@@ -13,7 +13,7 @@ https://travis-ci.org/mlieshoff/jcrapi2
 2. Create a branch: issue<ticket number>_<small_description>
 3. Implement your changes, do TDD!
 * Reformat the code with the projects formatter (intellij_code_formatter.xml)
-* Analyze the changed files with the projects inspection rules
+* Analyze the changed files with the projects inspection rules (intellij_inspection_rules.xml)
 * Commit with message like: [Issue<ticket_number>] <your message>
 4. Create a pull request as fast as possible, base it to master
 * Name it like: [Issue<ticket_number>] <your message>

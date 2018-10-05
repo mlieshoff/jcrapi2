@@ -1,0 +1,72 @@
+<model>
+
+    <class name="Version">
+        <const name="VERSION" value="v1" type="String"/>
+    </class>
+
+    <!-- clans -->
+
+    <class name="SearchedClan">
+        <member name="tag" type="String"/>
+        <member name="name" type="String"/>
+        <member name="type" type="String"/>
+        <member name="badgeId" type="int"/>
+        <member name="clanScore" type="int"/>
+        <member name="location" type="SearchedClanLocation"/>
+        <member name="requiredTrophies" type="int"/>
+        <member name="donationsPerWeek" type="int"/>
+        <member name="clanChestLevel" type="int"/>
+        <member name="clanChestMaxLevel" type="int"/>
+        <member name="members" type="int"/>
+    </class>
+
+    <class name="SearchedClanLocation">
+        <member name="id" type="int"/>
+        <member name="name" type="String"/>
+        <member name="country" alias="isCountry" type="boolean"/>
+        <member name="countryCode" type="String"/>
+    </class>
+
+    <class name="Clan">
+        <member name="tag" type="String"/>
+        <member name="name" type="String"/>
+        <member name="type" type="String"/>
+        <member name="badgeId" type="int"/>
+        <member name="clanScore" type="int"/>
+        <member name="location" type="ClanLocation"/>
+        <member name="requiredTrophies" type="int"/>
+        <member name="donationsPerWeek" type="int"/>
+        <member name="clanChestStatus" type="String"/>
+        <member name="clanChestLevel" type="int"/>
+        <member name="clanChestMaxLevel" type="int"/>
+        <member name="members" type="int"/>
+        <member name="memberList" type="list(ClanMember"/>
+    </class>
+
+    <class name="ClanLocation">
+        <member name="id" type="int"/>
+        <member name="name" type="String"/>
+        <member name="country" alias="isCountry" type="boolean"/>
+        <member name="countryCode" type="String"/>
+    </class>
+
+    <class name="ClanMember">
+        <member name="tag" type="String"/>
+        <member name="name" type="String"/>
+        <member name="role" type="String"/>
+        <member name="expLevel" type="int"/>
+        <member name="trophies" type="int"/>
+        <member name="arena" type="ClanMemberArena"/>
+        <member name="clanRank" type="int"/>
+        <member name="previousClanRank" type="int"/>
+        <member name="donations" type="String"/>
+        <member name="donationsReceived" type="int"/>
+        <member name="clanChestPoints" type="int"/>
+    </class>
+
+    <class name="ClanMemberArena">
+        <member name="id" type="int"/>
+        <member name="name" type="String"/>
+    </class>
+
+</model>

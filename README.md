@@ -1,9 +1,58 @@
 # jcrapi2
 A Java Wrapper For Official Supercell Clash Royal Api 
 
-## Continuous integration
+## Actual version: in dev
+
+## Simplest Usage ##
+
+Note: Please combine the builder methods as it makes sense. The demonstrated was is showing only all possibilities. 
+For more information please check 
+
+https://developer.clashroyale.com/#/documentation
+
+```java
+// connect to api
+Api api = new Api("https://api.clashroyale.com/v1/", "my-api-key");
+```
+
+```java
+// get clans
+GetClansResponse getClansResponse = api.getClans(GetClansRequest.builder()
+  // search criteria
+  .name()
+  .locationId()
+  .minScore()
+  .minMembers()
+  .maxMembers()
+  // paging
+  .after()
+  .before()
+  .limit()
+  .build()
+);
+```
+
+## How to bind the bintray repository ##
+
+```xml
+<repository>
+    <id>org-mili-repo</id>
+    <url>http://dl.bintray.com/mlieshoff/maven</url>
+    <releases>
+        <enabled>true</enabled>
+    </releases>
+    <snapshots>
+        <enabled>false</enabled>
+    </snapshots>
+</repository>
+```
+## Continuous Integration ##
 
 https://travis-ci.org/mlieshoff/jcrapi2
+
+## Repository ##
+
+https://bintray.com/mlieshoff/maven/jcrapi2
 
 ## Working Agreement
 

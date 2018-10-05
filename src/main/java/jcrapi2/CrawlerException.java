@@ -16,25 +16,41 @@
  */
 package jcrapi2;
 
+import com.google.common.base.Preconditions;
+
+import org.apache.commons.lang3.StringUtils;
+import org.apache.http.StatusLine;
+
 import java.io.IOException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import lombok.Getter;
 
 /**
  * @author Michael Lieshoff
  */
-public class TestClansServlet extends TestJsonFileServlet {
+@Getter
+public class CrawlerException extends IOException {
 
-  private static final long serialVersionUID = -4943083281747786181L;
+  private static final long serialVersionUID = 7983859692876675628L;
 
-  @Override
-  protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-    String parameter = getRestTagParameter(req);
-    String filename = null;
-    if ("clans".equals(parameter)) {
-      filename = "src/test/resources/clans.json";
+  private final String message;
+  private final String reason;
+
+  private final int statusCode;
+
+  public CrawlerException(StatusLine statusLine) {
+    Preconditions.checkNotNull(statusLine, "statusLine cannot be null!");
+    statusCode = statusLine.getStatusCode();
+    reason = statusLine.getReasonPhrase();
+    message = createMessage();
+  }
+
+  private String createMessage() {
+    StringBuilder msg = new StringBuilder();
+    msg.append("crapi: ").append(statusCode);
+    if (StringUtils.isNotBlank(reason)) {
+      msg.append(": ").append(reason);
     }
-    doGet(filename, req, resp);
+    return msg.toString();
   }
 
 }

@@ -16,30 +16,46 @@
  */
 package jcrapi2;
 
+import static jcrapi2.IntegrationTest.API_KEY;
+import static org.apache.http.HttpHeaders.AUTHORIZATION;
+import static org.apache.http.HttpStatus.SC_FORBIDDEN;
+
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * @author Michael Lieshoff
  */
 public class TestJsonFileServlet extends HttpServlet {
 
-  protected void doGet(String filename, HttpServletRequest httpServletRequest, ServletResponse httpServletResponse)
+  private static final long serialVersionUID = 7511948564064679157L;
+
+  void doGet(String filename, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse)
       throws IOException {
-    PrintWriter printWriter = httpServletResponse.getWriter();
-    printWriter.print(FileUtils.readFileToString(new File(filename)));
-    printWriter.flush();
+    if (checkAuth(httpServletRequest)) {
+      try (PrintWriter printWriter = httpServletResponse.getWriter()) {
+        printWriter.print(FileUtils.readFileToString(new File(filename)));
+        printWriter.flush();
+      }
+    } else {
+      httpServletResponse.setStatus(SC_FORBIDDEN);
+    }
   }
 
-  public static String getRestTagParameter(HttpServletRequest req) {
-    String uri = req.getRequestURI();
+  static String getRestTagParameter(HttpServletRequest httpServletRequest) {
+    String uri = httpServletRequest.getRequestURI();
     return uri.substring(uri.lastIndexOf('/') + 1);
+  }
+
+  private static boolean checkAuth(HttpServletRequest httpServletRequest) {
+    String apiKey = httpServletRequest.getHeader(AUTHORIZATION);
+    return ("Bearer " + API_KEY).equals(apiKey);
   }
 
 }

@@ -28,43 +28,43 @@ import lombok.ToString;
 @ToString
 public class Clan {
 
-    @SerializedName("tag")
-    private String tag;
+  @SerializedName("tag")
+  private String tag;
 
-    @SerializedName("name")
-    private String name;
+  @SerializedName("name")
+  private String name;
 
-    @SerializedName("type")
-    private String type;
+  @SerializedName("type")
+  private String type;
 
-    @SerializedName("badgeId")
-    private int badgeId;
+  @SerializedName("badgeId")
+  private int badgeId;
 
-    @SerializedName("clanScore")
-    private int clanScore;
+  @SerializedName("clanScore")
+  private int clanScore;
 
-    @SerializedName("location")
-    private ClanLocation location;
+  @SerializedName("location")
+  private ClanLocation location;
 
-    @SerializedName("requiredTrophies")
-    private int requiredTrophies;
+  @SerializedName("requiredTrophies")
+  private int requiredTrophies;
 
-    @SerializedName("donationsPerWeek")
-    private int donationsPerWeek;
+  @SerializedName("donationsPerWeek")
+  private int donationsPerWeek;
 
-    @SerializedName("clanChestStatus")
-    private String clanChestStatus;
+  @SerializedName("clanChestStatus")
+  private String clanChestStatus;
 
-    @SerializedName("clanChestLevel")
-    private int clanChestLevel;
+  @SerializedName("clanChestLevel")
+  private int clanChestLevel;
 
-    @SerializedName("clanChestMaxLevel")
-    private int clanChestMaxLevel;
+  @SerializedName("clanChestMaxLevel")
+  private int clanChestMaxLevel;
 
-    @SerializedName("members")
-    private int members;
+  @SerializedName("members")
+  private int members;
 
-    @SerializedName("memberList")
-    private java.util.List<ClanMember> memberList;
+  @SerializedName("memberList")
+  private java.util.List<ClanMember> memberList;
 
 }

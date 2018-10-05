@@ -14,20 +14,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jcrapi2.model;
+package jcrapi2;
 
-import javax.annotation.Generated;
-import com.google.gson.annotations.SerializedName;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-@Generated("org.mili.generator")
-@Getter
-@Setter
-@ToString
-public class Version {
+import org.junit.jupiter.api.Test;
 
-  public static final String VERSION = "v1";
+/**
+ * @author Michael Lieshoff
+ */
+class CrawlerFactoryTest {
+
+  @Test
+  void construct_whenWithNullHttpClientFactory_shouldThrowException() throws Exception {
+    assertThrows(NullPointerException.class, () -> new CrawlerFactory(null));
+  }
+
+  @Test
+  void construct_whenWithValidParameter_shouldConstruct() throws Exception {
+    assertNotNull(new CrawlerFactory(new HttpClientFactory()).createCrawler());
+  }
 
 }

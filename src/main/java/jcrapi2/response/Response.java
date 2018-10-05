@@ -14,20 +14,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jcrapi2.model;
+package jcrapi2.response;
 
-import javax.annotation.Generated;
 import com.google.gson.annotations.SerializedName;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
 
-@Generated("org.mili.generator")
-@Getter
-@Setter
-@ToString
-public class Version {
+import lombok.Data;
 
-  public static final String VERSION = "v1";
+/**
+ * @author Michael Lieshoff
+ */
+@Data
+public class Response {
+
+  @SerializedName("reason")
+  private String reason;
+
+  @SerializedName("message")
+  private String message;
 
 }

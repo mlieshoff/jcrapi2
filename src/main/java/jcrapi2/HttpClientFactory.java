@@ -14,20 +14,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jcrapi2.model;
+package jcrapi2;
 
-import javax.annotation.Generated;
-import com.google.gson.annotations.SerializedName;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import org.apache.http.client.HttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
 
-@Generated("org.mili.generator")
-@Getter
-@Setter
-@ToString
-public class Version {
+/**
+ * @author Michael Lieshoff
+ */
+class HttpClientFactory {
 
-  public static final String VERSION = "v1";
+  HttpClient create() {
+    return HttpClientBuilder.create().build();
+  }
 
 }

@@ -26,34 +26,34 @@ import org.junit.jupiter.api.Test;
 @Generated("org.mili.generator")
 public class ClanMemberArenaTest {
 
-    private ClanMemberArena unitUnderTest;
+  private ClanMemberArena unitUnderTest;
 
-    @BeforeEach
-    public void setUp() {
-        unitUnderTest = new ClanMemberArena();
-    }
+  @BeforeEach
+  public void setUp() {
+    unitUnderTest = new ClanMemberArena();
+  }
 
-    @Test
-    public void shouldGetSetId() {
-        int expected = 815;
-        unitUnderTest.setId(expected);
-        assertEquals(expected, unitUnderTest.getId());
-    }
+  @Test
+  public void shouldGetSetId() {
+    int expected = 815;
+    unitUnderTest.setId(expected);
+    assertEquals(expected, unitUnderTest.getId());
+  }
 
-    @Test
-    public void shouldGetSetName() {
-        String expected = "astring";
-        unitUnderTest.setName(expected);
-        assertEquals(expected, unitUnderTest.getName());
-    }
+  @Test
+  public void shouldGetSetName() {
+    String expected = "astring";
+    unitUnderTest.setName(expected);
+    assertEquals(expected, unitUnderTest.getName());
+  }
 
-    @Test
-    public void shouldToString() {
-        unitUnderTest.setId(815);
-        unitUnderTest.setName("astring");
-        String expected = "ClanMemberArena(id=815, name=astring)";
-        String actual = unitUnderTest.toString();
-        assertEquals(expected, actual);
-    }
+  @Test
+  public void shouldToString() {
+    unitUnderTest.setId(815);
+    unitUnderTest.setName("astring");
+    String expected = "ClanMemberArena(id=815, name=astring)";
+    String actual = unitUnderTest.toString();
+    assertEquals(expected, actual);
+  }
 
 }

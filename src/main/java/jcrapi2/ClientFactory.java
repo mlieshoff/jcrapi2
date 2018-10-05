@@ -14,20 +14,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jcrapi2.model;
+package jcrapi2;
 
-import javax.annotation.Generated;
-import com.google.gson.annotations.SerializedName;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import com.google.common.base.Preconditions;
 
-@Generated("org.mili.generator")
-@Getter
-@Setter
-@ToString
-public class Version {
+/**
+ * @author Michael Lieshoff
+ */
+class ClientFactory {
 
-  public static final String VERSION = "v1";
+  public Client createClient(String url, String apiKey) {
+    Preconditions.checkNotNull(url);
+    Preconditions.checkArgument(!url.isEmpty(), url);
+    return new Client(url, apiKey, new CrawlerFactory());
+  }
 
 }

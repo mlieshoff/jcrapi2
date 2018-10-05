@@ -28,10 +28,10 @@ import lombok.ToString;
 @ToString
 public class ClanMemberArena {
 
-    @SerializedName("id")
-    private int id;
+  @SerializedName("id")
+  private int id;
 
-    @SerializedName("name")
-    private String name;
+  @SerializedName("name")
+  private String name;
 
 }

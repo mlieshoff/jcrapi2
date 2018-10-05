@@ -16,40 +16,58 @@
  */
 package jcrapi2;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
+import jcrapi2.request.GetClansRequest;
+import jcrapi2.response.GetClansResponse;
 
 /**
  * @author Michael Lieshoff
  */
 class IntegrationTest {
 
-  public static final int PORT = 50000;
+  private static final int PORT = 50000;
+  private static final int NUMBER_OF_CLANS = 242;
 
   private static JettyServer jettyServer;
 
   private static final String CONTEXT = "test";
   private static final String APP = "jcrapi2";
   private static final String URL = String.format("http://localhost:50000/%s/%s/", CONTEXT, APP);
+  static final String API_KEY = "itsasecret";
 
   @BeforeAll
-  public static void beforeClass() throws Exception {
+  static void beforeClass() throws Exception {
     jettyServer = new JettyServer(PORT, '/' + CONTEXT);
     jettyServer.addServlet('/' + APP + "/clans", new TestClansServlet());
     jettyServer.start();
   }
 
   @AfterAll
-  public static void afterClass() throws Exception {
+  static void afterClass() throws Exception {
     jettyServer.stop();
   }
 
   @Test
-  public void method_when_should() throws IOException {
+  void getClans_whenWithValidParameters_shouldReturnResponse() throws Exception {
+    doGetClans(API_KEY);
+  }
 
+  private static void doGetClans(String apiKey) {
+    GetClansResponse actual = new Api(URL, apiKey).getClans(GetClansRequest.builder().name("name").build());
+    assertNotNull(actual);
+    assertEquals(NUMBER_OF_CLANS, actual.getItems().size());
+  }
+
+  @Test
+  void getClans_whenWithWrongUrl_shouldThrow() throws Exception {
+    assertThrows(ApiException.class, () -> doGetClans("lala2"));
   }
 
 }

@@ -14,20 +14,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jcrapi2.model;
+package jcrapi2.response;
 
-import javax.annotation.Generated;
-import com.google.gson.annotations.SerializedName;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@Generated("org.mili.generator")
-@Getter
-@Setter
-@ToString
-public class Version {
+import org.junit.jupiter.api.Test;
 
-  public static final String VERSION = "v1";
+abstract class ResponseTestBase<T extends Response> {
+
+  private static final String MESSAGE = "message";
+  private static final String REASON = "reason";
+
+  @Test
+  void setMessage_whenWithValidParameter_shouldGet() throws Exception {
+    T response = getResponse();
+    response.setMessage(MESSAGE);
+    assertEquals(MESSAGE, response.getMessage());
+  }
+
+  @Test
+  void setReason_whenWithValidParameter_shouldGet() throws Exception {
+    T response = getResponse();
+    response.setReason(REASON);
+    assertEquals(REASON, response.getReason());
+  }
+
+  abstract T getResponse();
 
 }

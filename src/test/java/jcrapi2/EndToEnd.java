@@ -16,28 +16,38 @@
  */
 package jcrapi2;
 
-import java.io.IOException;
-import okhttp3.Call;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import jcrapi2.request.GetClansRequest;
+import jcrapi2.response.GetClansResponse;
+
+/**
+ * @author Michael Lieshoff
+ */
 public class EndToEnd {
 
-  public static void main(String[] args) throws IOException {
+  private static final String API_KEY = System.getProperty("api.key");
 
-    String key = args[0];
+  private Api api;
 
-    Call.Factory okHttpClient = new OkHttpClient();
-    Request request = new Request.Builder()
-        .get()
-        .url("https://api.clashroyale.com/v1/clans?name=puzzle")
-        .addHeader("authorization", "Bearer " + key)
-        .build();
+  @BeforeEach
+  void setUp() throws Exception {
+    api = new Api("https://api.clashroyale.com/v1/", API_KEY);
+  }
 
-    Response response = okHttpClient.newCall(request).execute();
-
-    System.out.println(response.body().string());
+  @Test
+  void getClans_whenWithValidParameters_shouldGetRespone() throws Exception {
+    GetClansResponse getClansResponse = api.getClans(GetClansRequest.builder().name("puzzle").build());
+    assertAll(
+        () -> assertNotNull(getClansResponse, "getClansResponse"),
+        () -> assertNull(getClansResponse.getMessage(), "message"),
+        () -> assertNull(getClansResponse.getReason(), "reason")
+    );
   }
 
 }

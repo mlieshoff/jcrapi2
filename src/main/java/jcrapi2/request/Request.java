@@ -14,20 +14,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jcrapi2.model;
+package jcrapi2.request;
 
-import javax.annotation.Generated;
-import com.google.gson.annotations.SerializedName;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import lombok.Builder;
 
-@Generated("org.mili.generator")
-@Getter
-@Setter
-@ToString
-public class Version {
+/**
+ * @author Michael Lieshoff
+ */
+public class Request {
 
-  public static final String VERSION = "v1";
+  @Builder(builderMethodName = "requestBuilder")
+  Request() {
+
+  }
+
+  public Map<String, String> getQueryParameters() {
+    return new LinkedHashMap<>();
+  }
 
 }

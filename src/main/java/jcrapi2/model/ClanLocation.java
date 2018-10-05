@@ -28,16 +28,16 @@ import lombok.ToString;
 @ToString
 public class ClanLocation {
 
-    @SerializedName("id")
-    private int id;
+  @SerializedName("id")
+  private int id;
 
-    @SerializedName("name")
-    private String name;
+  @SerializedName("name")
+  private String name;
 
-    @SerializedName("country")
-    private boolean country;
+  @SerializedName("country")
+  private boolean country;
 
-    @SerializedName("countryCode")
-    private String countryCode;
+  @SerializedName("countryCode")
+  private String countryCode;
 
 }

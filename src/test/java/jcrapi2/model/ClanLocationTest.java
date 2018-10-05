@@ -26,50 +26,50 @@ import org.junit.jupiter.api.Test;
 @Generated("org.mili.generator")
 public class ClanLocationTest {
 
-    private ClanLocation unitUnderTest;
+  private ClanLocation unitUnderTest;
 
-    @BeforeEach
-    public void setUp() {
-        unitUnderTest = new ClanLocation();
-    }
+  @BeforeEach
+  public void setUp() {
+    unitUnderTest = new ClanLocation();
+  }
 
-    @Test
-    public void shouldGetSetId() {
-        int expected = 815;
-        unitUnderTest.setId(expected);
-        assertEquals(expected, unitUnderTest.getId());
-    }
+  @Test
+  public void shouldGetSetId() {
+    int expected = 815;
+    unitUnderTest.setId(expected);
+    assertEquals(expected, unitUnderTest.getId());
+  }
 
-    @Test
-    public void shouldGetSetName() {
-        String expected = "astring";
-        unitUnderTest.setName(expected);
-        assertEquals(expected, unitUnderTest.getName());
-    }
+  @Test
+  public void shouldGetSetName() {
+    String expected = "astring";
+    unitUnderTest.setName(expected);
+    assertEquals(expected, unitUnderTest.getName());
+  }
 
-    @Test
-    public void shouldGetSetCountry() {
-        boolean expected = false;
-        unitUnderTest.setCountry(expected);
-        assertEquals(expected, unitUnderTest.isCountry());
-    }
+  @Test
+  public void shouldGetSetCountry() {
+    boolean expected = false;
+    unitUnderTest.setCountry(expected);
+    assertEquals(expected, unitUnderTest.isCountry());
+  }
 
-    @Test
-    public void shouldGetSetCountryCode() {
-        String expected = "astring";
-        unitUnderTest.setCountryCode(expected);
-        assertEquals(expected, unitUnderTest.getCountryCode());
-    }
+  @Test
+  public void shouldGetSetCountryCode() {
+    String expected = "astring";
+    unitUnderTest.setCountryCode(expected);
+    assertEquals(expected, unitUnderTest.getCountryCode());
+  }
 
-    @Test
-    public void shouldToString() {
-        unitUnderTest.setId(815);
-        unitUnderTest.setName("astring");
-        unitUnderTest.setCountry(false);
-        unitUnderTest.setCountryCode("astring");
-        String expected = "ClanLocation(id=815, name=astring, country=false, countryCode=astring)";
-        String actual = unitUnderTest.toString();
-        assertEquals(expected, actual);
-    }
+  @Test
+  public void shouldToString() {
+    unitUnderTest.setId(815);
+    unitUnderTest.setName("astring");
+    unitUnderTest.setCountry(false);
+    unitUnderTest.setCountryCode("astring");
+    String expected = "ClanLocation(id=815, name=astring, country=false, countryCode=astring)";
+    String actual = unitUnderTest.toString();
+    assertEquals(expected, actual);
+  }
 
 }

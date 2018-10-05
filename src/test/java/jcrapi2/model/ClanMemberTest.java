@@ -26,106 +26,106 @@ import org.junit.jupiter.api.Test;
 @Generated("org.mili.generator")
 public class ClanMemberTest {
 
-    private ClanMember unitUnderTest;
+  private ClanMember unitUnderTest;
 
-    @BeforeEach
-    public void setUp() {
-        unitUnderTest = new ClanMember();
-    }
+  @BeforeEach
+  public void setUp() {
+    unitUnderTest = new ClanMember();
+  }
 
-    @Test
-    public void shouldGetSetTag() {
-        String expected = "astring";
-        unitUnderTest.setTag(expected);
-        assertEquals(expected, unitUnderTest.getTag());
-    }
+  @Test
+  public void shouldGetSetTag() {
+    String expected = "astring";
+    unitUnderTest.setTag(expected);
+    assertEquals(expected, unitUnderTest.getTag());
+  }
 
-    @Test
-    public void shouldGetSetName() {
-        String expected = "astring";
-        unitUnderTest.setName(expected);
-        assertEquals(expected, unitUnderTest.getName());
-    }
+  @Test
+  public void shouldGetSetName() {
+    String expected = "astring";
+    unitUnderTest.setName(expected);
+    assertEquals(expected, unitUnderTest.getName());
+  }
 
-    @Test
-    public void shouldGetSetRole() {
-        String expected = "astring";
-        unitUnderTest.setRole(expected);
-        assertEquals(expected, unitUnderTest.getRole());
-    }
+  @Test
+  public void shouldGetSetRole() {
+    String expected = "astring";
+    unitUnderTest.setRole(expected);
+    assertEquals(expected, unitUnderTest.getRole());
+  }
 
-    @Test
-    public void shouldGetSetExpLevel() {
-        int expected = 815;
-        unitUnderTest.setExpLevel(expected);
-        assertEquals(expected, unitUnderTest.getExpLevel());
-    }
+  @Test
+  public void shouldGetSetExpLevel() {
+    int expected = 815;
+    unitUnderTest.setExpLevel(expected);
+    assertEquals(expected, unitUnderTest.getExpLevel());
+  }
 
-    @Test
-    public void shouldGetSetTrophies() {
-        int expected = 815;
-        unitUnderTest.setTrophies(expected);
-        assertEquals(expected, unitUnderTest.getTrophies());
-    }
+  @Test
+  public void shouldGetSetTrophies() {
+    int expected = 815;
+    unitUnderTest.setTrophies(expected);
+    assertEquals(expected, unitUnderTest.getTrophies());
+  }
 
-    @Test
-    public void shouldGetSetArena() {
-        ClanMemberArena expected = new ClanMemberArena();
-        unitUnderTest.setArena(expected);
-        assertEquals(expected, unitUnderTest.getArena());
-    }
+  @Test
+  public void shouldGetSetArena() {
+    ClanMemberArena expected = new ClanMemberArena();
+    unitUnderTest.setArena(expected);
+    assertEquals(expected, unitUnderTest.getArena());
+  }
 
-    @Test
-    public void shouldGetSetClanRank() {
-        int expected = 815;
-        unitUnderTest.setClanRank(expected);
-        assertEquals(expected, unitUnderTest.getClanRank());
-    }
+  @Test
+  public void shouldGetSetClanRank() {
+    int expected = 815;
+    unitUnderTest.setClanRank(expected);
+    assertEquals(expected, unitUnderTest.getClanRank());
+  }
 
-    @Test
-    public void shouldGetSetPreviousClanRank() {
-        int expected = 815;
-        unitUnderTest.setPreviousClanRank(expected);
-        assertEquals(expected, unitUnderTest.getPreviousClanRank());
-    }
+  @Test
+  public void shouldGetSetPreviousClanRank() {
+    int expected = 815;
+    unitUnderTest.setPreviousClanRank(expected);
+    assertEquals(expected, unitUnderTest.getPreviousClanRank());
+  }
 
-    @Test
-    public void shouldGetSetDonations() {
-        String expected = "astring";
-        unitUnderTest.setDonations(expected);
-        assertEquals(expected, unitUnderTest.getDonations());
-    }
+  @Test
+  public void shouldGetSetDonations() {
+    String expected = "astring";
+    unitUnderTest.setDonations(expected);
+    assertEquals(expected, unitUnderTest.getDonations());
+  }
 
-    @Test
-    public void shouldGetSetDonationsReceived() {
-        int expected = 815;
-        unitUnderTest.setDonationsReceived(expected);
-        assertEquals(expected, unitUnderTest.getDonationsReceived());
-    }
+  @Test
+  public void shouldGetSetDonationsReceived() {
+    int expected = 815;
+    unitUnderTest.setDonationsReceived(expected);
+    assertEquals(expected, unitUnderTest.getDonationsReceived());
+  }
 
-    @Test
-    public void shouldGetSetClanChestPoints() {
-        int expected = 815;
-        unitUnderTest.setClanChestPoints(expected);
-        assertEquals(expected, unitUnderTest.getClanChestPoints());
-    }
+  @Test
+  public void shouldGetSetClanChestPoints() {
+    int expected = 815;
+    unitUnderTest.setClanChestPoints(expected);
+    assertEquals(expected, unitUnderTest.getClanChestPoints());
+  }
 
-    @Test
-    public void shouldToString() {
-        unitUnderTest.setTag("astring");
-        unitUnderTest.setName("astring");
-        unitUnderTest.setRole("astring");
-        unitUnderTest.setExpLevel(815);
-        unitUnderTest.setTrophies(815);
-        unitUnderTest.setArena(new ClanMemberArena());
-        unitUnderTest.setClanRank(815);
-        unitUnderTest.setPreviousClanRank(815);
-        unitUnderTest.setDonations("astring");
-        unitUnderTest.setDonationsReceived(815);
-        unitUnderTest.setClanChestPoints(815);
-        String expected = "ClanMember(tag=astring, name=astring, role=astring, expLevel=815, trophies=815, arena=" + new ClanMemberArena() + ", clanRank=815, previousClanRank=815, donations=astring, donationsReceived=815, clanChestPoints=815)";
-        String actual = unitUnderTest.toString();
-        assertEquals(expected, actual);
-    }
+  @Test
+  public void shouldToString() {
+    unitUnderTest.setTag("astring");
+    unitUnderTest.setName("astring");
+    unitUnderTest.setRole("astring");
+    unitUnderTest.setExpLevel(815);
+    unitUnderTest.setTrophies(815);
+    unitUnderTest.setArena(new ClanMemberArena());
+    unitUnderTest.setClanRank(815);
+    unitUnderTest.setPreviousClanRank(815);
+    unitUnderTest.setDonations("astring");
+    unitUnderTest.setDonationsReceived(815);
+    unitUnderTest.setClanChestPoints(815);
+    String expected = "ClanMember(tag=astring, name=astring, role=astring, expLevel=815, trophies=815, arena=" + new ClanMemberArena() + ", clanRank=815, previousClanRank=815, donations=astring, donationsReceived=815, clanChestPoints=815)";
+    String actual = unitUnderTest.toString();
+    assertEquals(expected, actual);
+  }
 
 }

@@ -14,20 +14,42 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jcrapi2.model;
+package jcrapi2.response;
 
-import javax.annotation.Generated;
 import com.google.gson.annotations.SerializedName;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
 
-@Generated("org.mili.generator")
-@Getter
-@Setter
-@ToString
-public class Version {
+import java.util.Collection;
+import lombok.Data;
 
-  public static final String VERSION = "v1";
+/**
+ * @author Michael Lieshoff
+ */
+@Data
+public class PageableResponse<T> extends Response {
+
+  @SerializedName("items")
+  private Collection<T> items;
+
+  @SerializedName("paging")
+  private Paging paging;
+
+  @Data
+  public static class Paging {
+
+    @SerializedName("cursors")
+    private Cursors cursors;
+
+    @Data
+    public static class Cursors {
+
+      @SerializedName("after")
+      private String after;
+
+      @SerializedName("before")
+      private String before;
+
+    }
+
+  }
 
 }

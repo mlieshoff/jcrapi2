@@ -14,20 +14,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jcrapi2.model;
+package jcrapi2;
 
-import javax.annotation.Generated;
-import com.google.gson.annotations.SerializedName;
 import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
 
-@Generated("org.mili.generator")
+/**
+ * @author Michael Lieshoff
+ */
 @Getter
-@Setter
-@ToString
-public class Version {
+public class ApiException extends RuntimeException {
 
-  public static final String VERSION = "v1";
+  private static final long serialVersionUID = -7830746893671497417L;
+
+  private final int code;
+  private final String message;
+
+  public ApiException(Throwable cause) {
+    super(cause);
+    message = cause.getMessage();
+    if (cause instanceof CrawlerException) {
+      CrawlerException crawlerException = (CrawlerException) cause;
+      code = crawlerException.getStatusCode();
+    } else {
+      code = 0;
+    }
+  }
 
 }

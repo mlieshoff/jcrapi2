@@ -28,37 +28,37 @@ import lombok.ToString;
 @ToString
 public class ClanMember {
 
-    @SerializedName("tag")
-    private String tag;
+  @SerializedName("tag")
+  private String tag;
 
-    @SerializedName("name")
-    private String name;
+  @SerializedName("name")
+  private String name;
 
-    @SerializedName("role")
-    private String role;
+  @SerializedName("role")
+  private String role;
 
-    @SerializedName("expLevel")
-    private int expLevel;
+  @SerializedName("expLevel")
+  private int expLevel;
 
-    @SerializedName("trophies")
-    private int trophies;
+  @SerializedName("trophies")
+  private int trophies;
 
-    @SerializedName("arena")
-    private ClanMemberArena arena;
+  @SerializedName("arena")
+  private ClanMemberArena arena;
 
-    @SerializedName("clanRank")
-    private int clanRank;
+  @SerializedName("clanRank")
+  private int clanRank;
 
-    @SerializedName("previousClanRank")
-    private int previousClanRank;
+  @SerializedName("previousClanRank")
+  private int previousClanRank;
 
-    @SerializedName("donations")
-    private String donations;
+  @SerializedName("donations")
+  private String donations;
 
-    @SerializedName("donationsReceived")
-    private int donationsReceived;
+  @SerializedName("donationsReceived")
+  private int donationsReceived;
 
-    @SerializedName("clanChestPoints")
-    private int clanChestPoints;
+  @SerializedName("clanChestPoints")
+  private int clanChestPoints;
 
 }

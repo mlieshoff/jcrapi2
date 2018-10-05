@@ -26,23 +26,23 @@ import org.junit.jupiter.api.Test;
 @Generated("org.mili.generator")
 public class VersionTest {
 
-    private Version unitUnderTest;
+  private Version unitUnderTest;
 
-    @BeforeEach
-    public void setUp() {
-        unitUnderTest = new Version();
-    }
+  @BeforeEach
+  public void setUp() {
+    unitUnderTest = new Version();
+  }
 
-    @Test
-    public void shouldGetVERSION() {
-        assertEquals( "v1", unitUnderTest.VERSION);
-    }
+  @Test
+  public void shouldGetVERSION() {
+    assertEquals( "v1", unitUnderTest.VERSION);
+  }
     
-    @Test
-    public void shouldToString() {
-        String expected = "Version()";
-        String actual = unitUnderTest.toString();
-        assertEquals(expected, actual);
-    }
+  @Test
+  public void shouldToString() {
+    String expected = "Version()";
+    String actual = unitUnderTest.toString();
+    assertEquals(expected, actual);
+  }
 
 }

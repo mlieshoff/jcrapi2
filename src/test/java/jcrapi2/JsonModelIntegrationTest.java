@@ -14,20 +14,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jcrapi2.model;
+package jcrapi2;
 
-import javax.annotation.Generated;
-import com.google.gson.annotations.SerializedName;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-@Generated("org.mili.generator")
-@Getter
-@Setter
-@ToString
-public class Version {
+import com.google.gson.Gson;
 
-  public static final String VERSION = "v1";
+import org.apache.commons.io.FileUtils;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+import java.io.File;
+import jcrapi2.response.GetClansResponse;
+
+class JsonModelIntegrationTest {
+
+  private static final Gson GSON = new Gson();
+
+  @Test
+  void fromJson_whenForGetClans_shouldResolve() throws Exception {
+    String json = FileUtils.readFileToString(new File("src/test/resources/clans.json"));
+    GetClansResponse object = GSON.fromJson(json, GetClansResponse.class);
+    assertNotNull(object);
+    object.getItems().forEach(Assertions::assertNotNull);
+  }
 
 }

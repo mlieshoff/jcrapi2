@@ -32,6 +32,11 @@ GetClansResponse getClansResponse = api.getClans(GetClansRequest.builder()
 );
 ```
 
+```java
+// get clan
+GetClanResponse getClanResponse = api.getClan(GetClanRequest.builder("#RP88QQG").build());
+```
+
 ## How to bind the bintray repository ##
 
 ```xml

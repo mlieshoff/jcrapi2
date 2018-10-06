@@ -59,7 +59,7 @@ class CrawlerTest {
   }
 
   @Test
-  void construct_whenWithNullUrl_shouldThrowException() throws Exception {
+  void construct_whenWithNullUrl_thenThrowException() throws Exception {
     assertThrows(NullPointerException.class, () -> new Crawler(httpClientFactory).get(null, createHeaders(), null));
   }
 
@@ -68,23 +68,23 @@ class CrawlerTest {
   }
 
   @Test
-  void construct_whenWithEmptyUrl_shouldThrowException() throws Exception {
+  void construct_whenWithEmptyUrl_thenThrowException() throws Exception {
     assertThrows(IllegalArgumentException.class, () -> new Crawler(httpClientFactory).get("", createHeaders(), null));
   }
 
   @Test
-  void construct_whenWithNullHeaders_shouldThrowException() throws Exception {
+  void construct_whenWithNullHeaders_thenThrowException() throws Exception {
     assertThrows(NullPointerException.class, () -> new Crawler(httpClientFactory).get("abc", null, null));
   }
 
   @Test
-  void construct_whenWithEmptyHeaders_shouldThrowException() throws Exception {
+  void construct_whenWithEmptyHeaders_thenThrowException() throws Exception {
     assertThrows(IllegalArgumentException.class,
         () -> new Crawler(httpClientFactory).get("abc", new HashMap<>(), null));
   }
 
   @Test
-  void get_whenWithValidParameters_shouldGet() throws Exception {
+  void get_whenWithValidParameters_thenGet() throws Exception {
     String expectedResult = "break-out-prison";
     when(httpClientFactory.create()).thenReturn(httpClient);
     HttpResponse
@@ -96,7 +96,7 @@ class CrawlerTest {
   }
 
   @Test
-  void get_whenWithException_shouldGetMessage() throws Exception {
+  void get_whenWithException_thenGetMessage() throws Exception {
     String expectedResult = "break-out-prison";
     when(httpClientFactory.create()).thenReturn(httpClient);
     HttpResponse

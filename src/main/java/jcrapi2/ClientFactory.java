@@ -16,7 +16,8 @@
  */
 package jcrapi2;
 
-import com.google.common.base.Preconditions;
+import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
  * @author Michael Lieshoff
@@ -24,8 +25,8 @@ import com.google.common.base.Preconditions;
 class ClientFactory {
 
   public Client createClient(String url, String apiKey) {
-    Preconditions.checkNotNull(url);
-    Preconditions.checkArgument(!url.isEmpty(), url);
+    checkNotNull(url, "url");
+    checkArgument(!url.isEmpty(), "url");
     return new Client(url, apiKey, new CrawlerFactory());
   }
 

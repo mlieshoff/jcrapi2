@@ -26,13 +26,20 @@ import static org.mockito.Mockito.when;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClansRequest;
+import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClansResponse;
 
 /**
  * @author Michael Lieshoff
  */
 class ApiTest {
+
+  private static final String API_KEY = "apiKey";
+  private static final String CLAN_TAG = "clanTag";
+  private static final String NAME = "name";
+  private static final String URL = "url";
 
   private Client client;
 
@@ -44,51 +51,76 @@ class ApiTest {
   void setUp() throws Exception {
     ClientFactory clientFactory = mock(ClientFactory.class);
     client = mock(Client.class);
-    when(clientFactory.createClient("lala", "abc")).thenReturn(client);
-    api = new Api("lala", "abc", clientFactory);
+    when(clientFactory.createClient(URL, API_KEY)).thenReturn(client);
+    api = new Api(URL, API_KEY, clientFactory);
     crawlerException = mock(CrawlerException.class);
     when(crawlerException.getStatusCode()).thenReturn(SC_NOT_FOUND);
   }
 
   @Test
-  void construct_whenWithNullUrl_shouldThrowException() throws Exception {
-    assertThrows(NullPointerException.class, () -> new Api(null, "abc"));
+  void construct_whenWithNullUrl_thenThrowException() throws Exception {
+    assertThrows(NullPointerException.class, () -> new Api(null, API_KEY));
   }
 
   @Test
-  void construct_whenWithEmptyUrl_shouldThrowException() throws Exception {
-    assertThrows(IllegalArgumentException.class, () -> new Api("", "abc"));
+  void construct_whenWithEmptyUrl_thenThrowException() throws Exception {
+    assertThrows(IllegalArgumentException.class, () -> new Api("", API_KEY));
   }
 
   @Test
-  void construct_whenWithNullApiKey_shouldThrowException() throws Exception {
-    assertThrows(NullPointerException.class, () -> new Api("url", null));
+  void construct_whenWithNullApiKey_thenThrowException() throws Exception {
+    assertThrows(NullPointerException.class, () -> new Api(URL, null));
   }
 
   @Test
-  void construct_whenWithEmptyApiKey_shouldThrowException() throws Exception {
-    assertThrows(IllegalArgumentException.class, () -> new Api("url", ""));
+  void construct_whenWithEmptyApiKey_thenThrowException() throws Exception {
+    assertThrows(IllegalArgumentException.class, () -> new Api(URL, ""));
   }
 
   @Test
-  void getClans_whenWithNullRequest_shouldThrowsException() throws Exception {
+  void getClans_whenWithNullRequest_thenThrowsException() throws Exception {
     assertThrows(NullPointerException.class, () -> api.getClans(null));
   }
 
   @Test
-  void getClans_whenWithRequest_shouldReturnResult() throws Exception {
-    GetClansRequest getClansRequest = GetClansRequest.builder().name("name").build();
+  void getClans_whenWithRequest_thenReturnResult() throws Exception {
+    GetClansRequest getClansRequest = GetClansRequest.builder().name(NAME).build();
     GetClansResponse getClansResponse = new GetClansResponse();
     when(client.getClans(getClansRequest)).thenReturn(getClansResponse);
     assertEquals(getClansResponse, api.getClans(getClansRequest));
   }
 
   @Test
-  void getClans_whenWithException_shouldThrowApiException() throws Exception {
-    GetClansRequest getClansRequest = GetClansRequest.builder().name("name").build();
+  void getClans_whenWithException_thenThrowApiException() throws Exception {
+    GetClansRequest getClansRequest = GetClansRequest.builder().name(NAME).build();
     when(client.getClans(getClansRequest)).thenThrow(crawlerException);
     try {
       api.getClans(getClansRequest);
+      fail();
+    } catch (ApiException e) {
+      assertEquals(SC_NOT_FOUND, e.getCode());
+    }
+  }
+
+  @Test
+  void getClan_whenWithNullRequest_thenThrowsException() throws Exception {
+    assertThrows(NullPointerException.class, () -> api.getClan(null));
+  }
+
+  @Test
+  void getClan_whenWithRequest_thenReturnResult() throws Exception {
+    GetClanRequest getClanRequest = GetClanRequest.builder(CLAN_TAG).build();
+    GetClanResponse getClanResponse = new GetClanResponse();
+    when(client.getClan(getClanRequest)).thenReturn(getClanResponse);
+    assertEquals(getClanResponse, api.getClan(getClanRequest));
+  }
+
+  @Test
+  void getClan_whenWithException_thenThrowApiException() throws Exception {
+    GetClanRequest getClanRequest = GetClanRequest.builder(CLAN_TAG).build();
+    when(client.getClan(getClanRequest)).thenThrow(crawlerException);
+    try {
+      api.getClan(getClanRequest);
       fail();
     } catch (ApiException e) {
       assertEquals(SC_NOT_FOUND, e.getCode());

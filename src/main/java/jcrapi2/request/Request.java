@@ -16,7 +16,9 @@
  */
 package jcrapi2.request;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import lombok.Builder;
 
@@ -32,6 +34,10 @@ public class Request {
 
   public Map<String, String> getQueryParameters() {
     return new LinkedHashMap<>();
+  }
+
+  public List<String> getRestParameters() {
+    return new ArrayList<>();
   }
 
 }

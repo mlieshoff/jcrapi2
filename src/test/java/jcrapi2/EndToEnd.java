@@ -23,7 +23,9 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClansRequest;
+import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClansResponse;
 
 /**
@@ -41,12 +43,22 @@ public class EndToEnd {
   }
 
   @Test
-  void getClans_whenWithValidParameters_shouldGetRespone() throws Exception {
+  void getClans_whenWithValidParameters_thenGetRespone() throws Exception {
     GetClansResponse getClansResponse = api.getClans(GetClansRequest.builder().name("puzzle").build());
     assertAll(
         () -> assertNotNull(getClansResponse, "getClansResponse"),
         () -> assertNull(getClansResponse.getMessage(), "message"),
         () -> assertNull(getClansResponse.getReason(), "reason")
+    );
+  }
+
+  @Test
+  void getClan_whenWithValidParameters_thenGetRespone() throws Exception {
+    GetClanResponse getClanResponse = api.getClan(GetClanRequest.builder("#RP88QQG").build());
+    assertAll(
+        () -> assertNotNull(getClanResponse, "getClanResponse"),
+        () -> assertNull(getClanResponse.getMessage(), "message"),
+        () -> assertNull(getClanResponse.getReason(), "reason")
     );
   }
 

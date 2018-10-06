@@ -16,7 +16,7 @@
  */
 package jcrapi2;
 
-import com.google.common.base.Preconditions;
+import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
  * @author Michael Lieshoff
@@ -30,7 +30,7 @@ class CrawlerFactory {
   }
 
   CrawlerFactory(HttpClientFactory httpClientFactory) {
-    Preconditions.checkNotNull(httpClientFactory);
+    checkNotNull(httpClientFactory);
     this.httpClientFactory = httpClientFactory;
   }
 

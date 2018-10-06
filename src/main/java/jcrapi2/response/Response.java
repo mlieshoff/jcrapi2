@@ -24,7 +24,7 @@ import lombok.Data;
  * @author Michael Lieshoff
  */
 @Data
-public class Response {
+public class Response implements IResponse {
 
   @SerializedName("reason")
   private String reason;

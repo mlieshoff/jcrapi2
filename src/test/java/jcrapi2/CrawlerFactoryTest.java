@@ -27,12 +27,12 @@ import org.junit.jupiter.api.Test;
 class CrawlerFactoryTest {
 
   @Test
-  void construct_whenWithNullHttpClientFactory_shouldThrowException() throws Exception {
+  void construct_whenWithNullHttpClientFactory_thenThrowException() throws Exception {
     assertThrows(NullPointerException.class, () -> new CrawlerFactory(null));
   }
 
   @Test
-  void construct_whenWithValidParameter_shouldConstruct() throws Exception {
+  void construct_whenWithValidParameter_thenConstruct() throws Exception {
     assertNotNull(new CrawlerFactory(new HttpClientFactory()).createCrawler());
   }
 

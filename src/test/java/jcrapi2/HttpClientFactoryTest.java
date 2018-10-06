@@ -26,7 +26,7 @@ import org.junit.jupiter.api.Test;
 class HttpClientFactoryTest {
 
   @Test
-  void construct_whenWithValidParameters_shouldConstruct() throws Exception {
+  void construct_whenWithValidParameters_thenConstruct() throws Exception {
     assertNotNull(new HttpClientFactory().create());
   }
 

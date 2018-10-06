@@ -14,31 +14,39 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jcrapi2.response;
+package jcrapi2.request;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Preconditions.checkNotNull;
 
-import org.junit.jupiter.api.Test;
+import java.util.List;
+import lombok.Builder;
+import lombok.Getter;
 
-abstract class ResponseTestBase<T extends IResponse> {
+/**
+ * @author Michael Lieshoff
+ */
+@Getter
+public class GetClanRequest extends Request {
 
-  private static final String MESSAGE = "message";
-  private static final String REASON = "reason";
+  private final String clanTag;
 
-  @Test
-  void setMessage_whenWithValidParameter_thenGet() throws Exception {
-    T response = getResponse();
-    response.setMessage(MESSAGE);
-    assertEquals(MESSAGE, response.getMessage());
+  @Builder
+  private GetClanRequest(String clanTag) {
+    checkNotNull(clanTag);
+    checkArgument(!clanTag.isEmpty());
+    this.clanTag = clanTag;
   }
 
-  @Test
-  void setReason_whenWithValidParameter_thenGet() throws Exception {
-    T response = getResponse();
-    response.setReason(REASON);
-    assertEquals(REASON, response.getReason());
+  public static GetClanRequestBuilder builder(String clanTag) {
+    return new GetClanRequestBuilder().clanTag(clanTag);
   }
 
-  abstract T getResponse();
+  @Override
+  public List<String> getRestParameters() {
+    List<String> list = super.getRestParameters();
+    list.add(clanTag);
+    return list;
+  }
 
 }

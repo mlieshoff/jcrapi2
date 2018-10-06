@@ -16,29 +16,17 @@
  */
 package jcrapi2.response;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+/**
+ * @author Michael Lieshoff
+ */
+public interface IResponse {
 
-import org.junit.jupiter.api.Test;
+  String getMessage();
 
-abstract class ResponseTestBase<T extends IResponse> {
+  void setMessage(String message);
 
-  private static final String MESSAGE = "message";
-  private static final String REASON = "reason";
+  String getReason();
 
-  @Test
-  void setMessage_whenWithValidParameter_thenGet() throws Exception {
-    T response = getResponse();
-    response.setMessage(MESSAGE);
-    assertEquals(MESSAGE, response.getMessage());
-  }
-
-  @Test
-  void setReason_whenWithValidParameter_thenGet() throws Exception {
-    T response = getResponse();
-    response.setReason(REASON);
-    assertEquals(REASON, response.getReason());
-  }
-
-  abstract T getResponse();
+  void setReason(String reason);
 
 }

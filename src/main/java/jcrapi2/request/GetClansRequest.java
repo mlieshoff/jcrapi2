@@ -16,19 +16,20 @@
  */
 package jcrapi2.request;
 
+import static com.google.common.base.Preconditions.checkArgument;
 import static java.lang.String.valueOf;
 import static org.apache.commons.lang3.StringUtils.isBlank;
 import static org.apache.commons.lang3.StringUtils.isNotBlank;
 import static org.apache.commons.lang3.StringUtils.isNotEmpty;
 
-import com.google.common.base.Preconditions;
-
 import java.util.Map;
 import lombok.Builder;
+import lombok.Getter;
 
 /**
  * @author Michael Lieshoff
  */
+@Getter
 public class GetClansRequest extends PageableRequest {
 
   static final String QUERY_PARAM_NAME = "name";
@@ -46,11 +47,11 @@ public class GetClansRequest extends PageableRequest {
 
   @Builder
   private GetClansRequest(int limit, String after, String before, String name, String locationId, int minMembers,
-                         int maxMembers, int minScore) {
+                          int maxMembers, int minScore) {
     super(limit, after, before);
     if (name != null) {
-      Preconditions.checkArgument(isNotEmpty(name));
-      Preconditions.checkArgument(name.length() > 2);
+      checkArgument(isNotEmpty(name));
+      checkArgument(name.length() > 2);
     }
     this.name = name;
     this.locationId = locationId;

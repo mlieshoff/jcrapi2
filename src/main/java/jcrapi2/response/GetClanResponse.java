@@ -16,29 +16,21 @@
  */
 package jcrapi2.response;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import com.google.gson.annotations.SerializedName;
 
-import org.junit.jupiter.api.Test;
+import jcrapi2.model.Clan;
+import lombok.Data;
 
-abstract class ResponseTestBase<T extends IResponse> {
+/**
+ * @author Michael Lieshoff
+ */
+@Data
+public class GetClanResponse extends Clan implements IResponse {
 
-  private static final String MESSAGE = "message";
-  private static final String REASON = "reason";
+  @SerializedName("reason")
+  private String reason;
 
-  @Test
-  void setMessage_whenWithValidParameter_thenGet() throws Exception {
-    T response = getResponse();
-    response.setMessage(MESSAGE);
-    assertEquals(MESSAGE, response.getMessage());
-  }
-
-  @Test
-  void setReason_whenWithValidParameter_thenGet() throws Exception {
-    T response = getResponse();
-    response.setReason(REASON);
-    assertEquals(REASON, response.getReason());
-  }
-
-  abstract T getResponse();
+  @SerializedName("message")
+  private String message;
 
 }

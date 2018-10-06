@@ -16,10 +16,13 @@
  */
 package jcrapi2;
 
-import com.google.common.base.Preconditions;
+import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Preconditions.checkNotNull;
 
 import java.io.IOException;
+import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClansRequest;
+import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClansResponse;
 
 /**
@@ -45,12 +48,12 @@ public class Api {
   }
 
   private static void checkString(String s, String key) {
-    Preconditions.checkNotNull(s, key);
-    Preconditions.checkArgument(!s.isEmpty(), key);
+    checkNotNull(s, key);
+    checkArgument(!s.isEmpty(), key);
   }
 
   public GetClansResponse getClans(GetClansRequest getClansRequest) {
-    Preconditions.checkNotNull(getClansRequest, "getClansRequest");
+    checkNotNull(getClansRequest, "getClansRequest");
     try {
       return createClient().getClans(getClansRequest);
     } catch (IOException e) {
@@ -60,6 +63,15 @@ public class Api {
 
   private Client createClient() {
     return clientFactory.createClient(url, apiKey);
+  }
+
+  public GetClanResponse getClan(GetClanRequest getClanRequest) {
+    checkNotNull(getClanRequest, "getClanRequest");
+    try {
+      return createClient().getClan(getClanRequest);
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
   }
 
 }

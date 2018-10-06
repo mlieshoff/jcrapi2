@@ -24,108 +24,108 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 @Generated("org.mili.generator")
-public class ClanTest {
+class ClanTest {
 
   private Clan unitUnderTest;
 
   @BeforeEach
-  public void setUp() {
+  void setUp() {
     unitUnderTest = new Clan();
   }
 
   @Test
-  public void shouldGetSetTag() {
+  void setTag_whenWithValidParameter_thenSetTag() {
     String expected = "astring";
     unitUnderTest.setTag(expected);
     assertEquals(expected, unitUnderTest.getTag());
   }
 
   @Test
-  public void shouldGetSetName() {
+  void setName_whenWithValidParameter_thenSetName() {
     String expected = "astring";
     unitUnderTest.setName(expected);
     assertEquals(expected, unitUnderTest.getName());
   }
 
   @Test
-  public void shouldGetSetType() {
+  void setType_whenWithValidParameter_thenSetType() {
     String expected = "astring";
     unitUnderTest.setType(expected);
     assertEquals(expected, unitUnderTest.getType());
   }
 
   @Test
-  public void shouldGetSetBadgeId() {
+  void setBadgeId_whenWithValidParameter_thenSetBadgeId() {
     int expected = 815;
     unitUnderTest.setBadgeId(expected);
     assertEquals(expected, unitUnderTest.getBadgeId());
   }
 
   @Test
-  public void shouldGetSetClanScore() {
+  void setClanScore_whenWithValidParameter_thenSetClanScore() {
     int expected = 815;
     unitUnderTest.setClanScore(expected);
     assertEquals(expected, unitUnderTest.getClanScore());
   }
 
   @Test
-  public void shouldGetSetLocation() {
+  void setLocation_whenWithValidParameter_thenSetLocation() {
     ClanLocation expected = new ClanLocation();
     unitUnderTest.setLocation(expected);
     assertEquals(expected, unitUnderTest.getLocation());
   }
 
   @Test
-  public void shouldGetSetRequiredTrophies() {
+  void setRequiredTrophies_whenWithValidParameter_thenSetRequiredTrophies() {
     int expected = 815;
     unitUnderTest.setRequiredTrophies(expected);
     assertEquals(expected, unitUnderTest.getRequiredTrophies());
   }
 
   @Test
-  public void shouldGetSetDonationsPerWeek() {
+  void setDonationsPerWeek_whenWithValidParameter_thenSetDonationsPerWeek() {
     int expected = 815;
     unitUnderTest.setDonationsPerWeek(expected);
     assertEquals(expected, unitUnderTest.getDonationsPerWeek());
   }
 
   @Test
-  public void shouldGetSetClanChestStatus() {
+  void setClanChestStatus_whenWithValidParameter_thenSetClanChestStatus() {
     String expected = "astring";
     unitUnderTest.setClanChestStatus(expected);
     assertEquals(expected, unitUnderTest.getClanChestStatus());
   }
 
   @Test
-  public void shouldGetSetClanChestLevel() {
+  void setClanChestLevel_whenWithValidParameter_thenSetClanChestLevel() {
     int expected = 815;
     unitUnderTest.setClanChestLevel(expected);
     assertEquals(expected, unitUnderTest.getClanChestLevel());
   }
 
   @Test
-  public void shouldGetSetClanChestMaxLevel() {
+  void setClanChestMaxLevel_whenWithValidParameter_thenSetClanChestMaxLevel() {
     int expected = 815;
     unitUnderTest.setClanChestMaxLevel(expected);
     assertEquals(expected, unitUnderTest.getClanChestMaxLevel());
   }
 
   @Test
-  public void shouldGetSetMembers() {
+  void setMembers_whenWithValidParameter_thenSetMembers() {
     int expected = 815;
     unitUnderTest.setMembers(expected);
     assertEquals(expected, unitUnderTest.getMembers());
   }
 
   @Test
-  public void shouldGetSetMemberList() {
+  void setMemberList_whenWithValidParameter_thenSetMemberList() {
     java.util.List<ClanMember> expected = new java.util.ArrayList<ClanMember>();
     unitUnderTest.setMemberList(expected);
     assertEquals(expected, unitUnderTest.getMemberList());
   }
 
   @Test
-  public void shouldToString() {
+  void toString_whenCalled_thenReturnStringRepresentation() {
     unitUnderTest.setTag("astring");
     unitUnderTest.setName("astring");
     unitUnderTest.setType("astring");

@@ -16,7 +16,6 @@
  */
 package jcrapi2;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -24,7 +23,9 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClansRequest;
+import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClansResponse;
 
 /**
@@ -33,7 +34,6 @@ import jcrapi2.response.GetClansResponse;
 class IntegrationTest {
 
   private static final int PORT = 50000;
-  private static final int NUMBER_OF_CLANS = 242;
 
   private static JettyServer jettyServer;
 
@@ -45,7 +45,7 @@ class IntegrationTest {
   @BeforeAll
   static void beforeClass() throws Exception {
     jettyServer = new JettyServer(PORT, '/' + CONTEXT);
-    jettyServer.addServlet('/' + APP + "/clans", new TestClansServlet());
+    jettyServer.addServlet('/' + APP + "/clans/*", new TestClansServlet());
     jettyServer.start();
   }
 
@@ -55,19 +55,33 @@ class IntegrationTest {
   }
 
   @Test
-  void getClans_whenWithValidParameters_shouldReturnResponse() throws Exception {
+  void getClans_whenWithValidParameters_thenReturnResponse() throws Exception {
     doGetClans(API_KEY);
   }
 
   private static void doGetClans(String apiKey) {
     GetClansResponse actual = new Api(URL, apiKey).getClans(GetClansRequest.builder().name("name").build());
     assertNotNull(actual);
-    assertEquals(NUMBER_OF_CLANS, actual.getItems().size());
   }
 
   @Test
-  void getClans_whenWithWrongUrl_shouldThrow() throws Exception {
+  void getClans_whenWithWrongUrl_thenThrow() throws Exception {
     assertThrows(ApiException.class, () -> doGetClans("lala2"));
+  }
+
+  @Test
+  void getClan_whenWithValidParameters_thenReturnResponse() throws Exception {
+    doGetClan(API_KEY);
+  }
+
+  private static void doGetClan(String apiKey) {
+    GetClanResponse actual = new Api(URL, apiKey).getClan(GetClanRequest.builder("clanTag").build());
+    assertNotNull(actual);
+  }
+
+  @Test
+  void getClan_whenWithWrongUrl_thenThrow() throws Exception {
+    assertThrows(ApiException.class, () -> doGetClan("lala2"));
   }
 
 }

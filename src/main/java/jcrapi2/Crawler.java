@@ -18,10 +18,11 @@ package jcrapi2;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
+import static org.apache.commons.collections.MapUtils.isNotEmpty;
+import static org.apache.commons.lang3.StringUtils.isNotBlank;
 import static org.apache.http.HttpStatus.SC_OK;
 
-import org.apache.commons.collections.MapUtils;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.http.HttpMessage;
 import org.apache.http.HttpResponse;
 import org.apache.http.StatusLine;
@@ -34,7 +35,9 @@ import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.nio.charset.Charset;
+import java.util.Collection;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -53,11 +56,16 @@ class Crawler {
   }
 
   String get(String url, Map<String, String> headers, Map<String, String> parameters) throws IOException {
+    return get(url, headers, parameters, null);
+  }
+
+  String get(String url, Map<String, String> headers, Map<String, String> parameters, List<String> restUrlParts)
+      throws IOException {
     checkNotNull(url);
     checkArgument(!url.isEmpty());
     checkNotNull(headers);
     checkArgument(!headers.isEmpty());
-    String replacedUrl = appendToUrl(url, parameters);
+    String replacedUrl = appendToUrl(url, parameters, restUrlParts);
     HttpClient client = httpClientFactory.create();
     HttpGet request = createRequest(replacedUrl, headers);
     HttpResponse response = client.execute(request);
@@ -76,9 +84,16 @@ class Crawler {
     return content.toString();
   }
 
-  private static String appendToUrl(String url, Map<String, String> parameters) throws UnsupportedEncodingException {
+  private static String appendToUrl(String url, Map<String, String> parameters, Collection<String> restUrlParts)
+      throws UnsupportedEncodingException {
     StringBuilder appendedUrl = new StringBuilder(url);
-    if (MapUtils.isNotEmpty(parameters)) {
+    if (CollectionUtils.isNotEmpty(restUrlParts)) {
+      for (String restUrlPart : restUrlParts) {
+        appendedUrl.append('/');
+        appendedUrl.append(encode(restUrlPart));
+      }
+    }
+    if (isNotEmpty(parameters)) {
       appendedUrl.append('?');
       for (Iterator<Map.Entry<String, String>> iterator = parameters.entrySet().iterator(); iterator.hasNext(); ) {
         Map.Entry<String, String> entry = iterator.next();
@@ -86,8 +101,8 @@ class Crawler {
         String value = entry.getKey();
         appendedUrl.append(name);
         appendedUrl.append('=');
-        if (StringUtils.isNotBlank(value)) {
-          appendedUrl.append(URLEncoder.encode(entry.getValue(), "UTF-8"));
+        if (isNotBlank(value)) {
+          appendedUrl.append(encode(entry.getValue()));
         }
         if (iterator.hasNext()) {
           appendedUrl.append('&');
@@ -97,6 +112,10 @@ class Crawler {
     return appendedUrl.toString();
   }
 
+  private static String encode(String s) throws UnsupportedEncodingException {
+    return URLEncoder.encode(s, "UTF-8");
+  }
+
   private static HttpGet createRequest(String url, Map<String, String> headers) {
     HttpGet httpGet = new HttpGet(url);
     addHeaders(httpGet, headers);
@@ -104,7 +123,7 @@ class Crawler {
   }
 
   private static void addHeaders(HttpMessage httpMessage, Map<String, String> headers) {
-    headers.entrySet().forEach(entry -> httpMessage.addHeader(entry.getKey(), entry.getValue()));
+    headers.forEach((key, value) -> httpMessage.addHeader(key, value));
   }
 
 }

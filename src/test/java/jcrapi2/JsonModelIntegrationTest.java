@@ -25,6 +25,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
+import jcrapi2.response.GetClanMembersResponse;
+import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClansResponse;
 
 class JsonModelIntegrationTest {
@@ -35,6 +37,21 @@ class JsonModelIntegrationTest {
   void fromJson_whenForGetClans_thenResolve() throws Exception {
     String json = FileUtils.readFileToString(new File("src/test/resources/clans.json"));
     GetClansResponse object = GSON.fromJson(json, GetClansResponse.class);
+    assertNotNull(object);
+    object.getItems().forEach(Assertions::assertNotNull);
+  }
+
+  @Test
+  void fromJson_whenForGetClan_thenResolve() throws Exception {
+    String json = FileUtils.readFileToString(new File("src/test/resources/clan.json"));
+    GetClanResponse object = GSON.fromJson(json, GetClanResponse.class);
+    assertNotNull(object);
+  }
+
+  @Test
+  void fromJson_whenForGetClanMemberss_thenResolve() throws Exception {
+    String json = FileUtils.readFileToString(new File("src/test/resources/clanMembers.json"));
+    GetClanMembersResponse object = GSON.fromJson(json, GetClanMembersResponse.class);
     assertNotNull(object);
     object.getItems().forEach(Assertions::assertNotNull);
   }

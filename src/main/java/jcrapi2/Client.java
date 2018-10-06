@@ -24,10 +24,13 @@ import com.google.common.collect.ImmutableMap;
 import com.google.gson.Gson;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.Map;
+import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClansRequest;
 import jcrapi2.request.Request;
+import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClansResponse;
 import jcrapi2.response.IResponse;
@@ -66,8 +69,8 @@ public class Client {
     return new Gson().fromJson(json, responseClass);
   }
 
-  GetClanResponse getClan(GetClanRequest getClanRequest) throws IOException {
-    return singleObjectFromJson("getClanRequest", "clans", getClanRequest, GetClanResponse.class);
+  private String createUrl(String part) throws UnsupportedEncodingException {
+    return url + part;
   }
 
   private String get(String url, Request request) throws IOException {
@@ -75,17 +78,23 @@ public class Client {
         .get(url, createAuthHeader(apiKey), request.getQueryParameters(), request.getRestParameters());
   }
 
+  private Crawler createCrawler() {
+    return crawlerFactory.createCrawler();
+  }
+
   private static Map<String, String> createAuthHeader(String apiKey) {
     String headerValue = "Bearer " + apiKey;
     return ImmutableMap.<String, String>builder().put(AUTHORIZATION, headerValue).build();
   }
 
-  private Crawler createCrawler() {
-    return crawlerFactory.createCrawler();
+  GetClanResponse getClan(GetClanRequest getClanRequest) throws IOException {
+    return singleObjectFromJson("getClanRequest", "clans/%s", getClanRequest,
+        GetClanResponse.class);
   }
 
-  private String createUrl(String part) {
-    return url + part;
+  GetClanMembersResponse getClanMembers(GetClanMembersRequest getClanMembersRequest) throws IOException {
+    return singleObjectFromJson("getClanMembersRequest", "clans/%s/members", getClanMembersRequest,
+        GetClanMembersResponse.class);
   }
 
 }

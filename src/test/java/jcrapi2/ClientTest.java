@@ -28,6 +28,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Map;
+import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClansRequest;
 
@@ -88,9 +89,17 @@ class ClientTest {
   void getClan_whenWithRequest_thenGetResponse() throws Exception {
     GetClanRequest getClanRequest = GetClanRequest.builder("clanTag").build();
     when(crawler
-        .get("lala/clans", createHeaders(), getClanRequest.getQueryParameters(), getClanRequest.getRestParameters()))
+        .get("lala/clans/%s", createHeaders(), getClanRequest.getQueryParameters(), getClanRequest.getRestParameters()))
         .thenReturn("{}");
     assertNotNull(createClient().getClan(getClanRequest));
+  }
+
+  @Test
+  void getClanMembers_whenWithRequest_thenGetResponse() throws Exception {
+    GetClanMembersRequest getClanMemberRequest = GetClanMembersRequest.builder("clanTag").build();
+    when(crawler.get("lala/clans/%s/members", createHeaders(), getClanMemberRequest.getQueryParameters(),
+        getClanMemberRequest.getRestParameters())).thenReturn("{}");
+    assertNotNull(createClient().getClanMembers(getClanMemberRequest));
   }
 
 }

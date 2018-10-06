@@ -16,7 +16,7 @@
  */
 package jcrapi2;
 
-import com.google.common.base.Preconditions;
+import static com.google.common.base.Preconditions.checkNotNull;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.StatusLine;
@@ -38,7 +38,7 @@ public class CrawlerException extends IOException {
   private final int statusCode;
 
   public CrawlerException(StatusLine statusLine) {
-    Preconditions.checkNotNull(statusLine, "statusLine cannot be null!");
+    checkNotNull(statusLine, "statusLine cannot be null!");
     statusCode = statusLine.getStatusCode();
     reason = statusLine.getReasonPhrase();
     message = createMessage();

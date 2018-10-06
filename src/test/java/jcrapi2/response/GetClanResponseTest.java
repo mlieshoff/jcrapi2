@@ -16,29 +16,11 @@
  */
 package jcrapi2.response;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+class GetClanResponseTest extends ResponseTestBase<GetClanResponse> {
 
-import org.junit.jupiter.api.Test;
-
-abstract class ResponseTestBase<T extends IResponse> {
-
-  private static final String MESSAGE = "message";
-  private static final String REASON = "reason";
-
-  @Test
-  void setMessage_whenWithValidParameter_thenGet() throws Exception {
-    T response = getResponse();
-    response.setMessage(MESSAGE);
-    assertEquals(MESSAGE, response.getMessage());
+  @Override
+  GetClanResponse getResponse() {
+    return new GetClanResponse();
   }
-
-  @Test
-  void setReason_whenWithValidParameter_thenGet() throws Exception {
-    T response = getResponse();
-    response.setReason(REASON);
-    assertEquals(REASON, response.getReason());
-  }
-
-  abstract T getResponse();
 
 }

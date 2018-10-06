@@ -23,7 +23,6 @@ import static jcrapi2.request.GetClansRequest.QUERY_PARAM_MIN_MEMBERS;
 import static jcrapi2.request.GetClansRequest.QUERY_PARAM_MIN_SCORE;
 import static jcrapi2.request.GetClansRequest.QUERY_PARAM_NAME;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
@@ -58,60 +57,62 @@ class GetClansRequestTest extends PageableRequestTestBase {
   }
 
   @Test
-  void build_whenWithName_thenShouldConstruct() throws Exception {
-    assertNotNull(GetClansRequest.builder().name(NAME).build());
+  void build_whenWithName_thenSetValue() throws Exception {
+    assertEquals(NAME, GetClansRequest.builder().name(NAME).build().getName());
   }
 
   @Test
-  void build_whenWithLocationId_thenShouldConstruct() throws Exception {
-    assertNotNull(GetClansRequest.builder().locationId(LOCATION_ID).build());
+  void build_whenWithLocationId_thenSetValue() throws Exception {
+    assertEquals(LOCATION_ID, GetClansRequest.builder().locationId(LOCATION_ID).build().getLocationId());
   }
 
   @Test
-  void build_whenWithNameAndLocationId_thenShouldConstruct() throws Exception {
-    assertNotNull(GetClansRequest.builder().name(NAME).locationId(LOCATION_ID).build());
+  void build_whenWithNameAndLocationId_thenSetValues() throws Exception {
+    GetClansRequest getClansRequest = GetClansRequest.builder().name(NAME).locationId(LOCATION_ID).build();
+    assertEquals(NAME, getClansRequest.getName());
+    assertEquals(LOCATION_ID, getClansRequest.getLocationId());
   }
 
   @Test
-  void build_whenWithMinMembers_thenShouldConstruct() throws Exception {
-    assertNotNull(GetClansRequest.builder().minMembers(1).build());
+  void build_whenWithMinMembers_thenSetValue() throws Exception {
+    assertEquals(MIN_MEMBERS, GetClansRequest.builder().minMembers(MIN_MEMBERS).build().getMinMembers());
   }
 
   @Test
-  void build_whenWithMaxMembers_thenShouldConstruct() throws Exception {
-    assertNotNull(GetClansRequest.builder().maxMembers(1).build());
+  void build_whenWithMaxMembers_thenSetValue() throws Exception {
+    assertEquals(MAX_MEMBERS, GetClansRequest.builder().maxMembers(MAX_MEMBERS).build().getMaxMembers());
   }
 
   @Test
-  void build_whenWithMinScore_thenShouldConstruct() throws Exception {
-    assertNotNull(GetClansRequest.builder().minScore(1).build());
+  void build_whenWithMinScore_thenSetValue() throws Exception {
+    assertEquals(MIN_SCORE, GetClansRequest.builder().minScore(MIN_SCORE).build().getMinScore());
   }
 
   @Test
-  void getQueryParameters_whenWithName_shouldHaveParameter() throws Exception {
+  void getQueryParameters_whenWithName_thenHaveParameter() throws Exception {
     assertEquals(NAME, GetClansRequest.builder().name(NAME).build().getQueryParameters().get(QUERY_PARAM_NAME));
   }
 
   @Test
-  void getQueryParameters_whenWithLocationId_shouldHaveParameter() throws Exception {
+  void getQueryParameters_whenWithLocationId_thenHaveParameter() throws Exception {
     assertEquals(LOCATION_ID,
         GetClansRequest.builder().locationId(LOCATION_ID).build().getQueryParameters().get(QUERY_PARAM_LOCATION_ID));
   }
 
   @Test
-  void getQueryParameters_whenWithMinMembers_shouldHaveParameter() throws Exception {
+  void getQueryParameters_whenWithMinMembers_thenHaveParameter() throws Exception {
     assertEquals(valueOf(MIN_MEMBERS),
         GetClansRequest.builder().minMembers(MIN_MEMBERS).build().getQueryParameters().get(QUERY_PARAM_MIN_MEMBERS));
   }
 
   @Test
-  void getQueryParameters_whenWithMaxMembers_shouldHaveParameter() throws Exception {
+  void getQueryParameters_whenWithMaxMembers_thenHaveParameter() throws Exception {
     assertEquals(valueOf(MAX_MEMBERS),
         GetClansRequest.builder().maxMembers(MAX_MEMBERS).build().getQueryParameters().get(QUERY_PARAM_MAX_MEMBERS));
   }
 
   @Test
-  void getQueryParameters_whenWithMinScore_shouldHaveParameter() throws Exception {
+  void getQueryParameters_whenWithMinScore_thenHaveParameter() throws Exception {
     assertEquals(valueOf(MIN_SCORE),
         GetClansRequest.builder().minScore(MIN_SCORE).build().getQueryParameters().get(QUERY_PARAM_MIN_SCORE));
   }

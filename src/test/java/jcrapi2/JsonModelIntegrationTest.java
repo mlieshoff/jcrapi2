@@ -32,7 +32,7 @@ class JsonModelIntegrationTest {
   private static final Gson GSON = new Gson();
 
   @Test
-  void fromJson_whenForGetClans_shouldResolve() throws Exception {
+  void fromJson_whenForGetClans_thenResolve() throws Exception {
     String json = FileUtils.readFileToString(new File("src/test/resources/clans.json"));
     GetClansResponse object = GSON.fromJson(json, GetClansResponse.class);
     assertNotNull(object);

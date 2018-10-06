@@ -24,31 +24,31 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 @Generated("org.mili.generator")
-public class ClanMemberArenaTest {
+class ClanMemberArenaTest {
 
   private ClanMemberArena unitUnderTest;
 
   @BeforeEach
-  public void setUp() {
+  void setUp() {
     unitUnderTest = new ClanMemberArena();
   }
 
   @Test
-  public void shouldGetSetId() {
+  void setId_whenWithValidParameter_thenSetId() {
     int expected = 815;
     unitUnderTest.setId(expected);
     assertEquals(expected, unitUnderTest.getId());
   }
 
   @Test
-  public void shouldGetSetName() {
+  void setName_whenWithValidParameter_thenSetName() {
     String expected = "astring";
     unitUnderTest.setName(expected);
     assertEquals(expected, unitUnderTest.getName());
   }
 
   @Test
-  public void shouldToString() {
+  void toString_whenCalled_thenReturnStringRepresentation() {
     unitUnderTest.setId(815);
     unitUnderTest.setName("astring");
     String expected = "ClanMemberArena(id=815, name=astring)";

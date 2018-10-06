@@ -24,45 +24,45 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 @Generated("org.mili.generator")
-public class SearchedClanLocationTest {
+class SearchedClanLocationTest {
 
   private SearchedClanLocation unitUnderTest;
 
   @BeforeEach
-  public void setUp() {
+  void setUp() {
     unitUnderTest = new SearchedClanLocation();
   }
 
   @Test
-  public void shouldGetSetId() {
+  void setId_whenWithValidParameter_thenSetId() {
     int expected = 815;
     unitUnderTest.setId(expected);
     assertEquals(expected, unitUnderTest.getId());
   }
 
   @Test
-  public void shouldGetSetName() {
+  void setName_whenWithValidParameter_thenSetName() {
     String expected = "astring";
     unitUnderTest.setName(expected);
     assertEquals(expected, unitUnderTest.getName());
   }
 
   @Test
-  public void shouldGetSetCountry() {
+  void setCountry_whenWithValidParameter_thenSetCountry() {
     boolean expected = false;
     unitUnderTest.setCountry(expected);
     assertEquals(expected, unitUnderTest.isCountry());
   }
 
   @Test
-  public void shouldGetSetCountryCode() {
+  void setCountryCode_whenWithValidParameter_thenSetCountryCode() {
     String expected = "astring";
     unitUnderTest.setCountryCode(expected);
     assertEquals(expected, unitUnderTest.getCountryCode());
   }
 
   @Test
-  public void shouldToString() {
+  void toString_whenCalled_thenReturnStringRepresentation() {
     unitUnderTest.setId(815);
     unitUnderTest.setName("astring");
     unitUnderTest.setCountry(false);

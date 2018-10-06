@@ -28,6 +28,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Map;
+import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClansRequest;
 
 /**
@@ -47,29 +48,35 @@ class ClientTest {
   }
 
   @Test
-  void construct_whenWithNullUrl_shouldThrowException() throws Exception {
+  void construct_whenWithNullUrl_thenThrowException() throws Exception {
     assertThrows(NullPointerException.class, () -> new Client(null, "abc", crawlerFactory));
   }
 
   @Test
-  void construct_whenWithEmptyUrl_shouldThrowException() throws Exception {
+  void construct_whenWithEmptyUrl_thenThrowException() throws Exception {
     assertThrows(IllegalArgumentException.class, () -> new Client("", "abc", crawlerFactory));
   }
 
   @Test
-  void construct_whenWithNullCrawlerFactory_shouldThrowException() throws Exception {
+  void construct_whenWithNullCrawlerFactory_thenThrowException() throws Exception {
     assertThrows(NullPointerException.class, () -> new Client("abc", "abc", null));
   }
 
   @Test
-  void getClans_whenWithNullRequest_shouldThrowException() throws Exception {
+  void getClans_whenWithNullRequest_thenThrowException() throws Exception {
     assertThrows(NullPointerException.class, () -> createClient().getClans(null));
   }
 
+  private Client createClient() {
+    return new Client("lala/", "abc", crawlerFactory);
+  }
+
   @Test
-  void getClans_whenWithRequest_shouldGetResponse() throws Exception {
+  void getClans_whenWithRequest_thenGetResponse() throws Exception {
     GetClansRequest getClansRequest = GetClansRequest.builder().name("abbas").build();
-    when(crawler.get("lala/clans", createHeaders(), getClansRequest.getQueryParameters())).thenReturn("{}");
+    when(crawler
+        .get("lala/clans", createHeaders(), getClansRequest.getQueryParameters(), getClansRequest.getRestParameters()))
+        .thenReturn("{}");
     assertNotNull(createClient().getClans(getClansRequest));
   }
 
@@ -77,8 +84,13 @@ class ClientTest {
     return ImmutableMap.<String, String>builder().put(AUTHORIZATION, "Bearer abc").build();
   }
 
-  private Client createClient() {
-    return new Client("lala/", "abc", crawlerFactory);
+  @Test
+  void getClan_whenWithRequest_thenGetResponse() throws Exception {
+    GetClanRequest getClanRequest = GetClanRequest.builder("clanTag").build();
+    when(crawler
+        .get("lala/clans", createHeaders(), getClanRequest.getQueryParameters(), getClanRequest.getRestParameters()))
+        .thenReturn("{}");
+    assertNotNull(createClient().getClan(getClanRequest));
   }
 
 }

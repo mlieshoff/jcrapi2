@@ -33,7 +33,7 @@ abstract class PageableRequestTestBase<T extends PageableRequest> extends Reques
   private static final String PAGEABLE_BEFORE = "xyz";
 
   @Test
-  void pageableRequestBuilder_whenCalled_shouldConstruct() throws Exception {
+  void pageableRequestBuilder_whenCalled_thenConstruct() throws Exception {
     assertTrue(PageableRequest.pageableRequestBuilder() instanceof PageableRequest.PageableRequestBuilder);
   }
 
@@ -53,7 +53,7 @@ abstract class PageableRequestTestBase<T extends PageableRequest> extends Reques
   }
 
   @Test
-  void getQueryParameters_whenWithLimit_shouldHaveParameter() throws Exception {
+  void getQueryParameters_whenWithLimit_thenHaveParameter() throws Exception {
     assertEquals(valueOf(PAGEABLE_LIMIT), getRequestWithLimit().getQueryParameters().get(QUERY_PARAM_LIMIT));
   }
 
@@ -73,7 +73,7 @@ abstract class PageableRequestTestBase<T extends PageableRequest> extends Reques
   }
 
   @Test
-  void getQueryParameters_whenWithAfter_shouldHaveParameter() throws Exception {
+  void getQueryParameters_whenWithAfter_thenHaveParameter() throws Exception {
     assertEquals(PAGEABLE_AFTER, getRequestWithAfter().getQueryParameters().get(QUERY_PARAM_AFTER));
   }
 
@@ -93,7 +93,7 @@ abstract class PageableRequestTestBase<T extends PageableRequest> extends Reques
   }
 
   @Test
-  void getQueryParameters_whenWithBefore_shouldHaveParameter() throws Exception {
+  void getQueryParameters_whenWithBefore_thenHaveParameter() throws Exception {
     assertEquals(PAGEABLE_BEFORE, getRequestWithBefore().getQueryParameters().get(QUERY_PARAM_BEFORE));
   }
 

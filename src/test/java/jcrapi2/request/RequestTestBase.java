@@ -16,6 +16,7 @@
  */
 package jcrapi2.request;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
@@ -25,7 +26,7 @@ import java.lang.reflect.Method;
 abstract class RequestTestBase {
 
   @Test
-  void requestBuilder_whenCalled_shouldConstruct() throws Exception {
+  void requestBuilder_whenCalled_thenConstruct() throws Exception {
     assertTrue(Request.requestBuilder() instanceof Request.RequestBuilder);
   }
 
@@ -46,6 +47,16 @@ abstract class RequestTestBase {
   static Object invokeMethod(String name, Object builder, Object expected, Class<?> clazz) throws Exception {
     Method excludesMethod = builder.getClass().getMethod(name, clazz);
     return excludesMethod.invoke(builder, expected);
+  }
+
+  @Test
+  void getQueryParameters_whenConstructed_thenWithZeroElements() throws Exception {
+    assertEquals(0, Request.requestBuilder().build().getQueryParameters().size());
+  }
+
+  @Test
+  void getRestParameters_whenConstructed_thenWithZeroElements() throws Exception {
+    assertEquals(0, Request.requestBuilder().build().getRestParameters().size());
   }
 
 }

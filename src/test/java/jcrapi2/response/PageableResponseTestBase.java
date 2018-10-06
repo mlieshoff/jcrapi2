@@ -30,7 +30,7 @@ abstract class PageableResponseTestBase<T extends PageableResponse> extends Resp
   private static final String BEFORE = "xyz";
 
   @Test
-  void setPaging_whenWithValidParameter_shouldGet() throws Exception {
+  void setPaging_whenWithValidParameter_thenGet() throws Exception {
     T response = getResponse();
     Paging expected = new Paging();
     response.setPaging(expected);
@@ -38,7 +38,7 @@ abstract class PageableResponseTestBase<T extends PageableResponse> extends Resp
   }
 
   @Test
-  void pagingSetCursors_whenWithValidParameter_shouldGet() throws Exception {
+  void pagingSetCursors_whenWithValidParameter_thenGet() throws Exception {
     Paging paging = new Paging();
     Cursors expected = new Cursors();
     paging.setCursors(expected);
@@ -46,21 +46,21 @@ abstract class PageableResponseTestBase<T extends PageableResponse> extends Resp
   }
 
   @Test
-  void pagingCursorsSetAfter_whenWithValidParameter_shouldGet() throws Exception {
+  void pagingCursorsSetAfter_whenWithValidParameter_thenGet() throws Exception {
     Cursors expected = new Cursors();
     expected.setAfter(AFTER);
     assertEquals(AFTER, expected.getAfter());
   }
 
   @Test
-  void pagingCursorsSetBefore_whenWithValidParameter_shouldGet() throws Exception {
+  void pagingCursorsSetBefore_whenWithValidParameter_thenGet() throws Exception {
     Cursors expected = new Cursors();
     expected.setBefore(BEFORE);
     assertEquals(BEFORE, expected.getBefore());
   }
 
   @Test
-  void setItems_whenWithValidParameter_shouldGet() throws Exception {
+  void setItems_whenWithValidParameter_thenGet() throws Exception {
     T response = getResponse();
     response.setItems(emptyList());
     assertEquals(emptyList(), response.getItems());

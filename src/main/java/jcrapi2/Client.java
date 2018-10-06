@@ -16,17 +16,21 @@
  */
 package jcrapi2;
 
+import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Preconditions.checkNotNull;
 import static org.apache.http.HttpHeaders.AUTHORIZATION;
 
-import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import com.google.gson.Gson;
 
 import java.io.IOException;
 import java.util.Map;
+import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClansRequest;
 import jcrapi2.request.Request;
+import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClansResponse;
+import jcrapi2.response.IResponse;
 
 /**
  * @author Michael Lieshoff
@@ -40,26 +44,35 @@ public class Client {
 
   Client(String url, String apiKey, CrawlerFactory crawlerFactory) {
     checkString(url);
-    Preconditions.checkNotNull(crawlerFactory);
+    checkNotNull(crawlerFactory);
     this.url = url;
     this.apiKey = apiKey;
     this.crawlerFactory = crawlerFactory;
   }
 
   private static void checkString(String url) {
-    Preconditions.checkNotNull(url);
-    Preconditions.checkArgument(!url.isEmpty(), url);
+    checkNotNull(url);
+    checkArgument(!url.isEmpty(), url);
   }
 
   GetClansResponse getClans(GetClansRequest getClansRequest) throws IOException {
-    Preconditions.checkNotNull(getClansRequest, "getClansRequest");
-    String json = get(createUrl("clans"), getClansRequest);
-    return new Gson().fromJson(json, GetClansResponse.class);
+    return singleObjectFromJson("getClansRequest", "clans", getClansRequest, GetClansResponse.class);
+  }
+
+  private <T extends IResponse> T singleObjectFromJson(String nameOfRequest, String part, Request request,
+                                                       Class<T> responseClass) throws IOException {
+    checkNotNull(request, nameOfRequest);
+    String json = get(createUrl(part), request);
+    return new Gson().fromJson(json, responseClass);
+  }
+
+  GetClanResponse getClan(GetClanRequest getClanRequest) throws IOException {
+    return singleObjectFromJson("getClanRequest", "clans", getClanRequest, GetClanResponse.class);
   }
 
   private String get(String url, Request request) throws IOException {
     return createCrawler()
-        .get(url, createAuthHeader(apiKey), request == null ? null : request.getQueryParameters());
+        .get(url, createAuthHeader(apiKey), request.getQueryParameters(), request.getRestParameters());
   }
 
   private static Map<String, String> createAuthHeader(String apiKey) {

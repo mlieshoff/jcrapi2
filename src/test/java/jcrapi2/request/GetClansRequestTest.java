@@ -27,7 +27,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
-class GetClansRequestTest extends PageableRequestTestBase {
+class GetClansRequestTest extends PageableRequestTestBase<GetClansRequest> {
 
   private static final String LOCATION_ID = "locationId";
   private static final String NAME = "name";

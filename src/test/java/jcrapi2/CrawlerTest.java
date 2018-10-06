@@ -16,6 +16,7 @@
  */
 package jcrapi2;
 
+import static java.util.Collections.singletonList;
 import static org.apache.http.HttpStatus.SC_NOT_FOUND;
 import static org.apache.http.HttpStatus.SC_OK;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -39,6 +40,7 @@ import org.mockito.ArgumentMatcher;
 import org.mockito.Mockito;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -112,19 +114,19 @@ class CrawlerTest {
   }
 
   @Test
-  void shouldEncodeParameters() throws IOException {
+  void get_whenWithQueryParameters_thenEncode() throws IOException {
     String expectedResult = "break-out-prison";
     when(httpClientFactory.create()).thenReturn(httpClient);
     HttpResponse
         httpResponse =
         new BasicHttpResponse(new BasicStatusLine(new ProtocolVersion("http", 100, 1), SC_OK, ""));
     httpResponse.setEntity(new StringEntity(expectedResult));
-    when(httpClient.execute(argThat(getMatcher()))).thenReturn(httpResponse);
+    when(httpClient.execute(argThat(getEncodingParameterMatcher()))).thenReturn(httpResponse);
     assertEquals(expectedResult, new Crawler(httpClientFactory).get("the-url", createHeaders(),
         ImmutableMap.<String, String>builder().put("param", "a+b").put("key", "abc").build()));
   }
 
-  private static ArgumentMatcher<HttpUriRequest> getMatcher() {
+  private static ArgumentMatcher<HttpUriRequest> getEncodingParameterMatcher() {
     return new ArgumentMatcher<HttpUriRequest>() {
       @Override
       public boolean matches(Object o) {
@@ -136,5 +138,49 @@ class CrawlerTest {
       }
     };
   }
+
+  @Test
+  void get_whenWithRestParameters_thenEncode() throws IOException {
+    String expectedResult = "break-out-prison";
+    when(httpClientFactory.create()).thenReturn(httpClient);
+    HttpResponse
+        httpResponse =
+        new BasicHttpResponse(new BasicStatusLine(new ProtocolVersion("http", 100, 1), SC_OK, ""));
+    httpResponse.setEntity(new StringEntity(expectedResult));
+    when(httpClient.execute(argThat(getEncodingRestParameterMatcher()))).thenReturn(httpResponse);
+    assertEquals(expectedResult,
+        new Crawler(httpClientFactory).get("the-url/%s/end", createHeaders(), null, singletonList("a+b")));
+  }
+
+  private static ArgumentMatcher<HttpUriRequest> getEncodingRestParameterMatcher() {
+    return new ArgumentMatcher<HttpUriRequest>() {
+      @Override
+      public boolean matches(Object o) {
+        if (o instanceof HttpUriRequest) {
+          HttpUriRequest httpUriRequest = (HttpUriRequest) o;
+          return "the-url/a%2Bb/end".equals(httpUriRequest.getURI().getRawPath());
+        }
+        return false;
+      }
+    };
+  }
+
+  @Test
+  void get_whenWithRestParametersWithEncodingProblem_thenThrowException() throws IOException {
+    when(httpClientFactory.create()).thenReturn(httpClient);
+    HttpResponse
+        httpResponse =
+        new BasicHttpResponse(new BasicStatusLine(new ProtocolVersion("http", 100, 1), SC_OK, ""));
+    when(httpClient.execute(argThat(getEncodingRestParameterMatcher()))).thenReturn(httpResponse);
+    Crawler defectCrawler = new Crawler(httpClientFactory) {
+      @Override
+      String encode(String s) throws UnsupportedEncodingException {
+        throw new UnsupportedEncodingException("test");
+      }
+    };
+    assertThrows(IllegalStateException.class,
+        () -> defectCrawler.get("the-url/%s/end", createHeaders(), null, singletonList("a+b")));
+  }
+
 
 }

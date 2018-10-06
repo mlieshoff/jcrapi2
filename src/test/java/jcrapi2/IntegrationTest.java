@@ -20,11 +20,14 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClansRequest;
+import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClansResponse;
 
@@ -62,6 +65,7 @@ class IntegrationTest {
   private static void doGetClans(String apiKey) {
     GetClansResponse actual = new Api(URL, apiKey).getClans(GetClansRequest.builder().name("name").build());
     assertNotNull(actual);
+    actual.getItems().forEach(Assertions::assertNotNull);
   }
 
   @Test
@@ -82,6 +86,22 @@ class IntegrationTest {
   @Test
   void getClan_whenWithWrongUrl_thenThrow() throws Exception {
     assertThrows(ApiException.class, () -> doGetClan("lala2"));
+  }
+
+  @Test
+  void getClanMembers_whenWithValidParameters_thenReturnResponse() throws Exception {
+    doGetClanMembers(API_KEY);
+  }
+
+  private static void doGetClanMembers(String apiKey) {
+    GetClanMembersResponse actual = new Api(URL, apiKey).getClanMembers(GetClanMembersRequest.builder("clanTag").build());
+    assertNotNull(actual);
+    actual.getItems().forEach(Assertions::assertNotNull);
+  }
+
+  @Test
+  void getClanMembers_whenWithWrongUrl_thenThrow() throws Exception {
+    assertThrows(ApiException.class, () -> doGetClanMembers("lala2"));
   }
 
 }

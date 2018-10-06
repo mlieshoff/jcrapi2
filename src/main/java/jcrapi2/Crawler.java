@@ -84,15 +84,9 @@ class Crawler {
     return content.toString();
   }
 
-  private static String appendToUrl(String url, Map<String, String> parameters, Collection<String> restUrlParts)
+  private String appendToUrl(String url, Map<String, String> parameters, Collection<String> restUrlParts)
       throws UnsupportedEncodingException {
     StringBuilder appendedUrl = new StringBuilder(url);
-    if (CollectionUtils.isNotEmpty(restUrlParts)) {
-      for (String restUrlPart : restUrlParts) {
-        appendedUrl.append('/');
-        appendedUrl.append(encode(restUrlPart));
-      }
-    }
     if (isNotEmpty(parameters)) {
       appendedUrl.append('?');
       for (Iterator<Map.Entry<String, String>> iterator = parameters.entrySet().iterator(); iterator.hasNext(); ) {
@@ -109,10 +103,21 @@ class Crawler {
         }
       }
     }
-    return appendedUrl.toString();
+    String result = appendedUrl.toString();
+    if (CollectionUtils.isNotEmpty(restUrlParts)) {
+      Object[] encodedParams = restUrlParts.stream().map(s -> {
+        try {
+          return encode(s);
+        } catch (UnsupportedEncodingException e) {
+          throw new IllegalStateException(e);
+        }
+      }).toArray();
+      result = String.format(result, (Object[]) encodedParams);
+    }
+    return result;
   }
 
-  private static String encode(String s) throws UnsupportedEncodingException {
+  String encode(String s) throws UnsupportedEncodingException {
     return URLEncoder.encode(s, "UTF-8");
   }
 
@@ -123,7 +128,7 @@ class Crawler {
   }
 
   private static void addHeaders(HttpMessage httpMessage, Map<String, String> headers) {
-    headers.forEach((key, value) -> httpMessage.addHeader(key, value));
+    headers.forEach(httpMessage::addHeader);
   }
 
 }

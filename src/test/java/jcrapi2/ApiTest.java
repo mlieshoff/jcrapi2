@@ -26,8 +26,10 @@ import static org.mockito.Mockito.when;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClansRequest;
+import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClansResponse;
 
@@ -121,6 +123,31 @@ class ApiTest {
     when(client.getClan(getClanRequest)).thenThrow(crawlerException);
     try {
       api.getClan(getClanRequest);
+      fail();
+    } catch (ApiException e) {
+      assertEquals(SC_NOT_FOUND, e.getCode());
+    }
+  }
+
+  @Test
+  void getClanMembers_whenWithNullRequest_thenThrowsException() throws Exception {
+    assertThrows(NullPointerException.class, () -> api.getClanMembers(null));
+  }
+
+  @Test
+  void getClanMembers_whenWithRequest_thenReturnResult() throws Exception {
+    GetClanMembersRequest getClanMembersRequest = GetClanMembersRequest.builder(CLAN_TAG).build();
+    GetClanMembersResponse getClanMembersResponse = new GetClanMembersResponse();
+    when(client.getClanMembers(getClanMembersRequest)).thenReturn(getClanMembersResponse);
+    assertEquals(getClanMembersResponse, api.getClanMembers(getClanMembersRequest));
+  }
+
+  @Test
+  void getClanMembers_whenWithException_thenThrowApiException() throws Exception {
+    GetClanMembersRequest getClanMembersRequest = GetClanMembersRequest.builder(CLAN_TAG).build();
+    when(client.getClanMembers(getClanMembersRequest)).thenThrow(crawlerException);
+    try {
+      api.getClanMembers(getClanMembersRequest);
       fail();
     } catch (ApiException e) {
       assertEquals(SC_NOT_FOUND, e.getCode());

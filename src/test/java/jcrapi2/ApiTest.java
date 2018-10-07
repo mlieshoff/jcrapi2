@@ -26,10 +26,12 @@ import static org.mockito.Mockito.when;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import jcrapi2.request.GetClanCurrentWarRequest;
 import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
+import jcrapi2.response.GetClanCurrentWarResponse;
 import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClanWarLogResponse;
@@ -175,6 +177,31 @@ class ApiTest {
     when(client.getClanWarLog(getClanWarLogRequest)).thenThrow(crawlerException);
     try {
       api.getClanWarLog(getClanWarLogRequest);
+      fail();
+    } catch (ApiException e) {
+      assertEquals(SC_NOT_FOUND, e.getCode());
+    }
+  }
+
+ @Test
+  void getClanCurrentWar_whenWithNullRequest_thenThrowsException() throws Exception {
+    assertThrows(NullPointerException.class, () -> api.getClanCurrentWar(null));
+  }
+
+  @Test
+  void getClanCurrentWar_whenWithRequest_thenReturnResult() throws Exception {
+    GetClanCurrentWarRequest getClanCurrentWarRequest = GetClanCurrentWarRequest.builder(CLAN_TAG).build();
+    GetClanCurrentWarResponse getClanCurrentWarResponse = new GetClanCurrentWarResponse();
+    when(client.getClanCurrentWar(getClanCurrentWarRequest)).thenReturn(getClanCurrentWarResponse);
+    assertEquals(getClanCurrentWarResponse, api.getClanCurrentWar(getClanCurrentWarRequest));
+  }
+
+  @Test
+  void getClanCurrentWar_whenWithException_thenThrowApiException() throws Exception {
+    GetClanCurrentWarRequest getClanCurrentWarRequest = GetClanCurrentWarRequest.builder(CLAN_TAG).build();
+    when(client.getClanCurrentWar(getClanCurrentWarRequest)).thenThrow(crawlerException);
+    try {
+      api.getClanCurrentWar(getClanCurrentWarRequest);
       fail();
     } catch (ApiException e) {
       assertEquals(SC_NOT_FOUND, e.getCode());

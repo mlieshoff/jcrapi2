@@ -22,33 +22,33 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
-class GetClanRequestTest extends RequestTestBase {
+class GetClanCurrentWarRequestTest extends RequestTestBase {
 
   private static final String CLAN_TAG = "clanTag";
 
   @Test
   void build_whenWithNullClanTag_thenThrowException() throws Exception {
-    assertThrows(NullPointerException.class, () -> GetClanRequest.builder(null).build());
+    assertThrows(NullPointerException.class, () -> GetClanCurrentWarRequest.builder(null).build());
   }
 
   @Test
   void build_whenWithEmptyClanTag_thenThrowException() throws Exception {
-    assertThrows(IllegalArgumentException.class, () -> GetClanRequest.builder("").build());
+    assertThrows(IllegalArgumentException.class, () -> GetClanCurrentWarRequest.builder("").build());
   }
 
   @Test
   void build_whenWithClanTag_thenSetValue() throws Exception {
-    assertEquals(CLAN_TAG, GetClanRequest.builder(CLAN_TAG).build().getClanTag());
+    assertEquals(CLAN_TAG, GetClanCurrentWarRequest.builder(CLAN_TAG).build().getClanTag());
   }
 
   @Test
   void build_whenWithClanTag_thenHaveRestParameter() throws Exception {
-    assertEquals(singletonList(CLAN_TAG), GetClanRequest.builder(CLAN_TAG).build().getRestParameters());
+    assertEquals(singletonList(CLAN_TAG), GetClanCurrentWarRequest.builder(CLAN_TAG).build().getRestParameters());
   }
 
   @Override
   Object getBuilder() {
-    return GetClanRequest.builder(CLAN_TAG);
+    return GetClanCurrentWarRequest.builder(CLAN_TAG);
   }
 
 }

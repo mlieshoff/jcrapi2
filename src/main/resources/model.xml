@@ -85,4 +85,32 @@
         <member name="wins" type="int"/>
     </class>
 
+    <!-- clans current war -->
+
+    <class name="ClanCurentWar">
+        <member name="state" type="String"/>
+        <member name="warEndTime" type="String"/>
+        <member name="clan" type="ClanCurentWarClan"/>
+        <member name="participants" type="list(ClanCurentWarParticipant)"/>
+    </class>
+
+    <class name="ClanCurentWarClan">
+        <member name="tag" type="String"/>
+        <member name="name" type="String"/>
+        <member name="badgeId" type="int"/>
+        <member name="clanScore" type="int"/>
+        <member name="participants" type="int"/>
+        <member name="battlesPlayed" type="int"/>
+        <member name="wins" type="int"/>
+        <member name="crowns" type="int"/>
+    </class>
+
+    <class name="ClanCurentWarParticipant">
+        <member name="tag" type="String"/>
+        <member name="name" type="String"/>
+        <member name="cardsEarned" type="int"/>
+        <member name="battlesPlayed" type="int"/>
+        <member name="wins" type="int"/>
+    </class>
+
 </model>

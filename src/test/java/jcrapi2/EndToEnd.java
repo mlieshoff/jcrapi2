@@ -23,10 +23,12 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import jcrapi2.request.GetClanCurrentWarRequest;
 import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
+import jcrapi2.response.GetClanCurrentWarResponse;
 import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClanWarLogResponse;
@@ -87,6 +89,18 @@ class EndToEnd {
         () -> assertNotNull(getClanWarLogResponse, "getClanWarLogResponse"),
         () -> assertNull(getClanWarLogResponse.getMessage(), "message"),
         () -> assertNull(getClanWarLogResponse.getReason(), "reason")
+    );
+  }
+
+  @Test
+  void getClanCurrentWar_whenWithValidParameters_thenGetResponse() throws Exception {
+    GetClanCurrentWarResponse
+        getClanCurrentWarResponse =
+        api.getClanCurrentWar(GetClanCurrentWarRequest.builder("#RP88QQG").build());
+    assertAll(
+        () -> assertNotNull(getClanCurrentWarResponse, "getClanCurrentWarResponse"),
+        () -> assertNull(getClanCurrentWarResponse.getMessage(), "message"),
+        () -> assertNull(getClanCurrentWarResponse.getReason(), "reason")
     );
   }
 

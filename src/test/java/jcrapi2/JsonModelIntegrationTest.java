@@ -25,8 +25,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
+import jcrapi2.response.GetClanCurrentWarResponse;
 import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
+import jcrapi2.response.GetClanWarLogResponse;
 import jcrapi2.response.GetClansResponse;
 
 class JsonModelIntegrationTest {
@@ -49,11 +51,26 @@ class JsonModelIntegrationTest {
   }
 
   @Test
-  void fromJson_whenForGetClanMemberss_thenResolve() throws Exception {
+  void fromJson_whenForGetClanMembers_thenResolve() throws Exception {
     String json = FileUtils.readFileToString(new File("src/test/resources/clanMembers.json"));
     GetClanMembersResponse object = GSON.fromJson(json, GetClanMembersResponse.class);
     assertNotNull(object);
     object.getItems().forEach(Assertions::assertNotNull);
+  }
+
+  @Test
+  void fromJson_whenForGetClanWarLog_thenResolve() throws Exception {
+    String json = FileUtils.readFileToString(new File("src/test/resources/clanWarLog.json"));
+    GetClanWarLogResponse object = GSON.fromJson(json, GetClanWarLogResponse.class);
+    assertNotNull(object);
+    object.getItems().forEach(Assertions::assertNotNull);
+  }
+
+  @Test
+  void fromJson_whenForGetClanCurentWar_thenResolve() throws Exception {
+    String json = FileUtils.readFileToString(new File("src/test/resources/clanCurrentWar.json"));
+    GetClanCurrentWarResponse object = GSON.fromJson(json, GetClanCurrentWarResponse.class);
+    assertNotNull(object);
   }
 
 }

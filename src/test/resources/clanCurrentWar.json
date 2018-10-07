@@ -1,0 +1,23 @@
+{
+  "state": "string",
+  "warEndTime": "string",
+  "clan": {
+    "tag": "string",
+    "name": "string",
+    "badgeId": 0,
+    "clanScore": 0,
+    "participants": 0,
+    "battlesPlayed": 0,
+    "wins": 0,
+    "crowns": 0
+  },
+  "participants": [
+    {
+      "tag": "string",
+      "name": "string",
+      "cardsEarned": 0,
+      "battlesPlayed": 0,
+      "wins": 0
+    }
+  ]
+}

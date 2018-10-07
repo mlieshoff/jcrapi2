@@ -26,11 +26,13 @@ import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.Map;
+import jcrapi2.request.GetClanCurrentWarRequest;
 import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
 import jcrapi2.request.Request;
+import jcrapi2.response.GetClanCurrentWarResponse;
 import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClanWarLogResponse;
@@ -102,6 +104,11 @@ public class Client {
   GetClanWarLogResponse getClanWarLog(GetClanWarLogRequest getClanWarLogRequest) throws IOException {
     return singleObjectFromJson("getClanWarLogRequest", "clans/%s/warlog", getClanWarLogRequest,
         GetClanWarLogResponse.class);
+  }
+
+  GetClanCurrentWarResponse getClanCurrentWar(GetClanCurrentWarRequest getClanCurrentWarRequest) throws IOException {
+    return singleObjectFromJson("getClanCurrentWarRequest", "clans/%s/currentwar", getClanCurrentWarRequest,
+        GetClanCurrentWarResponse.class);
   }
 
 }

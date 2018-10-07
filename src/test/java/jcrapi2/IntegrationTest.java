@@ -24,10 +24,12 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import jcrapi2.request.GetClanCurrentWarRequest;
 import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
+import jcrapi2.response.GetClanCurrentWarResponse;
 import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClanWarLogResponse;
@@ -122,6 +124,23 @@ class IntegrationTest {
   @Test
   void getClanWarLog_whenWithWrongUrl_thenThrow() throws Exception {
     assertThrows(ApiException.class, () -> doGetClanWarLog("lala2"));
+  }
+
+  @Test
+  void getClanCurrentWar_whenWithValidParameters_thenReturnResponse() throws Exception {
+    doGetClanCurrentWar(API_KEY);
+  }
+
+  private static void doGetClanCurrentWar(String apiKey) {
+    GetClanCurrentWarResponse
+        actual =
+        new Api(URL, apiKey).getClanCurrentWar(GetClanCurrentWarRequest.builder("clanTag").build());
+    assertNotNull(actual);
+  }
+
+  @Test
+  void getClanCurrentWar_whenWithWrongUrl_thenThrow() throws Exception {
+    assertThrows(ApiException.class, () -> doGetClanCurrentWar("lala2"));
   }
 
 }

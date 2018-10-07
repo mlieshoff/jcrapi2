@@ -20,10 +20,12 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import java.io.IOException;
+import jcrapi2.request.GetClanCurrentWarRequest;
 import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
+import jcrapi2.response.GetClanCurrentWarResponse;
 import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClanWarLogResponse;
@@ -91,6 +93,15 @@ public class Api {
     checkNotNull(getClanWarLogRequest, "getClanWarLogRequest");
     try {
       return createClient().getClanWarLog(getClanWarLogRequest);
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+  }
+
+  public GetClanCurrentWarResponse getClanCurrentWar(GetClanCurrentWarRequest getClanCurrentWarRequest) {
+    checkNotNull(getClanCurrentWarRequest, "getClanCurrentWarRequest");
+    try {
+      return createClient().getClanCurrentWar(getClanCurrentWarRequest);
     } catch (IOException e) {
       throw new ApiException(e);
     }

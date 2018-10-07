@@ -1,7 +1,7 @@
 # jcrapi2
 A Java Wrapper For Official Supercell Clash Royal Api 
 
-## Actual version: in dev
+## Actual version: 1.0.0-M1
 
 ## Simplest Usage ##
 
@@ -85,6 +85,10 @@ https://travis-ci.org/mlieshoff/jcrapi2
 ## Repository ##
 
 https://bintray.com/mlieshoff/maven/jcrapi2
+
+## Logging ##
+
+We use SLF4j.
 
 ## Working Agreement
 

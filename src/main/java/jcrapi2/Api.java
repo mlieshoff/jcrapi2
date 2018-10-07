@@ -22,9 +22,11 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import java.io.IOException;
 import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
+import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
 import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
+import jcrapi2.response.GetClanWarLogResponse;
 import jcrapi2.response.GetClansResponse;
 
 /**
@@ -80,6 +82,15 @@ public class Api {
     checkNotNull(getClanMembersRequest, "getClanMembersRequest");
     try {
       return createClient().getClanMembers(getClanMembersRequest);
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+  }
+
+  public GetClanWarLogResponse getClanWarLog(GetClanWarLogRequest getClanWarLogRequest) {
+    checkNotNull(getClanWarLogRequest, "getClanWarLogRequest");
+    try {
+      return createClient().getClanWarLog(getClanWarLogRequest);
     } catch (IOException e) {
       throw new ApiException(e);
     }

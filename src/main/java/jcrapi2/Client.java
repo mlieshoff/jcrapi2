@@ -28,10 +28,12 @@ import java.io.UnsupportedEncodingException;
 import java.util.Map;
 import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
+import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
 import jcrapi2.request.Request;
 import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
+import jcrapi2.response.GetClanWarLogResponse;
 import jcrapi2.response.GetClansResponse;
 import jcrapi2.response.IResponse;
 
@@ -95,6 +97,11 @@ public class Client {
   GetClanMembersResponse getClanMembers(GetClanMembersRequest getClanMembersRequest) throws IOException {
     return singleObjectFromJson("getClanMembersRequest", "clans/%s/members", getClanMembersRequest,
         GetClanMembersResponse.class);
+  }
+
+  GetClanWarLogResponse getClanWarLog(GetClanWarLogRequest getClanWarLogRequest) throws IOException {
+    return singleObjectFromJson("getClanWarLogRequest", "clans/%s/warlog", getClanWarLogRequest,
+        GetClanWarLogResponse.class);
   }
 
 }

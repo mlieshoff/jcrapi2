@@ -23,6 +23,7 @@ import static org.apache.commons.lang3.StringUtils.isNotBlank;
 import static org.apache.http.HttpStatus.SC_OK;
 
 import org.apache.commons.collections.CollectionUtils;
+import org.apache.http.Header;
 import org.apache.http.HttpMessage;
 import org.apache.http.HttpResponse;
 import org.apache.http.StatusLine;
@@ -37,12 +38,13 @@ import java.net.URLEncoder;
 import java.nio.charset.Charset;
 import java.util.Collection;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author Michael Lieshoff
  */
+@Slf4j
 class Crawler {
 
   private final HttpClientFactory httpClientFactory;
@@ -59,7 +61,7 @@ class Crawler {
     return get(url, headers, parameters, null);
   }
 
-  String get(String url, Map<String, String> headers, Map<String, String> parameters, List<String> restUrlParts)
+  String get(String url, Map<String, String> headers, Map<String, String> parameters, Collection<String> restUrlParts)
       throws IOException {
     checkNotNull(url);
     checkArgument(!url.isEmpty());
@@ -69,6 +71,7 @@ class Crawler {
     HttpClient client = httpClientFactory.create();
     HttpGet request = createRequest(replacedUrl, headers);
     HttpResponse response = client.execute(request);
+    logResponse(response);
     StatusLine statusLine = response.getStatusLine();
     if (statusLine.getStatusCode() != SC_OK) {
       throw new CrawlerException(statusLine);
@@ -82,6 +85,16 @@ class Crawler {
       }
     }
     return content.toString();
+  }
+
+  private static void logResponse(HttpResponse httpResponse) {
+    if (log.isInfoEnabled()) {
+      for (Header header : httpResponse.getAllHeaders()) {
+        log.info("    response header: {}={}", header.getName(), header.getValue());
+      }
+      StatusLine statusLine = httpResponse.getStatusLine();
+      log.info("    status code: {}- {}", statusLine.getStatusCode(), statusLine.getReasonPhrase());
+    }
   }
 
   private String appendToUrl(String url, Map<String, String> parameters, Collection<String> restUrlParts)
@@ -114,6 +127,7 @@ class Crawler {
       }).toArray();
       result = String.format(result, (Object[]) encodedParams);
     }
+    log.info("request to: {}", result);
     return result;
   }
 
@@ -128,7 +142,10 @@ class Crawler {
   }
 
   private static void addHeaders(HttpMessage httpMessage, Map<String, String> headers) {
-    headers.forEach(httpMessage::addHeader);
+    headers.forEach((key, value) -> {
+      log.info("    request header: {}={}", key, value);
+      httpMessage.addHeader(key, value);
+    });
   }
 
 }

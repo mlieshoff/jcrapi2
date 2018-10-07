@@ -30,6 +30,7 @@ import org.junit.jupiter.api.Test;
 import java.util.Map;
 import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
+import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
 
 /**
@@ -100,6 +101,14 @@ class ClientTest {
     when(crawler.get("lala/clans/%s/members", createHeaders(), getClanMemberRequest.getQueryParameters(),
         getClanMemberRequest.getRestParameters())).thenReturn("{}");
     assertNotNull(createClient().getClanMembers(getClanMemberRequest));
+  }
+
+  @Test
+  void getClanWarLog_whenWithRequest_thenGetResponse() throws Exception {
+    GetClanWarLogRequest getClanWarLogRequest = GetClanWarLogRequest.builder("clanTag").build();
+    when(crawler.get("lala/clans/%s/warlog", createHeaders(), getClanWarLogRequest.getQueryParameters(),
+        getClanWarLogRequest.getRestParameters())).thenReturn("{}");
+    assertNotNull(createClient().getClanWarLog(getClanWarLogRequest));
   }
 
 }

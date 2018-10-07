@@ -28,9 +28,11 @@ import org.junit.jupiter.api.Test;
 
 import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
+import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
 import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
+import jcrapi2.response.GetClanWarLogResponse;
 import jcrapi2.response.GetClansResponse;
 
 /**
@@ -148,6 +150,31 @@ class ApiTest {
     when(client.getClanMembers(getClanMembersRequest)).thenThrow(crawlerException);
     try {
       api.getClanMembers(getClanMembersRequest);
+      fail();
+    } catch (ApiException e) {
+      assertEquals(SC_NOT_FOUND, e.getCode());
+    }
+  }
+
+  @Test
+  void getClanWarLog_whenWithNullRequest_thenThrowsException() throws Exception {
+    assertThrows(NullPointerException.class, () -> api.getClanWarLog(null));
+  }
+
+  @Test
+  void getClanWarLog_whenWithRequest_thenReturnResult() throws Exception {
+    GetClanWarLogRequest getClanWarLogRequest = GetClanWarLogRequest.builder(CLAN_TAG).build();
+    GetClanWarLogResponse getClanWarLogResponse = new GetClanWarLogResponse();
+    when(client.getClanWarLog(getClanWarLogRequest)).thenReturn(getClanWarLogResponse);
+    assertEquals(getClanWarLogResponse, api.getClanWarLog(getClanWarLogRequest));
+  }
+
+  @Test
+  void getClanWarLog_whenWithException_thenThrowApiException() throws Exception {
+    GetClanWarLogRequest getClanWarLogRequest = GetClanWarLogRequest.builder(CLAN_TAG).build();
+    when(client.getClanWarLog(getClanWarLogRequest)).thenThrow(crawlerException);
+    try {
+      api.getClanWarLog(getClanWarLogRequest);
       fail();
     } catch (ApiException e) {
       assertEquals(SC_NOT_FOUND, e.getCode());

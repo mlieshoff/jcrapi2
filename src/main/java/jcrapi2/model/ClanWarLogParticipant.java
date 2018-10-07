@@ -26,8 +26,21 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class Version {
+public class ClanWarLogParticipant {
 
-  public static final String VERSION = "v1";
+  @SerializedName("tag")
+  private String tag;
+
+  @SerializedName("name")
+  private String name;
+
+  @SerializedName("cardsEarned")
+  private int cardsEarned;
+
+  @SerializedName("battlesPlayed")
+  private int battlesPlayed;
+
+  @SerializedName("wins")
+  private int wins;
 
 }

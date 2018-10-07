@@ -14,20 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jcrapi2.model;
+package jcrapi2.response;
 
-import javax.annotation.Generated;
-import com.google.gson.annotations.SerializedName;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+class GetClanMembersResponseTest extends PageableResponseTestBase<GetClanMembersResponse> {
 
-@Generated("org.mili.generator")
-@Getter
-@Setter
-@ToString
-public class Version {
-
-  public static final String VERSION = "v1";
+  @Override
+  GetClanMembersResponse getResponse() {
+    return new GetClanMembersResponse();
+  }
 
 }

@@ -25,15 +25,17 @@ import org.junit.jupiter.api.Test;
 
 import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
+import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
 import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
+import jcrapi2.response.GetClanWarLogResponse;
 import jcrapi2.response.GetClansResponse;
 
 /**
  * @author Michael Lieshoff
  */
-public class EndToEnd {
+class EndToEnd {
 
   private static final String API_KEY = System.getProperty("api.key");
 
@@ -45,7 +47,7 @@ public class EndToEnd {
   }
 
   @Test
-  void getClans_whenWithValidParameters_thenGetRespone() throws Exception {
+  void getClans_whenWithValidParameters_thenGetResponse() throws Exception {
     GetClansResponse getClansResponse = api.getClans(GetClansRequest.builder().name("puzzle").build());
     assertAll(
         () -> assertNotNull(getClansResponse, "getClansResponse"),
@@ -55,7 +57,7 @@ public class EndToEnd {
   }
 
   @Test
-  void getClan_whenWithValidParameters_thenGetRespone() throws Exception {
+  void getClan_whenWithValidParameters_thenGetResponse() throws Exception {
     GetClanResponse getClanResponse = api.getClan(GetClanRequest.builder("#RP88QQG").build());
     assertAll(
         () -> assertNotNull(getClanResponse, "getClanResponse"),
@@ -65,7 +67,7 @@ public class EndToEnd {
   }
 
   @Test
-  void getClanMembers_whenWithValidParameters_thenGetRespone() throws Exception {
+  void getClanMembers_whenWithValidParameters_thenGetResponse() throws Exception {
     GetClanMembersResponse
         getClanMembersResponse =
         api.getClanMembers(GetClanMembersRequest.builder("#RP88QQG").build());
@@ -73,6 +75,18 @@ public class EndToEnd {
         () -> assertNotNull(getClanMembersResponse, "getClanMembersResponse"),
         () -> assertNull(getClanMembersResponse.getMessage(), "message"),
         () -> assertNull(getClanMembersResponse.getReason(), "reason")
+    );
+  }
+
+  @Test
+  void getClanWarLog_whenWithValidParameters_thenGetResponse() throws Exception {
+    GetClanWarLogResponse
+        getClanWarLogResponse =
+        api.getClanWarLog(GetClanWarLogRequest.builder("#RP88QQG").build());
+    assertAll(
+        () -> assertNotNull(getClanWarLogResponse, "getClanWarLogResponse"),
+        () -> assertNull(getClanWarLogResponse.getMessage(), "message"),
+        () -> assertNull(getClanWarLogResponse.getReason(), "reason")
     );
   }
 

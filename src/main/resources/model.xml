@@ -69,4 +69,20 @@
         <member name="name" type="String"/>
     </class>
 
+    <!-- clans war log -->
+
+    <class name="ClanWarLog">
+        <member name="seasonId" type="int"/>
+        <member name="createdDate" type="String"/>
+        <member name="participants" type="list(ClanWarLogParticipant)"/>
+    </class>
+
+    <class name="ClanWarLogParticipant">
+        <member name="tag" type="String"/>
+        <member name="name" type="String"/>
+        <member name="cardsEarned" type="int"/>
+        <member name="battlesPlayed" type="int"/>
+        <member name="wins" type="int"/>
+    </class>
+
 </model>

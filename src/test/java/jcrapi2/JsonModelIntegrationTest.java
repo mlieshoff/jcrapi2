@@ -16,11 +16,11 @@
  */
 package jcrapi2;
 
+import static org.apache.commons.io.FileUtils.readFileToString;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import com.google.gson.Gson;
 
-import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -30,6 +30,7 @@ import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClanWarLogResponse;
 import jcrapi2.response.GetClansResponse;
+import jcrapi2.response.GetPlayerResponse;
 
 class JsonModelIntegrationTest {
 
@@ -37,7 +38,7 @@ class JsonModelIntegrationTest {
 
   @Test
   void fromJson_whenForGetClans_thenResolve() throws Exception {
-    String json = FileUtils.readFileToString(new File("src/test/resources/clans.json"));
+    String json = readFileToString(new File("src/test/resources/clans.json"));
     GetClansResponse object = GSON.fromJson(json, GetClansResponse.class);
     assertNotNull(object);
     object.getItems().forEach(Assertions::assertNotNull);
@@ -45,14 +46,14 @@ class JsonModelIntegrationTest {
 
   @Test
   void fromJson_whenForGetClan_thenResolve() throws Exception {
-    String json = FileUtils.readFileToString(new File("src/test/resources/clan.json"));
+    String json = readFileToString(new File("src/test/resources/clan.json"));
     GetClanResponse object = GSON.fromJson(json, GetClanResponse.class);
     assertNotNull(object);
   }
 
   @Test
   void fromJson_whenForGetClanMembers_thenResolve() throws Exception {
-    String json = FileUtils.readFileToString(new File("src/test/resources/clanMembers.json"));
+    String json = readFileToString(new File("src/test/resources/clanMembers.json"));
     GetClanMembersResponse object = GSON.fromJson(json, GetClanMembersResponse.class);
     assertNotNull(object);
     object.getItems().forEach(Assertions::assertNotNull);
@@ -60,7 +61,7 @@ class JsonModelIntegrationTest {
 
   @Test
   void fromJson_whenForGetClanWarLog_thenResolve() throws Exception {
-    String json = FileUtils.readFileToString(new File("src/test/resources/clanWarLog.json"));
+    String json = readFileToString(new File("src/test/resources/clanWarLog.json"));
     GetClanWarLogResponse object = GSON.fromJson(json, GetClanWarLogResponse.class);
     assertNotNull(object);
     object.getItems().forEach(Assertions::assertNotNull);
@@ -68,8 +69,15 @@ class JsonModelIntegrationTest {
 
   @Test
   void fromJson_whenForGetClanCurentWar_thenResolve() throws Exception {
-    String json = FileUtils.readFileToString(new File("src/test/resources/clanCurrentWar.json"));
+    String json = readFileToString(new File("src/test/resources/clanCurrentWar.json"));
     GetClanCurrentWarResponse object = GSON.fromJson(json, GetClanCurrentWarResponse.class);
+    assertNotNull(object);
+  }
+
+  @Test
+  void fromJson_whenForGetPlayer_thenResolve() throws Exception {
+    String json = readFileToString(new File("src/test/resources/player.json"));
+    GetPlayerResponse object = GSON.fromJson(json, GetPlayerResponse.class);
     assertNotNull(object);
   }
 

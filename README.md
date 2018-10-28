@@ -64,6 +64,11 @@ GetClanWarLogResponse getClanWarLogResponse = api.getClanWarLog(GetClanWarLogReq
 GetClanCurrentWarResponse getClanCurrentWarResponse = api.getClanCurrentWar(GetClanCurrentWarRequest.builder("#RP88QQG").build());
 ```
 
+```java
+// get player
+GetPlayerResponse getPlayerResponse = api.getPlayer(GetPlayerRequest.builder("#L88P2282").build());
+```
+
 ## How to bind the bintray repository ##
 
 ```xml

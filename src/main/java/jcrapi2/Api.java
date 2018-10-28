@@ -25,11 +25,13 @@ import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
+import jcrapi2.request.GetPlayerRequest;
 import jcrapi2.response.GetClanCurrentWarResponse;
 import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClanWarLogResponse;
 import jcrapi2.response.GetClansResponse;
+import jcrapi2.response.GetPlayerResponse;
 
 /**
  * @author Michael Lieshoff
@@ -102,6 +104,15 @@ public class Api {
     checkNotNull(getClanCurrentWarRequest, "getClanCurrentWarRequest");
     try {
       return createClient().getClanCurrentWar(getClanCurrentWarRequest);
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+  }
+
+  public GetPlayerResponse getPlayer(GetPlayerRequest getPlayerRequest) {
+    checkNotNull(getPlayerRequest, "getPlayerRequest");
+    try {
+      return createClient().getPlayer(getPlayerRequest);
     } catch (IOException e) {
       throw new ApiException(e);
     }

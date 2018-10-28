@@ -456,11 +456,6 @@
   <inspection_tool class="ClassComplexity" enabled="true" level="WARNING" enabled_by_default="true">
     <option name="m_limit" value="80" />
   </inspection_tool>
-  <inspection_tool class="ClassCoupling" enabled="true" level="WARNING" enabled_by_default="true">
-    <option name="m_includeJavaClasses" value="false" />
-    <option name="m_includeLibraryClasses" value="false" />
-    <option name="m_limit" value="15" />
-  </inspection_tool>
   <inspection_tool class="ClassInDefaultPackage" enabled="false" level="ERROR" enabled_by_default="false" />
   <inspection_tool class="ClassInitializer" enabled="true" level="WARNING" enabled_by_default="true" />
   <inspection_tool class="ClassLoaderInstantiation" enabled="true" level="WARNING" enabled_by_default="true" />
@@ -852,9 +847,6 @@
   <inspection_tool class="GwtUiXmlReferences" enabled="false" level="ERROR" enabled_by_default="false" />
   <inspection_tool class="HamlNestedTagContent" enabled="false" level="WARNING" enabled_by_default="false" />
   <inspection_tool class="HardcodedActionUrl" enabled="false" level="WARNING" enabled_by_default="false" />
-  <inspection_tool class="HardcodedFileSeparators" enabled="true" level="WARNING" enabled_by_default="true">
-    <option name="m_recognizeExampleMediaType" value="false" />
-  </inspection_tool>
   <inspection_tool class="HardcodedLineSeparators" enabled="true" level="WARNING" enabled_by_default="true" />
   <inspection_tool class="HardwiredNamespacePrefix" enabled="false" level="WARNING" enabled_by_default="false" />
   <inspection_tool class="HasPlatformType" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
@@ -1135,13 +1127,6 @@
     <option name="m_ignoreStaticMethods" value="true" />
   </inspection_tool>
   <inspection_tool class="LocalVariableName" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
-  <inspection_tool class="LocalVariableNamingConvention" enabled="true" level="WARNING" enabled_by_default="true">
-    <option name="m_ignoreForLoopParameters" value="false" />
-    <option name="m_ignoreCatchParameters" value="false" />
-    <option name="m_regex" value="[a-z][A-Za-z\d]*" />
-    <option name="m_minLength" value="1" />
-    <option name="m_maxLength" value="20" />
-  </inspection_tool>
   <inspection_tool class="LogStatementGuardedByLogCondition" enabled="true" level="WARNING" enabled_by_default="true" />
   <inspection_tool class="LoggerInitializedWithForeignClass" enabled="true" level="WARNING" enabled_by_default="true">
     <option name="loggerFactoryMethodName" value="getLogger,getLogger,getLog,getLogger" />
@@ -1168,11 +1153,6 @@
   <inspection_tool class="MavenRedundantGroupId" enabled="false" level="WARNING" enabled_by_default="false" />
   <inspection_tool class="MayBeConstant" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
   <inspection_tool class="MemberVisibilityCanBePrivate" enabled="false" level="INFO" enabled_by_default="false" />
-  <inspection_tool class="MethodCount" enabled="true" level="WARNING" enabled_by_default="true">
-    <option name="m_limit" value="20" />
-    <option name="ignoreGettersAndSetters" value="false" />
-    <option name="ignoreOverridingMethods" value="false" />
-  </inspection_tool>
   <inspection_tool class="MethodCoupling" enabled="true" level="WARNING" enabled_by_default="true">
     <option name="m_includeJavaClasses" value="false" />
     <option name="m_includeLibraryClasses" value="false" />
@@ -1355,11 +1335,6 @@
   <inspection_tool class="ParameterNameDiffersFromOverriddenParameter" enabled="true" level="WARNING" enabled_by_default="true">
     <option name="m_ignoreSingleCharacterNames" value="false" />
     <option name="m_ignoreOverridesOfLibraryMethods" value="false" />
-  </inspection_tool>
-  <inspection_tool class="ParameterNamingConvention" enabled="true" level="WARNING" enabled_by_default="true">
-    <option name="m_regex" value="[a-z][A-Za-z\d]*" />
-    <option name="m_minLength" value="1" />
-    <option name="m_maxLength" value="20" />
   </inspection_tool>
   <inspection_tool class="ParameterTypePreventsOverriding" enabled="true" level="WARNING" enabled_by_default="true" />
   <inspection_tool class="ParameterizedParametersStaticCollection" enabled="true" level="WARNING" enabled_by_default="true" />
@@ -1843,7 +1818,7 @@
     <option name="m_ignoreStaticMethodCalls" value="false" />
     <option name="m_ignoreStaticAccessFromStaticContext" value="false" />
   </inspection_tool>
-  <inspection_tool class="UnnecessarilyQualifiedStaticallyImportedElement" enabled="true" level="WARNING" enabled_by_default="true" />
+  <inspection_tool class="UnnecessarilyQualifiedStaticallyImportedElement" enabled="true" level="ERROR" enabled_by_default="true" />
   <inspection_tool class="UnnecessaryCallToStringValueOf" enabled="true" level="WARNING" enabled_by_default="true" />
   <inspection_tool class="UnnecessaryConstantArrayCreationExpression" enabled="true" level="WARNING" enabled_by_default="true" />
   <inspection_tool class="UnnecessaryConstructor" enabled="true" level="WARNING" enabled_by_default="true" />

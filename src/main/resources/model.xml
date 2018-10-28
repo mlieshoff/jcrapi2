@@ -113,4 +113,71 @@
         <member name="wins" type="int"/>
     </class>
 
+    <!-- get players -->
+
+    <class name="Player">
+        <member name="tag" type="String"/>
+        <member name="name" type="String"/>
+        <member name="expLevel" type="int"/>
+        <member name="trophies" type="int"/>
+        <member name="bestTrophies" type="int"/>
+        <member name="wins" type="int"/>
+        <member name="losses" type="int"/>
+        <member name="battleCount" type="int"/>
+        <member name="threeCrownWins" type="int"/>
+        <member name="challengeCardsWon" type="int"/>
+        <member name="challengeMaxWins" type="int"/>
+        <member name="tournamentCardsWon" type="int"/>
+        <member name="tournamentBattleCount" type="int"/>
+        <member name="role" type="String"/>
+        <member name="donations" type="int"/>
+        <member name="donationsReceived" type="int"/>
+        <member name="totalDonations" type="int"/>
+        <member name="warDayWins" type="int"/>
+        <member name="clanCardsCollected" type="int"/>
+        <member name="clan" type="PlayerClan"/>
+        <member name="arena" type="PlayerArena"/>
+        <member name="achievements" type="list(PlayerAchievment)"/>
+        <member name="cards" type="list(PlayerCard)"/>
+        <member name="playerCurrentFavouriteCard" type="PlayerCurrentFavouriteCard"/>
+    </class>
+
+    <class name="PlayerClan">
+        <member name="tag" type="String"/>
+        <member name="name" type="String"/>
+        <member name="badgeId" type="int"/>
+    </class>
+
+    <class name="PlayerArena">
+        <member name="id" type="int"/>
+        <member name="name" type="String"/>
+    </class>
+
+    <class name="PlayerAchievment">
+        <member name="name" type="String"/>
+        <member name="stars" type="int"/>
+        <member name="value" type="int"/>
+        <member name="target" type="int"/>
+        <member name="info" type="String"/>
+    </class>
+
+    <class name="PlayerCard">
+        <member name="name" type="String"/>
+        <member name="level" type="int"/>
+        <member name="maxLevel" type="int"/>
+        <member name="count" type="int"/>
+        <member name="iconUrls" type="PlayerIconUrls"/>
+    </class>
+
+    <class name="PlayerIconUrls">
+        <member name="medium" type="String"/>
+    </class>
+
+    <class name="PlayerCurrentFavouriteCard">
+        <member name="name" type="String"/>
+        <member name="id" type="int"/>
+        <member name="maxLevel" type="int"/>
+        <member name="iconUrls" type="PlayerIconUrls"/>
+    </class>
+
 </model>

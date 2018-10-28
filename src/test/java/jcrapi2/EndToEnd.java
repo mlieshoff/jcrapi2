@@ -28,11 +28,13 @@ import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
+import jcrapi2.request.GetPlayerRequest;
 import jcrapi2.response.GetClanCurrentWarResponse;
 import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClanWarLogResponse;
 import jcrapi2.response.GetClansResponse;
+import jcrapi2.response.GetPlayerResponse;
 
 /**
  * @author Michael Lieshoff
@@ -101,6 +103,16 @@ class EndToEnd {
         () -> assertNotNull(getClanCurrentWarResponse, "getClanCurrentWarResponse"),
         () -> assertNull(getClanCurrentWarResponse.getMessage(), "message"),
         () -> assertNull(getClanCurrentWarResponse.getReason(), "reason")
+    );
+  }
+
+  @Test
+  void getPlayer_whenWithValidParameters_thenGetResponse() throws Exception {
+    GetPlayerResponse getPlayerResponse = api.getPlayer(GetPlayerRequest.builder("#L88P2282").build());
+    assertAll(
+        () -> assertNotNull(getPlayerResponse, "getPlayerResponse"),
+        () -> assertNull(getPlayerResponse.getMessage(), "message"),
+        () -> assertNull(getPlayerResponse.getReason(), "reason")
     );
   }
 

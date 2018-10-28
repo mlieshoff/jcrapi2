@@ -33,6 +33,7 @@ import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
+import jcrapi2.request.GetPlayerRequest;
 
 /**
  * @author Michael Lieshoff
@@ -118,6 +119,16 @@ class ClientTest {
     when(crawler.get("lala/clans/%s/currentwar", createHeaders(), getClanCurrentWarRequest.getQueryParameters(),
         getClanCurrentWarRequest.getRestParameters())).thenReturn("{}");
     assertNotNull(createClient().getClanCurrentWar(getClanCurrentWarRequest));
+  }
+
+  @Test
+  void getPlayer_whenWithRequest_thenGetResponse() throws Exception {
+    GetPlayerRequest getPlayerRequest = GetPlayerRequest.builder("playerTag").build();
+    when(crawler
+        .get("lala/players/%s", createHeaders(), getPlayerRequest.getQueryParameters(),
+            getPlayerRequest.getRestParameters()))
+        .thenReturn("{}");
+    assertNotNull(createClient().getPlayer(getPlayerRequest));
   }
 
 }

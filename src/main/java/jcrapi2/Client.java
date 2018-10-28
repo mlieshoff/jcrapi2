@@ -24,19 +24,20 @@ import com.google.common.collect.ImmutableMap;
 import com.google.gson.Gson;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.util.Map;
 import jcrapi2.request.GetClanCurrentWarRequest;
 import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
+import jcrapi2.request.GetPlayerRequest;
 import jcrapi2.request.Request;
 import jcrapi2.response.GetClanCurrentWarResponse;
 import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClanWarLogResponse;
 import jcrapi2.response.GetClansResponse;
+import jcrapi2.response.GetPlayerResponse;
 import jcrapi2.response.IResponse;
 
 /**
@@ -73,7 +74,7 @@ public class Client {
     return new Gson().fromJson(json, responseClass);
   }
 
-  private String createUrl(String part) throws UnsupportedEncodingException {
+  private String createUrl(String part) {
     return url + part;
   }
 
@@ -109,6 +110,10 @@ public class Client {
   GetClanCurrentWarResponse getClanCurrentWar(GetClanCurrentWarRequest getClanCurrentWarRequest) throws IOException {
     return singleObjectFromJson("getClanCurrentWarRequest", "clans/%s/currentwar", getClanCurrentWarRequest,
         GetClanCurrentWarResponse.class);
+  }
+
+  GetPlayerResponse getPlayer(GetPlayerRequest getPlayerRequest) throws IOException {
+    return singleObjectFromJson("getPlayerRequest", "players/%s", getPlayerRequest, GetPlayerResponse.class);
   }
 
 }

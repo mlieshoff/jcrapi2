@@ -19,6 +19,7 @@ package jcrapi2;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static org.apache.commons.collections.MapUtils.isNotEmpty;
+import static org.apache.commons.lang3.ArrayUtils.isNotEmpty;
 import static org.apache.commons.lang3.StringUtils.isNotBlank;
 import static org.apache.http.HttpStatus.SC_OK;
 
@@ -39,6 +40,7 @@ import java.nio.charset.Charset;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Map;
+import jcrapi2.response.RawResponse;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -46,6 +48,8 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 class Crawler {
+
+  private static final ThreadLocal<RawResponse> RESPONSE = new ThreadLocal<>();
 
   private final HttpClientFactory httpClientFactory;
 
@@ -74,6 +78,7 @@ class Crawler {
     logResponse(response);
     StatusLine statusLine = response.getStatusLine();
     if (statusLine.getStatusCode() != SC_OK) {
+      setLastResponse(null, response);
       throw new CrawlerException(statusLine);
     }
     StringBuilder content = new StringBuilder();
@@ -85,7 +90,20 @@ class Crawler {
       }
     }
     log.info("    response content: {}", content);
+    setLastResponse(content.toString(), response);
     return content.toString();
+  }
+
+  private static void setLastResponse(String result, HttpResponse response) {
+    RawResponse rawResponse = new RawResponse();
+    rawResponse.setRaw(result);
+    if (isNotEmpty(response.getAllHeaders())) {
+      rawResponse.getResponseHeaders().clear();
+      for (Header header : response.getAllHeaders()) {
+        rawResponse.getResponseHeaders().put(header.getName().toLowerCase(), header.getValue());
+      }
+    }
+    RESPONSE.set(rawResponse);
   }
 
   private static void logResponse(HttpResponse httpResponse) {
@@ -147,6 +165,10 @@ class Crawler {
       log.info("    request header: {}={}", key, value);
       httpMessage.addHeader(key, value);
     });
+  }
+
+  public RawResponse getLastRawResponse() {
+    return RESPONSE.get();
   }
 
 }

@@ -40,6 +40,7 @@ import jcrapi2.response.GetPlayerResponse;
 import jcrapi2.response.GetPlayerUpcomingChestsResponse;
 import jcrapi2.response.GetTournamentResponse;
 import jcrapi2.response.GetTournamentsResponse;
+import jcrapi2.response.RawResponse;
 
 /**
  * @author Michael Lieshoff
@@ -161,6 +162,10 @@ public class Api {
     } catch (IOException e) {
       throw new ApiException(e);
     }
+  }
+
+  public RawResponse getLastRawResponse() {
+    return createClient().getLastRawResponse();
   }
 
 }

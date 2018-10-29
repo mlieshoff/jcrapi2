@@ -17,6 +17,7 @@
 package jcrapi2;
 
 import static org.apache.http.HttpHeaders.AUTHORIZATION;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.mock;
@@ -38,6 +39,7 @@ import jcrapi2.request.GetPlayerRequest;
 import jcrapi2.request.GetPlayerUpcomingChestsRequest;
 import jcrapi2.request.GetTournamentRequest;
 import jcrapi2.request.GetTournamentsRequest;
+import jcrapi2.response.RawResponse;
 
 /**
  * @author Michael Lieshoff
@@ -177,6 +179,13 @@ class ClientTest {
     when(crawler.get("lala/tournaments/%s", createHeaders(), getTournamentRequest.getQueryParameters(),
         getTournamentRequest.getRestParameters())).thenReturn("{}");
     assertNotNull(createClient().getTournament(getTournamentRequest));
+  }
+
+  @Test
+  void getLastRawResponse_whenCalled_thenReturnLastRawResponse() throws Exception {
+    RawResponse rawResponse = new RawResponse();
+    when(crawler.getLastRawResponse()).thenReturn(rawResponse);
+    assertEquals(rawResponse, createClient().getLastRawResponse());
   }
 
 }

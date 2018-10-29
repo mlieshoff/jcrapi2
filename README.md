@@ -97,6 +97,14 @@ GetTournamentsResponse getTournamentsResponse = api.getTournaments(GetTournament
 );
 ```
 
+```java
+// get thread safe last response object from last request 
+RawResponse rawResponse = api.getLastRawResponse();
+
+String raw = rawResponse.getRaw();
+Map<String, String> responseHeaders = rawResponse.getResponseHeaders();
+```
+
 ## How to bind the bintray repository ##
 
 ```xml

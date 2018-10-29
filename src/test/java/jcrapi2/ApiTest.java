@@ -43,6 +43,7 @@ import jcrapi2.response.GetClanWarLogResponse;
 import jcrapi2.response.GetClansResponse;
 import jcrapi2.response.GetPlayerResponse;
 import jcrapi2.response.GetPlayerUpcomingChestsResponse;
+import jcrapi2.response.RawResponse;
 
 /**
  * @author Michael Lieshoff
@@ -306,6 +307,13 @@ class ApiTest {
     } catch (ApiException e) {
       assertEquals(SC_NOT_FOUND, e.getCode());
     }
+  }
+
+  @Test
+  public void getLastRawResponse_whenCalled_theReturnLastRawResponse() throws Exception {
+    RawResponse rawResponse = new RawResponse();
+    when(client.getLastRawResponse()).thenReturn(rawResponse);
+    assertEquals(rawResponse, api.getLastRawResponse());
   }
 
 }

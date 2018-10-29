@@ -43,6 +43,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
+import jcrapi2.response.RawResponse;
 
 /**
  * @author Michael Lieshoff
@@ -182,5 +183,22 @@ class CrawlerTest {
         () -> defectCrawler.get("the-url/%s/end", createHeaders(), null, singletonList("a+b")));
   }
 
+  @Test
+  public void getLastRawResponse_whenCalled_shouldReturnLastRawResponse() throws IOException {
+    String expectedResult = "break-out-prison";
+    when(httpClientFactory.create()).thenReturn(httpClient);
+    HttpResponse
+        httpResponse =
+        new BasicHttpResponse(new BasicStatusLine(new ProtocolVersion("http", 100, 1), 200, ""));
+    httpResponse.setEntity(new StringEntity(expectedResult));
+    httpResponse.addHeader("hello", "world");
+    when(httpClient.execute(argThat(getEncodingParameterMatcher()))).thenReturn(httpResponse);
+    RawResponse rawResponse = new RawResponse();
+    rawResponse.setRaw(expectedResult);
+    rawResponse.getResponseHeaders().put("hello", "world");
+    assertEquals(expectedResult, new Crawler(httpClientFactory).get("the-url", createHeaders(),
+        ImmutableMap.<String, String>builder().put("param", "a+b").put("key", "abc").build()));
+    assertEquals(rawResponse, new Crawler(httpClientFactory).getLastRawResponse());
+  }
 
 }

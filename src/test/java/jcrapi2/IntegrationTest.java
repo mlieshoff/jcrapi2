@@ -32,6 +32,7 @@ import jcrapi2.request.GetClansRequest;
 import jcrapi2.request.GetPlayerBattleLogRequest;
 import jcrapi2.request.GetPlayerRequest;
 import jcrapi2.request.GetPlayerUpcomingChestsRequest;
+import jcrapi2.request.GetTournamentRequest;
 import jcrapi2.request.GetTournamentsRequest;
 import jcrapi2.response.GetClanCurrentWarResponse;
 import jcrapi2.response.GetClanMembersResponse;
@@ -41,6 +42,7 @@ import jcrapi2.response.GetClansResponse;
 import jcrapi2.response.GetPlayerBattleLogResponse;
 import jcrapi2.response.GetPlayerResponse;
 import jcrapi2.response.GetPlayerUpcomingChestsResponse;
+import jcrapi2.response.GetTournamentResponse;
 import jcrapi2.response.GetTournamentsResponse;
 
 /**
@@ -219,6 +221,24 @@ class IntegrationTest {
   @Test
   void getTournaments_whenWithWrongUrl_thenThrow() throws Exception {
     assertThrows(ApiException.class, () -> doGetTournaments("lala2"));
+  }
+
+  @Test
+  void getTournament_whenWithValidParameters_thenReturnResponse() throws Exception {
+    doGetTournament(API_KEY);
+  }
+
+  private static void doGetTournament(String apiKey) {
+    GetTournamentResponse
+        actual =
+        new Api(URL, apiKey).getTournament(GetTournamentRequest.builder("tournamentTag").build());
+    assertNotNull(actual);
+    actual.getItems().forEach(Assertions::assertNotNull);
+  }
+
+  @Test
+  void getTournament_whenWithWrongUrl_thenThrow() throws Exception {
+    assertThrows(ApiException.class, () -> doGetTournament("lala2"));
   }
 
 }

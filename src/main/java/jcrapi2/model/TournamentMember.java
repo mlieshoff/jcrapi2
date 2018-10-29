@@ -14,29 +14,33 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jcrapi2;
+package jcrapi2.model;
 
-import java.io.IOException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.annotation.Generated;
+import com.google.gson.annotations.SerializedName;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
-/**
- * @author Michael Lieshoff
- */
-public class TestTournamentsServlet extends TestJsonFileServlet {
+@Generated("org.mili.generator")
+@Getter
+@Setter
+@ToString
+public class TournamentMember {
 
-  private static final long serialVersionUID = 2223554163029355420L;
+  @SerializedName("tag")
+  private String tag;
 
-  @Override
-  protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-    String parameter = getRestTagParameter(req);
-    String filename;
-    if ("tournaments".equals(parameter)) {
-      filename = "src/test/resources/tournaments.json";
-    } else {
-      filename = "src/test/resources/tournament.json";
-    }
-    doGet(filename, req, resp);
-  }
+  @SerializedName("name")
+  private String name;
+
+  @SerializedName("score")
+  private int score;
+
+  @SerializedName("rank")
+  private int rank;
+
+  @SerializedName("clan")
+  private TournamentMemberClan clan;
 
 }

@@ -14,29 +14,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jcrapi2;
+package jcrapi2.request;
 
-import java.io.IOException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import java.util.List;
+import lombok.Builder;
+import lombok.Getter;
 
 /**
  * @author Michael Lieshoff
  */
-public class TestTournamentsServlet extends TestJsonFileServlet {
+@Getter
+public class GetTournamentRequest extends PageableRequest {
 
-  private static final long serialVersionUID = 2223554163029355420L;
+  private final String tournamentTag;
+
+  @Builder
+  private GetTournamentRequest(int limit, String after, String before, String tournamentTag) {
+    super(limit, after, before);
+    this.tournamentTag = tournamentTag;
+  }
+
+  public static GetTournamentRequest.GetTournamentRequestBuilder builder(String tournamentTag) {
+    return new GetTournamentRequest.GetTournamentRequestBuilder().tournamentTag(tournamentTag);
+  }
 
   @Override
-  protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-    String parameter = getRestTagParameter(req);
-    String filename;
-    if ("tournaments".equals(parameter)) {
-      filename = "src/test/resources/tournaments.json";
-    } else {
-      filename = "src/test/resources/tournament.json";
-    }
-    doGet(filename, req, resp);
+  public List<String> getRestParameters() {
+    List<String> list = super.getRestParameters();
+    list.add(tournamentTag);
+    return list;
   }
 
 }

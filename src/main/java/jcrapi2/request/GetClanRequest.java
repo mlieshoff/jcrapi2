@@ -20,6 +20,8 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import java.util.List;
+import jcrapi2.response.Callback;
+import jcrapi2.response.GetClanResponse;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -27,12 +29,13 @@ import lombok.Getter;
  * @author Michael Lieshoff
  */
 @Getter
-public class GetClanRequest extends Request {
+public class GetClanRequest extends Request<GetClanResponse> {
 
   private final String clanTag;
 
   @Builder
-  private GetClanRequest(String clanTag) {
+  private GetClanRequest(Callback<GetClanResponse> callback, String clanTag) {
+    super(callback);
     checkNotNull(clanTag);
     checkArgument(!clanTag.isEmpty());
     this.clanTag = clanTag;

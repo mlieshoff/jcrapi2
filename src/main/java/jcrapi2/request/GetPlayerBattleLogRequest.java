@@ -20,6 +20,8 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import java.util.List;
+import jcrapi2.response.Callback;
+import jcrapi2.response.GetPlayerBattleLogResponse;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -27,12 +29,13 @@ import lombok.Getter;
  * @author Michael Lieshoff
  */
 @Getter
-public class GetPlayerBattleLogRequest extends Request {
+public class GetPlayerBattleLogRequest extends Request<GetPlayerBattleLogResponse> {
 
   private final String playerTag;
 
   @Builder
-  private GetPlayerBattleLogRequest(String playerTag) {
+  private GetPlayerBattleLogRequest(Callback<GetPlayerBattleLogResponse> callback, String playerTag) {
+    super(callback);
     checkNotNull(playerTag);
     checkArgument(!playerTag.isEmpty());
     this.playerTag = playerTag;

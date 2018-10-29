@@ -18,10 +18,16 @@ package jcrapi2;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
+import static com.google.common.util.concurrent.MoreExecutors.listeningDecorator;
+import static java.lang.Thread.NORM_PRIORITY;
+import static java.util.concurrent.Executors.newFixedThreadPool;
 import static org.apache.http.HttpHeaders.AUTHORIZATION;
 
 import com.google.common.collect.ImmutableMap;
+import com.google.common.util.concurrent.ListeningExecutorService;
 import com.google.gson.Gson;
+
+import org.apache.commons.lang3.concurrent.BasicThreadFactory;
 
 import java.io.IOException;
 import java.util.Map;
@@ -54,6 +60,14 @@ import jcrapi2.response.RawResponse;
  */
 public class Client {
 
+  private static final ListeningExecutorService EXECUTOR_SERVICE = listeningDecorator(
+      newFixedThreadPool(8, new BasicThreadFactory.Builder()
+          .daemon(true)
+          .namingPattern("jcrapi2.async")
+          .priority(NORM_PRIORITY)
+          .build())
+  );
+
   private final String url;
   private final String apiKey;
 
@@ -79,6 +93,21 @@ public class Client {
   private <T extends IResponse> T singleObjectFromJson(String nameOfRequest, String part, Request request,
                                                        Class<T> responseClass) throws IOException {
     checkNotNull(request, nameOfRequest);
+    if (request.getCallback() == null) {
+      return toJson(part, request, responseClass);
+    } else {
+      EXECUTOR_SERVICE.submit(() -> {
+        try {
+          request.getCallback().onResponse(toJson(part, request, responseClass));
+        } catch (Exception e) {
+          request.getCallback().onException(e);
+        }
+      });
+      return null;
+    }
+  }
+
+  private <T extends IResponse> T toJson(String part, Request request, Class<T> responseClass) throws IOException {
     String json = get(createUrl(part), request);
     return new Gson().fromJson(json, responseClass);
   }

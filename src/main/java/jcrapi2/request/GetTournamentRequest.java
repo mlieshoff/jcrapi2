@@ -17,6 +17,8 @@
 package jcrapi2.request;
 
 import java.util.List;
+import jcrapi2.response.Callback;
+import jcrapi2.response.GetTournamentResponse;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -24,13 +26,13 @@ import lombok.Getter;
  * @author Michael Lieshoff
  */
 @Getter
-public class GetTournamentRequest extends PageableRequest {
+public class GetTournamentRequest extends PageableRequest<GetTournamentResponse> {
 
   private final String tournamentTag;
 
   @Builder
-  private GetTournamentRequest(int limit, String after, String before, String tournamentTag) {
-    super(limit, after, before);
+  private GetTournamentRequest(Callback<GetTournamentResponse> callback, int limit, String after, String before, String tournamentTag) {
+    super(callback, limit, after, before);
     this.tournamentTag = tournamentTag;
   }
 

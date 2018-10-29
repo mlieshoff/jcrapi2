@@ -23,6 +23,8 @@ import static org.apache.commons.lang3.StringUtils.isNotBlank;
 import static org.apache.commons.lang3.StringUtils.isNotEmpty;
 
 import java.util.Map;
+import jcrapi2.response.Callback;
+import jcrapi2.response.GetClansResponse;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -30,7 +32,7 @@ import lombok.Getter;
  * @author Michael Lieshoff
  */
 @Getter
-public class GetClansRequest extends PageableRequest {
+public class GetClansRequest extends PageableRequest<GetClansResponse> {
 
   static final String QUERY_PARAM_NAME = "name";
   static final String QUERY_PARAM_LOCATION_ID = "locationId";
@@ -46,9 +48,9 @@ public class GetClansRequest extends PageableRequest {
   private final int minScore;
 
   @Builder
-  private GetClansRequest(int limit, String after, String before, String name, String locationId, int minMembers,
-                          int maxMembers, int minScore) {
-    super(limit, after, before);
+  private GetClansRequest(Callback<GetClansResponse> callback, int limit, String after, String before, String name,
+                          String locationId, int minMembers, int maxMembers, int minScore) {
+    super(callback, limit, after, before);
     if (name != null) {
       checkArgument(isNotEmpty(name));
       checkArgument(name.length() > 2);

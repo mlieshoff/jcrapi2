@@ -20,6 +20,8 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import java.util.List;
+import jcrapi2.response.Callback;
+import jcrapi2.response.GetPlayerUpcomingChestsResponse;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -27,13 +29,13 @@ import lombok.Getter;
  * @author Michael Lieshoff
  */
 @Getter
-public class GetPlayerUpcomingChestsRequest extends PageableRequest {
+public class GetPlayerUpcomingChestsRequest extends PageableRequest<GetPlayerUpcomingChestsResponse> {
 
   private final String playerTag;
 
   @Builder
-  private GetPlayerUpcomingChestsRequest(int limit, String after, String before, String playerTag) {
-    super(limit, after, before);
+  private GetPlayerUpcomingChestsRequest(Callback<GetPlayerUpcomingChestsResponse> callback, int limit, String after, String before, String playerTag) {
+    super(callback, limit, after, before);
     checkNotNull(playerTag, "playerTag");
     checkArgument(!playerTag.isEmpty(), "playerTag");
     this.playerTag = playerTag;

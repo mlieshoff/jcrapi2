@@ -1,0 +1,65 @@
+[
+  {
+    "type": "string",
+    "battleTime": "string",
+    "arena": {
+      "id": 0,
+      "name": "string"
+    },
+    "gameMode": {
+      "id": 0,
+      "name": "string"
+    },
+    "deckSelection": "string",
+    "team": [
+      {
+        "tag": "string",
+        "name": "string",
+        "startingTrophies": 0,
+        "trophyChange": 0,
+        "crowns": 0,
+        "clan": {
+          "tag": "string",
+          "name": "string",
+          "badgeId": 0
+        },
+        "cards": [
+          {
+            "name": "string",
+            "level": 0,
+            "maxLevel": 0,
+            "iconUrls":
+              {
+                "medium": "string"
+              }
+          }
+        ]
+      }
+    ],
+    "opponent": [
+      {
+        "tag": "string",
+        "name": "string",
+        "startingTrophies": 0,
+        "trophyChange": 0,
+        "crowns": 0,
+        "clan": {
+          "tag": "string",
+          "name": "string",
+          "badgeId": 0
+        },
+        "cards": [
+          {
+            "name": "string",
+            "level": 0,
+            "maxLevel": 0,
+            "iconUrls":
+              {
+                "medium": "string"
+              }
+          }
+        ]
+      }
+    ]
+  }
+]

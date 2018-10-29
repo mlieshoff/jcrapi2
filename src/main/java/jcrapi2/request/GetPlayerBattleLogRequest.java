@@ -14,31 +14,39 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jcrapi2;
+package jcrapi2.request;
 
-import java.io.IOException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Preconditions.checkNotNull;
+
+import java.util.List;
+import lombok.Builder;
+import lombok.Getter;
 
 /**
  * @author Michael Lieshoff
  */
-public class TestPlayersServlet extends TestJsonFileServlet {
+@Getter
+public class GetPlayerBattleLogRequest extends Request {
 
-  private static final long serialVersionUID = 8489017515923544994L;
+  private final String playerTag;
+
+  @Builder
+  private GetPlayerBattleLogRequest(String playerTag) {
+    checkNotNull(playerTag);
+    checkArgument(!playerTag.isEmpty());
+    this.playerTag = playerTag;
+  }
+
+  public static GetPlayerBattleLogRequest.GetPlayerBattleLogRequestBuilder builder(String clanTag) {
+    return new GetPlayerBattleLogRequest.GetPlayerBattleLogRequestBuilder().playerTag(clanTag);
+  }
 
   @Override
-  protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-    String parameter = getRestTagParameter(req);
-    String filename;
-    if ("upcomingchests".equals(parameter)) {
-      filename = "src/test/resources/playerUpcomingChests.json";
-    } else if ("battlelog".equals(parameter)) {
-      filename = "src/test/resources/playerBattleLog.json";
-    } else {
-      filename = "src/test/resources/player.json";
-    }
-    doGet(filename, req, resp);
+  public List<String> getRestParameters() {
+    List<String> list = super.getRestParameters();
+    list.add(playerTag);
+    return list;
   }
 
 }

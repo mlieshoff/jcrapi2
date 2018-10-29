@@ -25,6 +25,7 @@ import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
+import jcrapi2.request.GetPlayerBattleLogRequest;
 import jcrapi2.request.GetPlayerRequest;
 import jcrapi2.request.GetPlayerUpcomingChestsRequest;
 import jcrapi2.response.GetClanCurrentWarResponse;
@@ -32,6 +33,7 @@ import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClanWarLogResponse;
 import jcrapi2.response.GetClansResponse;
+import jcrapi2.response.GetPlayerBattleLogResponse;
 import jcrapi2.response.GetPlayerResponse;
 import jcrapi2.response.GetPlayerUpcomingChestsResponse;
 
@@ -125,6 +127,15 @@ public class Api {
     checkNotNull(getPlayerUpcomingChestsRequest, "getPlayerUpcomingChestsRequest");
     try {
       return createClient().getPlayerUpcomingChests(getPlayerUpcomingChestsRequest);
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+  }
+
+  public GetPlayerBattleLogResponse getPlayerBattleLog(GetPlayerBattleLogRequest getPlayerBattleLogRequest) {
+    checkNotNull(getPlayerBattleLogRequest, "getPlayerBattleLogRequest");
+    try {
+      return createClient().getPlayerBattleLog(getPlayerBattleLogRequest);
     } catch (IOException e) {
       throw new ApiException(e);
     }

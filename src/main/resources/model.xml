@@ -187,4 +187,79 @@
         <member name="name" type="String"/>
     </class>
 
+    <!-- get player battle logs -->
+
+    <class name="PlayerBattleLog">
+        <member name="type" type="String"/>
+        <member name="battleTime" type="String"/>
+        <member name="arena" type="PlayerBattleLogArena"/>
+        <member name="gameMode" type="PlayerBattleLogGameMode"/>
+        <member name="deckSelection" type="String"/>
+        <member name="team" type="list(PlayerBattleLogTeam)"/>
+    </class>
+
+    <class name="PlayerBattleLogArena">
+        <member name="id" type="int"/>
+        <member name="name" type="String"/>
+    </class>
+
+    <class name="PlayerBattleLogGameMode">
+        <member name="id" type="int"/>
+        <member name="name" type="String"/>
+    </class>
+
+    <class name="PlayerBattleLogTeam">
+        <member name="tag" type="String"/>
+        <member name="name" type="String"/>
+        <member name="startingTrophies" type="int"/>
+        <member name="trophyChange" type="int"/>
+        <member name="crowns" type="int"/>
+        <member name="clan" type="PlayerBattleLogTeamClan"/>
+        <member name="cards" type="list(PlayerBattleLogTeamCard)"/>
+    </class>
+
+    <class name="PlayerBattleLogTeamClan">
+        <member name="tag" type="String"/>
+        <member name="name" type="String"/>
+        <member name="badgeId" type="int"/>
+    </class>
+
+    <class name="PlayerBattleLogTeamCard">
+        <member name="name" type="String"/>
+        <member name="level" type="int"/>
+        <member name="maxLevel" type="int"/>
+        <member name="iconUrls" type="PlayerBattleLogTeamCardIconUrls"/>
+    </class>
+
+    <class name="PlayerBattleLogTeamCardIconUrls">
+        <member name="medium" type="String"/>
+    </class>
+
+    <class name="PlayerBattleLogOpponent">
+        <member name="tag" type="String"/>
+        <member name="name" type="String"/>
+        <member name="startingTrophies" type="int"/>
+        <member name="trophyChange" type="int"/>
+        <member name="crowns" type="int"/>
+        <member name="clan" type="PlayerBattleLogOpponentClan"/>
+        <member name="cards" type="PlayerBattleLogOpponentCard"/>
+    </class>
+
+    <class name="PlayerBattleLogOpponentClan">
+        <member name="tag" type="String"/>
+        <member name="name" type="String"/>
+        <member name="badgeId" type="int"/>
+    </class>
+
+    <class name="PlayerBattleLogOpponentCard">
+        <member name="name" type="String"/>
+        <member name="level" type="int"/>
+        <member name="maxLevel" type="int"/>
+        <member name="iconUrls" type="PlayerBattleLogOpponentCardIconUrls"/>
+    </class>
+
+    <class name="PlayerBattleLogOpponentCardIconUrls">
+        <member name="medium" type="String"/>
+    </class>
+
 </model>

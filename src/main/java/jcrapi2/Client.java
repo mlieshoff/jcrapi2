@@ -33,6 +33,7 @@ import jcrapi2.request.GetClansRequest;
 import jcrapi2.request.GetPlayerBattleLogRequest;
 import jcrapi2.request.GetPlayerRequest;
 import jcrapi2.request.GetPlayerUpcomingChestsRequest;
+import jcrapi2.request.GetTournamentsRequest;
 import jcrapi2.request.Request;
 import jcrapi2.response.GetClanCurrentWarResponse;
 import jcrapi2.response.GetClanMembersResponse;
@@ -42,6 +43,7 @@ import jcrapi2.response.GetClansResponse;
 import jcrapi2.response.GetPlayerBattleLogResponse;
 import jcrapi2.response.GetPlayerResponse;
 import jcrapi2.response.GetPlayerUpcomingChestsResponse;
+import jcrapi2.response.GetTournamentsResponse;
 import jcrapi2.response.IResponse;
 
 /**
@@ -130,6 +132,12 @@ public class Client {
       throws IOException {
     return singleObjectFromJson("getPlayerBattleLogRequest", "players/%s/battlelog",
         getPlayerBattleLogRequest, GetPlayerBattleLogResponse.class);
+  }
+
+  GetTournamentsResponse getTournaments(GetTournamentsRequest getTournamentsRequest)
+      throws IOException {
+    return singleObjectFromJson("getTournamentsRequest", "tournaments", getTournamentsRequest,
+        GetTournamentsResponse.class);
   }
 
 }

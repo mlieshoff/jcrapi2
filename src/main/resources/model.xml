@@ -262,4 +262,19 @@
         <member name="medium" type="String"/>
     </class>
 
+    <!-- get tournaments -->
+
+    <class name="SearchedTournament">
+        <member name="tag" type="String"/>
+        <member name="type" type="String"/>
+        <member name="status" type="String"/>
+        <member name="creatorTag" type="String"/>
+        <member name="name" type="String"/>
+        <member name="description" type="String"/>
+        <member name="capacity" type="int"/>
+        <member name="preparationDuration" type="int"/>
+        <member name="duration" type="int"/>
+        <member name="createdTime" type="String"/>
+    </class>
+
 </model>

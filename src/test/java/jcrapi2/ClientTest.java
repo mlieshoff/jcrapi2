@@ -36,6 +36,7 @@ import jcrapi2.request.GetClansRequest;
 import jcrapi2.request.GetPlayerBattleLogRequest;
 import jcrapi2.request.GetPlayerRequest;
 import jcrapi2.request.GetPlayerUpcomingChestsRequest;
+import jcrapi2.request.GetTournamentsRequest;
 
 /**
  * @author Michael Lieshoff
@@ -159,6 +160,14 @@ class ClientTest {
         .get("lala/players/%s/battlelog", createHeaders(), getPlayerBattleLogRequest.getQueryParameters(),
             getPlayerBattleLogRequest.getRestParameters())).thenReturn("[{}]");
     assertNotNull(createClient().getPlayerBattleLog(getPlayerBattleLogRequest));
+  }
+
+  @Test
+  void getTournaments_whenWithRequest_thenGetResponse() throws Exception {
+    GetTournamentsRequest getTournamentsRequest = GetTournamentsRequest.builder().build();
+    when(crawler.get("lala/tournaments", createHeaders(), getTournamentsRequest.getQueryParameters(),
+        getTournamentsRequest.getRestParameters())).thenReturn("{}");
+    assertNotNull(createClient().getTournaments(getTournamentsRequest));
   }
 
 }

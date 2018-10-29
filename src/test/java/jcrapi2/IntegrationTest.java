@@ -32,6 +32,7 @@ import jcrapi2.request.GetClansRequest;
 import jcrapi2.request.GetPlayerBattleLogRequest;
 import jcrapi2.request.GetPlayerRequest;
 import jcrapi2.request.GetPlayerUpcomingChestsRequest;
+import jcrapi2.request.GetTournamentsRequest;
 import jcrapi2.response.GetClanCurrentWarResponse;
 import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
@@ -40,6 +41,7 @@ import jcrapi2.response.GetClansResponse;
 import jcrapi2.response.GetPlayerBattleLogResponse;
 import jcrapi2.response.GetPlayerResponse;
 import jcrapi2.response.GetPlayerUpcomingChestsResponse;
+import jcrapi2.response.GetTournamentsResponse;
 
 /**
  * @author Michael Lieshoff
@@ -60,6 +62,7 @@ class IntegrationTest {
     jettyServer = new JettyServer(PORT, '/' + CONTEXT);
     jettyServer.addServlet('/' + APP + "/clans/*", new TestClansServlet());
     jettyServer.addServlet('/' + APP + "/players/*", new TestPlayersServlet());
+    jettyServer.addServlet('/' + APP + "/tournaments/*", new TestTournamentsServlet());
     jettyServer.start();
   }
 
@@ -198,6 +201,24 @@ class IntegrationTest {
   @Test
   void getPlayerBattleLog_whenWithWrongUrl_thenThrow() throws Exception {
     assertThrows(ApiException.class, () -> doGetPlayerBattleLog("lala2"));
+  }
+
+  @Test
+  void getTournaments_whenWithValidParameters_thenReturnResponse() throws Exception {
+    doGetTournaments(API_KEY);
+  }
+
+  private static void doGetTournaments(String apiKey) {
+    GetTournamentsResponse
+        actual =
+        new Api(URL, apiKey).getTournaments(GetTournamentsRequest.builder().name("name").build());
+    assertNotNull(actual);
+    actual.getItems().forEach(Assertions::assertNotNull);
+  }
+
+  @Test
+  void getTournaments_whenWithWrongUrl_thenThrow() throws Exception {
+    assertThrows(ApiException.class, () -> doGetTournaments("lala2"));
   }
 
 }

@@ -29,6 +29,7 @@ import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
+import jcrapi2.request.GetPlayerBattleLogRequest;
 import jcrapi2.request.GetPlayerRequest;
 import jcrapi2.request.GetPlayerUpcomingChestsRequest;
 import jcrapi2.response.GetClanCurrentWarResponse;
@@ -36,6 +37,7 @@ import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClanWarLogResponse;
 import jcrapi2.response.GetClansResponse;
+import jcrapi2.response.GetPlayerBattleLogResponse;
 import jcrapi2.response.GetPlayerResponse;
 import jcrapi2.response.GetPlayerUpcomingChestsResponse;
 
@@ -179,6 +181,23 @@ class IntegrationTest {
   @Test
   void getPlayerUpcomingChests_whenWithWrongUrl_thenThrow() throws Exception {
     assertThrows(ApiException.class, () -> doGetPlayerUpcomingChests("lala2"));
+  }
+
+  @Test
+  void getPlayerBattleLog_whenWithValidParameters_thenReturnResponse() throws Exception {
+    doGetPlayerBattleLog(API_KEY);
+  }
+
+  private static void doGetPlayerBattleLog(String apiKey) {
+    GetPlayerBattleLogResponse
+        actual =
+        new Api(URL, apiKey).getPlayerBattleLog(GetPlayerBattleLogRequest.builder("playerTag").build());
+    assertNotNull(actual);
+  }
+
+  @Test
+  void getPlayerBattleLog_whenWithWrongUrl_thenThrow() throws Exception {
+    assertThrows(ApiException.class, () -> doGetPlayerBattleLog("lala2"));
   }
 
 }

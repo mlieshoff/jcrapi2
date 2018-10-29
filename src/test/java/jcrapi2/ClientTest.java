@@ -33,6 +33,7 @@ import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
+import jcrapi2.request.GetPlayerBattleLogRequest;
 import jcrapi2.request.GetPlayerRequest;
 import jcrapi2.request.GetPlayerUpcomingChestsRequest;
 
@@ -147,6 +148,17 @@ class ClientTest {
         .get("lala/players/%s/upcomingchests", createHeaders(), getPlayerUpcomingChestsRequest.getQueryParameters(),
             getPlayerUpcomingChestsRequest.getRestParameters())).thenReturn("{}");
     assertNotNull(createClient().getPlayerUpcomingChests(getPlayerUpcomingChestsRequest));
+  }
+
+  @Test
+  void getPlayerBattleLog_whenWithRequest_thenGetResponse() throws Exception {
+    GetPlayerBattleLogRequest
+        getPlayerBattleLogRequest =
+        GetPlayerBattleLogRequest.builder(PLAYER_TAG).build();
+    when(crawler
+        .get("lala/players/%s/battlelog", createHeaders(), getPlayerBattleLogRequest.getQueryParameters(),
+            getPlayerBattleLogRequest.getRestParameters())).thenReturn("[{}]");
+    assertNotNull(createClient().getPlayerBattleLog(getPlayerBattleLogRequest));
   }
 
 }

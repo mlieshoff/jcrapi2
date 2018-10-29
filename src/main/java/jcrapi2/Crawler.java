@@ -84,6 +84,7 @@ class Crawler {
         content.append(line);
       }
     }
+    log.info("    response content: {}", content);
     return content.toString();
   }
 

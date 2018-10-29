@@ -14,31 +14,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jcrapi2;
+package jcrapi2.response;
 
-import java.io.IOException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import com.google.gson.annotations.SerializedName;
+
+import java.util.ArrayList;
+import jcrapi2.model.PlayerBattleLog;
+import lombok.Data;
 
 /**
  * @author Michael Lieshoff
  */
-public class TestPlayersServlet extends TestJsonFileServlet {
+@Data
+public class GetPlayerBattleLogResponse extends ArrayList<PlayerBattleLog> implements IResponse {
 
-  private static final long serialVersionUID = 8489017515923544994L;
+  @SerializedName("reason")
+  private String reason;
 
-  @Override
-  protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-    String parameter = getRestTagParameter(req);
-    String filename;
-    if ("upcomingchests".equals(parameter)) {
-      filename = "src/test/resources/playerUpcomingChests.json";
-    } else if ("battlelog".equals(parameter)) {
-      filename = "src/test/resources/playerBattleLog.json";
-    } else {
-      filename = "src/test/resources/player.json";
-    }
-    doGet(filename, req, resp);
-  }
+  @SerializedName("message")
+  private String message;
 
 }

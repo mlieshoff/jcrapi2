@@ -28,6 +28,7 @@ import jcrapi2.request.GetClansRequest;
 import jcrapi2.request.GetPlayerBattleLogRequest;
 import jcrapi2.request.GetPlayerRequest;
 import jcrapi2.request.GetPlayerUpcomingChestsRequest;
+import jcrapi2.request.GetTournamentsRequest;
 import jcrapi2.response.GetClanCurrentWarResponse;
 import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
@@ -36,6 +37,7 @@ import jcrapi2.response.GetClansResponse;
 import jcrapi2.response.GetPlayerBattleLogResponse;
 import jcrapi2.response.GetPlayerResponse;
 import jcrapi2.response.GetPlayerUpcomingChestsResponse;
+import jcrapi2.response.GetTournamentsResponse;
 
 /**
  * @author Michael Lieshoff
@@ -136,6 +138,15 @@ public class Api {
     checkNotNull(getPlayerBattleLogRequest, "getPlayerBattleLogRequest");
     try {
       return createClient().getPlayerBattleLog(getPlayerBattleLogRequest);
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+  }
+
+  public GetTournamentsResponse getTournaments(GetTournamentsRequest getTournamentsRequest) {
+    checkNotNull(getTournamentsRequest, "getTournamentsRequest");
+    try {
+      return createClient().getTournaments(getTournamentsRequest);
     } catch (IOException e) {
       throw new ApiException(e);
     }

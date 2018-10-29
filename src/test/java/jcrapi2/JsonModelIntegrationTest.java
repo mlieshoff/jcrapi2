@@ -33,6 +33,7 @@ import jcrapi2.response.GetClansResponse;
 import jcrapi2.response.GetPlayerBattleLogResponse;
 import jcrapi2.response.GetPlayerResponse;
 import jcrapi2.response.GetPlayerUpcomingChestsResponse;
+import jcrapi2.response.GetTournamentsResponse;
 
 class JsonModelIntegrationTest {
 
@@ -97,6 +98,14 @@ class JsonModelIntegrationTest {
     GetPlayerBattleLogResponse object = GSON.fromJson(json, GetPlayerBattleLogResponse.class);
     assertNotNull(object);
     object.forEach(Assertions::assertNotNull);
+  }
+
+  @Test
+  void fromJson_whenForGetTournaments_thenResolve() throws Exception {
+    String json = readFileToString(new File("src/test/resources/tournaments.json"));
+    GetTournamentsResponse object = GSON.fromJson(json, GetTournamentsResponse.class);
+    assertNotNull(object);
+    object.getItems().forEach(Assertions::assertNotNull);
   }
 
 }

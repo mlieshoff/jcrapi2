@@ -31,6 +31,7 @@ import jcrapi2.request.GetClansRequest;
 import jcrapi2.request.GetPlayerBattleLogRequest;
 import jcrapi2.request.GetPlayerRequest;
 import jcrapi2.request.GetPlayerUpcomingChestsRequest;
+import jcrapi2.request.GetTournamentsRequest;
 import jcrapi2.response.GetClanCurrentWarResponse;
 import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
@@ -39,6 +40,7 @@ import jcrapi2.response.GetClansResponse;
 import jcrapi2.response.GetPlayerBattleLogResponse;
 import jcrapi2.response.GetPlayerResponse;
 import jcrapi2.response.GetPlayerUpcomingChestsResponse;
+import jcrapi2.response.GetTournamentsResponse;
 
 /**
  * @author Michael Lieshoff
@@ -141,6 +143,18 @@ class EndToEnd {
         () -> assertNotNull(getPlayerBattleLogResponse, "getPlayerBattleLogResponse"),
         () -> assertNull(getPlayerBattleLogResponse.getMessage(), "message"),
         () -> assertNull(getPlayerBattleLogResponse.getReason(), "reason")
+    );
+  }
+
+  @Test
+  void getTournaments_whenWithValidParameters_thenGetResponse() throws Exception {
+    GetTournamentsResponse
+        getTournamentsResponse =
+        api.getTournaments(GetTournamentsRequest.builder().name("de").build());
+    assertAll(
+        () -> assertNotNull(getTournamentsResponse, "getTournamentsResponse"),
+        () -> assertNull(getTournamentsResponse.getMessage(), "message"),
+        () -> assertNull(getTournamentsResponse.getReason(), "reason")
     );
   }
 

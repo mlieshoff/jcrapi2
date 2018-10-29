@@ -34,6 +34,7 @@ import jcrapi2.request.GetClansRequest;
 import jcrapi2.request.GetPlayerBattleLogRequest;
 import jcrapi2.request.GetPlayerRequest;
 import jcrapi2.request.GetPlayerUpcomingChestsRequest;
+import jcrapi2.request.GetTournamentsRequest;
 import jcrapi2.response.GetClanCurrentWarResponse;
 import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
@@ -276,6 +277,18 @@ class ApiTest {
     when(client.getPlayerBattleLog(getPlayerBattleLogRequest)).thenThrow(crawlerException);
     try {
       api.getPlayerBattleLog(getPlayerBattleLogRequest);
+      fail();
+    } catch (ApiException e) {
+      assertEquals(SC_NOT_FOUND, e.getCode());
+    }
+  }
+
+  @Test
+  void getTournaments_whenWithException_thenThrowApiException() throws Exception {
+    GetTournamentsRequest getTournamentsRequest = GetTournamentsRequest.builder().build();
+    when(client.getTournaments(getTournamentsRequest)).thenThrow(crawlerException);
+    try {
+      api.getTournaments(getTournamentsRequest);
       fail();
     } catch (ApiException e) {
       assertEquals(SC_NOT_FOUND, e.getCode());

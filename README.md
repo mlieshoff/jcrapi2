@@ -85,6 +85,18 @@ GetPlayerUpcomingChestsResponse getPlayerUpcomingChestsResponse = api.getPlayerU
 GetPlayerBattleLogResponse getPlayerBattleLogResponse = api.getPlayerUpcomingChests(GetPlayerUpcomingChestsRequest.builder("#L88P2282"));
 ```
 
+```java
+// get tournaments
+GetTournamentsResponse getTournamentsResponse = api.getTournaments(GetTournamentsRequest.builder()
+  .name("de")
+  // paging
+  .after()
+  .before()
+  .limit()
+  .build()
+);
+```
+
 ## How to bind the bintray repository ##
 
 ```xml

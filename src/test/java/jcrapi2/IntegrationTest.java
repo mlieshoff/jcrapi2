@@ -30,12 +30,14 @@ import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
 import jcrapi2.request.GetPlayerRequest;
+import jcrapi2.request.GetPlayerUpcomingChestsRequest;
 import jcrapi2.response.GetClanCurrentWarResponse;
 import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClanWarLogResponse;
 import jcrapi2.response.GetClansResponse;
 import jcrapi2.response.GetPlayerResponse;
+import jcrapi2.response.GetPlayerUpcomingChestsResponse;
 
 /**
  * @author Michael Lieshoff
@@ -159,6 +161,24 @@ class IntegrationTest {
   @Test
   void getPlayer_whenWithWrongUrl_thenThrow() throws Exception {
     assertThrows(ApiException.class, () -> doGetPlayer("lala2"));
+  }
+
+  @Test
+  void getPlayerUpcomingChests_whenWithValidParameters_thenReturnResponse() throws Exception {
+    doGetPlayerUpcomingChests(API_KEY);
+  }
+
+  private static void doGetPlayerUpcomingChests(String apiKey) {
+    GetPlayerUpcomingChestsResponse
+        actual =
+        new Api(URL, apiKey).getPlayerUpcomingChests(GetPlayerUpcomingChestsRequest.builder("playerTag").build());
+    assertNotNull(actual);
+    actual.getItems().forEach(Assertions::assertNotNull);
+  }
+
+  @Test
+  void getPlayerUpcomingChests_whenWithWrongUrl_thenThrow() throws Exception {
+    assertThrows(ApiException.class, () -> doGetPlayerUpcomingChests("lala2"));
   }
 
 }

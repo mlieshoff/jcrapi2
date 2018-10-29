@@ -34,11 +34,18 @@ import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
 import jcrapi2.request.GetPlayerRequest;
+import jcrapi2.request.GetPlayerUpcomingChestsRequest;
 
 /**
  * @author Michael Lieshoff
  */
 class ClientTest {
+
+  private static final String API_KEY = "apiKey";
+  private static final String CLAN_TAG = "clanTag";
+  private static final String NAME = "name";
+  private static final String PLAYER_TAG = "playerTag";
+  private static final String URL = "url";
 
   private CrawlerFactory crawlerFactory;
 
@@ -53,17 +60,17 @@ class ClientTest {
 
   @Test
   void construct_whenWithNullUrl_thenThrowException() throws Exception {
-    assertThrows(NullPointerException.class, () -> new Client(null, "abc", crawlerFactory));
+    assertThrows(NullPointerException.class, () -> new Client(null, API_KEY, crawlerFactory));
   }
 
   @Test
   void construct_whenWithEmptyUrl_thenThrowException() throws Exception {
-    assertThrows(IllegalArgumentException.class, () -> new Client("", "abc", crawlerFactory));
+    assertThrows(IllegalArgumentException.class, () -> new Client("", API_KEY, crawlerFactory));
   }
 
   @Test
   void construct_whenWithNullCrawlerFactory_thenThrowException() throws Exception {
-    assertThrows(NullPointerException.class, () -> new Client("abc", "abc", null));
+    assertThrows(NullPointerException.class, () -> new Client(URL, API_KEY, null));
   }
 
   @Test
@@ -72,12 +79,12 @@ class ClientTest {
   }
 
   private Client createClient() {
-    return new Client("lala/", "abc", crawlerFactory);
+    return new Client("lala/", API_KEY, crawlerFactory);
   }
 
   @Test
   void getClans_whenWithRequest_thenGetResponse() throws Exception {
-    GetClansRequest getClansRequest = GetClansRequest.builder().name("abbas").build();
+    GetClansRequest getClansRequest = GetClansRequest.builder().name(NAME).build();
     when(crawler
         .get("lala/clans", createHeaders(), getClansRequest.getQueryParameters(), getClansRequest.getRestParameters()))
         .thenReturn("{}");
@@ -85,12 +92,12 @@ class ClientTest {
   }
 
   private static Map<String, String> createHeaders() {
-    return ImmutableMap.<String, String>builder().put(AUTHORIZATION, "Bearer abc").build();
+    return ImmutableMap.<String, String>builder().put(AUTHORIZATION, "Bearer " + API_KEY).build();
   }
 
   @Test
   void getClan_whenWithRequest_thenGetResponse() throws Exception {
-    GetClanRequest getClanRequest = GetClanRequest.builder("clanTag").build();
+    GetClanRequest getClanRequest = GetClanRequest.builder(CLAN_TAG).build();
     when(crawler
         .get("lala/clans/%s", createHeaders(), getClanRequest.getQueryParameters(), getClanRequest.getRestParameters()))
         .thenReturn("{}");
@@ -99,7 +106,7 @@ class ClientTest {
 
   @Test
   void getClanMembers_whenWithRequest_thenGetResponse() throws Exception {
-    GetClanMembersRequest getClanMemberRequest = GetClanMembersRequest.builder("clanTag").build();
+    GetClanMembersRequest getClanMemberRequest = GetClanMembersRequest.builder(CLAN_TAG).build();
     when(crawler.get("lala/clans/%s/members", createHeaders(), getClanMemberRequest.getQueryParameters(),
         getClanMemberRequest.getRestParameters())).thenReturn("{}");
     assertNotNull(createClient().getClanMembers(getClanMemberRequest));
@@ -107,7 +114,7 @@ class ClientTest {
 
   @Test
   void getClanWarLog_whenWithRequest_thenGetResponse() throws Exception {
-    GetClanWarLogRequest getClanWarLogRequest = GetClanWarLogRequest.builder("clanTag").build();
+    GetClanWarLogRequest getClanWarLogRequest = GetClanWarLogRequest.builder(CLAN_TAG).build();
     when(crawler.get("lala/clans/%s/warlog", createHeaders(), getClanWarLogRequest.getQueryParameters(),
         getClanWarLogRequest.getRestParameters())).thenReturn("{}");
     assertNotNull(createClient().getClanWarLog(getClanWarLogRequest));
@@ -115,7 +122,7 @@ class ClientTest {
 
   @Test
   void getClanCurrentWar_whenWithRequest_thenGetResponse() throws Exception {
-    GetClanCurrentWarRequest getClanCurrentWarRequest = GetClanCurrentWarRequest.builder("clanTag").build();
+    GetClanCurrentWarRequest getClanCurrentWarRequest = GetClanCurrentWarRequest.builder(CLAN_TAG).build();
     when(crawler.get("lala/clans/%s/currentwar", createHeaders(), getClanCurrentWarRequest.getQueryParameters(),
         getClanCurrentWarRequest.getRestParameters())).thenReturn("{}");
     assertNotNull(createClient().getClanCurrentWar(getClanCurrentWarRequest));
@@ -123,12 +130,23 @@ class ClientTest {
 
   @Test
   void getPlayer_whenWithRequest_thenGetResponse() throws Exception {
-    GetPlayerRequest getPlayerRequest = GetPlayerRequest.builder("playerTag").build();
+    GetPlayerRequest getPlayerRequest = GetPlayerRequest.builder(PLAYER_TAG).build();
     when(crawler
         .get("lala/players/%s", createHeaders(), getPlayerRequest.getQueryParameters(),
             getPlayerRequest.getRestParameters()))
         .thenReturn("{}");
     assertNotNull(createClient().getPlayer(getPlayerRequest));
+  }
+
+  @Test
+  void getPlayerUpcomingChests_whenWithRequest_thenGetResponse() throws Exception {
+    GetPlayerUpcomingChestsRequest
+        getPlayerUpcomingChestsRequest =
+        GetPlayerUpcomingChestsRequest.builder(PLAYER_TAG).build();
+    when(crawler
+        .get("lala/players/%s/upcomingchests", createHeaders(), getPlayerUpcomingChestsRequest.getQueryParameters(),
+            getPlayerUpcomingChestsRequest.getRestParameters())).thenReturn("{}");
+    assertNotNull(createClient().getPlayerUpcomingChests(getPlayerUpcomingChestsRequest));
   }
 
 }

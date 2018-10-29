@@ -180,4 +180,11 @@
         <member name="iconUrls" type="PlayerIconUrls"/>
     </class>
 
+    <!-- get player upcomming chests -->
+
+    <class name="PlayerUpcomingChest">
+        <member name="index" type="int"/>
+        <member name="name" type="String"/>
+    </class>
+
 </model>

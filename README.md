@@ -69,6 +69,17 @@ GetClanCurrentWarResponse getClanCurrentWarResponse = api.getClanCurrentWar(GetC
 GetPlayerResponse getPlayerResponse = api.getPlayer(GetPlayerRequest.builder("#L88P2282").build());
 ```
 
+```java
+// get player upcomming chests 
+GetPlayerUpcomingChestsResponse getPlayerUpcomingChestsResponse = api.getPlayerUpcomingChests(GetPlayerUpcomingChestsRequest.builder("#L88P2282")
+  // paging
+  .after()
+  .before()
+  .limit()
+  .build()
+);
+```
+
 ## How to bind the bintray repository ##
 
 ```xml

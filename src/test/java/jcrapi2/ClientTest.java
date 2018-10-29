@@ -20,6 +20,8 @@ import static org.apache.http.HttpHeaders.AUTHORIZATION;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -28,7 +30,9 @@ import com.google.common.collect.ImmutableMap;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicBoolean;
 import jcrapi2.request.GetClanCurrentWarRequest;
 import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
@@ -39,6 +43,8 @@ import jcrapi2.request.GetPlayerRequest;
 import jcrapi2.request.GetPlayerUpcomingChestsRequest;
 import jcrapi2.request.GetTournamentRequest;
 import jcrapi2.request.GetTournamentsRequest;
+import jcrapi2.response.Callback;
+import jcrapi2.response.GetTournamentResponse;
 import jcrapi2.response.RawResponse;
 
 /**
@@ -186,6 +192,64 @@ class ClientTest {
     RawResponse rawResponse = new RawResponse();
     when(crawler.getLastRawResponse()).thenReturn(rawResponse);
     assertEquals(rawResponse, createClient().getLastRawResponse());
+  }
+
+  @Test
+  void getTournament_whenWithCallback_thenCallOnResponse() throws Exception {
+    AtomicBoolean state = new AtomicBoolean(false);
+    GetTournamentRequest getTournamentRequest = GetTournamentRequest.builder("tournamentTag").callback(new Callback<GetTournamentResponse>() {
+      @Override
+      public void onResponse(GetTournamentResponse getTournamentResponse) {
+        assertNotNull(getTournamentResponse);
+        state.set(true);
+      }
+
+      @Override
+      public void onException(Exception exception) {
+        fail();
+      }
+    }).build();
+    when(crawler.get("lala/tournaments/%s", createHeaders(), getTournamentRequest.getQueryParameters(),
+        getTournamentRequest.getRestParameters())).thenReturn("{}");
+    createClient().getTournament(getTournamentRequest);
+    waitUntil(state::get);
+    assertTrue(state.get(), "callback not notified!");
+  }
+
+  private static void waitUntil(Action action) {
+    long stop = System.currentTimeMillis() + 5000L;
+    for (long ms = System.currentTimeMillis(); ms < stop; ms = System.currentTimeMillis()) {
+      if (action.eval()) {
+        break;
+      }
+    }
+  }
+
+  private interface Action {
+
+    boolean eval();
+
+  }
+
+  @Test
+  void getTournament_whenWithCallbackException_thenCallOnException() throws Exception {
+    AtomicBoolean state = new AtomicBoolean(false);
+    GetTournamentRequest getTournamentRequest = GetTournamentRequest.builder("tournamentTag").callback(new Callback<GetTournamentResponse>() {
+      @Override
+      public void onResponse(GetTournamentResponse getTournamentResponse) {
+        fail();
+      }
+
+      @Override
+      public void onException(Exception exception) {
+        state.set(true);
+      }
+    }).build();
+    when(crawler.get("lala/tournaments/%s", createHeaders(), getTournamentRequest.getQueryParameters(),
+        getTournamentRequest.getRestParameters())).thenThrow(new IOException());
+    createClient().getTournament(getTournamentRequest);
+    waitUntil(state::get);
+    assertTrue(state.get(), "callback not notified!");
   }
 
 }

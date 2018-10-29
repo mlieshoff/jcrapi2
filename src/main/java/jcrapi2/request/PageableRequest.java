@@ -19,6 +19,8 @@ package jcrapi2.request;
 import static org.apache.commons.lang3.StringUtils.isNotBlank;
 
 import java.util.Map;
+import jcrapi2.response.Callback;
+import jcrapi2.response.IResponse;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -26,7 +28,7 @@ import lombok.Getter;
  * @author Michael Lieshoff
  */
 @Getter
-public class PageableRequest extends Request {
+public class PageableRequest<T extends IResponse> extends Request<T> {
 
   static final String QUERY_PARAM_LIMIT = "limit";
   static final String QUERY_PARAM_AFTER = "after";
@@ -38,7 +40,8 @@ public class PageableRequest extends Request {
   private final String before;
 
   @Builder(builderMethodName = "pageableRequestBuilder")
-  PageableRequest(int limit, String after, String before) {
+  PageableRequest(Callback<T> callback, int limit, String after, String before) {
+    super(callback);
     this.limit = limit;
     this.after = after;
     this.before = before;

@@ -14,36 +14,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jcrapi2.request;
+package jcrapi2.response;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import jcrapi2.response.Callback;
-import jcrapi2.response.IResponse;
-import lombok.Builder;
-import lombok.Getter;
+public interface Callback<T extends IResponse> {
 
-/**
- * @author Michael Lieshoff
- */
-@Getter
-public class Request<T extends IResponse> {
+  void onResponse(T result);
 
-  private final Callback<T> callback;
-
-  @Builder(builderMethodName = "requestBuilder")
-  Request(Callback<T> callback) {
-    this.callback = callback;
-  }
-
-  public Map<String, String> getQueryParameters() {
-    return new LinkedHashMap<>();
-  }
-
-  public List<String> getRestParameters() {
-    return new ArrayList<>();
-  }
+  void onException(Exception exception);
 
 }

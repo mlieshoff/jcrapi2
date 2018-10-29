@@ -17,11 +17,14 @@
 package jcrapi2.request;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.mock;
 
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Method;
+import jcrapi2.response.Callback;
 
 abstract class RequestTestBase {
 
@@ -57,6 +60,17 @@ abstract class RequestTestBase {
   @Test
   void getRestParameters_whenConstructed_thenWithZeroElements() throws Exception {
     assertEquals(0, Request.requestBuilder().build().getRestParameters().size());
+  }
+
+  @Test
+  void getCallback_whenConstructed_thenReturnNull() throws Exception {
+    assertNull(Request.requestBuilder().build().getCallback());
+  }
+
+  @Test
+  void getCallback_whenSet_thenGet() throws Exception {
+    Callback expected = mock(Callback.class);
+    assertEquals(expected, Request.requestBuilder().callback(expected).build().getCallback());
   }
 
 }

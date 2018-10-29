@@ -105,6 +105,40 @@ String raw = rawResponse.getRaw();
 Map<String, String> responseHeaders = rawResponse.getResponseHeaders();
 ```
 
+## Asynchronous usage
+
+All requests can have a *callback*. Then execution will be asynchronous.
+
+```java
+// get clans
+api.getClans(GetClansRequest.builder()
+  // search criteria
+  .name()
+  .locationId()
+  .minScore()
+  .minMembers()
+  .maxMembers()
+  // paging
+  .after()
+  .before()
+  .limit()
+  .build()
+  // async callback
+  .callback(new Callback<GetClansResponse>() {
+    @Override
+    public void onResponse(GetClansResponse getClansResponse) {
+      // handle result
+    }
+
+    @Override
+    public void onException(Exception exception) {
+      state.set(true);
+    }
+  })
+);
+```
+ 
+
 ## How to bind the bintray repository ##
 
 ```xml

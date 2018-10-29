@@ -36,6 +36,7 @@ import jcrapi2.request.GetClansRequest;
 import jcrapi2.request.GetPlayerBattleLogRequest;
 import jcrapi2.request.GetPlayerRequest;
 import jcrapi2.request.GetPlayerUpcomingChestsRequest;
+import jcrapi2.request.GetTournamentRequest;
 import jcrapi2.request.GetTournamentsRequest;
 
 /**
@@ -168,6 +169,14 @@ class ClientTest {
     when(crawler.get("lala/tournaments", createHeaders(), getTournamentsRequest.getQueryParameters(),
         getTournamentsRequest.getRestParameters())).thenReturn("{}");
     assertNotNull(createClient().getTournaments(getTournamentsRequest));
+  }
+
+  @Test
+  void getTournament_whenWithRequest_thenGetResponse() throws Exception {
+    GetTournamentRequest getTournamentRequest = GetTournamentRequest.builder("tournamentTag").build();
+    when(crawler.get("lala/tournaments/%s", createHeaders(), getTournamentRequest.getQueryParameters(),
+        getTournamentRequest.getRestParameters())).thenReturn("{}");
+    assertNotNull(createClient().getTournament(getTournamentRequest));
   }
 
 }

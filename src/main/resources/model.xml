@@ -277,4 +277,33 @@
         <member name="createdTime" type="String"/>
     </class>
 
+    <class name="Tournament">
+        <member name="tag" type="String"/>
+        <member name="type" type="String"/>
+        <member name="status" type="String"/>
+        <member name="creatorTag" type="String"/>
+        <member name="name" type="String"/>
+        <member name="capacity" type="int"/>
+        <member name="maxCapacity" type="int"/>
+        <member name="preparationDuration" type="int"/>
+        <member name="duration" type="int"/>
+        <member name="createdTime" type="String"/>
+        <member name="startedTime" type="String"/>
+        <member name="memberList" type="list(TournamentMember)"/>
+    </class>
+
+    <class name="TournamentMember">
+        <member name="tag" type="String"/>
+        <member name="name" type="String"/>
+        <member name="score" type="int"/>
+        <member name="rank" type="int"/>
+        <member name="clan" type="TournamentMemberClan"/>
+    </class>
+
+    <class name="TournamentMemberClan">
+        <member name="tag" type="String"/>
+        <member name="name" type="String"/>
+        <member name="badgeId" type="int"/>
+    </class>
+
 </model>

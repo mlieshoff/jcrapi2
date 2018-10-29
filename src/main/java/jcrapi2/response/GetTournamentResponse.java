@@ -14,29 +14,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jcrapi2;
+package jcrapi2.response;
 
-import java.io.IOException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jcrapi2.model.Tournament;
+import lombok.Data;
 
 /**
  * @author Michael Lieshoff
  */
-public class TestTournamentsServlet extends TestJsonFileServlet {
-
-  private static final long serialVersionUID = 2223554163029355420L;
-
-  @Override
-  protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-    String parameter = getRestTagParameter(req);
-    String filename;
-    if ("tournaments".equals(parameter)) {
-      filename = "src/test/resources/tournaments.json";
-    } else {
-      filename = "src/test/resources/tournament.json";
-    }
-    doGet(filename, req, resp);
-  }
+@Data
+public class GetTournamentResponse extends PageableResponse<Tournament> {
 
 }

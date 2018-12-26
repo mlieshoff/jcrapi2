@@ -37,6 +37,7 @@ import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
+import jcrapi2.request.GetLocationClanRankingsRequest;
 import jcrapi2.request.GetLocationRequest;
 import jcrapi2.request.GetLocationsRequest;
 import jcrapi2.request.GetPlayerBattleLogRequest;
@@ -51,6 +52,7 @@ import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClanWarLogResponse;
 import jcrapi2.response.GetClansResponse;
+import jcrapi2.response.GetLocationClanRankingsResponse;
 import jcrapi2.response.GetLocationResponse;
 import jcrapi2.response.GetLocationsResponse;
 import jcrapi2.response.GetPlayerBattleLogResponse;
@@ -198,6 +200,12 @@ public class Client {
 
   GetLocationResponse getLocation(GetLocationRequest getLocationRequest) throws IOException {
     return singleObjectFromJson("getLocationRequest", "locations/%s", getLocationRequest, GetLocationResponse.class);
+  }
+
+  GetLocationClanRankingsResponse getLocationClanRankings(GetLocationClanRankingsRequest getLocationClanRankingsRequest)
+      throws IOException {
+    return singleObjectFromJson("getLocationClanRankingsRequest", "locations/%s/rankings/clans",
+        getLocationClanRankingsRequest, GetLocationClanRankingsResponse.class);
   }
 
 }

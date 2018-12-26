@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "tag": "string",
+      "name": "string",
+      "rank": 0,
+      "previousRank": 0,
+      "location": {
+        "id": 0,
+        "name": "string",
+        "isCountry": true,
+        "countryCode": "string"
+      },
+      "clanScore": 0,
+      "badgeId": 0,
+      "members": 0
+    }
+  ]
+}

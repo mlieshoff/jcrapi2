@@ -26,6 +26,7 @@ import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
+import jcrapi2.request.GetLocationClanRankingsRequest;
 import jcrapi2.request.GetLocationRequest;
 import jcrapi2.request.GetLocationsRequest;
 import jcrapi2.request.GetPlayerBattleLogRequest;
@@ -39,6 +40,7 @@ import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClanWarLogResponse;
 import jcrapi2.response.GetClansResponse;
+import jcrapi2.response.GetLocationClanRankingsResponse;
 import jcrapi2.response.GetLocationResponse;
 import jcrapi2.response.GetLocationsResponse;
 import jcrapi2.response.GetPlayerBattleLogResponse;
@@ -195,6 +197,16 @@ public class Api {
     checkNotNull(getLocationRequest, "getLocationRequest");
     try {
       return createClient().getLocation(getLocationRequest);
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+  }
+
+  public GetLocationClanRankingsResponse getLocationClanRankings(
+      GetLocationClanRankingsRequest getLocationClanRankingsRequest) {
+    checkNotNull(getLocationClanRankingsRequest, "getLocationClanRankingsRequest");
+    try {
+      return createClient().getLocationClanRankings(getLocationClanRankingsRequest);
     } catch (IOException e) {
       throw new ApiException(e);
     }

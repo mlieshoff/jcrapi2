@@ -327,4 +327,23 @@
         <member name="country" alias="isCountry" type="boolean"/>
     </class>
 
+    <!-- get location clan rankings -->
+
+    <class name="LocationRankingClan">
+        <member name="tag" type="String"/>
+        <member name="name" type="String"/>
+        <member name="rank" type="int"/>
+        <member name="previousRank" type="int"/>
+        <member name="location" type="LocationRankingClanLocation"/>
+        <member name="clanScore" type="int"/>
+        <member name="badgeId" type="int"/>
+        <member name="members" type="int"/>
+    </class>
+
+    <class name="LocationRankingClanLocation">
+        <member name="id" type="int"/>
+        <member name="name" type="String"/>
+        <member name="country" alias="isCountry" type="boolean"/>
+    </class>
+
 </model>

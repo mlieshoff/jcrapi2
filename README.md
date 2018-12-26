@@ -121,6 +121,11 @@ GetLocationsResponse getLocationsResponse = api.getLocations(GetLocationsRequest
 );
 ```
 
+```java
+// get location
+GetLocationResponse getLocationResponse = api.getLocation(GetLocationRequest.builder("de").build());
+```
+
 ## Asynchronous usage
 
 All requests can have a *callback*. Then execution will be asynchronous.

@@ -33,6 +33,7 @@ import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
+import jcrapi2.request.GetLocationRequest;
 import jcrapi2.request.GetLocationsRequest;
 import jcrapi2.request.GetPlayerBattleLogRequest;
 import jcrapi2.request.GetPlayerRequest;
@@ -45,6 +46,7 @@ import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClanWarLogResponse;
 import jcrapi2.response.GetClansResponse;
+import jcrapi2.response.GetLocationResponse;
 import jcrapi2.response.GetLocationsResponse;
 import jcrapi2.response.GetPlayerBattleLogResponse;
 import jcrapi2.response.GetPlayerResponse;
@@ -401,6 +403,31 @@ class ApiTest {
     when(client.getLocations(getLocationsRequest)).thenThrow(crawlerException);
     try {
       api.getLocations(getLocationsRequest);
+      fail();
+    } catch (ApiException e) {
+      assertEquals(SC_NOT_FOUND, e.getCode());
+    }
+  }
+
+  @Test
+  void getLocation_whenWithNullRequest_thenThrowsException() throws Exception {
+    assertThrows(NullPointerException.class, () -> api.getLocation(null));
+  }
+
+  @Test
+  void getLocation_whenWithRequest_thenReturnResult() throws Exception {
+    GetLocationRequest getLocationRequest = GetLocationRequest.builder("de").build();
+    GetLocationResponse getLocationResponse = new GetLocationResponse();
+    when(client.getLocation(getLocationRequest)).thenReturn(getLocationResponse);
+    assertEquals(getLocationResponse, api.getLocation(getLocationRequest));
+  }
+
+  @Test
+  void getLocation_whenWithException_thenThrowApiException() throws Exception {
+    GetLocationRequest getLocationRequest = GetLocationRequest.builder("de").build();
+    when(client.getLocation(getLocationRequest)).thenThrow(crawlerException);
+    try {
+      api.getLocation(getLocationRequest);
       fail();
     } catch (ApiException e) {
       assertEquals(SC_NOT_FOUND, e.getCode());

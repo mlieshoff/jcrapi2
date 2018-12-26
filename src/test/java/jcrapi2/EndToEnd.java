@@ -28,6 +28,7 @@ import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
+import jcrapi2.request.GetLocationRequest;
 import jcrapi2.request.GetLocationsRequest;
 import jcrapi2.request.GetPlayerBattleLogRequest;
 import jcrapi2.request.GetPlayerRequest;
@@ -40,6 +41,7 @@ import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClanWarLogResponse;
 import jcrapi2.response.GetClansResponse;
+import jcrapi2.response.GetLocationResponse;
 import jcrapi2.response.GetLocationsResponse;
 import jcrapi2.response.GetPlayerBattleLogResponse;
 import jcrapi2.response.GetPlayerResponse;
@@ -186,12 +188,22 @@ class EndToEnd {
   }
 
   @Test
-  void getLocations_whenCalled_thenGetResponse() throws Exception {
+  void getLocations_whenWithValidParameters_thenGetResponse() throws Exception {
     GetLocationsResponse getLocationsResponse = api.getLocations(GetLocationsRequest.builder().build());
     assertAll(
         () -> assertNotNull(getLocationsResponse, "getLocationsResponse"),
         () -> assertNull(getLocationsResponse.getMessage(), "message"),
         () -> assertNull(getLocationsResponse.getReason(), "reason")
+    );
+  }
+
+  @Test
+  void getLocation_whenWithValidParameters_thenGetResponse() throws Exception {
+    GetLocationResponse getLocationResponse = api.getLocation(GetLocationRequest.builder("de").build());
+    assertAll(
+        () -> assertNotNull(getLocationResponse, "getLocationResponse"),
+        () -> assertNull(getLocationResponse.getMessage(), "message"),
+        () -> assertNull(getLocationResponse.getReason(), "reason")
     );
   }
 

@@ -14,31 +14,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jcrapi2;
+package jcrapi2.model;
 
-import java.io.IOException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.annotation.Generated;
+import com.google.gson.annotations.SerializedName;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
-/**
- * @author Michael Lieshoff
- */
-public class TestLocationsServlet extends TestJsonFileServlet {
+@Generated("org.mili.generator")
+@Getter
+@Setter
+@ToString
+public class LocationRankingClanLocation {
 
-  private static final long serialVersionUID = 6746289303092938110L;
+  @SerializedName("id")
+  private int id;
 
-  @Override
-  protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-    String parameter = getRestTagParameter(req);
-    String filename;
-    if ("57000000".equals(parameter)) {
-      filename = "src/test/resources/location.json";
-    } else if ("clans".equals(parameter)) {
-      filename = "src/test/resources/locationClanRankings.json";
-    } else {
-      filename = "src/test/resources/locations.json";
-    }
-    doGet(filename, req, resp);
-  }
+  @SerializedName("name")
+  private String name;
+
+  @SerializedName("country")
+  private boolean country;
 
 }

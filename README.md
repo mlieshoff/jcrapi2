@@ -123,7 +123,12 @@ GetLocationsResponse getLocationsResponse = api.getLocations(GetLocationsRequest
 
 ```java
 // get location
-GetLocationResponse getLocationResponse = api.getLocation(GetLocationRequest.builder("de").build());
+GetLocationResponse getLocationResponse = api.getLocation(GetLocationRequest.builder("57000000").build());
+```
+
+```java
+// get location clan rankings
+GetLocationClanRankingsResponse getLocationClanRankingsResponse = api.getLocationClanRankings(GetLocationClanRankingsRequest.builder("57000000").build());
 ```
 
 ## Asynchronous usage

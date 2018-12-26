@@ -29,6 +29,7 @@ import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
+import jcrapi2.request.GetLocationsRequest;
 import jcrapi2.request.GetPlayerBattleLogRequest;
 import jcrapi2.request.GetPlayerRequest;
 import jcrapi2.request.GetPlayerUpcomingChestsRequest;
@@ -40,6 +41,7 @@ import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClanWarLogResponse;
 import jcrapi2.response.GetClansResponse;
+import jcrapi2.response.GetLocationsResponse;
 import jcrapi2.response.GetPlayerBattleLogResponse;
 import jcrapi2.response.GetPlayerResponse;
 import jcrapi2.response.GetPlayerUpcomingChestsResponse;
@@ -67,6 +69,7 @@ class IntegrationTest {
     jettyServer.addServlet('/' + APP + "/players/*", new TestPlayersServlet());
     jettyServer.addServlet('/' + APP + "/tournaments/*", new TestTournamentsServlet());
     jettyServer.addServlet('/' + APP + "/cards/*", new TestCardsServlet());
+    jettyServer.addServlet('/' + APP + "/locations/*", new TestLocationsServlet());
     jettyServer.start();
   }
 
@@ -257,6 +260,22 @@ class IntegrationTest {
   @Test
   void getCards_whenWithWrongUrl_thenThrow() throws Exception {
     assertThrows(ApiException.class, () -> doGetCards("lala2"));
+  }
+
+  @Test
+  void getLocations_whenWithValidParameters_thenReturnResponse() throws Exception {
+    doGetLocations(API_KEY);
+  }
+
+  private static void doGetLocations(String apiKey) {
+    GetLocationsResponse actual = new Api(URL, apiKey).getLocations(GetLocationsRequest.builder().build());
+    assertNotNull(actual);
+    actual.getItems().forEach(Assertions::assertNotNull);
+  }
+
+  @Test
+  void getLocations_whenWithWrongUrl_thenThrow() throws Exception {
+    assertThrows(ApiException.class, () -> doGetLocations("lala2"));
   }
 
 }

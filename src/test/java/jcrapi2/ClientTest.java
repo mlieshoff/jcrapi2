@@ -16,6 +16,8 @@
  */
 package jcrapi2;
 
+import static java.util.Collections.emptyList;
+import static java.util.Collections.emptyMap;
 import static org.apache.http.HttpHeaders.AUTHORIZATION;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -33,6 +35,7 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicBoolean;
+import jcrapi2.request.BlankRequest;
 import jcrapi2.request.GetClanCurrentWarRequest;
 import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
@@ -197,18 +200,20 @@ class ClientTest {
   @Test
   void getTournament_whenWithCallback_thenCallOnResponse() throws Exception {
     AtomicBoolean state = new AtomicBoolean(false);
-    GetTournamentRequest getTournamentRequest = GetTournamentRequest.builder("tournamentTag").callback(new Callback<GetTournamentResponse>() {
-      @Override
-      public void onResponse(GetTournamentResponse getTournamentResponse) {
-        assertNotNull(getTournamentResponse);
-        state.set(true);
-      }
+    GetTournamentRequest
+        getTournamentRequest =
+        GetTournamentRequest.builder("tournamentTag").callback(new Callback<GetTournamentResponse>() {
+          @Override
+          public void onResponse(GetTournamentResponse getTournamentResponse) {
+            assertNotNull(getTournamentResponse);
+            state.set(true);
+          }
 
-      @Override
-      public void onException(Exception exception) {
-        fail();
-      }
-    }).build();
+          @Override
+          public void onException(Exception exception) {
+            fail();
+          }
+        }).build();
     when(crawler.get("lala/tournaments/%s", createHeaders(), getTournamentRequest.getQueryParameters(),
         getTournamentRequest.getRestParameters())).thenReturn("{}");
     createClient().getTournament(getTournamentRequest);
@@ -234,22 +239,30 @@ class ClientTest {
   @Test
   void getTournament_whenWithCallbackException_thenCallOnException() throws Exception {
     AtomicBoolean state = new AtomicBoolean(false);
-    GetTournamentRequest getTournamentRequest = GetTournamentRequest.builder("tournamentTag").callback(new Callback<GetTournamentResponse>() {
-      @Override
-      public void onResponse(GetTournamentResponse getTournamentResponse) {
-        fail();
-      }
+    GetTournamentRequest
+        getTournamentRequest =
+        GetTournamentRequest.builder("tournamentTag").callback(new Callback<GetTournamentResponse>() {
+          @Override
+          public void onResponse(GetTournamentResponse getTournamentResponse) {
+            fail();
+          }
 
-      @Override
-      public void onException(Exception exception) {
-        state.set(true);
-      }
-    }).build();
+          @Override
+          public void onException(Exception exception) {
+            state.set(true);
+          }
+        }).build();
     when(crawler.get("lala/tournaments/%s", createHeaders(), getTournamentRequest.getQueryParameters(),
         getTournamentRequest.getRestParameters())).thenThrow(new IOException());
     createClient().getTournament(getTournamentRequest);
     waitUntil(state::get);
     assertTrue(state.get(), "callback not notified!");
+  }
+
+  @Test
+  void getCards_whenCalled_thenGetResponse() throws Exception {
+    when(crawler.get("lala/cards", createHeaders(), emptyMap(), emptyList())).thenReturn("{}");
+    assertNotNull(createClient().getCards(new BlankRequest<>()));
   }
 
 }

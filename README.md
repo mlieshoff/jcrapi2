@@ -105,6 +105,11 @@ String raw = rawResponse.getRaw();
 Map<String, String> responseHeaders = rawResponse.getResponseHeaders();
 ```
 
+```java
+// get cards
+GetCardsResponse getCardsResponse = api.getCards();
+```
+
 ## Asynchronous usage
 
 All requests can have a *callback*. Then execution will be asynchronous.

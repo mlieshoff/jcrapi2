@@ -20,6 +20,7 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import java.io.IOException;
+import jcrapi2.request.BlankRequest;
 import jcrapi2.request.GetClanCurrentWarRequest;
 import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
@@ -30,6 +31,7 @@ import jcrapi2.request.GetPlayerRequest;
 import jcrapi2.request.GetPlayerUpcomingChestsRequest;
 import jcrapi2.request.GetTournamentRequest;
 import jcrapi2.request.GetTournamentsRequest;
+import jcrapi2.response.GetCardsResponse;
 import jcrapi2.response.GetClanCurrentWarResponse;
 import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
@@ -166,6 +168,14 @@ public class Api {
 
   public RawResponse getLastRawResponse() {
     return createClient().getLastRawResponse();
+  }
+
+  public GetCardsResponse getCards() {
+    try {
+      return createClient().getCards(new BlankRequest<>());
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
   }
 
 }

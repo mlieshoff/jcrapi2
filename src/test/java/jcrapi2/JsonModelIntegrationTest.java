@@ -25,6 +25,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
+import jcrapi2.response.GetCardsResponse;
 import jcrapi2.response.GetClanCurrentWarResponse;
 import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
@@ -113,6 +114,14 @@ class JsonModelIntegrationTest {
   void fromJson_whenForGetTournament_thenResolve() throws Exception {
     String json = readFileToString(new File("src/test/resources/tournament.json"));
     GetTournamentResponse object = GSON.fromJson(json, GetTournamentResponse.class);
+    assertNotNull(object);
+    object.getItems().forEach(Assertions::assertNotNull);
+  }
+
+  @Test
+  void fromJson_whenForGetCards_thenResolve() throws Exception {
+    String json = readFileToString(new File("src/test/resources/cards.json"));
+    GetCardsResponse object = GSON.fromJson(json, GetCardsResponse.class);
     assertNotNull(object);
     object.getItems().forEach(Assertions::assertNotNull);
   }

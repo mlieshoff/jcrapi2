@@ -31,6 +31,7 @@ import org.apache.commons.lang3.concurrent.BasicThreadFactory;
 
 import java.io.IOException;
 import java.util.Map;
+import jcrapi2.request.BlankRequest;
 import jcrapi2.request.GetClanCurrentWarRequest;
 import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
@@ -42,6 +43,7 @@ import jcrapi2.request.GetPlayerUpcomingChestsRequest;
 import jcrapi2.request.GetTournamentRequest;
 import jcrapi2.request.GetTournamentsRequest;
 import jcrapi2.request.Request;
+import jcrapi2.response.GetCardsResponse;
 import jcrapi2.response.GetClanCurrentWarResponse;
 import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
@@ -180,6 +182,10 @@ public class Client {
 
   RawResponse getLastRawResponse() {
     return createCrawler().getLastRawResponse();
+  }
+
+  GetCardsResponse getCards(BlankRequest<GetCardsResponse> blankRequest) throws IOException {
+    return singleObjectFromJson("getCardsRequest", "cards", blankRequest, GetCardsResponse.class);
   }
 
 }

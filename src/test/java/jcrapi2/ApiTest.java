@@ -20,12 +20,14 @@ import static org.apache.http.HttpStatus.SC_NOT_FOUND;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.fail;
+import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import jcrapi2.request.BlankRequest;
 import jcrapi2.request.GetClanCurrentWarRequest;
 import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
@@ -36,13 +38,17 @@ import jcrapi2.request.GetPlayerRequest;
 import jcrapi2.request.GetPlayerUpcomingChestsRequest;
 import jcrapi2.request.GetTournamentRequest;
 import jcrapi2.request.GetTournamentsRequest;
+import jcrapi2.response.GetCardsResponse;
 import jcrapi2.response.GetClanCurrentWarResponse;
 import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClanWarLogResponse;
 import jcrapi2.response.GetClansResponse;
+import jcrapi2.response.GetPlayerBattleLogResponse;
 import jcrapi2.response.GetPlayerResponse;
 import jcrapi2.response.GetPlayerUpcomingChestsResponse;
+import jcrapi2.response.GetTournamentResponse;
+import jcrapi2.response.GetTournamentsResponse;
 import jcrapi2.response.RawResponse;
 
 /**
@@ -54,6 +60,7 @@ class ApiTest {
   private static final String CLAN_TAG = "clanTag";
   private static final String NAME = "name";
   private static final String PLAYER_TAG = "playerTag";
+  private static final String TOURNAMENT_TAG = "tournamentTag";
   private static final String URL = "url";
 
   private Client client;
@@ -272,6 +279,19 @@ class ApiTest {
   }
 
   @Test
+  void getPlayerBattleLog_whenWithNullRequest_thenThrowsException() throws Exception {
+    assertThrows(NullPointerException.class, () -> api.getPlayerBattleLog(null));
+  }
+
+  @Test
+  void getPlayerBattleLog_whenWithRequest_thenReturnResult() throws Exception {
+    GetPlayerBattleLogRequest getPlayerBattleLogRequest = GetPlayerBattleLogRequest.builder(PLAYER_TAG).build();
+    GetPlayerBattleLogResponse getPlayerBattleLogResponse = new GetPlayerBattleLogResponse();
+    when(client.getPlayerBattleLog(getPlayerBattleLogRequest)).thenReturn(getPlayerBattleLogResponse);
+    assertEquals(getPlayerBattleLogResponse, api.getPlayerBattleLog(getPlayerBattleLogRequest));
+  }
+
+  @Test
   void getPlayerBattleLog_whenWithException_thenThrowApiException() throws Exception {
     GetPlayerBattleLogRequest
         getPlayerBattleLogRequest =
@@ -283,6 +303,19 @@ class ApiTest {
     } catch (ApiException e) {
       assertEquals(SC_NOT_FOUND, e.getCode());
     }
+  }
+
+  @Test
+  void getTournaments_whenWithNullRequest_thenThrowsException() throws Exception {
+    assertThrows(NullPointerException.class, () -> api.getTournaments(null));
+  }
+
+  @Test
+  void getTournaments_whenWithRequest_thenReturnResult() throws Exception {
+    GetTournamentsRequest getTournamentsRequest = GetTournamentsRequest.builder().build();
+    GetTournamentsResponse getTournamentsResponse = new GetTournamentsResponse();
+    when(client.getTournaments(getTournamentsRequest)).thenReturn(getTournamentsResponse);
+    assertEquals(getTournamentsResponse, api.getTournaments(getTournamentsRequest));
   }
 
   @Test
@@ -298,8 +331,21 @@ class ApiTest {
   }
 
   @Test
+  void getTournament_whenWithNullRequest_thenThrowsException() throws Exception {
+    assertThrows(NullPointerException.class, () -> api.getTournament(null));
+  }
+
+  @Test
+  void getTournament_whenWithRequest_thenReturnResult() throws Exception {
+    GetTournamentRequest getTournamentRequest = GetTournamentRequest.builder(TOURNAMENT_TAG).build();
+    GetTournamentResponse getTournamentResponse = new GetTournamentResponse();
+    when(client.getTournament(getTournamentRequest)).thenReturn(getTournamentResponse);
+    assertEquals(getTournamentResponse, api.getTournament(getTournamentRequest));
+  }
+
+  @Test
   void getTournament_whenWithException_thenThrowApiException() throws Exception {
-    GetTournamentRequest getTournamentRequest = GetTournamentRequest.builder("tournamentTag").build();
+    GetTournamentRequest getTournamentRequest = GetTournamentRequest.builder(TOURNAMENT_TAG).build();
     when(client.getTournament(getTournamentRequest)).thenThrow(crawlerException);
     try {
       api.getTournament(getTournamentRequest);
@@ -310,10 +356,28 @@ class ApiTest {
   }
 
   @Test
-  public void getLastRawResponse_whenCalled_theReturnLastRawResponse() throws Exception {
+  void getLastRawResponse_whenCalled_theReturnLastRawResponse() throws Exception {
     RawResponse rawResponse = new RawResponse();
     when(client.getLastRawResponse()).thenReturn(rawResponse);
     assertEquals(rawResponse, api.getLastRawResponse());
+  }
+
+  @Test
+  void getCards_whenWithRequest_thenReturnResult() throws Exception {
+    GetCardsResponse getCardsResponse = new GetCardsResponse();
+    when(client.getCards(any(BlankRequest.class))).thenReturn(getCardsResponse);
+    assertEquals(getCardsResponse, api.getCards());
+  }
+
+  @Test
+  void getCards_whenWithException_thenThrowApiException() throws Exception {
+    when(client.getCards(any(BlankRequest.class))).thenThrow(crawlerException);
+    try {
+      api.getCards();
+      fail();
+    } catch (ApiException e) {
+      assertEquals(SC_NOT_FOUND, e.getCode());
+    }
   }
 
 }

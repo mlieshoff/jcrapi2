@@ -42,6 +42,7 @@ import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
 import jcrapi2.request.GetLocationClanRankingsRequest;
+import jcrapi2.request.GetLocationClanWarRankingsRequest;
 import jcrapi2.request.GetLocationPlayerRankingsRequest;
 import jcrapi2.request.GetLocationRequest;
 import jcrapi2.request.GetLocationsRequest;
@@ -303,9 +304,22 @@ class ClientTest {
         getLocationPlayerRankingsRequest =
         GetLocationPlayerRankingsRequest.builder(LOCATION_ID).build();
     when(crawler
-        .get("lala/locations/%s/rankings/players", createHeaders(), getLocationPlayerRankingsRequest.getQueryParameters(),
+        .get("lala/locations/%s/rankings/players", createHeaders(),
+            getLocationPlayerRankingsRequest.getQueryParameters(),
             getLocationPlayerRankingsRequest.getRestParameters())).thenReturn("{}");
     assertNotNull(createClient().getLocationPlayerRankings(getLocationPlayerRankingsRequest));
+  }
+
+  @Test
+  void getLocationClanWarRankings_whenWithRequest_thenGetResponse() throws Exception {
+    GetLocationClanWarRankingsRequest
+        getLocationClanWarRankingsRequest =
+        GetLocationClanWarRankingsRequest.builder(LOCATION_ID).build();
+    when(crawler
+        .get("lala/locations/%s/rankings/clanwars", createHeaders(),
+            getLocationClanWarRankingsRequest.getQueryParameters(),
+            getLocationClanWarRankingsRequest.getRestParameters())).thenReturn("{}");
+    assertNotNull(createClient().getLocationClanWarRankings(getLocationClanWarRankingsRequest));
   }
 
 }

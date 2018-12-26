@@ -14,29 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jcrapi2;
+package jcrapi2.response;
 
-import java.io.IOException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-/**
- * @author Michael Lieshoff
- */
-public class TestLocationsServlet extends TestJsonFileServlet {
-
-  private static final long serialVersionUID = 6746289303092938110L;
+class GetLocationResponseTest extends ResponseTestBase<GetLocationResponse> {
 
   @Override
-  protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-    String parameter = getRestTagParameter(req);
-    String filename;
-    if ("de".equals(parameter)) {
-      filename = "src/test/resources/location.json";
-    } else {
-      filename = "src/test/resources/locations.json";
-    }
-    doGet(filename, req, resp);
+  GetLocationResponse getResponse() {
+    return new GetLocationResponse();
   }
 
 }

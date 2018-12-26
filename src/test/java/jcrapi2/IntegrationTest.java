@@ -29,6 +29,7 @@ import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
+import jcrapi2.request.GetLocationRequest;
 import jcrapi2.request.GetLocationsRequest;
 import jcrapi2.request.GetPlayerBattleLogRequest;
 import jcrapi2.request.GetPlayerRequest;
@@ -41,6 +42,7 @@ import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClanWarLogResponse;
 import jcrapi2.response.GetClansResponse;
+import jcrapi2.response.GetLocationResponse;
 import jcrapi2.response.GetLocationsResponse;
 import jcrapi2.response.GetPlayerBattleLogResponse;
 import jcrapi2.response.GetPlayerResponse;
@@ -276,6 +278,21 @@ class IntegrationTest {
   @Test
   void getLocations_whenWithWrongUrl_thenThrow() throws Exception {
     assertThrows(ApiException.class, () -> doGetLocations("lala2"));
+  }
+
+  @Test
+  void getLocation_whenWithValidParameters_thenReturnResponse() throws Exception {
+    doGetLocation(API_KEY);
+  }
+
+  private static void doGetLocation(String apiKey) {
+    GetLocationResponse actual = new Api(URL, apiKey).getLocation(GetLocationRequest.builder("de").build());
+    assertNotNull(actual);
+  }
+
+  @Test
+  void getLocation_whenWithWrongUrl_thenThrow() throws Exception {
+    assertThrows(ApiException.class, () -> doGetLocation("lala2"));
   }
 
 }

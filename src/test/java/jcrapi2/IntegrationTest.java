@@ -30,6 +30,7 @@ import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
 import jcrapi2.request.GetLocationClanRankingsRequest;
+import jcrapi2.request.GetLocationClanWarRankingsRequest;
 import jcrapi2.request.GetLocationPlayerRankingsRequest;
 import jcrapi2.request.GetLocationRequest;
 import jcrapi2.request.GetLocationsRequest;
@@ -45,6 +46,7 @@ import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClanWarLogResponse;
 import jcrapi2.response.GetClansResponse;
 import jcrapi2.response.GetLocationClanRankingsResponse;
+import jcrapi2.response.GetLocationClanWarRankingsResponse;
 import jcrapi2.response.GetLocationPlayerRankingsResponse;
 import jcrapi2.response.GetLocationResponse;
 import jcrapi2.response.GetLocationsResponse;
@@ -333,6 +335,24 @@ class IntegrationTest {
   @Test
   void getLocationPlayerRankings_whenWithWrongUrl_thenThrow() throws Exception {
     assertThrows(ApiException.class, () -> doGetLocationPlayerRankings("lala2"));
+  }
+
+  @Test
+  void getLocationClanWarRankings_whenWithValidParameters_thenReturnResponse() throws Exception {
+    doGetLocationClanWarRankings(API_KEY);
+  }
+
+  private static void doGetLocationClanWarRankings(String apiKey) {
+    GetLocationClanWarRankingsResponse
+        actual =
+        new Api(URL, apiKey).getLocationClanWarRankings(GetLocationClanWarRankingsRequest.builder("57000000").build());
+    assertNotNull(actual);
+    actual.getItems().forEach(Assertions::assertNotNull);
+  }
+
+  @Test
+  void getLocationClanWarRankings_whenWithWrongUrl_thenThrow() throws Exception {
+    assertThrows(ApiException.class, () -> doGetLocationClanWarRankings("lala2"));
   }
 
 }

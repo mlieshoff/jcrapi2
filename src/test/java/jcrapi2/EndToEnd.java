@@ -29,6 +29,7 @@ import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
 import jcrapi2.request.GetLocationClanRankingsRequest;
+import jcrapi2.request.GetLocationClanWarRankingsRequest;
 import jcrapi2.request.GetLocationPlayerRankingsRequest;
 import jcrapi2.request.GetLocationRequest;
 import jcrapi2.request.GetLocationsRequest;
@@ -44,6 +45,7 @@ import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClanWarLogResponse;
 import jcrapi2.response.GetClansResponse;
 import jcrapi2.response.GetLocationClanRankingsResponse;
+import jcrapi2.response.GetLocationClanWarRankingsResponse;
 import jcrapi2.response.GetLocationPlayerRankingsResponse;
 import jcrapi2.response.GetLocationResponse;
 import jcrapi2.response.GetLocationsResponse;
@@ -232,6 +234,18 @@ class EndToEnd {
         () -> assertNotNull(getLocationPlayerRankingsResponse, "getLocationPlayerRankingsResponse"),
         () -> assertNull(getLocationPlayerRankingsResponse.getMessage(), "message"),
         () -> assertNull(getLocationPlayerRankingsResponse.getReason(), "reason")
+    );
+  }
+
+  @Test
+  void getLocationClanWarRankings_whenWithValidParameters_thenGetResponse() throws Exception {
+    GetLocationClanWarRankingsResponse
+        getLocationClanWarRankingsResponse =
+        api.getLocationClanWarRankings(GetLocationClanWarRankingsRequest.builder("57000000").build());
+    assertAll(
+        () -> assertNotNull(getLocationClanWarRankingsResponse, "getLocationClanWarRankingsResponse"),
+        () -> assertNull(getLocationClanWarRankingsResponse.getMessage(), "message"),
+        () -> assertNull(getLocationClanWarRankingsResponse.getReason(), "reason")
     );
   }
 

@@ -32,6 +32,7 @@ import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClanWarLogResponse;
 import jcrapi2.response.GetClansResponse;
 import jcrapi2.response.GetLocationClanRankingsResponse;
+import jcrapi2.response.GetLocationClanWarRankingsResponse;
 import jcrapi2.response.GetLocationPlayerRankingsResponse;
 import jcrapi2.response.GetLocationResponse;
 import jcrapi2.response.GetLocationsResponse;
@@ -157,6 +158,14 @@ class JsonModelIntegrationTest {
   void fromJson_whenForGetLocationPlayerRankings_thenResolve() throws Exception {
     String json = readFileToString(new File("src/test/resources/locationPlayerRankings.json"));
     GetLocationPlayerRankingsResponse object = GSON.fromJson(json, GetLocationPlayerRankingsResponse.class);
+    assertNotNull(object);
+    object.getItems().forEach(Assertions::assertNotNull);
+  }
+
+  @Test
+  void fromJson_whenForGetLocationClanWarRankings_thenResolve() throws Exception {
+    String json = readFileToString(new File("src/test/resources/locationClanWarRankings.json"));
+    GetLocationClanWarRankingsResponse object = GSON.fromJson(json, GetLocationClanWarRankingsResponse.class);
     assertNotNull(object);
     object.getItems().forEach(Assertions::assertNotNull);
   }

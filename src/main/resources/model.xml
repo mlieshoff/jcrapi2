@@ -368,4 +368,23 @@
         <member name="name" type="String"/>
     </class>
 
+    <!-- get location clan war rankings -->
+
+    <class name="LocationRankingClanWar">
+        <member name="tag" type="String"/>
+        <member name="name" type="String"/>
+        <member name="rank" type="int"/>
+        <member name="previousRank" type="int"/>
+        <member name="location" type="LocationRankingClanWarLocation"/>
+        <member name="clanScore" type="int"/>
+        <member name="badgeId" type="int"/>
+        <member name="members" type="int"/>
+    </class>
+
+    <class name="LocationRankingClanWarLocation">
+        <member name="id" type="int"/>
+        <member name="name" type="String"/>
+        <member name="country" alias="isCountry" type="boolean"/>
+    </class>
+
 </model>

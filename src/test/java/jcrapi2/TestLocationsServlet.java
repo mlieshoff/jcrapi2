@@ -37,6 +37,8 @@ public class TestLocationsServlet extends TestJsonFileServlet {
       filename = "src/test/resources/locationClanRankings.json";
     } else if ("players".equals(parameter)) {
       filename = "src/test/resources/locationPlayerRankings.json";
+    } else if ("clanwars".equals(parameter)) {
+      filename = "src/test/resources/locationClanWarRankings.json";
     } else {
       filename = "src/test/resources/locations.json";
     }

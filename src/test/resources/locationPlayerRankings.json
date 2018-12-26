@@ -1,0 +1,21 @@
+{
+  "items": [
+    {
+      "tag": "string",
+      "name": "string",
+      "expLevel": 0,
+      "trophies": 0,
+      "rank": 0,
+      "previousRank": 0,
+      "clan": {
+        "tag": "string",
+        "name": "string",
+        "badgeId": 0
+      },
+      "arena": {
+        "id": 0,
+        "name": "string"
+      }
+    }
+  ]
+}

@@ -34,6 +34,7 @@ import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
 import jcrapi2.request.GetLocationClanRankingsRequest;
+import jcrapi2.request.GetLocationPlayerRankingsRequest;
 import jcrapi2.request.GetLocationRequest;
 import jcrapi2.request.GetLocationsRequest;
 import jcrapi2.request.GetPlayerBattleLogRequest;
@@ -48,6 +49,7 @@ import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClanWarLogResponse;
 import jcrapi2.response.GetClansResponse;
 import jcrapi2.response.GetLocationClanRankingsResponse;
+import jcrapi2.response.GetLocationPlayerRankingsResponse;
 import jcrapi2.response.GetLocationResponse;
 import jcrapi2.response.GetLocationsResponse;
 import jcrapi2.response.GetPlayerBattleLogResponse;
@@ -460,6 +462,35 @@ class ApiTest {
     when(client.getLocationClanRankings(getLocationClanRankingsRequest)).thenThrow(crawlerException);
     try {
       api.getLocationClanRankings(getLocationClanRankingsRequest);
+      fail();
+    } catch (ApiException e) {
+      assertEquals(SC_NOT_FOUND, e.getCode());
+    }
+  }
+
+  @Test
+  void getLocationPlayerRankings_whenWithNullRequest_thenThrowsException() throws Exception {
+    assertThrows(NullPointerException.class, () -> api.getLocationPlayerRankings(null));
+  }
+
+  @Test
+  void getLocationPlayerRankings_whenWithRequest_thenReturnResult() throws Exception {
+    GetLocationPlayerRankingsRequest
+        getLocationPlayerRankingsRequest =
+        GetLocationPlayerRankingsRequest.builder(LOCATION_ID).build();
+    GetLocationPlayerRankingsResponse getLocationPlayerRankingsResponse = new GetLocationPlayerRankingsResponse();
+    when(client.getLocationPlayerRankings(getLocationPlayerRankingsRequest)).thenReturn(getLocationPlayerRankingsResponse);
+    assertEquals(getLocationPlayerRankingsResponse, api.getLocationPlayerRankings(getLocationPlayerRankingsRequest));
+  }
+
+  @Test
+  void getLocationPlayerRankings_whenWithException_thenThrowApiException() throws Exception {
+    GetLocationPlayerRankingsRequest
+        getLocationPlayerRankingsRequest =
+        GetLocationPlayerRankingsRequest.builder(LOCATION_ID).build();
+    when(client.getLocationPlayerRankings(getLocationPlayerRankingsRequest)).thenThrow(crawlerException);
+    try {
+      api.getLocationPlayerRankings(getLocationPlayerRankingsRequest);
       fail();
     } catch (ApiException e) {
       assertEquals(SC_NOT_FOUND, e.getCode());

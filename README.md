@@ -131,6 +131,11 @@ GetLocationResponse getLocationResponse = api.getLocation(GetLocationRequest.bui
 GetLocationClanRankingsResponse getLocationClanRankingsResponse = api.getLocationClanRankings(GetLocationClanRankingsRequest.builder("57000000").build());
 ```
 
+```java
+// get location player rankings
+GetLocationPlayerRankingsResponse getLocationClanRankingsResponse = api.getLocationPlayerRankings(GetLocationPlayerRankingsRequest.builder("57000000").build());
+```
+
 ## Asynchronous usage
 
 All requests can have a *callback*. Then execution will be asynchronous.

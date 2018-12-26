@@ -319,4 +319,12 @@
         <member name="medium" type="String"/>
     </class>
 
+    <!-- get locations -->
+
+    <class name="Location">
+        <member name="id" type="int"/>
+        <member name="name" type="String"/>
+        <member name="country" alias="isCountry" type="boolean"/>
+    </class>
+
 </model>

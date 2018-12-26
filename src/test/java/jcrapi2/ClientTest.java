@@ -41,6 +41,7 @@ import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
+import jcrapi2.request.GetLocationsRequest;
 import jcrapi2.request.GetPlayerBattleLogRequest;
 import jcrapi2.request.GetPlayerRequest;
 import jcrapi2.request.GetPlayerUpcomingChestsRequest;
@@ -263,6 +264,14 @@ class ClientTest {
   void getCards_whenCalled_thenGetResponse() throws Exception {
     when(crawler.get("lala/cards", createHeaders(), emptyMap(), emptyList())).thenReturn("{}");
     assertNotNull(createClient().getCards(new BlankRequest<>()));
+  }
+
+  @Test
+  void getLocations_whenWithRequest_thenGetResponse() throws Exception {
+    GetLocationsRequest getLocationsRequest = GetLocationsRequest.builder().build();
+    when(crawler.get("lala/locations", createHeaders(), getLocationsRequest.getQueryParameters(),
+        getLocationsRequest.getRestParameters())).thenReturn("{}");
+    assertNotNull(createClient().getLocations(getLocationsRequest));
   }
 
 }

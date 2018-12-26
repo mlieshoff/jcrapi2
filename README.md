@@ -110,6 +110,17 @@ Map<String, String> responseHeaders = rawResponse.getResponseHeaders();
 GetCardsResponse getCardsResponse = api.getCards();
 ```
 
+```java
+// get locations
+GetLocationsResponse getLocationsResponse = api.getLocations(GetLocationsRequest.builder()
+  // paging
+  .after()
+  .before()
+  .limit()
+  .build()
+);
+```
+
 ## Asynchronous usage
 
 All requests can have a *callback*. Then execution will be asynchronous.

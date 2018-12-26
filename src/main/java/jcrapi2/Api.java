@@ -26,6 +26,7 @@ import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
+import jcrapi2.request.GetLocationsRequest;
 import jcrapi2.request.GetPlayerBattleLogRequest;
 import jcrapi2.request.GetPlayerRequest;
 import jcrapi2.request.GetPlayerUpcomingChestsRequest;
@@ -37,6 +38,7 @@ import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClanWarLogResponse;
 import jcrapi2.response.GetClansResponse;
+import jcrapi2.response.GetLocationsResponse;
 import jcrapi2.response.GetPlayerBattleLogResponse;
 import jcrapi2.response.GetPlayerResponse;
 import jcrapi2.response.GetPlayerUpcomingChestsResponse;
@@ -173,6 +175,15 @@ public class Api {
   public GetCardsResponse getCards() {
     try {
       return createClient().getCards(new BlankRequest<>());
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+  }
+
+  public GetLocationsResponse getLocations(GetLocationsRequest getLocationsRequest) {
+    checkNotNull(getLocationsRequest, "getLocationsRequest");
+    try {
+      return createClient().getLocations(getLocationsRequest);
     } catch (IOException e) {
       throw new ApiException(e);
     }

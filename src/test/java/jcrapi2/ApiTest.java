@@ -33,6 +33,7 @@ import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
+import jcrapi2.request.GetLocationsRequest;
 import jcrapi2.request.GetPlayerBattleLogRequest;
 import jcrapi2.request.GetPlayerRequest;
 import jcrapi2.request.GetPlayerUpcomingChestsRequest;
@@ -44,6 +45,7 @@ import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClanWarLogResponse;
 import jcrapi2.response.GetClansResponse;
+import jcrapi2.response.GetLocationsResponse;
 import jcrapi2.response.GetPlayerBattleLogResponse;
 import jcrapi2.response.GetPlayerResponse;
 import jcrapi2.response.GetPlayerUpcomingChestsResponse;
@@ -374,6 +376,31 @@ class ApiTest {
     when(client.getCards(any(BlankRequest.class))).thenThrow(crawlerException);
     try {
       api.getCards();
+      fail();
+    } catch (ApiException e) {
+      assertEquals(SC_NOT_FOUND, e.getCode());
+    }
+  }
+
+  @Test
+  void getLocations_whenWithNullRequest_thenThrowsException() throws Exception {
+    assertThrows(NullPointerException.class, () -> api.getLocations(null));
+  }
+
+  @Test
+  void getLocations_whenWithRequest_thenReturnResult() throws Exception {
+    GetLocationsRequest getLocationsRequest = GetLocationsRequest.builder().build();
+    GetLocationsResponse getLocationsResponse = new GetLocationsResponse();
+    when(client.getLocations(getLocationsRequest)).thenReturn(getLocationsResponse);
+    assertEquals(getLocationsResponse, api.getLocations(getLocationsRequest));
+  }
+
+  @Test
+  void getLocations_whenWithException_thenThrowApiException() throws Exception {
+    GetLocationsRequest getLocationsRequest = GetLocationsRequest.builder().build();
+    when(client.getLocations(getLocationsRequest)).thenThrow(crawlerException);
+    try {
+      api.getLocations(getLocationsRequest);
       fail();
     } catch (ApiException e) {
       assertEquals(SC_NOT_FOUND, e.getCode());

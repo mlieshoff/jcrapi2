@@ -306,4 +306,17 @@
         <member name="badgeId" type="int"/>
     </class>
 
+    <!-- get cards -->
+
+    <class name="Card">
+        <member name="name" type="String"/>
+        <member name="id" type="int"/>
+        <member name="maxLevel" type="int"/>
+        <member name="iconUrls" type="CardIconUrls"/>
+    </class>
+
+    <class name="CardIconUrls">
+        <member name="medium" type="String"/>
+    </class>
+
 </model>

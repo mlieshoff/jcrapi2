@@ -34,6 +34,7 @@ import jcrapi2.request.GetPlayerRequest;
 import jcrapi2.request.GetPlayerUpcomingChestsRequest;
 import jcrapi2.request.GetTournamentRequest;
 import jcrapi2.request.GetTournamentsRequest;
+import jcrapi2.response.GetCardsResponse;
 import jcrapi2.response.GetClanCurrentWarResponse;
 import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
@@ -65,6 +66,7 @@ class IntegrationTest {
     jettyServer.addServlet('/' + APP + "/clans/*", new TestClansServlet());
     jettyServer.addServlet('/' + APP + "/players/*", new TestPlayersServlet());
     jettyServer.addServlet('/' + APP + "/tournaments/*", new TestTournamentsServlet());
+    jettyServer.addServlet('/' + APP + "/cards/*", new TestCardsServlet());
     jettyServer.start();
   }
 
@@ -239,6 +241,22 @@ class IntegrationTest {
   @Test
   void getTournament_whenWithWrongUrl_thenThrow() throws Exception {
     assertThrows(ApiException.class, () -> doGetTournament("lala2"));
+  }
+
+  @Test
+  void getCards_whenWithValidParameters_thenReturnResponse() throws Exception {
+    doGetCards(API_KEY);
+  }
+
+  private static void doGetCards(String apiKey) {
+    GetCardsResponse actual = new Api(URL, apiKey).getCards();
+    assertNotNull(actual);
+    actual.getItems().forEach(Assertions::assertNotNull);
+  }
+
+  @Test
+  void getCards_whenWithWrongUrl_thenThrow() throws Exception {
+    assertThrows(ApiException.class, () -> doGetCards("lala2"));
   }
 
 }

@@ -59,7 +59,7 @@
         <member name="arena" type="ClanMemberArena"/>
         <member name="clanRank" type="int"/>
         <member name="previousClanRank" type="int"/>
-        <member name="donations" type="String"/>
+        <member name="donations" type="int"/>
         <member name="donationsReceived" type="int"/>
         <member name="clanChestPoints" type="int"/>
     </class>

@@ -34,7 +34,7 @@ public class SearchedClanLocation {
   @SerializedName("name")
   private String name;
 
-  @SerializedName("country")
+  @SerializedName("isCountry")
   private boolean country;
 
   @SerializedName("countryCode")

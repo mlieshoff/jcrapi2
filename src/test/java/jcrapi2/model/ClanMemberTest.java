@@ -91,7 +91,7 @@ class ClanMemberTest {
 
   @Test
   void setDonations_whenWithValidParameter_thenSetDonations() {
-    String expected = "astring";
+    int expected = 815;
     unitUnderTest.setDonations(expected);
     assertEquals(expected, unitUnderTest.getDonations());
   }
@@ -120,10 +120,10 @@ class ClanMemberTest {
     unitUnderTest.setArena(new ClanMemberArena());
     unitUnderTest.setClanRank(815);
     unitUnderTest.setPreviousClanRank(815);
-    unitUnderTest.setDonations("astring");
+    unitUnderTest.setDonations(815);
     unitUnderTest.setDonationsReceived(815);
     unitUnderTest.setClanChestPoints(815);
-    String expected = "ClanMember(tag=astring, name=astring, role=astring, expLevel=815, trophies=815, arena=" + new ClanMemberArena() + ", clanRank=815, previousClanRank=815, donations=astring, donationsReceived=815, clanChestPoints=815)";
+    String expected = "ClanMember(tag=astring, name=astring, role=astring, expLevel=815, trophies=815, arena=" + new ClanMemberArena() + ", clanRank=815, previousClanRank=815, donations=815, donationsReceived=815, clanChestPoints=815)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

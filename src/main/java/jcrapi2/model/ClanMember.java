@@ -53,7 +53,7 @@ public class ClanMember {
   private int previousClanRank;
 
   @SerializedName("donations")
-  private String donations;
+  private int donations;
 
   @SerializedName("donationsReceived")
   private int donationsReceived;

@@ -47,6 +47,6 @@ public class PlayerBattleLogOpponent {
   private PlayerBattleLogOpponentClan clan;
 
   @SerializedName("cards")
-  private PlayerBattleLogOpponentCard cards;
+  private java.util.List<PlayerBattleLogOpponentCard> cards;
 
 }

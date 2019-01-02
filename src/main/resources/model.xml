@@ -317,7 +317,7 @@
         <member name="trophyChange" type="int"/>
         <member name="crowns" type="int"/>
         <member name="clan" type="PlayerBattleLogOpponentClan"/>
-        <member name="cards" type="PlayerBattleLogOpponentCard"/>
+        <member name="cards" type="list(PlayerBattleLogOpponentCard)"/>
     </class>
 
     <class name="PlayerBattleLogOpponentClan">

@@ -67,4 +67,13 @@ public class Clan {
   @SerializedName("memberList")
   private java.util.List<ClanMember> memberList;
 
+  @SerializedName("description")
+  private String description;
+
+  @SerializedName("clanChestPoints")
+  private int clanChestPoints;
+
+  @SerializedName("clanWarTrophies")
+  private int clanWarTrophies;
+
 }

@@ -69,13 +69,29 @@ class PlayerCardTest {
   }
 
   @Test
+  void setId_whenWithValidParameter_thenSetId() {
+    int expected = 815;
+    unitUnderTest.setId(expected);
+    assertEquals(expected, unitUnderTest.getId());
+  }
+
+  @Test
+  void setStarLevel_whenWithValidParameter_thenSetStarLevel() {
+    int expected = 815;
+    unitUnderTest.setStarLevel(expected);
+    assertEquals(expected, unitUnderTest.getStarLevel());
+  }
+
+  @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
     unitUnderTest.setName("astring");
     unitUnderTest.setLevel(815);
     unitUnderTest.setMaxLevel(815);
     unitUnderTest.setCount(815);
     unitUnderTest.setIconUrls(new PlayerIconUrls());
-    String expected = "PlayerCard(name=astring, level=815, maxLevel=815, count=815, iconUrls=" + new PlayerIconUrls() + ")";
+    unitUnderTest.setId(815);
+    unitUnderTest.setStarLevel(815);
+    String expected = "PlayerCard(name=astring, level=815, maxLevel=815, count=815, iconUrls=" + new PlayerIconUrls() + ", id=815, starLevel=815)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

@@ -37,4 +37,7 @@ public class LocationRankingClanLocation {
   @SerializedName("isCountry")
   private boolean country;
 
+  @SerializedName("countryCode")
+  private String countryCode;
+
 }

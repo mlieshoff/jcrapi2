@@ -61,4 +61,7 @@ public class SearchedClan {
   @SerializedName("members")
   private int members;
 
+  @SerializedName("clanWarTrophies")
+  private int clanWarTrophies;
+
 }

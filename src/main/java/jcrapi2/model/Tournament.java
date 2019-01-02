@@ -61,7 +61,19 @@ public class Tournament {
   @SerializedName("startedTime")
   private String startedTime;
 
-  @SerializedName("memberList")
-  private java.util.List<TournamentMember> memberList;
+  @SerializedName("membersList")
+  private java.util.List<TournamentMember> membersList;
+
+  @SerializedName("description")
+  private String description;
+
+  @SerializedName("levelCap")
+  private int levelCap;
+
+  @SerializedName("firstPlaceCardPrize")
+  private int firstPlaceCardPrize;
+
+  @SerializedName("gameMode")
+  private TournamentGameMode gameMode;
 
 }

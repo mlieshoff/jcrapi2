@@ -28,6 +28,9 @@ import lombok.ToString;
 @ToString
 public class PlayerBattleLogTeamCard {
 
+  @SerializedName("id")
+  private int id;
+
   @SerializedName("name")
   private String name;
 
@@ -39,5 +42,8 @@ public class PlayerBattleLogTeamCard {
 
   @SerializedName("iconUrls")
   private PlayerBattleLogTeamCardIconUrls iconUrls;
+
+  @SerializedName("starLevel")
+  private int starLevel;
 
 }

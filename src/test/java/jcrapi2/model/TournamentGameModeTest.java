@@ -16,34 +16,36 @@
  */
 package jcrapi2.model;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import javax.annotation.Generated;
-import com.google.gson.annotations.SerializedName;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 @Generated("org.mili.generator")
-@Getter
-@Setter
-@ToString
-public class ClanWarLogParticipant {
+class TournamentGameModeTest {
 
-  @SerializedName("tag")
-  private String tag;
+  private TournamentGameMode unitUnderTest;
 
-  @SerializedName("name")
-  private String name;
+  @BeforeEach
+  void setUp() {
+    unitUnderTest = new TournamentGameMode();
+  }
 
-  @SerializedName("cardsEarned")
-  private int cardsEarned;
+  @Test
+  void setId_whenWithValidParameter_thenSetId() {
+    int expected = 815;
+    unitUnderTest.setId(expected);
+    assertEquals(expected, unitUnderTest.getId());
+  }
 
-  @SerializedName("battlesPlayed")
-  private int battlesPlayed;
-
-  @SerializedName("wins")
-  private int wins;
-
-  @SerializedName("collectionDayBattlesPlayed")
-  private int collectionDayBattlesPlayed;
+  @Test
+  void toString_whenCalled_thenReturnStringRepresentation() {
+    unitUnderTest.setId(815);
+    String expected = "TournamentGameMode(id=815)";
+    String actual = unitUnderTest.toString();
+    assertEquals(expected, actual);
+  }
 
 }

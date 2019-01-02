@@ -24,50 +24,42 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 @Generated("org.mili.generator")
-class PlayerCurrentFavouriteCardTest {
+class PlayerLeagueStatisticsCurrentSeasonTest {
 
-  private PlayerCurrentFavouriteCard unitUnderTest;
+  private PlayerLeagueStatisticsCurrentSeason unitUnderTest;
 
   @BeforeEach
   void setUp() {
-    unitUnderTest = new PlayerCurrentFavouriteCard();
+    unitUnderTest = new PlayerLeagueStatisticsCurrentSeason();
   }
 
   @Test
-  void setName_whenWithValidParameter_thenSetName() {
-    String expected = "astring";
-    unitUnderTest.setName(expected);
-    assertEquals(expected, unitUnderTest.getName());
-  }
-
-  @Test
-  void setId_whenWithValidParameter_thenSetId() {
+  void setTrophies_whenWithValidParameter_thenSetTrophies() {
     int expected = 815;
-    unitUnderTest.setId(expected);
-    assertEquals(expected, unitUnderTest.getId());
+    unitUnderTest.setTrophies(expected);
+    assertEquals(expected, unitUnderTest.getTrophies());
   }
 
   @Test
-  void setMaxLevel_whenWithValidParameter_thenSetMaxLevel() {
+  void setBestTrophies_whenWithValidParameter_thenSetBestTrophies() {
     int expected = 815;
-    unitUnderTest.setMaxLevel(expected);
-    assertEquals(expected, unitUnderTest.getMaxLevel());
+    unitUnderTest.setBestTrophies(expected);
+    assertEquals(expected, unitUnderTest.getBestTrophies());
   }
 
   @Test
-  void setIconUrls_whenWithValidParameter_thenSetIconUrls() {
-    PlayerCurrentFavouriteCardIconUrls expected = new PlayerCurrentFavouriteCardIconUrls();
-    unitUnderTest.setIconUrls(expected);
-    assertEquals(expected, unitUnderTest.getIconUrls());
+  void setRank_whenWithValidParameter_thenSetRank() {
+    int expected = 815;
+    unitUnderTest.setRank(expected);
+    assertEquals(expected, unitUnderTest.getRank());
   }
 
   @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
-    unitUnderTest.setName("astring");
-    unitUnderTest.setId(815);
-    unitUnderTest.setMaxLevel(815);
-    unitUnderTest.setIconUrls(new PlayerCurrentFavouriteCardIconUrls());
-    String expected = "PlayerCurrentFavouriteCard(name=astring, id=815, maxLevel=815, iconUrls=" + new PlayerCurrentFavouriteCardIconUrls() + ")";
+    unitUnderTest.setTrophies(815);
+    unitUnderTest.setBestTrophies(815);
+    unitUnderTest.setRank(815);
+    String expected = "PlayerLeagueStatisticsCurrentSeason(trophies=815, bestTrophies=815, rank=815)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

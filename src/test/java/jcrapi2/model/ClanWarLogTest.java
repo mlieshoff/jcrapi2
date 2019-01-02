@@ -55,11 +55,19 @@ class ClanWarLogTest {
   }
 
   @Test
+  void setStandings_whenWithValidParameter_thenSetStandings() {
+    java.util.List<ClanWarLogStanding> expected = new java.util.ArrayList<ClanWarLogStanding>();
+    unitUnderTest.setStandings(expected);
+    assertEquals(expected, unitUnderTest.getStandings());
+  }
+
+  @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
     unitUnderTest.setSeasonId(815);
     unitUnderTest.setCreatedDate("astring");
     unitUnderTest.setParticipants(new java.util.ArrayList<ClanWarLogParticipant>());
-    String expected = "ClanWarLog(seasonId=815, createdDate=astring, participants=" + new java.util.ArrayList<ClanWarLogParticipant>() + ")";
+    unitUnderTest.setStandings(new java.util.ArrayList<ClanWarLogStanding>());
+    String expected = "ClanWarLog(seasonId=815, createdDate=astring, participants=" + new java.util.ArrayList<ClanWarLogParticipant>() + ", standings=" + new java.util.ArrayList<ClanWarLogStanding>() + ")";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

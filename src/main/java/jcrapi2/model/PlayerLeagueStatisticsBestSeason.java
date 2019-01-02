@@ -26,24 +26,15 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class ClanWarLogParticipant {
+public class PlayerLeagueStatisticsBestSeason {
 
-  @SerializedName("tag")
-  private String tag;
+  @SerializedName("id")
+  private String id;
 
-  @SerializedName("name")
-  private String name;
+  @SerializedName("trophies")
+  private int trophies;
 
-  @SerializedName("cardsEarned")
-  private int cardsEarned;
-
-  @SerializedName("battlesPlayed")
-  private int battlesPlayed;
-
-  @SerializedName("wins")
-  private int wins;
-
-  @SerializedName("collectionDayBattlesPlayed")
-  private int collectionDayBattlesPlayed;
+  @SerializedName("rank")
+  private int rank;
 
 }

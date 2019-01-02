@@ -24,50 +24,34 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 @Generated("org.mili.generator")
-class PlayerCurrentFavouriteCardTest {
+class ClanWarLogStandingTest {
 
-  private PlayerCurrentFavouriteCard unitUnderTest;
+  private ClanWarLogStanding unitUnderTest;
 
   @BeforeEach
   void setUp() {
-    unitUnderTest = new PlayerCurrentFavouriteCard();
+    unitUnderTest = new ClanWarLogStanding();
   }
 
   @Test
-  void setName_whenWithValidParameter_thenSetName() {
-    String expected = "astring";
-    unitUnderTest.setName(expected);
-    assertEquals(expected, unitUnderTest.getName());
+  void setClan_whenWithValidParameter_thenSetClan() {
+    ClanWarLogStandingClan expected = new ClanWarLogStandingClan();
+    unitUnderTest.setClan(expected);
+    assertEquals(expected, unitUnderTest.getClan());
   }
 
   @Test
-  void setId_whenWithValidParameter_thenSetId() {
+  void setTrophyChange_whenWithValidParameter_thenSetTrophyChange() {
     int expected = 815;
-    unitUnderTest.setId(expected);
-    assertEquals(expected, unitUnderTest.getId());
-  }
-
-  @Test
-  void setMaxLevel_whenWithValidParameter_thenSetMaxLevel() {
-    int expected = 815;
-    unitUnderTest.setMaxLevel(expected);
-    assertEquals(expected, unitUnderTest.getMaxLevel());
-  }
-
-  @Test
-  void setIconUrls_whenWithValidParameter_thenSetIconUrls() {
-    PlayerCurrentFavouriteCardIconUrls expected = new PlayerCurrentFavouriteCardIconUrls();
-    unitUnderTest.setIconUrls(expected);
-    assertEquals(expected, unitUnderTest.getIconUrls());
+    unitUnderTest.setTrophyChange(expected);
+    assertEquals(expected, unitUnderTest.getTrophyChange());
   }
 
   @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
-    unitUnderTest.setName("astring");
-    unitUnderTest.setId(815);
-    unitUnderTest.setMaxLevel(815);
-    unitUnderTest.setIconUrls(new PlayerCurrentFavouriteCardIconUrls());
-    String expected = "PlayerCurrentFavouriteCard(name=astring, id=815, maxLevel=815, iconUrls=" + new PlayerCurrentFavouriteCardIconUrls() + ")";
+    unitUnderTest.setClan(new ClanWarLogStandingClan());
+    unitUnderTest.setTrophyChange(815);
+    String expected = "ClanWarLogStanding(clan=" + new ClanWarLogStandingClan() + ", trophyChange=815)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

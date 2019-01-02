@@ -111,10 +111,38 @@ class TournamentTest {
   }
 
   @Test
-  void setMemberList_whenWithValidParameter_thenSetMemberList() {
+  void setMembersList_whenWithValidParameter_thenSetMembersList() {
     java.util.List<TournamentMember> expected = new java.util.ArrayList<TournamentMember>();
-    unitUnderTest.setMemberList(expected);
-    assertEquals(expected, unitUnderTest.getMemberList());
+    unitUnderTest.setMembersList(expected);
+    assertEquals(expected, unitUnderTest.getMembersList());
+  }
+
+  @Test
+  void setDescription_whenWithValidParameter_thenSetDescription() {
+    String expected = "astring";
+    unitUnderTest.setDescription(expected);
+    assertEquals(expected, unitUnderTest.getDescription());
+  }
+
+  @Test
+  void setLevelCap_whenWithValidParameter_thenSetLevelCap() {
+    int expected = 815;
+    unitUnderTest.setLevelCap(expected);
+    assertEquals(expected, unitUnderTest.getLevelCap());
+  }
+
+  @Test
+  void setFirstPlaceCardPrize_whenWithValidParameter_thenSetFirstPlaceCardPrize() {
+    int expected = 815;
+    unitUnderTest.setFirstPlaceCardPrize(expected);
+    assertEquals(expected, unitUnderTest.getFirstPlaceCardPrize());
+  }
+
+  @Test
+  void setGameMode_whenWithValidParameter_thenSetGameMode() {
+    TournamentGameMode expected = new TournamentGameMode();
+    unitUnderTest.setGameMode(expected);
+    assertEquals(expected, unitUnderTest.getGameMode());
   }
 
   @Test
@@ -130,8 +158,12 @@ class TournamentTest {
     unitUnderTest.setDuration(815);
     unitUnderTest.setCreatedTime("astring");
     unitUnderTest.setStartedTime("astring");
-    unitUnderTest.setMemberList(new java.util.ArrayList<TournamentMember>());
-    String expected = "Tournament(tag=astring, type=astring, status=astring, creatorTag=astring, name=astring, capacity=815, maxCapacity=815, preparationDuration=815, duration=815, createdTime=astring, startedTime=astring, memberList=" + new java.util.ArrayList<TournamentMember>() + ")";
+    unitUnderTest.setMembersList(new java.util.ArrayList<TournamentMember>());
+    unitUnderTest.setDescription("astring");
+    unitUnderTest.setLevelCap(815);
+    unitUnderTest.setFirstPlaceCardPrize(815);
+    unitUnderTest.setGameMode(new TournamentGameMode());
+    String expected = "Tournament(tag=astring, type=astring, status=astring, creatorTag=astring, name=astring, capacity=815, maxCapacity=815, preparationDuration=815, duration=815, createdTime=astring, startedTime=astring, membersList=" + new java.util.ArrayList<TournamentMember>() + ", description=astring, levelCap=815, firstPlaceCardPrize=815, gameMode=" + new TournamentGameMode() + ")";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

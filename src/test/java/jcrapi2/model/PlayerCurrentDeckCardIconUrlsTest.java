@@ -24,50 +24,26 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 @Generated("org.mili.generator")
-class PlayerCurrentFavouriteCardTest {
+class PlayerCurrentDeckCardIconUrlsTest {
 
-  private PlayerCurrentFavouriteCard unitUnderTest;
+  private PlayerCurrentDeckCardIconUrls unitUnderTest;
 
   @BeforeEach
   void setUp() {
-    unitUnderTest = new PlayerCurrentFavouriteCard();
+    unitUnderTest = new PlayerCurrentDeckCardIconUrls();
   }
 
   @Test
-  void setName_whenWithValidParameter_thenSetName() {
+  void setMedium_whenWithValidParameter_thenSetMedium() {
     String expected = "astring";
-    unitUnderTest.setName(expected);
-    assertEquals(expected, unitUnderTest.getName());
-  }
-
-  @Test
-  void setId_whenWithValidParameter_thenSetId() {
-    int expected = 815;
-    unitUnderTest.setId(expected);
-    assertEquals(expected, unitUnderTest.getId());
-  }
-
-  @Test
-  void setMaxLevel_whenWithValidParameter_thenSetMaxLevel() {
-    int expected = 815;
-    unitUnderTest.setMaxLevel(expected);
-    assertEquals(expected, unitUnderTest.getMaxLevel());
-  }
-
-  @Test
-  void setIconUrls_whenWithValidParameter_thenSetIconUrls() {
-    PlayerCurrentFavouriteCardIconUrls expected = new PlayerCurrentFavouriteCardIconUrls();
-    unitUnderTest.setIconUrls(expected);
-    assertEquals(expected, unitUnderTest.getIconUrls());
+    unitUnderTest.setMedium(expected);
+    assertEquals(expected, unitUnderTest.getMedium());
   }
 
   @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
-    unitUnderTest.setName("astring");
-    unitUnderTest.setId(815);
-    unitUnderTest.setMaxLevel(815);
-    unitUnderTest.setIconUrls(new PlayerCurrentFavouriteCardIconUrls());
-    String expected = "PlayerCurrentFavouriteCard(name=astring, id=815, maxLevel=815, iconUrls=" + new PlayerCurrentFavouriteCardIconUrls() + ")";
+    unitUnderTest.setMedium("astring");
+    String expected = "PlayerCurrentDeckCardIconUrls(medium=astring)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

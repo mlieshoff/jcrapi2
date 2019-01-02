@@ -77,7 +77,7 @@ class PlayerBattleLogOpponentTest {
 
   @Test
   void setCards_whenWithValidParameter_thenSetCards() {
-    PlayerBattleLogOpponentCard expected = new PlayerBattleLogOpponentCard();
+    java.util.List<PlayerBattleLogOpponentCard> expected = new java.util.ArrayList<PlayerBattleLogOpponentCard>();
     unitUnderTest.setCards(expected);
     assertEquals(expected, unitUnderTest.getCards());
   }
@@ -90,8 +90,8 @@ class PlayerBattleLogOpponentTest {
     unitUnderTest.setTrophyChange(815);
     unitUnderTest.setCrowns(815);
     unitUnderTest.setClan(new PlayerBattleLogOpponentClan());
-    unitUnderTest.setCards(new PlayerBattleLogOpponentCard());
-    String expected = "PlayerBattleLogOpponent(tag=astring, name=astring, startingTrophies=815, trophyChange=815, crowns=815, clan=" + new PlayerBattleLogOpponentClan() + ", cards=" + new PlayerBattleLogOpponentCard() + ")";
+    unitUnderTest.setCards(new java.util.ArrayList<PlayerBattleLogOpponentCard>());
+    String expected = "PlayerBattleLogOpponent(tag=astring, name=astring, startingTrophies=815, trophyChange=815, crowns=815, clan=" + new PlayerBattleLogOpponentClan() + ", cards=" + new java.util.ArrayList<PlayerBattleLogOpponentCard>() + ")";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

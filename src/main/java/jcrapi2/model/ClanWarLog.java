@@ -37,4 +37,7 @@ public class ClanWarLog {
   @SerializedName("participants")
   private java.util.List<ClanWarLogParticipant> participants;
 
+  @SerializedName("standings")
+  private java.util.List<ClanWarLogStanding> standings;
+
 }

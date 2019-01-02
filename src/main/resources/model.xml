@@ -18,6 +18,7 @@
         <member name="clanChestLevel" type="int"/>
         <member name="clanChestMaxLevel" type="int"/>
         <member name="members" type="int"/>
+        <member name="clanWarTrophies" type="int"/>
     </class>
 
     <class name="SearchedClanLocation">
@@ -40,7 +41,10 @@
         <member name="clanChestLevel" type="int"/>
         <member name="clanChestMaxLevel" type="int"/>
         <member name="members" type="int"/>
-        <member name="memberList" type="list(ClanMember"/>
+        <member name="memberList" type="list(ClanMember)"/>
+        <member name="description" type="String"/>
+        <member name="clanChestPoints" type="int"/>
+        <member name="clanWarTrophies" type="int"/>
     </class>
 
     <class name="ClanLocation">
@@ -75,6 +79,7 @@
         <member name="seasonId" type="int"/>
         <member name="createdDate" type="String"/>
         <member name="participants" type="list(ClanWarLogParticipant)"/>
+        <member name="standings" type="list(ClanWarLogStanding)"/>
     </class>
 
     <class name="ClanWarLogParticipant">
@@ -83,6 +88,23 @@
         <member name="cardsEarned" type="int"/>
         <member name="battlesPlayed" type="int"/>
         <member name="wins" type="int"/>
+        <member name="collectionDayBattlesPlayed" type="int"/>
+    </class>
+
+    <class name="ClanWarLogStanding">
+        <member name="clan" type="ClanWarLogStandingClan"/>
+        <member name="trophyChange" type="int"/>
+    </class>
+
+    <class name="ClanWarLogStandingClan">
+        <member name="tag" type="String"/>
+        <member name="name" type="String"/>
+        <member name="badgeId" type="int"/>
+        <member name="clanScore" type="int"/>
+        <member name="participants" type="int"/>
+        <member name="battlesPlayed" type="int"/>
+        <member name="wins" type="int"/>
+        <member name="crowns" type="int"/>
     </class>
 
     <!-- clans current war -->
@@ -139,7 +161,10 @@
         <member name="arena" type="PlayerArena"/>
         <member name="achievements" type="list(PlayerAchievment)"/>
         <member name="cards" type="list(PlayerCard)"/>
-        <member name="playerCurrentFavouriteCard" type="PlayerCurrentFavouriteCard"/>
+        <member name="starPoints" type="int"/>
+        <member name="leagueStatistics" type="PlayerLeagueStatistics"/>
+        <member name="currentDeck" type="list(PlayerCurrentDeckCard)"/>
+        <member name="currentFavouriteCard" type="PlayerCurrentFavouriteCard"/>
     </class>
 
     <class name="PlayerClan">
@@ -167,6 +192,8 @@
         <member name="maxLevel" type="int"/>
         <member name="count" type="int"/>
         <member name="iconUrls" type="PlayerIconUrls"/>
+        <member name="id" type="int"/>
+        <member name="starLevel" type="int"/>
     </class>
 
     <class name="PlayerIconUrls">
@@ -177,7 +204,49 @@
         <member name="name" type="String"/>
         <member name="id" type="int"/>
         <member name="maxLevel" type="int"/>
-        <member name="iconUrls" type="PlayerIconUrls"/>
+        <member name="iconUrls" type="PlayerCurrentFavouriteCardIconUrls"/>
+    </class>
+
+    <class name="PlayerCurrentFavouriteCardIconUrls">
+        <member name="medium" type="String"/>
+    </class>
+
+    <class name="PlayerLeagueStatistics">
+        <member name="currentSeason" type="PlayerLeagueStatisticsCurrentSeason"/>
+        <member name="previousSeason" type="PlayerLeagueStatisticsPreviousSeason"/>
+        <member name="bestSeason" type="PlayerLeagueStatisticsBestSeason"/>
+    </class>
+
+    <class name="PlayerLeagueStatisticsCurrentSeason">
+        <member name="trophies" type="int"/>
+        <member name="bestTrophies" type="int"/>
+        <member name="rank" type="int"/>
+    </class>
+
+    <class name="PlayerLeagueStatisticsPreviousSeason">
+        <member name="id" type="String"/>
+        <member name="trophies" type="int"/>
+        <member name="bestTrophies" type="int"/>
+    </class>
+
+    <class name="PlayerLeagueStatisticsBestSeason">
+        <member name="id" type="String"/>
+        <member name="trophies" type="int"/>
+        <member name="rank" type="int"/>
+    </class>
+
+    <class name="PlayerCurrentDeckCard">
+        <member name="name" type="String"/>
+        <member name="id" type="int"/>
+        <member name="level" type="int"/>
+        <member name="starLevel" type="int"/>
+        <member name="maxLevel" type="int"/>
+        <member name="count" type="int"/>
+        <member name="iconUrls" type="PlayerCurrentDeckCardIconUrls"/>
+    </class>
+
+    <class name="PlayerCurrentDeckCardIconUrls">
+        <member name="medium" type="String"/>
     </class>
 
     <!-- get player upcomming chests -->
@@ -196,6 +265,10 @@
         <member name="gameMode" type="PlayerBattleLogGameMode"/>
         <member name="deckSelection" type="String"/>
         <member name="team" type="list(PlayerBattleLogTeam)"/>
+        <member name="opponent" type="list(PlayerBattleLogOpponent)"/>
+        <member name="challengeId" type="int"/>
+        <member name="challengeWinCountBefore" type="int"/>
+        <member name="challengeTitle" type="int"/>
     </class>
 
     <class name="PlayerBattleLogArena">
@@ -225,10 +298,12 @@
     </class>
 
     <class name="PlayerBattleLogTeamCard">
+        <member name="id" type="int"/>
         <member name="name" type="String"/>
         <member name="level" type="int"/>
         <member name="maxLevel" type="int"/>
         <member name="iconUrls" type="PlayerBattleLogTeamCardIconUrls"/>
+        <member name="starLevel" type="int"/>
     </class>
 
     <class name="PlayerBattleLogTeamCardIconUrls">
@@ -242,7 +317,7 @@
         <member name="trophyChange" type="int"/>
         <member name="crowns" type="int"/>
         <member name="clan" type="PlayerBattleLogOpponentClan"/>
-        <member name="cards" type="PlayerBattleLogOpponentCard"/>
+        <member name="cards" type="list(PlayerBattleLogOpponentCard)"/>
     </class>
 
     <class name="PlayerBattleLogOpponentClan">
@@ -275,6 +350,14 @@
         <member name="preparationDuration" type="int"/>
         <member name="duration" type="int"/>
         <member name="createdTime" type="String"/>
+        <member name="levelCap" type="int"/>
+        <member name="firstPlaceCardPrize" type="int"/>
+        <member name="maxCapacity" type="int"/>
+        <member name="gameMode" type="SearchedTournamentGameMode"/>
+    </class>
+
+    <class name="SearchedTournamentGameMode">
+        <member name="id" type="int"/>
     </class>
 
     <class name="Tournament">
@@ -289,7 +372,15 @@
         <member name="duration" type="int"/>
         <member name="createdTime" type="String"/>
         <member name="startedTime" type="String"/>
-        <member name="memberList" type="list(TournamentMember)"/>
+        <member name="membersList" type="list(TournamentMember)"/>
+        <member name="description" type="String"/>
+        <member name="levelCap" type="int"/>
+        <member name="firstPlaceCardPrize" type="int"/>
+        <member name="gameMode" type="TournamentGameMode"/>
+    </class>
+
+    <class name="TournamentGameMode">
+        <member name="id" type="int"/>
     </class>
 
     <class name="TournamentMember">
@@ -325,6 +416,7 @@
         <member name="id" type="int"/>
         <member name="name" type="String"/>
         <member name="country" alias="isCountry" type="boolean"/>
+        <member name="countryCode" type="String"/>
     </class>
 
     <!-- get location clan rankings -->
@@ -344,6 +436,7 @@
         <member name="id" type="int"/>
         <member name="name" type="String"/>
         <member name="country" alias="isCountry" type="boolean"/>
+        <member name="countryCode" type="String"/>
     </class>
 
     <!-- get location player rankings -->
@@ -355,6 +448,8 @@
         <member name="previousRank" type="int"/>
         <member name="clan" type="LocationRankingPlayerClan"/>
         <member name="arena" type="LocationRankingPlayerArena"/>
+        <member name="expLevel" type="int"/>
+        <member name="trophies" type="int"/>
     </class>
 
     <class name="LocationRankingPlayerClan">
@@ -385,6 +480,7 @@
         <member name="id" type="int"/>
         <member name="name" type="String"/>
         <member name="country" alias="isCountry" type="boolean"/>
+        <member name="countryCode" type="String"/>
     </class>
 
 </model>

@@ -58,4 +58,16 @@ public class SearchedTournament {
   @SerializedName("createdTime")
   private String createdTime;
 
+  @SerializedName("levelCap")
+  private int levelCap;
+
+  @SerializedName("firstPlaceCardPrize")
+  private int firstPlaceCardPrize;
+
+  @SerializedName("maxCapacity")
+  private int maxCapacity;
+
+  @SerializedName("gameMode")
+  private SearchedTournamentGameMode gameMode;
+
 }

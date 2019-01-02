@@ -46,4 +46,16 @@ public class PlayerBattleLog {
   @SerializedName("team")
   private java.util.List<PlayerBattleLogTeam> team;
 
+  @SerializedName("opponent")
+  private java.util.List<PlayerBattleLogOpponent> opponent;
+
+  @SerializedName("challengeId")
+  private int challengeId;
+
+  @SerializedName("challengeWinCountBefore")
+  private int challengeWinCountBefore;
+
+  @SerializedName("challengeTitle")
+  private int challengeTitle;
+
 }

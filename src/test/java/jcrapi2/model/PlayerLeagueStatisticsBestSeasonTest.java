@@ -24,50 +24,42 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 @Generated("org.mili.generator")
-class PlayerCurrentFavouriteCardTest {
+class PlayerLeagueStatisticsBestSeasonTest {
 
-  private PlayerCurrentFavouriteCard unitUnderTest;
+  private PlayerLeagueStatisticsBestSeason unitUnderTest;
 
   @BeforeEach
   void setUp() {
-    unitUnderTest = new PlayerCurrentFavouriteCard();
-  }
-
-  @Test
-  void setName_whenWithValidParameter_thenSetName() {
-    String expected = "astring";
-    unitUnderTest.setName(expected);
-    assertEquals(expected, unitUnderTest.getName());
+    unitUnderTest = new PlayerLeagueStatisticsBestSeason();
   }
 
   @Test
   void setId_whenWithValidParameter_thenSetId() {
-    int expected = 815;
+    String expected = "astring";
     unitUnderTest.setId(expected);
     assertEquals(expected, unitUnderTest.getId());
   }
 
   @Test
-  void setMaxLevel_whenWithValidParameter_thenSetMaxLevel() {
+  void setTrophies_whenWithValidParameter_thenSetTrophies() {
     int expected = 815;
-    unitUnderTest.setMaxLevel(expected);
-    assertEquals(expected, unitUnderTest.getMaxLevel());
+    unitUnderTest.setTrophies(expected);
+    assertEquals(expected, unitUnderTest.getTrophies());
   }
 
   @Test
-  void setIconUrls_whenWithValidParameter_thenSetIconUrls() {
-    PlayerCurrentFavouriteCardIconUrls expected = new PlayerCurrentFavouriteCardIconUrls();
-    unitUnderTest.setIconUrls(expected);
-    assertEquals(expected, unitUnderTest.getIconUrls());
+  void setRank_whenWithValidParameter_thenSetRank() {
+    int expected = 815;
+    unitUnderTest.setRank(expected);
+    assertEquals(expected, unitUnderTest.getRank());
   }
 
   @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
-    unitUnderTest.setName("astring");
-    unitUnderTest.setId(815);
-    unitUnderTest.setMaxLevel(815);
-    unitUnderTest.setIconUrls(new PlayerCurrentFavouriteCardIconUrls());
-    String expected = "PlayerCurrentFavouriteCard(name=astring, id=815, maxLevel=815, iconUrls=" + new PlayerCurrentFavouriteCardIconUrls() + ")";
+    unitUnderTest.setId("astring");
+    unitUnderTest.setTrophies(815);
+    unitUnderTest.setRank(815);
+    String expected = "PlayerLeagueStatisticsBestSeason(id=astring, trophies=815, rank=815)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

@@ -125,6 +125,27 @@ class ClanTest {
   }
 
   @Test
+  void setDescription_whenWithValidParameter_thenSetDescription() {
+    String expected = "astring";
+    unitUnderTest.setDescription(expected);
+    assertEquals(expected, unitUnderTest.getDescription());
+  }
+
+  @Test
+  void setClanChestPoints_whenWithValidParameter_thenSetClanChestPoints() {
+    int expected = 815;
+    unitUnderTest.setClanChestPoints(expected);
+    assertEquals(expected, unitUnderTest.getClanChestPoints());
+  }
+
+  @Test
+  void setClanWarTrophies_whenWithValidParameter_thenSetClanWarTrophies() {
+    int expected = 815;
+    unitUnderTest.setClanWarTrophies(expected);
+    assertEquals(expected, unitUnderTest.getClanWarTrophies());
+  }
+
+  @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
     unitUnderTest.setTag("astring");
     unitUnderTest.setName("astring");
@@ -139,7 +160,10 @@ class ClanTest {
     unitUnderTest.setClanChestMaxLevel(815);
     unitUnderTest.setMembers(815);
     unitUnderTest.setMemberList(new java.util.ArrayList<ClanMember>());
-    String expected = "Clan(tag=astring, name=astring, type=astring, badgeId=815, clanScore=815, location=" + new ClanLocation() + ", requiredTrophies=815, donationsPerWeek=815, clanChestStatus=astring, clanChestLevel=815, clanChestMaxLevel=815, members=815, memberList=" + new java.util.ArrayList<ClanMember>() + ")";
+    unitUnderTest.setDescription("astring");
+    unitUnderTest.setClanChestPoints(815);
+    unitUnderTest.setClanWarTrophies(815);
+    String expected = "Clan(tag=astring, name=astring, type=astring, badgeId=815, clanScore=815, location=" + new ClanLocation() + ", requiredTrophies=815, donationsPerWeek=815, clanChestStatus=astring, clanChestLevel=815, clanChestMaxLevel=815, members=815, memberList=" + new java.util.ArrayList<ClanMember>() + ", description=astring, clanChestPoints=815, clanWarTrophies=815)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

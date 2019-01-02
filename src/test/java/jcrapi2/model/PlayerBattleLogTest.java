@@ -76,6 +76,34 @@ class PlayerBattleLogTest {
   }
 
   @Test
+  void setOpponent_whenWithValidParameter_thenSetOpponent() {
+    java.util.List<PlayerBattleLogOpponent> expected = new java.util.ArrayList<PlayerBattleLogOpponent>();
+    unitUnderTest.setOpponent(expected);
+    assertEquals(expected, unitUnderTest.getOpponent());
+  }
+
+  @Test
+  void setChallengeId_whenWithValidParameter_thenSetChallengeId() {
+    int expected = 815;
+    unitUnderTest.setChallengeId(expected);
+    assertEquals(expected, unitUnderTest.getChallengeId());
+  }
+
+  @Test
+  void setChallengeWinCountBefore_whenWithValidParameter_thenSetChallengeWinCountBefore() {
+    int expected = 815;
+    unitUnderTest.setChallengeWinCountBefore(expected);
+    assertEquals(expected, unitUnderTest.getChallengeWinCountBefore());
+  }
+
+  @Test
+  void setChallengeTitle_whenWithValidParameter_thenSetChallengeTitle() {
+    int expected = 815;
+    unitUnderTest.setChallengeTitle(expected);
+    assertEquals(expected, unitUnderTest.getChallengeTitle());
+  }
+
+  @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
     unitUnderTest.setType("astring");
     unitUnderTest.setBattleTime("astring");
@@ -83,7 +111,11 @@ class PlayerBattleLogTest {
     unitUnderTest.setGameMode(new PlayerBattleLogGameMode());
     unitUnderTest.setDeckSelection("astring");
     unitUnderTest.setTeam(new java.util.ArrayList<PlayerBattleLogTeam>());
-    String expected = "PlayerBattleLog(type=astring, battleTime=astring, arena=" + new PlayerBattleLogArena() + ", gameMode=" + new PlayerBattleLogGameMode() + ", deckSelection=astring, team=" + new java.util.ArrayList<PlayerBattleLogTeam>() + ")";
+    unitUnderTest.setOpponent(new java.util.ArrayList<PlayerBattleLogOpponent>());
+    unitUnderTest.setChallengeId(815);
+    unitUnderTest.setChallengeWinCountBefore(815);
+    unitUnderTest.setChallengeTitle(815);
+    String expected = "PlayerBattleLog(type=astring, battleTime=astring, arena=" + new PlayerBattleLogArena() + ", gameMode=" + new PlayerBattleLogGameMode() + ", deckSelection=astring, team=" + new java.util.ArrayList<PlayerBattleLogTeam>() + ", opponent=" + new java.util.ArrayList<PlayerBattleLogOpponent>() + ", challengeId=815, challengeWinCountBefore=815, challengeTitle=815)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

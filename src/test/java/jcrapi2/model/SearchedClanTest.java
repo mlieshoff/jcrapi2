@@ -111,6 +111,13 @@ class SearchedClanTest {
   }
 
   @Test
+  void setClanWarTrophies_whenWithValidParameter_thenSetClanWarTrophies() {
+    int expected = 815;
+    unitUnderTest.setClanWarTrophies(expected);
+    assertEquals(expected, unitUnderTest.getClanWarTrophies());
+  }
+
+  @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
     unitUnderTest.setTag("astring");
     unitUnderTest.setName("astring");
@@ -123,7 +130,8 @@ class SearchedClanTest {
     unitUnderTest.setClanChestLevel(815);
     unitUnderTest.setClanChestMaxLevel(815);
     unitUnderTest.setMembers(815);
-    String expected = "SearchedClan(tag=astring, name=astring, type=astring, badgeId=815, clanScore=815, location=" + new SearchedClanLocation() + ", requiredTrophies=815, donationsPerWeek=815, clanChestLevel=815, clanChestMaxLevel=815, members=815)";
+    unitUnderTest.setClanWarTrophies(815);
+    String expected = "SearchedClan(tag=astring, name=astring, type=astring, badgeId=815, clanScore=815, location=" + new SearchedClanLocation() + ", requiredTrophies=815, donationsPerWeek=815, clanChestLevel=815, clanChestMaxLevel=815, members=815, clanWarTrophies=815)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

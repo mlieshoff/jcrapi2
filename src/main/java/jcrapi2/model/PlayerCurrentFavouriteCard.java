@@ -38,6 +38,6 @@ public class PlayerCurrentFavouriteCard {
   private int maxLevel;
 
   @SerializedName("iconUrls")
-  private PlayerIconUrls iconUrls;
+  private PlayerCurrentFavouriteCardIconUrls iconUrls;
 
 }

@@ -205,7 +205,7 @@ class EndToEnd {
 
   @Test
   void getLocation_whenWithValidParameters_thenGetResponse() throws Exception {
-    GetLocationResponse getLocationResponse = api.getLocation(GetLocationRequest.builder("57000000").build());
+    GetLocationResponse getLocationResponse = api.getLocation(GetLocationRequest.builder("57000094").build());
     assertAll(
         () -> assertNotNull(getLocationResponse, "getLocationResponse"),
         () -> assertNull(getLocationResponse.getMessage(), "message"),
@@ -217,7 +217,7 @@ class EndToEnd {
   void getLocationClanRankings_whenWithValidParameters_thenGetResponse() throws Exception {
     GetLocationClanRankingsResponse
         getLocationClanRankingsResponse =
-        api.getLocationClanRankings(GetLocationClanRankingsRequest.builder("57000000").build());
+        api.getLocationClanRankings(GetLocationClanRankingsRequest.builder("57000094").build());
     assertAll(
         () -> assertNotNull(getLocationClanRankingsResponse, "getLocationClanRankingsResponse"),
         () -> assertNull(getLocationClanRankingsResponse.getMessage(), "message"),
@@ -229,7 +229,7 @@ class EndToEnd {
   void getLocationPlayerRankings_whenWithValidParameters_thenGetResponse() throws Exception {
     GetLocationPlayerRankingsResponse
         getLocationPlayerRankingsResponse =
-        api.getLocationPlayerRankings(GetLocationPlayerRankingsRequest.builder("57000000").build());
+        api.getLocationPlayerRankings(GetLocationPlayerRankingsRequest.builder("57000094").build());
     assertAll(
         () -> assertNotNull(getLocationPlayerRankingsResponse, "getLocationPlayerRankingsResponse"),
         () -> assertNull(getLocationPlayerRankingsResponse.getMessage(), "message"),
@@ -241,7 +241,7 @@ class EndToEnd {
   void getLocationClanWarRankings_whenWithValidParameters_thenGetResponse() throws Exception {
     GetLocationClanWarRankingsResponse
         getLocationClanWarRankingsResponse =
-        api.getLocationClanWarRankings(GetLocationClanWarRankingsRequest.builder("57000000").build());
+        api.getLocationClanWarRankings(GetLocationClanWarRankingsRequest.builder("57000094").build());
     assertAll(
         () -> assertNotNull(getLocationClanWarRankingsResponse, "getLocationClanWarRankingsResponse"),
         () -> assertNull(getLocationClanWarRankingsResponse.getMessage(), "message"),

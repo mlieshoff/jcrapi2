@@ -24,20 +24,13 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 @Generated("org.mili.generator")
-class PlayerBattleLogTeamCardTest {
+class PlayerCurrentDeckCardTest {
 
-  private PlayerBattleLogTeamCard unitUnderTest;
+  private PlayerCurrentDeckCard unitUnderTest;
 
   @BeforeEach
   void setUp() {
-    unitUnderTest = new PlayerBattleLogTeamCard();
-  }
-
-  @Test
-  void setId_whenWithValidParameter_thenSetId() {
-    int expected = 815;
-    unitUnderTest.setId(expected);
-    assertEquals(expected, unitUnderTest.getId());
+    unitUnderTest = new PlayerCurrentDeckCard();
   }
 
   @Test
@@ -48,24 +41,17 @@ class PlayerBattleLogTeamCardTest {
   }
 
   @Test
+  void setId_whenWithValidParameter_thenSetId() {
+    int expected = 815;
+    unitUnderTest.setId(expected);
+    assertEquals(expected, unitUnderTest.getId());
+  }
+
+  @Test
   void setLevel_whenWithValidParameter_thenSetLevel() {
     int expected = 815;
     unitUnderTest.setLevel(expected);
     assertEquals(expected, unitUnderTest.getLevel());
-  }
-
-  @Test
-  void setMaxLevel_whenWithValidParameter_thenSetMaxLevel() {
-    int expected = 815;
-    unitUnderTest.setMaxLevel(expected);
-    assertEquals(expected, unitUnderTest.getMaxLevel());
-  }
-
-  @Test
-  void setIconUrls_whenWithValidParameter_thenSetIconUrls() {
-    PlayerBattleLogTeamCardIconUrls expected = new PlayerBattleLogTeamCardIconUrls();
-    unitUnderTest.setIconUrls(expected);
-    assertEquals(expected, unitUnderTest.getIconUrls());
   }
 
   @Test
@@ -76,14 +62,36 @@ class PlayerBattleLogTeamCardTest {
   }
 
   @Test
+  void setMaxLevel_whenWithValidParameter_thenSetMaxLevel() {
+    int expected = 815;
+    unitUnderTest.setMaxLevel(expected);
+    assertEquals(expected, unitUnderTest.getMaxLevel());
+  }
+
+  @Test
+  void setCount_whenWithValidParameter_thenSetCount() {
+    int expected = 815;
+    unitUnderTest.setCount(expected);
+    assertEquals(expected, unitUnderTest.getCount());
+  }
+
+  @Test
+  void setIconUrls_whenWithValidParameter_thenSetIconUrls() {
+    PlayerCurrentDeckCardIconUrls expected = new PlayerCurrentDeckCardIconUrls();
+    unitUnderTest.setIconUrls(expected);
+    assertEquals(expected, unitUnderTest.getIconUrls());
+  }
+
+  @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
-    unitUnderTest.setId(815);
     unitUnderTest.setName("astring");
+    unitUnderTest.setId(815);
     unitUnderTest.setLevel(815);
-    unitUnderTest.setMaxLevel(815);
-    unitUnderTest.setIconUrls(new PlayerBattleLogTeamCardIconUrls());
     unitUnderTest.setStarLevel(815);
-    String expected = "PlayerBattleLogTeamCard(id=815, name=astring, level=815, maxLevel=815, iconUrls=" + new PlayerBattleLogTeamCardIconUrls() + ", starLevel=815)";
+    unitUnderTest.setMaxLevel(815);
+    unitUnderTest.setCount(815);
+    unitUnderTest.setIconUrls(new PlayerCurrentDeckCardIconUrls());
+    String expected = "PlayerCurrentDeckCard(name=astring, id=815, level=815, starLevel=815, maxLevel=815, count=815, iconUrls=" + new PlayerCurrentDeckCardIconUrls() + ")";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

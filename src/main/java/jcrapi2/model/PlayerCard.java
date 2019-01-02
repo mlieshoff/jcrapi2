@@ -43,4 +43,10 @@ public class PlayerCard {
   @SerializedName("iconUrls")
   private PlayerIconUrls iconUrls;
 
+  @SerializedName("id")
+  private int id;
+
+  @SerializedName("starLevel")
+  private int starLevel;
+
 }

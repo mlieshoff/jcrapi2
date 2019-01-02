@@ -46,4 +46,10 @@ public class LocationRankingPlayer {
   @SerializedName("arena")
   private LocationRankingPlayerArena arena;
 
+  @SerializedName("expLevel")
+  private int expLevel;
+
+  @SerializedName("trophies")
+  private int trophies;
+
 }

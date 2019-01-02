@@ -97,7 +97,16 @@ public class Player {
   @SerializedName("cards")
   private java.util.List<PlayerCard> cards;
 
-  @SerializedName("playerCurrentFavouriteCard")
-  private PlayerCurrentFavouriteCard playerCurrentFavouriteCard;
+  @SerializedName("starPoints")
+  private int starPoints;
+
+  @SerializedName("leagueStatistics")
+  private PlayerLeagueStatistics leagueStatistics;
+
+  @SerializedName("currentDeck")
+  private java.util.List<PlayerCurrentDeckCard> currentDeck;
+
+  @SerializedName("currentFavouriteCard")
+  private PlayerCurrentFavouriteCard currentFavouriteCard;
 
 }

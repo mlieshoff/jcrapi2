@@ -104,6 +104,34 @@ class SearchedTournamentTest {
   }
 
   @Test
+  void setLevelCap_whenWithValidParameter_thenSetLevelCap() {
+    int expected = 815;
+    unitUnderTest.setLevelCap(expected);
+    assertEquals(expected, unitUnderTest.getLevelCap());
+  }
+
+  @Test
+  void setFirstPlaceCardPrize_whenWithValidParameter_thenSetFirstPlaceCardPrize() {
+    int expected = 815;
+    unitUnderTest.setFirstPlaceCardPrize(expected);
+    assertEquals(expected, unitUnderTest.getFirstPlaceCardPrize());
+  }
+
+  @Test
+  void setMaxCapacity_whenWithValidParameter_thenSetMaxCapacity() {
+    int expected = 815;
+    unitUnderTest.setMaxCapacity(expected);
+    assertEquals(expected, unitUnderTest.getMaxCapacity());
+  }
+
+  @Test
+  void setGameMode_whenWithValidParameter_thenSetGameMode() {
+    SearchedTournamentGameMode expected = new SearchedTournamentGameMode();
+    unitUnderTest.setGameMode(expected);
+    assertEquals(expected, unitUnderTest.getGameMode());
+  }
+
+  @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
     unitUnderTest.setTag("astring");
     unitUnderTest.setType("astring");
@@ -115,7 +143,11 @@ class SearchedTournamentTest {
     unitUnderTest.setPreparationDuration(815);
     unitUnderTest.setDuration(815);
     unitUnderTest.setCreatedTime("astring");
-    String expected = "SearchedTournament(tag=astring, type=astring, status=astring, creatorTag=astring, name=astring, description=astring, capacity=815, preparationDuration=815, duration=815, createdTime=astring)";
+    unitUnderTest.setLevelCap(815);
+    unitUnderTest.setFirstPlaceCardPrize(815);
+    unitUnderTest.setMaxCapacity(815);
+    unitUnderTest.setGameMode(new SearchedTournamentGameMode());
+    String expected = "SearchedTournament(tag=astring, type=astring, status=astring, creatorTag=astring, name=astring, description=astring, capacity=815, preparationDuration=815, duration=815, createdTime=astring, levelCap=815, firstPlaceCardPrize=815, maxCapacity=815, gameMode=" + new SearchedTournamentGameMode() + ")";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

@@ -55,11 +55,19 @@ class LocationRankingClanLocationTest {
   }
 
   @Test
+  void setCountryCode_whenWithValidParameter_thenSetCountryCode() {
+    String expected = "astring";
+    unitUnderTest.setCountryCode(expected);
+    assertEquals(expected, unitUnderTest.getCountryCode());
+  }
+
+  @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
     unitUnderTest.setId(815);
     unitUnderTest.setName("astring");
     unitUnderTest.setCountry(false);
-    String expected = "LocationRankingClanLocation(id=815, name=astring, country=false)";
+    unitUnderTest.setCountryCode("astring");
+    String expected = "LocationRankingClanLocation(id=815, name=astring, country=false, countryCode=astring)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

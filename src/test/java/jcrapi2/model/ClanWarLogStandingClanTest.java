@@ -24,13 +24,13 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 @Generated("org.mili.generator")
-class LocationRankingPlayerTest {
+class ClanWarLogStandingClanTest {
 
-  private LocationRankingPlayer unitUnderTest;
+  private ClanWarLogStandingClan unitUnderTest;
 
   @BeforeEach
   void setUp() {
-    unitUnderTest = new LocationRankingPlayer();
+    unitUnderTest = new ClanWarLogStandingClan();
   }
 
   @Test
@@ -48,58 +48,58 @@ class LocationRankingPlayerTest {
   }
 
   @Test
-  void setRank_whenWithValidParameter_thenSetRank() {
+  void setBadgeId_whenWithValidParameter_thenSetBadgeId() {
     int expected = 815;
-    unitUnderTest.setRank(expected);
-    assertEquals(expected, unitUnderTest.getRank());
+    unitUnderTest.setBadgeId(expected);
+    assertEquals(expected, unitUnderTest.getBadgeId());
   }
 
   @Test
-  void setPreviousRank_whenWithValidParameter_thenSetPreviousRank() {
+  void setClanScore_whenWithValidParameter_thenSetClanScore() {
     int expected = 815;
-    unitUnderTest.setPreviousRank(expected);
-    assertEquals(expected, unitUnderTest.getPreviousRank());
+    unitUnderTest.setClanScore(expected);
+    assertEquals(expected, unitUnderTest.getClanScore());
   }
 
   @Test
-  void setClan_whenWithValidParameter_thenSetClan() {
-    LocationRankingPlayerClan expected = new LocationRankingPlayerClan();
-    unitUnderTest.setClan(expected);
-    assertEquals(expected, unitUnderTest.getClan());
-  }
-
-  @Test
-  void setArena_whenWithValidParameter_thenSetArena() {
-    LocationRankingPlayerArena expected = new LocationRankingPlayerArena();
-    unitUnderTest.setArena(expected);
-    assertEquals(expected, unitUnderTest.getArena());
-  }
-
-  @Test
-  void setExpLevel_whenWithValidParameter_thenSetExpLevel() {
+  void setParticipants_whenWithValidParameter_thenSetParticipants() {
     int expected = 815;
-    unitUnderTest.setExpLevel(expected);
-    assertEquals(expected, unitUnderTest.getExpLevel());
+    unitUnderTest.setParticipants(expected);
+    assertEquals(expected, unitUnderTest.getParticipants());
   }
 
   @Test
-  void setTrophies_whenWithValidParameter_thenSetTrophies() {
+  void setBattlesPlayed_whenWithValidParameter_thenSetBattlesPlayed() {
     int expected = 815;
-    unitUnderTest.setTrophies(expected);
-    assertEquals(expected, unitUnderTest.getTrophies());
+    unitUnderTest.setBattlesPlayed(expected);
+    assertEquals(expected, unitUnderTest.getBattlesPlayed());
+  }
+
+  @Test
+  void setWins_whenWithValidParameter_thenSetWins() {
+    int expected = 815;
+    unitUnderTest.setWins(expected);
+    assertEquals(expected, unitUnderTest.getWins());
+  }
+
+  @Test
+  void setCrowns_whenWithValidParameter_thenSetCrowns() {
+    int expected = 815;
+    unitUnderTest.setCrowns(expected);
+    assertEquals(expected, unitUnderTest.getCrowns());
   }
 
   @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
     unitUnderTest.setTag("astring");
     unitUnderTest.setName("astring");
-    unitUnderTest.setRank(815);
-    unitUnderTest.setPreviousRank(815);
-    unitUnderTest.setClan(new LocationRankingPlayerClan());
-    unitUnderTest.setArena(new LocationRankingPlayerArena());
-    unitUnderTest.setExpLevel(815);
-    unitUnderTest.setTrophies(815);
-    String expected = "LocationRankingPlayer(tag=astring, name=astring, rank=815, previousRank=815, clan=" + new LocationRankingPlayerClan() + ", arena=" + new LocationRankingPlayerArena() + ", expLevel=815, trophies=815)";
+    unitUnderTest.setBadgeId(815);
+    unitUnderTest.setClanScore(815);
+    unitUnderTest.setParticipants(815);
+    unitUnderTest.setBattlesPlayed(815);
+    unitUnderTest.setWins(815);
+    unitUnderTest.setCrowns(815);
+    String expected = "ClanWarLogStandingClan(tag=astring, name=astring, badgeId=815, clanScore=815, participants=815, battlesPlayed=815, wins=815, crowns=815)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

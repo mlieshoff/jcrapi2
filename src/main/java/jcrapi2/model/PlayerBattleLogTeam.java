@@ -49,4 +49,10 @@ public class PlayerBattleLogTeam {
   @SerializedName("cards")
   private java.util.List<PlayerBattleLogTeamCard> cards;
 
+  @SerializedName("kingTowerHitPoints")
+  private int kingTowerHitPoints;
+
+  @SerializedName("princessTowersHitPoints")
+  private int princessTowersHitPoints;
+
 }

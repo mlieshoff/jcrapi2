@@ -56,6 +56,9 @@ public class PlayerBattleLog {
   private int challengeWinCountBefore;
 
   @SerializedName("challengeTitle")
-  private int challengeTitle;
+  private String challengeTitle;
+
+  @SerializedName("isLadderTournament")
+  private boolean LadderTournament;
 
 }

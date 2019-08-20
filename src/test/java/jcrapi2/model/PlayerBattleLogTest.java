@@ -98,9 +98,16 @@ class PlayerBattleLogTest {
 
   @Test
   void setChallengeTitle_whenWithValidParameter_thenSetChallengeTitle() {
-    int expected = 815;
+    String expected = "astring";
     unitUnderTest.setChallengeTitle(expected);
     assertEquals(expected, unitUnderTest.getChallengeTitle());
+  }
+
+  @Test
+  void setLadderTournament_whenWithValidParameter_thenSetLadderTournament() {
+    boolean expected = false;
+    unitUnderTest.setLadderTournament(expected);
+    assertEquals(expected, unitUnderTest.isLadderTournament());
   }
 
   @Test
@@ -114,8 +121,9 @@ class PlayerBattleLogTest {
     unitUnderTest.setOpponent(new java.util.ArrayList<PlayerBattleLogOpponent>());
     unitUnderTest.setChallengeId(815);
     unitUnderTest.setChallengeWinCountBefore(815);
-    unitUnderTest.setChallengeTitle(815);
-    String expected = "PlayerBattleLog(type=astring, battleTime=astring, arena=" + new PlayerBattleLogArena() + ", gameMode=" + new PlayerBattleLogGameMode() + ", deckSelection=astring, team=" + new java.util.ArrayList<PlayerBattleLogTeam>() + ", opponent=" + new java.util.ArrayList<PlayerBattleLogOpponent>() + ", challengeId=815, challengeWinCountBefore=815, challengeTitle=815)";
+    unitUnderTest.setChallengeTitle("astring");
+    unitUnderTest.setLadderTournament(false);
+    String expected = "PlayerBattleLog(type=astring, battleTime=astring, arena=" + new PlayerBattleLogArena() + ", gameMode=" + new PlayerBattleLogGameMode() + ", deckSelection=astring, team=" + new java.util.ArrayList<PlayerBattleLogTeam>() + ", opponent=" + new java.util.ArrayList<PlayerBattleLogOpponent>() + ", challengeId=815, challengeWinCountBefore=815, challengeTitle=astring, LadderTournament=false)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

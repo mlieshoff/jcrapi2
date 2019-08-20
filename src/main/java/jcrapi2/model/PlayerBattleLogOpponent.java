@@ -49,4 +49,10 @@ public class PlayerBattleLogOpponent {
   @SerializedName("cards")
   private java.util.List<PlayerBattleLogOpponentCard> cards;
 
+  @SerializedName("kingTowerHitPoints")
+  private int kingTowerHitPoints;
+
+  @SerializedName("princessTowersHitPoints")
+  private int princessTowersHitPoints;
+
 }

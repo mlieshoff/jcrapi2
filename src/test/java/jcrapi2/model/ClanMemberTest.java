@@ -111,6 +111,13 @@ class ClanMemberTest {
   }
 
   @Test
+  void setLastSeen_whenWithValidParameter_thenSetLastSeen() {
+    String expected = "astring";
+    unitUnderTest.setLastSeen(expected);
+    assertEquals(expected, unitUnderTest.getLastSeen());
+  }
+
+  @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
     unitUnderTest.setTag("astring");
     unitUnderTest.setName("astring");
@@ -123,7 +130,8 @@ class ClanMemberTest {
     unitUnderTest.setDonations(815);
     unitUnderTest.setDonationsReceived(815);
     unitUnderTest.setClanChestPoints(815);
-    String expected = "ClanMember(tag=astring, name=astring, role=astring, expLevel=815, trophies=815, arena=" + new ClanMemberArena() + ", clanRank=815, previousClanRank=815, donations=815, donationsReceived=815, clanChestPoints=815)";
+    unitUnderTest.setLastSeen("astring");
+    String expected = "ClanMember(tag=astring, name=astring, role=astring, expLevel=815, trophies=815, arena=" + new ClanMemberArena() + ", clanRank=815, previousClanRank=815, donations=815, donationsReceived=815, clanChestPoints=815, lastSeen=astring)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

@@ -66,6 +66,7 @@
         <member name="donations" type="int"/>
         <member name="donationsReceived" type="int"/>
         <member name="clanChestPoints" type="int"/>
+        <member name="lastSeen" type="String"/>
     </class>
 
     <class name="ClanMemberArena">
@@ -89,6 +90,7 @@
         <member name="battlesPlayed" type="int"/>
         <member name="wins" type="int"/>
         <member name="collectionDayBattlesPlayed" type="int"/>
+        <member name="numberOfBattles" type="int"/>
     </class>
 
     <class name="ClanWarLogStanding">
@@ -165,6 +167,7 @@
         <member name="leagueStatistics" type="PlayerLeagueStatistics"/>
         <member name="currentDeck" type="list(PlayerCurrentDeckCard)"/>
         <member name="currentFavouriteCard" type="PlayerCurrentFavouriteCard"/>
+        <member name="badges" type="list(PlayerBadge)"/>
     </class>
 
     <class name="PlayerClan">
@@ -209,6 +212,14 @@
 
     <class name="PlayerCurrentFavouriteCardIconUrls">
         <member name="medium" type="String"/>
+    </class>
+
+    <class name="PlayerBadge">
+        <member name="name" type="String"/>
+        <member name="level" type="int"/>
+        <member name="maxLevel" type="int"/>
+        <member name="progress" type="int"/>
+        <member name="target" type="int"/>
     </class>
 
     <class name="PlayerLeagueStatistics">
@@ -268,7 +279,8 @@
         <member name="opponent" type="list(PlayerBattleLogOpponent)"/>
         <member name="challengeId" type="int"/>
         <member name="challengeWinCountBefore" type="int"/>
-        <member name="challengeTitle" type="int"/>
+        <member name="challengeTitle" type="String"/>
+        <member name="isLadderTournament" type="boolean"/>
     </class>
 
     <class name="PlayerBattleLogArena">
@@ -289,6 +301,8 @@
         <member name="crowns" type="int"/>
         <member name="clan" type="PlayerBattleLogTeamClan"/>
         <member name="cards" type="list(PlayerBattleLogTeamCard)"/>
+        <member name="kingTowerHitPoints" type="int"/>
+        <member name="princessTowersHitPoints" type="int"/>
     </class>
 
     <class name="PlayerBattleLogTeamClan">
@@ -318,6 +332,8 @@
         <member name="crowns" type="int"/>
         <member name="clan" type="PlayerBattleLogOpponentClan"/>
         <member name="cards" type="list(PlayerBattleLogOpponentCard)"/>
+        <member name="kingTowerHitPoints" type="int"/>
+        <member name="princessTowersHitPoints" type="int"/>
     </class>
 
     <class name="PlayerBattleLogOpponentClan">
@@ -327,10 +343,12 @@
     </class>
 
     <class name="PlayerBattleLogOpponentCard">
+        <member name="id" type="int"/>
         <member name="name" type="String"/>
         <member name="level" type="int"/>
         <member name="maxLevel" type="int"/>
         <member name="iconUrls" type="PlayerBattleLogOpponentCardIconUrls"/>
+        <member name="starLevel" type="int"/>
     </class>
 
     <class name="PlayerBattleLogOpponentCardIconUrls">
@@ -377,6 +395,7 @@
         <member name="levelCap" type="int"/>
         <member name="firstPlaceCardPrize" type="int"/>
         <member name="gameMode" type="TournamentGameMode"/>
+        <member name="endedTime" type="String"/>
     </class>
 
     <class name="TournamentGameMode">

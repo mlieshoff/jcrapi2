@@ -109,4 +109,7 @@ public class Player {
   @SerializedName("currentFavouriteCard")
   private PlayerCurrentFavouriteCard currentFavouriteCard;
 
+  @SerializedName("badges")
+  private java.util.List<PlayerBadge> badges;
+
 }

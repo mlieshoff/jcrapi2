@@ -24,20 +24,13 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 @Generated("org.mili.generator")
-class PlayerBattleLogOpponentCardTest {
+class PlayerBadgeTest {
 
-  private PlayerBattleLogOpponentCard unitUnderTest;
+  private PlayerBadge unitUnderTest;
 
   @BeforeEach
   void setUp() {
-    unitUnderTest = new PlayerBattleLogOpponentCard();
-  }
-
-  @Test
-  void setId_whenWithValidParameter_thenSetId() {
-    int expected = 815;
-    unitUnderTest.setId(expected);
-    assertEquals(expected, unitUnderTest.getId());
+    unitUnderTest = new PlayerBadge();
   }
 
   @Test
@@ -62,28 +55,27 @@ class PlayerBattleLogOpponentCardTest {
   }
 
   @Test
-  void setIconUrls_whenWithValidParameter_thenSetIconUrls() {
-    PlayerBattleLogOpponentCardIconUrls expected = new PlayerBattleLogOpponentCardIconUrls();
-    unitUnderTest.setIconUrls(expected);
-    assertEquals(expected, unitUnderTest.getIconUrls());
+  void setProgress_whenWithValidParameter_thenSetProgress() {
+    int expected = 815;
+    unitUnderTest.setProgress(expected);
+    assertEquals(expected, unitUnderTest.getProgress());
   }
 
   @Test
-  void setStarLevel_whenWithValidParameter_thenSetStarLevel() {
+  void setTarget_whenWithValidParameter_thenSetTarget() {
     int expected = 815;
-    unitUnderTest.setStarLevel(expected);
-    assertEquals(expected, unitUnderTest.getStarLevel());
+    unitUnderTest.setTarget(expected);
+    assertEquals(expected, unitUnderTest.getTarget());
   }
 
   @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
-    unitUnderTest.setId(815);
     unitUnderTest.setName("astring");
     unitUnderTest.setLevel(815);
     unitUnderTest.setMaxLevel(815);
-    unitUnderTest.setIconUrls(new PlayerBattleLogOpponentCardIconUrls());
-    unitUnderTest.setStarLevel(815);
-    String expected = "PlayerBattleLogOpponentCard(id=815, name=astring, level=815, maxLevel=815, iconUrls=" + new PlayerBattleLogOpponentCardIconUrls() + ", starLevel=815)";
+    unitUnderTest.setProgress(815);
+    unitUnderTest.setTarget(815);
+    String expected = "PlayerBadge(name=astring, level=815, maxLevel=815, progress=815, target=815)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

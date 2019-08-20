@@ -61,4 +61,7 @@ public class ClanMember {
   @SerializedName("clanChestPoints")
   private int clanChestPoints;
 
+  @SerializedName("lastSeen")
+  private String lastSeen;
+
 }

@@ -146,6 +146,13 @@ class TournamentTest {
   }
 
   @Test
+  void setEndedTime_whenWithValidParameter_thenSetEndedTime() {
+    String expected = "astring";
+    unitUnderTest.setEndedTime(expected);
+    assertEquals(expected, unitUnderTest.getEndedTime());
+  }
+
+  @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
     unitUnderTest.setTag("astring");
     unitUnderTest.setType("astring");
@@ -163,7 +170,8 @@ class TournamentTest {
     unitUnderTest.setLevelCap(815);
     unitUnderTest.setFirstPlaceCardPrize(815);
     unitUnderTest.setGameMode(new TournamentGameMode());
-    String expected = "Tournament(tag=astring, type=astring, status=astring, creatorTag=astring, name=astring, capacity=815, maxCapacity=815, preparationDuration=815, duration=815, createdTime=astring, startedTime=astring, membersList=" + new java.util.ArrayList<TournamentMember>() + ", description=astring, levelCap=815, firstPlaceCardPrize=815, gameMode=" + new TournamentGameMode() + ")";
+    unitUnderTest.setEndedTime("astring");
+    String expected = "Tournament(tag=astring, type=astring, status=astring, creatorTag=astring, name=astring, capacity=815, maxCapacity=815, preparationDuration=815, duration=815, createdTime=astring, startedTime=astring, membersList=" + new java.util.ArrayList<TournamentMember>() + ", description=astring, levelCap=815, firstPlaceCardPrize=815, gameMode=" + new TournamentGameMode() + ", endedTime=astring)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

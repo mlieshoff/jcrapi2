@@ -223,6 +223,13 @@ class PlayerTest {
   }
 
   @Test
+  void setBadges_whenWithValidParameter_thenSetBadges() {
+    java.util.List<PlayerBadge> expected = new java.util.ArrayList<PlayerBadge>();
+    unitUnderTest.setBadges(expected);
+    assertEquals(expected, unitUnderTest.getBadges());
+  }
+
+  @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
     unitUnderTest.setTag("astring");
     unitUnderTest.setName("astring");
@@ -251,7 +258,8 @@ class PlayerTest {
     unitUnderTest.setLeagueStatistics(new PlayerLeagueStatistics());
     unitUnderTest.setCurrentDeck(new java.util.ArrayList<PlayerCurrentDeckCard>());
     unitUnderTest.setCurrentFavouriteCard(new PlayerCurrentFavouriteCard());
-    String expected = "Player(tag=astring, name=astring, expLevel=815, trophies=815, bestTrophies=815, wins=815, losses=815, battleCount=815, threeCrownWins=815, challengeCardsWon=815, challengeMaxWins=815, tournamentCardsWon=815, tournamentBattleCount=815, role=astring, donations=815, donationsReceived=815, totalDonations=815, warDayWins=815, clanCardsCollected=815, clan=" + new PlayerClan() + ", arena=" + new PlayerArena() + ", achievements=" + new java.util.ArrayList<PlayerAchievment>() + ", cards=" + new java.util.ArrayList<PlayerCard>() + ", starPoints=815, leagueStatistics=" + new PlayerLeagueStatistics() + ", currentDeck=" + new java.util.ArrayList<PlayerCurrentDeckCard>() + ", currentFavouriteCard=" + new PlayerCurrentFavouriteCard() + ")";
+    unitUnderTest.setBadges(new java.util.ArrayList<PlayerBadge>());
+    String expected = "Player(tag=astring, name=astring, expLevel=815, trophies=815, bestTrophies=815, wins=815, losses=815, battleCount=815, threeCrownWins=815, challengeCardsWon=815, challengeMaxWins=815, tournamentCardsWon=815, tournamentBattleCount=815, role=astring, donations=815, donationsReceived=815, totalDonations=815, warDayWins=815, clanCardsCollected=815, clan=" + new PlayerClan() + ", arena=" + new PlayerArena() + ", achievements=" + new java.util.ArrayList<PlayerAchievment>() + ", cards=" + new java.util.ArrayList<PlayerCard>() + ", starPoints=815, leagueStatistics=" + new PlayerLeagueStatistics() + ", currentDeck=" + new java.util.ArrayList<PlayerCurrentDeckCard>() + ", currentFavouriteCard=" + new PlayerCurrentFavouriteCard() + ", badges=" + new java.util.ArrayList<PlayerBadge>() + ")";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

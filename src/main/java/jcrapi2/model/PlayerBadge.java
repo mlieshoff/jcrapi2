@@ -26,57 +26,21 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class Tournament {
-
-  @SerializedName("tag")
-  private String tag;
-
-  @SerializedName("type")
-  private String type;
-
-  @SerializedName("status")
-  private String status;
-
-  @SerializedName("creatorTag")
-  private String creatorTag;
+public class PlayerBadge {
 
   @SerializedName("name")
   private String name;
 
-  @SerializedName("capacity")
-  private int capacity;
+  @SerializedName("level")
+  private int level;
 
-  @SerializedName("maxCapacity")
-  private int maxCapacity;
+  @SerializedName("maxLevel")
+  private int maxLevel;
 
-  @SerializedName("preparationDuration")
-  private int preparationDuration;
+  @SerializedName("progress")
+  private int progress;
 
-  @SerializedName("duration")
-  private int duration;
-
-  @SerializedName("createdTime")
-  private String createdTime;
-
-  @SerializedName("startedTime")
-  private String startedTime;
-
-  @SerializedName("membersList")
-  private java.util.List<TournamentMember> membersList;
-
-  @SerializedName("description")
-  private String description;
-
-  @SerializedName("levelCap")
-  private int levelCap;
-
-  @SerializedName("firstPlaceCardPrize")
-  private int firstPlaceCardPrize;
-
-  @SerializedName("gameMode")
-  private TournamentGameMode gameMode;
-
-  @SerializedName("endedTime")
-  private String endedTime;
+  @SerializedName("target")
+  private int target;
 
 }

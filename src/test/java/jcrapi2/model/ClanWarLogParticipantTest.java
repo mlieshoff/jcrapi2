@@ -76,6 +76,13 @@ class ClanWarLogParticipantTest {
   }
 
   @Test
+  void setNumberOfBattles_whenWithValidParameter_thenSetNumberOfBattles() {
+    int expected = 815;
+    unitUnderTest.setNumberOfBattles(expected);
+    assertEquals(expected, unitUnderTest.getNumberOfBattles());
+  }
+
+  @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
     unitUnderTest.setTag("astring");
     unitUnderTest.setName("astring");
@@ -83,7 +90,8 @@ class ClanWarLogParticipantTest {
     unitUnderTest.setBattlesPlayed(815);
     unitUnderTest.setWins(815);
     unitUnderTest.setCollectionDayBattlesPlayed(815);
-    String expected = "ClanWarLogParticipant(tag=astring, name=astring, cardsEarned=815, battlesPlayed=815, wins=815, collectionDayBattlesPlayed=815)";
+    unitUnderTest.setNumberOfBattles(815);
+    String expected = "ClanWarLogParticipant(tag=astring, name=astring, cardsEarned=815, battlesPlayed=815, wins=815, collectionDayBattlesPlayed=815, numberOfBattles=815)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

@@ -1,7 +1,7 @@
 # jcrapi2
 A Java Wrapper For Official Supercell Clash Royal Api 
 
-## Actual version: 1.0.1
+## Actual version: 1.0.1-U1
 
 ## Simplest Usage ##
 

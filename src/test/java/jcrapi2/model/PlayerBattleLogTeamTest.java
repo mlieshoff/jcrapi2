@@ -91,7 +91,7 @@ class PlayerBattleLogTeamTest {
 
   @Test
   void setPrincessTowersHitPoints_whenWithValidParameter_thenSetPrincessTowersHitPoints() {
-    int expected = 815;
+    java.util.List<Integer> expected = new java.util.ArrayList<Integer>();
     unitUnderTest.setPrincessTowersHitPoints(expected);
     assertEquals(expected, unitUnderTest.getPrincessTowersHitPoints());
   }
@@ -106,8 +106,8 @@ class PlayerBattleLogTeamTest {
     unitUnderTest.setClan(new PlayerBattleLogTeamClan());
     unitUnderTest.setCards(new java.util.ArrayList<PlayerBattleLogTeamCard>());
     unitUnderTest.setKingTowerHitPoints(815);
-    unitUnderTest.setPrincessTowersHitPoints(815);
-    String expected = "PlayerBattleLogTeam(tag=astring, name=astring, startingTrophies=815, trophyChange=815, crowns=815, clan=" + new PlayerBattleLogTeamClan() + ", cards=" + new java.util.ArrayList<PlayerBattleLogTeamCard>() + ", kingTowerHitPoints=815, princessTowersHitPoints=815)";
+    unitUnderTest.setPrincessTowersHitPoints(new java.util.ArrayList<Integer>());
+    String expected = "PlayerBattleLogTeam(tag=astring, name=astring, startingTrophies=815, trophyChange=815, crowns=815, clan=" + new PlayerBattleLogTeamClan() + ", cards=" + new java.util.ArrayList<PlayerBattleLogTeamCard>() + ", kingTowerHitPoints=815, princessTowersHitPoints=" + new java.util.ArrayList<Integer>() + ")";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

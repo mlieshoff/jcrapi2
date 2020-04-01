@@ -302,7 +302,7 @@
         <member name="clan" type="PlayerBattleLogTeamClan"/>
         <member name="cards" type="list(PlayerBattleLogTeamCard)"/>
         <member name="kingTowerHitPoints" type="int"/>
-        <member name="princessTowersHitPoints" type="int"/>
+        <member name="princessTowersHitPoints" type="list(Integer)"/>
     </class>
 
     <class name="PlayerBattleLogTeamClan">
@@ -333,7 +333,7 @@
         <member name="clan" type="PlayerBattleLogOpponentClan"/>
         <member name="cards" type="list(PlayerBattleLogOpponentCard)"/>
         <member name="kingTowerHitPoints" type="int"/>
-        <member name="princessTowersHitPoints" type="int"/>
+        <member name="princessTowersHitPoints" type="list(Integer)"/>
     </class>
 
     <class name="PlayerBattleLogOpponentClan">

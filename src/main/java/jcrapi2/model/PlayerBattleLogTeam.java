@@ -53,6 +53,6 @@ public class PlayerBattleLogTeam {
   private int kingTowerHitPoints;
 
   @SerializedName("princessTowersHitPoints")
-  private int princessTowersHitPoints;
+  private java.util.List<Integer> princessTowersHitPoints;
 
 }

@@ -133,9 +133,8 @@ class EndToEnd {
         () -> assertNull(getPlayerResponse.getMessage(), "message"),
         () -> assertNull(getPlayerResponse.getReason(), "reason")
     );
+    aaa,
   }
-
-  //
 
   @Test
   void getPlayerUpcomingChests_whenWithValidParameters_thenGetResponse() throws Exception {

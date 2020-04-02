@@ -133,7 +133,6 @@ class EndToEnd {
         () -> assertNull(getPlayerResponse.getMessage(), "message"),
         () -> assertNull(getPlayerResponse.getReason(), "reason")
     );
-    aaa,
   }
 
   @Test

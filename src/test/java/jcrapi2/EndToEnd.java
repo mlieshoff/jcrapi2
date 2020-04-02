@@ -135,6 +135,8 @@ class EndToEnd {
     );
   }
 
+  //
+
   @Test
   void getPlayerUpcomingChests_whenWithValidParameters_thenGetResponse() throws Exception {
     GetPlayerUpcomingChestsResponse

@@ -34,20 +34,6 @@ class LocationRankingClanWarLocationTest {
   }
 
   @Test
-  void setId_whenWithValidParameter_thenSetId() {
-    int expected = 815;
-    unitUnderTest.setId(expected);
-    assertEquals(expected, unitUnderTest.getId());
-  }
-
-  @Test
-  void setName_whenWithValidParameter_thenSetName() {
-    String expected = "astring";
-    unitUnderTest.setName(expected);
-    assertEquals(expected, unitUnderTest.getName());
-  }
-
-  @Test
   void setCountry_whenWithValidParameter_thenSetCountry() {
     boolean expected = false;
     unitUnderTest.setCountry(expected);
@@ -62,12 +48,26 @@ class LocationRankingClanWarLocationTest {
   }
 
   @Test
+  void setId_whenWithValidParameter_thenSetId() {
+    int expected = 815;
+    unitUnderTest.setId(expected);
+    assertEquals(expected, unitUnderTest.getId());
+  }
+
+  @Test
+  void setName_whenWithValidParameter_thenSetName() {
+    String expected = "astring";
+    unitUnderTest.setName(expected);
+    assertEquals(expected, unitUnderTest.getName());
+  }
+
+  @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
-    unitUnderTest.setId(815);
-    unitUnderTest.setName("astring");
     unitUnderTest.setCountry(false);
     unitUnderTest.setCountryCode("astring");
-    String expected = "LocationRankingClanWarLocation(id=815, name=astring, country=false, countryCode=astring)";
+    unitUnderTest.setId(815);
+    unitUnderTest.setName("astring");
+    String expected = "LocationRankingClanWarLocation(country=false, countryCode=astring, id=815, name=astring)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

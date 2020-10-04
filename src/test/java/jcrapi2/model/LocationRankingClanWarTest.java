@@ -34,38 +34,10 @@ class LocationRankingClanWarTest {
   }
 
   @Test
-  void setTag_whenWithValidParameter_thenSetTag() {
-    String expected = "astring";
-    unitUnderTest.setTag(expected);
-    assertEquals(expected, unitUnderTest.getTag());
-  }
-
-  @Test
-  void setName_whenWithValidParameter_thenSetName() {
-    String expected = "astring";
-    unitUnderTest.setName(expected);
-    assertEquals(expected, unitUnderTest.getName());
-  }
-
-  @Test
-  void setRank_whenWithValidParameter_thenSetRank() {
+  void setBadgeId_whenWithValidParameter_thenSetBadgeId() {
     int expected = 815;
-    unitUnderTest.setRank(expected);
-    assertEquals(expected, unitUnderTest.getRank());
-  }
-
-  @Test
-  void setPreviousRank_whenWithValidParameter_thenSetPreviousRank() {
-    int expected = 815;
-    unitUnderTest.setPreviousRank(expected);
-    assertEquals(expected, unitUnderTest.getPreviousRank());
-  }
-
-  @Test
-  void setLocation_whenWithValidParameter_thenSetLocation() {
-    LocationRankingClanWarLocation expected = new LocationRankingClanWarLocation();
-    unitUnderTest.setLocation(expected);
-    assertEquals(expected, unitUnderTest.getLocation());
+    unitUnderTest.setBadgeId(expected);
+    assertEquals(expected, unitUnderTest.getBadgeId());
   }
 
   @Test
@@ -76,10 +48,10 @@ class LocationRankingClanWarTest {
   }
 
   @Test
-  void setBadgeId_whenWithValidParameter_thenSetBadgeId() {
-    int expected = 815;
-    unitUnderTest.setBadgeId(expected);
-    assertEquals(expected, unitUnderTest.getBadgeId());
+  void setLocation_whenWithValidParameter_thenSetLocation() {
+    LocationRankingClanWarLocation expected = new LocationRankingClanWarLocation();
+    unitUnderTest.setLocation(expected);
+    assertEquals(expected, unitUnderTest.getLocation());
   }
 
   @Test
@@ -90,16 +62,44 @@ class LocationRankingClanWarTest {
   }
 
   @Test
+  void setName_whenWithValidParameter_thenSetName() {
+    String expected = "astring";
+    unitUnderTest.setName(expected);
+    assertEquals(expected, unitUnderTest.getName());
+  }
+
+  @Test
+  void setPreviousRank_whenWithValidParameter_thenSetPreviousRank() {
+    int expected = 815;
+    unitUnderTest.setPreviousRank(expected);
+    assertEquals(expected, unitUnderTest.getPreviousRank());
+  }
+
+  @Test
+  void setRank_whenWithValidParameter_thenSetRank() {
+    int expected = 815;
+    unitUnderTest.setRank(expected);
+    assertEquals(expected, unitUnderTest.getRank());
+  }
+
+  @Test
+  void setTag_whenWithValidParameter_thenSetTag() {
+    String expected = "astring";
+    unitUnderTest.setTag(expected);
+    assertEquals(expected, unitUnderTest.getTag());
+  }
+
+  @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
-    unitUnderTest.setTag("astring");
-    unitUnderTest.setName("astring");
-    unitUnderTest.setRank(815);
-    unitUnderTest.setPreviousRank(815);
-    unitUnderTest.setLocation(new LocationRankingClanWarLocation());
-    unitUnderTest.setClanScore(815);
     unitUnderTest.setBadgeId(815);
+    unitUnderTest.setClanScore(815);
+    unitUnderTest.setLocation(new LocationRankingClanWarLocation());
     unitUnderTest.setMembers(815);
-    String expected = "LocationRankingClanWar(tag=astring, name=astring, rank=815, previousRank=815, location=" + new LocationRankingClanWarLocation() + ", clanScore=815, badgeId=815, members=815)";
+    unitUnderTest.setName("astring");
+    unitUnderTest.setPreviousRank(815);
+    unitUnderTest.setRank(815);
+    unitUnderTest.setTag("astring");
+    String expected = "LocationRankingClanWar(badgeId=815, clanScore=815, location=" + new LocationRankingClanWarLocation() + ", members=815, name=astring, previousRank=815, rank=815, tag=astring)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

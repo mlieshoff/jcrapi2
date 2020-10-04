@@ -16,8 +16,10 @@
  */
 package jcrapi2.model;
 
-import javax.annotation.Generated;
 import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
+import javax.annotation.Generated;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -28,32 +30,23 @@ import lombok.ToString;
 @ToString
 public class Player {
 
-  @SerializedName("tag")
-  private String tag;
+  @SerializedName("achievements")
+  private List<PlayerAchievment> achievements;
 
-  @SerializedName("name")
-  private String name;
+  @SerializedName("arena")
+  private PlayerArena arena;
 
-  @SerializedName("expLevel")
-  private int expLevel;
-
-  @SerializedName("trophies")
-  private int trophies;
-
-  @SerializedName("bestTrophies")
-  private int bestTrophies;
-
-  @SerializedName("wins")
-  private int wins;
-
-  @SerializedName("losses")
-  private int losses;
+  @SerializedName("badges")
+  private List<PlayerBadge> badges;
 
   @SerializedName("battleCount")
   private int battleCount;
 
-  @SerializedName("threeCrownWins")
-  private int threeCrownWins;
+  @SerializedName("bestTrophies")
+  private int bestTrophies;
+
+  @SerializedName("cards")
+  private List<PlayerCard> cards;
 
   @SerializedName("challengeCardsWon")
   private int challengeCardsWon;
@@ -61,14 +54,17 @@ public class Player {
   @SerializedName("challengeMaxWins")
   private int challengeMaxWins;
 
-  @SerializedName("tournamentCardsWon")
-  private int tournamentCardsWon;
+  @SerializedName("clan")
+  private PlayerClan clan;
 
-  @SerializedName("tournamentBattleCount")
-  private int tournamentBattleCount;
+  @SerializedName("clanCardsCollected")
+  private int clanCardsCollected;
 
-  @SerializedName("role")
-  private String role;
+  @SerializedName("currentDeck")
+  private List<PlayerCurrentDeckCard> currentDeck;
+
+  @SerializedName("currentFavouriteCard")
+  private PlayerCurrentFavouriteCard currentFavouriteCard;
 
   @SerializedName("donations")
   private int donations;
@@ -76,40 +72,46 @@ public class Player {
   @SerializedName("donationsReceived")
   private int donationsReceived;
 
-  @SerializedName("totalDonations")
-  private int totalDonations;
-
-  @SerializedName("warDayWins")
-  private int warDayWins;
-
-  @SerializedName("clanCardsCollected")
-  private int clanCardsCollected;
-
-  @SerializedName("clan")
-  private PlayerClan clan;
-
-  @SerializedName("arena")
-  private PlayerArena arena;
-
-  @SerializedName("achievements")
-  private java.util.List<PlayerAchievment> achievements;
-
-  @SerializedName("cards")
-  private java.util.List<PlayerCard> cards;
-
-  @SerializedName("starPoints")
-  private int starPoints;
+  @SerializedName("expLevel")
+  private int expLevel;
 
   @SerializedName("leagueStatistics")
   private PlayerLeagueStatistics leagueStatistics;
 
-  @SerializedName("currentDeck")
-  private java.util.List<PlayerCurrentDeckCard> currentDeck;
+  @SerializedName("losses")
+  private int losses;
 
-  @SerializedName("currentFavouriteCard")
-  private PlayerCurrentFavouriteCard currentFavouriteCard;
+  @SerializedName("name")
+  private String name;
 
-  @SerializedName("badges")
-  private java.util.List<PlayerBadge> badges;
+  @SerializedName("role")
+  private String role;
+
+  @SerializedName("starPoints")
+  private int starPoints;
+
+  @SerializedName("tag")
+  private String tag;
+
+  @SerializedName("threeCrownWins")
+  private int threeCrownWins;
+
+  @SerializedName("totalDonations")
+  private int totalDonations;
+
+  @SerializedName("tournamentBattleCount")
+  private int tournamentBattleCount;
+
+  @SerializedName("tournamentCardsWon")
+  private int tournamentCardsWon;
+
+  @SerializedName("trophies")
+  private int trophies;
+
+  @SerializedName("warDayWins")
+  private int warDayWins;
+
+  @SerializedName("wins")
+  private int wins;
 
 }

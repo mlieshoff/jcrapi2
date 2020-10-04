@@ -16,8 +16,10 @@
  */
 package jcrapi2.model;
 
-import javax.annotation.Generated;
 import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
+import javax.annotation.Generated;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -28,47 +30,23 @@ import lombok.ToString;
 @ToString
 public class Tournament {
 
-  @SerializedName("tag")
-  private String tag;
-
-  @SerializedName("type")
-  private String type;
-
-  @SerializedName("status")
-  private String status;
-
-  @SerializedName("creatorTag")
-  private String creatorTag;
-
-  @SerializedName("name")
-  private String name;
-
   @SerializedName("capacity")
   private int capacity;
-
-  @SerializedName("maxCapacity")
-  private int maxCapacity;
-
-  @SerializedName("preparationDuration")
-  private int preparationDuration;
-
-  @SerializedName("duration")
-  private int duration;
 
   @SerializedName("createdTime")
   private String createdTime;
 
-  @SerializedName("startedTime")
-  private String startedTime;
-
-  @SerializedName("membersList")
-  private java.util.List<TournamentMember> membersList;
+  @SerializedName("creatorTag")
+  private String creatorTag;
 
   @SerializedName("description")
   private String description;
 
-  @SerializedName("levelCap")
-  private int levelCap;
+  @SerializedName("duration")
+  private int duration;
+
+  @SerializedName("endedTime")
+  private String endedTime;
 
   @SerializedName("firstPlaceCardPrize")
   private int firstPlaceCardPrize;
@@ -76,7 +54,31 @@ public class Tournament {
   @SerializedName("gameMode")
   private TournamentGameMode gameMode;
 
-  @SerializedName("endedTime")
-  private String endedTime;
+  @SerializedName("levelCap")
+  private int levelCap;
+
+  @SerializedName("maxCapacity")
+  private int maxCapacity;
+
+  @SerializedName("membersList")
+  private List<TournamentMember> membersList;
+
+  @SerializedName("name")
+  private String name;
+
+  @SerializedName("preparationDuration")
+  private int preparationDuration;
+
+  @SerializedName("startedTime")
+  private String startedTime;
+
+  @SerializedName("status")
+  private String status;
+
+  @SerializedName("tag")
+  private String tag;
+
+  @SerializedName("type")
+  private String type;
 
 }

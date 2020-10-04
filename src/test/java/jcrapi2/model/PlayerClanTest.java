@@ -18,10 +18,10 @@ package jcrapi2.model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import javax.annotation.Generated;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import javax.annotation.Generated;
 
 @Generated("org.mili.generator")
 class PlayerClanTest {
@@ -34,10 +34,10 @@ class PlayerClanTest {
   }
 
   @Test
-  void setTag_whenWithValidParameter_thenSetTag() {
-    String expected = "astring";
-    unitUnderTest.setTag(expected);
-    assertEquals(expected, unitUnderTest.getTag());
+  void setBadgeId_whenWithValidParameter_thenSetBadgeId() {
+    int expected = 815;
+    unitUnderTest.setBadgeId(expected);
+    assertEquals(expected, unitUnderTest.getBadgeId());
   }
 
   @Test
@@ -48,18 +48,18 @@ class PlayerClanTest {
   }
 
   @Test
-  void setBadgeId_whenWithValidParameter_thenSetBadgeId() {
-    int expected = 815;
-    unitUnderTest.setBadgeId(expected);
-    assertEquals(expected, unitUnderTest.getBadgeId());
+  void setTag_whenWithValidParameter_thenSetTag() {
+    String expected = "astring";
+    unitUnderTest.setTag(expected);
+    assertEquals(expected, unitUnderTest.getTag());
   }
 
   @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
-    unitUnderTest.setTag("astring");
-    unitUnderTest.setName("astring");
     unitUnderTest.setBadgeId(815);
-    String expected = "PlayerClan(tag=astring, name=astring, badgeId=815)";
+    unitUnderTest.setName("astring");
+    unitUnderTest.setTag("astring");
+    String expected = "PlayerClan(badgeId=815, name=astring, tag=astring)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

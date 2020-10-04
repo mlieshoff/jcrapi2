@@ -16,8 +16,9 @@
  */
 package jcrapi2.model;
 
-import javax.annotation.Generated;
 import com.google.gson.annotations.SerializedName;
+
+import javax.annotation.Generated;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -28,19 +29,22 @@ import lombok.ToString;
 @ToString
 public class PlayerAchievment {
 
+  @SerializedName("completionInfo")
+  private String completionInfo;
+
+  @SerializedName("info")
+  private String info;
+
   @SerializedName("name")
   private String name;
 
   @SerializedName("stars")
   private int stars;
 
-  @SerializedName("value")
-  private int value;
-
   @SerializedName("target")
   private int target;
 
-  @SerializedName("info")
-  private String info;
+  @SerializedName("value")
+  private int value;
 
 }

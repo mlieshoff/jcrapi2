@@ -18,10 +18,10 @@ package jcrapi2.model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import javax.annotation.Generated;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import javax.annotation.Generated;
 
 @Generated("org.mili.generator")
 class TournamentMemberTest {
@@ -34,10 +34,10 @@ class TournamentMemberTest {
   }
 
   @Test
-  void setTag_whenWithValidParameter_thenSetTag() {
-    String expected = "astring";
-    unitUnderTest.setTag(expected);
-    assertEquals(expected, unitUnderTest.getTag());
+  void setClan_whenWithValidParameter_thenSetClan() {
+    TournamentMemberClan expected = new TournamentMemberClan();
+    unitUnderTest.setClan(expected);
+    assertEquals(expected, unitUnderTest.getClan());
   }
 
   @Test
@@ -48,13 +48,6 @@ class TournamentMemberTest {
   }
 
   @Test
-  void setScore_whenWithValidParameter_thenSetScore() {
-    int expected = 815;
-    unitUnderTest.setScore(expected);
-    assertEquals(expected, unitUnderTest.getScore());
-  }
-
-  @Test
   void setRank_whenWithValidParameter_thenSetRank() {
     int expected = 815;
     unitUnderTest.setRank(expected);
@@ -62,20 +55,27 @@ class TournamentMemberTest {
   }
 
   @Test
-  void setClan_whenWithValidParameter_thenSetClan() {
-    TournamentMemberClan expected = new TournamentMemberClan();
-    unitUnderTest.setClan(expected);
-    assertEquals(expected, unitUnderTest.getClan());
+  void setScore_whenWithValidParameter_thenSetScore() {
+    int expected = 815;
+    unitUnderTest.setScore(expected);
+    assertEquals(expected, unitUnderTest.getScore());
+  }
+
+  @Test
+  void setTag_whenWithValidParameter_thenSetTag() {
+    String expected = "astring";
+    unitUnderTest.setTag(expected);
+    assertEquals(expected, unitUnderTest.getTag());
   }
 
   @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
-    unitUnderTest.setTag("astring");
-    unitUnderTest.setName("astring");
-    unitUnderTest.setScore(815);
-    unitUnderTest.setRank(815);
     unitUnderTest.setClan(new TournamentMemberClan());
-    String expected = "TournamentMember(tag=astring, name=astring, score=815, rank=815, clan=" + new TournamentMemberClan() + ")";
+    unitUnderTest.setName("astring");
+    unitUnderTest.setRank(815);
+    unitUnderTest.setScore(815);
+    unitUnderTest.setTag("astring");
+    String expected = "TournamentMember(clan=" + new TournamentMemberClan() + ", name=astring, rank=815, score=815, tag=astring)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

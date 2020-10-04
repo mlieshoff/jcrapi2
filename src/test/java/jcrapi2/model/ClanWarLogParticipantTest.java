@@ -34,17 +34,10 @@ class ClanWarLogParticipantTest {
   }
 
   @Test
-  void setTag_whenWithValidParameter_thenSetTag() {
-    String expected = "astring";
-    unitUnderTest.setTag(expected);
-    assertEquals(expected, unitUnderTest.getTag());
-  }
-
-  @Test
-  void setName_whenWithValidParameter_thenSetName() {
-    String expected = "astring";
-    unitUnderTest.setName(expected);
-    assertEquals(expected, unitUnderTest.getName());
+  void setBattlesPlayed_whenWithValidParameter_thenSetBattlesPlayed() {
+    int expected = 815;
+    unitUnderTest.setBattlesPlayed(expected);
+    assertEquals(expected, unitUnderTest.getBattlesPlayed());
   }
 
   @Test
@@ -55,24 +48,17 @@ class ClanWarLogParticipantTest {
   }
 
   @Test
-  void setBattlesPlayed_whenWithValidParameter_thenSetBattlesPlayed() {
-    int expected = 815;
-    unitUnderTest.setBattlesPlayed(expected);
-    assertEquals(expected, unitUnderTest.getBattlesPlayed());
-  }
-
-  @Test
-  void setWins_whenWithValidParameter_thenSetWins() {
-    int expected = 815;
-    unitUnderTest.setWins(expected);
-    assertEquals(expected, unitUnderTest.getWins());
-  }
-
-  @Test
   void setCollectionDayBattlesPlayed_whenWithValidParameter_thenSetCollectionDayBattlesPlayed() {
     int expected = 815;
     unitUnderTest.setCollectionDayBattlesPlayed(expected);
     assertEquals(expected, unitUnderTest.getCollectionDayBattlesPlayed());
+  }
+
+  @Test
+  void setName_whenWithValidParameter_thenSetName() {
+    String expected = "astring";
+    unitUnderTest.setName(expected);
+    assertEquals(expected, unitUnderTest.getName());
   }
 
   @Test
@@ -83,15 +69,29 @@ class ClanWarLogParticipantTest {
   }
 
   @Test
+  void setTag_whenWithValidParameter_thenSetTag() {
+    String expected = "astring";
+    unitUnderTest.setTag(expected);
+    assertEquals(expected, unitUnderTest.getTag());
+  }
+
+  @Test
+  void setWins_whenWithValidParameter_thenSetWins() {
+    int expected = 815;
+    unitUnderTest.setWins(expected);
+    assertEquals(expected, unitUnderTest.getWins());
+  }
+
+  @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
-    unitUnderTest.setTag("astring");
-    unitUnderTest.setName("astring");
-    unitUnderTest.setCardsEarned(815);
     unitUnderTest.setBattlesPlayed(815);
-    unitUnderTest.setWins(815);
+    unitUnderTest.setCardsEarned(815);
     unitUnderTest.setCollectionDayBattlesPlayed(815);
+    unitUnderTest.setName("astring");
     unitUnderTest.setNumberOfBattles(815);
-    String expected = "ClanWarLogParticipant(tag=astring, name=astring, cardsEarned=815, battlesPlayed=815, wins=815, collectionDayBattlesPlayed=815, numberOfBattles=815)";
+    unitUnderTest.setTag("astring");
+    unitUnderTest.setWins(815);
+    String expected = "ClanWarLogParticipant(battlesPlayed=815, cardsEarned=815, collectionDayBattlesPlayed=815, name=astring, numberOfBattles=815, tag=astring, wins=815)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

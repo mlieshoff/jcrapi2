@@ -18,10 +18,10 @@ package jcrapi2.model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import javax.annotation.Generated;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import javax.annotation.Generated;
 
 @Generated("org.mili.generator")
 class PlayerAchievmentTest {
@@ -31,6 +31,20 @@ class PlayerAchievmentTest {
   @BeforeEach
   void setUp() {
     unitUnderTest = new PlayerAchievment();
+  }
+
+  @Test
+  void setCompletionInfo_whenWithValidParameter_thenSetCompletionInfo() {
+    String expected = "astring";
+    unitUnderTest.setCompletionInfo(expected);
+    assertEquals(expected, unitUnderTest.getCompletionInfo());
+  }
+
+  @Test
+  void setInfo_whenWithValidParameter_thenSetInfo() {
+    String expected = "astring";
+    unitUnderTest.setInfo(expected);
+    assertEquals(expected, unitUnderTest.getInfo());
   }
 
   @Test
@@ -48,13 +62,6 @@ class PlayerAchievmentTest {
   }
 
   @Test
-  void setValue_whenWithValidParameter_thenSetValue() {
-    int expected = 815;
-    unitUnderTest.setValue(expected);
-    assertEquals(expected, unitUnderTest.getValue());
-  }
-
-  @Test
   void setTarget_whenWithValidParameter_thenSetTarget() {
     int expected = 815;
     unitUnderTest.setTarget(expected);
@@ -62,20 +69,21 @@ class PlayerAchievmentTest {
   }
 
   @Test
-  void setInfo_whenWithValidParameter_thenSetInfo() {
-    String expected = "astring";
-    unitUnderTest.setInfo(expected);
-    assertEquals(expected, unitUnderTest.getInfo());
+  void setValue_whenWithValidParameter_thenSetValue() {
+    int expected = 815;
+    unitUnderTest.setValue(expected);
+    assertEquals(expected, unitUnderTest.getValue());
   }
 
   @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
+    unitUnderTest.setCompletionInfo("astring");
+    unitUnderTest.setInfo("astring");
     unitUnderTest.setName("astring");
     unitUnderTest.setStars(815);
-    unitUnderTest.setValue(815);
     unitUnderTest.setTarget(815);
-    unitUnderTest.setInfo("astring");
-    String expected = "PlayerAchievment(name=astring, stars=815, value=815, target=815, info=astring)";
+    unitUnderTest.setValue(815);
+    String expected = "PlayerAchievment(completionInfo=astring, info=astring, name=astring, stars=815, target=815, value=815)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

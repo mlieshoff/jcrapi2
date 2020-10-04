@@ -18,10 +18,10 @@ package jcrapi2.model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import javax.annotation.Generated;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import javax.annotation.Generated;
 
 @Generated("org.mili.generator")
 class PlayerCardTest {
@@ -31,27 +31,6 @@ class PlayerCardTest {
   @BeforeEach
   void setUp() {
     unitUnderTest = new PlayerCard();
-  }
-
-  @Test
-  void setName_whenWithValidParameter_thenSetName() {
-    String expected = "astring";
-    unitUnderTest.setName(expected);
-    assertEquals(expected, unitUnderTest.getName());
-  }
-
-  @Test
-  void setLevel_whenWithValidParameter_thenSetLevel() {
-    int expected = 815;
-    unitUnderTest.setLevel(expected);
-    assertEquals(expected, unitUnderTest.getLevel());
-  }
-
-  @Test
-  void setMaxLevel_whenWithValidParameter_thenSetMaxLevel() {
-    int expected = 815;
-    unitUnderTest.setMaxLevel(expected);
-    assertEquals(expected, unitUnderTest.getMaxLevel());
   }
 
   @Test
@@ -76,6 +55,27 @@ class PlayerCardTest {
   }
 
   @Test
+  void setLevel_whenWithValidParameter_thenSetLevel() {
+    int expected = 815;
+    unitUnderTest.setLevel(expected);
+    assertEquals(expected, unitUnderTest.getLevel());
+  }
+
+  @Test
+  void setMaxLevel_whenWithValidParameter_thenSetMaxLevel() {
+    int expected = 815;
+    unitUnderTest.setMaxLevel(expected);
+    assertEquals(expected, unitUnderTest.getMaxLevel());
+  }
+
+  @Test
+  void setName_whenWithValidParameter_thenSetName() {
+    String expected = "astring";
+    unitUnderTest.setName(expected);
+    assertEquals(expected, unitUnderTest.getName());
+  }
+
+  @Test
   void setStarLevel_whenWithValidParameter_thenSetStarLevel() {
     int expected = 815;
     unitUnderTest.setStarLevel(expected);
@@ -84,14 +84,14 @@ class PlayerCardTest {
 
   @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
-    unitUnderTest.setName("astring");
-    unitUnderTest.setLevel(815);
-    unitUnderTest.setMaxLevel(815);
     unitUnderTest.setCount(815);
     unitUnderTest.setIconUrls(new PlayerIconUrls());
     unitUnderTest.setId(815);
+    unitUnderTest.setLevel(815);
+    unitUnderTest.setMaxLevel(815);
+    unitUnderTest.setName("astring");
     unitUnderTest.setStarLevel(815);
-    String expected = "PlayerCard(name=astring, level=815, maxLevel=815, count=815, iconUrls=" + new PlayerIconUrls() + ", id=815, starLevel=815)";
+    String expected = "PlayerCard(count=815, iconUrls=" + new PlayerIconUrls() + ", id=815, level=815, maxLevel=815, name=astring, starLevel=815)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

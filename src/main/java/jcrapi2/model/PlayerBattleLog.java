@@ -16,8 +16,10 @@
  */
 package jcrapi2.model;
 
-import javax.annotation.Generated;
 import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
+import javax.annotation.Generated;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -28,37 +30,37 @@ import lombok.ToString;
 @ToString
 public class PlayerBattleLog {
 
-  @SerializedName("type")
-  private String type;
+  @SerializedName("arena")
+  private PlayerBattleLogArena arena;
 
   @SerializedName("battleTime")
   private String battleTime;
 
-  @SerializedName("arena")
-  private PlayerBattleLogArena arena;
-
-  @SerializedName("gameMode")
-  private PlayerBattleLogGameMode gameMode;
-
-  @SerializedName("deckSelection")
-  private String deckSelection;
-
-  @SerializedName("team")
-  private java.util.List<PlayerBattleLogTeam> team;
-
-  @SerializedName("opponent")
-  private java.util.List<PlayerBattleLogOpponent> opponent;
-
   @SerializedName("challengeId")
   private int challengeId;
-
-  @SerializedName("challengeWinCountBefore")
-  private int challengeWinCountBefore;
 
   @SerializedName("challengeTitle")
   private String challengeTitle;
 
+  @SerializedName("challengeWinCountBefore")
+  private int challengeWinCountBefore;
+
+  @SerializedName("deckSelection")
+  private String deckSelection;
+
+  @SerializedName("gameMode")
+  private PlayerBattleLogGameMode gameMode;
+
   @SerializedName("isLadderTournament")
   private boolean LadderTournament;
+
+  @SerializedName("opponent")
+  private List<PlayerBattleLogOpponent> opponent;
+
+  @SerializedName("team")
+  private List<PlayerBattleLogTeam> team;
+
+  @SerializedName("type")
+  private String type;
 
 }

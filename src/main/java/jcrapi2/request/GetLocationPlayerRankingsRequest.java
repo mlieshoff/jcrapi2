@@ -21,7 +21,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import java.util.List;
 import jcrapi2.response.Callback;
-import jcrapi2.response.GetLocationClanRankingsResponse;
 import jcrapi2.response.GetLocationPlayerRankingsResponse;
 import lombok.Builder;
 import lombok.Getter;

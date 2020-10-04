@@ -16,8 +16,9 @@
  */
 package jcrapi2.model;
 
-import javax.annotation.Generated;
 import com.google.gson.annotations.SerializedName;
+
+import javax.annotation.Generated;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -28,13 +29,13 @@ import lombok.ToString;
 @ToString
 public class PlayerBattleLogTeamClan {
 
-  @SerializedName("tag")
-  private String tag;
+  @SerializedName("badgeId")
+  private int badgeId;
 
   @SerializedName("name")
   private String name;
 
-  @SerializedName("badgeId")
-  private int badgeId;
+  @SerializedName("tag")
+  private String tag;
 
 }

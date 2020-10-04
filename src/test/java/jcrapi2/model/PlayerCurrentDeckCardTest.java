@@ -34,10 +34,17 @@ class PlayerCurrentDeckCardTest {
   }
 
   @Test
-  void setName_whenWithValidParameter_thenSetName() {
-    String expected = "astring";
-    unitUnderTest.setName(expected);
-    assertEquals(expected, unitUnderTest.getName());
+  void setCount_whenWithValidParameter_thenSetCount() {
+    int expected = 815;
+    unitUnderTest.setCount(expected);
+    assertEquals(expected, unitUnderTest.getCount());
+  }
+
+  @Test
+  void setIconUrls_whenWithValidParameter_thenSetIconUrls() {
+    PlayerCurrentDeckCardIconUrls expected = new PlayerCurrentDeckCardIconUrls();
+    unitUnderTest.setIconUrls(expected);
+    assertEquals(expected, unitUnderTest.getIconUrls());
   }
 
   @Test
@@ -55,13 +62,6 @@ class PlayerCurrentDeckCardTest {
   }
 
   @Test
-  void setStarLevel_whenWithValidParameter_thenSetStarLevel() {
-    int expected = 815;
-    unitUnderTest.setStarLevel(expected);
-    assertEquals(expected, unitUnderTest.getStarLevel());
-  }
-
-  @Test
   void setMaxLevel_whenWithValidParameter_thenSetMaxLevel() {
     int expected = 815;
     unitUnderTest.setMaxLevel(expected);
@@ -69,29 +69,29 @@ class PlayerCurrentDeckCardTest {
   }
 
   @Test
-  void setCount_whenWithValidParameter_thenSetCount() {
-    int expected = 815;
-    unitUnderTest.setCount(expected);
-    assertEquals(expected, unitUnderTest.getCount());
+  void setName_whenWithValidParameter_thenSetName() {
+    String expected = "astring";
+    unitUnderTest.setName(expected);
+    assertEquals(expected, unitUnderTest.getName());
   }
 
   @Test
-  void setIconUrls_whenWithValidParameter_thenSetIconUrls() {
-    PlayerCurrentDeckCardIconUrls expected = new PlayerCurrentDeckCardIconUrls();
-    unitUnderTest.setIconUrls(expected);
-    assertEquals(expected, unitUnderTest.getIconUrls());
+  void setStarLevel_whenWithValidParameter_thenSetStarLevel() {
+    int expected = 815;
+    unitUnderTest.setStarLevel(expected);
+    assertEquals(expected, unitUnderTest.getStarLevel());
   }
 
   @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
-    unitUnderTest.setName("astring");
-    unitUnderTest.setId(815);
-    unitUnderTest.setLevel(815);
-    unitUnderTest.setStarLevel(815);
-    unitUnderTest.setMaxLevel(815);
     unitUnderTest.setCount(815);
     unitUnderTest.setIconUrls(new PlayerCurrentDeckCardIconUrls());
-    String expected = "PlayerCurrentDeckCard(name=astring, id=815, level=815, starLevel=815, maxLevel=815, count=815, iconUrls=" + new PlayerCurrentDeckCardIconUrls() + ")";
+    unitUnderTest.setId(815);
+    unitUnderTest.setLevel(815);
+    unitUnderTest.setMaxLevel(815);
+    unitUnderTest.setName("astring");
+    unitUnderTest.setStarLevel(815);
+    String expected = "PlayerCurrentDeckCard(count=815, iconUrls=" + new PlayerCurrentDeckCardIconUrls() + ", id=815, level=815, maxLevel=815, name=astring, starLevel=815)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

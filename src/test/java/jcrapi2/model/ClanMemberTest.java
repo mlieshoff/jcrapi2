@@ -18,10 +18,10 @@ package jcrapi2.model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import javax.annotation.Generated;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import javax.annotation.Generated;
 
 @Generated("org.mili.generator")
 class ClanMemberTest {
@@ -34,41 +34,6 @@ class ClanMemberTest {
   }
 
   @Test
-  void setTag_whenWithValidParameter_thenSetTag() {
-    String expected = "astring";
-    unitUnderTest.setTag(expected);
-    assertEquals(expected, unitUnderTest.getTag());
-  }
-
-  @Test
-  void setName_whenWithValidParameter_thenSetName() {
-    String expected = "astring";
-    unitUnderTest.setName(expected);
-    assertEquals(expected, unitUnderTest.getName());
-  }
-
-  @Test
-  void setRole_whenWithValidParameter_thenSetRole() {
-    String expected = "astring";
-    unitUnderTest.setRole(expected);
-    assertEquals(expected, unitUnderTest.getRole());
-  }
-
-  @Test
-  void setExpLevel_whenWithValidParameter_thenSetExpLevel() {
-    int expected = 815;
-    unitUnderTest.setExpLevel(expected);
-    assertEquals(expected, unitUnderTest.getExpLevel());
-  }
-
-  @Test
-  void setTrophies_whenWithValidParameter_thenSetTrophies() {
-    int expected = 815;
-    unitUnderTest.setTrophies(expected);
-    assertEquals(expected, unitUnderTest.getTrophies());
-  }
-
-  @Test
   void setArena_whenWithValidParameter_thenSetArena() {
     ClanMemberArena expected = new ClanMemberArena();
     unitUnderTest.setArena(expected);
@@ -76,17 +41,17 @@ class ClanMemberTest {
   }
 
   @Test
+  void setClanChestPoints_whenWithValidParameter_thenSetClanChestPoints() {
+    int expected = 815;
+    unitUnderTest.setClanChestPoints(expected);
+    assertEquals(expected, unitUnderTest.getClanChestPoints());
+  }
+
+  @Test
   void setClanRank_whenWithValidParameter_thenSetClanRank() {
     int expected = 815;
     unitUnderTest.setClanRank(expected);
     assertEquals(expected, unitUnderTest.getClanRank());
-  }
-
-  @Test
-  void setPreviousClanRank_whenWithValidParameter_thenSetPreviousClanRank() {
-    int expected = 815;
-    unitUnderTest.setPreviousClanRank(expected);
-    assertEquals(expected, unitUnderTest.getPreviousClanRank());
   }
 
   @Test
@@ -104,10 +69,10 @@ class ClanMemberTest {
   }
 
   @Test
-  void setClanChestPoints_whenWithValidParameter_thenSetClanChestPoints() {
+  void setExpLevel_whenWithValidParameter_thenSetExpLevel() {
     int expected = 815;
-    unitUnderTest.setClanChestPoints(expected);
-    assertEquals(expected, unitUnderTest.getClanChestPoints());
+    unitUnderTest.setExpLevel(expected);
+    assertEquals(expected, unitUnderTest.getExpLevel());
   }
 
   @Test
@@ -118,20 +83,55 @@ class ClanMemberTest {
   }
 
   @Test
+  void setName_whenWithValidParameter_thenSetName() {
+    String expected = "astring";
+    unitUnderTest.setName(expected);
+    assertEquals(expected, unitUnderTest.getName());
+  }
+
+  @Test
+  void setPreviousClanRank_whenWithValidParameter_thenSetPreviousClanRank() {
+    int expected = 815;
+    unitUnderTest.setPreviousClanRank(expected);
+    assertEquals(expected, unitUnderTest.getPreviousClanRank());
+  }
+
+  @Test
+  void setRole_whenWithValidParameter_thenSetRole() {
+    String expected = "astring";
+    unitUnderTest.setRole(expected);
+    assertEquals(expected, unitUnderTest.getRole());
+  }
+
+  @Test
+  void setTag_whenWithValidParameter_thenSetTag() {
+    String expected = "astring";
+    unitUnderTest.setTag(expected);
+    assertEquals(expected, unitUnderTest.getTag());
+  }
+
+  @Test
+  void setTrophies_whenWithValidParameter_thenSetTrophies() {
+    int expected = 815;
+    unitUnderTest.setTrophies(expected);
+    assertEquals(expected, unitUnderTest.getTrophies());
+  }
+
+  @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
-    unitUnderTest.setTag("astring");
-    unitUnderTest.setName("astring");
-    unitUnderTest.setRole("astring");
-    unitUnderTest.setExpLevel(815);
-    unitUnderTest.setTrophies(815);
     unitUnderTest.setArena(new ClanMemberArena());
+    unitUnderTest.setClanChestPoints(815);
     unitUnderTest.setClanRank(815);
-    unitUnderTest.setPreviousClanRank(815);
     unitUnderTest.setDonations(815);
     unitUnderTest.setDonationsReceived(815);
-    unitUnderTest.setClanChestPoints(815);
+    unitUnderTest.setExpLevel(815);
     unitUnderTest.setLastSeen("astring");
-    String expected = "ClanMember(tag=astring, name=astring, role=astring, expLevel=815, trophies=815, arena=" + new ClanMemberArena() + ", clanRank=815, previousClanRank=815, donations=815, donationsReceived=815, clanChestPoints=815, lastSeen=astring)";
+    unitUnderTest.setName("astring");
+    unitUnderTest.setPreviousClanRank(815);
+    unitUnderTest.setRole("astring");
+    unitUnderTest.setTag("astring");
+    unitUnderTest.setTrophies(815);
+    String expected = "ClanMember(arena=" + new ClanMemberArena() + ", clanChestPoints=815, clanRank=815, donations=815, donationsReceived=815, expLevel=815, lastSeen=astring, name=astring, previousClanRank=815, role=astring, tag=astring, trophies=815)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

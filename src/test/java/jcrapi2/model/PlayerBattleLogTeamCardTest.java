@@ -34,17 +34,17 @@ class PlayerBattleLogTeamCardTest {
   }
 
   @Test
+  void setIconUrls_whenWithValidParameter_thenSetIconUrls() {
+    PlayerBattleLogTeamCardIconUrls expected = new PlayerBattleLogTeamCardIconUrls();
+    unitUnderTest.setIconUrls(expected);
+    assertEquals(expected, unitUnderTest.getIconUrls());
+  }
+
+  @Test
   void setId_whenWithValidParameter_thenSetId() {
     int expected = 815;
     unitUnderTest.setId(expected);
     assertEquals(expected, unitUnderTest.getId());
-  }
-
-  @Test
-  void setName_whenWithValidParameter_thenSetName() {
-    String expected = "astring";
-    unitUnderTest.setName(expected);
-    assertEquals(expected, unitUnderTest.getName());
   }
 
   @Test
@@ -62,10 +62,10 @@ class PlayerBattleLogTeamCardTest {
   }
 
   @Test
-  void setIconUrls_whenWithValidParameter_thenSetIconUrls() {
-    PlayerBattleLogTeamCardIconUrls expected = new PlayerBattleLogTeamCardIconUrls();
-    unitUnderTest.setIconUrls(expected);
-    assertEquals(expected, unitUnderTest.getIconUrls());
+  void setName_whenWithValidParameter_thenSetName() {
+    String expected = "astring";
+    unitUnderTest.setName(expected);
+    assertEquals(expected, unitUnderTest.getName());
   }
 
   @Test
@@ -77,13 +77,13 @@ class PlayerBattleLogTeamCardTest {
 
   @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
+    unitUnderTest.setIconUrls(new PlayerBattleLogTeamCardIconUrls());
     unitUnderTest.setId(815);
-    unitUnderTest.setName("astring");
     unitUnderTest.setLevel(815);
     unitUnderTest.setMaxLevel(815);
-    unitUnderTest.setIconUrls(new PlayerBattleLogTeamCardIconUrls());
+    unitUnderTest.setName("astring");
     unitUnderTest.setStarLevel(815);
-    String expected = "PlayerBattleLogTeamCard(id=815, name=astring, level=815, maxLevel=815, iconUrls=" + new PlayerBattleLogTeamCardIconUrls() + ", starLevel=815)";
+    String expected = "PlayerBattleLogTeamCard(iconUrls=" + new PlayerBattleLogTeamCardIconUrls() + ", id=815, level=815, maxLevel=815, name=astring, starLevel=815)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

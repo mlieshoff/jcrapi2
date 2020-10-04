@@ -18,10 +18,10 @@ package jcrapi2.model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import javax.annotation.Generated;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import javax.annotation.Generated;
 
 @Generated("org.mili.generator")
 class PlayerBadgeTest {
@@ -31,13 +31,6 @@ class PlayerBadgeTest {
   @BeforeEach
   void setUp() {
     unitUnderTest = new PlayerBadge();
-  }
-
-  @Test
-  void setName_whenWithValidParameter_thenSetName() {
-    String expected = "astring";
-    unitUnderTest.setName(expected);
-    assertEquals(expected, unitUnderTest.getName());
   }
 
   @Test
@@ -52,6 +45,13 @@ class PlayerBadgeTest {
     int expected = 815;
     unitUnderTest.setMaxLevel(expected);
     assertEquals(expected, unitUnderTest.getMaxLevel());
+  }
+
+  @Test
+  void setName_whenWithValidParameter_thenSetName() {
+    String expected = "astring";
+    unitUnderTest.setName(expected);
+    assertEquals(expected, unitUnderTest.getName());
   }
 
   @Test
@@ -70,12 +70,12 @@ class PlayerBadgeTest {
 
   @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
-    unitUnderTest.setName("astring");
     unitUnderTest.setLevel(815);
     unitUnderTest.setMaxLevel(815);
+    unitUnderTest.setName("astring");
     unitUnderTest.setProgress(815);
     unitUnderTest.setTarget(815);
-    String expected = "PlayerBadge(name=astring, level=815, maxLevel=815, progress=815, target=815)";
+    String expected = "PlayerBadge(level=815, maxLevel=815, name=astring, progress=815, target=815)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

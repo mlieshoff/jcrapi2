@@ -34,10 +34,10 @@ class PlayerBattleLogOpponentClanTest {
   }
 
   @Test
-  void setTag_whenWithValidParameter_thenSetTag() {
-    String expected = "astring";
-    unitUnderTest.setTag(expected);
-    assertEquals(expected, unitUnderTest.getTag());
+  void setBadgeId_whenWithValidParameter_thenSetBadgeId() {
+    int expected = 815;
+    unitUnderTest.setBadgeId(expected);
+    assertEquals(expected, unitUnderTest.getBadgeId());
   }
 
   @Test
@@ -48,18 +48,18 @@ class PlayerBattleLogOpponentClanTest {
   }
 
   @Test
-  void setBadgeId_whenWithValidParameter_thenSetBadgeId() {
-    int expected = 815;
-    unitUnderTest.setBadgeId(expected);
-    assertEquals(expected, unitUnderTest.getBadgeId());
+  void setTag_whenWithValidParameter_thenSetTag() {
+    String expected = "astring";
+    unitUnderTest.setTag(expected);
+    assertEquals(expected, unitUnderTest.getTag());
   }
 
   @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
-    unitUnderTest.setTag("astring");
-    unitUnderTest.setName("astring");
     unitUnderTest.setBadgeId(815);
-    String expected = "PlayerBattleLogOpponentClan(tag=astring, name=astring, badgeId=815)";
+    unitUnderTest.setName("astring");
+    unitUnderTest.setTag("astring");
+    String expected = "PlayerBattleLogOpponentClan(badgeId=815, name=astring, tag=astring)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

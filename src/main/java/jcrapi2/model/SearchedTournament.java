@@ -16,8 +16,9 @@
  */
 package jcrapi2.model;
 
-import javax.annotation.Generated;
 import com.google.gson.annotations.SerializedName;
+
+import javax.annotation.Generated;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -28,46 +29,46 @@ import lombok.ToString;
 @ToString
 public class SearchedTournament {
 
+  @SerializedName("capacity")
+  private int capacity;
+
+  @SerializedName("createdTime")
+  private String createdTime;
+
+  @SerializedName("creatorTag")
+  private String creatorTag;
+
+  @SerializedName("description")
+  private String description;
+
+  @SerializedName("duration")
+  private int duration;
+
+  @SerializedName("firstPlaceCardPrize")
+  private int firstPlaceCardPrize;
+
+  @SerializedName("gameMode")
+  private SearchedTournamentGameMode gameMode;
+
+  @SerializedName("levelCap")
+  private int levelCap;
+
+  @SerializedName("maxCapacity")
+  private int maxCapacity;
+
+  @SerializedName("name")
+  private String name;
+
+  @SerializedName("preparationDuration")
+  private int preparationDuration;
+
+  @SerializedName("status")
+  private String status;
+
   @SerializedName("tag")
   private String tag;
 
   @SerializedName("type")
   private String type;
-
-  @SerializedName("status")
-  private String status;
-
-  @SerializedName("creatorTag")
-  private String creatorTag;
-
-  @SerializedName("name")
-  private String name;
-
-  @SerializedName("description")
-  private String description;
-
-  @SerializedName("capacity")
-  private int capacity;
-
-  @SerializedName("preparationDuration")
-  private int preparationDuration;
-
-  @SerializedName("duration")
-  private int duration;
-
-  @SerializedName("createdTime")
-  private String createdTime;
-
-  @SerializedName("levelCap")
-  private int levelCap;
-
-  @SerializedName("firstPlaceCardPrize")
-  private int firstPlaceCardPrize;
-
-  @SerializedName("maxCapacity")
-  private int maxCapacity;
-
-  @SerializedName("gameMode")
-  private SearchedTournamentGameMode gameMode;
 
 }

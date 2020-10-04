@@ -18,10 +18,12 @@ package jcrapi2.model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import javax.annotation.Generated;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+import javax.annotation.Generated;
 
 @Generated("org.mili.generator")
 class ClanWarLogTest {
@@ -34,13 +36,6 @@ class ClanWarLogTest {
   }
 
   @Test
-  void setSeasonId_whenWithValidParameter_thenSetSeasonId() {
-    int expected = 815;
-    unitUnderTest.setSeasonId(expected);
-    assertEquals(expected, unitUnderTest.getSeasonId());
-  }
-
-  @Test
   void setCreatedDate_whenWithValidParameter_thenSetCreatedDate() {
     String expected = "astring";
     unitUnderTest.setCreatedDate(expected);
@@ -49,25 +44,32 @@ class ClanWarLogTest {
 
   @Test
   void setParticipants_whenWithValidParameter_thenSetParticipants() {
-    java.util.List<ClanWarLogParticipant> expected = new java.util.ArrayList<ClanWarLogParticipant>();
+    List<ClanWarLogParticipant> expected = new ArrayList<ClanWarLogParticipant>();
     unitUnderTest.setParticipants(expected);
     assertEquals(expected, unitUnderTest.getParticipants());
   }
 
   @Test
+  void setSeasonId_whenWithValidParameter_thenSetSeasonId() {
+    int expected = 815;
+    unitUnderTest.setSeasonId(expected);
+    assertEquals(expected, unitUnderTest.getSeasonId());
+  }
+
+  @Test
   void setStandings_whenWithValidParameter_thenSetStandings() {
-    java.util.List<ClanWarLogStanding> expected = new java.util.ArrayList<ClanWarLogStanding>();
+    List<ClanWarLogStanding> expected = new ArrayList<ClanWarLogStanding>();
     unitUnderTest.setStandings(expected);
     assertEquals(expected, unitUnderTest.getStandings());
   }
 
   @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
-    unitUnderTest.setSeasonId(815);
     unitUnderTest.setCreatedDate("astring");
-    unitUnderTest.setParticipants(new java.util.ArrayList<ClanWarLogParticipant>());
-    unitUnderTest.setStandings(new java.util.ArrayList<ClanWarLogStanding>());
-    String expected = "ClanWarLog(seasonId=815, createdDate=astring, participants=" + new java.util.ArrayList<ClanWarLogParticipant>() + ", standings=" + new java.util.ArrayList<ClanWarLogStanding>() + ")";
+    unitUnderTest.setParticipants(new ArrayList<ClanWarLogParticipant>());
+    unitUnderTest.setSeasonId(815);
+    unitUnderTest.setStandings(new ArrayList<ClanWarLogStanding>());
+    String expected = "ClanWarLog(createdDate=astring, participants=" + new ArrayList<ClanWarLogParticipant>() + ", seasonId=815, standings=" + new ArrayList<ClanWarLogStanding>() + ")";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

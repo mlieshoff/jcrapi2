@@ -16,8 +16,10 @@
  */
 package jcrapi2.model;
 
-import javax.annotation.Generated;
 import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
+import javax.annotation.Generated;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -28,16 +30,16 @@ import lombok.ToString;
 @ToString
 public class ClanCurentWar {
 
+  @SerializedName("clan")
+  private ClanCurentWarClan clan;
+
+  @SerializedName("participants")
+  private List<ClanCurentWarParticipant> participants;
+
   @SerializedName("state")
   private String state;
 
   @SerializedName("warEndTime")
   private String warEndTime;
-
-  @SerializedName("clan")
-  private ClanCurentWarClan clan;
-
-  @SerializedName("participants")
-  private java.util.List<ClanCurentWarParticipant> participants;
 
 }

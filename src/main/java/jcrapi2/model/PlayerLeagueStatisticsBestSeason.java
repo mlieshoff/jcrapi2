@@ -16,8 +16,9 @@
  */
 package jcrapi2.model;
 
-import javax.annotation.Generated;
 import com.google.gson.annotations.SerializedName;
+
+import javax.annotation.Generated;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -31,10 +32,10 @@ public class PlayerLeagueStatisticsBestSeason {
   @SerializedName("id")
   private String id;
 
-  @SerializedName("trophies")
-  private int trophies;
-
   @SerializedName("rank")
   private int rank;
+
+  @SerializedName("trophies")
+  private int trophies;
 
 }

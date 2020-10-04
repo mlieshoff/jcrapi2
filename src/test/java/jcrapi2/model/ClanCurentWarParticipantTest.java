@@ -34,17 +34,10 @@ class ClanCurentWarParticipantTest {
   }
 
   @Test
-  void setTag_whenWithValidParameter_thenSetTag() {
-    String expected = "astring";
-    unitUnderTest.setTag(expected);
-    assertEquals(expected, unitUnderTest.getTag());
-  }
-
-  @Test
-  void setName_whenWithValidParameter_thenSetName() {
-    String expected = "astring";
-    unitUnderTest.setName(expected);
-    assertEquals(expected, unitUnderTest.getName());
+  void setBattlesPlayed_whenWithValidParameter_thenSetBattlesPlayed() {
+    int expected = 815;
+    unitUnderTest.setBattlesPlayed(expected);
+    assertEquals(expected, unitUnderTest.getBattlesPlayed());
   }
 
   @Test
@@ -55,10 +48,17 @@ class ClanCurentWarParticipantTest {
   }
 
   @Test
-  void setBattlesPlayed_whenWithValidParameter_thenSetBattlesPlayed() {
-    int expected = 815;
-    unitUnderTest.setBattlesPlayed(expected);
-    assertEquals(expected, unitUnderTest.getBattlesPlayed());
+  void setName_whenWithValidParameter_thenSetName() {
+    String expected = "astring";
+    unitUnderTest.setName(expected);
+    assertEquals(expected, unitUnderTest.getName());
+  }
+
+  @Test
+  void setTag_whenWithValidParameter_thenSetTag() {
+    String expected = "astring";
+    unitUnderTest.setTag(expected);
+    assertEquals(expected, unitUnderTest.getTag());
   }
 
   @Test
@@ -70,12 +70,12 @@ class ClanCurentWarParticipantTest {
 
   @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
-    unitUnderTest.setTag("astring");
-    unitUnderTest.setName("astring");
-    unitUnderTest.setCardsEarned(815);
     unitUnderTest.setBattlesPlayed(815);
+    unitUnderTest.setCardsEarned(815);
+    unitUnderTest.setName("astring");
+    unitUnderTest.setTag("astring");
     unitUnderTest.setWins(815);
-    String expected = "ClanCurentWarParticipant(tag=astring, name=astring, cardsEarned=815, battlesPlayed=815, wins=815)";
+    String expected = "ClanCurentWarParticipant(battlesPlayed=815, cardsEarned=815, name=astring, tag=astring, wins=815)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

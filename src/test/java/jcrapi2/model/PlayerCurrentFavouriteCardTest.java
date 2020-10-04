@@ -34,10 +34,10 @@ class PlayerCurrentFavouriteCardTest {
   }
 
   @Test
-  void setName_whenWithValidParameter_thenSetName() {
-    String expected = "astring";
-    unitUnderTest.setName(expected);
-    assertEquals(expected, unitUnderTest.getName());
+  void setIconUrls_whenWithValidParameter_thenSetIconUrls() {
+    PlayerCurrentFavouriteCardIconUrls expected = new PlayerCurrentFavouriteCardIconUrls();
+    unitUnderTest.setIconUrls(expected);
+    assertEquals(expected, unitUnderTest.getIconUrls());
   }
 
   @Test
@@ -55,19 +55,19 @@ class PlayerCurrentFavouriteCardTest {
   }
 
   @Test
-  void setIconUrls_whenWithValidParameter_thenSetIconUrls() {
-    PlayerCurrentFavouriteCardIconUrls expected = new PlayerCurrentFavouriteCardIconUrls();
-    unitUnderTest.setIconUrls(expected);
-    assertEquals(expected, unitUnderTest.getIconUrls());
+  void setName_whenWithValidParameter_thenSetName() {
+    String expected = "astring";
+    unitUnderTest.setName(expected);
+    assertEquals(expected, unitUnderTest.getName());
   }
 
   @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
-    unitUnderTest.setName("astring");
+    unitUnderTest.setIconUrls(new PlayerCurrentFavouriteCardIconUrls());
     unitUnderTest.setId(815);
     unitUnderTest.setMaxLevel(815);
-    unitUnderTest.setIconUrls(new PlayerCurrentFavouriteCardIconUrls());
-    String expected = "PlayerCurrentFavouriteCard(name=astring, id=815, maxLevel=815, iconUrls=" + new PlayerCurrentFavouriteCardIconUrls() + ")";
+    unitUnderTest.setName("astring");
+    String expected = "PlayerCurrentFavouriteCard(iconUrls=" + new PlayerCurrentFavouriteCardIconUrls() + ", id=815, maxLevel=815, name=astring)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

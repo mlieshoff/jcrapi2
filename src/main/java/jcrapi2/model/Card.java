@@ -16,8 +16,9 @@
  */
 package jcrapi2.model;
 
-import javax.annotation.Generated;
 import com.google.gson.annotations.SerializedName;
+
+import javax.annotation.Generated;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -28,8 +29,8 @@ import lombok.ToString;
 @ToString
 public class Card {
 
-  @SerializedName("name")
-  private String name;
+  @SerializedName("iconUrls")
+  private CardIconUrls iconUrls;
 
   @SerializedName("id")
   private int id;
@@ -37,7 +38,7 @@ public class Card {
   @SerializedName("maxLevel")
   private int maxLevel;
 
-  @SerializedName("iconUrls")
-  private CardIconUrls iconUrls;
+  @SerializedName("name")
+  private String name;
 
 }

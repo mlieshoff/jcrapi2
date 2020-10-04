@@ -19,6 +19,8 @@ package jcrapi2.model;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import javax.annotation.Generated;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -34,38 +36,10 @@ class PlayerBattleLogOpponentTest {
   }
 
   @Test
-  void setTag_whenWithValidParameter_thenSetTag() {
-    String expected = "astring";
-    unitUnderTest.setTag(expected);
-    assertEquals(expected, unitUnderTest.getTag());
-  }
-
-  @Test
-  void setName_whenWithValidParameter_thenSetName() {
-    String expected = "astring";
-    unitUnderTest.setName(expected);
-    assertEquals(expected, unitUnderTest.getName());
-  }
-
-  @Test
-  void setStartingTrophies_whenWithValidParameter_thenSetStartingTrophies() {
-    int expected = 815;
-    unitUnderTest.setStartingTrophies(expected);
-    assertEquals(expected, unitUnderTest.getStartingTrophies());
-  }
-
-  @Test
-  void setTrophyChange_whenWithValidParameter_thenSetTrophyChange() {
-    int expected = 815;
-    unitUnderTest.setTrophyChange(expected);
-    assertEquals(expected, unitUnderTest.getTrophyChange());
-  }
-
-  @Test
-  void setCrowns_whenWithValidParameter_thenSetCrowns() {
-    int expected = 815;
-    unitUnderTest.setCrowns(expected);
-    assertEquals(expected, unitUnderTest.getCrowns());
+  void setCards_whenWithValidParameter_thenSetCards() {
+    List<PlayerBattleLogOpponentCard> expected = new ArrayList<PlayerBattleLogOpponentCard>();
+    unitUnderTest.setCards(expected);
+    assertEquals(expected, unitUnderTest.getCards());
   }
 
   @Test
@@ -76,10 +50,10 @@ class PlayerBattleLogOpponentTest {
   }
 
   @Test
-  void setCards_whenWithValidParameter_thenSetCards() {
-    java.util.List<PlayerBattleLogOpponentCard> expected = new java.util.ArrayList<PlayerBattleLogOpponentCard>();
-    unitUnderTest.setCards(expected);
-    assertEquals(expected, unitUnderTest.getCards());
+  void setCrowns_whenWithValidParameter_thenSetCrowns() {
+    int expected = 815;
+    unitUnderTest.setCrowns(expected);
+    assertEquals(expected, unitUnderTest.getCrowns());
   }
 
   @Test
@@ -90,24 +64,52 @@ class PlayerBattleLogOpponentTest {
   }
 
   @Test
+  void setName_whenWithValidParameter_thenSetName() {
+    String expected = "astring";
+    unitUnderTest.setName(expected);
+    assertEquals(expected, unitUnderTest.getName());
+  }
+
+  @Test
   void setPrincessTowersHitPoints_whenWithValidParameter_thenSetPrincessTowersHitPoints() {
-    java.util.List<Integer> expected = new java.util.ArrayList<Integer>();
+    List<Integer> expected = new ArrayList<Integer>();
     unitUnderTest.setPrincessTowersHitPoints(expected);
     assertEquals(expected, unitUnderTest.getPrincessTowersHitPoints());
   }
 
   @Test
+  void setStartingTrophies_whenWithValidParameter_thenSetStartingTrophies() {
+    int expected = 815;
+    unitUnderTest.setStartingTrophies(expected);
+    assertEquals(expected, unitUnderTest.getStartingTrophies());
+  }
+
+  @Test
+  void setTag_whenWithValidParameter_thenSetTag() {
+    String expected = "astring";
+    unitUnderTest.setTag(expected);
+    assertEquals(expected, unitUnderTest.getTag());
+  }
+
+  @Test
+  void setTrophyChange_whenWithValidParameter_thenSetTrophyChange() {
+    int expected = 815;
+    unitUnderTest.setTrophyChange(expected);
+    assertEquals(expected, unitUnderTest.getTrophyChange());
+  }
+
+  @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
-    unitUnderTest.setTag("astring");
-    unitUnderTest.setName("astring");
-    unitUnderTest.setStartingTrophies(815);
-    unitUnderTest.setTrophyChange(815);
-    unitUnderTest.setCrowns(815);
+    unitUnderTest.setCards(new ArrayList<PlayerBattleLogOpponentCard>());
     unitUnderTest.setClan(new PlayerBattleLogOpponentClan());
-    unitUnderTest.setCards(new java.util.ArrayList<PlayerBattleLogOpponentCard>());
+    unitUnderTest.setCrowns(815);
     unitUnderTest.setKingTowerHitPoints(815);
-    unitUnderTest.setPrincessTowersHitPoints(new java.util.ArrayList<Integer>());
-    String expected = "PlayerBattleLogOpponent(tag=astring, name=astring, startingTrophies=815, trophyChange=815, crowns=815, clan=" + new PlayerBattleLogOpponentClan() + ", cards=" + new java.util.ArrayList<PlayerBattleLogOpponentCard>() + ", kingTowerHitPoints=815, princessTowersHitPoints=" + new java.util.ArrayList<Integer>() + ")";
+    unitUnderTest.setName("astring");
+    unitUnderTest.setPrincessTowersHitPoints(new ArrayList<Integer>());
+    unitUnderTest.setStartingTrophies(815);
+    unitUnderTest.setTag("astring");
+    unitUnderTest.setTrophyChange(815);
+    String expected = "PlayerBattleLogOpponent(cards=" + new ArrayList<PlayerBattleLogOpponentCard>() + ", clan=" + new PlayerBattleLogOpponentClan() + ", crowns=815, kingTowerHitPoints=815, name=astring, princessTowersHitPoints=" + new ArrayList<Integer>() + ", startingTrophies=815, tag=astring, trophyChange=815)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

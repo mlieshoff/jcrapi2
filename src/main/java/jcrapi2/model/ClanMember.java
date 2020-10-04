@@ -16,8 +16,9 @@
  */
 package jcrapi2.model;
 
-import javax.annotation.Generated;
 import com.google.gson.annotations.SerializedName;
+
+import javax.annotation.Generated;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -28,29 +29,15 @@ import lombok.ToString;
 @ToString
 public class ClanMember {
 
-  @SerializedName("tag")
-  private String tag;
-
-  @SerializedName("name")
-  private String name;
-
-  @SerializedName("role")
-  private String role;
-
-  @SerializedName("expLevel")
-  private int expLevel;
-
-  @SerializedName("trophies")
-  private int trophies;
-
   @SerializedName("arena")
   private ClanMemberArena arena;
 
+  @Deprecated
+  @SerializedName("clanChestPoints")
+  private int clanChestPoints;
+
   @SerializedName("clanRank")
   private int clanRank;
-
-  @SerializedName("previousClanRank")
-  private int previousClanRank;
 
   @SerializedName("donations")
   private int donations;
@@ -58,10 +45,25 @@ public class ClanMember {
   @SerializedName("donationsReceived")
   private int donationsReceived;
 
-  @SerializedName("clanChestPoints")
-  private int clanChestPoints;
+  @SerializedName("expLevel")
+  private int expLevel;
 
   @SerializedName("lastSeen")
   private String lastSeen;
+
+  @SerializedName("name")
+  private String name;
+
+  @SerializedName("previousClanRank")
+  private int previousClanRank;
+
+  @SerializedName("role")
+  private String role;
+
+  @SerializedName("tag")
+  private String tag;
+
+  @SerializedName("trophies")
+  private int trophies;
 
 }

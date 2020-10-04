@@ -18,10 +18,12 @@ package jcrapi2.model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import javax.annotation.Generated;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+import javax.annotation.Generated;
 
 @Generated("org.mili.generator")
 class PlayerBattleLogTest {
@@ -34,10 +36,10 @@ class PlayerBattleLogTest {
   }
 
   @Test
-  void setType_whenWithValidParameter_thenSetType() {
-    String expected = "astring";
-    unitUnderTest.setType(expected);
-    assertEquals(expected, unitUnderTest.getType());
+  void setArena_whenWithValidParameter_thenSetArena() {
+    PlayerBattleLogArena expected = new PlayerBattleLogArena();
+    unitUnderTest.setArena(expected);
+    assertEquals(expected, unitUnderTest.getArena());
   }
 
   @Test
@@ -48,52 +50,10 @@ class PlayerBattleLogTest {
   }
 
   @Test
-  void setArena_whenWithValidParameter_thenSetArena() {
-    PlayerBattleLogArena expected = new PlayerBattleLogArena();
-    unitUnderTest.setArena(expected);
-    assertEquals(expected, unitUnderTest.getArena());
-  }
-
-  @Test
-  void setGameMode_whenWithValidParameter_thenSetGameMode() {
-    PlayerBattleLogGameMode expected = new PlayerBattleLogGameMode();
-    unitUnderTest.setGameMode(expected);
-    assertEquals(expected, unitUnderTest.getGameMode());
-  }
-
-  @Test
-  void setDeckSelection_whenWithValidParameter_thenSetDeckSelection() {
-    String expected = "astring";
-    unitUnderTest.setDeckSelection(expected);
-    assertEquals(expected, unitUnderTest.getDeckSelection());
-  }
-
-  @Test
-  void setTeam_whenWithValidParameter_thenSetTeam() {
-    java.util.List<PlayerBattleLogTeam> expected = new java.util.ArrayList<PlayerBattleLogTeam>();
-    unitUnderTest.setTeam(expected);
-    assertEquals(expected, unitUnderTest.getTeam());
-  }
-
-  @Test
-  void setOpponent_whenWithValidParameter_thenSetOpponent() {
-    java.util.List<PlayerBattleLogOpponent> expected = new java.util.ArrayList<PlayerBattleLogOpponent>();
-    unitUnderTest.setOpponent(expected);
-    assertEquals(expected, unitUnderTest.getOpponent());
-  }
-
-  @Test
   void setChallengeId_whenWithValidParameter_thenSetChallengeId() {
     int expected = 815;
     unitUnderTest.setChallengeId(expected);
     assertEquals(expected, unitUnderTest.getChallengeId());
-  }
-
-  @Test
-  void setChallengeWinCountBefore_whenWithValidParameter_thenSetChallengeWinCountBefore() {
-    int expected = 815;
-    unitUnderTest.setChallengeWinCountBefore(expected);
-    assertEquals(expected, unitUnderTest.getChallengeWinCountBefore());
   }
 
   @Test
@@ -104,6 +64,27 @@ class PlayerBattleLogTest {
   }
 
   @Test
+  void setChallengeWinCountBefore_whenWithValidParameter_thenSetChallengeWinCountBefore() {
+    int expected = 815;
+    unitUnderTest.setChallengeWinCountBefore(expected);
+    assertEquals(expected, unitUnderTest.getChallengeWinCountBefore());
+  }
+
+  @Test
+  void setDeckSelection_whenWithValidParameter_thenSetDeckSelection() {
+    String expected = "astring";
+    unitUnderTest.setDeckSelection(expected);
+    assertEquals(expected, unitUnderTest.getDeckSelection());
+  }
+
+  @Test
+  void setGameMode_whenWithValidParameter_thenSetGameMode() {
+    PlayerBattleLogGameMode expected = new PlayerBattleLogGameMode();
+    unitUnderTest.setGameMode(expected);
+    assertEquals(expected, unitUnderTest.getGameMode());
+  }
+
+  @Test
   void setLadderTournament_whenWithValidParameter_thenSetLadderTournament() {
     boolean expected = false;
     unitUnderTest.setLadderTournament(expected);
@@ -111,19 +92,40 @@ class PlayerBattleLogTest {
   }
 
   @Test
+  void setOpponent_whenWithValidParameter_thenSetOpponent() {
+    List<PlayerBattleLogOpponent> expected = new ArrayList<PlayerBattleLogOpponent>();
+    unitUnderTest.setOpponent(expected);
+    assertEquals(expected, unitUnderTest.getOpponent());
+  }
+
+  @Test
+  void setTeam_whenWithValidParameter_thenSetTeam() {
+    List<PlayerBattleLogTeam> expected = new ArrayList<PlayerBattleLogTeam>();
+    unitUnderTest.setTeam(expected);
+    assertEquals(expected, unitUnderTest.getTeam());
+  }
+
+  @Test
+  void setType_whenWithValidParameter_thenSetType() {
+    String expected = "astring";
+    unitUnderTest.setType(expected);
+    assertEquals(expected, unitUnderTest.getType());
+  }
+
+  @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
-    unitUnderTest.setType("astring");
-    unitUnderTest.setBattleTime("astring");
     unitUnderTest.setArena(new PlayerBattleLogArena());
-    unitUnderTest.setGameMode(new PlayerBattleLogGameMode());
-    unitUnderTest.setDeckSelection("astring");
-    unitUnderTest.setTeam(new java.util.ArrayList<PlayerBattleLogTeam>());
-    unitUnderTest.setOpponent(new java.util.ArrayList<PlayerBattleLogOpponent>());
+    unitUnderTest.setBattleTime("astring");
     unitUnderTest.setChallengeId(815);
-    unitUnderTest.setChallengeWinCountBefore(815);
     unitUnderTest.setChallengeTitle("astring");
+    unitUnderTest.setChallengeWinCountBefore(815);
+    unitUnderTest.setDeckSelection("astring");
+    unitUnderTest.setGameMode(new PlayerBattleLogGameMode());
     unitUnderTest.setLadderTournament(false);
-    String expected = "PlayerBattleLog(type=astring, battleTime=astring, arena=" + new PlayerBattleLogArena() + ", gameMode=" + new PlayerBattleLogGameMode() + ", deckSelection=astring, team=" + new java.util.ArrayList<PlayerBattleLogTeam>() + ", opponent=" + new java.util.ArrayList<PlayerBattleLogOpponent>() + ", challengeId=815, challengeWinCountBefore=815, challengeTitle=astring, LadderTournament=false)";
+    unitUnderTest.setOpponent(new ArrayList<PlayerBattleLogOpponent>());
+    unitUnderTest.setTeam(new ArrayList<PlayerBattleLogTeam>());
+    unitUnderTest.setType("astring");
+    String expected = "PlayerBattleLog(arena=" + new PlayerBattleLogArena() + ", battleTime=astring, challengeId=815, challengeTitle=astring, challengeWinCountBefore=815, deckSelection=astring, gameMode=" + new PlayerBattleLogGameMode() + ", LadderTournament=false, opponent=" + new ArrayList<PlayerBattleLogOpponent>() + ", team=" + new ArrayList<PlayerBattleLogTeam>() + ", type=astring)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

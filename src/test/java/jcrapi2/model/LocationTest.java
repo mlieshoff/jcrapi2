@@ -18,10 +18,10 @@ package jcrapi2.model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import javax.annotation.Generated;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import javax.annotation.Generated;
 
 @Generated("org.mili.generator")
 class LocationTest {
@@ -31,20 +31,6 @@ class LocationTest {
   @BeforeEach
   void setUp() {
     unitUnderTest = new Location();
-  }
-
-  @Test
-  void setId_whenWithValidParameter_thenSetId() {
-    int expected = 815;
-    unitUnderTest.setId(expected);
-    assertEquals(expected, unitUnderTest.getId());
-  }
-
-  @Test
-  void setName_whenWithValidParameter_thenSetName() {
-    String expected = "astring";
-    unitUnderTest.setName(expected);
-    assertEquals(expected, unitUnderTest.getName());
   }
 
   @Test
@@ -62,12 +48,26 @@ class LocationTest {
   }
 
   @Test
+  void setId_whenWithValidParameter_thenSetId() {
+    int expected = 815;
+    unitUnderTest.setId(expected);
+    assertEquals(expected, unitUnderTest.getId());
+  }
+
+  @Test
+  void setName_whenWithValidParameter_thenSetName() {
+    String expected = "astring";
+    unitUnderTest.setName(expected);
+    assertEquals(expected, unitUnderTest.getName());
+  }
+
+  @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
-    unitUnderTest.setId(815);
-    unitUnderTest.setName("astring");
     unitUnderTest.setCountry(false);
     unitUnderTest.setCountryCode("astring");
-    String expected = "Location(id=815, name=astring, country=false, countryCode=astring)";
+    unitUnderTest.setId(815);
+    unitUnderTest.setName("astring");
+    String expected = "Location(country=false, countryCode=astring, id=815, name=astring)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

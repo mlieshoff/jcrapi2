@@ -34,31 +34,10 @@ class LocationRankingPlayerTest {
   }
 
   @Test
-  void setTag_whenWithValidParameter_thenSetTag() {
-    String expected = "astring";
-    unitUnderTest.setTag(expected);
-    assertEquals(expected, unitUnderTest.getTag());
-  }
-
-  @Test
-  void setName_whenWithValidParameter_thenSetName() {
-    String expected = "astring";
-    unitUnderTest.setName(expected);
-    assertEquals(expected, unitUnderTest.getName());
-  }
-
-  @Test
-  void setRank_whenWithValidParameter_thenSetRank() {
-    int expected = 815;
-    unitUnderTest.setRank(expected);
-    assertEquals(expected, unitUnderTest.getRank());
-  }
-
-  @Test
-  void setPreviousRank_whenWithValidParameter_thenSetPreviousRank() {
-    int expected = 815;
-    unitUnderTest.setPreviousRank(expected);
-    assertEquals(expected, unitUnderTest.getPreviousRank());
+  void setArena_whenWithValidParameter_thenSetArena() {
+    LocationRankingPlayerArena expected = new LocationRankingPlayerArena();
+    unitUnderTest.setArena(expected);
+    assertEquals(expected, unitUnderTest.getArena());
   }
 
   @Test
@@ -69,17 +48,38 @@ class LocationRankingPlayerTest {
   }
 
   @Test
-  void setArena_whenWithValidParameter_thenSetArena() {
-    LocationRankingPlayerArena expected = new LocationRankingPlayerArena();
-    unitUnderTest.setArena(expected);
-    assertEquals(expected, unitUnderTest.getArena());
-  }
-
-  @Test
   void setExpLevel_whenWithValidParameter_thenSetExpLevel() {
     int expected = 815;
     unitUnderTest.setExpLevel(expected);
     assertEquals(expected, unitUnderTest.getExpLevel());
+  }
+
+  @Test
+  void setName_whenWithValidParameter_thenSetName() {
+    String expected = "astring";
+    unitUnderTest.setName(expected);
+    assertEquals(expected, unitUnderTest.getName());
+  }
+
+  @Test
+  void setPreviousRank_whenWithValidParameter_thenSetPreviousRank() {
+    int expected = 815;
+    unitUnderTest.setPreviousRank(expected);
+    assertEquals(expected, unitUnderTest.getPreviousRank());
+  }
+
+  @Test
+  void setRank_whenWithValidParameter_thenSetRank() {
+    int expected = 815;
+    unitUnderTest.setRank(expected);
+    assertEquals(expected, unitUnderTest.getRank());
+  }
+
+  @Test
+  void setTag_whenWithValidParameter_thenSetTag() {
+    String expected = "astring";
+    unitUnderTest.setTag(expected);
+    assertEquals(expected, unitUnderTest.getTag());
   }
 
   @Test
@@ -91,15 +91,15 @@ class LocationRankingPlayerTest {
 
   @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
-    unitUnderTest.setTag("astring");
-    unitUnderTest.setName("astring");
-    unitUnderTest.setRank(815);
-    unitUnderTest.setPreviousRank(815);
-    unitUnderTest.setClan(new LocationRankingPlayerClan());
     unitUnderTest.setArena(new LocationRankingPlayerArena());
+    unitUnderTest.setClan(new LocationRankingPlayerClan());
     unitUnderTest.setExpLevel(815);
+    unitUnderTest.setName("astring");
+    unitUnderTest.setPreviousRank(815);
+    unitUnderTest.setRank(815);
+    unitUnderTest.setTag("astring");
     unitUnderTest.setTrophies(815);
-    String expected = "LocationRankingPlayer(tag=astring, name=astring, rank=815, previousRank=815, clan=" + new LocationRankingPlayerClan() + ", arena=" + new LocationRankingPlayerArena() + ", expLevel=815, trophies=815)";
+    String expected = "LocationRankingPlayer(arena=" + new LocationRankingPlayerArena() + ", clan=" + new LocationRankingPlayerClan() + ", expLevel=815, name=astring, previousRank=815, rank=815, tag=astring, trophies=815)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

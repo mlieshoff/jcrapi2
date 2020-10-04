@@ -18,10 +18,12 @@ package jcrapi2.model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import javax.annotation.Generated;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+import javax.annotation.Generated;
 
 @Generated("org.mili.generator")
 class TournamentTest {
@@ -34,66 +36,10 @@ class TournamentTest {
   }
 
   @Test
-  void setTag_whenWithValidParameter_thenSetTag() {
-    String expected = "astring";
-    unitUnderTest.setTag(expected);
-    assertEquals(expected, unitUnderTest.getTag());
-  }
-
-  @Test
-  void setType_whenWithValidParameter_thenSetType() {
-    String expected = "astring";
-    unitUnderTest.setType(expected);
-    assertEquals(expected, unitUnderTest.getType());
-  }
-
-  @Test
-  void setStatus_whenWithValidParameter_thenSetStatus() {
-    String expected = "astring";
-    unitUnderTest.setStatus(expected);
-    assertEquals(expected, unitUnderTest.getStatus());
-  }
-
-  @Test
-  void setCreatorTag_whenWithValidParameter_thenSetCreatorTag() {
-    String expected = "astring";
-    unitUnderTest.setCreatorTag(expected);
-    assertEquals(expected, unitUnderTest.getCreatorTag());
-  }
-
-  @Test
-  void setName_whenWithValidParameter_thenSetName() {
-    String expected = "astring";
-    unitUnderTest.setName(expected);
-    assertEquals(expected, unitUnderTest.getName());
-  }
-
-  @Test
   void setCapacity_whenWithValidParameter_thenSetCapacity() {
     int expected = 815;
     unitUnderTest.setCapacity(expected);
     assertEquals(expected, unitUnderTest.getCapacity());
-  }
-
-  @Test
-  void setMaxCapacity_whenWithValidParameter_thenSetMaxCapacity() {
-    int expected = 815;
-    unitUnderTest.setMaxCapacity(expected);
-    assertEquals(expected, unitUnderTest.getMaxCapacity());
-  }
-
-  @Test
-  void setPreparationDuration_whenWithValidParameter_thenSetPreparationDuration() {
-    int expected = 815;
-    unitUnderTest.setPreparationDuration(expected);
-    assertEquals(expected, unitUnderTest.getPreparationDuration());
-  }
-
-  @Test
-  void setDuration_whenWithValidParameter_thenSetDuration() {
-    int expected = 815;
-    unitUnderTest.setDuration(expected);
-    assertEquals(expected, unitUnderTest.getDuration());
   }
 
   @Test
@@ -104,17 +50,10 @@ class TournamentTest {
   }
 
   @Test
-  void setStartedTime_whenWithValidParameter_thenSetStartedTime() {
+  void setCreatorTag_whenWithValidParameter_thenSetCreatorTag() {
     String expected = "astring";
-    unitUnderTest.setStartedTime(expected);
-    assertEquals(expected, unitUnderTest.getStartedTime());
-  }
-
-  @Test
-  void setMembersList_whenWithValidParameter_thenSetMembersList() {
-    java.util.List<TournamentMember> expected = new java.util.ArrayList<TournamentMember>();
-    unitUnderTest.setMembersList(expected);
-    assertEquals(expected, unitUnderTest.getMembersList());
+    unitUnderTest.setCreatorTag(expected);
+    assertEquals(expected, unitUnderTest.getCreatorTag());
   }
 
   @Test
@@ -125,10 +64,17 @@ class TournamentTest {
   }
 
   @Test
-  void setLevelCap_whenWithValidParameter_thenSetLevelCap() {
+  void setDuration_whenWithValidParameter_thenSetDuration() {
     int expected = 815;
-    unitUnderTest.setLevelCap(expected);
-    assertEquals(expected, unitUnderTest.getLevelCap());
+    unitUnderTest.setDuration(expected);
+    assertEquals(expected, unitUnderTest.getDuration());
+  }
+
+  @Test
+  void setEndedTime_whenWithValidParameter_thenSetEndedTime() {
+    String expected = "astring";
+    unitUnderTest.setEndedTime(expected);
+    assertEquals(expected, unitUnderTest.getEndedTime());
   }
 
   @Test
@@ -146,32 +92,88 @@ class TournamentTest {
   }
 
   @Test
-  void setEndedTime_whenWithValidParameter_thenSetEndedTime() {
+  void setLevelCap_whenWithValidParameter_thenSetLevelCap() {
+    int expected = 815;
+    unitUnderTest.setLevelCap(expected);
+    assertEquals(expected, unitUnderTest.getLevelCap());
+  }
+
+  @Test
+  void setMaxCapacity_whenWithValidParameter_thenSetMaxCapacity() {
+    int expected = 815;
+    unitUnderTest.setMaxCapacity(expected);
+    assertEquals(expected, unitUnderTest.getMaxCapacity());
+  }
+
+  @Test
+  void setMembersList_whenWithValidParameter_thenSetMembersList() {
+    List<TournamentMember> expected = new ArrayList<TournamentMember>();
+    unitUnderTest.setMembersList(expected);
+    assertEquals(expected, unitUnderTest.getMembersList());
+  }
+
+  @Test
+  void setName_whenWithValidParameter_thenSetName() {
     String expected = "astring";
-    unitUnderTest.setEndedTime(expected);
-    assertEquals(expected, unitUnderTest.getEndedTime());
+    unitUnderTest.setName(expected);
+    assertEquals(expected, unitUnderTest.getName());
+  }
+
+  @Test
+  void setPreparationDuration_whenWithValidParameter_thenSetPreparationDuration() {
+    int expected = 815;
+    unitUnderTest.setPreparationDuration(expected);
+    assertEquals(expected, unitUnderTest.getPreparationDuration());
+  }
+
+  @Test
+  void setStartedTime_whenWithValidParameter_thenSetStartedTime() {
+    String expected = "astring";
+    unitUnderTest.setStartedTime(expected);
+    assertEquals(expected, unitUnderTest.getStartedTime());
+  }
+
+  @Test
+  void setStatus_whenWithValidParameter_thenSetStatus() {
+    String expected = "astring";
+    unitUnderTest.setStatus(expected);
+    assertEquals(expected, unitUnderTest.getStatus());
+  }
+
+  @Test
+  void setTag_whenWithValidParameter_thenSetTag() {
+    String expected = "astring";
+    unitUnderTest.setTag(expected);
+    assertEquals(expected, unitUnderTest.getTag());
+  }
+
+  @Test
+  void setType_whenWithValidParameter_thenSetType() {
+    String expected = "astring";
+    unitUnderTest.setType(expected);
+    assertEquals(expected, unitUnderTest.getType());
   }
 
   @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
-    unitUnderTest.setTag("astring");
-    unitUnderTest.setType("astring");
-    unitUnderTest.setStatus("astring");
-    unitUnderTest.setCreatorTag("astring");
-    unitUnderTest.setName("astring");
     unitUnderTest.setCapacity(815);
-    unitUnderTest.setMaxCapacity(815);
-    unitUnderTest.setPreparationDuration(815);
-    unitUnderTest.setDuration(815);
     unitUnderTest.setCreatedTime("astring");
-    unitUnderTest.setStartedTime("astring");
-    unitUnderTest.setMembersList(new java.util.ArrayList<TournamentMember>());
+    unitUnderTest.setCreatorTag("astring");
     unitUnderTest.setDescription("astring");
-    unitUnderTest.setLevelCap(815);
+    unitUnderTest.setDuration(815);
+    unitUnderTest.setEndedTime("astring");
     unitUnderTest.setFirstPlaceCardPrize(815);
     unitUnderTest.setGameMode(new TournamentGameMode());
-    unitUnderTest.setEndedTime("astring");
-    String expected = "Tournament(tag=astring, type=astring, status=astring, creatorTag=astring, name=astring, capacity=815, maxCapacity=815, preparationDuration=815, duration=815, createdTime=astring, startedTime=astring, membersList=" + new java.util.ArrayList<TournamentMember>() + ", description=astring, levelCap=815, firstPlaceCardPrize=815, gameMode=" + new TournamentGameMode() + ", endedTime=astring)";
+    unitUnderTest.setLevelCap(815);
+    unitUnderTest.setMaxCapacity(815);
+    unitUnderTest.setMembersList(new ArrayList<TournamentMember>());
+    unitUnderTest.setName("astring");
+    unitUnderTest.setPreparationDuration(815);
+    unitUnderTest.setStartedTime("astring");
+    unitUnderTest.setStatus("astring");
+    unitUnderTest.setTag("astring");
+    unitUnderTest.setType("astring");
+    String expected = "Tournament(capacity=815, createdTime=astring, creatorTag=astring, description=astring, duration=815, endedTime=astring, firstPlaceCardPrize=815, gameMode=" + new TournamentGameMode() + ", levelCap=815, maxCapacity=815, membersList=" + new ArrayList<TournamentMember>() + ", name=astring, preparationDuration=815, startedTime=astring, status=astring, tag=astring, type=astring)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

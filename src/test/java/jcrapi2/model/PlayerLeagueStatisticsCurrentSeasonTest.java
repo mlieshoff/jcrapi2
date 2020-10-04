@@ -34,13 +34,6 @@ class PlayerLeagueStatisticsCurrentSeasonTest {
   }
 
   @Test
-  void setTrophies_whenWithValidParameter_thenSetTrophies() {
-    int expected = 815;
-    unitUnderTest.setTrophies(expected);
-    assertEquals(expected, unitUnderTest.getTrophies());
-  }
-
-  @Test
   void setBestTrophies_whenWithValidParameter_thenSetBestTrophies() {
     int expected = 815;
     unitUnderTest.setBestTrophies(expected);
@@ -55,11 +48,18 @@ class PlayerLeagueStatisticsCurrentSeasonTest {
   }
 
   @Test
+  void setTrophies_whenWithValidParameter_thenSetTrophies() {
+    int expected = 815;
+    unitUnderTest.setTrophies(expected);
+    assertEquals(expected, unitUnderTest.getTrophies());
+  }
+
+  @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
-    unitUnderTest.setTrophies(815);
     unitUnderTest.setBestTrophies(815);
     unitUnderTest.setRank(815);
-    String expected = "PlayerLeagueStatisticsCurrentSeason(trophies=815, bestTrophies=815, rank=815)";
+    unitUnderTest.setTrophies(815);
+    String expected = "PlayerLeagueStatisticsCurrentSeason(bestTrophies=815, rank=815, trophies=815)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

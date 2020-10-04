@@ -16,8 +16,10 @@
  */
 package jcrapi2.model;
 
-import javax.annotation.Generated;
 import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
+import javax.annotation.Generated;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -28,32 +30,8 @@ import lombok.ToString;
 @ToString
 public class Clan {
 
-  @SerializedName("tag")
-  private String tag;
-
-  @SerializedName("name")
-  private String name;
-
-  @SerializedName("type")
-  private String type;
-
   @SerializedName("badgeId")
   private int badgeId;
-
-  @SerializedName("clanScore")
-  private int clanScore;
-
-  @SerializedName("location")
-  private ClanLocation location;
-
-  @SerializedName("requiredTrophies")
-  private int requiredTrophies;
-
-  @SerializedName("donationsPerWeek")
-  private int donationsPerWeek;
-
-  @SerializedName("clanChestStatus")
-  private String clanChestStatus;
 
   @SerializedName("clanChestLevel")
   private int clanChestLevel;
@@ -61,19 +39,44 @@ public class Clan {
   @SerializedName("clanChestMaxLevel")
   private int clanChestMaxLevel;
 
-  @SerializedName("members")
-  private int members;
+  @Deprecated
+  @SerializedName("clanChestPoints")
+  private int clanChestPoints;
 
-  @SerializedName("memberList")
-  private java.util.List<ClanMember> memberList;
+  @SerializedName("clanChestStatus")
+  private String clanChestStatus;
+
+  @SerializedName("clanScore")
+  private int clanScore;
+
+  @SerializedName("clanWarTrophies")
+  private int clanWarTrophies;
 
   @SerializedName("description")
   private String description;
 
-  @SerializedName("clanChestPoints")
-  private int clanChestPoints;
+  @SerializedName("donationsPerWeek")
+  private int donationsPerWeek;
 
-  @SerializedName("clanWarTrophies")
-  private int clanWarTrophies;
+  @SerializedName("location")
+  private ClanLocation location;
+
+  @SerializedName("memberList")
+  private List<ClanMember> memberList;
+
+  @SerializedName("members")
+  private int members;
+
+  @SerializedName("name")
+  private String name;
+
+  @SerializedName("requiredTrophies")
+  private int requiredTrophies;
+
+  @SerializedName("tag")
+  private String tag;
+
+  @SerializedName("type")
+  private String type;
 
 }

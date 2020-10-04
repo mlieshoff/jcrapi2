@@ -34,17 +34,17 @@ class PlayerBattleLogOpponentCardTest {
   }
 
   @Test
+  void setIconUrls_whenWithValidParameter_thenSetIconUrls() {
+    PlayerBattleLogOpponentCardIconUrls expected = new PlayerBattleLogOpponentCardIconUrls();
+    unitUnderTest.setIconUrls(expected);
+    assertEquals(expected, unitUnderTest.getIconUrls());
+  }
+
+  @Test
   void setId_whenWithValidParameter_thenSetId() {
     int expected = 815;
     unitUnderTest.setId(expected);
     assertEquals(expected, unitUnderTest.getId());
-  }
-
-  @Test
-  void setName_whenWithValidParameter_thenSetName() {
-    String expected = "astring";
-    unitUnderTest.setName(expected);
-    assertEquals(expected, unitUnderTest.getName());
   }
 
   @Test
@@ -62,10 +62,10 @@ class PlayerBattleLogOpponentCardTest {
   }
 
   @Test
-  void setIconUrls_whenWithValidParameter_thenSetIconUrls() {
-    PlayerBattleLogOpponentCardIconUrls expected = new PlayerBattleLogOpponentCardIconUrls();
-    unitUnderTest.setIconUrls(expected);
-    assertEquals(expected, unitUnderTest.getIconUrls());
+  void setName_whenWithValidParameter_thenSetName() {
+    String expected = "astring";
+    unitUnderTest.setName(expected);
+    assertEquals(expected, unitUnderTest.getName());
   }
 
   @Test
@@ -77,13 +77,13 @@ class PlayerBattleLogOpponentCardTest {
 
   @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
+    unitUnderTest.setIconUrls(new PlayerBattleLogOpponentCardIconUrls());
     unitUnderTest.setId(815);
-    unitUnderTest.setName("astring");
     unitUnderTest.setLevel(815);
     unitUnderTest.setMaxLevel(815);
-    unitUnderTest.setIconUrls(new PlayerBattleLogOpponentCardIconUrls());
+    unitUnderTest.setName("astring");
     unitUnderTest.setStarLevel(815);
-    String expected = "PlayerBattleLogOpponentCard(id=815, name=astring, level=815, maxLevel=815, iconUrls=" + new PlayerBattleLogOpponentCardIconUrls() + ", starLevel=815)";
+    String expected = "PlayerBattleLogOpponentCard(iconUrls=" + new PlayerBattleLogOpponentCardIconUrls() + ", id=815, level=815, maxLevel=815, name=astring, starLevel=815)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

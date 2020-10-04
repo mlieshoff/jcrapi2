@@ -16,8 +16,10 @@
  */
 package jcrapi2.model;
 
-import javax.annotation.Generated;
 import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
+import javax.annotation.Generated;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -28,31 +30,31 @@ import lombok.ToString;
 @ToString
 public class PlayerBattleLogOpponent {
 
-  @SerializedName("tag")
-  private String tag;
-
-  @SerializedName("name")
-  private String name;
-
-  @SerializedName("startingTrophies")
-  private int startingTrophies;
-
-  @SerializedName("trophyChange")
-  private int trophyChange;
-
-  @SerializedName("crowns")
-  private int crowns;
+  @SerializedName("cards")
+  private List<PlayerBattleLogOpponentCard> cards;
 
   @SerializedName("clan")
   private PlayerBattleLogOpponentClan clan;
 
-  @SerializedName("cards")
-  private java.util.List<PlayerBattleLogOpponentCard> cards;
+  @SerializedName("crowns")
+  private int crowns;
 
   @SerializedName("kingTowerHitPoints")
   private int kingTowerHitPoints;
 
+  @SerializedName("name")
+  private String name;
+
   @SerializedName("princessTowersHitPoints")
-  private java.util.List<Integer> princessTowersHitPoints;
+  private List<Integer> princessTowersHitPoints;
+
+  @SerializedName("startingTrophies")
+  private int startingTrophies;
+
+  @SerializedName("tag")
+  private String tag;
+
+  @SerializedName("trophyChange")
+  private int trophyChange;
 
 }

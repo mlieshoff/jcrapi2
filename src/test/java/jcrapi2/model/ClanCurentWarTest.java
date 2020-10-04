@@ -18,10 +18,12 @@ package jcrapi2.model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import javax.annotation.Generated;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+import javax.annotation.Generated;
 
 @Generated("org.mili.generator")
 class ClanCurentWarTest {
@@ -31,6 +33,20 @@ class ClanCurentWarTest {
   @BeforeEach
   void setUp() {
     unitUnderTest = new ClanCurentWar();
+  }
+
+  @Test
+  void setClan_whenWithValidParameter_thenSetClan() {
+    ClanCurentWarClan expected = new ClanCurentWarClan();
+    unitUnderTest.setClan(expected);
+    assertEquals(expected, unitUnderTest.getClan());
+  }
+
+  @Test
+  void setParticipants_whenWithValidParameter_thenSetParticipants() {
+    List<ClanCurentWarParticipant> expected = new ArrayList<ClanCurentWarParticipant>();
+    unitUnderTest.setParticipants(expected);
+    assertEquals(expected, unitUnderTest.getParticipants());
   }
 
   @Test
@@ -48,26 +64,12 @@ class ClanCurentWarTest {
   }
 
   @Test
-  void setClan_whenWithValidParameter_thenSetClan() {
-    ClanCurentWarClan expected = new ClanCurentWarClan();
-    unitUnderTest.setClan(expected);
-    assertEquals(expected, unitUnderTest.getClan());
-  }
-
-  @Test
-  void setParticipants_whenWithValidParameter_thenSetParticipants() {
-    java.util.List<ClanCurentWarParticipant> expected = new java.util.ArrayList<ClanCurentWarParticipant>();
-    unitUnderTest.setParticipants(expected);
-    assertEquals(expected, unitUnderTest.getParticipants());
-  }
-
-  @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
+    unitUnderTest.setClan(new ClanCurentWarClan());
+    unitUnderTest.setParticipants(new ArrayList<ClanCurentWarParticipant>());
     unitUnderTest.setState("astring");
     unitUnderTest.setWarEndTime("astring");
-    unitUnderTest.setClan(new ClanCurentWarClan());
-    unitUnderTest.setParticipants(new java.util.ArrayList<ClanCurentWarParticipant>());
-    String expected = "ClanCurentWar(state=astring, warEndTime=astring, clan=" + new ClanCurentWarClan() + ", participants=" + new java.util.ArrayList<ClanCurentWarParticipant>() + ")";
+    String expected = "ClanCurentWar(clan=" + new ClanCurentWarClan() + ", participants=" + new ArrayList<ClanCurentWarParticipant>() + ", state=astring, warEndTime=astring)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

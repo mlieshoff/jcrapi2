@@ -18,10 +18,10 @@ package jcrapi2.model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import javax.annotation.Generated;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import javax.annotation.Generated;
 
 @Generated("org.mili.generator")
 class CardTest {
@@ -34,10 +34,10 @@ class CardTest {
   }
 
   @Test
-  void setName_whenWithValidParameter_thenSetName() {
-    String expected = "astring";
-    unitUnderTest.setName(expected);
-    assertEquals(expected, unitUnderTest.getName());
+  void setIconUrls_whenWithValidParameter_thenSetIconUrls() {
+    CardIconUrls expected = new CardIconUrls();
+    unitUnderTest.setIconUrls(expected);
+    assertEquals(expected, unitUnderTest.getIconUrls());
   }
 
   @Test
@@ -55,19 +55,19 @@ class CardTest {
   }
 
   @Test
-  void setIconUrls_whenWithValidParameter_thenSetIconUrls() {
-    CardIconUrls expected = new CardIconUrls();
-    unitUnderTest.setIconUrls(expected);
-    assertEquals(expected, unitUnderTest.getIconUrls());
+  void setName_whenWithValidParameter_thenSetName() {
+    String expected = "astring";
+    unitUnderTest.setName(expected);
+    assertEquals(expected, unitUnderTest.getName());
   }
 
   @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
-    unitUnderTest.setName("astring");
+    unitUnderTest.setIconUrls(new CardIconUrls());
     unitUnderTest.setId(815);
     unitUnderTest.setMaxLevel(815);
-    unitUnderTest.setIconUrls(new CardIconUrls());
-    String expected = "Card(name=astring, id=815, maxLevel=815, iconUrls=" + new CardIconUrls() + ")";
+    unitUnderTest.setName("astring");
+    String expected = "Card(iconUrls=" + new CardIconUrls() + ", id=815, maxLevel=815, name=astring)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

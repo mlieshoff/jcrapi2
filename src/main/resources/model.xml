@@ -43,7 +43,7 @@
         <member name="members" type="int"/>
         <member name="memberList" type="list(ClanMember)"/>
         <member name="description" type="String"/>
-        <member name="clanChestPoints" type="int"/>
+        <member name="clanChestPoints" type="int" deprecated="true"/>
         <member name="clanWarTrophies" type="int"/>
     </class>
 
@@ -65,7 +65,7 @@
         <member name="previousClanRank" type="int"/>
         <member name="donations" type="int"/>
         <member name="donationsReceived" type="int"/>
-        <member name="clanChestPoints" type="int"/>
+        <member name="clanChestPoints" type="int" deprecated="true"/>
         <member name="lastSeen" type="String"/>
     </class>
 
@@ -187,6 +187,7 @@
         <member name="value" type="int"/>
         <member name="target" type="int"/>
         <member name="info" type="String"/>
+        <member name="completionInfo" type="String"/>
     </class>
 
     <class name="PlayerCard">

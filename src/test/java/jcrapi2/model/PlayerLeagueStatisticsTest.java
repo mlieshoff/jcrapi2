@@ -34,6 +34,13 @@ class PlayerLeagueStatisticsTest {
   }
 
   @Test
+  void setBestSeason_whenWithValidParameter_thenSetBestSeason() {
+    PlayerLeagueStatisticsBestSeason expected = new PlayerLeagueStatisticsBestSeason();
+    unitUnderTest.setBestSeason(expected);
+    assertEquals(expected, unitUnderTest.getBestSeason());
+  }
+
+  @Test
   void setCurrentSeason_whenWithValidParameter_thenSetCurrentSeason() {
     PlayerLeagueStatisticsCurrentSeason expected = new PlayerLeagueStatisticsCurrentSeason();
     unitUnderTest.setCurrentSeason(expected);
@@ -48,18 +55,11 @@ class PlayerLeagueStatisticsTest {
   }
 
   @Test
-  void setBestSeason_whenWithValidParameter_thenSetBestSeason() {
-    PlayerLeagueStatisticsBestSeason expected = new PlayerLeagueStatisticsBestSeason();
-    unitUnderTest.setBestSeason(expected);
-    assertEquals(expected, unitUnderTest.getBestSeason());
-  }
-
-  @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
+    unitUnderTest.setBestSeason(new PlayerLeagueStatisticsBestSeason());
     unitUnderTest.setCurrentSeason(new PlayerLeagueStatisticsCurrentSeason());
     unitUnderTest.setPreviousSeason(new PlayerLeagueStatisticsPreviousSeason());
-    unitUnderTest.setBestSeason(new PlayerLeagueStatisticsBestSeason());
-    String expected = "PlayerLeagueStatistics(currentSeason=" + new PlayerLeagueStatisticsCurrentSeason() + ", previousSeason=" + new PlayerLeagueStatisticsPreviousSeason() + ", bestSeason=" + new PlayerLeagueStatisticsBestSeason() + ")";
+    String expected = "PlayerLeagueStatistics(bestSeason=" + new PlayerLeagueStatisticsBestSeason() + ", currentSeason=" + new PlayerLeagueStatisticsCurrentSeason() + ", previousSeason=" + new PlayerLeagueStatisticsPreviousSeason() + ")";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

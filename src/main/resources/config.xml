@@ -1,10 +1,10 @@
-<config package="jcrapi2.model">
+<config basePackage="jcrapi2" package="jcrapi2.model">
     <for type="CLASS">
-        <template name="generator/src/main/resources/lombok-json-pojo.vm"/>
-        <template name="generator/src/main/resources/lombok-test-pojo-unit5.vm"/>
+        <template id="PojoClass" name="generator/src/main/resources/lombok-json-pojo.vm" suffix=".java"/>
+        <template id="PojoTest" name="generator/src/main/resources/lombok-test-pojo-unit5.vm" suffix="Test.java" test="true"/>
     </for>
     <for type="ENUM">
-        <template name="generator/src/main/resources/enum.vm"/>
-        <template name="generator/src/main/resources/test-enum.vm"/>
+        <template id="EnumClass" name="generator/src/main/resources/enum.vm" suffix=".java"/>
+        <template id="EnumTest" name="generator/src/main/resources/test-enum.vm" suffix="Test.java" test="true"/>
     </for>
 </config>

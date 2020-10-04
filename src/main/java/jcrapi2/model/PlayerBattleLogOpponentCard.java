@@ -16,8 +16,9 @@
  */
 package jcrapi2.model;
 
-import javax.annotation.Generated;
 import com.google.gson.annotations.SerializedName;
+
+import javax.annotation.Generated;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -28,11 +29,11 @@ import lombok.ToString;
 @ToString
 public class PlayerBattleLogOpponentCard {
 
+  @SerializedName("iconUrls")
+  private PlayerBattleLogOpponentCardIconUrls iconUrls;
+
   @SerializedName("id")
   private int id;
-
-  @SerializedName("name")
-  private String name;
 
   @SerializedName("level")
   private int level;
@@ -40,8 +41,8 @@ public class PlayerBattleLogOpponentCard {
   @SerializedName("maxLevel")
   private int maxLevel;
 
-  @SerializedName("iconUrls")
-  private PlayerBattleLogOpponentCardIconUrls iconUrls;
+  @SerializedName("name")
+  private String name;
 
   @SerializedName("starLevel")
   private int starLevel;

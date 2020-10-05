@@ -18,12 +18,13 @@ package jcrapi2;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
-import static org.apache.commons.collections.MapUtils.isNotEmpty;
+import static java.nio.charset.StandardCharsets.UTF_8;
+import static org.apache.commons.collections4.MapUtils.isNotEmpty;
 import static org.apache.commons.lang3.ArrayUtils.isNotEmpty;
 import static org.apache.commons.lang3.StringUtils.isNotBlank;
 import static org.apache.http.HttpStatus.SC_OK;
 
-import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.http.Header;
 import org.apache.http.HttpMessage;
 import org.apache.http.HttpResponse;
@@ -36,7 +37,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
-import java.nio.charset.Charset;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Map;
@@ -83,7 +83,7 @@ class Crawler {
     }
     StringBuilder content = new StringBuilder();
     try (BufferedReader rd = new BufferedReader(
-        new InputStreamReader(response.getEntity().getContent(), Charset.forName("UTF-8")))) {
+        new InputStreamReader(response.getEntity().getContent(), UTF_8))) {
       String line;
       while ((line = rd.readLine()) != null) {
         content.append(line);
@@ -144,7 +144,7 @@ class Crawler {
           throw new IllegalStateException(e);
         }
       }).toArray();
-      result = String.format(result, (Object[]) encodedParams);
+      result = String.format(result, encodedParams);
     }
     log.info("request to: {}", result);
     return result;

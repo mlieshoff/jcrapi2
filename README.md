@@ -201,6 +201,20 @@ https://bintray.com/mlieshoff/maven/jcrapi2
 
 We use SLF4j.
 
+## Usage of RoyaleApi proxy ##
+
+This wrapper can be easy connected to the proxy of our friends on RoyaleAPI. Please proceed first the steps described here:
+
+https://docs.royaleapi.com/#/proxy
+
+Then initialize an instance of class Api like that:
+
+```
+Api api = new Api("https://proxy.royaleapi.dev/v1/", API_KEY);
+```
+
+That's all, enjoy :)
+
 ## Working Agreement
 
 1. Get a ticket

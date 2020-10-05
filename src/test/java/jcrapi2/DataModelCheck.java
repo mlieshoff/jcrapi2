@@ -18,17 +18,16 @@ package jcrapi2;
 
 import static org.apache.http.HttpHeaders.AUTHORIZATION;
 
-import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableMap;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.annotations.SerializedName;
 
-import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.io.Charsets;
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.lang3.text.WordUtils;
+import org.apache.commons.text.WordUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -40,9 +39,9 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import jcrapi2.model.Card;
 import jcrapi2.model.ClanCurentWar;
 import jcrapi2.model.ClanMember;
@@ -128,7 +127,7 @@ public class DataModelCheck {
           String field = innerEntry.getKey();
           int fieldNotFoundCount = innerEntry.getValue();
           if (fieldNotFoundCount == max) {
-            System.out.println(type + ".deprecated: " + field + " " + max + " / " + fieldNotFoundCount);
+            System.out.println(type + ".deprecated: " + field + ' ' + max + " / " + fieldNotFoundCount);
           }
         }
       }
@@ -316,12 +315,11 @@ public class DataModelCheck {
       if (templateName.equalsIgnoreCase(String.class.getName())) {
         return Collections.emptyList();
       }
-      System.out.println("type not found: " + templateName + " " + sourceField);
+      System.out.println("type not found: " + templateName + ' ' + sourceField);
     }
 
     if (jsonElement.isJsonArray()) {
-      for (Iterator<JsonElement> iterator = jsonElement.getAsJsonArray().iterator(); iterator.hasNext(); ) {
-        JsonElement jsonListElement = iterator.next();
+      for (JsonElement jsonListElement : jsonElement.getAsJsonArray()) {
         if (!jsonListElement.isJsonPrimitive()) {
           Collection<String>
               collection =
@@ -358,18 +356,14 @@ public class DataModelCheck {
         }
       }
     }
-    typeCount.put(templateName, Optional.fromNullable(typeCount.get(templateName)).or(0) + 1);
+    typeCount.put(templateName, Optional.ofNullable(typeCount.get(templateName)).orElse(0) + 1);
     Collection<String> notExpected = CollectionUtils.subtract(expectedFields, foundFields);
     Collection<String> notDefined = CollectionUtils.subtract(foundFields, expectedFields);
     if (!notExpected.isEmpty()) {
-      Map<String, Integer> deprecatedMap = deprecatedFieldCount.get(templateName);
-      if (deprecatedMap == null) {
-        deprecatedMap = new HashMap<>();
-        deprecatedFieldCount.put(templateName, deprecatedMap);
-      }
+      Map<String, Integer> deprecatedMap = deprecatedFieldCount.computeIfAbsent(templateName, k -> new HashMap<>());
       for (String deprecatedFieldName : notExpected) {
-        String id = templateName + "." + deprecatedFieldName;
-        deprecatedMap.put(id, Optional.fromNullable(deprecatedMap.get(id)).or(0) + 1);
+        String id = templateName + '.' + deprecatedFieldName;
+        deprecatedMap.put(id, Optional.ofNullable(deprecatedMap.get(id)).orElse(0) + 1);
       }
     }
     if (!notDefined.isEmpty()) {
@@ -378,11 +372,11 @@ public class DataModelCheck {
     return foundFields;
   }
 
-  private boolean isCollection(Field field) {
+  private static boolean isCollection(Field field) {
     return Collection.class.isAssignableFrom(field.getType());
   }
 
-  private boolean isArray(Field field) {
+  private static boolean isArray(Field field) {
     return Array.class.isAssignableFrom(field.getType());
   }
 

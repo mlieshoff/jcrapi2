@@ -34,7 +34,8 @@ public class GetPlayerUpcomingChestsRequest extends PageableRequest<GetPlayerUpc
   private final String playerTag;
 
   @Builder
-  private GetPlayerUpcomingChestsRequest(Callback<GetPlayerUpcomingChestsResponse> callback, int limit, String after, String before, String playerTag) {
+  private GetPlayerUpcomingChestsRequest(Callback<GetPlayerUpcomingChestsResponse> callback, int limit, String after,
+                                         String before, String playerTag) {
     super(callback, limit, after, before);
     checkNotNull(playerTag, "playerTag");
     checkArgument(!playerTag.isEmpty(), "playerTag");

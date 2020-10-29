@@ -27,6 +27,7 @@ import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClanRiverRaceLogRequest;
 import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
+import jcrapi2.request.GetCurrentClanRiverRaceRequest;
 import jcrapi2.request.GetLocationClanRankingsRequest;
 import jcrapi2.request.GetLocationClanWarRankingsRequest;
 import jcrapi2.request.GetLocationPlayerRankingsRequest;
@@ -44,6 +45,7 @@ import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClanRiverRaceLogResponse;
 import jcrapi2.response.GetClanWarLogResponse;
 import jcrapi2.response.GetClansResponse;
+import jcrapi2.response.GetCurrentClanRiverRaceResponse;
 import jcrapi2.response.GetLocationClanRankingsResponse;
 import jcrapi2.response.GetLocationClanWarRankingsResponse;
 import jcrapi2.response.GetLocationPlayerRankingsResponse;
@@ -242,6 +244,15 @@ public class Api {
     checkNotNull(getClanRiverRaceLogRequest, "getClanRiverRaceLogRequest");
     try {
       return createClient().getClanRiverRaceLog(getClanRiverRaceLogRequest);
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+  }
+
+  public GetCurrentClanRiverRaceResponse getCurrentClanRiverRace(GetCurrentClanRiverRaceRequest getCurrentClanRiverRaceRequest) {
+    checkNotNull(getCurrentClanRiverRaceRequest, "getCurrentClanRiverRaceRequest");
+    try {
+      return createClient().getCurrentClanRiverRace(getCurrentClanRiverRaceRequest);
     } catch (IOException e) {
       throw new ApiException(e);
     }

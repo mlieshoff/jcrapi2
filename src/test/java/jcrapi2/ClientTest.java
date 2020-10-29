@@ -42,6 +42,7 @@ import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClanRiverRaceLogRequest;
 import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
+import jcrapi2.request.GetCurrentClanRiverRaceRequest;
 import jcrapi2.request.GetLocationClanRankingsRequest;
 import jcrapi2.request.GetLocationClanWarRankingsRequest;
 import jcrapi2.request.GetLocationPlayerRankingsRequest;
@@ -333,6 +334,18 @@ class ClientTest {
             getClanRiverRaceLogRequest.getQueryParameters(),
             getClanRiverRaceLogRequest.getRestParameters())).thenReturn("{}");
     assertNotNull(createClient().getClanRiverRaceLog(getClanRiverRaceLogRequest));
+  }
+
+  @Test
+  void getCurrentClanRiverRace_whenWithRequest_thenGetResponse() throws Exception {
+    GetCurrentClanRiverRaceRequest
+        getCurrentClanRiverRaceRequest =
+        GetCurrentClanRiverRaceRequest.builder(CLAN_TAG).build();
+    when(crawler
+        .get("lala/clans/%s/currentriverrace", createHeaders(),
+            getCurrentClanRiverRaceRequest.getQueryParameters(),
+            getCurrentClanRiverRaceRequest.getRestParameters())).thenReturn("{}");
+    assertNotNull(createClient().getCurrentClanRiverRace(getCurrentClanRiverRaceRequest));
   }
 
 }

@@ -26,6 +26,7 @@ import org.junit.jupiter.api.Test;
 import jcrapi2.request.GetClanCurrentWarRequest;
 import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
+import jcrapi2.request.GetClanRiverRaceLogRequest;
 import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
 import jcrapi2.request.GetLocationClanRankingsRequest;
@@ -42,6 +43,7 @@ import jcrapi2.response.GetCardsResponse;
 import jcrapi2.response.GetClanCurrentWarResponse;
 import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
+import jcrapi2.response.GetClanRiverRaceLogResponse;
 import jcrapi2.response.GetClanWarLogResponse;
 import jcrapi2.response.GetClansResponse;
 import jcrapi2.response.GetLocationClanRankingsResponse;
@@ -66,7 +68,7 @@ class EndToEnd {
 
   @BeforeEach
   void setUp() throws Exception {
-    api = new Api("https://api.clashroyale.com/v1/", API_KEY);
+    api = new Api("https://proxy.royaleapi.dev/v1/", API_KEY);
   }
 
   @Test
@@ -246,6 +248,17 @@ class EndToEnd {
         () -> assertNotNull(getLocationClanWarRankingsResponse, "getLocationClanWarRankingsResponse"),
         () -> assertNull(getLocationClanWarRankingsResponse.getMessage(), "message"),
         () -> assertNull(getLocationClanWarRankingsResponse.getReason(), "reason")
+    );
+  }
+
+  @Test
+  void getClanRiverRaceLog_whenWithValidParameters_thenGetResponse() throws Exception {
+    GetClanRiverRaceLogResponse getClanRiverRaceLogResponse = api.getClanRiverRaceLog(
+        GetClanRiverRaceLogRequest.builder("#RP88QQG").build());
+    assertAll(
+        () -> assertNotNull(getClanRiverRaceLogResponse, "getClanRiverRaceLogResponse"),
+        () -> assertNull(getClanRiverRaceLogResponse.getMessage(), "message"),
+        () -> assertNull(getClanRiverRaceLogResponse.getReason(), "reason")
     );
   }
 

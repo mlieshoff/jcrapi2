@@ -1,0 +1,1734 @@
+{
+  "state": "full",
+  "clan": {
+    "tag": "#RP88QQG",
+    "name": "RoyalCardForces",
+    "badgeId": 16000077,
+    "fame": 14710,
+    "repairPoints": 1686,
+    "participants": [
+      {
+        "tag": "#8JGL9PUR8",
+        "name": "Makita K",
+        "fame": 0,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#8JYVJP2P",
+        "name": "dasProgramm",
+        "fame": 0,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#8880LUPC",
+        "name": "Max",
+        "fame": 0,
+        "repairPoints": 303
+      },
+      {
+        "tag": "#PVCCUUJ2V",
+        "name": "Granaten-Kalle",
+        "fame": 0,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#PYCJCU",
+        "name": "BadBoy6",
+        "fame": 0,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#9L08J0V0",
+        "name": "Lisa",
+        "fame": 0,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#PQUQG82Y",
+        "name": "Tc-CaN-Cx ©®",
+        "fame": 0,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#2VPY80C",
+        "name": "zILove_MoMo",
+        "fame": 0,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#LGYPCR",
+        "name": "Wambo",
+        "fame": 0,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#Y20JP8Y2",
+        "name": "Der Alleskönner",
+        "fame": 0,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#2UL2PVYY0",
+        "name": "xenomurks",
+        "fame": 0,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#8UQ98LYG0",
+        "name": "pavlos",
+        "fame": 0,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#GYUYYQ28",
+        "name": "Lutschi Lutschi",
+        "fame": 0,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#LRCV0RJL8",
+        "name": "melmarv",
+        "fame": 0,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#89Y2LCYLG",
+        "name": "hakudamudda",
+        "fame": 0,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#PP8UR8CUY",
+        "name": "DontBreathe",
+        "fame": 0,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#LRGUR0CG",
+        "name": "Fabi_Play",
+        "fame": 0,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#L29LCYG9R",
+        "name": "R2_Micha_Kxng",
+        "fame": 0,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#QJLUCQU9C",
+        "name": "Camster",
+        "fame": 0,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#82RPR2RQ",
+        "name": "TheFernandos",
+        "fame": 0,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#LGVCL0QRQ",
+        "name": "Jones",
+        "fame": 0,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#98PYLL2YJ",
+        "name": "SAEEDLAJBAZZZ",
+        "fame": 0,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#28J8VJ28L",
+        "name": "Andrei",
+        "fame": 0,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#L0CQG2R90",
+        "name": "mauta",
+        "fame": 0,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#88UCJLRUC",
+        "name": "KING",
+        "fame": 0,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#PU2GJ9G00",
+        "name": "mega tron",
+        "fame": 0,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#L2VUYVYQJ",
+        "name": "RAMBO",
+        "fame": 0,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#8GCGVC88V",
+        "name": "bli bla blu",
+        "fame": 0,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#GY8P8L8UJ",
+        "name": "Snippz_HendrikY",
+        "fame": 0,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#YYYPVVGCG",
+        "name": "flotter Kobold",
+        "fame": 0,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#98QJ8RCCV",
+        "name": "Noah 1.0",
+        "fame": 0,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#20C2JPYP2",
+        "name": "SimonMay",
+        "fame": 0,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#9C08GR8QU",
+        "name": "SocialDwarf",
+        "fame": 0,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#P9LLP2Y8G",
+        "name": "Gandalf",
+        "fame": 0,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#PR8UR80UR",
+        "name": "Sir TET",
+        "fame": 0,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#PGJUVUGCC",
+        "name": "CMP",
+        "fame": 0,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#PPQ2RCCUJ",
+        "name": "Xdgamer",
+        "fame": 0,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#LU9UYU9RQ",
+        "name": "king jonny",
+        "fame": 66,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#229JUC0Q9",
+        "name": "Fasta",
+        "fame": 194,
+        "repairPoints": 205
+      },
+      {
+        "tag": "#Q80Q2U8VV",
+        "name": "Sophie",
+        "fame": 258,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#Y2PULGJ",
+        "name": "Adritv16",
+        "fame": 389,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#2QG90VC9",
+        "name": "Darth_Nifa",
+        "fame": 393,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#8R0U29QCY",
+        "name": "Herobrin",
+        "fame": 485,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#LG9UC9C0",
+        "name": "KeremsWelt",
+        "fame": 549,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#2CCYJ8YRJ",
+        "name": "Headbanger03",
+        "fame": 728,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#YPPRYR2U",
+        "name": "MicDaRoc",
+        "fame": 754,
+        "repairPoints": 378
+      },
+      {
+        "tag": "#GPCGVJ0QR",
+        "name": "KorolPro",
+        "fame": 761,
+        "repairPoints": 267
+      },
+      {
+        "tag": "#PVP8PVVPY",
+        "name": "JennyPenny",
+        "fame": 881,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#8LJRJRP8",
+        "name": "kapa90",
+        "fame": 1172,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#9VULRRRRG",
+        "name": "DA CHEF",
+        "fame": 1246,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#82C8UR8LL",
+        "name": "Leo",
+        "fame": 1485,
+        "repairPoints": 135
+      },
+      {
+        "tag": "#2PGGCJJL",
+        "name": "micah",
+        "fame": 1701,
+        "repairPoints": 398
+      },
+      {
+        "tag": "#LQ8PRJQ",
+        "name": "Der Killer",
+        "fame": 1735,
+        "repairPoints": 0
+      },
+      {
+        "tag": "#89QVL8RY",
+        "name": "Phillippei",
+        "fame": 1913,
+        "repairPoints": 0
+      }
+    ],
+    "clanScore": 1426
+  },
+  "clans": [
+    {
+      "tag": "#2L90C0",
+      "name": "INDIAN CAFE",
+      "badgeId": 16000059,
+      "fame": 9820,
+      "repairPoints": 0,
+      "participants": [
+        {
+          "tag": "#P8J00LVPP",
+          "name": "unwieldy",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#20R2GVJLV",
+          "name": "Lumberjack",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#YVYPY8RP",
+          "name": "Mohit",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#9RL9220C2",
+          "name": "broosterjaxx",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#RRUY800P",
+          "name": "aks",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#90LJRJR8Q",
+          "name": "Gaurav",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#28RGJ9LQY",
+          "name": "Aryan3Ta",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#8UVQQRUJP",
+          "name": "Preserver",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#Q8U88G0QR",
+          "name": "assn op",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#2QUJR8CLV",
+          "name": "Jit",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#2JGG209UR",
+          "name": "dragon warrior",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#P9LR2LPVG",
+          "name": "jalaz",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#8CGQVU9UC",
+          "name": "honey-badger",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#PRJPGCCR",
+          "name": "FD GOD",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#8P0QQGGV",
+          "name": "ichigo",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#G00QY028",
+          "name": "007",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#QP8QRG2QY",
+          "name": "Pro Jhonty bhai",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#CCQ9LYQY",
+          "name": "clashforcash",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#PLLUCQ2CL",
+          "name": "Nishchal",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#9QPPC9P9J",
+          "name": "Killer$andy",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#PJCCVCCC9",
+          "name": "samuvel",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#8U8GJGJY",
+          "name": "rachan",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#LYG92CLG2",
+          "name": "deva1986mba",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#8CR0Q0R20",
+          "name": "FRIEND",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#2ULP9ULVG",
+          "name": "Kushaal Fonsi",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#2CVJCRYU8",
+          "name": "REBEL",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#PGVJQP22P",
+          "name": "thor",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#8YU9UYURP",
+          "name": "KHU",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#YVV2J82V0",
+          "name": "Darshan",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#2PYQ8999U",
+          "name": "Dont try to win",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#Q2V9C9JYY",
+          "name": "SupaHotFire",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#GQU8UCVJ",
+          "name": "ROYAL KING",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#G80VQCQ2U",
+          "name": "ram",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#8UJYC809P",
+          "name": "Bhavin",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#YP9R28YPP",
+          "name": "munna",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#LL0V080Q2",
+          "name": "Aiden Potter",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#G9QQR2Q9Y",
+          "name": "J O S H",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#YLRYP8LYL",
+          "name": "bhanu",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#QU0Q2P08J",
+          "name": "siva",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#98Y8RCGCP",
+          "name": "vishvas ahir",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#Q288PUVGV",
+          "name": "LION",
+          "fame": 69,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#2L9LVR9QJ",
+          "name": "Pablo escobar",
+          "fame": 90,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#PG0U0QV",
+          "name": "DEV RAJ",
+          "fame": 250,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#8L2VP9P29",
+          "name": "rijan",
+          "fame": 326,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#2Q2C2PGJ",
+          "name": "wolves",
+          "fame": 372,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#QVP0LLQJV",
+          "name": "Sopan",
+          "fame": 378,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#20P9LYUQ",
+          "name": "Kevin",
+          "fame": 1071,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#2LYJRULL",
+          "name": "kingster delhi",
+          "fame": 1145,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#8Y9880C2",
+          "name": "SKT",
+          "fame": 1193,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#LVCYYYQJ",
+          "name": "ViJaY ShArMa",
+          "fame": 1329,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#8UJQLRPJ0",
+          "name": "prince",
+          "fame": 1434,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#QCR2YL9JC",
+          "name": "JAINAM",
+          "fame": 1872,
+          "repairPoints": 0
+        }
+      ],
+      "clanScore": 1420
+    },
+    {
+      "tag": "#V2LVU0L",
+      "name": "AnKot_WoManEPIC",
+      "badgeId": 16000002,
+      "fame": 11611,
+      "repairPoints": 0,
+      "participants": [
+        {
+          "tag": "#RQ98P2LV",
+          "name": "Maximilyan",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#PUV9R0822",
+          "name": "WIK_wik",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#YGV9VLJLV",
+          "name": "arqiles",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#2V99PCR89",
+          "name": "joejoex77",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#LQCGLQ2",
+          "name": "Arї_ÜyЄє",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#8RUYGG2V",
+          "name": "GODNEST",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#GGVJ8RL",
+          "name": "iPemeNg",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#8JQ88GVG",
+          "name": "exzzy",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#Q9LLR2U",
+          "name": "azqa",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#YGRGJV8L0",
+          "name": "may",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#9Q8G8CV9",
+          "name": "barto",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#L0VGLLYG",
+          "name": "Sumharry tok",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#C28GJ28C",
+          "name": "sukra-jrx",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#20UUUYPP8",
+          "name": "Sang Maestro",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#YQQP8PRR0",
+          "name": "venom•SWA",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#LP8LVPVVC",
+          "name": "Sabam Manurung",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#G08YRQQYU",
+          "name": "haris27",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#2QUQJJVVV",
+          "name": "dhyiecka",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#QQGVGJRV9",
+          "name": "liemip21",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#L2JJYQQVU",
+          "name": "penghancurMASSA",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#JLYYC29V",
+          "name": "febby",
+          "fame": 93,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#PVR8QQQL",
+          "name": "Anggra_DeathBat",
+          "fame": 240,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#YPPVJ2QQ",
+          "name": "OIS_SINGGO",
+          "fame": 278,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#22J9PV29P",
+          "name": "arsandy",
+          "fame": 308,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#YGGP8V8RP",
+          "name": "red dragon",
+          "fame": 309,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#2JQ2UCGUL",
+          "name": "lamsius",
+          "fame": 332,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#PG80V8QG",
+          "name": "Wahid Mc",
+          "fame": 336,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#PUYQVYRLY",
+          "name": "STREET FIRE",
+          "fame": 505,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#L20RY9QL",
+          "name": "Rangga",
+          "fame": 657,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#GL2UCCGV9",
+          "name": "nicotine saga",
+          "fame": 861,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#20YQ9G22R",
+          "name": "MbelgedeSS",
+          "fame": 872,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#22YGQL0CQ",
+          "name": "NAUFAL",
+          "fame": 1169,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#JUPP9U0G",
+          "name": "Ricool",
+          "fame": 1170,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#JPQ2JQP",
+          "name": "ayu",
+          "fame": 1222,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#V2LC2L00",
+          "name": "sasuke susano'o",
+          "fame": 1294,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#QP2QCQR",
+          "name": "gundhul",
+          "fame": 1965,
+          "repairPoints": 0
+        }
+      ],
+      "clanScore": 1423
+    },
+    {
+      "tag": "#RP88QQG",
+      "name": "RoyalCardForces",
+      "badgeId": 16000077,
+      "fame": 14710,
+      "repairPoints": 1686,
+      "participants": [
+        {
+          "tag": "#8JGL9PUR8",
+          "name": "Makita K",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#8JYVJP2P",
+          "name": "dasProgramm",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#8880LUPC",
+          "name": "Max",
+          "fame": 0,
+          "repairPoints": 303
+        },
+        {
+          "tag": "#PVCCUUJ2V",
+          "name": "Granaten-Kalle",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#PYCJCU",
+          "name": "BadBoy6",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#9L08J0V0",
+          "name": "Lisa",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#PQUQG82Y",
+          "name": "Tc-CaN-Cx ©®",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#2VPY80C",
+          "name": "zILove_MoMo",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#LGYPCR",
+          "name": "Wambo",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#Y20JP8Y2",
+          "name": "Der Alleskönner",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#2UL2PVYY0",
+          "name": "xenomurks",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#8UQ98LYG0",
+          "name": "pavlos",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#GYUYYQ28",
+          "name": "Lutschi Lutschi",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#LRCV0RJL8",
+          "name": "melmarv",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#89Y2LCYLG",
+          "name": "hakudamudda",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#PP8UR8CUY",
+          "name": "DontBreathe",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#LRGUR0CG",
+          "name": "Fabi_Play",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#L29LCYG9R",
+          "name": "R2_Micha_Kxng",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#QJLUCQU9C",
+          "name": "Camster",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#82RPR2RQ",
+          "name": "TheFernandos",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#LGVCL0QRQ",
+          "name": "Jones",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#98PYLL2YJ",
+          "name": "SAEEDLAJBAZZZ",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#28J8VJ28L",
+          "name": "Andrei",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#L0CQG2R90",
+          "name": "mauta",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#88UCJLRUC",
+          "name": "KING",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#PU2GJ9G00",
+          "name": "mega tron",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#L2VUYVYQJ",
+          "name": "RAMBO",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#8GCGVC88V",
+          "name": "bli bla blu",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#GY8P8L8UJ",
+          "name": "Snippz_HendrikY",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#YYYPVVGCG",
+          "name": "flotter Kobold",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#98QJ8RCCV",
+          "name": "Noah 1.0",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#20C2JPYP2",
+          "name": "SimonMay",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#9C08GR8QU",
+          "name": "SocialDwarf",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#P9LLP2Y8G",
+          "name": "Gandalf",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#PR8UR80UR",
+          "name": "Sir TET",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#PGJUVUGCC",
+          "name": "CMP",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#PPQ2RCCUJ",
+          "name": "Xdgamer",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#LU9UYU9RQ",
+          "name": "king jonny",
+          "fame": 66,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#229JUC0Q9",
+          "name": "Fasta",
+          "fame": 194,
+          "repairPoints": 205
+        },
+        {
+          "tag": "#Q80Q2U8VV",
+          "name": "Sophie",
+          "fame": 258,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#Y2PULGJ",
+          "name": "Adritv16",
+          "fame": 389,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#2QG90VC9",
+          "name": "Darth_Nifa",
+          "fame": 393,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#8R0U29QCY",
+          "name": "Herobrin",
+          "fame": 485,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#LG9UC9C0",
+          "name": "KeremsWelt",
+          "fame": 549,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#2CCYJ8YRJ",
+          "name": "Headbanger03",
+          "fame": 728,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#YPPRYR2U",
+          "name": "MicDaRoc",
+          "fame": 754,
+          "repairPoints": 378
+        },
+        {
+          "tag": "#GPCGVJ0QR",
+          "name": "KorolPro",
+          "fame": 761,
+          "repairPoints": 267
+        },
+        {
+          "tag": "#PVP8PVVPY",
+          "name": "JennyPenny",
+          "fame": 881,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#8LJRJRP8",
+          "name": "kapa90",
+          "fame": 1172,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#9VULRRRRG",
+          "name": "DA CHEF",
+          "fame": 1246,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#82C8UR8LL",
+          "name": "Leo",
+          "fame": 1485,
+          "repairPoints": 135
+        },
+        {
+          "tag": "#2PGGCJJL",
+          "name": "micah",
+          "fame": 1701,
+          "repairPoints": 398
+        },
+        {
+          "tag": "#LQ8PRJQ",
+          "name": "Der Killer",
+          "fame": 1735,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#89QVL8RY",
+          "name": "Phillippei",
+          "fame": 1913,
+          "repairPoints": 0
+        }
+      ],
+      "clanScore": 1426
+    },
+    {
+      "tag": "#Y9202JCP",
+      "name": "stoned island",
+      "badgeId": 16000032,
+      "fame": 2044,
+      "repairPoints": 0,
+      "participants": [
+        {
+          "tag": "#YC8RYJ9G",
+          "name": "¥anick",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#YGR2PRYL8",
+          "name": "alice",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#YQ22V9YJV",
+          "name": "Mixer",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#Y9Y0GGY9Q",
+          "name": "lara",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#YY20QU9P",
+          "name": "DoenerWhatElse",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#C0LLUQQ",
+          "name": "Schewitz",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#J28R099P",
+          "name": "ichbineinhuan",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#9PPVP0C00",
+          "name": "YungSavage",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#9PV099V8",
+          "name": "bumsebiene",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#9JGLV0L2",
+          "name": "Drop x Nasty",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#YLUCVY8R9",
+          "name": "Soso",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#2Q88YJUR",
+          "name": "98agua",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#GUPVV2CC",
+          "name": "Ziegenmann",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#899RJUVV",
+          "name": "Jeezus",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#ULLLRYUP",
+          "name": "the death",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#Q0PJ8V2R",
+          "name": "DonMox",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#PU9QPLUGU",
+          "name": "Fvcckk",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#QGRVQL9G9",
+          "name": "hs69",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#8YL0VQ0Y8",
+          "name": "giratina",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#PLV0J8UCG",
+          "name": "PradaBoi",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#2LYU8QYQG",
+          "name": "agrica",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#QQL0LCY0J",
+          "name": "r_c.beastboy",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#8JJYQRUP",
+          "name": "Tassilo",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#Y2JQG9RRY",
+          "name": "Farmer Scott",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#9YRGRC92",
+          "name": "Simon",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#PVPY2RL9G",
+          "name": "mycatisgay",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#PVQUCGQU2",
+          "name": "DasStahlprisma",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#8CRYJPUQP",
+          "name": "lea",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#YL2R282UR",
+          "name": "YSL",
+          "fame": 188,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#PVPPCYL8Q",
+          "name": "doors",
+          "fame": 202,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#P28L22PC",
+          "name": "__Mrgreco__",
+          "fame": 1654,
+          "repairPoints": 0
+        }
+      ],
+      "clanScore": 1352
+    },
+    {
+      "tag": "#8VQUVJ02",
+      "name": "BAILEYS",
+      "badgeId": 16000005,
+      "fame": 20941,
+      "repairPoints": 3256,
+      "participants": [
+        {
+          "tag": "#UPLGLQJG",
+          "name": "SILV3R",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#P9Q2JLLLY",
+          "name": "DARK",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#JYJVPPY2",
+          "name": "ALEX EL PATRON",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#20CJQ8V2",
+          "name": "<<RICKY 29>>",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#99LC82CC",
+          "name": "Luke95",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#LLGCCGL",
+          "name": "xNova_17",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#PJPVRRL0C",
+          "name": "REP MONSTER",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#YYCQRGGPP",
+          "name": "elbartolo_03",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#QRG0CR9",
+          "name": "Albi",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#GUGRPPJY",
+          "name": "PSS Sim",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#2QYCJCCVG",
+          "name": "gelataio1",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#L0PVJ2VQP",
+          "name": "Midas",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#9JRCG0892",
+          "name": "flow",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#L9RYPU2L",
+          "name": "alecs",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#88GY8G22Y",
+          "name": "simonemartolo",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#9GUQU2PC",
+          "name": "Veneto best",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#LV8QLGGVY",
+          "name": "_marty_",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#PUG9V0GJ0",
+          "name": "zilomar_1",
+          "fame": 0,
+          "repairPoints": 348
+        },
+        {
+          "tag": "#2UJVJVJC8",
+          "name": "Lorenzo2005",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#Y9L9JP9P",
+          "name": "SAMA",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#2RVL2L89V",
+          "name": "SAIMON...!",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#LLLPU2GRJ",
+          "name": "rango118",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#YYCPU9VRR",
+          "name": "krrencho",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#2JLLGPUU",
+          "name": "Kenshin yayo",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#2PRPUY2Y8",
+          "name": "lupo_gamer97",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#8UJQRYU2",
+          "name": "Tappo Bagnato",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#YRVR00GR",
+          "name": "tha.luce",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#QCYJ2YCJU",
+          "name": "LEVIS",
+          "fame": 0,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#8LYL0GQJR",
+          "name": "Giampaolo",
+          "fame": 0,
+          "repairPoints": 377
+        },
+        {
+          "tag": "#2PR2P89G",
+          "name": "BullTerrier",
+          "fame": 76,
+          "repairPoints": 211
+        },
+        {
+          "tag": "#G9QGL2J8V",
+          "name": "GIGHEN",
+          "fame": 125,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#2G2QC908",
+          "name": "il combattitore",
+          "fame": 271,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#LV0VQJQ9",
+          "name": "kim",
+          "fame": 454,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#8QVRUCL8",
+          "name": "Cousta30",
+          "fame": 455,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#LQCG882GC",
+          "name": "Ste906",
+          "fame": 457,
+          "repairPoints": 206
+        },
+        {
+          "tag": "#R80Y28CY",
+          "name": "even though",
+          "fame": 579,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#2Y2L9V998",
+          "name": "El Padooo",
+          "fame": 720,
+          "repairPoints": 91
+        },
+        {
+          "tag": "#JR8RQC2G",
+          "name": "MACHETERA",
+          "fame": 841,
+          "repairPoints": 305
+        },
+        {
+          "tag": "#R9LYJQUQ",
+          "name": "MACHETE",
+          "fame": 893,
+          "repairPoints": 489
+        },
+        {
+          "tag": "#QLUU08JJU",
+          "name": "uday",
+          "fame": 954,
+          "repairPoints": 515
+        },
+        {
+          "tag": "#8VUUGR0R",
+          "name": "CATTELAN",
+          "fame": 1020,
+          "repairPoints": 334
+        },
+        {
+          "tag": "#20GYPRGY",
+          "name": "Sipho",
+          "fame": 1045,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#2V9PL8Q2L",
+          "name": "_nebro7_",
+          "fame": 1161,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#20QV88U9",
+          "name": "Alemaf",
+          "fame": 1167,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#9RY2GJRR",
+          "name": "MARTIN ",
+          "fame": 1286,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#229VJPR80",
+          "name": "davide+",
+          "fame": 1336,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#CRL0QCV",
+          "name": "KIMI",
+          "fame": 1434,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#YGV8V8QRR",
+          "name": "pennellone",
+          "fame": 1444,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#VCR09Q2",
+          "name": "Elegido",
+          "fame": 1628,
+          "repairPoints": 380
+        },
+        {
+          "tag": "#V98P2LRJ",
+          "name": "M1rk0",
+          "fame": 1648,
+          "repairPoints": 0
+        },
+        {
+          "tag": "#8QL9Q0LGP",
+          "name": "mk",
+          "fame": 1885,
+          "repairPoints": 0
+        }
+      ],
+      "clanScore": 1475
+    }
+  ],
+  "sectionIndex": 3
+}

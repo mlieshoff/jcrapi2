@@ -30,6 +30,7 @@ import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClanRiverRaceLogRequest;
 import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
+import jcrapi2.request.GetCurrentClanRiverRaceRequest;
 import jcrapi2.request.GetLocationClanRankingsRequest;
 import jcrapi2.request.GetLocationClanWarRankingsRequest;
 import jcrapi2.request.GetLocationPlayerRankingsRequest;
@@ -47,6 +48,7 @@ import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClanRiverRaceLogResponse;
 import jcrapi2.response.GetClanWarLogResponse;
 import jcrapi2.response.GetClansResponse;
+import jcrapi2.response.GetCurrentClanRiverRaceResponse;
 import jcrapi2.response.GetLocationClanRankingsResponse;
 import jcrapi2.response.GetLocationClanWarRankingsResponse;
 import jcrapi2.response.GetLocationPlayerRankingsResponse;
@@ -373,6 +375,23 @@ class IntegrationTest {
   @Test
   void getClanRiverRaceLog_whenWithWrongUrl_thenThrow() throws Exception {
     assertThrows(ApiException.class, () -> doGetClanRiverRaceLog("lala2"));
+  }
+
+  @Test
+  void getCurrentClanRiverRace_whenWithValidParameters_thenReturnResponse() throws Exception {
+    doGetCurrentClanRiverRace(API_KEY);
+  }
+
+  private static void doGetCurrentClanRiverRace(String apiKey) {
+    GetCurrentClanRiverRaceResponse
+        actual =
+        new Api(URL, apiKey).getCurrentClanRiverRace(GetCurrentClanRiverRaceRequest.builder("57000000").build());
+    assertNotNull(actual);
+  }
+
+  @Test
+  void getCurrentClanRiverRace_whenWithWrongUrl_thenThrow() throws Exception {
+    assertThrows(ApiException.class, () -> doGetCurrentClanRiverRace("lala2"));
   }
 
 }

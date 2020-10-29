@@ -536,4 +536,30 @@
         <member name="repairPoints" type="int"/>
     </class>
 
+    <!-- get current clan river race -->
+
+    <class name="CurrentClanRiverRace">
+        <member name="state" type="String"/>
+        <member name="sectionIndex" type="int"/>
+        <member name="clan" type="CurrentClanRiverRaceClan"/>
+        <member name="clans" type="list(CurrentClanRiverRaceClan)"/>
+    </class>
+
+    <class name="CurrentClanRiverRaceClan">
+        <member name="tag" type="String"/>
+        <member name="name" type="String"/>
+        <member name="badgeId" type="int"/>
+        <member name="fame" type="int"/>
+        <member name="repairPoints" type="int"/>
+        <member name="clanScore" type="int"/>
+        <member name="participants" type="list(CurrentClanRiverRaceClanParticipant)"/>
+    </class>
+
+    <class name="CurrentClanRiverRaceClanParticipant">
+        <member name="tag" type="String"/>
+        <member name="name" type="String"/>
+        <member name="fame" type="int"/>
+        <member name="repairPoints" type="int"/>
+    </class>
+
 </model>

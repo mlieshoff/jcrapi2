@@ -34,6 +34,7 @@ import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClanRiverRaceLogRequest;
 import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
+import jcrapi2.request.GetCurrentClanRiverRaceRequest;
 import jcrapi2.request.GetLocationClanRankingsRequest;
 import jcrapi2.request.GetLocationClanWarRankingsRequest;
 import jcrapi2.request.GetLocationPlayerRankingsRequest;
@@ -51,6 +52,7 @@ import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClanRiverRaceLogResponse;
 import jcrapi2.response.GetClanWarLogResponse;
 import jcrapi2.response.GetClansResponse;
+import jcrapi2.response.GetCurrentClanRiverRaceResponse;
 import jcrapi2.response.GetLocationClanRankingsResponse;
 import jcrapi2.response.GetLocationClanWarRankingsResponse;
 import jcrapi2.response.GetLocationPlayerRankingsResponse;
@@ -551,6 +553,31 @@ class ApiTest {
     when(client.getClanRiverRaceLog(getClanRiverRaceLogRequest)).thenThrow(crawlerException);
     try {
       api.getClanRiverRaceLog(getClanRiverRaceLogRequest);
+      fail();
+    } catch (ApiException e) {
+      assertEquals(SC_NOT_FOUND, e.getCode());
+    }
+  }
+
+  @Test
+  void getCurrentClanRiverRace_whenWithRequest_thenReturnResult() throws Exception {
+    GetCurrentClanRiverRaceRequest
+        getCurrentClanRiverRaceRequest =
+        GetCurrentClanRiverRaceRequest.builder(LOCATION_ID).build();
+    GetCurrentClanRiverRaceResponse getCurrentClanRiverRaceResponse = new GetCurrentClanRiverRaceResponse();
+    when(client.getCurrentClanRiverRace(getCurrentClanRiverRaceRequest))
+        .thenReturn(getCurrentClanRiverRaceResponse);
+    assertEquals(getCurrentClanRiverRaceResponse, api.getCurrentClanRiverRace(getCurrentClanRiverRaceRequest));
+  }
+
+  @Test
+  void getCurrentClanRiverRace_whenWithException_thenThrowApiException() throws Exception {
+    GetCurrentClanRiverRaceRequest
+        getCurrentClanRiverRaceRequest =
+        GetCurrentClanRiverRaceRequest.builder(LOCATION_ID).build();
+    when(client.getCurrentClanRiverRace(getCurrentClanRiverRaceRequest)).thenThrow(crawlerException);
+    try {
+      api.getCurrentClanRiverRace(getCurrentClanRiverRaceRequest);
       fail();
     } catch (ApiException e) {
       assertEquals(SC_NOT_FOUND, e.getCode());

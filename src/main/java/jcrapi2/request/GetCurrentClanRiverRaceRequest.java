@@ -21,7 +21,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import java.util.List;
 import jcrapi2.response.Callback;
-import jcrapi2.response.GetClanRiverRaceLogResponse;
+import jcrapi2.response.GetCurrentClanRiverRaceResponse;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -29,21 +29,20 @@ import lombok.Getter;
  * @author Michael Lieshoff
  */
 @Getter
-public class GetClanRiverRaceLogRequest extends PageableRequest<GetClanRiverRaceLogResponse> {
+public class GetCurrentClanRiverRaceRequest extends Request<GetCurrentClanRiverRaceResponse> {
 
   private final String clanTag;
 
   @Builder
-  private GetClanRiverRaceLogRequest(Callback<GetClanRiverRaceLogResponse> callback, int limit, String after,
-                                     String before, String clanTag) {
-    super(callback, limit, after, before);
+  private GetCurrentClanRiverRaceRequest(Callback<GetCurrentClanRiverRaceResponse> callback, String clanTag) {
+    super(callback);
     checkNotNull(clanTag, "clanTag");
     checkArgument(!clanTag.isEmpty(), "clanTag");
     this.clanTag = clanTag;
   }
 
-  public static GetClanRiverRaceLogRequest.GetClanRiverRaceLogRequestBuilder builder(String clanTag) {
-    return new GetClanRiverRaceLogRequest.GetClanRiverRaceLogRequestBuilder().clanTag(clanTag);
+  public static GetCurrentClanRiverRaceRequest.GetCurrentClanRiverRaceRequestBuilder builder(String clanTag) {
+    return new GetCurrentClanRiverRaceRequest.GetCurrentClanRiverRaceRequestBuilder().clanTag(clanTag);
   }
 
   @Override

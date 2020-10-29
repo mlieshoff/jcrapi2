@@ -38,6 +38,7 @@ import jcrapi2.request.GetClanRequest;
 import jcrapi2.request.GetClanRiverRaceLogRequest;
 import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
+import jcrapi2.request.GetCurrentClanRiverRaceRequest;
 import jcrapi2.request.GetLocationClanRankingsRequest;
 import jcrapi2.request.GetLocationClanWarRankingsRequest;
 import jcrapi2.request.GetLocationPlayerRankingsRequest;
@@ -56,6 +57,7 @@ import jcrapi2.response.GetClanResponse;
 import jcrapi2.response.GetClanRiverRaceLogResponse;
 import jcrapi2.response.GetClanWarLogResponse;
 import jcrapi2.response.GetClansResponse;
+import jcrapi2.response.GetCurrentClanRiverRaceResponse;
 import jcrapi2.response.GetLocationClanRankingsResponse;
 import jcrapi2.response.GetLocationClanWarRankingsResponse;
 import jcrapi2.response.GetLocationPlayerRankingsResponse;
@@ -230,8 +232,14 @@ public class Client {
 
   GetClanRiverRaceLogResponse getClanRiverRaceLog(GetClanRiverRaceLogRequest getClanRiverRaceLogRequest)
       throws IOException {
-    return singleObjectFromJson("getClanRiverRaceLog", "clans/%s/riverracelog", getClanRiverRaceLogRequest,
+    return singleObjectFromJson("getClanRiverRaceLogRequest", "clans/%s/riverracelog", getClanRiverRaceLogRequest,
         GetClanRiverRaceLogResponse.class);
+  }
+
+  GetCurrentClanRiverRaceResponse getCurrentClanRiverRace(GetCurrentClanRiverRaceRequest getCurrentClanRiverRaceRequest)
+      throws IOException {
+    return singleObjectFromJson("getCurrentClanRiverRaceRequest", "clans/%s/currentriverrace",
+        getCurrentClanRiverRaceRequest, GetCurrentClanRiverRaceResponse.class);
   }
 
 }

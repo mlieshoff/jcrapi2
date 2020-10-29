@@ -45,6 +45,7 @@ import java.util.Optional;
 import jcrapi2.model.Card;
 import jcrapi2.model.ClanCurentWar;
 import jcrapi2.model.ClanMember;
+import jcrapi2.model.ClanRiverRaceLog;
 import jcrapi2.model.ClanWarLog;
 import jcrapi2.model.Location;
 import jcrapi2.model.LocationRankingClan;
@@ -60,6 +61,7 @@ import jcrapi2.response.GetCardsResponse;
 import jcrapi2.response.GetClanCurrentWarResponse;
 import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
+import jcrapi2.response.GetClanRiverRaceLogResponse;
 import jcrapi2.response.GetClanWarLogResponse;
 import jcrapi2.response.GetClansResponse;
 import jcrapi2.response.GetLocationClanRankingsResponse;
@@ -93,12 +95,13 @@ public class DataModelCheck {
   }
 
   public static void main(String[] args) throws IOException, ClassNotFoundException {
-    new DataModelCheck("https://api.clashroyale.com/v1/", API_KEY).start();
+    new DataModelCheck("https://proxy.royaleapi.dev/v1/", API_KEY).start();
   }
 
   private void start() throws IOException, ClassNotFoundException {
     loadModel();
 
+    /*
     testClans();
     testClan();
     testClanMembers();
@@ -115,6 +118,8 @@ public class DataModelCheck {
     testLocationClanRankings();
     testLocationPlayerRankings();
     testLocationWarRankings();
+    */
+    testClanRiverRaceLog();
   }
 
   private void printResults() {
@@ -270,6 +275,12 @@ public class DataModelCheck {
     test(Arrays.asList(
         "locations/57000094/rankings/clanwars"
     ), GetLocationClanWarRankingsResponse.class, false, LocationRankingClanWar.class);
+  }
+
+  private void testClanRiverRaceLog() throws IOException {
+    test(Arrays.asList(
+        "clans/%23RP88QQG/riverracelog"
+    ), GetClanRiverRaceLogResponse.class, false, ClanRiverRaceLog.class);
   }
 
   private void test(List<String> parts, Class<?> clazz, boolean isList, Class<?> itemClass) throws IOException {

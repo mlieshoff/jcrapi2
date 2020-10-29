@@ -503,4 +503,37 @@
         <member name="countryCode" type="String"/>
     </class>
 
+    <!-- get clan river race log -->
+
+    <class name="ClanRiverRaceLog">
+        <member name="seasonId" type="int"/>
+        <member name="sectionIndex" type="int"/>
+        <member name="createdDate" type="String"/>
+        <member name="standings" type="list(ClanRiverRaceLogStanding)"/>
+    </class>
+
+    <class name="ClanRiverRaceLogStanding">
+        <member name="rank" type="int"/>
+        <member name="trophyChange" type="int"/>
+        <member name="clan" type="ClanRiverRaceLogStandingClan"/>
+    </class>
+
+    <class name="ClanRiverRaceLogStandingClan">
+        <member name="tag" type="String"/>
+        <member name="name" type="String"/>
+        <member name="badgeId" type="int"/>
+        <member name="fame" type="int"/>
+        <member name="repairPoints" type="int"/>
+        <member name="finishTime" type="String"/>
+        <member name="clanScore" type="int"/>
+        <member name="participants" type="list(ClanRiverRaceLogStandingClanParticipant)"/>
+    </class>
+
+    <class name="ClanRiverRaceLogStandingClanParticipant">
+        <member name="tag" type="String"/>
+        <member name="name" type="String"/>
+        <member name="fame" type="int"/>
+        <member name="repairPoints" type="int"/>
+    </class>
+
 </model>

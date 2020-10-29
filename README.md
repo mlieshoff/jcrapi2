@@ -141,6 +141,17 @@ GetLocationPlayerRankingsResponse getLocationClanRankingsResponse = api.getLocat
 GetLocationClanWarRankingsResponse getLocationClanWarRankingsResponse = api.getLocationPlayerRankings(GetLocationClanWarRankingsRequest.builder("57000000").build());
 ```
 
+```java
+// get clan war log
+GetClanRiverRaceLogResponse getClanRiverRaceLogResponse = api.getClanRiverRaceLog(GetClanWarLogRequest.builder("#RP88QQG")
+  // paging
+  .after()
+  .before()
+  .limit()
+  .build()
+);
+```
+
 ## Asynchronous usage
 
 All requests can have a *callback*. Then execution will be asynchronous.

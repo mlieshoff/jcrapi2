@@ -27,6 +27,7 @@ import org.junit.jupiter.api.Test;
 import jcrapi2.request.GetClanCurrentWarRequest;
 import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
+import jcrapi2.request.GetClanRiverRaceLogRequest;
 import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
 import jcrapi2.request.GetLocationClanRankingsRequest;
@@ -43,6 +44,7 @@ import jcrapi2.response.GetCardsResponse;
 import jcrapi2.response.GetClanCurrentWarResponse;
 import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
+import jcrapi2.response.GetClanRiverRaceLogResponse;
 import jcrapi2.response.GetClanWarLogResponse;
 import jcrapi2.response.GetClansResponse;
 import jcrapi2.response.GetLocationClanRankingsResponse;
@@ -353,6 +355,24 @@ class IntegrationTest {
   @Test
   void getLocationClanWarRankings_whenWithWrongUrl_thenThrow() throws Exception {
     assertThrows(ApiException.class, () -> doGetLocationClanWarRankings("lala2"));
+  }
+
+  @Test
+  void getClanRiverRaceLog_whenWithValidParameters_thenReturnResponse() throws Exception {
+    doGetClanRiverRaceLog(API_KEY);
+  }
+
+  private static void doGetClanRiverRaceLog(String apiKey) {
+    GetClanRiverRaceLogResponse
+        actual =
+        new Api(URL, apiKey).getClanRiverRaceLog(GetClanRiverRaceLogRequest.builder("57000000").build());
+    assertNotNull(actual);
+    actual.getItems().forEach(Assertions::assertNotNull);
+  }
+
+  @Test
+  void getClanRiverRaceLog_whenWithWrongUrl_thenThrow() throws Exception {
+    assertThrows(ApiException.class, () -> doGetClanRiverRaceLog("lala2"));
   }
 
 }

@@ -31,6 +31,7 @@ import jcrapi2.request.BlankRequest;
 import jcrapi2.request.GetClanCurrentWarRequest;
 import jcrapi2.request.GetClanMembersRequest;
 import jcrapi2.request.GetClanRequest;
+import jcrapi2.request.GetClanRiverRaceLogRequest;
 import jcrapi2.request.GetClanWarLogRequest;
 import jcrapi2.request.GetClansRequest;
 import jcrapi2.request.GetLocationClanRankingsRequest;
@@ -47,6 +48,7 @@ import jcrapi2.response.GetCardsResponse;
 import jcrapi2.response.GetClanCurrentWarResponse;
 import jcrapi2.response.GetClanMembersResponse;
 import jcrapi2.response.GetClanResponse;
+import jcrapi2.response.GetClanRiverRaceLogResponse;
 import jcrapi2.response.GetClanWarLogResponse;
 import jcrapi2.response.GetClansResponse;
 import jcrapi2.response.GetLocationClanRankingsResponse;
@@ -524,6 +526,31 @@ class ApiTest {
     when(client.getLocationClanWarRankings(getLocationClanWarRankingsRequest)).thenThrow(crawlerException);
     try {
       api.getLocationClanWarRankings(getLocationClanWarRankingsRequest);
+      fail();
+    } catch (ApiException e) {
+      assertEquals(SC_NOT_FOUND, e.getCode());
+    }
+  }
+
+  @Test
+  void getClanRiverRaceLog_whenWithRequest_thenReturnResult() throws Exception {
+    GetClanRiverRaceLogRequest
+        getClanRiverRaceLogRequest =
+        GetClanRiverRaceLogRequest.builder(LOCATION_ID).build();
+    GetClanRiverRaceLogResponse getClanRiverRaceLogResponse = new GetClanRiverRaceLogResponse();
+    when(client.getClanRiverRaceLog(getClanRiverRaceLogRequest))
+        .thenReturn(getClanRiverRaceLogResponse);
+    assertEquals(getClanRiverRaceLogResponse, api.getClanRiverRaceLog(getClanRiverRaceLogRequest));
+  }
+
+  @Test
+  void getClanRiverRaceLog_whenWithException_thenThrowApiException() throws Exception {
+    GetClanRiverRaceLogRequest
+        getClanRiverRaceLogRequest =
+        GetClanRiverRaceLogRequest.builder(LOCATION_ID).build();
+    when(client.getClanRiverRaceLog(getClanRiverRaceLogRequest)).thenThrow(crawlerException);
+    try {
+      api.getClanRiverRaceLog(getClanRiverRaceLogRequest);
       fail();
     } catch (ApiException e) {
       assertEquals(SC_NOT_FOUND, e.getCode());

@@ -102,6 +102,7 @@ public class DataModelCheck {
   private void start() throws IOException, ClassNotFoundException {
     loadModel();
 
+    /*
     testClans();
     testClan();
     testClanMembers();
@@ -120,6 +121,8 @@ public class DataModelCheck {
     testLocationWarRankings();
     testClanRiverRaceLog();
     testCurrentClanRiverRace();
+    */
+    testGlobalTournaments();
   }
 
   private void printResults() {
@@ -286,6 +289,12 @@ public class DataModelCheck {
   private void testCurrentClanRiverRace() throws IOException {
     test(Arrays.asList(
         "clans/%23RP88QQG/currentriverrace"
+    ), GetCurrentClanRiverRaceResponse.class, false, ClanRiverRaceLog.class);
+  }
+
+  private void testGlobalTournaments() throws IOException {
+    test(Arrays.asList(
+        "globaltournaments"
     ), GetCurrentClanRiverRaceResponse.class, false, ClanRiverRaceLog.class);
   }
 

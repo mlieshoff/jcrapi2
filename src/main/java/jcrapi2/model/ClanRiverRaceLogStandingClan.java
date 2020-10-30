@@ -16,9 +16,10 @@
  */
 package jcrapi2.model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 import javax.annotation.Generated;
-import com.google.gson.annotations.SerializedName;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

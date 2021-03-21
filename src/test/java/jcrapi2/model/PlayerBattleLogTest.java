@@ -85,6 +85,13 @@ class PlayerBattleLogTest {
   }
 
   @Test
+  void setHostedMatch_whenWithValidParameter_thenSetHostedMatch() {
+    boolean expected = false;
+    unitUnderTest.setHostedMatch(expected);
+    assertEquals(expected, unitUnderTest.isHostedMatch());
+  }
+
+  @Test
   void setLadderTournament_whenWithValidParameter_thenSetLadderTournament() {
     boolean expected = false;
     unitUnderTest.setLadderTournament(expected);
@@ -121,11 +128,12 @@ class PlayerBattleLogTest {
     unitUnderTest.setChallengeWinCountBefore(815);
     unitUnderTest.setDeckSelection("astring");
     unitUnderTest.setGameMode(new PlayerBattleLogGameMode());
+    unitUnderTest.setHostedMatch(false);
     unitUnderTest.setLadderTournament(false);
     unitUnderTest.setOpponent(new ArrayList<PlayerBattleLogOpponent>());
     unitUnderTest.setTeam(new ArrayList<PlayerBattleLogTeam>());
     unitUnderTest.setType("astring");
-    String expected = "PlayerBattleLog(arena=" + new PlayerBattleLogArena() + ", battleTime=astring, challengeId=815, challengeTitle=astring, challengeWinCountBefore=815, deckSelection=astring, gameMode=" + new PlayerBattleLogGameMode() + ", LadderTournament=false, opponent=" + new ArrayList<PlayerBattleLogOpponent>() + ", team=" + new ArrayList<PlayerBattleLogTeam>() + ", type=astring)";
+    String expected = "PlayerBattleLog(arena=" + new PlayerBattleLogArena() + ", battleTime=astring, challengeId=815, challengeTitle=astring, challengeWinCountBefore=815, deckSelection=astring, gameMode=" + new PlayerBattleLogGameMode() + ", HostedMatch=false, LadderTournament=false, opponent=" + new ArrayList<PlayerBattleLogOpponent>() + ", team=" + new ArrayList<PlayerBattleLogTeam>() + ", type=astring)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

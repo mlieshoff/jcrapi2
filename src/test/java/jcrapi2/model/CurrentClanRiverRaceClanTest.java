@@ -57,6 +57,13 @@ class CurrentClanRiverRaceClanTest {
   }
 
   @Test
+  void setFinishTime_whenWithValidParameter_thenSetFinishTime() {
+    String expected = "astring";
+    unitUnderTest.setFinishTime(expected);
+    assertEquals(expected, unitUnderTest.getFinishTime());
+  }
+
+  @Test
   void setName_whenWithValidParameter_thenSetName() {
     String expected = "astring";
     unitUnderTest.setName(expected);
@@ -89,11 +96,12 @@ class CurrentClanRiverRaceClanTest {
     unitUnderTest.setBadgeId(815);
     unitUnderTest.setClanScore(815);
     unitUnderTest.setFame(815);
+    unitUnderTest.setFinishTime("astring");
     unitUnderTest.setName("astring");
     unitUnderTest.setParticipants(new ArrayList<CurrentClanRiverRaceClanParticipant>());
     unitUnderTest.setRepairPoints(815);
     unitUnderTest.setTag("astring");
-    String expected = "CurrentClanRiverRaceClan(badgeId=815, clanScore=815, fame=815, name=astring, participants=" + new ArrayList<CurrentClanRiverRaceClanParticipant>() + ", repairPoints=815, tag=astring)";
+    String expected = "CurrentClanRiverRaceClan(badgeId=815, clanScore=815, fame=815, finishTime=astring, name=astring, participants=" + new ArrayList<CurrentClanRiverRaceClanParticipant>() + ", repairPoints=815, tag=astring)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

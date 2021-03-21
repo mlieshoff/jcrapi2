@@ -34,6 +34,20 @@ class ClanRiverRaceLogStandingClanParticipantTest {
   }
 
   @Test
+  void setBoatAttacks_whenWithValidParameter_thenSetBoatAttacks() {
+    int expected = 815;
+    unitUnderTest.setBoatAttacks(expected);
+    assertEquals(expected, unitUnderTest.getBoatAttacks());
+  }
+
+  @Test
+  void setDecksUsed_whenWithValidParameter_thenSetDecksUsed() {
+    int expected = 815;
+    unitUnderTest.setDecksUsed(expected);
+    assertEquals(expected, unitUnderTest.getDecksUsed());
+  }
+
+  @Test
   void setFame_whenWithValidParameter_thenSetFame() {
     int expected = 815;
     unitUnderTest.setFame(expected);
@@ -63,11 +77,13 @@ class ClanRiverRaceLogStandingClanParticipantTest {
 
   @Test
   void toString_whenCalled_thenReturnStringRepresentation() {
+    unitUnderTest.setBoatAttacks(815);
+    unitUnderTest.setDecksUsed(815);
     unitUnderTest.setFame(815);
     unitUnderTest.setName("astring");
     unitUnderTest.setRepairPoints(815);
     unitUnderTest.setTag("astring");
-    String expected = "ClanRiverRaceLogStandingClanParticipant(fame=815, name=astring, repairPoints=815, tag=astring)";
+    String expected = "ClanRiverRaceLogStandingClanParticipant(boatAttacks=815, decksUsed=815, fame=815, name=astring, repairPoints=815, tag=astring)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

@@ -65,7 +65,7 @@
         <member name="previousClanRank" type="int"/>
         <member name="donations" type="int"/>
         <member name="donationsReceived" type="int"/>
-        <member name="clanChestPoints" type="int" deprecated="true"/>
+        <member name="clanChestPoints" type="int"/>
         <member name="lastSeen" type="String"/>
     </class>
 
@@ -232,7 +232,7 @@
     <class name="PlayerLeagueStatisticsCurrentSeason">
         <member name="trophies" type="int"/>
         <member name="bestTrophies" type="int"/>
-        <member name="rank" type="int"/>
+        <member name="rank" type="int" deprecated="true"/>
     </class>
 
     <class name="PlayerLeagueStatisticsPreviousSeason">
@@ -278,10 +278,11 @@
         <member name="deckSelection" type="String"/>
         <member name="team" type="list(PlayerBattleLogTeam)"/>
         <member name="opponent" type="list(PlayerBattleLogOpponent)"/>
-        <member name="challengeId" type="int"/>
-        <member name="challengeWinCountBefore" type="int"/>
-        <member name="challengeTitle" type="String"/>
+        <member name="challengeId" type="int" deprecated="true"/>
+        <member name="challengeWinCountBefore" type="int" deprecated="true"/>
+        <member name="challengeTitle" type="String" deprecated="true"/>
         <member name="isLadderTournament" type="boolean"/>
+        <member name="isHostedMatch" type="boolean"/>
     </class>
 
     <class name="PlayerBattleLogArena">
@@ -534,6 +535,8 @@
         <member name="name" type="String"/>
         <member name="fame" type="int"/>
         <member name="repairPoints" type="int"/>
+        <member name="boatAttacks" type="int"/>
+        <member name="decksUsed" type="int"/>
     </class>
 
     <!-- get current clan river race -->
@@ -553,6 +556,7 @@
         <member name="repairPoints" type="int"/>
         <member name="clanScore" type="int"/>
         <member name="participants" type="list(CurrentClanRiverRaceClanParticipant)"/>
+        <member name="finishTime" type="String"/>
     </class>
 
     <class name="CurrentClanRiverRaceClanParticipant">
@@ -560,6 +564,8 @@
         <member name="name" type="String"/>
         <member name="fame" type="int"/>
         <member name="repairPoints" type="int"/>
+        <member name="boatAttacks" type="int"/>
+        <member name="decksUsed" type="int"/>
     </class>
 
 </model>

@@ -14,37 +14,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jcrapi2.model;
-
-import com.google.gson.annotations.SerializedName;
+package $package;
 
 import javax.annotation.Generated;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 @Generated("org.mili.generator")
-@Getter
-@Setter
-@ToString
-public class CurrentClanRiverRaceClanParticipant {
+public class $testClassname {
 
-  @SerializedName("boatAttacks")
-  private int boatAttacks;
+#foreach( $const in $constlist )
+  @Test
+  public void should$const.name#[[()]]# {
+    assertEquals(#if($const.prefix) $classname.$const.prefix#[[.getCode()]]# +#end #if($const.type == "String")"$const.value"#else$const.value#end, $classname.$const.name#[[.getCode()]]#);
+  }
 
-  @SerializedName("decksUsed")
-  private int decksUsed;
-
-  @SerializedName("fame")
-  private int fame;
-
-  @SerializedName("name")
-  private String name;
-
-  @SerializedName("repairPoints")
-  private int repairPoints;
-
-  @SerializedName("tag")
-  private String tag;
-
+#end
 }

@@ -32,7 +32,6 @@ public class ClanMember {
   @SerializedName("arena")
   private ClanMemberArena arena;
 
-  @Deprecated
   @SerializedName("clanChestPoints")
   private int clanChestPoints;
 

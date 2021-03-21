@@ -39,6 +39,9 @@ public class CurrentClanRiverRaceClan {
   @SerializedName("fame")
   private int fame;
 
+  @SerializedName("finishTime")
+  private String finishTime;
+
   @SerializedName("name")
   private String name;
 

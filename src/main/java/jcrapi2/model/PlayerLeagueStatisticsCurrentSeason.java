@@ -32,6 +32,7 @@ public class PlayerLeagueStatisticsCurrentSeason {
   @SerializedName("bestTrophies")
   private int bestTrophies;
 
+  @Deprecated
   @SerializedName("rank")
   private int rank;
 

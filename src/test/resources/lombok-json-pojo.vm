@@ -14,59 +14,44 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jcrapi2.model;
+package $package;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Generated;
+#if(!$extends.startsWith("map(") && !$extends.startsWith("list("))
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+#end
 
+#if($field.deprecated)
+@Deprecated
+#end
 @Generated("org.mili.generator")
+#if(!$extends.startsWith("map(") && !$extends.startsWith("list("))
 @Getter
 @Setter
 @ToString
-public class PlayerBattleLog {
+#end
+public class $classname #if($extends)extends ${Utils.getJavaImplType($extends)} #end{
+#foreach( $const in $constlist )
 
-  @SerializedName("arena")
-  private PlayerBattleLogArena arena;
-
-  @SerializedName("battleTime")
-  private String battleTime;
-
+  #if($field.deprecated)
   @Deprecated
-  @SerializedName("challengeId")
-  private int challengeId;
+  #end
+  public static final $const.type $const.name =#if($const.prefix) $const.value +#end #if($const.type == "String")"$const.value"#else$const.value#end;
+#end
 
+#foreach( $field in $fieldlist )
+  #if($field.deprecated)
   @Deprecated
-  @SerializedName("challengeTitle")
-  private String challengeTitle;
+  #end
+  @SerializedName("${Utils.getNameOrAlias($field)}")
+  private ${Utils.getJavaType($field.type)} ${Utils.getJavaName($field.name)};
 
-  @Deprecated
-  @SerializedName("challengeWinCountBefore")
-  private int challengeWinCountBefore;
-
-  @SerializedName("deckSelection")
-  private String deckSelection;
-
-  @SerializedName("gameMode")
-  private PlayerBattleLogGameMode gameMode;
-
-  @SerializedName("isHostedMatch")
-  private boolean HostedMatch;
-
-  @SerializedName("isLadderTournament")
-  private boolean LadderTournament;
-
-  @SerializedName("opponent")
-  private List<PlayerBattleLogOpponent> opponent;
-
-  @SerializedName("team")
-  private List<PlayerBattleLogTeam> team;
-
-  @SerializedName("type")
-  private String type;
-
+#end
 }

@@ -29,6 +29,12 @@ import lombok.ToString;
 @ToString
 public class ClanRiverRaceLogStandingClanParticipant {
 
+  @SerializedName("boatAttacks")
+  private int boatAttacks;
+
+  @SerializedName("decksUsed")
+  private int decksUsed;
+
   @SerializedName("fame")
   private int fame;
 

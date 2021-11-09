@@ -95,9 +95,9 @@
         </resources>
         <extensions>
             <extension>
-                <groupId>org.jvnet.wagon-svn</groupId>
-                <artifactId>wagon-svn</artifactId>
-                <version>1.9</version>
+                <groupId>io.packagecloud.maven.wagon</groupId>
+                <artifactId>maven-packagecloud-wagon</artifactId>
+                <version>0.0.4</version>
             </extension>
         </extensions>
     </build>
@@ -175,19 +175,19 @@
     </dependencies>
     <distributionManagement>
         <repository>
-            <id>bintray</id>
-            <url>https://api.bintray.com/maven/mlieshoff/maven/jcrapi2</url>
+            <id>packagecloud</id>
+            <url>packagecloud+https://packagecloud.io/mlieshoff/jcrapi2</url>
         </repository>
     </distributionManagement>
     <repositories>
         <repository>
-            <id>mlieshoff-repo</id>
-            <url>http://dl.bintray.com/mlieshoff/maven</url>
+            <id>mlieshoff-jcrapi2</id>
+            <url>https://packagecloud.io/mlieshoff/jcrapi2/maven2</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
             <snapshots>
-                <enabled>false</enabled>
+                <enabled>true</enabled>
             </snapshots>
         </repository>
     </repositories>

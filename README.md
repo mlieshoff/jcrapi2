@@ -2,6 +2,7 @@
 A Java Wrapper For Official Supercell Clash Royal Api 
 
 ## Actual version: 1.0.2
+(we moved repository to https://packagecloud.io/mlieshoff/jcrapi2)
 
 ## Simplest Usage ##
 
@@ -186,23 +187,23 @@ api.getClans(GetClansRequest.builder()
 ```
  
 
-## How to bind the bintray repository ##
+## How to bind the packageclod repository ##
 
 ```xml
 <repository>
-    <id>org-mili-repo</id>
-    <url>http://dl.bintray.com/mlieshoff/maven</url>
+    <id>mlieshoff-jcrapi2</id>
+    <url>https://packagecloud.io/mlieshoff/jcrapi2/maven2</url>
     <releases>
         <enabled>true</enabled>
     </releases>
     <snapshots>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </snapshots>
 </repository>
 ```
 ## Continuous Integration ##
 
-https://travis-ci.org/mlieshoff/jcrapi2
+https://github.com/mlieshoff/jcrapi2/actions
 
 ## Repository ##
 

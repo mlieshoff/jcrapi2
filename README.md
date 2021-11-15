@@ -210,7 +210,7 @@ https://github.com/mlieshoff/jcrapi2/actions
 
 ## Repository ##
 
-https://bintray.com/mlieshoff/maven/jcrapi2
+https://packagecloud.io/mlieshoff/jcrapi2
 
 ## Logging ##
 

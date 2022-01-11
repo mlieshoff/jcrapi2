@@ -41,8 +41,8 @@ public class GetPlayerBattleLogRequest extends Request<GetPlayerBattleLogRespons
     this.playerTag = playerTag;
   }
 
-  public static GetPlayerBattleLogRequest.GetPlayerBattleLogRequestBuilder builder(String clanTag) {
-    return new GetPlayerBattleLogRequest.GetPlayerBattleLogRequestBuilder().playerTag(clanTag);
+  public static GetPlayerBattleLogRequest.GetPlayerBattleLogRequestBuilder builder(String playerTag) {
+    return new GetPlayerBattleLogRequest.GetPlayerBattleLogRequestBuilder().playerTag(playerTag);
   }
 
   @Override

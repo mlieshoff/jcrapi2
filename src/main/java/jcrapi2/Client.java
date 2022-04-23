@@ -16,11 +16,11 @@
  */
 package jcrapi2;
 
-import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.util.concurrent.MoreExecutors.listeningDecorator;
 import static java.lang.Thread.NORM_PRIORITY;
 import static java.util.concurrent.Executors.newFixedThreadPool;
+import static jcrapi2.Preconditions.checkNotBlank;
 import static org.apache.http.HttpHeaders.AUTHORIZATION;
 
 import com.google.common.collect.ImmutableMap;
@@ -90,16 +90,11 @@ public class Client {
   private final CrawlerFactory crawlerFactory;
 
   Client(String url, String apiKey, CrawlerFactory crawlerFactory) {
-    checkString(url);
+    checkNotBlank(url, "url");
     checkNotNull(crawlerFactory);
     this.url = url;
     this.apiKey = apiKey;
     this.crawlerFactory = crawlerFactory;
-  }
-
-  private static void checkString(String url) {
-    checkNotNull(url);
-    checkArgument(!url.isEmpty(), url);
   }
 
   GetClansResponse getClans(GetClansRequest getClansRequest) throws IOException {

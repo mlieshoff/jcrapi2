@@ -16,8 +16,8 @@
  */
 package jcrapi2;
 
-import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
+import static jcrapi2.Preconditions.checkNotBlank;
 
 import java.io.IOException;
 import jcrapi2.request.BlankRequest;
@@ -73,16 +73,11 @@ public class Api {
   }
 
   Api(String url, String apiKey, ClientFactory clientFactory) {
-    checkString(url, "url");
-    checkString(apiKey, "apiKey");
+    checkNotBlank(url, "url");
+    checkNotBlank(apiKey, "apiKey");
     this.url = url;
     this.apiKey = apiKey;
     this.clientFactory = clientFactory;
-  }
-
-  private static void checkString(String s, String key) {
-    checkNotNull(s, key);
-    checkArgument(!s.isEmpty(), key);
   }
 
   public GetClansResponse getClans(GetClansRequest getClansRequest) {
@@ -249,7 +244,8 @@ public class Api {
     }
   }
 
-  public GetCurrentClanRiverRaceResponse getCurrentClanRiverRace(GetCurrentClanRiverRaceRequest getCurrentClanRiverRaceRequest) {
+  public GetCurrentClanRiverRaceResponse getCurrentClanRiverRace(
+      GetCurrentClanRiverRaceRequest getCurrentClanRiverRaceRequest) {
     checkNotNull(getCurrentClanRiverRaceRequest, "getCurrentClanRiverRaceRequest");
     try {
       return createClient().getCurrentClanRiverRace(getCurrentClanRiverRaceRequest);

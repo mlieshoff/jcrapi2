@@ -3,13 +3,14 @@
 # jcrapi2 1.0.2
 A Java Wrapper For Official Supercell Clash Royal Api 
 
-## Why we moved to the amazing services of packagecloud?
+## Why we moved to the amazing services of packagecloud.io?
 
--- blog content goes here --
+We moved to packagecloud.io because the bintray closed their nice hosting... And packagecloud.io is a really nice place 
+to be :)
 
 ## Simplest Usage ##
 
-Note: Please combine the builder methods as it makes sense. The demonstrated was is showing only all possibilities. 
+Note: Please combine the builder methods as it makes sense. The demonstrated usage is showing only all possibilities. 
 For more information please check 
 
 https://developer.clashroyale.com/#/documentation

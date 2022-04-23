@@ -9,7 +9,7 @@ A Java Wrapper For Official Supercell Clash Royal Api
 
 ## Simplest Usage ##
 
-Note: Please combine the builder methods as it makes sense. The demonstrated was is showing only all possibilities. 
+Note: Please combine the builder methods as it makes sense. The demonstrated usage is showing only all possibilities. 
 For more information please check 
 
 https://developer.clashroyale.com/#/documentation

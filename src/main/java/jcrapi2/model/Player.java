@@ -75,6 +75,9 @@ public class Player {
   @SerializedName("expLevel")
   private int expLevel;
 
+  @SerializedName("expPoints")
+  private long expPoints;
+
   @SerializedName("leagueStatistics")
   private PlayerLeagueStatistics leagueStatistics;
 

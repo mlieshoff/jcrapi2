@@ -50,6 +50,27 @@ class CurrentClanRiverRaceTest {
   }
 
   @Test
+  void setPeriodIndex_whenWithValidParameter_thenSetPeriodIndex() {
+    int expected = 815;
+    unitUnderTest.setPeriodIndex(expected);
+    assertEquals(expected, unitUnderTest.getPeriodIndex());
+  }
+
+  @Test
+  void setPeriodLogs_whenWithValidParameter_thenSetPeriodLogs() {
+    String expected = "astring";
+    unitUnderTest.setPeriodLogs(expected);
+    assertEquals(expected, unitUnderTest.getPeriodLogs());
+  }
+
+  @Test
+  void setPeriodType_whenWithValidParameter_thenSetPeriodType() {
+    String expected = "astring";
+    unitUnderTest.setPeriodType(expected);
+    assertEquals(expected, unitUnderTest.getPeriodType());
+  }
+
+  @Test
   void setSectionIndex_whenWithValidParameter_thenSetSectionIndex() {
     int expected = 815;
     unitUnderTest.setSectionIndex(expected);
@@ -67,9 +88,12 @@ class CurrentClanRiverRaceTest {
   void toString_whenCalled_thenReturnStringRepresentation() {
     unitUnderTest.setClan(new CurrentClanRiverRaceClan());
     unitUnderTest.setClans(new ArrayList<CurrentClanRiverRaceClan>());
+    unitUnderTest.setPeriodIndex(815);
+    unitUnderTest.setPeriodLogs("astring");
+    unitUnderTest.setPeriodType("astring");
     unitUnderTest.setSectionIndex(815);
     unitUnderTest.setState("astring");
-    String expected = "CurrentClanRiverRace(clan=" + new CurrentClanRiverRaceClan() + ", clans=" + new ArrayList<CurrentClanRiverRaceClan>() + ", sectionIndex=815, state=astring)";
+    String expected = "CurrentClanRiverRace(clan=" + new CurrentClanRiverRaceClan() + ", clans=" + new ArrayList<CurrentClanRiverRaceClan>() + ", periodIndex=815, periodLogs=astring, periodType=astring, sectionIndex=815, state=astring)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

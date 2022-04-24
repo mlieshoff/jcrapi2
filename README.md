@@ -1,6 +1,6 @@
 [![](https://img.shields.io/badge/java-packagecloud.io-844fec.svg)](https://packagecloud.io/)
 
-# jcrapi2 1.0.3
+# jcrapi2 1.0.4
 A Java Wrapper For Official Supercell Clash Royal Api 
 
 ## Why we moved to the amazing services of packagecloud.io?

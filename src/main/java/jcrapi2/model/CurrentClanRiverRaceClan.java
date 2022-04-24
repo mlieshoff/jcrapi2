@@ -39,6 +39,7 @@ public class CurrentClanRiverRaceClan {
   @SerializedName("fame")
   private int fame;
 
+  @Deprecated
   @SerializedName("finishTime")
   private String finishTime;
 
@@ -47,6 +48,9 @@ public class CurrentClanRiverRaceClan {
 
   @SerializedName("participants")
   private List<CurrentClanRiverRaceClanParticipant> participants;
+
+  @SerializedName("periodPoints")
+  private int periodPoints;
 
   @SerializedName("repairPoints")
   private int repairPoints;

@@ -48,6 +48,9 @@ public class ClanRiverRaceLogStandingClan {
   @SerializedName("participants")
   private List<ClanRiverRaceLogStandingClanParticipant> participants;
 
+  @SerializedName("periodPoints")
+  private int periodPoints;
+
   @SerializedName("repairPoints")
   private int repairPoints;
 

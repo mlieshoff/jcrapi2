@@ -36,15 +36,12 @@ public class PlayerBattleLog {
   @SerializedName("battleTime")
   private String battleTime;
 
-  @Deprecated
   @SerializedName("challengeId")
   private int challengeId;
 
-  @Deprecated
   @SerializedName("challengeTitle")
   private String challengeTitle;
 
-  @Deprecated
   @SerializedName("challengeWinCountBefore")
   private int challengeWinCountBefore;
 

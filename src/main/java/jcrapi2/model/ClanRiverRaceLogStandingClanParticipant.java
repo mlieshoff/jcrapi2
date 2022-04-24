@@ -35,6 +35,9 @@ public class ClanRiverRaceLogStandingClanParticipant {
   @SerializedName("decksUsed")
   private int decksUsed;
 
+  @SerializedName("decksUsedToday")
+  private int decksUsedToday;
+
   @SerializedName("fame")
   private int fame;
 

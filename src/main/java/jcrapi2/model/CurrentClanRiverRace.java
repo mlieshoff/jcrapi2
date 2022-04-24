@@ -36,6 +36,15 @@ public class CurrentClanRiverRace {
   @SerializedName("clans")
   private List<CurrentClanRiverRaceClan> clans;
 
+  @SerializedName("periodIndex")
+  private int periodIndex;
+
+  @SerializedName("periodLogs")
+  private String periodLogs;
+
+  @SerializedName("periodType")
+  private String periodType;
+
   @SerializedName("sectionIndex")
   private int sectionIndex;
 

@@ -168,6 +168,7 @@
         <member name="currentDeck" type="list(PlayerCurrentDeckCard)"/>
         <member name="currentFavouriteCard" type="PlayerCurrentFavouriteCard"/>
         <member name="badges" type="list(PlayerBadge)"/>
+        <member name="expPoints" type="long"/>
     </class>
 
     <class name="PlayerClan">
@@ -283,6 +284,9 @@
         <member name="challengeTitle" type="String" deprecated="true"/>
         <member name="isLadderTournament" type="boolean"/>
         <member name="isHostedMatch" type="boolean"/>
+        <member name="challengeId" type="int"/>
+        <member name="challengeTitle" type="String"/>
+        <member name="challengeWinCountBefore" type="int"/>
     </class>
 
     <class name="PlayerBattleLogArena">
@@ -528,6 +532,7 @@
         <member name="finishTime" type="String"/>
         <member name="clanScore" type="int"/>
         <member name="participants" type="list(ClanRiverRaceLogStandingClanParticipant)"/>
+        <member name="periodPoints" type="int"/>
     </class>
 
     <class name="ClanRiverRaceLogStandingClanParticipant">
@@ -537,6 +542,7 @@
         <member name="repairPoints" type="int"/>
         <member name="boatAttacks" type="int"/>
         <member name="decksUsed" type="int"/>
+        <member name="decksUsedToday" type="int"/>
     </class>
 
     <!-- get current clan river race -->
@@ -546,6 +552,9 @@
         <member name="sectionIndex" type="int"/>
         <member name="clan" type="CurrentClanRiverRaceClan"/>
         <member name="clans" type="list(CurrentClanRiverRaceClan)"/>
+        <member name="periodType" type="String"/>
+        <member name="periodLogs" type="String"/>
+        <member name="periodIndex" type="int"/>
     </class>
 
     <class name="CurrentClanRiverRaceClan">
@@ -556,7 +565,8 @@
         <member name="repairPoints" type="int"/>
         <member name="clanScore" type="int"/>
         <member name="participants" type="list(CurrentClanRiverRaceClanParticipant)"/>
-        <member name="finishTime" type="String"/>
+        <member name="finishTime" type="String" deprecated="true"/>
+        <member name="periodPoints" type="int"/>
     </class>
 
     <class name="CurrentClanRiverRaceClanParticipant">
@@ -566,6 +576,7 @@
         <member name="repairPoints" type="int"/>
         <member name="boatAttacks" type="int"/>
         <member name="decksUsed" type="int"/>
+        <member name="decksUsedToday" type="int"/>
     </class>
 
 </model>

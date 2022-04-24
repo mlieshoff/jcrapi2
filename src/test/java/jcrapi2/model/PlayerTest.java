@@ -141,6 +141,13 @@ class PlayerTest {
   }
 
   @Test
+  void setExpPoints_whenWithValidParameter_thenSetExpPoints() {
+    long expected = 4711L;
+    unitUnderTest.setExpPoints(expected);
+    assertEquals(expected, unitUnderTest.getExpPoints());
+  }
+
+  @Test
   void setLeagueStatistics_whenWithValidParameter_thenSetLeagueStatistics() {
     PlayerLeagueStatistics expected = new PlayerLeagueStatistics();
     unitUnderTest.setLeagueStatistics(expected);
@@ -248,6 +255,7 @@ class PlayerTest {
     unitUnderTest.setDonations(815);
     unitUnderTest.setDonationsReceived(815);
     unitUnderTest.setExpLevel(815);
+    unitUnderTest.setExpPoints(4711L);
     unitUnderTest.setLeagueStatistics(new PlayerLeagueStatistics());
     unitUnderTest.setLosses(815);
     unitUnderTest.setName("astring");
@@ -261,7 +269,7 @@ class PlayerTest {
     unitUnderTest.setTrophies(815);
     unitUnderTest.setWarDayWins(815);
     unitUnderTest.setWins(815);
-    String expected = "Player(achievements=" + new ArrayList<PlayerAchievment>() + ", arena=" + new PlayerArena() + ", badges=" + new ArrayList<PlayerBadge>() + ", battleCount=815, bestTrophies=815, cards=" + new ArrayList<PlayerCard>() + ", challengeCardsWon=815, challengeMaxWins=815, clan=" + new PlayerClan() + ", clanCardsCollected=815, currentDeck=" + new ArrayList<PlayerCurrentDeckCard>() + ", currentFavouriteCard=" + new PlayerCurrentFavouriteCard() + ", donations=815, donationsReceived=815, expLevel=815, leagueStatistics=" + new PlayerLeagueStatistics() + ", losses=815, name=astring, role=astring, starPoints=815, tag=astring, threeCrownWins=815, totalDonations=815, tournamentBattleCount=815, tournamentCardsWon=815, trophies=815, warDayWins=815, wins=815)";
+    String expected = "Player(achievements=" + new ArrayList<PlayerAchievment>() + ", arena=" + new PlayerArena() + ", badges=" + new ArrayList<PlayerBadge>() + ", battleCount=815, bestTrophies=815, cards=" + new ArrayList<PlayerCard>() + ", challengeCardsWon=815, challengeMaxWins=815, clan=" + new PlayerClan() + ", clanCardsCollected=815, currentDeck=" + new ArrayList<PlayerCurrentDeckCard>() + ", currentFavouriteCard=" + new PlayerCurrentFavouriteCard() + ", donations=815, donationsReceived=815, expLevel=815, expPoints=4711, leagueStatistics=" + new PlayerLeagueStatistics() + ", losses=815, name=astring, role=astring, starPoints=815, tag=astring, threeCrownWins=815, totalDonations=815, tournamentBattleCount=815, tournamentCardsWon=815, trophies=815, warDayWins=815, wins=815)";
     String actual = unitUnderTest.toString();
     assertEquals(expected, actual);
   }

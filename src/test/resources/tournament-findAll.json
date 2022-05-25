@@ -1,0 +1,355 @@
+{
+  "items": [
+    {
+      "tag": "#2PU8V802",
+      "type": "open",
+      "status": "inPreparation",
+      "creatorTag": "#GUQ98R8C2",
+      "name": "chef des chef",
+      "description": "le meilleur du clan !!",
+      "levelCap": 11,
+      "firstPlaceCardPrize": 0,
+      "capacity": 1,
+      "maxCapacity": 1000,
+      "preparationDuration": 3600,
+      "duration": 14400,
+      "createdTime": "20220524T141118.000Z",
+      "gameMode": {
+        "id": 72000024
+      }
+    },
+    {
+      "tag": "#2QVG9QJP",
+      "type": "open",
+      "status": "inProgress",
+      "creatorTag": "#L0Q0LR99C",
+      "name": "tropa de mancos",
+      "levelCap": 11,
+      "firstPlaceCardPrize": 0,
+      "capacity": 6,
+      "maxCapacity": 50,
+      "preparationDuration": 3600,
+      "duration": 10800,
+      "createdTime": "20220524T145818.000Z",
+      "gameMode": {
+        "id": 72000194
+      }
+    },
+    {
+      "tag": "#2PU8LC8C",
+      "type": "passwordProtected",
+      "status": "inProgress",
+      "creatorTag": "#QU2VCJ2VC",
+      "name": "respeto de rangos",
+      "description": "el que gane se g*******ucas del perdedor",
+      "levelCap": 11,
+      "firstPlaceCardPrize": 0,
+      "capacity": 9,
+      "maxCapacity": 10,
+      "preparationDuration": 3600,
+      "duration": 7200,
+      "createdTime": "20220524T131213.000Z",
+      "gameMode": {
+        "id": 72000009
+      }
+    },
+    {
+      "tag": "#2PRYCC09",
+      "type": "open",
+      "status": "inPreparation",
+      "creatorTag": "#JV9U8CG8Q",
+      "name": "batalha de capacidade",
+      "description": "só vai vencer os melhores",
+      "levelCap": 11,
+      "firstPlaceCardPrize": 0,
+      "capacity": 1,
+      "maxCapacity": 500,
+      "preparationDuration": 3600,
+      "duration": 14400,
+      "createdTime": "20220524T131927.000Z",
+      "gameMode": {
+        "id": 72000001
+      }
+    },
+    {
+      "tag": "#2YL2QJL8",
+      "type": "passwordProtected",
+      "status": "inProgress",
+      "creatorTag": "#PR0U9JGUL",
+      "name": "el mejor de 3°A",
+      "levelCap": 11,
+      "firstPlaceCardPrize": 0,
+      "capacity": 6,
+      "maxCapacity": 50,
+      "preparationDuration": 3600,
+      "duration": 3600,
+      "createdTime": "20220524T133543.000Z",
+      "gameMode": {
+        "id": 72000009
+      }
+    },
+    {
+      "tag": "#2PU8V0RC",
+      "type": "passwordProtected",
+      "status": "inProgress",
+      "creatorTag": "#2LV2RP9Q",
+      "name": "degenerados",
+      "levelCap": 11,
+      "firstPlaceCardPrize": 0,
+      "capacity": 7,
+      "maxCapacity": 10,
+      "preparationDuration": 3600,
+      "duration": 3600,
+      "createdTime": "20220524T141117.000Z",
+      "gameMode": {
+        "id": 72000005
+      }
+    },
+    {
+      "tag": "#2QVQ80V0",
+      "type": "passwordProtected",
+      "status": "inProgress",
+      "creatorTag": "#CYG8PJRJL",
+      "name": "Base de elixir",
+      "levelCap": 13,
+      "firstPlaceCardPrize": 0,
+      "capacity": 1,
+      "maxCapacity": 10,
+      "preparationDuration": 3600,
+      "duration": 1800,
+      "createdTime": "20220524T145904.000Z",
+      "gameMode": {
+        "id": 72000027
+      }
+    },
+    {
+      "tag": "#2YL8LL0C",
+      "type": "open",
+      "status": "inProgress",
+      "creatorTag": "#JJRYCCLL2",
+      "name": "de",
+      "levelCap": 14,
+      "firstPlaceCardPrize": 0,
+      "capacity": 3,
+      "maxCapacity": 50,
+      "preparationDuration": 3600,
+      "duration": 14400,
+      "createdTime": "20220524T133135.000Z",
+      "gameMode": {
+        "id": 72000009
+      }
+    },
+    {
+      "tag": "#2QVGGYR2",
+      "type": "open",
+      "status": "inProgress",
+      "creatorTag": "#2GU8V88RL",
+      "name": "25 de mayo",
+      "levelCap": 11,
+      "firstPlaceCardPrize": 0,
+      "capacity": 3,
+      "maxCapacity": 10,
+      "preparationDuration": 3600,
+      "duration": 14400,
+      "createdTime": "20220524T115455.000Z",
+      "gameMode": {
+        "id": 72000013
+      }
+    },
+    {
+      "tag": "#2PU9202U",
+      "type": "open",
+      "status": "inPreparation",
+      "creatorTag": "#C8QRPY0JV",
+      "name": "les bg de la night",
+      "description": "tournoi tirage triple",
+      "levelCap": 11,
+      "firstPlaceCardPrize": 0,
+      "capacity": 1,
+      "maxCapacity": 10,
+      "preparationDuration": 3600,
+      "duration": 14400,
+      "createdTime": "20220524T150059.000Z",
+      "gameMode": {
+        "id": 72000194
+      }
+    },
+    {
+      "tag": "#2UJ9LGY8",
+      "type": "passwordProtected",
+      "status": "inProgress",
+      "creatorTag": "#9RLJCJGG2",
+      "name": "Tournois de pd biko",
+      "description": "vive allah",
+      "levelCap": 14,
+      "firstPlaceCardPrize": 0,
+      "capacity": 9,
+      "maxCapacity": 1000,
+      "preparationDuration": 3600,
+      "duration": 14400,
+      "createdTime": "20220524T101122.000Z",
+      "gameMode": {
+        "id": 72000009
+      }
+    },
+    {
+      "tag": "#2L0J099P",
+      "type": "open",
+      "status": "inProgress",
+      "creatorTag": "#GVJVUQ292",
+      "name": "ME GUSTA LA MAMA DE MCLOVIN",
+      "description": "BOQUITA DE MI VIDA",
+      "levelCap": 11,
+      "firstPlaceCardPrize": 0,
+      "capacity": 9,
+      "maxCapacity": 10,
+      "preparationDuration": 3600,
+      "duration": 14400,
+      "createdTime": "20220524T111227.000Z",
+      "gameMode": {
+        "id": 72000194
+      }
+    },
+    {
+      "tag": "#2PRLRPVQ",
+      "type": "open",
+      "status": "inProgress",
+      "creatorTag": "#P2088CY0C",
+      "name": "desafío fantasmal",
+      "levelCap": 14,
+      "firstPlaceCardPrize": 0,
+      "capacity": 1,
+      "maxCapacity": 1000,
+      "preparationDuration": 3600,
+      "duration": 14400,
+      "createdTime": "20220524T120534.000Z",
+      "gameMode": {
+        "id": 72000180
+      }
+    },
+    {
+      "tag": "#2PRLRL9C",
+      "type": "passwordProtected",
+      "status": "inProgress",
+      "creatorTag": "#RL98RGJVY",
+      "name": "bal des sapeur",
+      "levelCap": 11,
+      "firstPlaceCardPrize": 0,
+      "capacity": 1,
+      "maxCapacity": 1000,
+      "preparationDuration": 3600,
+      "duration": 14400,
+      "createdTime": "20220524T120539.000Z",
+      "gameMode": {
+        "id": 72000133
+      }
+    },
+    {
+      "tag": "#2PRYC2UP",
+      "type": "open",
+      "status": "inPreparation",
+      "creatorTag": "#2GPY2UV0L",
+      "name": "torneo del colegio",
+      "levelCap": 11,
+      "firstPlaceCardPrize": 0,
+      "capacity": 4,
+      "maxCapacity": 10,
+      "preparationDuration": 3600,
+      "duration": 10800,
+      "createdTime": "20220524T141707.000Z",
+      "gameMode": {
+        "id": 72000009
+      }
+    },
+    {
+      "tag": "#2QVGUGYU",
+      "type": "open",
+      "status": "inProgress",
+      "creatorTag": "#CLL0U0QQU",
+      "name": "los destructores503",
+      "levelCap": 11,
+      "firstPlaceCardPrize": 0,
+      "capacity": 2,
+      "maxCapacity": 50,
+      "preparationDuration": 3600,
+      "duration": 14400,
+      "createdTime": "20220524T130327.000Z",
+      "gameMode": {
+        "id": 72000194
+      }
+    },
+    {
+      "tag": "#2YL2LVVU",
+      "type": "open",
+      "status": "inProgress",
+      "creatorTag": "#CLCVLLJCP",
+      "name": "fight to the death",
+      "description": "by emmy",
+      "levelCap": 11,
+      "firstPlaceCardPrize": 0,
+      "capacity": 1,
+      "maxCapacity": 10,
+      "preparationDuration": 3600,
+      "duration": 14400,
+      "createdTime": "20220524T122825.000Z",
+      "gameMode": {
+        "id": 72000024
+      }
+    },
+    {
+      "tag": "#2GU2VUJ9",
+      "type": "open",
+      "status": "inProgress",
+      "creatorTag": "#U2JU0PCQY",
+      "name": "les deseo suerte",
+      "levelCap": 14,
+      "firstPlaceCardPrize": 0,
+      "capacity": 2,
+      "maxCapacity": 50,
+      "preparationDuration": 3600,
+      "duration": 14400,
+      "createdTime": "20220524T125004.000Z",
+      "gameMode": {
+        "id": 72000027
+      }
+    },
+    {
+      "tag": "#2PRYQU8Y",
+      "type": "open",
+      "status": "inPreparation",
+      "creatorTag": "#QJ0VPULPC",
+      "name": "de badboys",
+      "description": "voor de lol",
+      "levelCap": 11,
+      "firstPlaceCardPrize": 0,
+      "capacity": 1,
+      "maxCapacity": 1000,
+      "preparationDuration": 3600,
+      "duration": 14400,
+      "createdTime": "20220524T141748.000Z",
+      "gameMode": {
+        "id": 72000005
+      }
+    },
+    {
+      "tag": "#2PR9JG9P",
+      "type": "passwordProtected",
+      "status": "inProgress",
+      "creatorTag": "#L9QCJ8U2L",
+      "name": "los de la tec pt2",
+      "levelCap": 11,
+      "firstPlaceCardPrize": 0,
+      "capacity": 8,
+      "maxCapacity": 1000,
+      "preparationDuration": 3600,
+      "duration": 14400,
+      "createdTime": "20220524T132725.000Z",
+      "gameMode": {
+        "id": 72000005
+      }
+    }
+  ],
+  "paging": {
+    "cursors": {}
+  }
+}

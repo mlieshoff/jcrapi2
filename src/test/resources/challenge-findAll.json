@@ -1,0 +1,696 @@
+[
+  {
+    "type": "singleChallenge",
+    "startTime": "20220603T080000.000Z",
+    "endTime": "19700120T033502.400Z",
+    "challenges": [
+      {
+        "id": 73005979,
+        "name": "Double Elixir Challenge",
+        "description": "Create your own deck and play with double speed Elixir. 3 losses and you’re out, but you will have a chance to reset your losses and keep your progress.",
+        "winMode": "win",
+        "casual": false,
+        "maxLosses": 3,
+        "gameMode": {
+          "id": 72000011,
+          "name": "DoubleElixir_Friendly"
+        },
+        "prizes": [
+          {
+            "type": "none"
+          },
+          {
+            "type": "resource",
+            "amount": 500,
+            "resource": "gold"
+          },
+          {
+            "type": "consumable",
+            "amount": 1,
+            "consumableName": "ChestKey"
+          },
+          {
+            "type": "resource",
+            "amount": 500,
+            "resource": "gold"
+          },
+          {
+            "type": "resource",
+            "amount": 500,
+            "resource": "gold"
+          }
+        ],
+        "maxWins": 4,
+        "iconUrl": "https://event-assets.clashroyale.com/bb1fe911-e20f-41fe-b973-ba395be7aaf0_2elixir_challenge_02.png"
+      }
+    ]
+  },
+  {
+    "type": "singleChallenge",
+    "startTime": "20220516T080000.000Z",
+    "endTime": "19700120T031200.000Z",
+    "challenges": [
+      {
+        "id": 73005980,
+        "name": "Royal Tournament",
+        "description": "Bring your best deck into battle! Win as many battles as you can to earn rewards! Make it to the top 100 to earn an Exclusive Emote + 100000 bonus gold!",
+        "winMode": "win",
+        "casual": false,
+        "maxLosses": 5,
+        "gameMode": {
+          "id": 72000291,
+          "name": "Challenge_AllCards_EventDeck"
+        },
+        "prizes": [
+          {
+            "type": "none"
+          },
+          {
+            "type": "consumable",
+            "amount": 1,
+            "consumableName": "WildcardLegendary"
+          },
+          {
+            "type": "resource",
+            "amount": 10000,
+            "resource": "gold"
+          },
+          {
+            "type": "consumable",
+            "amount": 5,
+            "consumableName": "WildcardEpic"
+          },
+          {
+            "type": "chest",
+            "chest": "Epic"
+          },
+          {
+            "type": "resource",
+            "amount": 10000,
+            "resource": "gold"
+          },
+          {
+            "type": "consumable",
+            "amount": 25,
+            "consumableName": "WildcardRare"
+          },
+          {
+            "type": "chest",
+            "chest": "Giant"
+          },
+          {
+            "type": "resource",
+            "amount": 10000,
+            "resource": "gold"
+          },
+          {
+            "type": "consumable",
+            "amount": 25,
+            "consumableName": "WildcardRare"
+          },
+          {
+            "type": "chest",
+            "chest": "Kings"
+          },
+          {
+            "type": "resource",
+            "amount": 10000,
+            "resource": "gold"
+          },
+          {
+            "type": "consumable",
+            "amount": 100,
+            "consumableName": "WildcardCommon"
+          },
+          {
+            "type": "consumable",
+            "amount": 1,
+            "consumableName": "ChestKey"
+          },
+          {
+            "type": "resource",
+            "amount": 10000,
+            "resource": "gold"
+          },
+          {
+            "type": "chest",
+            "chest": "Magic"
+          }
+        ],
+        "maxWins": 15,
+        "iconUrl": "https://event-assets.clashroyale.com/c16fb977-1320-46db-8240-8de515ac0683_S17_global_tournament.png"
+      }
+    ]
+  },
+  {
+    "type": "singleChallenge",
+    "startTime": "20220527T080000.000Z",
+    "endTime": "19700120T032750.400Z",
+    "challenges": [
+      {
+        "id": 73005981,
+        "name": "Sudden Death Tournament",
+        "description": "Battle starts in Sudden Death... the first player to take a crown wins! Win as many battles as you can to earn rewards! Make it to the top 100 to earn an Exclusive Emote + 100000 bonus gold!",
+        "winMode": "win",
+        "casual": false,
+        "maxLosses": 5,
+        "gameMode": {
+          "id": 72000296,
+          "name": "Overtime_AllCards_EventDeck"
+        },
+        "prizes": [
+          {
+            "type": "none"
+          },
+          {
+            "type": "consumable",
+            "amount": 1,
+            "consumableName": "WildcardLegendary"
+          },
+          {
+            "type": "resource",
+            "amount": 10000,
+            "resource": "gold"
+          },
+          {
+            "type": "consumable",
+            "amount": 5,
+            "consumableName": "WildcardEpic"
+          },
+          {
+            "type": "chest",
+            "chest": "Epic"
+          },
+          {
+            "type": "resource",
+            "amount": 10000,
+            "resource": "gold"
+          },
+          {
+            "type": "consumable",
+            "amount": 25,
+            "consumableName": "WildcardRare"
+          },
+          {
+            "type": "chest",
+            "chest": "Giant"
+          },
+          {
+            "type": "resource",
+            "amount": 10000,
+            "resource": "gold"
+          },
+          {
+            "type": "consumable",
+            "amount": 25,
+            "consumableName": "WildcardRare"
+          },
+          {
+            "type": "chest",
+            "chest": "Kings"
+          },
+          {
+            "type": "resource",
+            "amount": 10000,
+            "resource": "gold"
+          },
+          {
+            "type": "consumable",
+            "amount": 100,
+            "consumableName": "WildcardCommon"
+          },
+          {
+            "type": "consumable",
+            "amount": 1,
+            "consumableName": "ChestKey"
+          },
+          {
+            "type": "resource",
+            "amount": 10000,
+            "resource": "gold"
+          },
+          {
+            "type": "chest",
+            "chest": "Magic"
+          }
+        ],
+        "maxWins": 15,
+        "iconUrl": "https://event-assets.clashroyale.com/ccfec9ef-fdbc-4db2-bca5-3766d9ee1e0a_global_tournament_sudden.png"
+      }
+    ]
+  },
+  {
+    "type": "singleChallenge",
+    "startTime": "20220601T080000.000Z",
+    "endTime": "19700120T033502.400Z",
+    "challenges": [
+      {
+        "id": 73005984,
+        "name": "Double Elixir Challenge",
+        "description": "Create your own deck and play with double speed Elixir. 3 losses and you’re out, but you will have a chance to reset your losses and keep your progress.",
+        "winMode": "win",
+        "casual": false,
+        "maxLosses": 3,
+        "gameMode": {
+          "id": 72000011,
+          "name": "DoubleElixir_Friendly"
+        },
+        "prizes": [
+          {
+            "type": "none"
+          },
+          {
+            "type": "resource",
+            "amount": 5000,
+            "resource": "gold"
+          },
+          {
+            "type": "resource",
+            "amount": 4000,
+            "resource": "gold"
+          },
+          {
+            "type": "resource",
+            "amount": 3000,
+            "resource": "gold"
+          },
+          {
+            "type": "resource",
+            "amount": 2000,
+            "resource": "gold"
+          },
+          {
+            "type": "resource",
+            "amount": 1000,
+            "resource": "gold"
+          },
+          {
+            "type": "chest",
+            "chest": "GoldCage_Medium"
+          }
+        ],
+        "maxWins": 6,
+        "iconUrl": "https://event-assets.clashroyale.com/bb1fe911-e20f-41fe-b973-ba395be7aaf0_2elixir_challenge_02.png"
+      }
+    ]
+  },
+  {
+    "type": "singleChallenge",
+    "startTime": "20220523T080000.000Z",
+    "endTime": "19700120T032457.600Z",
+    "challenges": [
+      {
+        "id": 73005986,
+        "name": "The Floor Is Healing!",
+        "description": "Battle, Heal, Repeat! The entire Arena has a Heal spell effect. Build your deck and battle. No losses! Play to the final reward!",
+        "winMode": "win",
+        "casual": true,
+        "maxLosses": 0,
+        "gameMode": {
+          "id": 72000255,
+          "name": "GlobalHeal_NoBuildings_Tournament"
+        },
+        "prizes": [
+          {
+            "type": "none"
+          },
+          {
+            "type": "resource",
+            "amount": 1000,
+            "resource": "gold"
+          },
+          {
+            "type": "resource",
+            "amount": 1000,
+            "resource": "gold"
+          },
+          {
+            "type": "resource",
+            "amount": 1000,
+            "resource": "gold"
+          },
+          {
+            "type": "resource",
+            "amount": 1000,
+            "resource": "gold"
+          },
+          {
+            "type": "resource",
+            "amount": 1000,
+            "resource": "gold"
+          },
+          {
+            "type": "resource",
+            "amount": 500,
+            "resource": "gold"
+          },
+          {
+            "type": "resource",
+            "amount": 500,
+            "resource": "gold"
+          },
+          {
+            "type": "resource",
+            "amount": 500,
+            "resource": "gold"
+          },
+          {
+            "type": "resource",
+            "amount": 500,
+            "resource": "gold"
+          },
+          {
+            "type": "resource",
+            "amount": 3000,
+            "resource": "gold"
+          }
+        ],
+        "maxWins": 10,
+        "iconUrl": "https://event-assets.clashroyale.com/6701f3db-e457-42b3-b2a8-17a2db2eb8c8_FloorisHealing_Banner.png"
+      }
+    ]
+  },
+  {
+    "type": "challengeChain",
+    "title": "Free Super Card Event!",
+    "startTime": "20220513T080000.000Z",
+    "endTime": "19700120T031452.800Z",
+    "challenges": [
+      {
+        "id": 73005992,
+        "name": "Super Witch Crown Challenge",
+        "description": "Witch is temporarily powered up! Build a deck with Super Witch, and collect CROWNS for free rewards! No losses! Play to the final reward!",
+        "winMode": "crown",
+        "casual": true,
+        "maxLosses": 0,
+        "gameMode": {
+          "id": 72000311,
+          "name": "Event_SuperWitch"
+        },
+        "prizes": [
+          {
+            "type": "none"
+          },
+          {
+            "type": "resource",
+            "amount": 500,
+            "resource": "gold"
+          },
+          {
+            "type": "none"
+          },
+          {
+            "type": "cardStack",
+            "amount": 50,
+            "card": {
+              "name": null,
+              "id": 28000008,
+              "maxLevel": 0
+            },
+            "rarity": "common"
+          },
+          {
+            "type": "none"
+          },
+          {
+            "type": "resource",
+            "amount": 500,
+            "resource": "gold"
+          },
+          {
+            "type": "none"
+          },
+          {
+            "type": "cardStack",
+            "amount": 50,
+            "card": {
+              "name": null,
+              "id": 28000001,
+              "maxLevel": 0
+            },
+            "rarity": "common"
+          },
+          {
+            "type": "none"
+          },
+          {
+            "type": "chest",
+            "chest": "GoldCage_Large"
+          }
+        ],
+        "maxWins": 9,
+        "iconUrl": "https://event-assets.clashroyale.com/6b6ac71f-035d-4590-8e96-d3a125342a06_SuperWitch_Chain1_Complete.png"
+      },
+      {
+        "id": 73005993,
+        "name": "Super Witch Crown Challenge",
+        "description": "Witch is temporarily powered up! Build a deck with Super Witch, and collect CROWNS for free rewards! No losses! Play to the final reward!",
+        "winMode": "crown",
+        "casual": true,
+        "maxLosses": 0,
+        "gameMode": {
+          "id": 72000311,
+          "name": "Event_SuperWitch"
+        },
+        "prizes": [
+          {
+            "type": "none"
+          },
+          {
+            "type": "none"
+          },
+          {
+            "type": "resource",
+            "amount": 500,
+            "resource": "gold"
+          },
+          {
+            "type": "none"
+          },
+          {
+            "type": "cardStack",
+            "amount": 50,
+            "card": {
+              "name": null,
+              "id": 28000018,
+              "maxLevel": 0
+            },
+            "rarity": "common"
+          },
+          {
+            "type": "none"
+          },
+          {
+            "type": "resource",
+            "amount": 500,
+            "resource": "gold"
+          },
+          {
+            "type": "none"
+          },
+          {
+            "type": "cardStack",
+            "amount": 25,
+            "card": {
+              "name": null,
+              "id": 26000017,
+              "maxLevel": 0
+            },
+            "rarity": "common"
+          },
+          {
+            "type": "none"
+          },
+          {
+            "type": "resource",
+            "amount": 500,
+            "resource": "gold"
+          },
+          {
+            "type": "none"
+          },
+          {
+            "type": "chest",
+            "chest": "GoldCage_Large"
+          }
+        ],
+        "maxWins": 12,
+        "iconUrl": "https://event-assets.clashroyale.com/ddb245da-f3f8-430d-a24b-c5e65827c380_SuperWitch_Chain2_complete.png"
+      },
+      {
+        "id": 73005994,
+        "name": "Super Witch Crown Challenge",
+        "description": "Witch is temporarily powered up! Build a deck with Super Witch, and collect CROWNS for free rewards! No losses! Play to the final reward!",
+        "winMode": "crown",
+        "casual": true,
+        "maxLosses": 0,
+        "gameMode": {
+          "id": 72000311,
+          "name": "Event_SuperWitch"
+        },
+        "prizes": [
+          {
+            "type": "none"
+          },
+          {
+            "type": "resource",
+            "amount": 500,
+            "resource": "gold"
+          },
+          {
+            "type": "none"
+          },
+          {
+            "type": "resource",
+            "amount": 500,
+            "resource": "gold"
+          },
+          {
+            "type": "none"
+          },
+          {
+            "type": "resource",
+            "amount": 500,
+            "resource": "gold"
+          },
+          {
+            "type": "none"
+          },
+          {
+            "type": "cardStack",
+            "amount": 10,
+            "card": {
+              "name": null,
+              "id": 28000009,
+              "maxLevel": 0
+            },
+            "rarity": "common"
+          },
+          {
+            "type": "none"
+          },
+          {
+            "type": "resource",
+            "amount": 500,
+            "resource": "gold"
+          },
+          {
+            "type": "none"
+          },
+          {
+            "type": "resource",
+            "amount": 500,
+            "resource": "gold"
+          },
+          {
+            "type": "none"
+          },
+          {
+            "type": "resource",
+            "amount": 500,
+            "resource": "gold"
+          },
+          {
+            "type": "none"
+          },
+          {
+            "type": "consumable",
+            "amount": 1,
+            "consumableName": "WildcardLegendary"
+          }
+        ],
+        "maxWins": 15,
+        "iconUrl": "https://event-assets.clashroyale.com/6f550216-4fee-4f76-acd1-2c39a408fcd0_SuperWitch_Chain3_complete.png"
+      },
+      {
+        "id": 73005995,
+        "name": "Super Witch Crown Challenge",
+        "description": "Witch is temporarily powered up! Build a deck with Super Witch, and collect CROWNS for free rewards! No losses! Play to the final reward!",
+        "winMode": "crown",
+        "casual": true,
+        "maxLosses": 0,
+        "gameMode": {
+          "id": 72000311,
+          "name": "Event_SuperWitch"
+        },
+        "prizes": [
+          {
+            "type": "none"
+          },
+          {
+            "type": "none"
+          },
+          {
+            "type": "resource",
+            "amount": 500,
+            "resource": "gold"
+          },
+          {
+            "type": "none"
+          },
+          {
+            "type": "resource",
+            "amount": 500,
+            "resource": "gold"
+          },
+          {
+            "type": "none"
+          },
+          {
+            "type": "resource",
+            "amount": 500,
+            "resource": "gold"
+          },
+          {
+            "type": "none"
+          },
+          {
+            "type": "resource",
+            "amount": 500,
+            "resource": "gold"
+          },
+          {
+            "type": "none"
+          },
+          {
+            "type": "resource",
+            "amount": 500,
+            "resource": "gold"
+          },
+          {
+            "type": "none"
+          },
+          {
+            "type": "resource",
+            "amount": 500,
+            "resource": "gold"
+          },
+          {
+            "type": "none"
+          },
+          {
+            "type": "resource",
+            "amount": 500,
+            "resource": "gold"
+          },
+          {
+            "type": "none"
+          },
+          {
+            "type": "resource",
+            "amount": 500,
+            "resource": "gold"
+          },
+          {
+            "type": "none"
+          },
+          {
+            "type": null
+          }
+        ],
+        "maxWins": 18,
+        "iconUrl": "https://event-assets.clashroyale.com/d246d8e6-c944-4f0c-a98d-9f80f5a953cc_SuperWitch_Chain4_complete.png"
+      }
+    ]
+  }
+]

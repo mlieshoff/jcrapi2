@@ -1,0 +1,673 @@
+{
+  "items": [
+    {
+      "tag": "#YPR02QUJ",
+      "name": "joris bord",
+      "expLevel": 14,
+      "trophies": 6016,
+      "rank": 1,
+      "previousRank": 1,
+      "clan": {
+        "tag": "#Y8G8C",
+        "name": "Ambitionz FR",
+        "badgeId": 16000078
+      },
+      "arena": {
+        "id": 54000015,
+        "name": "Master I"
+      }
+    },
+    {
+      "tag": "#LCPYJ9RJP",
+      "name": "amaury",
+      "expLevel": 11,
+      "trophies": 5307,
+      "rank": 2,
+      "previousRank": 2,
+      "clan": {
+        "tag": "#G9V0U0QU",
+        "name": "K C D KUu",
+        "badgeId": 16000175
+      },
+      "arena": {
+        "id": 54000013,
+        "name": "Challenger II"
+      }
+    },
+    {
+      "tag": "#GY88QUVY9",
+      "name": "Haagrah!",
+      "expLevel": 12,
+      "trophies": 5209,
+      "rank": 3,
+      "previousRank": 3,
+      "arena": {
+        "id": 54000012,
+        "name": "Legendary Arena"
+      }
+    },
+    {
+      "tag": "#JYCGVV0U2",
+      "name": "KNG SMK",
+      "expLevel": 10,
+      "trophies": 5192,
+      "rank": 4,
+      "previousRank": 5,
+      "clan": {
+        "tag": "#JCY2J9R",
+        "name": "ADCOG",
+        "badgeId": 16000078
+      },
+      "arena": {
+        "id": 54000012,
+        "name": "Legendary Arena"
+      }
+    },
+    {
+      "tag": "#QGYCGURYU",
+      "name": "GoldenPash",
+      "expLevel": 12,
+      "trophies": 5104,
+      "rank": 5,
+      "previousRank": 4,
+      "clan": {
+        "tag": "#LQU2JQ99",
+        "name": "les b0ul!$tes",
+        "badgeId": 16000162
+      },
+      "arena": {
+        "id": 54000012,
+        "name": "Legendary Arena"
+      }
+    },
+    {
+      "tag": "#8R80VVQCV",
+      "name": "??Mystère¿¿",
+      "expLevel": 12,
+      "trophies": 5008,
+      "rank": 6,
+      "previousRank": 6,
+      "clan": {
+        "tag": "#QVPG00QG",
+        "name": "SKARX",
+        "badgeId": 16000144
+      },
+      "arena": {
+        "id": 54000012,
+        "name": "Legendary Arena"
+      }
+    },
+    {
+      "tag": "#8J2RUVY8G",
+      "name": "CHOPAA",
+      "expLevel": 10,
+      "trophies": 4765,
+      "rank": 7,
+      "previousRank": 7,
+      "clan": {
+        "tag": "#QCYC8RJY",
+        "name": "Les Nouilles",
+        "badgeId": 16000078
+      },
+      "arena": {
+        "id": 54000056,
+        "name": "Arena 14"
+      }
+    },
+    {
+      "tag": "#9U989CYVJ",
+      "name": "Eon",
+      "expLevel": 11,
+      "trophies": 4343,
+      "rank": 8,
+      "previousRank": 8,
+      "clan": {
+        "tag": "#LJC2CR0L",
+        "name": "cartel35",
+        "badgeId": 16000158
+      },
+      "arena": {
+        "id": 54000055,
+        "name": "Arena 13"
+      }
+    },
+    {
+      "tag": "#C82QC9P",
+      "name": "adamadèm",
+      "expLevel": 11,
+      "trophies": 4296,
+      "rank": 9,
+      "previousRank": 9,
+      "clan": {
+        "tag": "#QR0PGVR9",
+        "name": "CABALLOGANG",
+        "badgeId": 16000138
+      },
+      "arena": {
+        "id": 54000055,
+        "name": "Arena 13"
+      }
+    },
+    {
+      "tag": "#YLV9GL2VU",
+      "name": "tristan",
+      "expLevel": 9,
+      "trophies": 3763,
+      "rank": 10,
+      "previousRank": 10,
+      "clan": {
+        "tag": "#Y28V8U90",
+        "name": "PAPY BG",
+        "badgeId": 16000176
+      },
+      "arena": {
+        "id": 54000011,
+        "name": "Arena 12"
+      }
+    },
+    {
+      "tag": "#LP2C8RC88",
+      "name": "Exe Evo",
+      "expLevel": 8,
+      "trophies": 3508,
+      "rank": 11,
+      "previousRank": 11,
+      "arena": {
+        "id": 54000024,
+        "name": "Arena 11"
+      }
+    },
+    {
+      "tag": "#8JGVJLUU2",
+      "name": "GOSTS life team",
+      "expLevel": 10,
+      "trophies": 3400,
+      "rank": 12,
+      "previousRank": 12,
+      "clan": {
+        "tag": "#LGCG0R0L",
+        "name": "french elite",
+        "badgeId": 16000078
+      },
+      "arena": {
+        "id": 54000024,
+        "name": "Arena 11"
+      }
+    },
+    {
+      "tag": "#JGP9YG2JQ",
+      "name": "Aspirant",
+      "expLevel": 8,
+      "trophies": 3167,
+      "rank": 13,
+      "previousRank": 13,
+      "arena": {
+        "id": 54000007,
+        "name": "Arena 10"
+      }
+    },
+    {
+      "tag": "#JUL22QUQJ",
+      "name": "Alexandre",
+      "expLevel": 9,
+      "trophies": 2632,
+      "rank": 14,
+      "previousRank": 14,
+      "clan": {
+        "tag": "#LRYP9QCL",
+        "name": "$amoa gāng",
+        "badgeId": 16000077
+      },
+      "arena": {
+        "id": 54000010,
+        "name": "Arena 9"
+      }
+    },
+    {
+      "tag": "#JJ9UJRURY",
+      "name": "kolovao986",
+      "expLevel": 10,
+      "trophies": 2621,
+      "rank": 15,
+      "previousRank": 16,
+      "clan": {
+        "tag": "#LRPVR2PG",
+        "name": "MAXIPICHON",
+        "badgeId": 16000078
+      },
+      "arena": {
+        "id": 54000010,
+        "name": "Arena 9"
+      }
+    },
+    {
+      "tag": "#UJQGLCLJ8",
+      "name": "/\\RKVNE_",
+      "expLevel": 9,
+      "trophies": 2600,
+      "rank": 16,
+      "previousRank": 15,
+      "clan": {
+        "tag": "#2GYUR9CQ",
+        "name": "clan destino",
+        "badgeId": 16000078
+      },
+      "arena": {
+        "id": 54000010,
+        "name": "Arena 9"
+      }
+    },
+    {
+      "tag": "#R98ULY899",
+      "name": "LOOLSIDE",
+      "expLevel": 7,
+      "trophies": 2300,
+      "rank": 17,
+      "previousRank": 17,
+      "clan": {
+        "tag": "#LR0RGC28",
+        "name": "ClanRoyale",
+        "badgeId": 16000077
+      },
+      "arena": {
+        "id": 54000009,
+        "name": "Arena 8"
+      }
+    },
+    {
+      "tag": "#C899LU8YQ",
+      "name": "MELIODÅS",
+      "expLevel": 8,
+      "trophies": 2300,
+      "rank": 18,
+      "previousRank": 18,
+      "clan": {
+        "tag": "#LQJU9PJ8",
+        "name": "THOUSAND WINTER",
+        "badgeId": 16000177
+      },
+      "arena": {
+        "id": 54000009,
+        "name": "Arena 8"
+      }
+    },
+    {
+      "tag": "#JRGVR8G0G",
+      "name": "Supreme Pike",
+      "expLevel": 8,
+      "trophies": 2089,
+      "rank": 19,
+      "previousRank": 19,
+      "clan": {
+        "tag": "#PV9LPCCQ",
+        "name": "LATINOS ¡MX!",
+        "badgeId": 16000090
+      },
+      "arena": {
+        "id": 54000008,
+        "name": "Arena 7"
+      }
+    },
+    {
+      "tag": "#CVY228R9P",
+      "name": "Méga Chevalier",
+      "expLevel": 9,
+      "trophies": 2080,
+      "rank": 20,
+      "previousRank": 20,
+      "clan": {
+        "tag": "#QRVYLUPV",
+        "name": "les loups charo",
+        "badgeId": 16000164
+      },
+      "arena": {
+        "id": 54000008,
+        "name": "Arena 7"
+      }
+    },
+    {
+      "tag": "#CVYYRUQRY",
+      "name": "sano melody",
+      "expLevel": 9,
+      "trophies": 2000,
+      "rank": 21,
+      "previousRank": 21,
+      "arena": {
+        "id": 54000008,
+        "name": "Arena 7"
+      }
+    },
+    {
+      "tag": "#CJVJJ2CQ0",
+      "name": "Victor 986",
+      "expLevel": 8,
+      "trophies": 1697,
+      "rank": 22,
+      "previousRank": 22,
+      "clan": {
+        "tag": "#L8R8VYLR",
+        "name": "Los gayos",
+        "badgeId": 16000117
+      },
+      "arena": {
+        "id": 54000006,
+        "name": "Arena 6"
+      }
+    },
+    {
+      "tag": "#PLY2JUQQJ",
+      "name": "Makateke",
+      "expLevel": 8,
+      "trophies": 1600,
+      "rank": 23,
+      "previousRank": 23,
+      "clan": {
+        "tag": "#LP9UGQU2",
+        "name": "CMJCR",
+        "badgeId": 16000028
+      },
+      "arena": {
+        "id": 54000006,
+        "name": "Arena 6"
+      }
+    },
+    {
+      "tag": "#CRLPCY928",
+      "name": "sevenclook910",
+      "expLevel": 7,
+      "trophies": 1330,
+      "rank": 24,
+      "previousRank": 24,
+      "arena": {
+        "id": 54000005,
+        "name": "Arena 5"
+      }
+    },
+    {
+      "tag": "#JCJRVYUC2",
+      "name": "Kyōjurō Rengoku",
+      "expLevel": 8,
+      "trophies": 1307,
+      "rank": 25,
+      "previousRank": 25,
+      "clan": {
+        "tag": "#LRYP9QCL",
+        "name": "$amoa gāng",
+        "badgeId": 16000077
+      },
+      "arena": {
+        "id": 54000005,
+        "name": "Arena 5"
+      }
+    },
+    {
+      "tag": "#GGJL90P0L",
+      "name": "oniichan",
+      "expLevel": 8,
+      "trophies": 1300,
+      "rank": 26,
+      "previousRank": 26,
+      "arena": {
+        "id": 54000005,
+        "name": "Arena 5"
+      }
+    },
+    {
+      "tag": "#8JLRRQ0P2",
+      "name": "ALKSH€LuLuL",
+      "expLevel": 7,
+      "trophies": 1149,
+      "rank": 27,
+      "previousRank": 27,
+      "arena": {
+        "id": 54000004,
+        "name": "Arena 4"
+      }
+    },
+    {
+      "tag": "#U2PGRG0YP",
+      "name": "william",
+      "expLevel": 7,
+      "trophies": 1064,
+      "rank": 28,
+      "previousRank": 29,
+      "arena": {
+        "id": 54000004,
+        "name": "Arena 4"
+      }
+    },
+    {
+      "tag": "#CPY8V8GU2",
+      "name": "Julien45",
+      "expLevel": 6,
+      "trophies": 1060,
+      "rank": 29,
+      "previousRank": 28,
+      "clan": {
+        "tag": "#LCYGG888",
+        "name": "Julien45",
+        "badgeId": 16000078
+      },
+      "arena": {
+        "id": 54000004,
+        "name": "Arena 4"
+      }
+    },
+    {
+      "tag": "#CC8RVRR2J",
+      "name": "LE BOSS",
+      "expLevel": 8,
+      "trophies": 1030,
+      "rank": 30,
+      "previousRank": 30,
+      "clan": {
+        "tag": "#G88RU202",
+        "name": "7 ans",
+        "badgeId": 16000050
+      },
+      "arena": {
+        "id": 54000004,
+        "name": "Arena 4"
+      }
+    },
+    {
+      "tag": "#URUQVPUU9",
+      "name": "william",
+      "expLevel": 6,
+      "trophies": 1000,
+      "rank": 31,
+      "previousRank": 31,
+      "clan": {
+        "tag": "#Q80LRG8L",
+        "name": "Les raciste",
+        "badgeId": 16000078
+      },
+      "arena": {
+        "id": 54000004,
+        "name": "Arena 4"
+      }
+    },
+    {
+      "tag": "#UR9VYJP02",
+      "name": "Xilef V2",
+      "expLevel": 6,
+      "trophies": 957,
+      "rank": 32,
+      "previousRank": 32,
+      "clan": {
+        "tag": "#LR0RGC28",
+        "name": "ClanRoyale",
+        "badgeId": 16000077
+      },
+      "arena": {
+        "id": 54000003,
+        "name": "Arena 3"
+      }
+    },
+    {
+      "tag": "#YQP99JQY",
+      "name": "joselito",
+      "expLevel": 4,
+      "trophies": 839,
+      "rank": 33,
+      "previousRank": 33,
+      "arena": {
+        "id": 54000003,
+        "name": "Arena 3"
+      }
+    },
+    {
+      "tag": "#ULU2CLJU9",
+      "name": "killerbee986",
+      "expLevel": 6,
+      "trophies": 824,
+      "rank": 34,
+      "previousRank": 34,
+      "arena": {
+        "id": 54000003,
+        "name": "Arena 3"
+      }
+    },
+    {
+      "tag": "#CQ2J92UQL",
+      "name": "leela22",
+      "expLevel": 6,
+      "trophies": 738,
+      "rank": 35,
+      "previousRank": 35,
+      "clan": {
+        "tag": "#GR9RGL",
+        "name": "La Reunion Boss",
+        "badgeId": 16000142
+      },
+      "arena": {
+        "id": 54000003,
+        "name": "Arena 3"
+      }
+    },
+    {
+      "tag": "#J9YVQJRJ9",
+      "name": "leo",
+      "expLevel": 6,
+      "trophies": 660,
+      "rank": 36,
+      "previousRank": 36,
+      "arena": {
+        "id": 54000003,
+        "name": "Arena 3"
+      }
+    },
+    {
+      "tag": "#CVLQR89UC",
+      "name": "NiTram Pgn",
+      "expLevel": 5,
+      "trophies": 649,
+      "rank": 37,
+      "previousRank": 37,
+      "clan": {
+        "tag": "#LR0RGC28",
+        "name": "ClanRoyale",
+        "badgeId": 16000077
+      },
+      "arena": {
+        "id": 54000003,
+        "name": "Arena 3"
+      }
+    },
+    {
+      "tag": "#CQ9PP2RQJ",
+      "name": "Élite dpn",
+      "expLevel": 6,
+      "trophies": 600,
+      "rank": 38,
+      "previousRank": 38,
+      "clan": {
+        "tag": "#LR0RGC28",
+        "name": "ClanRoyale",
+        "badgeId": 16000077
+      },
+      "arena": {
+        "id": 54000003,
+        "name": "Arena 3"
+      }
+    },
+    {
+      "tag": "#GV0YV099R",
+      "name": "piggy",
+      "expLevel": 4,
+      "trophies": 256,
+      "rank": 39,
+      "previousRank": 39,
+      "clan": {
+        "tag": "#LG22R9L8",
+        "name": "Kitsune",
+        "badgeId": 16000175
+      },
+      "arena": {
+        "id": 54000001,
+        "name": "Arena 1"
+      }
+    },
+    {
+      "tag": "#GJ98JUU9Y",
+      "name": "kirito",
+      "expLevel": 3,
+      "trophies": 148,
+      "rank": 40,
+      "previousRank": 40,
+      "arena": {
+        "id": 54000001,
+        "name": "Arena 1"
+      }
+    },
+    {
+      "tag": "#CCL8YCRY9",
+      "name": "elioenai",
+      "expLevel": 3,
+      "trophies": 97,
+      "rank": 41,
+      "previousRank": 41,
+      "clan": {
+        "tag": "#LCYGG888",
+        "name": "Julien45",
+        "badgeId": 16000078
+      },
+      "arena": {
+        "id": 54000001,
+        "name": "Arena 1"
+      }
+    },
+    {
+      "tag": "#V0JV9UUYC",
+      "name": "986",
+      "expLevel": 2,
+      "trophies": 82,
+      "rank": 42,
+      "previousRank": 42,
+      "arena": {
+        "id": 54000001,
+        "name": "Arena 1"
+      }
+    },
+    {
+      "tag": "#U0YRL0QL2",
+      "name": "Kazumi09",
+      "expLevel": 3,
+      "trophies": 54,
+      "rank": 43,
+      "previousRank": 43,
+      "clan": {
+        "tag": "#LGYGU80J",
+        "name": "F3B",
+        "badgeId": 16000078
+      },
+      "arena": {
+        "id": 54000001,
+        "name": "Arena 1"
+      }
+    }
+  ],
+  "paging": {
+    "cursors": {}
+  }
+}

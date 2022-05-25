@@ -1,232 +1,397 @@
 [![](https://img.shields.io/badge/java-packagecloud.io-844fec.svg)](https://packagecloud.io/)
 
-# jcrapi2 1.0.4
-A Java Wrapper For Official Supercell Clash Royal Api 
+# jcrapi2 2.0.0
+A Java Wrapper For Official Supercell Clash Royal Api
 
-## Why we moved to the amazing services of packagecloud.io?
+## Why we don't use the Swagger scheme?
 
-We moved to packagecloud.io because the bintray closed their nice hosting... And packagecloud.io is a really nice place 
-to be :)
+A big sorry for that, but the quality of that scheme changes from day to day.
+Another big sorry, but the OpenApi Java generator is producing code quality we like much.
+That's simple why :) If you think the same way (it may differ from case to case of course), feel free to continue using our wrapper.
 
-## Simplest Usage ##
+## Why we moved to the amazing services of packagecloud?
 
-Note: Please combine the builder methods as it makes sense. The demonstrated usage is showing only all possibilities. 
-For more information please check 
+We moved to packagecloud.io because the bintray closed their nice hosting... And packagecloud.io is a really nice place to be :)
+
+## Simplest Usage
+
+Note: Please combine the builder methods as it makes sense. The demonstrated is showing only all possibilities.
+For more information please check
 
 https://developer.clashroyale.com/#/documentation
 
-```java
-// connect to api
-Api api = new Api("https://api.clashroyale.com/v1/", "my-api-key");
+Use one of these endpoints:
+
+Official endpoint
+```
+    https://api.clashroyale.com/v1
 ```
 
-```java
-// get clans
-GetClansResponse getClansResponse = api.getClans(GetClansRequest.builder()
-  // search criteria
-  .name()
-  .locationId()
-  .minScore()
-  .minMembers()
-  .maxMembers()
-  // paging
-  .after()
-  .before()
-  .limit()
-  .build()
-);
+Proxy endpoint
+```
+    https://crproxy.royaleapi.dev/v1
 ```
 
+Use built-in http connector
 ```java
-// get clan
-GetClanResponse getClanResponse = api.getClan(GetClanRequest.builder("#RP88QQG").build());
+    Connector connector = new StandardConnector();
 ```
 
+or use custom implementation
 ```java
-// get clan members
-GetClanMembersResponse getClanMembersResponse = api.getClanMembers(GetClanMembersRequest.builder("#RP88QQG")
-  // paging
-  .after()
-  .before()
-  .limit()
-  .build()
-);
+    Connector connector = new Connector() {
+        @Override
+        public <T extends IResponse> T get(RequestContext requestContext) throws ConnectorException {
+                // do not forget to use auth header with *Bearer*
+                String authHeader =  "Authorization: Bearer " + requestContext.getApiKey();
+            }
+        }
+    );
 ```
 
+connect to the api with creating a *ClashRoyale* instance.
 ```java
-// get clan war log
-GetClanWarLogResponse getClanWarLogResponse = api.getClanWarLog(GetClanWarLogRequest.builder("#RP88QQG")
-  // paging
-  .after()
-  .before()
-  .limit()
-  .build()
-);
+    JCrApi jCrApi = new JCrApi("https://crproxy.royaleapi.dev/v1", "my-api-key", connector);
 ```
 
+list all supported apis
 ```java
-// get clan current war
-GetClanCurrentWarResponse getClanCurrentWarResponse = api.getClanCurrentWar(GetClanCurrentWarRequest.builder("#RP88QQG").build());
+    System.out.println(jCrApi.listApis());
 ```
 
+### List of APIs and example usages
+
+#### ClanApi
 ```java
-// get player
-GetPlayerResponse getPlayerResponse = api.getPlayer(GetPlayerRequest.builder("#L88P2282").build());
+    // create an instance for the api
+    ClanApi api = jCrApi.getApi(ClanApi.class);
+```
+```java
+    // findAll
+    ClansResponse response = api.findAll(clansRequest.builder()
+           .name()
+           .locationId()
+           .minMembers()
+           .maxMembers()
+           // pagination
+           .limit()
+           .after()
+           .before()
+           // store raw response
+           .storeRawResponse()
+        .build()
+    ).get();
+```
+```java
+    // findByTag
+    ClanResponse response = api.findByTag(clanRequest.builder()
+           .clanTag()
+           // store raw response
+           .storeRawResponse()
+        .build()
+    ).get();
+```
+```java
+    // getRiverRaceLog
+    RiverRaceLogResponse response = api.getRiverRaceLog(riverRaceLogRequest.builder()
+           .clanTag()
+           // pagination
+           .limit()
+           .after()
+           .before()
+           // store raw response
+           .storeRawResponse()
+        .build()
+    ).get();
+```
+```java
+    // getMembers
+    ClanMembersResponse response = api.getMembers(clanMembersRequest.builder()
+           .clanTag()
+           // pagination
+           .limit()
+           .after()
+           .before()
+           // store raw response
+           .storeRawResponse()
+        .build()
+    ).get();
+```
+```java
+    // getCurrentRiverRace
+    CurrentRiverRaceResponse response = api.getCurrentRiverRace(currentRiverRaceRequest.builder()
+           .clanTag()
+           // store raw response
+           .storeRawResponse()
+        .build()
+    ).get();
+```
+#### PlayerApi
+```java
+    // create an instance for the api
+    PlayerApi api = jCrApi.getApi(PlayerApi.class);
+```
+```java
+    // findByTag
+    PlayerResponse response = api.findByTag(playerRequest.builder()
+           .playerTag()
+           // store raw response
+           .storeRawResponse()
+        .build()
+    ).get();
+```
+```java
+    // getUpcomingChests
+    UpcomingChestsResponse response = api.getUpcomingChests(upcomingChestsRequest.builder()
+           .playerTag()
+           // store raw response
+           .storeRawResponse()
+        .build()
+    ).get();
+```
+```java
+    // getBattleLog
+    BattleLogResponse response = api.getBattleLog(battleLogRequest.builder()
+           .playerTag()
+           // store raw response
+           .storeRawResponse()
+        .build()
+    ).get();
+```
+#### CardApi
+```java
+    // create an instance for the api
+    CardApi api = jCrApi.getApi(CardApi.class);
+```
+```java
+    // findAll
+    CardsResponse response = api.findAll(cardsRequest.builder()
+           // store raw response
+           .storeRawResponse()
+        .build()
+    ).get();
+```
+#### TournamentApi
+```java
+    // create an instance for the api
+    TournamentApi api = jCrApi.getApi(TournamentApi.class);
+```
+```java
+    // findAll
+    TournamentsResponse response = api.findAll(tournamentsRequest.builder()
+           .name()
+           // pagination
+           .limit()
+           .after()
+           .before()
+           // store raw response
+           .storeRawResponse()
+        .build()
+    ).get();
+```
+```java
+    // findByTag
+    TournamentResponse response = api.findByTag(tournamentRequest.builder()
+           .tournamentTag()
+           // pagination
+           .limit()
+           .after()
+           .before()
+           // store raw response
+           .storeRawResponse()
+        .build()
+    ).get();
+```
+#### LocationApi
+```java
+    // create an instance for the api
+    LocationApi api = jCrApi.getApi(LocationApi.class);
+```
+```java
+    // findAll
+    LocationsResponse response = api.findAll(locationsRequest.builder()
+           // pagination
+           .limit()
+           .after()
+           .before()
+           // store raw response
+           .storeRawResponse()
+        .build()
+    ).get();
+```
+```java
+    // findById
+    LocationResponse response = api.findById(locationRequest.builder()
+           .locationId()
+           // store raw response
+           .storeRawResponse()
+        .build()
+    ).get();
+```
+```java
+    // getClanRankings
+    ClanRankingsResponse response = api.getClanRankings(clanRankingsRequest.builder()
+           .locationId()
+           // pagination
+           .limit()
+           .after()
+           .before()
+           // store raw response
+           .storeRawResponse()
+        .build()
+    ).get();
+```
+```java
+    // getPlayerRankings
+    PlayerRankingsResponse response = api.getPlayerRankings(playerRankingsRequest.builder()
+           .locationId()
+           // pagination
+           .limit()
+           .after()
+           .before()
+           // store raw response
+           .storeRawResponse()
+        .build()
+    ).get();
+```
+```java
+    // getClanWarRankings
+    ClanWarRankingsResponse response = api.getClanWarRankings(clanWarRankingsRequest.builder()
+           .locationId()
+           // pagination
+           .limit()
+           .after()
+           .before()
+           // store raw response
+           .storeRawResponse()
+        .build()
+    ).get();
+```
+```java
+    // getTopPlayerLeagueSeasons
+    TopPlayerLeagueSeasonsResponse response = api.getTopPlayerLeagueSeasons(topPlayerLeagueSeasonsRequest.builder()
+           // pagination
+           .limit()
+           .after()
+           .before()
+           // store raw response
+           .storeRawResponse()
+        .build()
+    ).get();
+```
+```java
+    // getTopPlayerLeagueSeason
+    TopPlayerLeagueSeasonResponse response = api.getTopPlayerLeagueSeason(topPlayerLeagueSeasonRequest.builder()
+           .seasonId()
+           // store raw response
+           .storeRawResponse()
+        .build()
+    ).get();
+```
+```java
+    // getTopPlayerLeagueSeasonRankings
+    TopPlayerLeagueSeasonRankingsResponse response = api.getTopPlayerLeagueSeasonRankings(topPlayerLeagueSeasonRankingsRequest.builder()
+           .seasonId()
+           // pagination
+           .limit()
+           .after()
+           .before()
+           // store raw response
+           .storeRawResponse()
+        .build()
+    ).get();
+```
+#### ChallengeApi
+```java
+    // create an instance for the api
+    ChallengeApi api = jCrApi.getApi(ChallengeApi.class);
+```
+```java
+    // findAll
+    ChallengesResponse response = api.findAll(challengesRequest.builder()
+           // store raw response
+           .storeRawResponse()
+        .build()
+    ).get();
+```
+#### GlobalTournamentApi
+```java
+    // create an instance for the api
+    GlobalTournamentApi api = jCrApi.getApi(GlobalTournamentApi.class);
+```
+```java
+    // findAll
+    GlobalTournamentsResponse response = api.findAll(globalTournamentsRequest.builder()
+           // pagination
+           .limit()
+           .after()
+           .before()
+           // store raw response
+           .storeRawResponse()
+        .build()
+    ).get();
 ```
 
-```java
-// get player upcomming chests 
-GetPlayerUpcomingChestsResponse getPlayerUpcomingChestsResponse = api.getPlayerUpcomingChests(GetPlayerUpcomingChestsRequest.builder("#L88P2282")
-  // paging
-  .after()
-  .before()
-  .limit()
-  .build()
-);
-```
+## Add or replace registered API's
 
 ```java
-// get player battle log
-GetPlayerBattleLogResponse getPlayerBattleLogResponse = api.getPlayerUpcomingChests(GetPlayerUpcomingChestsRequest.builder("#L88P2282"));
+    JCrApi jCrApi = new JCrApi(...);
+    jCrApi.register(MyApi.class, MyApiImpl.class.getName());
+    MyApi myApi = jCrApi.getApi(MyApi.class);
+    GoodiesResponse goodiesResponse = myApi.findAllGoodies(new GoodiesRequest(...))).get();
 ```
 
-```java
-// get tournaments
-GetTournamentsResponse getTournamentsResponse = api.getTournaments(GetTournamentsRequest.builder()
-  .name("de")
-  // paging
-  .after()
-  .before()
-  .limit()
-  .build()
-);
-```
-
-```java
-// get thread safe last response object from last request 
-RawResponse rawResponse = api.getLastRawResponse();
-
-String raw = rawResponse.getRaw();
-Map<String, String> responseHeaders = rawResponse.getResponseHeaders();
-```
-
-```java
-// get cards
-GetCardsResponse getCardsResponse = api.getCards();
-```
-
-```java
-// get locations
-GetLocationsResponse getLocationsResponse = api.getLocations(GetLocationsRequest.builder()
-  // paging
-  .after()
-  .before()
-  .limit()
-  .build()
-);
-```
-
-```java
-// get location
-GetLocationResponse getLocationResponse = api.getLocation(GetLocationRequest.builder("57000000").build());
-```
-
-```java
-// get location clan rankings
-GetLocationClanRankingsResponse getLocationClanRankingsResponse = api.getLocationClanRankings(GetLocationClanRankingsRequest.builder("57000000").build());
-```
-
-```java
-// get location player rankings
-GetLocationPlayerRankingsResponse getLocationClanRankingsResponse = api.getLocationPlayerRankings(GetLocationPlayerRankingsRequest.builder("57000000").build());
-```
-
-```java
-// get location clan war rankings
-GetLocationClanWarRankingsResponse getLocationClanWarRankingsResponse = api.getLocationPlayerRankings(GetLocationClanWarRankingsRequest.builder("57000000").build());
-```
-
-```java
-// get clan war log
-GetClanRiverRaceLogResponse getClanRiverRaceLogResponse = api.getClanRiverRaceLog(GetClanWarLogRequest.builder("#RP88QQG")
-  // paging
-  .after()
-  .before()
-  .limit()
-  .build()
-);
-```
+Custom API implementations just need to inherit from *BaseApi*.
 
 ## Asynchronous usage
 
-All requests can have a *callback*. Then execution will be asynchronous.
+All requests are returning *java.concurrent.Future*. The execution will be asynchronous by default.
 
-```java
-// get clans
-api.getClans(GetClansRequest.builder()
-  // search criteria
-  .name()
-  .locationId()
-  .minScore()
-  .minMembers()
-  .maxMembers()
-  // paging
-  .after()
-  .before()
-  .limit()
-  .build()
-  // async callback
-  .callback(new Callback<GetClansResponse>() {
-    @Override
-    public void onResponse(GetClansResponse getClansResponse) {
-      // handle result
-    }
-
-    @Override
-    public void onException(Exception exception) {
-      state.set(true);
-    }
-  })
-);
-```
- 
-
-## How to bind the packagecloud repository ##
+## How to bind the packagecloud repository
 
 ```xml
-<repository>
-    <id>packagecloud-jcrapi2</id>
-    <url>https://packagecloud.io/mlieshoff/jcrapi2/maven2</url>
-    <releases>
-        <enabled>true</enabled>
-    </releases>
-    <snapshots>
-        <enabled>true</enabled>
-    </snapshots>
-</repository>
+    <repositories>
+        <repository>
+            <id>packagecloud-jcrapi2</id>
+            <url>https://packagecloud.io/mlieshoff/jcrapi2/maven2</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 ```
-## Continuous Integration ##
+
+### Maven
+### Gradle
+
+
+implementation group: 'jcrapi2', name: 'jcrapi2', version: '1.0.4'
+
+## Continuous Integration
 
 https://github.com/mlieshoff/jcrapi2/actions
 
-## Repository ##
+## Repository
 
 https://packagecloud.io/mlieshoff/jcrapi2
 
-## Logging ##
+## Logging
 
-We use SLF4j.
+We are using SLF4j.
 
-## Usage of RoyaleApi proxy ##
+## Usage of RoyaleApi proxy
 
-This wrapper can be easy connected to the proxy of our friends on RoyaleAPI. Please proceed first the steps described here:
+This wrapper can be easyly connected to the proxy of our friends on RoyaleAPI. Please proceed first the steps described here:
 
 https://docs.royaleapi.com/#/proxy
 
 Then initialize an instance of class Api like that:
 
-```
-Api api = new Api("https://proxy.royaleapi.dev/v1/", API_KEY);
+```java
+    JCrApi jCrApi = new JCrApi("https://crproxy.royaleapi.dev/v1", API_KEY, CONNECTOR);
 ```
 
 That's all, enjoy :)

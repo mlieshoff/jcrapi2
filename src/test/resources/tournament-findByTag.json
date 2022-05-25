@@ -1,0 +1,765 @@
+{
+  "tag": "#U2QQQL2",
+  "type": "open",
+  "status": "ended",
+  "creatorTag": "#8CVQUGL2R",
+  "name": "torneio dos bárbaros de elite",
+  "description": "100 gemas",
+  "levelCap": 0,
+  "firstPlaceCardPrize": 0,
+  "capacity": 68,
+  "maxCapacity": 1000,
+  "preparationDuration": 7200,
+  "duration": 3600,
+  "createdTime": "20181029T133746.000Z",
+  "startedTime": "20181029T153746.000Z",
+  "endedTime": "20181029T163746.000Z",
+  "membersList": [
+    {
+      "tag": "#2J0RULRYJ",
+      "name": "Richard wfe",
+      "score": 170,
+      "rank": 1,
+      "clan": {
+        "tag": "#PY9UR8J2",
+        "name": "-Red Fox- BR",
+        "badgeId": 16000165
+      }
+    },
+    {
+      "tag": "#8Q0U08J29",
+      "name": "{ π }",
+      "score": 163,
+      "rank": 2,
+      "clan": {
+        "tag": "#8GYRQP2P",
+        "name": "\"GENESIS DARK\"",
+        "badgeId": 16000032
+      }
+    },
+    {
+      "tag": "#P9G9CU98",
+      "name": "Abobrinha.",
+      "score": 124,
+      "rank": 3,
+      "clan": {
+        "tag": "#28CPVY29",
+        "name": "Extremo BR",
+        "badgeId": 16000024
+      }
+    },
+    {
+      "tag": "#8822G00GR",
+      "name": "JonyD",
+      "score": 120,
+      "rank": 4,
+      "clan": {
+        "tag": "#P2CPPJV",
+        "name": "ARG",
+        "badgeId": 16000162
+      }
+    },
+    {
+      "tag": "#29UJ0YYRP",
+      "name": "#Mauro#",
+      "score": 100,
+      "rank": 5,
+      "clan": {
+        "tag": "#VGJP98Y",
+        "name": "NERVOS DE AÇO",
+        "badgeId": 16000058
+      }
+    },
+    {
+      "tag": "#2V0CRQ2J8",
+      "name": "PEPO",
+      "score": 96,
+      "rank": 6,
+      "clan": {
+        "tag": "#9UYYVC2J",
+        "name": "Kiricocho vol2",
+        "badgeId": 16000171
+      }
+    },
+    {
+      "tag": "#2CQ9JUR0G",
+      "name": "meliodas?",
+      "score": 92,
+      "rank": 7,
+      "clan": {
+        "tag": "#9808RGYR",
+        "name": "ALFA ROMEU 2",
+        "badgeId": 16000039
+      }
+    },
+    {
+      "tag": "#8QPQG8C",
+      "name": "jh",
+      "score": 89,
+      "rank": 8,
+      "clan": {
+        "tag": "#9P8G2QLC",
+        "name": "#LosBandoleros★",
+        "badgeId": 16000077
+      }
+    },
+    {
+      "tag": "#2V8GVVCR0",
+      "name": "Hudson",
+      "score": 89,
+      "rank": 9,
+      "clan": {
+        "tag": "#YV8UJ2P",
+        "name": "InTheRise",
+        "badgeId": 16000122
+      }
+    },
+    {
+      "tag": "#8QQPULU0Y",
+      "name": "supercell",
+      "score": 84,
+      "rank": 10,
+      "clan": {
+        "tag": "#UJ2V9U",
+        "name": "Death & Glory",
+        "badgeId": 16000061
+      }
+    },
+    {
+      "tag": "#88JU08GR0",
+      "name": "刀丹れ lrd",
+      "score": 83,
+      "rank": 11,
+      "clan": {
+        "tag": "#P28LYJJY",
+        "name": "Play HARD",
+        "badgeId": 16000058
+      }
+    },
+    {
+      "tag": "#9P8UPLJV",
+      "name": ".*(lawyer)*.",
+      "score": 82,
+      "rank": 12,
+      "clan": {
+        "tag": "#2JGJ8V",
+        "name": "Trolls",
+        "badgeId": 16000029
+      }
+    },
+    {
+      "tag": "#28CLPYU29",
+      "name": "rugal",
+      "score": 78,
+      "rank": 13,
+      "clan": {
+        "tag": "#RG2RRL0",
+        "name": "Bounty Hunter",
+        "badgeId": 16000058
+      }
+    },
+    {
+      "tag": "#2RJQPVPP2",
+      "name": "Diego Valadez",
+      "score": 74,
+      "rank": 14,
+      "clan": {
+        "tag": "#2YCPYJPG",
+        "name": "Las fuerzas MX.",
+        "badgeId": 16000081
+      }
+    },
+    {
+      "tag": "#8YP8R2L0L",
+      "name": "firmino",
+      "score": 69,
+      "rank": 15,
+      "clan": {
+        "tag": "#9CJLC8LG",
+        "name": "Arkham",
+        "badgeId": 16000028
+      }
+    },
+    {
+      "tag": "#2JR9YRR0",
+      "name": "monstro",
+      "score": 67,
+      "rank": 16,
+      "clan": {
+        "tag": "#9JQ89G0",
+        "name": "FURIA-BR",
+        "badgeId": 16000058
+      }
+    },
+    {
+      "tag": "#8RVP02P98",
+      "name": "foTz",
+      "score": 66,
+      "rank": 17,
+      "clan": {
+        "tag": "#2RL0GGP0",
+        "name": "Bad Wolf",
+        "badgeId": 16000024
+      }
+    },
+    {
+      "tag": "#9PC0QCQCL",
+      "name": "kevin",
+      "score": 62,
+      "rank": 18,
+      "clan": {
+        "tag": "#PLJLRJQG",
+        "name": "ANTRAX",
+        "badgeId": 16000010
+      }
+    },
+    {
+      "tag": "#VQJ22CJ",
+      "name": "Sabugo",
+      "score": 60,
+      "rank": 19
+    },
+    {
+      "tag": "#8UP29LPC2",
+      "name": "junior",
+      "score": 55,
+      "rank": 20,
+      "clan": {
+        "tag": "#QV0CLJL",
+        "name": "Pikalapongas",
+        "badgeId": 16000010
+      }
+    },
+    {
+      "tag": "#L8020RU0",
+      "name": "馬克思主義",
+      "score": 54,
+      "rank": 21,
+      "clan": {
+        "tag": "#8CL0L0Q",
+        "name": "新北農耕村",
+        "badgeId": 16000002
+      }
+    },
+    {
+      "tag": "#2VJQPQQPG",
+      "name": "muerte entierra",
+      "score": 53,
+      "rank": 22,
+      "clan": {
+        "tag": "#9UR9UY2P",
+        "name": "GLORIOUS MISTY",
+        "badgeId": 16000035
+      }
+    },
+    {
+      "tag": "#9YQQPLPU",
+      "name": "Andre",
+      "score": 48,
+      "rank": 23,
+      "clan": {
+        "tag": "#9VYU02QJ",
+        "name": "Alcoólatras",
+        "badgeId": 16000136
+      }
+    },
+    {
+      "tag": "#8RYGU2PVU",
+      "name": "Quantic",
+      "score": 41,
+      "rank": 24,
+      "clan": {
+        "tag": "#9CV90G8J",
+        "name": "Invicts Brazil",
+        "badgeId": 16000058
+      }
+    },
+    {
+      "tag": "#22GLGR2UR",
+      "name": "Kevis Z 2000",
+      "score": 37,
+      "rank": 25,
+      "clan": {
+        "tag": "#9QYC99QJ",
+        "name": "BLACK'SABBATH",
+        "badgeId": 16000077
+      }
+    },
+    {
+      "tag": "#228C998C2",
+      "name": "victor",
+      "score": 32,
+      "rank": 26,
+      "clan": {
+        "tag": "#9GJ0V2U9",
+        "name": "os gladiadores",
+        "badgeId": 16000058
+      }
+    },
+    {
+      "tag": "#2CR8G9V2R",
+      "name": "JONKI",
+      "score": 32,
+      "rank": 27,
+      "clan": {
+        "tag": "#8YUL0PG",
+        "name": "King Royales",
+        "badgeId": 16000013
+      }
+    },
+    {
+      "tag": "#9Q0UCGGCP",
+      "name": "*Fenix*",
+      "score": 30,
+      "rank": 28,
+      "clan": {
+        "tag": "#2VR088R2",
+        "name": "SPARTAN'S BR",
+        "badgeId": 16000004
+      }
+    },
+    {
+      "tag": "#2QP22C9L",
+      "name": "Luxuria",
+      "score": 30,
+      "rank": 29,
+      "clan": {
+        "tag": "#2UJCUGGJ",
+        "name": "Mortal Combat",
+        "badgeId": 16000014
+      }
+    },
+    {
+      "tag": "#222YCPPPU",
+      "name": "Santiago",
+      "score": 28,
+      "rank": 30,
+      "clan": {
+        "tag": "#P9LUVCC9",
+        "name": "AnarKia",
+        "badgeId": 16000002
+      }
+    },
+    {
+      "tag": "#2LVP8G982",
+      "name": "riboli",
+      "score": 22,
+      "rank": 31,
+      "clan": {
+        "tag": "#2VJPVLGG",
+        "name": "OS_NENÊ_FORCY",
+        "badgeId": 16000028
+      }
+    },
+    {
+      "tag": "#8V2UUPYGG",
+      "name": "RAZOR",
+      "score": 22,
+      "rank": 32,
+      "clan": {
+        "tag": "#LUYQ0U",
+        "name": "Ganja Babe",
+        "badgeId": 16000091
+      }
+    },
+    {
+      "tag": "#8YVYCUURU",
+      "name": "Mago Elétrico",
+      "score": 21,
+      "rank": 33,
+      "clan": {
+        "tag": "#PP9LV9JP",
+        "name": "Castelinho",
+        "badgeId": 16000028
+      }
+    },
+    {
+      "tag": "#PL2LYVLLC",
+      "name": "THIAGO E MIGUEL",
+      "score": 16,
+      "rank": 34,
+      "clan": {
+        "tag": "#PU2VJLV9",
+        "name": "turma 42 vera",
+        "badgeId": 16000044
+      }
+    },
+    {
+      "tag": "#R09QGUUG",
+      "name": "DUDU HAHA",
+      "score": 13,
+      "rank": 35,
+      "clan": {
+        "tag": "#2ULUV0YU",
+        "name": "The Expendables",
+        "badgeId": 16000146
+      }
+    },
+    {
+      "tag": "#9RUU9URLY",
+      "name": "lucasbr6678",
+      "score": 13,
+      "rank": 36,
+      "clan": {
+        "tag": "#PRY0YJY9",
+        "name": "amigos",
+        "badgeId": 16000058
+      }
+    },
+    {
+      "tag": "#2UCLQVPL9",
+      "name": "￦lorrany￦",
+      "score": 11,
+      "rank": 37,
+      "clan": {
+        "tag": "#PYCLPV2P",
+        "name": "Família Inter",
+        "badgeId": 16000014
+      }
+    },
+    {
+      "tag": "#C2V0RPRV",
+      "name": "miguel",
+      "score": 11,
+      "rank": 38,
+      "clan": {
+        "tag": "#2GVYCCC2",
+        "name": "esquenta.",
+        "badgeId": 16000058
+      }
+    },
+    {
+      "tag": "#8GPQJRR02",
+      "name": "carlos eduardo",
+      "score": 9,
+      "rank": 39,
+      "clan": {
+        "tag": "#PJJP8RLR",
+        "name": "IFMA T-14",
+        "badgeId": 16000015
+      }
+    },
+    {
+      "tag": "#8CVQUGL2R",
+      "name": "kayo",
+      "score": 0,
+      "rank": 40,
+      "clan": {
+        "tag": "#8CP0JC8C",
+        "name": "Luziânia Go",
+        "badgeId": 16000162
+      }
+    },
+    {
+      "tag": "#2Q0QJU09Y",
+      "name": "alibaba",
+      "score": 0,
+      "rank": 41,
+      "clan": {
+        "tag": "#2L2Q09RL",
+        "name": "alibaba",
+        "badgeId": 16000030
+      }
+    },
+    {
+      "tag": "#2CYC8YP0G",
+      "name": "NewPower",
+      "score": 0,
+      "rank": 42,
+      "clan": {
+        "tag": "#RY8YVL",
+        "name": "BrBrBr",
+        "badgeId": 16000058
+      }
+    },
+    {
+      "tag": "#P0L0GCG20",
+      "name": "NewzpowerPH",
+      "score": 0,
+      "rank": 43,
+      "clan": {
+        "tag": "#RY8YVL",
+        "name": "BrBrBr",
+        "badgeId": 16000058
+      }
+    },
+    {
+      "tag": "#8JQQVCRUV",
+      "name": "zu",
+      "score": 0,
+      "rank": 44,
+      "clan": {
+        "tag": "#9YLGP0V2",
+        "name": "CHIMPERIO™",
+        "badgeId": 16000028
+      }
+    },
+    {
+      "tag": "#9Q8C02CY9",
+      "name": "sooraj",
+      "score": 0,
+      "rank": 45,
+      "clan": {
+        "tag": "#2YLU0Q2J",
+        "name": "hunting lions",
+        "badgeId": 16000077
+      }
+    },
+    {
+      "tag": "#8ULGR2JC2",
+      "name": "marcone",
+      "score": 0,
+      "rank": 46,
+      "clan": {
+        "tag": "#P2LC2YGR",
+        "name": "RUA DOS LISOS",
+        "badgeId": 16000171
+      }
+    },
+    {
+      "tag": "#9VR008JPR",
+      "name": "Kauan ClashNGKS",
+      "score": 0,
+      "rank": 47,
+      "clan": {
+        "tag": "#9URP9RQQ",
+        "name": "Os Jogadores",
+        "badgeId": 16000041
+      }
+    },
+    {
+      "tag": "#92UR90GGG",
+      "name": "Thiago",
+      "score": 0,
+      "rank": 48,
+      "clan": {
+        "tag": "#V8RJLV0",
+        "name": "Torre dos Forte",
+        "badgeId": 16000024
+      }
+    },
+    {
+      "tag": "#8VQRURLPJ",
+      "name": "Genilson",
+      "score": 0,
+      "rank": 49,
+      "clan": {
+        "tag": "#QY8YLP",
+        "name": "joinville-sc",
+        "badgeId": 16000058
+      }
+    },
+    {
+      "tag": "#2G90PLY08",
+      "name": "Umberto",
+      "score": 0,
+      "rank": 50,
+      "clan": {
+        "tag": "#PJ228PPP",
+        "name": "1^A Sc",
+        "badgeId": 16000081
+      }
+    },
+    {
+      "tag": "#9P0PP98J",
+      "name": "Rei Drian",
+      "score": 0,
+      "rank": 51,
+      "clan": {
+        "tag": "#9LL8CR09",
+        "name": "DigiClã",
+        "badgeId": 16000029
+      }
+    },
+    {
+      "tag": "#8VGJY82LL",
+      "name": "nando10000",
+      "score": 0,
+      "rank": 52,
+      "clan": {
+        "tag": "#89U2GCUV",
+        "name": "^^Royals Br^^",
+        "badgeId": 16000058
+      }
+    },
+    {
+      "tag": "#92G8LG9L9",
+      "name": "tharlysonth",
+      "score": 0,
+      "rank": 53,
+      "clan": {
+        "tag": "#8LQ0289L",
+        "name": "FÚRIA BRASIL",
+        "badgeId": 16000058
+      }
+    },
+    {
+      "tag": "#9VGJ0PY82",
+      "name": "potato",
+      "score": 0,
+      "rank": 54,
+      "clan": {
+        "tag": "#9UGU08Y2",
+        "name": "irmãos",
+        "badgeId": 16000058
+      }
+    },
+    {
+      "tag": "#990YCVU2J",
+      "name": "Lincoln",
+      "score": 0,
+      "rank": 55,
+      "clan": {
+        "tag": "#9LLRYUJ0",
+        "name": "Duros de Matar",
+        "badgeId": 16000024
+      }
+    },
+    {
+      "tag": "#2LU2PQLG2",
+      "name": "StarCrow",
+      "score": 0,
+      "rank": 56,
+      "clan": {
+        "tag": "#CL8UQR",
+        "name": "Royal Team",
+        "badgeId": 16000058
+      }
+    },
+    {
+      "tag": "#P0CGYY0R9",
+      "name": "n-strikeelite14",
+      "score": 0,
+      "rank": 57,
+      "clan": {
+        "tag": "#8UYU0R02",
+        "name": "Pablo e thiago",
+        "badgeId": 16000009
+      }
+    },
+    {
+      "tag": "#9R8QGL02P",
+      "name": "vinho",
+      "score": 0,
+      "rank": 58,
+      "clan": {
+        "tag": "#P08QGV9L",
+        "name": "Gold Stars Br",
+        "badgeId": 16000058
+      }
+    },
+    {
+      "tag": "#9PCV0VRU2",
+      "name": "oktay",
+      "score": 0,
+      "rank": 59,
+      "clan": {
+        "tag": "#9UY9002G",
+        "name": "kozaki z łobza",
+        "badgeId": 16000003
+      }
+    },
+    {
+      "tag": "#9YC2JULPP",
+      "name": "Red gamer08",
+      "score": 0,
+      "rank": 60,
+      "clan": {
+        "tag": "#9V0YU90Q",
+        "name": "TopsBr",
+        "badgeId": 16000058
+      }
+    },
+    {
+      "tag": "#9LJQJPQU0",
+      "name": "Music Evil",
+      "score": 0,
+      "rank": 61,
+      "clan": {
+        "tag": "#8JPUPYCJ",
+        "name": "lords of clas",
+        "badgeId": 16000014
+      }
+    },
+    {
+      "tag": "#9JLJUURRG",
+      "name": "kaiopampam",
+      "score": 0,
+      "rank": 62,
+      "clan": {
+        "tag": "#JVRCJ8",
+        "name": "Elite Brasil",
+        "badgeId": 16000000
+      }
+    },
+    {
+      "tag": "#9RQGPCUR8",
+      "name": "Gabriel",
+      "score": 0,
+      "rank": 63,
+      "clan": {
+        "tag": "#PJ2CR0U2",
+        "name": "PENTA",
+        "badgeId": 16000167
+      }
+    },
+    {
+      "tag": "#9GGV9V",
+      "name": "Joanderson",
+      "score": 0,
+      "rank": 64,
+      "clan": {
+        "tag": "#GRG2YPR",
+        "name": "THE AVENGERS",
+        "badgeId": 16000044
+      }
+    },
+    {
+      "tag": "#9GJR90Q2V",
+      "name": "miclash",
+      "score": 0,
+      "rank": 65,
+      "clan": {
+        "tag": "#PULR89CC",
+        "name": "clash",
+        "badgeId": 16000107
+      }
+    },
+    {
+      "tag": "#LGVQRQRC",
+      "name": "UuuGuiBRAS",
+      "score": 0,
+      "rank": 66,
+      "clan": {
+        "tag": "#P0QGVLCQ",
+        "name": "Quite 34",
+        "badgeId": 16000016
+      }
+    },
+    {
+      "tag": "#2PC920UJR",
+      "name": "james ford",
+      "score": 0,
+      "rank": 67,
+      "clan": {
+        "tag": "#9RRJQ8PQ",
+        "name": "Clash Royale BR",
+        "badgeId": 16000058
+      }
+    },
+    {
+      "tag": "#9JG2LYG0V",
+      "name": "supercel",
+      "score": 0,
+      "rank": 68,
+      "clan": {
+        "tag": "#P0C8J2QR",
+        "name": "PORT CRATOS",
+        "badgeId": 16000035
+      }
+    }
+  ],
+  "gameMode": {
+    "id": -1
+  }
+}

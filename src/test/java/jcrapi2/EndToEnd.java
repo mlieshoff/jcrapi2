@@ -16,263 +16,381 @@
  */
 package jcrapi2;
 
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static wiremock.org.apache.commons.lang3.StringUtils.EMPTY;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import jcrapi2.request.GetClanCurrentWarRequest;
-import jcrapi2.request.GetClanMembersRequest;
-import jcrapi2.request.GetClanRequest;
-import jcrapi2.request.GetClanRiverRaceLogRequest;
-import jcrapi2.request.GetClanWarLogRequest;
-import jcrapi2.request.GetClansRequest;
-import jcrapi2.request.GetCurrentClanRiverRaceRequest;
-import jcrapi2.request.GetLocationClanRankingsRequest;
-import jcrapi2.request.GetLocationClanWarRankingsRequest;
-import jcrapi2.request.GetLocationPlayerRankingsRequest;
-import jcrapi2.request.GetLocationRequest;
-import jcrapi2.request.GetLocationsRequest;
-import jcrapi2.request.GetPlayerBattleLogRequest;
-import jcrapi2.request.GetPlayerRequest;
-import jcrapi2.request.GetPlayerUpcomingChestsRequest;
-import jcrapi2.request.GetTournamentRequest;
-import jcrapi2.request.GetTournamentsRequest;
-import jcrapi2.response.GetCardsResponse;
-import jcrapi2.response.GetClanCurrentWarResponse;
-import jcrapi2.response.GetClanMembersResponse;
-import jcrapi2.response.GetClanResponse;
-import jcrapi2.response.GetClanRiverRaceLogResponse;
-import jcrapi2.response.GetClanWarLogResponse;
-import jcrapi2.response.GetClansResponse;
-import jcrapi2.response.GetCurrentClanRiverRaceResponse;
-import jcrapi2.response.GetLocationClanRankingsResponse;
-import jcrapi2.response.GetLocationClanWarRankingsResponse;
-import jcrapi2.response.GetLocationPlayerRankingsResponse;
-import jcrapi2.response.GetLocationResponse;
-import jcrapi2.response.GetLocationsResponse;
-import jcrapi2.response.GetPlayerBattleLogResponse;
-import jcrapi2.response.GetPlayerResponse;
-import jcrapi2.response.GetPlayerUpcomingChestsResponse;
-import jcrapi2.response.GetTournamentResponse;
-import jcrapi2.response.GetTournamentsResponse;
+import java.io.File;
+import java.io.StringReader;
+import javax.json.Json;
+import javax.json.JsonPatch;
+import javax.json.JsonValue;
+import jcrapi2.api.intern.cards.CardApi;
+import jcrapi2.api.intern.cards.CardsRequest;
+import jcrapi2.api.intern.cards.CardsResponse;
+import jcrapi2.api.intern.challenges.ChallengeApi;
+import jcrapi2.api.intern.challenges.ChallengesRequest;
+import jcrapi2.api.intern.challenges.ChallengesResponse;
+import jcrapi2.api.intern.clans.ClanApi;
+import jcrapi2.api.intern.clans.ClansRequest;
+import jcrapi2.api.intern.clans.ClansResponse;
+import jcrapi2.api.intern.clans.currentriverrace.CurrentRiverRaceRequest;
+import jcrapi2.api.intern.clans.currentriverrace.CurrentRiverRaceResponse;
+import jcrapi2.api.intern.clans.info.ClanRequest;
+import jcrapi2.api.intern.clans.info.ClanResponse;
+import jcrapi2.api.intern.clans.members.ClanMembersRequest;
+import jcrapi2.api.intern.clans.members.ClanMembersResponse;
+import jcrapi2.api.intern.clans.riverracelog.RiverRaceLogRequest;
+import jcrapi2.api.intern.clans.riverracelog.RiverRaceLogResponse;
+import jcrapi2.api.intern.globaltournaments.GlobalTournamentApi;
+import jcrapi2.api.intern.globaltournaments.GlobalTournamentsRequest;
+import jcrapi2.api.intern.globaltournaments.GlobalTournamentsResponse;
+import jcrapi2.api.intern.locations.LocationApi;
+import jcrapi2.api.intern.locations.LocationsRequest;
+import jcrapi2.api.intern.locations.LocationsResponse;
+import jcrapi2.api.intern.locations.info.LocationRequest;
+import jcrapi2.api.intern.locations.info.LocationResponse;
+import jcrapi2.api.intern.locations.rankings.clan.ClanRankingsRequest;
+import jcrapi2.api.intern.locations.rankings.clan.ClanRankingsResponse;
+import jcrapi2.api.intern.locations.rankings.clanwar.ClanWarRankingsRequest;
+import jcrapi2.api.intern.locations.rankings.clanwar.ClanWarRankingsResponse;
+import jcrapi2.api.intern.locations.rankings.player.PlayerRankingsRequest;
+import jcrapi2.api.intern.locations.rankings.player.PlayerRankingsResponse;
+import jcrapi2.api.intern.locations.seasons.global.TopPlayerLeagueSeasonsRequest;
+import jcrapi2.api.intern.locations.seasons.global.TopPlayerLeagueSeasonsResponse;
+import jcrapi2.api.intern.locations.seasons.global.info.TopPlayerLeagueSeasonRequest;
+import jcrapi2.api.intern.locations.seasons.global.info.TopPlayerLeagueSeasonResponse;
+import jcrapi2.api.intern.locations.seasons.global.rankings.TopPlayerLeagueSeasonRankingsRequest;
+import jcrapi2.api.intern.locations.seasons.global.rankings.TopPlayerLeagueSeasonRankingsResponse;
+import jcrapi2.api.intern.players.PlayerApi;
+import jcrapi2.api.intern.players.battlelog.BattleLogRequest;
+import jcrapi2.api.intern.players.battlelog.BattleLogResponse;
+import jcrapi2.api.intern.players.info.PlayerRequest;
+import jcrapi2.api.intern.players.info.PlayerResponse;
+import jcrapi2.api.intern.players.upcomingchests.UpcomingChestsRequest;
+import jcrapi2.api.intern.players.upcomingchests.UpcomingChestsResponse;
+import jcrapi2.api.intern.tournament.TournamentApi;
+import jcrapi2.api.intern.tournaments.TournamentsRequest;
+import jcrapi2.api.intern.tournaments.TournamentsResponse;
+import jcrapi2.api.intern.tournaments.info.TournamentRequest;
+import jcrapi2.api.intern.tournaments.info.TournamentResponse;
+import jcrapi2.connector.StandardConnector;
 
-/**
- * @author Michael Lieshoff
- */
-class EndToEnd {
+public class EndToEnd {
 
-  private static final String API_KEY = System.getProperty("api.key");
+  private static final Gson GSON = new GsonBuilder().disableHtmlEscaping().create();
 
-  private Api api;
+  private JCrApi jCrApi;
+
+  private ClanApi clanApi;
+
+  private PlayerApi playerApi;
+
+  private CardApi cardApi;
+
+  private TournamentApi tournamentApi;
+
+  private LocationApi locationApi;
+
+  private ChallengeApi challengeApi;
+
+  private GlobalTournamentApi globalTournamentApi;
 
   @BeforeEach
-  void setUp() throws Exception {
-    api = new Api("https://proxy.royaleapi.dev/v1/", API_KEY);
+  void setUp() {
+    jCrApi =
+        new JCrApi("https://proxy.royaleapi.dev/v1", System.getProperty("apiKey"), new StandardConnector());
+    clanApi = jCrApi.getApi(ClanApi.class);
+    playerApi = jCrApi.getApi(PlayerApi.class);
+    cardApi = jCrApi.getApi(CardApi.class);
+    tournamentApi = jCrApi.getApi(TournamentApi.class);
+    locationApi = jCrApi.getApi(LocationApi.class);
+    challengeApi = jCrApi.getApi(ChallengeApi.class);
+    globalTournamentApi = jCrApi.getApi(GlobalTournamentApi.class);
+  }
+
+  private void assertDiff(String expected, String actual) {
+    JsonValue source = Json.createReader(new StringReader(actual)).readValue();
+    JsonValue target = Json.createReader(new StringReader(expected)).readValue();
+    JsonPatch diff;
+    try {
+      diff = Json.createDiff(source.asJsonObject(), target.asJsonObject());
+    } catch (ClassCastException e) {
+      diff = Json.createDiff(source.asJsonArray(), target.asJsonArray());
+    }
+    StringBuilder diffOutput = new StringBuilder();
+    diff.toJsonArray().forEach(entry -> diffOutput.append(entry + "\n"));
+    assertEquals(EMPTY, diffOutput.toString());
   }
 
   @Test
-  void getClans_whenWithValidParameters_thenGetResponse() throws Exception {
-    GetClansResponse getClansResponse = api.getClans(GetClansRequest.builder().name("puzzle").build());
-    assertAll(
-        () -> assertNotNull(getClansResponse, "getClansResponse"),
-        () -> assertNull(getClansResponse.getMessage(), "message"),
-        () -> assertNull(getClansResponse.getReason(), "reason")
-    );
+  void clans_findAll() throws Exception {
+    ClansResponse
+        clansResponse =
+        clanApi.findAll(ClansRequest.builder()
+            .name("puz")
+            .locationId(57000120)
+            .minMembers(5)
+            .maxMembers(20)
+            .storeRawResponse(true).build()).get();
+    String actual = GSON.toJson(clansResponse);
+    String expected = clansResponse.getRawResponse().getRaw();
+
+    assertDiff(expected, actual);
   }
 
   @Test
-  void getClan_whenWithValidParameters_thenGetResponse() throws Exception {
-    GetClanResponse getClanResponse = api.getClan(GetClanRequest.builder("#RP88QQG").build());
-    assertAll(
-        () -> assertNotNull(getClanResponse, "getClanResponse"),
-        () -> assertNull(getClanResponse.getMessage(), "message"),
-        () -> assertNull(getClanResponse.getReason(), "reason")
-    );
+  void clans_findByTag() throws Exception {
+    ClanResponse
+        response =
+        clanApi.findByTag(ClanRequest.builder("#RP88QQG").storeRawResponse(true).build()).get();
+    String actual = GSON.toJson(response);
+    String expected = response.getRawResponse().getRaw();
+
+    assertDiff(expected, actual);
   }
 
   @Test
-  void getClanMembers_whenWithValidParameters_thenGetResponse() throws Exception {
-    GetClanMembersResponse
-        getClanMembersResponse =
-        api.getClanMembers(GetClanMembersRequest.builder("#RP88QQG").build());
-    assertAll(
-        () -> assertNotNull(getClanMembersResponse, "getClanMembersResponse"),
-        () -> assertNull(getClanMembersResponse.getMessage(), "message"),
-        () -> assertNull(getClanMembersResponse.getReason(), "reason")
-    );
+  void clans_getRiverRaceLog() throws Exception {
+    RiverRaceLogResponse
+        response =
+        clanApi.getRiverRaceLog(RiverRaceLogRequest.builder("#RP88QQG").storeRawResponse(true).build()).get();
+    String actual = GSON.toJson(response);
+    String expected = response.getRawResponse().getRaw();
+
+    assertDiff(expected, actual);
   }
 
   @Test
-  void getClanWarLog_whenWithValidParameters_thenGetResponse() throws Exception {
-    GetClanWarLogResponse
-        getClanWarLogResponse =
-        api.getClanWarLog(GetClanWarLogRequest.builder("#RP88QQG").build());
-    assertAll(
-        () -> assertNotNull(getClanWarLogResponse, "getClanWarLogResponse"),
-        () -> assertNull(getClanWarLogResponse.getMessage(), "message"),
-        () -> assertNull(getClanWarLogResponse.getReason(), "reason")
-    );
+  void clans_getMembers() throws Exception {
+    ClanMembersResponse
+        response =
+        clanApi.getMembers(ClanMembersRequest.builder("#RP88QQG").storeRawResponse(true).build()).get();
+    String actual = GSON.toJson(response);
+    String expected = response.getRawResponse().getRaw();
+
+    assertDiff(expected, actual);
   }
 
   @Test
-  void getClanCurrentWar_whenWithValidParameters_thenGetResponse() throws Exception {
-    GetClanCurrentWarResponse
-        getClanCurrentWarResponse =
-        api.getClanCurrentWar(GetClanCurrentWarRequest.builder("#RP88QQG").build());
-    assertAll(
-        () -> assertNotNull(getClanCurrentWarResponse, "getClanCurrentWarResponse"),
-        () -> assertNull(getClanCurrentWarResponse.getMessage(), "message"),
-        () -> assertNull(getClanCurrentWarResponse.getReason(), "reason")
-    );
+  void clans_getCurrentRiverRaceLog() throws Exception {
+    CurrentRiverRaceResponse
+        response =
+        clanApi.getCurrentRiverRace(CurrentRiverRaceRequest.builder("#RP88QQG").storeRawResponse(true).build()).get();
+    String actual = GSON.toJson(response);
+    String expected = response.getRawResponse().getRaw();
+
+    assertDiff(expected, actual);
   }
 
   @Test
-  void getPlayer_whenWithValidParameters_thenGetResponse() throws Exception {
-    GetPlayerResponse getPlayerResponse = api.getPlayer(GetPlayerRequest.builder("#L88P2282").build());
-    assertAll(
-        () -> assertNotNull(getPlayerResponse, "getPlayerResponse"),
-        () -> assertNull(getPlayerResponse.getMessage(), "message"),
-        () -> assertNull(getPlayerResponse.getReason(), "reason")
-    );
+  void players_findByTag() throws Exception {
+    PlayerResponse
+        response =
+        playerApi.findByTag(PlayerRequest.builder("#2PGGCJJL").storeRawResponse(true).build()).get();
+    String actual = GSON.toJson(response)
+        .replace(",\"starLevel\":0", "")
+        .replace(",\"target\":0", "");
+    String expected = response.getRawResponse().getRaw().replace(",\"completionInfo\":null", "");
+
+    assertDiff(expected, actual);
   }
 
   @Test
-  void getPlayerUpcomingChests_whenWithValidParameters_thenGetResponse() throws Exception {
-    GetPlayerUpcomingChestsResponse
-        getPlayerUpcomingChestsResponse =
-        api.getPlayerUpcomingChests(GetPlayerUpcomingChestsRequest.builder("#L88P2282").build());
-    assertAll(
-        () -> assertNotNull(getPlayerUpcomingChestsResponse, "getPlayerUpcomingChestsResponse"),
-        () -> assertNull(getPlayerUpcomingChestsResponse.getMessage(), "message"),
-        () -> assertNull(getPlayerUpcomingChestsResponse.getReason(), "reason")
-    );
+  void players_getUpcomingChests() throws Exception {
+    UpcomingChestsResponse
+        response =
+        playerApi.getUpcomingChests(UpcomingChestsRequest.builder("#2PGGCJJL").storeRawResponse(true).build()).get();
+    String actual = GSON.toJson(response);
+    String expected = response.getRawResponse().getRaw();
+
+    assertDiff(expected, actual);
   }
 
   @Test
-  void getPlayerBattleLog_whenWithValidParameters_thenGetResponse() throws Exception {
-    GetPlayerBattleLogResponse
-        getPlayerBattleLogResponse =
-        api.getPlayerBattleLog(GetPlayerBattleLogRequest.builder("#L88P2282").build());
-    assertAll(
-        () -> assertNotNull(getPlayerBattleLogResponse, "getPlayerBattleLogResponse"),
-        () -> assertNull(getPlayerBattleLogResponse.getMessage(), "message"),
-        () -> assertNull(getPlayerBattleLogResponse.getReason(), "reason")
-    );
+  void players_getBattleLog() throws Exception {
+    BattleLogResponse
+        response =
+        playerApi.getBattleLog(BattleLogRequest.builder("#2PGGCJJL").storeRawResponse(true).build()).get();
+    String actual = GSON.toJson(response)
+        .replace(",\"startingTrophies\":0", "")
+        .replace(",\"crowns\":0", "")
+        .replace(",\"trophyChange\":0", "")
+        .replace(",\"kingTowerHitPoints\":0", "")
+        .replace(",\"boatBattleWon\":false", "")
+        .replace(",\"newTowersDestroyed\":0", "")
+        .replace(",\"prevTowersDestroyed\":0", "")
+        .replace(",\"prevTowersDestroyedprevTowersDestroyed\":0", "")
+        .replace(",\"remainingTowers\":0", "")
+        .replace(",\"starLevel\":0", "");
+    String expected = response.getRawResponse().getRaw()
+        .replace(",\"crowns\":0", "")
+        .replace(",\"boatBattleWon\":false", "")
+        .replace(",\"remainingTowers\":0", "")
+        .replace(",\"prevTowersDestroyed\":0", "")
+        .replace(",\"newTowersDestroyed\":0", "");
+
+    assertDiff(expected, actual);
   }
 
   @Test
-  void getTournaments_whenWithValidParameters_thenGetResponse() throws Exception {
-    GetTournamentsResponse
-        getTournamentsResponse =
-        api.getTournaments(GetTournamentsRequest.builder().name("de").build());
-    assertAll(
-        () -> assertNotNull(getTournamentsResponse, "getTournamentsResponse"),
-        () -> assertNull(getTournamentsResponse.getMessage(), "message"),
-        () -> assertNull(getTournamentsResponse.getReason(), "reason")
-    );
+  void cards_findAll() throws Exception {
+    CardsResponse
+        response =
+        cardApi.findAll(CardsRequest.builder().storeRawResponse(true).build()).get();
+    String actual = GSON.toJson(response);
+    String expected = response.getRawResponse().getRaw();
+
+    assertDiff(expected, actual);
   }
 
   @Test
-  void getTournament_whenWithValidParameters_thenGetResponse() throws Exception {
-    GetTournamentResponse
-        getTournamentResponse =
-        api.getTournament(GetTournamentRequest.builder("#U2QQQL2").build());
-    assertAll(
-        () -> assertNotNull(getTournamentResponse, "getTournamentResponse"),
-        () -> assertNull(getTournamentResponse.getMessage(), "message"),
-        () -> assertNull(getTournamentResponse.getReason(), "reason")
-    );
+  void tournaments_findAll() throws Exception {
+    TournamentsResponse
+        response =
+        tournamentApi.findAll(TournamentsRequest.builder().name("de").storeRawResponse(true).build()).get();
+    String actual = GSON.toJson(response);
+    String expected = response.getRawResponse().getRaw();
+
+    assertDiff(expected, actual);
   }
 
   @Test
-  void getCards_whenCalled_thenGetResponse() throws Exception {
-    GetCardsResponse getCardsResponse = api.getCards();
-    assertAll(
-        () -> assertNotNull(getCardsResponse, "getCardsResponse"),
-        () -> assertNull(getCardsResponse.getMessage(), "message"),
-        () -> assertNull(getCardsResponse.getReason(), "reason")
-    );
+  void tournaments_findByTag() throws Exception {
+    TournamentResponse
+        response =
+        tournamentApi.findByTag(TournamentRequest.builder("#U2QQQL2").storeRawResponse(true).build()).get();
+    String actual = GSON.toJson(response);
+    String expected = response.getRawResponse().getRaw();
+
+    assertDiff(expected, actual);
   }
 
   @Test
-  void getLocations_whenWithValidParameters_thenGetResponse() throws Exception {
-    GetLocationsResponse getLocationsResponse = api.getLocations(GetLocationsRequest.builder().build());
-    assertAll(
-        () -> assertNotNull(getLocationsResponse, "getLocationsResponse"),
-        () -> assertNull(getLocationsResponse.getMessage(), "message"),
-        () -> assertNull(getLocationsResponse.getReason(), "reason")
-    );
+  void locations_findAll() throws Exception {
+    LocationsResponse
+        response =
+        locationApi.findAll(LocationsRequest.builder().storeRawResponse(true).build()).get();
+    String actual = GSON.toJson(response);
+    String expected = response.getRawResponse().getRaw();
+
+    assertDiff(expected, actual);
   }
 
   @Test
-  void getLocation_whenWithValidParameters_thenGetResponse() throws Exception {
-    GetLocationResponse getLocationResponse = api.getLocation(GetLocationRequest.builder("57000094").build());
-    assertAll(
-        () -> assertNotNull(getLocationResponse, "getLocationResponse"),
-        () -> assertNull(getLocationResponse.getMessage(), "message"),
-        () -> assertNull(getLocationResponse.getReason(), "reason")
-    );
+  void locations_findById() throws Exception {
+    LocationResponse
+        response =
+        locationApi.findById(LocationRequest.builder(57000256).storeRawResponse(true).build()).get();
+    String actual = GSON.toJson(response);
+    String expected = response.getRawResponse().getRaw();
+
+    assertDiff(expected, actual);
   }
 
   @Test
-  void getLocationClanRankings_whenWithValidParameters_thenGetResponse() throws Exception {
-    GetLocationClanRankingsResponse
-        getLocationClanRankingsResponse =
-        api.getLocationClanRankings(GetLocationClanRankingsRequest.builder("57000094").build());
-    assertAll(
-        () -> assertNotNull(getLocationClanRankingsResponse, "getLocationClanRankingsResponse"),
-        () -> assertNull(getLocationClanRankingsResponse.getMessage(), "message"),
-        () -> assertNull(getLocationClanRankingsResponse.getReason(), "reason")
-    );
+  void locations_getClanRankings() throws Exception {
+    ClanRankingsResponse
+        response =
+        locationApi.getClanRankings(ClanRankingsRequest.builder(57000256).storeRawResponse(true).build()).get();
+    String actual = GSON.toJson(response);
+    String expected = response.getRawResponse().getRaw();
+
+    assertDiff(expected, actual);
   }
 
   @Test
-  void getLocationPlayerRankings_whenWithValidParameters_thenGetResponse() throws Exception {
-    GetLocationPlayerRankingsResponse
-        getLocationPlayerRankingsResponse =
-        api.getLocationPlayerRankings(GetLocationPlayerRankingsRequest.builder("57000094").build());
-    assertAll(
-        () -> assertNotNull(getLocationPlayerRankingsResponse, "getLocationPlayerRankingsResponse"),
-        () -> assertNull(getLocationPlayerRankingsResponse.getMessage(), "message"),
-        () -> assertNull(getLocationPlayerRankingsResponse.getReason(), "reason")
-    );
+  void locations_getPlayerRankings() throws Exception {
+    PlayerRankingsResponse
+        response =
+        locationApi.getPlayerRankings(PlayerRankingsRequest.builder(57000256).storeRawResponse(true).build()).get();
+    String actual = GSON.toJson(response);
+    String expected = response.getRawResponse().getRaw();
+
+    assertDiff(expected, actual);
   }
 
   @Test
-  void getLocationClanWarRankings_whenWithValidParameters_thenGetResponse() throws Exception {
-    GetLocationClanWarRankingsResponse
-        getLocationClanWarRankingsResponse =
-        api.getLocationClanWarRankings(GetLocationClanWarRankingsRequest.builder("57000094").build());
-    assertAll(
-        () -> assertNotNull(getLocationClanWarRankingsResponse, "getLocationClanWarRankingsResponse"),
-        () -> assertNull(getLocationClanWarRankingsResponse.getMessage(), "message"),
-        () -> assertNull(getLocationClanWarRankingsResponse.getReason(), "reason")
-    );
+  void locations_getClanWarRankings() throws Exception {
+    ClanWarRankingsResponse
+        response =
+        locationApi.getClanWarRankings(ClanWarRankingsRequest.builder(57000256).storeRawResponse(true).build()).get();
+    String actual = GSON.toJson(response);
+    String expected = response.getRawResponse().getRaw();
+
+    assertDiff(expected, actual);
   }
 
   @Test
-  void getClanRiverRaceLog_whenWithValidParameters_thenGetResponse() throws Exception {
-    GetClanRiverRaceLogResponse getClanRiverRaceLogResponse = api.getClanRiverRaceLog(
-        GetClanRiverRaceLogRequest.builder("#RP88QQG").build());
-    assertAll(
-        () -> assertNotNull(getClanRiverRaceLogResponse, "getClanRiverRaceLogResponse"),
-        () -> assertNull(getClanRiverRaceLogResponse.getMessage(), "message"),
-        () -> assertNull(getClanRiverRaceLogResponse.getReason(), "reason")
-    );
+  void locations_getTopPlayerLeagueSeasons() throws Exception {
+    TopPlayerLeagueSeasonsResponse
+        response =
+        locationApi.getTopPlayerLeagueSeasons(TopPlayerLeagueSeasonsRequest.builder().storeRawResponse(true).build())
+            .get();
+    String actual = GSON.toJson(response);
+    String expected = response.getRawResponse().getRaw();
+
+    assertDiff(expected, actual);
   }
 
   @Test
-  void getCurrentClanRiverRace_whenWithValidParameters_thenGetResponse() throws Exception {
-    GetCurrentClanRiverRaceResponse getCurrentClanRiverRaceResponse = api.getCurrentClanRiverRace(
-        GetCurrentClanRiverRaceRequest.builder("#RP88QQG").build());
-    assertAll(
-        () -> assertNotNull(getCurrentClanRiverRaceResponse, "getCurrentClanRiverRaceResponse"),
-        () -> assertNull(getCurrentClanRiverRaceResponse.getMessage(), "message"),
-        () -> assertNull(getCurrentClanRiverRaceResponse.getReason(), "reason")
-    );
+  void locations_getTopPlayerLeagueSeason() throws Exception {
+    TopPlayerLeagueSeasonResponse
+        response =
+        locationApi.getTopPlayerLeagueSeason(
+            TopPlayerLeagueSeasonRequest.builder("2022-04").storeRawResponse(true).build()).get();
+    String actual = GSON.toJson(response);
+    String expected = response.getRawResponse().getRaw();
+
+    assertDiff(expected, actual);
+  }
+
+  @Test
+  void locations_getTopPlayerLeagueSeasonRankings() throws Exception {
+    TopPlayerLeagueSeasonRankingsResponse
+        response =
+        locationApi.getTopPlayerLeagueSeasonRankings(
+            TopPlayerLeagueSeasonRankingsRequest.builder("2022-04").storeRawResponse(true).build()).get();
+    String actual = GSON.toJson(response);
+    String expected = response.getRawResponse().getRaw();
+    FileUtils.write(new File("test.json"), expected);
+    assertDiff(expected, actual);
+  }
+
+  @Test
+  void challenges_findAll() throws Exception {
+    ChallengesResponse
+        response =
+        challengeApi.findAll(ChallengesRequest.builder().storeRawResponse(true).build()).get();
+    String actual = GSON.toJson(response)
+        .replace(",\"amount\":0", "")
+        .replace(",{\"amount\":0}", "")
+        .replace(",{\"type\":null}", "")
+        .replace(",\"type\":null", "");
+    String expected = response.getRawResponse().getRaw()
+        .replace(",{\"type\":null}", "")
+        .replace("\"name\":null,", "");
+
+    assertDiff(expected, actual);
+  }
+
+  @Test
+  void globalTournaments_findAll() throws Exception {
+    GlobalTournamentsResponse
+        response = globalTournamentApi.findAll(GlobalTournamentsRequest.builder().storeRawResponse(true).build()).get();
+    String actual = GSON.toJson(response)
+        .replace(",\"amount\":0", "");
+    String expected = response.getRawResponse().getRaw()
+        .replace(",\"type\":null", "")
+        .replace("\"name\":null,", "");
+
+    assertDiff(expected, actual);
   }
 
 }

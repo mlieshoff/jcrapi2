@@ -13,7 +13,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: zulu
-          java-version: 1.8
+          java-version: 8.0.322+6
       - name: Start E2E tests
         run: mvn -B verify -PendToEnd
         env:

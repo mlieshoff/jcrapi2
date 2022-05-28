@@ -15,7 +15,7 @@ We moved to packagecloud.io because the bintray closed their nice hosting... And
 
 ## Join us on Discord
 
-https://discord.com/channels/978161445864869938/978161445864869944
+https://discord.gg/WNb5c8hn
 
 ## Simplest Usage
 

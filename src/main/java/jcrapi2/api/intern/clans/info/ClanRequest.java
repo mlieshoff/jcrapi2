@@ -32,8 +32,8 @@ public class ClanRequest extends Request {
 
   public static ClanRequestBuilder builder(String clanTag) {
     return new ClanRequestBuilder()
-        .clanTag(clanTag)
-        ;
+      .clanTag(clanTag)
+    ;
   }
 
   @Override

@@ -18,19 +18,18 @@ package jcrapi2.api.intern.players;
 
 import java.util.concurrent.Future;
 import jcrapi2.api.Api;
-import jcrapi2.api.intern.players.battlelog.BattleLogRequest;
-import jcrapi2.api.intern.players.battlelog.BattleLogResponse;
-import jcrapi2.api.intern.players.info.PlayerRequest;
+
 import jcrapi2.api.intern.players.info.PlayerResponse;
-import jcrapi2.api.intern.players.upcomingchests.UpcomingChestsRequest;
+import jcrapi2.api.intern.players.info.PlayerRequest;
 import jcrapi2.api.intern.players.upcomingchests.UpcomingChestsResponse;
+import jcrapi2.api.intern.players.upcomingchests.UpcomingChestsRequest;
+import jcrapi2.api.intern.players.battlelog.BattleLogResponse;
+import jcrapi2.api.intern.players.battlelog.BattleLogRequest;
 
 public interface PlayerApi extends Api {
 
   Future<PlayerResponse> findByTag(PlayerRequest playerRequest);
-
   Future<UpcomingChestsResponse> getUpcomingChests(UpcomingChestsRequest upcomingChestsRequest);
-
   Future<BattleLogResponse> getBattleLog(BattleLogRequest battleLogRequest);
 
 }

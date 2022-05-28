@@ -28,8 +28,7 @@ public class ClansRequest extends PaginationRequest {
   private final Integer maxMembers;
 
   @Builder
-  private ClansRequest(int limit, String after, String before, boolean storeRawResponse, String name,
-                       Integer locationId, Integer minMembers, Integer maxMembers) {
+  private ClansRequest(int limit, String after, String before, boolean storeRawResponse, String name, Integer locationId, Integer minMembers, Integer maxMembers) {
     super(limit, after, before, storeRawResponse);
     this.name = name;
     this.locationId = locationId;

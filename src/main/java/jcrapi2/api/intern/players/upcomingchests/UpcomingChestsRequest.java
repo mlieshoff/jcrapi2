@@ -32,8 +32,8 @@ public class UpcomingChestsRequest extends Request {
 
   public static UpcomingChestsRequestBuilder builder(String playerTag) {
     return new UpcomingChestsRequestBuilder()
-        .playerTag(playerTag)
-        ;
+      .playerTag(playerTag)
+    ;
   }
 
   @Override

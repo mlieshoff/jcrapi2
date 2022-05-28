@@ -32,8 +32,8 @@ public class CurrentRiverRaceRequest extends Request {
 
   public static CurrentRiverRaceRequestBuilder builder(String clanTag) {
     return new CurrentRiverRaceRequestBuilder()
-        .clanTag(clanTag)
-        ;
+      .clanTag(clanTag)
+    ;
   }
 
   @Override

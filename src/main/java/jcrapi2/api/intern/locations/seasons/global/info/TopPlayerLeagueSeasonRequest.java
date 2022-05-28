@@ -32,8 +32,8 @@ public class TopPlayerLeagueSeasonRequest extends Request {
 
   public static TopPlayerLeagueSeasonRequestBuilder builder(String seasonId) {
     return new TopPlayerLeagueSeasonRequestBuilder()
-        .seasonId(seasonId)
-        ;
+      .seasonId(seasonId)
+    ;
   }
 
   @Override

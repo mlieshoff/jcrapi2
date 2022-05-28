@@ -25,8 +25,7 @@ public class TopPlayerLeagueSeasonRankingsRequest extends PaginationRequest {
   private final String seasonId;
 
   @Builder
-  private TopPlayerLeagueSeasonRankingsRequest(int limit, String after, String before, boolean storeRawResponse,
-                                               String seasonId) {
+  private TopPlayerLeagueSeasonRankingsRequest(int limit, String after, String before, boolean storeRawResponse, String seasonId) {
     super(limit, after, before, storeRawResponse);
     this.seasonId = seasonId;
   }

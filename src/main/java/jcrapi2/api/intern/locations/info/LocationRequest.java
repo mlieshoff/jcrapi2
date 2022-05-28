@@ -32,8 +32,8 @@ public class LocationRequest extends Request {
 
   public static LocationRequestBuilder builder(long locationId) {
     return new LocationRequestBuilder()
-        .locationId(locationId)
-        ;
+      .locationId(locationId)
+    ;
   }
 
   @Override

@@ -29,7 +29,7 @@ public class CardsRequest extends Request {
 
   public static CardsRequestBuilder builder() {
     return new CardsRequestBuilder()
-        ;
+    ;
   }
 
 

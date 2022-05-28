@@ -16,6 +16,8 @@
  */
 package jcrapi2.api.intern.cards;
 
+import static wiremock.org.apache.commons.lang3.StringUtils.EMPTY;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -35,12 +37,10 @@ public class CardApiImplIntegrationTest extends IntegrationTestBase {
     jcrapi2.api.intern.cards.CardsRequest.CardsRequestBuilder builder = jcrapi2.api.intern.cards.CardsRequest.builder();
     jcrapi2.api.intern.cards.CardsRequest request = builder
 
-        .storeRawResponse(true)
-        .build();
-    prepare("/cards", "", "src/test/resources/card-findAll.json", request);
-    jcrapi2.api.intern.cards.CardsResponse
-        expected =
-        toJson(jcrapi2.api.intern.cards.CardsResponse.class, getExpected());
+      .storeRawResponse(true)
+      .build();
+    prepare("/cards", EMPTY, "src/test/resources/card-findAll.json", request);
+    jcrapi2.api.intern.cards.CardsResponse expected = toJson(jcrapi2.api.intern.cards.CardsResponse.class, getExpected());
 
     run(expected, () -> unitUnderTest.findAll(request).get());
   }
@@ -50,10 +50,10 @@ public class CardApiImplIntegrationTest extends IntegrationTestBase {
     jcrapi2.api.intern.cards.CardsRequest.CardsRequestBuilder builder = jcrapi2.api.intern.cards.CardsRequest.builder();
     jcrapi2.api.intern.cards.CardsRequest request = builder
 
-        .storeRawResponse(true)
-        .build();
+      .storeRawResponse(true)
+      .build();
 
-    prepareWithErrorAndRun("/cards", "", request, () -> unitUnderTest.findAll(request).get());
+    prepareWithErrorAndRun("/cards", EMPTY, request, () -> unitUnderTest.findAll(request).get());
   }
 
 }

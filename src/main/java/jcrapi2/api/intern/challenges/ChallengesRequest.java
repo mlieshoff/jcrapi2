@@ -29,7 +29,7 @@ public class ChallengesRequest extends Request {
 
   public static ChallengesRequestBuilder builder() {
     return new ChallengesRequestBuilder()
-        ;
+    ;
   }
 
 

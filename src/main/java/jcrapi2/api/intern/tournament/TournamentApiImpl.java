@@ -19,10 +19,11 @@ package jcrapi2.api.intern.tournament;
 import java.util.concurrent.Future;
 import jcrapi2.api.ApiContext;
 import jcrapi2.api.BaseApi;
-import jcrapi2.api.intern.tournaments.TournamentsRequest;
+
 import jcrapi2.api.intern.tournaments.TournamentsResponse;
-import jcrapi2.api.intern.tournaments.info.TournamentRequest;
+import jcrapi2.api.intern.tournaments.TournamentsRequest;
 import jcrapi2.api.intern.tournaments.info.TournamentResponse;
+import jcrapi2.api.intern.tournaments.info.TournamentRequest;
 
 class TournamentApiImpl extends BaseApi implements TournamentApi {
 

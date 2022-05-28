@@ -22,11 +22,9 @@ import static wiremock.org.apache.commons.lang3.StringUtils.EMPTY;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
 import java.io.StringReader;
 import javax.json.Json;
 import javax.json.JsonPatch;
@@ -288,7 +286,7 @@ public class EndToEnd {
   void locations_findById() throws Exception {
     LocationResponse
         response =
-        locationApi.findById(LocationRequest.builder(57000256).storeRawResponse(true).build()).get();
+        locationApi.findById(LocationRequest.builder(57000256L).storeRawResponse(true).build()).get();
     String actual = GSON.toJson(response);
     String expected = response.getRawResponse().getRaw();
 
@@ -299,7 +297,7 @@ public class EndToEnd {
   void locations_getClanRankings() throws Exception {
     ClanRankingsResponse
         response =
-        locationApi.getClanRankings(ClanRankingsRequest.builder(57000256).storeRawResponse(true).build()).get();
+        locationApi.getClanRankings(ClanRankingsRequest.builder(57000256L).storeRawResponse(true).build()).get();
     String actual = GSON.toJson(response);
     String expected = response.getRawResponse().getRaw();
 
@@ -310,7 +308,7 @@ public class EndToEnd {
   void locations_getPlayerRankings() throws Exception {
     PlayerRankingsResponse
         response =
-        locationApi.getPlayerRankings(PlayerRankingsRequest.builder(57000256).storeRawResponse(true).build()).get();
+        locationApi.getPlayerRankings(PlayerRankingsRequest.builder(57000256L).storeRawResponse(true).build()).get();
     String actual = GSON.toJson(response);
     String expected = response.getRawResponse().getRaw();
 
@@ -321,7 +319,7 @@ public class EndToEnd {
   void locations_getClanWarRankings() throws Exception {
     ClanWarRankingsResponse
         response =
-        locationApi.getClanWarRankings(ClanWarRankingsRequest.builder(57000256).storeRawResponse(true).build()).get();
+        locationApi.getClanWarRankings(ClanWarRankingsRequest.builder(57000256L).storeRawResponse(true).build()).get();
     String actual = GSON.toJson(response);
     String expected = response.getRawResponse().getRaw();
 

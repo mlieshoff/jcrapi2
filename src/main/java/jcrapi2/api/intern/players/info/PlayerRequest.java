@@ -32,8 +32,8 @@ public class PlayerRequest extends Request {
 
   public static PlayerRequestBuilder builder(String playerTag) {
     return new PlayerRequestBuilder()
-        .playerTag(playerTag)
-        ;
+      .playerTag(playerTag)
+    ;
   }
 
   @Override

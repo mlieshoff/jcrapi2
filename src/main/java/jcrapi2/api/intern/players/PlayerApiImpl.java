@@ -19,12 +19,13 @@ package jcrapi2.api.intern.players;
 import java.util.concurrent.Future;
 import jcrapi2.api.ApiContext;
 import jcrapi2.api.BaseApi;
-import jcrapi2.api.intern.players.battlelog.BattleLogRequest;
-import jcrapi2.api.intern.players.battlelog.BattleLogResponse;
-import jcrapi2.api.intern.players.info.PlayerRequest;
+
 import jcrapi2.api.intern.players.info.PlayerResponse;
-import jcrapi2.api.intern.players.upcomingchests.UpcomingChestsRequest;
+import jcrapi2.api.intern.players.info.PlayerRequest;
 import jcrapi2.api.intern.players.upcomingchests.UpcomingChestsResponse;
+import jcrapi2.api.intern.players.upcomingchests.UpcomingChestsRequest;
+import jcrapi2.api.intern.players.battlelog.BattleLogResponse;
+import jcrapi2.api.intern.players.battlelog.BattleLogRequest;
 
 class PlayerApiImpl extends BaseApi implements PlayerApi {
 

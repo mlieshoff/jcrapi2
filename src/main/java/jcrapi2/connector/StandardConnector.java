@@ -136,7 +136,7 @@ public class StandardConnector implements Connector {
         for (Iterator<String> iterator = queries.iterator(); iterator.hasNext(); ) {
           appendedUrl.append(iterator.next());
           if (iterator.hasNext()) {
-            appendedUrl.append("&");
+            appendedUrl.append('&');
           }
         }
       }

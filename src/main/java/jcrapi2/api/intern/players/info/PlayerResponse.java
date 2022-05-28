@@ -16,9 +16,10 @@
  */
 package jcrapi2.api.intern.players.info;
 
+import jcrapi2.common.IResponse;
+
 import com.google.gson.annotations.SerializedName;
 
-import jcrapi2.common.IResponse;
 import jcrapi2.common.RawResponse;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

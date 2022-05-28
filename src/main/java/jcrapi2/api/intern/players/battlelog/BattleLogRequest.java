@@ -32,8 +32,8 @@ public class BattleLogRequest extends Request {
 
   public static BattleLogRequestBuilder builder(String playerTag) {
     return new BattleLogRequestBuilder()
-        .playerTag(playerTag)
-        ;
+      .playerTag(playerTag)
+    ;
   }
 
   @Override

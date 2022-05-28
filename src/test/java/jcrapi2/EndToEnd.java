@@ -360,7 +360,7 @@ public class EndToEnd {
             TopPlayerLeagueSeasonRankingsRequest.builder("2022-04").storeRawResponse(true).build()).get();
     String actual = GSON.toJson(response);
     String expected = response.getRawResponse().getRaw();
-    FileUtils.write(new File("test.json"), expected);
+
     assertDiff(expected, actual);
   }
 

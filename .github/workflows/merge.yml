@@ -1,0 +1,24 @@
+name: Merge Pull Request
+on:
+  push:
+    branches:
+      - main
+      - master
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up deployment
+        uses: actions/setup-java@v1
+        with:
+          distribution: zulu
+          java-version: 1.8
+          server-id: packagecloud
+          server-username: MAVEN_USERNAME
+          server-password: MAVEN_PASSWORD
+      - name: Publish package
+        run: mvn --batch-mode deploy
+        env:
+          MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
+          MAVEN_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}

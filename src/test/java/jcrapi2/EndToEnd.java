@@ -105,7 +105,8 @@ public class EndToEnd {
   @BeforeEach
   void setUp() {
     jCrApi =
-        new JCrApi("https://proxy.royaleapi.dev/v1", System.getProperty("apiKey"), new StandardConnector());
+        new JCrApi("https://proxy.royaleapi.dev/v1", System.getProperty("apiKey", System.getenv("API_KEY")),
+            new StandardConnector());
     clanApi = jCrApi.getApi(ClanApi.class);
     playerApi = jCrApi.getApi(PlayerApi.class);
     cardApi = jCrApi.getApi(CardApi.class);

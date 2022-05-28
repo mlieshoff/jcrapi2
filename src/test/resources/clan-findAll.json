@@ -1,0 +1,2076 @@
+{
+  "items": [
+    {
+      "tag": "#2YJVUPV",
+      "name": "puzzle",
+      "type": "open",
+      "badgeId": 16000078,
+      "clanScore": 53105,
+      "clanWarTrophies": 1208,
+      "location": {
+        "id": 57000087,
+        "name": "France",
+        "isCountry": true,
+        "countryCode": "FR"
+      },
+      "requiredTrophies": 2600,
+      "donationsPerWeek": 5865,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 50
+    },
+    {
+      "tag": "#QJUV8YCQ",
+      "name": "Puzzle",
+      "type": "open",
+      "badgeId": 16000173,
+      "clanScore": 46197,
+      "clanWarTrophies": 850,
+      "location": {
+        "id": 57000114,
+        "name": "Indonesia",
+        "isCountry": true,
+        "countryCode": "ID"
+      },
+      "requiredTrophies": 3000,
+      "donationsPerWeek": 7215,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 38
+    },
+    {
+      "tag": "#LYLGCYGP",
+      "name": "Puzzle",
+      "type": "open",
+      "badgeId": 16000168,
+      "clanScore": 49774,
+      "clanWarTrophies": 1275,
+      "location": {
+        "id": 57000244,
+        "name": "U.S. Virgin Islands",
+        "isCountry": true,
+        "countryCode": "VI"
+      },
+      "requiredTrophies": 4600,
+      "donationsPerWeek": 1076,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 49
+    },
+    {
+      "tag": "#LCYQJ2CG",
+      "name": "PUZZLE",
+      "type": "open",
+      "badgeId": 16000144,
+      "clanScore": 51449,
+      "clanWarTrophies": 1560,
+      "location": {
+        "id": 57000006,
+        "name": "International",
+        "isCountry": false
+      },
+      "requiredTrophies": 5000,
+      "donationsPerWeek": 5000,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 50
+    },
+    {
+      "tag": "#QC9LU0L2",
+      "name": "Puzzle",
+      "type": "open",
+      "badgeId": 16000030,
+      "clanScore": 32129,
+      "clanWarTrophies": 100,
+      "location": {
+        "id": 57000239,
+        "name": "Turkey",
+        "isCountry": true,
+        "countryCode": "TR"
+      },
+      "requiredTrophies": 2300,
+      "donationsPerWeek": 309,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 21
+    },
+    {
+      "tag": "#LCJU9C9G",
+      "name": "puzzle",
+      "type": "open",
+      "badgeId": 16000171,
+      "clanScore": 4875,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000006,
+        "name": "International",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 8,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 3
+    },
+    {
+      "tag": "#UR9GU08",
+      "name": "PUZZLE",
+      "type": "inviteOnly",
+      "badgeId": 16000030,
+      "clanScore": 2105,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000006,
+        "name": "International",
+        "isCountry": false
+      },
+      "requiredTrophies": 800,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 3
+    },
+    {
+      "tag": "#P0RVJJ0",
+      "name": "PUZZLE",
+      "type": "open",
+      "badgeId": 16000008,
+      "clanScore": 1229,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000115,
+        "name": "Iran",
+        "isCountry": true,
+        "countryCode": "IR"
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 6
+    },
+    {
+      "tag": "#LLJ2LJVJ",
+      "name": "Puzzle",
+      "type": "open",
+      "badgeId": 16000078,
+      "clanScore": 15638,
+      "clanWarTrophies": 163,
+      "location": {
+        "id": 57000000,
+        "name": "Europe",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 10
+    },
+    {
+      "tag": "#22CLCRC",
+      "name": "Puzzle",
+      "type": "open",
+      "badgeId": 16000164,
+      "clanScore": 2444,
+      "clanWarTrophies": 48,
+      "location": {
+        "id": 57000218,
+        "name": "Spain",
+        "isCountry": true,
+        "countryCode": "ES"
+      },
+      "requiredTrophies": 1800,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 3
+    },
+    {
+      "tag": "#YPVGYCV9",
+      "name": "puzzle",
+      "type": "open",
+      "badgeId": 16000165,
+      "clanScore": 2321,
+      "clanWarTrophies": 208,
+      "location": {
+        "id": 57000115,
+        "name": "Iran",
+        "isCountry": true,
+        "countryCode": "IR"
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 1
+    },
+    {
+      "tag": "#PCJLP0L8",
+      "name": "Puzzle",
+      "type": "closed",
+      "badgeId": 16000022,
+      "clanScore": 2143,
+      "clanWarTrophies": 1390,
+      "location": {
+        "id": 57000115,
+        "name": "Iran",
+        "isCountry": true,
+        "countryCode": "IR"
+      },
+      "requiredTrophies": 3600,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 1
+    },
+    {
+      "tag": "#Q8J0CC29",
+      "name": "puzzle",
+      "type": "inviteOnly",
+      "badgeId": 16000009,
+      "clanScore": 2969,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000097,
+        "name": "Greece",
+        "isCountry": true,
+        "countryCode": "GR"
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 2
+    },
+    {
+      "tag": "#LQ2J9J2L",
+      "name": "Puzzle",
+      "type": "open",
+      "badgeId": 16000029,
+      "clanScore": 20888,
+      "clanWarTrophies": 526,
+      "location": {
+        "id": 57000115,
+        "name": "Iran",
+        "isCountry": true,
+        "countryCode": "IR"
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 70,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 50
+    },
+    {
+      "tag": "#QQ9QJGP",
+      "name": "Puzzle",
+      "type": "open",
+      "badgeId": 16000024,
+      "clanScore": 14181,
+      "clanWarTrophies": 457,
+      "location": {
+        "id": 57000006,
+        "name": "International",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 32
+    },
+    {
+      "tag": "#8UUP0JJU",
+      "name": "puzzle",
+      "type": "open",
+      "badgeId": 16000078,
+      "clanScore": 4067,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000087,
+        "name": "France",
+        "isCountry": true,
+        "countryCode": "FR"
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 3
+    },
+    {
+      "tag": "#Y02JVJ89",
+      "name": "Puzzle",
+      "type": "inviteOnly",
+      "badgeId": 16000136,
+      "clanScore": 28206,
+      "clanWarTrophies": 804,
+      "location": {
+        "id": 57000094,
+        "name": "Germany",
+        "isCountry": true,
+        "countryCode": "DE"
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 8,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 20
+    },
+    {
+      "tag": "#L2CVGUJ0",
+      "name": "puzzle",
+      "type": "open",
+      "badgeId": 16000172,
+      "clanScore": 7112,
+      "clanWarTrophies": 245,
+      "location": {
+        "id": 57000006,
+        "name": "International",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 5
+    },
+    {
+      "tag": "#9JL9YV0Y",
+      "name": "puzzle",
+      "type": "open",
+      "badgeId": 16000028,
+      "clanScore": 10590,
+      "clanWarTrophies": 359,
+      "location": {
+        "id": 57000021,
+        "name": "Australia",
+        "isCountry": true,
+        "countryCode": "AU"
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 48
+    },
+    {
+      "tag": "#2PPRGGC",
+      "name": "PuZzlE",
+      "type": "open",
+      "badgeId": 16000026,
+      "clanScore": 1119,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000115,
+        "name": "Iran",
+        "isCountry": true,
+        "countryCode": "IR"
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 3
+    },
+    {
+      "tag": "#RLV9PJ",
+      "name": "PUZZLE",
+      "type": "open",
+      "badgeId": 16000124,
+      "clanScore": 11045,
+      "clanWarTrophies": 1064,
+      "location": {
+        "id": 57000006,
+        "name": "International",
+        "isCountry": false
+      },
+      "requiredTrophies": 1000,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 13
+    },
+    {
+      "tag": "#LG8P9299",
+      "name": "Puzzle",
+      "type": "open",
+      "badgeId": 16000004,
+      "clanScore": 4818,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000000,
+        "name": "Europe",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 7
+    },
+    {
+      "tag": "#LR08L0Q8",
+      "name": "Puzzle Gang",
+      "type": "open",
+      "badgeId": 16000015,
+      "clanScore": 39386,
+      "clanWarTrophies": 429,
+      "location": {
+        "id": 57000087,
+        "name": "France",
+        "isCountry": true,
+        "countryCode": "FR"
+      },
+      "requiredTrophies": 4600,
+      "donationsPerWeek": 1557,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 21
+    },
+    {
+      "tag": "#QL8RUU00",
+      "name": "Puzzle gaming",
+      "type": "inviteOnly",
+      "badgeId": 16000171,
+      "clanScore": 37548,
+      "clanWarTrophies": 310,
+      "location": {
+        "id": 57000087,
+        "name": "France",
+        "isCountry": true,
+        "countryCode": "FR"
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 4558,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 37
+    },
+    {
+      "tag": "#PCUQYLYV",
+      "name": "Puzzle Piece",
+      "type": "open",
+      "badgeId": 16000120,
+      "clanScore": 53851,
+      "clanWarTrophies": 1187,
+      "location": {
+        "id": 57000122,
+        "name": "Japan",
+        "isCountry": true,
+        "countryCode": "JP"
+      },
+      "requiredTrophies": 4600,
+      "donationsPerWeek": 3941,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 50
+    },
+    {
+      "tag": "#GLLQ08GR",
+      "name": "Puzzle gang",
+      "type": "open",
+      "badgeId": 16000009,
+      "clanScore": 16313,
+      "clanWarTrophies": 120,
+      "location": {
+        "id": 57000006,
+        "name": "International",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 317,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 17
+    },
+    {
+      "tag": "#LUPQPLUQ",
+      "name": "team puzzle",
+      "type": "open",
+      "badgeId": 16000144,
+      "clanScore": 22796,
+      "clanWarTrophies": 160,
+      "location": {
+        "id": 57000000,
+        "name": "Europe",
+        "isCountry": false
+      },
+      "requiredTrophies": 1600,
+      "donationsPerWeek": 14,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 15
+    },
+    {
+      "tag": "#YVJCYJ",
+      "name": "The Puzzle",
+      "type": "open",
+      "badgeId": 16000030,
+      "clanScore": 2389,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000038,
+        "name": "Brazil",
+        "isCountry": true,
+        "countryCode": "BR"
+      },
+      "requiredTrophies": 800,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 4
+    },
+    {
+      "tag": "#LU8RVRJY",
+      "name": "Puzzle Club",
+      "type": "open",
+      "badgeId": 16000045,
+      "clanScore": 665,
+      "clanWarTrophies": 47,
+      "location": {
+        "id": 57000006,
+        "name": "International",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 1
+    },
+    {
+      "tag": "#LVRR9RGL",
+      "name": "YT Puzzle",
+      "type": "inviteOnly",
+      "badgeId": 16000022,
+      "clanScore": 2000,
+      "clanWarTrophies": 26,
+      "location": {
+        "id": 57000216,
+        "name": "South Korea",
+        "isCountry": true,
+        "countryCode": "KR"
+      },
+      "requiredTrophies": 4000,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 1
+    },
+    {
+      "tag": "#L20QU9J9",
+      "name": "Puzzle Piece",
+      "type": "open",
+      "badgeId": 16000107,
+      "clanScore": 28777,
+      "clanWarTrophies": 673,
+      "location": {
+        "id": 57000117,
+        "name": "Ireland",
+        "isCountry": true,
+        "countryCode": "IE"
+      },
+      "requiredTrophies": 600,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 45
+    },
+    {
+      "tag": "#QLG88C8L",
+      "name": "Puzzle Piece",
+      "type": "open",
+      "badgeId": 16000164,
+      "clanScore": 2500,
+      "clanWarTrophies": 100,
+      "location": {
+        "id": 57000006,
+        "name": "International",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 1
+    },
+    {
+      "tag": "#YU9RLY9R",
+      "name": "Puzzle Castle",
+      "type": "open",
+      "badgeId": 16000000,
+      "clanScore": 2665,
+      "clanWarTrophies": 397,
+      "location": {
+        "id": 57000006,
+        "name": "International",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 2
+    },
+    {
+      "tag": "#QRLR8Q",
+      "name": "PUZZLE TEAM",
+      "type": "open",
+      "badgeId": 16000003,
+      "clanScore": 13976,
+      "clanWarTrophies": 294,
+      "location": {
+        "id": 57000001,
+        "name": "North America",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 36
+    },
+    {
+      "tag": "#LQQ8CU0Q",
+      "name": "puzzle Factory",
+      "type": "open",
+      "badgeId": 16000021,
+      "clanScore": 31018,
+      "clanWarTrophies": 417,
+      "location": {
+        "id": 57000001,
+        "name": "North America",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 22
+    },
+    {
+      "tag": "#QJUPLJGR",
+      "name": "lemon puzzle",
+      "type": "open",
+      "badgeId": 16000107,
+      "clanScore": 1040,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000006,
+        "name": "International",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 2
+    },
+    {
+      "tag": "#2RQCC9R",
+      "name": "UNSOLVED PUZZLE",
+      "type": "open",
+      "badgeId": 16000038,
+      "clanScore": 6529,
+      "clanWarTrophies": 40,
+      "location": {
+        "id": 57000165,
+        "name": "Nepal",
+        "isCountry": true,
+        "countryCode": "NP"
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 35
+    },
+    {
+      "tag": "#PQVY0JY",
+      "name": "Puzzle Masters",
+      "type": "inviteOnly",
+      "badgeId": 16000007,
+      "clanScore": 17370,
+      "clanWarTrophies": 6,
+      "location": {
+        "id": 57000236,
+        "name": "Trinidad and Tobago",
+        "isCountry": true,
+        "countryCode": "TT"
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 29
+    },
+    {
+      "tag": "#GY9C8JRL",
+      "name": "Puzzledoms",
+      "type": "open",
+      "badgeId": 16000114,
+      "clanScore": 4884,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000249,
+        "name": "United States",
+        "isCountry": true,
+        "countryCode": "US"
+      },
+      "requiredTrophies": 2000,
+      "donationsPerWeek": 26,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 3
+    },
+    {
+      "tag": "#VV98J8Y",
+      "name": "puzzles",
+      "type": "open",
+      "badgeId": 16000128,
+      "clanScore": 51624,
+      "clanWarTrophies": 1334,
+      "location": {
+        "id": 57000113,
+        "name": "India",
+        "isCountry": true,
+        "countryCode": "IN"
+      },
+      "requiredTrophies": 3000,
+      "donationsPerWeek": 3415,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 49
+    },
+    {
+      "tag": "#P99PRJQJ",
+      "name": "Puzzles",
+      "type": "open",
+      "badgeId": 16000025,
+      "clanScore": 33782,
+      "clanWarTrophies": 1597,
+      "location": {
+        "id": 57000000,
+        "name": "Europe",
+        "isCountry": false
+      },
+      "requiredTrophies": 2300,
+      "donationsPerWeek": 1340,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 16
+    },
+    {
+      "tag": "#LU29L82C",
+      "name": "Puzzles",
+      "type": "open",
+      "badgeId": 16000106,
+      "clanScore": 33216,
+      "clanWarTrophies": 90,
+      "location": {
+        "id": 57000094,
+        "name": "Germany",
+        "isCountry": true,
+        "countryCode": "DE"
+      },
+      "requiredTrophies": 3000,
+      "donationsPerWeek": 2217,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 16
+    },
+    {
+      "tag": "#LQGQRJV9",
+      "name": "Puzzles",
+      "type": "open",
+      "badgeId": 16000123,
+      "clanScore": 26967,
+      "clanWarTrophies": 452,
+      "location": {
+        "id": 57000000,
+        "name": "Europe",
+        "isCountry": false
+      },
+      "requiredTrophies": 1600,
+      "donationsPerWeek": 426,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 14
+    },
+    {
+      "tag": "#2YU29QYP",
+      "name": "Puzzle's",
+      "type": "open",
+      "badgeId": 16000164,
+      "clanScore": 26397,
+      "clanWarTrophies": 708,
+      "location": {
+        "id": 57000094,
+        "name": "Germany",
+        "isCountry": true,
+        "countryCode": "DE"
+      },
+      "requiredTrophies": 2000,
+      "donationsPerWeek": 304,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 14
+    },
+    {
+      "tag": "#PVURQQQ8",
+      "name": "puzzled",
+      "type": "inviteOnly",
+      "badgeId": 16000164,
+      "clanScore": 11948,
+      "clanWarTrophies": 740,
+      "location": {
+        "id": 57000248,
+        "name": "United Kingdom",
+        "isCountry": true,
+        "countryCode": "GB"
+      },
+      "requiredTrophies": 300,
+      "donationsPerWeek": 10,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 5
+    },
+    {
+      "tag": "#YL2QRVLU",
+      "name": "Puzzled Panther",
+      "type": "open",
+      "badgeId": 16000058,
+      "clanScore": 37573,
+      "clanWarTrophies": 479,
+      "location": {
+        "id": 57000054,
+        "name": "Chad",
+        "isCountry": true,
+        "countryCode": "TD"
+      },
+      "requiredTrophies": 4000,
+      "donationsPerWeek": 1114,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 35
+    },
+    {
+      "tag": "#YY98QYU2",
+      "name": "Puzzles",
+      "type": "open",
+      "badgeId": 16000171,
+      "clanScore": 52537,
+      "clanWarTrophies": 836,
+      "location": {
+        "id": 57000022,
+        "name": "Austria",
+        "isCountry": true,
+        "countryCode": "AT"
+      },
+      "requiredTrophies": 4600,
+      "donationsPerWeek": 2014,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 49
+    },
+    {
+      "tag": "#2GVR0RV",
+      "name": "puzzles",
+      "type": "open",
+      "badgeId": 16000096,
+      "clanScore": 50752,
+      "clanWarTrophies": 1048,
+      "location": {
+        "id": 57000047,
+        "name": "Canada",
+        "isCountry": true,
+        "countryCode": "CA"
+      },
+      "requiredTrophies": 4000,
+      "donationsPerWeek": 2772,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 43
+    },
+    {
+      "tag": "#Y22ULUP0",
+      "name": "Puzzles",
+      "type": "inviteOnly",
+      "badgeId": 16000044,
+      "clanScore": 40113,
+      "clanWarTrophies": 585,
+      "location": {
+        "id": 57000249,
+        "name": "United States",
+        "isCountry": true,
+        "countryCode": "US"
+      },
+      "requiredTrophies": 5000,
+      "donationsPerWeek": 447,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 29
+    },
+    {
+      "tag": "#9LL9RG8V",
+      "name": "Puzzles",
+      "type": "open",
+      "badgeId": 16000142,
+      "clanScore": 33860,
+      "clanWarTrophies": 537,
+      "location": {
+        "id": 57000006,
+        "name": "International",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 158,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 19
+    },
+    {
+      "tag": "#9LPVYV8G",
+      "name": "Puzzles",
+      "type": "open",
+      "badgeId": 16000165,
+      "clanScore": 31430,
+      "clanWarTrophies": 941,
+      "location": {
+        "id": 57000094,
+        "name": "Germany",
+        "isCountry": true,
+        "countryCode": "DE"
+      },
+      "requiredTrophies": 4000,
+      "donationsPerWeek": 242,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 14
+    },
+    {
+      "tag": "#LULRR20P",
+      "name": "Puzzles",
+      "type": "open",
+      "badgeId": 16000167,
+      "clanScore": 14362,
+      "clanWarTrophies": 130,
+      "location": {
+        "id": 57000021,
+        "name": "Australia",
+        "isCountry": true,
+        "countryCode": "AU"
+      },
+      "requiredTrophies": 3000,
+      "donationsPerWeek": 80,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 10
+    },
+    {
+      "tag": "#YC0C90U",
+      "name": "Puzzles 2.0",
+      "type": "open",
+      "badgeId": 16000060,
+      "clanScore": 42190,
+      "clanWarTrophies": 762,
+      "location": {
+        "id": 57000226,
+        "name": "Switzerland",
+        "isCountry": true,
+        "countryCode": "CH"
+      },
+      "requiredTrophies": 1600,
+      "donationsPerWeek": 94,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 50
+    },
+    {
+      "tag": "#QUQPUL2P",
+      "name": "PUZZLE’S",
+      "type": "open",
+      "badgeId": 16000162,
+      "clanScore": 47101,
+      "clanWarTrophies": 431,
+      "location": {
+        "id": 57000006,
+        "name": "International",
+        "isCountry": false
+      },
+      "requiredTrophies": 3000,
+      "donationsPerWeek": 1012,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 38
+    },
+    {
+      "tag": "#L80C29P",
+      "name": "I like puzzles",
+      "type": "open",
+      "badgeId": 16000024,
+      "clanScore": 6455,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000001,
+        "name": "North America",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 4
+    },
+    {
+      "tag": "#GYRJVV89",
+      "name": "Los Puzzles",
+      "type": "open",
+      "badgeId": 16000002,
+      "clanScore": 2783,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000153,
+        "name": "Mexico",
+        "isCountry": true,
+        "countryCode": "MX"
+      },
+      "requiredTrophies": 1000,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 2
+    },
+    {
+      "tag": "#888JQ2C",
+      "name": "Puzzle&Dragons",
+      "type": "inviteOnly",
+      "badgeId": 16000028,
+      "clanScore": 7242,
+      "clanWarTrophies": 92,
+      "location": {
+        "id": 57000006,
+        "name": "International",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 12
+    },
+    {
+      "tag": "#28Q29C0",
+      "name": "Puzzle'S",
+      "type": "inviteOnly",
+      "badgeId": 16000029,
+      "clanScore": 9879,
+      "clanWarTrophies": 60,
+      "location": {
+        "id": 57000000,
+        "name": "Europe",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 18
+    },
+    {
+      "tag": "#LRU80J0",
+      "name": "puzzle.999",
+      "type": "open",
+      "badgeId": 16000032,
+      "clanScore": 7182,
+      "clanWarTrophies": 375,
+      "location": {
+        "id": 57000216,
+        "name": "South Korea",
+        "isCountry": true,
+        "countryCode": "KR"
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 15
+    },
+    {
+      "tag": "#2VJG0YPP",
+      "name": "Puzzled",
+      "type": "inviteOnly",
+      "badgeId": 16000043,
+      "clanScore": 10070,
+      "clanWarTrophies": 351,
+      "location": {
+        "id": 57000001,
+        "name": "North America",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 7
+    },
+    {
+      "tag": "#PPQV89G",
+      "name": "Puzzled Moguls",
+      "type": "inviteOnly",
+      "badgeId": 16000061,
+      "clanScore": 13934,
+      "clanWarTrophies": 18,
+      "location": {
+        "id": 57000120,
+        "name": "Italy",
+        "isCountry": true,
+        "countryCode": "IT"
+      },
+      "requiredTrophies": 2600,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 11
+    },
+    {
+      "tag": "#L0Y892JU",
+      "name": "puzzled penguin",
+      "type": "inviteOnly",
+      "badgeId": 16000026,
+      "clanScore": 487,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000006,
+        "name": "International",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 1
+    },
+    {
+      "tag": "#2GCPJUQ",
+      "name": "PuzzlePieces",
+      "type": "open",
+      "badgeId": 16000030,
+      "clanScore": 3003,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000239,
+        "name": "Turkey",
+        "isCountry": true,
+        "countryCode": "TR"
+      },
+      "requiredTrophies": 200,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 18
+    },
+    {
+      "tag": "#LRRJQYJP",
+      "name": "Puzzles",
+      "type": "open",
+      "badgeId": 16000002,
+      "clanScore": 20850,
+      "clanWarTrophies": 1024,
+      "location": {
+        "id": 57000198,
+        "name": "Saint Lucia",
+        "isCountry": true,
+        "countryCode": "LC"
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 14
+    },
+    {
+      "tag": "#9V2GCVL",
+      "name": "Puzzles",
+      "type": "open",
+      "badgeId": 16000106,
+      "clanScore": 19734,
+      "clanWarTrophies": 377,
+      "location": {
+        "id": 57000249,
+        "name": "United States",
+        "isCountry": true,
+        "countryCode": "US"
+      },
+      "requiredTrophies": 1400,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 27
+    },
+    {
+      "tag": "#28VCUP2",
+      "name": "Puzzles",
+      "type": "open",
+      "badgeId": 16000164,
+      "clanScore": 18437,
+      "clanWarTrophies": 443,
+      "location": {
+        "id": 57000001,
+        "name": "North America",
+        "isCountry": false
+      },
+      "requiredTrophies": 1200,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 17
+    },
+    {
+      "tag": "#YUJ0VVRY",
+      "name": "Puzzles",
+      "type": "open",
+      "badgeId": 16000080,
+      "clanScore": 15442,
+      "clanWarTrophies": 514,
+      "location": {
+        "id": 57000094,
+        "name": "Germany",
+        "isCountry": true,
+        "countryCode": "DE"
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 10
+    },
+    {
+      "tag": "#9G09CQ",
+      "name": "Puzzles",
+      "type": "inviteOnly",
+      "badgeId": 16000000,
+      "clanScore": 14025,
+      "clanWarTrophies": 12,
+      "location": {
+        "id": 57000006,
+        "name": "International",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 22
+    },
+    {
+      "tag": "#LC9V80G2",
+      "name": "PUZZLES",
+      "type": "open",
+      "badgeId": 16000125,
+      "clanScore": 12852,
+      "clanWarTrophies": 130,
+      "location": {
+        "id": 57000239,
+        "name": "Turkey",
+        "isCountry": true,
+        "countryCode": "TR"
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 10
+    },
+    {
+      "tag": "#GGJLVP",
+      "name": "Puzzles",
+      "type": "inviteOnly",
+      "badgeId": 16000077,
+      "clanScore": 11019,
+      "clanWarTrophies": 92,
+      "location": {
+        "id": 57000094,
+        "name": "Germany",
+        "isCountry": true,
+        "countryCode": "DE"
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 18
+    },
+    {
+      "tag": "#8PJ289",
+      "name": "Puzzles",
+      "type": "inviteOnly",
+      "badgeId": 16000005,
+      "clanScore": 9423,
+      "clanWarTrophies": 120,
+      "location": {
+        "id": 57000249,
+        "name": "United States",
+        "isCountry": true,
+        "countryCode": "US"
+      },
+      "requiredTrophies": 200,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 15
+    },
+    {
+      "tag": "#L98CV9P0",
+      "name": "PuZzles",
+      "type": "open",
+      "badgeId": 16000095,
+      "clanScore": 7291,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000094,
+        "name": "Germany",
+        "isCountry": true,
+        "countryCode": "DE"
+      },
+      "requiredTrophies": 1000,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 4
+    },
+    {
+      "tag": "#Y0CJ0VGU",
+      "name": "Puzzles",
+      "type": "open",
+      "badgeId": 16000024,
+      "clanScore": 6901,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000006,
+        "name": "International",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 14
+    },
+    {
+      "tag": "#Q8YR0VY8",
+      "name": "puzzles",
+      "type": "closed",
+      "badgeId": 16000015,
+      "clanScore": 6599,
+      "clanWarTrophies": 148,
+      "location": {
+        "id": 57000115,
+        "name": "Iran",
+        "isCountry": true,
+        "countryCode": "IR"
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 3
+    },
+    {
+      "tag": "#2098JJQ",
+      "name": "Puzzles",
+      "type": "open",
+      "badgeId": 16000060,
+      "clanScore": 6365,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000226,
+        "name": "Switzerland",
+        "isCountry": true,
+        "countryCode": "CH"
+      },
+      "requiredTrophies": 1000,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 9
+    },
+    {
+      "tag": "#8C928RQ",
+      "name": "puzzles",
+      "type": "inviteOnly",
+      "badgeId": 16000018,
+      "clanScore": 5865,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000001,
+        "name": "North America",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 5
+    },
+    {
+      "tag": "#2QV22VVV",
+      "name": "PUZZLES",
+      "type": "inviteOnly",
+      "badgeId": 16000002,
+      "clanScore": 5837,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000006,
+        "name": "International",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 7
+    },
+    {
+      "tag": "#2J8YL0",
+      "name": "Puzzles",
+      "type": "open",
+      "badgeId": 16000020,
+      "clanScore": 4945,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000006,
+        "name": "International",
+        "isCountry": false
+      },
+      "requiredTrophies": 400,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 13
+    },
+    {
+      "tag": "#209PUR9",
+      "name": "Puzzles",
+      "type": "inviteOnly",
+      "badgeId": 16000151,
+      "clanScore": 4560,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000001,
+        "name": "North America",
+        "isCountry": false
+      },
+      "requiredTrophies": 1200,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 8
+    },
+    {
+      "tag": "#89VQ2QQ",
+      "name": "Puzzles",
+      "type": "open",
+      "badgeId": 16000077,
+      "clanScore": 4507,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000218,
+        "name": "Spain",
+        "isCountry": true,
+        "countryCode": "ES"
+      },
+      "requiredTrophies": 600,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 10
+    },
+    {
+      "tag": "#Y0QPQV9Q",
+      "name": "PUZZLES",
+      "type": "open",
+      "badgeId": 16000082,
+      "clanScore": 4367,
+      "clanWarTrophies": 134,
+      "location": {
+        "id": 57000006,
+        "name": "International",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 3
+    },
+    {
+      "tag": "#2G090JV",
+      "name": "Puzzles",
+      "type": "open",
+      "badgeId": 16000005,
+      "clanScore": 3816,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000006,
+        "name": "International",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 8
+    },
+    {
+      "tag": "#2LYR8898",
+      "name": "Puzzles",
+      "type": "open",
+      "badgeId": 16000171,
+      "clanScore": 3683,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000006,
+        "name": "International",
+        "isCountry": false
+      },
+      "requiredTrophies": 1600,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 3
+    },
+    {
+      "tag": "#LRRJ2J0P",
+      "name": "puzzles",
+      "type": "inviteOnly",
+      "badgeId": 16000078,
+      "clanScore": 3628,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000006,
+        "name": "International",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 2
+    },
+    {
+      "tag": "#8CG0VR9",
+      "name": "Puzzles",
+      "type": "inviteOnly",
+      "badgeId": 16000038,
+      "clanScore": 3373,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000249,
+        "name": "United States",
+        "isCountry": true,
+        "countryCode": "US"
+      },
+      "requiredTrophies": 400,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 5
+    },
+    {
+      "tag": "#VRJLYU",
+      "name": "Puzzles",
+      "type": "inviteOnly",
+      "badgeId": 16000095,
+      "clanScore": 3022,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000006,
+        "name": "International",
+        "isCountry": false
+      },
+      "requiredTrophies": 400,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 7
+    },
+    {
+      "tag": "#Y2GL920P",
+      "name": "Puzzles",
+      "type": "open",
+      "badgeId": 16000131,
+      "clanScore": 2100,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000006,
+        "name": "International",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 1
+    },
+    {
+      "tag": "#28YCUJU",
+      "name": "puzzles",
+      "type": "inviteOnly",
+      "badgeId": 16000046,
+      "clanScore": 2043,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000001,
+        "name": "North America",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 3
+    },
+    {
+      "tag": "#LJ989J09",
+      "name": "Puzzles",
+      "type": "open",
+      "badgeId": 16000139,
+      "clanScore": 1927,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000006,
+        "name": "International",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 1
+    },
+    {
+      "tag": "#89P2PQU0",
+      "name": "Puzzles",
+      "type": "open",
+      "badgeId": 16000051,
+      "clanScore": 1562,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000006,
+        "name": "International",
+        "isCountry": false
+      },
+      "requiredTrophies": 200,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 2
+    },
+    {
+      "tag": "#8YP09UQ",
+      "name": "puzzles",
+      "type": "open",
+      "badgeId": 16000024,
+      "clanScore": 1461,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000006,
+        "name": "International",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 3
+    },
+    {
+      "tag": "#Q8R92GPL",
+      "name": "Puzzles",
+      "type": "open",
+      "badgeId": 16000092,
+      "clanScore": 1455,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000006,
+        "name": "International",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 3
+    },
+    {
+      "tag": "#PRC8RG",
+      "name": "Puzzles",
+      "type": "open",
+      "badgeId": 16000068,
+      "clanScore": 1063,
+      "clanWarTrophies": 16,
+      "location": {
+        "id": 57000185,
+        "name": "Philippines",
+        "isCountry": true,
+        "countryCode": "PH"
+      },
+      "requiredTrophies": 800,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 2
+    },
+    {
+      "tag": "#8QURJ8C9",
+      "name": "Puzzles",
+      "type": "open",
+      "badgeId": 16000010,
+      "clanScore": 1055,
+      "clanWarTrophies": 1408,
+      "location": {
+        "id": 57000002,
+        "name": "South America",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 1
+    },
+    {
+      "tag": "#GU9LJU",
+      "name": "Puzzles",
+      "type": "open",
+      "badgeId": 16000032,
+      "clanScore": 838,
+      "clanWarTrophies": 48,
+      "location": {
+        "id": 57000006,
+        "name": "International",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 3
+    },
+    {
+      "tag": "#CYUC8R",
+      "name": "Puzzles",
+      "type": "open",
+      "badgeId": 16000029,
+      "clanScore": 824,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000006,
+        "name": "International",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 2
+    },
+    {
+      "tag": "#2YUQPCR",
+      "name": "Puzzles",
+      "type": "open",
+      "badgeId": 16000177,
+      "clanScore": 691,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000000,
+        "name": "Europe",
+        "isCountry": false
+      },
+      "requiredTrophies": 200,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 2
+    },
+    {
+      "tag": "#222988P",
+      "name": "Puzzles",
+      "type": "open",
+      "badgeId": 16000061,
+      "clanScore": 682,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000001,
+        "name": "North America",
+        "isCountry": false
+      },
+      "requiredTrophies": 600,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 1
+    },
+    {
+      "tag": "#G20Q2QQ9",
+      "name": "Puzzles",
+      "type": "open",
+      "badgeId": 16000128,
+      "clanScore": 626,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000006,
+        "name": "International",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 2
+    },
+    {
+      "tag": "#2P0QC9",
+      "name": "Puzzles",
+      "type": "open",
+      "badgeId": 16000080,
+      "clanScore": 418,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000006,
+        "name": "International",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 1
+    },
+    {
+      "tag": "#YRRVQUGJ",
+      "name": "puzzles",
+      "type": "open",
+      "badgeId": 16000050,
+      "clanScore": 412,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000006,
+        "name": "International",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 1
+    },
+    {
+      "tag": "#8999RU8",
+      "name": "PUZZLES",
+      "type": "inviteOnly",
+      "badgeId": 16000024,
+      "clanScore": 307,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000000,
+        "name": "Europe",
+        "isCountry": false
+      },
+      "requiredTrophies": 200,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 1
+    },
+    {
+      "tag": "#8PC0LVV",
+      "name": "puzzles amk",
+      "type": "open",
+      "badgeId": 16000019,
+      "clanScore": 876,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000000,
+        "name": "Europe",
+        "isCountry": false
+      },
+      "requiredTrophies": 200,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 2
+    },
+    {
+      "tag": "#2VPPJVJ2",
+      "name": "PUZZLES II",
+      "type": "inviteOnly",
+      "badgeId": 16000132,
+      "clanScore": 11290,
+      "clanWarTrophies": 12,
+      "location": {
+        "id": 57000094,
+        "name": "Germany",
+        "isCountry": true,
+        "countryCode": "DE"
+      },
+      "requiredTrophies": 1000,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 25
+    },
+    {
+      "tag": "#VCCY2Y0",
+      "name": "Puzzles queen",
+      "type": "open",
+      "badgeId": 16000032,
+      "clanScore": 2025,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000002,
+        "name": "South America",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 8
+    },
+    {
+      "tag": "#L0Y2QU",
+      "name": "Puzzles Royale",
+      "type": "inviteOnly",
+      "badgeId": 16000043,
+      "clanScore": 1382,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000000,
+        "name": "Europe",
+        "isCountry": false
+      },
+      "requiredTrophies": 4600,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 2
+    },
+    {
+      "tag": "#LG2Q2P2P",
+      "name": "Puzzles.",
+      "type": "open",
+      "badgeId": 16000139,
+      "clanScore": 2002,
+      "clanWarTrophies": 342,
+      "location": {
+        "id": 57000021,
+        "name": "Australia",
+        "isCountry": true,
+        "countryCode": "AU"
+      },
+      "requiredTrophies": 3300,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 1
+    },
+    {
+      "tag": "#PPLLJPU",
+      "name": "PuzzlesNGoblins",
+      "type": "open",
+      "badgeId": 16000003,
+      "clanScore": 613,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000006,
+        "name": "International",
+        "isCountry": false
+      },
+      "requiredTrophies": 400,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 1
+    },
+    {
+      "tag": "#L09RGQVU",
+      "name": "Puzzle’s",
+      "type": "inviteOnly",
+      "badgeId": 16000015,
+      "clanScore": 10166,
+      "clanWarTrophies": 320,
+      "location": {
+        "id": 57000006,
+        "name": "International",
+        "isCountry": false
+      },
+      "requiredTrophies": 3000,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 5
+    },
+    {
+      "tag": "#889YV22",
+      "name": "royale puzzles",
+      "type": "open",
+      "badgeId": 16000000,
+      "clanScore": 3717,
+      "clanWarTrophies": 14,
+      "location": {
+        "id": 57000166,
+        "name": "Netherlands",
+        "isCountry": true,
+        "countryCode": "NL"
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 9
+    },
+    {
+      "tag": "#G9RRJQ",
+      "name": "Truly Puzzled",
+      "type": "open",
+      "badgeId": 16000012,
+      "clanScore": 7550,
+      "clanWarTrophies": 112,
+      "location": {
+        "id": 57000006,
+        "name": "International",
+        "isCountry": false
+      },
+      "requiredTrophies": 0,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 20
+    },
+    {
+      "tag": "#QC02RL",
+      "name": "✌ PUZZLES ✌",
+      "type": "inviteOnly",
+      "badgeId": 16000010,
+      "clanScore": 1741,
+      "clanWarTrophies": 0,
+      "location": {
+        "id": 57000000,
+        "name": "Europe",
+        "isCountry": false
+      },
+      "requiredTrophies": 600,
+      "donationsPerWeek": 0,
+      "clanChestLevel": 1,
+      "clanChestMaxLevel": 0,
+      "members": 4
+    }
+  ],
+  "paging": {
+    "cursors": {}
+  }
+}

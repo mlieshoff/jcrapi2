@@ -1,0 +1,20 @@
+name: Nightlies
+on:
+  schedule:
+    - cron: "0 0 * * *"
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: master
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: zulu
+          java-version: 8.0.322+6
+      - name: Start E2E tests
+        run: mvn -B verify -PendToEnd
+        env:
+          API_KEY: ${{ secrets.API_KEY }}

@@ -1,0 +1,2797 @@
+{
+  "items": [
+    {
+      "tag": "#2RRVY08J",
+      "name": "Los Lamentables",
+      "rank": 1,
+      "previousRank": 1,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 2040,
+      "members": 42,
+      "badgeId": 16000175
+    },
+    {
+      "tag": "#PUP9UCQU",
+      "name": "sin fronteras",
+      "rank": 2,
+      "previousRank": 2,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 1506,
+      "members": 35,
+      "badgeId": 16000175
+    },
+    {
+      "tag": "#L0CGYYR9",
+      "name": "Zigheads",
+      "rank": 3,
+      "previousRank": 3,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 1369,
+      "members": 45,
+      "badgeId": 16000038
+    },
+    {
+      "tag": "#PV0UQCJ8",
+      "name": "Tu mama",
+      "rank": 4,
+      "previousRank": 4,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 1196,
+      "members": 50,
+      "badgeId": 16000140
+    },
+    {
+      "tag": "#8QCUYLQ",
+      "name": "KrownKollectors",
+      "rank": 5,
+      "previousRank": 5,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 1175,
+      "members": 19,
+      "badgeId": 16000015
+    },
+    {
+      "tag": "#YGJGYGCJ",
+      "name": "Fatty McGee",
+      "rank": 6,
+      "previousRank": 6,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 1029,
+      "members": 49,
+      "badgeId": 16000158
+    },
+    {
+      "tag": "#LL09P0R8",
+      "name": "TEAM❤️JIJIJIJA",
+      "rank": 7,
+      "previousRank": 7,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 1025,
+      "members": 48,
+      "badgeId": 16000128
+    },
+    {
+      "tag": "#Y00GGYRU",
+      "name": "Los Sandel",
+      "rank": 8,
+      "previousRank": 8,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 1024,
+      "members": 42,
+      "badgeId": 16000172
+    },
+    {
+      "tag": "#LJ9RQVQV",
+      "name": "BigDaddyDoinks",
+      "rank": 9,
+      "previousRank": 9,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 1024,
+      "members": 47,
+      "badgeId": 16000107
+    },
+    {
+      "tag": "#PUP2CQYQ",
+      "name": "LUV",
+      "rank": 10,
+      "previousRank": 10,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 985,
+      "members": 20,
+      "badgeId": 16000075
+    },
+    {
+      "tag": "#YVL0RVCY",
+      "name": "camp dos brabos",
+      "rank": 11,
+      "previousRank": 11,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 983,
+      "members": 48,
+      "badgeId": 16000029
+    },
+    {
+      "tag": "#PVR00R0C",
+      "name": "Boyz are buzzin",
+      "rank": 12,
+      "previousRank": 12,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 964,
+      "members": 39,
+      "badgeId": 16000010
+    },
+    {
+      "tag": "#YVJG2VQY",
+      "name": "Royale Fans",
+      "rank": 13,
+      "previousRank": 13,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 950,
+      "members": 12,
+      "badgeId": 16000029
+    },
+    {
+      "tag": "#PCVRQYCU",
+      "name": "海中B3503",
+      "rank": 14,
+      "previousRank": 14,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 948,
+      "members": 1,
+      "badgeId": 16000016
+    },
+    {
+      "tag": "#YUGULC0R",
+      "name": "Bratva Belyy",
+      "rank": 15,
+      "previousRank": 15,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 931,
+      "members": 50,
+      "badgeId": 16000072
+    },
+    {
+      "tag": "#9U2PR02",
+      "name": "seba y mena",
+      "rank": 16,
+      "previousRank": 16,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 904,
+      "members": 49,
+      "badgeId": 16000029
+    },
+    {
+      "tag": "#LC29JLJG",
+      "name": "GrannyBashers",
+      "rank": 17,
+      "previousRank": 17,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 897,
+      "members": 39,
+      "badgeId": 16000154
+    },
+    {
+      "tag": "#98YY8LQR",
+      "name": "SKABROZ",
+      "rank": 18,
+      "previousRank": 18,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 892,
+      "members": 22,
+      "badgeId": 16000121
+    },
+    {
+      "tag": "#LPQGUPV8",
+      "name": "LDLP",
+      "rank": 19,
+      "previousRank": 19,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 878,
+      "members": 44,
+      "badgeId": 16000106
+    },
+    {
+      "tag": "#LYQ2UV8P",
+      "name": "PARONAMICA",
+      "rank": 20,
+      "previousRank": 20,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 874,
+      "members": 26,
+      "badgeId": 16000056
+    },
+    {
+      "tag": "#8CGQYJ9",
+      "name": "los carnalitos",
+      "rank": 21,
+      "previousRank": 21,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 852,
+      "members": 13,
+      "badgeId": 16000029
+    },
+    {
+      "tag": "#QPL0V8RC",
+      "name": "the best",
+      "rank": 22,
+      "previousRank": 22,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 831,
+      "members": 14,
+      "badgeId": 16000170
+    },
+    {
+      "tag": "#L9RLQ8C2",
+      "name": "RichardBottom",
+      "rank": 23,
+      "previousRank": 23,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 793,
+      "members": 22,
+      "badgeId": 16000135
+    },
+    {
+      "tag": "#L9VJJQV8",
+      "name": "Max Chee",
+      "rank": 24,
+      "previousRank": 24,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 781,
+      "members": 39,
+      "badgeId": 16000161
+    },
+    {
+      "tag": "#LGUUYL0",
+      "name": "Milan Zoo2",
+      "rank": 25,
+      "previousRank": 25,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 777,
+      "members": 16,
+      "badgeId": 16000081
+    },
+    {
+      "tag": "#YV2089UJ",
+      "name": "sussy baka",
+      "rank": 26,
+      "previousRank": 26,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 765,
+      "members": 12,
+      "badgeId": 16000120
+    },
+    {
+      "tag": "#LGG89LY2",
+      "name": "MEX EN GUERRA 6",
+      "rank": 27,
+      "previousRank": 27,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 755,
+      "members": 29,
+      "badgeId": 16000170
+    },
+    {
+      "tag": "#PYGQ9G22",
+      "name": "CoCRoyale",
+      "rank": 28,
+      "previousRank": 28,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 741,
+      "members": 3,
+      "badgeId": 16000151
+    },
+    {
+      "tag": "#LYJ2G2CP",
+      "name": "XtremePests",
+      "rank": 29,
+      "previousRank": 29,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 740,
+      "members": 41,
+      "badgeId": 16000162
+    },
+    {
+      "tag": "#8PQL0CYP",
+      "name": "Santa isabel 1",
+      "rank": 30,
+      "previousRank": 30,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 726,
+      "members": 21,
+      "badgeId": 16000013
+    },
+    {
+      "tag": "#9C8RJVYU",
+      "name": "terrorists",
+      "rank": 31,
+      "previousRank": 31,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 724,
+      "members": 10,
+      "badgeId": 16000030
+    },
+    {
+      "tag": "#L28L2CJ8",
+      "name": "Flying Balloons",
+      "rank": 32,
+      "previousRank": 32,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 723,
+      "members": 14,
+      "badgeId": 16000151
+    },
+    {
+      "tag": "#LLVV990V",
+      "name": "CoinToUrWitcher",
+      "rank": 33,
+      "previousRank": 33,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 712,
+      "members": 7,
+      "badgeId": 16000044
+    },
+    {
+      "tag": "#QJ0LQUJL",
+      "name": "Osiris Gung",
+      "rank": 34,
+      "previousRank": 34,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 692,
+      "members": 31,
+      "badgeId": 16000172
+    },
+    {
+      "tag": "#YG2VQ28",
+      "name": "الملوك",
+      "rank": 35,
+      "previousRank": 35,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 681,
+      "members": 11,
+      "badgeId": 16000024
+    },
+    {
+      "tag": "#9L2PG2QV",
+      "name": "xicos",
+      "rank": 36,
+      "previousRank": 36,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 665,
+      "members": 10,
+      "badgeId": 16000145
+    },
+    {
+      "tag": "#LL0C99JL",
+      "name": "chinese_virus",
+      "rank": 37,
+      "previousRank": 37,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 620,
+      "members": 22,
+      "badgeId": 16000028
+    },
+    {
+      "tag": "#Q8UJUPQP",
+      "name": "LOSLARRY13",
+      "rank": 38,
+      "previousRank": 38,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 617,
+      "members": 12,
+      "badgeId": 16000142
+    },
+    {
+      "tag": "#PQVVUC80",
+      "name": "NigsRus",
+      "rank": 39,
+      "previousRank": 39,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 615,
+      "members": 14,
+      "badgeId": 16000029
+    },
+    {
+      "tag": "#LPL909G8",
+      "name": "pedrixon",
+      "rank": 40,
+      "previousRank": 40,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 600,
+      "members": 15,
+      "badgeId": 16000172
+    },
+    {
+      "tag": "#YPR2LYRR",
+      "name": "Nygga Speakers",
+      "rank": 41,
+      "previousRank": 41,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 599,
+      "members": 11,
+      "badgeId": 16000139
+    },
+    {
+      "tag": "#Y00Y00L9",
+      "name": "ASD",
+      "rank": 42,
+      "previousRank": 42,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 598,
+      "members": 47,
+      "badgeId": 16000091
+    },
+    {
+      "tag": "#8RJUP0G2",
+      "name": "MEGA IMPERIO.SV",
+      "rank": 43,
+      "previousRank": -1,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 598,
+      "members": 17,
+      "badgeId": 16000002
+    },
+    {
+      "tag": "#8C8GP0Q",
+      "name": "Spies Like Us",
+      "rank": 44,
+      "previousRank": 43,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 596,
+      "members": 10,
+      "badgeId": 16000141
+    },
+    {
+      "tag": "#YJLVLCPY",
+      "name": "Bowles Brothas",
+      "rank": 45,
+      "previousRank": 44,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 593,
+      "members": 10,
+      "badgeId": 16000141
+    },
+    {
+      "tag": "#82LCUG99",
+      "name": "Nova I Argenta",
+      "rank": 46,
+      "previousRank": 45,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 591,
+      "members": 15,
+      "badgeId": 16000044
+    },
+    {
+      "tag": "#QYGVCQLV",
+      "name": "la prima en 4",
+      "rank": 47,
+      "previousRank": 46,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 591,
+      "members": 28,
+      "badgeId": 16000052
+    },
+    {
+      "tag": "#PL990PV2",
+      "name": "TROTE SALMONATE",
+      "rank": 48,
+      "previousRank": 47,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 580,
+      "members": 50,
+      "badgeId": 16000081
+    },
+    {
+      "tag": "#L2YPUC2U",
+      "name": "Wallis Clan",
+      "rank": 49,
+      "previousRank": 48,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 569,
+      "members": 13,
+      "badgeId": 16000124
+    },
+    {
+      "tag": "#90PL9GQ2",
+      "name": "بنات",
+      "rank": 50,
+      "previousRank": 49,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 565,
+      "members": 50,
+      "badgeId": 16000107
+    },
+    {
+      "tag": "#RUPJUUP",
+      "name": "xbox gamers",
+      "rank": 51,
+      "previousRank": 50,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 559,
+      "members": 13,
+      "badgeId": 16000167
+    },
+    {
+      "tag": "#LPJY02YG",
+      "name": "[FFG]",
+      "rank": 52,
+      "previousRank": 51,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 546,
+      "members": 8,
+      "badgeId": 16000142
+    },
+    {
+      "tag": "#PYJVQVLY",
+      "name": "ベッキー親衛隊",
+      "rank": 53,
+      "previousRank": 52,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 546,
+      "members": 18,
+      "badgeId": 16000171
+    },
+    {
+      "tag": "#2Y9UVRCJ",
+      "name": "AA",
+      "rank": 54,
+      "previousRank": 53,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 526,
+      "members": 45,
+      "badgeId": 16000014
+    },
+    {
+      "tag": "#LU9GLJ22",
+      "name": "trev still bad",
+      "rank": 55,
+      "previousRank": 54,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 520,
+      "members": 11,
+      "badgeId": 16000072
+    },
+    {
+      "tag": "#YRPJC92R",
+      "name": "NoZoMiN.s",
+      "rank": 56,
+      "previousRank": 55,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 519,
+      "members": 40,
+      "badgeId": 16000019
+    },
+    {
+      "tag": "#LPJVYY2G",
+      "name": "SCC 1U",
+      "rank": 57,
+      "previousRank": 56,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 503,
+      "members": 33,
+      "badgeId": 16000168
+    },
+    {
+      "tag": "#LUJUVLUV",
+      "name": "Anti Thatthat",
+      "rank": 58,
+      "previousRank": -1,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 497,
+      "members": 7,
+      "badgeId": 16000140
+    },
+    {
+      "tag": "#GYYG99JV",
+      "name": "Los zanahorios",
+      "rank": 59,
+      "previousRank": 57,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 490,
+      "members": 24,
+      "badgeId": 16000172
+    },
+    {
+      "tag": "#2R9PLRYC",
+      "name": "mango farmers",
+      "rank": 60,
+      "previousRank": 58,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 487,
+      "members": 41,
+      "badgeId": 16000141
+    },
+    {
+      "tag": "#28YGLLG",
+      "name": "plastic fork",
+      "rank": 61,
+      "previousRank": 59,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 483,
+      "members": 22,
+      "badgeId": 16000159
+    },
+    {
+      "tag": "#Q9CL80RG",
+      "name": "AbfulsCrew",
+      "rank": 62,
+      "previousRank": 60,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 481,
+      "members": 50,
+      "badgeId": 16000175
+    },
+    {
+      "tag": "#G2YQ8L2L",
+      "name": "OSCAR",
+      "rank": 63,
+      "previousRank": 61,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 480,
+      "members": 33,
+      "badgeId": 16000003
+    },
+    {
+      "tag": "#Y9JUGQP8",
+      "name": "PG",
+      "rank": 64,
+      "previousRank": 62,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 470,
+      "members": 27,
+      "badgeId": 16000145
+    },
+    {
+      "tag": "#9L0CCVG",
+      "name": "Wallis & Futuna",
+      "rank": 65,
+      "previousRank": 63,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 460,
+      "members": 30,
+      "badgeId": 16000132
+    },
+    {
+      "tag": "#Q9YG0P0P",
+      "name": "yente",
+      "rank": 66,
+      "previousRank": 64,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 455,
+      "members": 24,
+      "badgeId": 16000136
+    },
+    {
+      "tag": "#LR9CLU08",
+      "name": "VivaAerobus",
+      "rank": 67,
+      "previousRank": 65,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 450,
+      "members": 7,
+      "badgeId": 16000145
+    },
+    {
+      "tag": "#YLQLGVU",
+      "name": "Pumpkin Pals",
+      "rank": 68,
+      "previousRank": 66,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 439,
+      "members": 19,
+      "badgeId": 16000140
+    },
+    {
+      "tag": "#Y20GRVRG",
+      "name": "GÜSSELCHÜBEL",
+      "rank": 69,
+      "previousRank": 67,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 437,
+      "members": 20,
+      "badgeId": 16000144
+    },
+    {
+      "tag": "#YUR8L8UR",
+      "name": "Los indios",
+      "rank": 70,
+      "previousRank": 68,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 424,
+      "members": 5,
+      "badgeId": 16000098
+    },
+    {
+      "tag": "#QQLR2UP2",
+      "name": "mistic is good",
+      "rank": 71,
+      "previousRank": 69,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 413,
+      "members": 8,
+      "badgeId": 16000129
+    },
+    {
+      "tag": "#8Y9LQGUR",
+      "name": "Kings and Queen",
+      "rank": 72,
+      "previousRank": 70,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 406,
+      "members": 9,
+      "badgeId": 16000133
+    },
+    {
+      "tag": "#22L9YJC",
+      "name": "Bedes",
+      "rank": 73,
+      "previousRank": 71,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 405,
+      "members": 37,
+      "badgeId": 16000080
+    },
+    {
+      "tag": "#28Y8RRR",
+      "name": "Konger av Norge",
+      "rank": 74,
+      "previousRank": 72,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 394,
+      "members": 45,
+      "badgeId": 16000156
+    },
+    {
+      "tag": "#2C9V0CG",
+      "name": "Clan De jaguar",
+      "rank": 75,
+      "previousRank": 73,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 393,
+      "members": 7,
+      "badgeId": 16000003
+    },
+    {
+      "tag": "#L82JYC0U",
+      "name": "LosDelfines",
+      "rank": 76,
+      "previousRank": 74,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 392,
+      "members": 7,
+      "badgeId": 16000107
+    },
+    {
+      "tag": "#G8LL08",
+      "name": "身骑白马",
+      "rank": 77,
+      "previousRank": 75,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 386,
+      "members": 13,
+      "badgeId": 16000145
+    },
+    {
+      "tag": "#2QPRLGYC",
+      "name": "Found",
+      "rank": 78,
+      "previousRank": 76,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 383,
+      "members": 17,
+      "badgeId": 16000107
+    },
+    {
+      "tag": "#YYJJYPQP",
+      "name": "Royale Fighters",
+      "rank": 79,
+      "previousRank": 77,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 380,
+      "members": 27,
+      "badgeId": 16000081
+    },
+    {
+      "tag": "#PG22RC9C",
+      "name": "حمد الله",
+      "rank": 80,
+      "previousRank": 78,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 370,
+      "members": 9,
+      "badgeId": 16000010
+    },
+    {
+      "tag": "#LY0J22V0",
+      "name": "our clan",
+      "rank": 81,
+      "previousRank": 79,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 368,
+      "members": 16,
+      "badgeId": 16000098
+    },
+    {
+      "tag": "#PVLV8RQR",
+      "name": "The Virgins",
+      "rank": 82,
+      "previousRank": 80,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 363,
+      "members": 7,
+      "badgeId": 16000146
+    },
+    {
+      "tag": "#LUJQQLYP",
+      "name": "Imperium",
+      "rank": 83,
+      "previousRank": 81,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 360,
+      "members": 3,
+      "badgeId": 16000128
+    },
+    {
+      "tag": "#LCQYR992",
+      "name": "le balle nere e",
+      "rank": 84,
+      "previousRank": 82,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 359,
+      "members": 30,
+      "badgeId": 16000141
+    },
+    {
+      "tag": "#QPC0U2UJ",
+      "name": "BP CR :(",
+      "rank": 85,
+      "previousRank": 83,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 355,
+      "members": 7,
+      "badgeId": 16000154
+    },
+    {
+      "tag": "#Y0J2CJ98",
+      "name": "PlayPalazzoni",
+      "rank": 86,
+      "previousRank": 84,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 355,
+      "members": 4,
+      "badgeId": 16000091
+    },
+    {
+      "tag": "#QYPV8VVC",
+      "name": "JW elite",
+      "rank": 87,
+      "previousRank": 85,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 350,
+      "members": 9,
+      "badgeId": 16000142
+    },
+    {
+      "tag": "#RLG00Q",
+      "name": "吃饭饭",
+      "rank": 88,
+      "previousRank": 86,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 349,
+      "members": 11,
+      "badgeId": 16000013
+    },
+    {
+      "tag": "#YUGQRVVR",
+      "name": "Dumb Dogs",
+      "rank": 89,
+      "previousRank": 87,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 342,
+      "members": 8,
+      "badgeId": 16000133
+    },
+    {
+      "tag": "#LVLRPVPG",
+      "name": "╰‿╯█████████╰‿╯",
+      "rank": 90,
+      "previousRank": 88,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 339,
+      "members": 15,
+      "badgeId": 16000134
+    },
+    {
+      "tag": "#G2PG08",
+      "name": "MadeInMalabon",
+      "rank": 91,
+      "previousRank": 89,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 337,
+      "members": 18,
+      "badgeId": 16000125
+    },
+    {
+      "tag": "#QU8P92VG",
+      "name": "Y.M.C.I",
+      "rank": 92,
+      "previousRank": 90,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 336,
+      "members": 36,
+      "badgeId": 16000139
+    },
+    {
+      "tag": "#QJJ2R8LC",
+      "name": "fc losties",
+      "rank": 93,
+      "previousRank": 91,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 334,
+      "members": 4,
+      "badgeId": 16000170
+    },
+    {
+      "tag": "#9QPGPCRY",
+      "name": "TinyMeatGang",
+      "rank": 94,
+      "previousRank": 92,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 323,
+      "members": 25,
+      "badgeId": 16000154
+    },
+    {
+      "tag": "#LYGVVCYJ",
+      "name": "los simps",
+      "rank": 95,
+      "previousRank": 93,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 319,
+      "members": 5,
+      "badgeId": 16000107
+    },
+    {
+      "tag": "#L98CYPY9",
+      "name": "2,6ホグ使い　集まれー",
+      "rank": 96,
+      "previousRank": 94,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 312,
+      "members": 3,
+      "badgeId": 16000020
+    },
+    {
+      "tag": "#9QGRV8Q8",
+      "name": "أحمد أمين",
+      "rank": 97,
+      "previousRank": 95,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 304,
+      "members": 46,
+      "badgeId": 16000020
+    },
+    {
+      "tag": "#G8999QLR",
+      "name": "KOREA",
+      "rank": 98,
+      "previousRank": 96,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 300,
+      "members": 23,
+      "badgeId": 16000126
+    },
+    {
+      "tag": "#JJQ8LLP",
+      "name": "cineco_boys2016",
+      "rank": 99,
+      "previousRank": 97,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 268,
+      "members": 47,
+      "badgeId": 16000008
+    },
+    {
+      "tag": "#PCQQGYY0",
+      "name": "Hola Fortnite G",
+      "rank": 100,
+      "previousRank": 98,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 261,
+      "members": 1,
+      "badgeId": 16000098
+    },
+    {
+      "tag": "#LQ0JJVUJ",
+      "name": "宗教団体　幸せのココナッツ",
+      "rank": 101,
+      "previousRank": 99,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 260,
+      "members": 25,
+      "badgeId": 16000141
+    },
+    {
+      "tag": "#8988YL9J",
+      "name": "The Fermishers",
+      "rank": 102,
+      "previousRank": 100,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 255,
+      "members": 8,
+      "badgeId": 16000008
+    },
+    {
+      "tag": "#L8UJYJPL",
+      "name": "thj",
+      "rank": 103,
+      "previousRank": 101,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 253,
+      "members": 3,
+      "badgeId": 16000077
+    },
+    {
+      "tag": "#QJLVG0LL",
+      "name": "夕張トリプラーズ",
+      "rank": 104,
+      "previousRank": 102,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 249,
+      "members": 12,
+      "badgeId": 16000000
+    },
+    {
+      "tag": "#LY0GL008",
+      "name": "pppelatone",
+      "rank": 105,
+      "previousRank": 103,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 237,
+      "members": 32,
+      "badgeId": 16000159
+    },
+    {
+      "tag": "#QRYUV9UQ",
+      "name": "986",
+      "rank": 106,
+      "previousRank": 104,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 235,
+      "members": 4,
+      "badgeId": 16000026
+    },
+    {
+      "tag": "#YYURP2UY",
+      "name": "AITO PASIFIKA",
+      "rank": 107,
+      "previousRank": 105,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 223,
+      "members": 8,
+      "badgeId": 16000060
+    },
+    {
+      "tag": "#L80RGVYU",
+      "name": "PEKKA",
+      "rank": 108,
+      "previousRank": 106,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 220,
+      "members": 3,
+      "badgeId": 16000172
+    },
+    {
+      "tag": "#2VPR200",
+      "name": "走鬼档",
+      "rank": 109,
+      "previousRank": 107,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 220,
+      "members": 12,
+      "badgeId": 16000077
+    },
+    {
+      "tag": "#PUGV2J02",
+      "name": "Nova I Ohira",
+      "rank": 110,
+      "previousRank": 108,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 217,
+      "members": 10,
+      "badgeId": 16000106
+    },
+    {
+      "tag": "#9RVV8UGL",
+      "name": "العراق",
+      "rank": 111,
+      "previousRank": 109,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 214,
+      "members": 20,
+      "badgeId": 16000110
+    },
+    {
+      "tag": "#Y9RR9P8C",
+      "name": "dio bubu",
+      "rank": 112,
+      "previousRank": 110,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 212,
+      "members": 6,
+      "badgeId": 16000024
+    },
+    {
+      "tag": "#QCR0JJ9V",
+      "name": "cappella nera",
+      "rank": 113,
+      "previousRank": 111,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 205,
+      "members": 12,
+      "badgeId": 16000084
+    },
+    {
+      "tag": "#LRYG99RL",
+      "name": "las fufas",
+      "rank": 114,
+      "previousRank": 112,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 196,
+      "members": 11,
+      "badgeId": 16000160
+    },
+    {
+      "tag": "#G0VQQ0LR",
+      "name": "Chirihuillos",
+      "rank": 115,
+      "previousRank": 113,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 196,
+      "members": 10,
+      "badgeId": 16000123
+    },
+    {
+      "tag": "#Y809LLC",
+      "name": "Full Bonobo",
+      "rank": 116,
+      "previousRank": 114,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 194,
+      "members": 11,
+      "badgeId": 16000137
+    },
+    {
+      "tag": "#LQG9Y9PQ",
+      "name": "pičedrat kurva",
+      "rank": 117,
+      "previousRank": 115,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 180,
+      "members": 11,
+      "badgeId": 16000091
+    },
+    {
+      "tag": "#2U2J9UV",
+      "name": "mcg",
+      "rank": 118,
+      "previousRank": 116,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 176,
+      "members": 27,
+      "badgeId": 16000039
+    },
+    {
+      "tag": "#LQV2LCPV",
+      "name": "Peaceful Banana",
+      "rank": 119,
+      "previousRank": 117,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 174,
+      "members": 6,
+      "badgeId": 16000152
+    },
+    {
+      "tag": "#2VRYJY8C",
+      "name": "ENOC",
+      "rank": 120,
+      "previousRank": 118,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 170,
+      "members": 25,
+      "badgeId": 16000047
+    },
+    {
+      "tag": "#GPPU80R0",
+      "name": "FreeWay",
+      "rank": 121,
+      "previousRank": 119,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 162,
+      "members": 17,
+      "badgeId": 16000172
+    },
+    {
+      "tag": "#P0L2GP",
+      "name": "Baby monkey",
+      "rank": 122,
+      "previousRank": 120,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 148,
+      "members": 13,
+      "badgeId": 16000152
+    },
+    {
+      "tag": "#QJGUQC",
+      "name": "Trojan condumz",
+      "rank": 123,
+      "previousRank": 121,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 146,
+      "members": 24,
+      "badgeId": 16000163
+    },
+    {
+      "tag": "#LPC0Y8Q9",
+      "name": "ملل",
+      "rank": 124,
+      "previousRank": 122,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 142,
+      "members": 1,
+      "badgeId": 16000128
+    },
+    {
+      "tag": "#LG8VUGVR",
+      "name": "THEGG",
+      "rank": 125,
+      "previousRank": 123,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 140,
+      "members": 9,
+      "badgeId": 16000098
+    },
+    {
+      "tag": "#RLG0LRC",
+      "name": "Popete",
+      "rank": 126,
+      "previousRank": 124,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 140,
+      "members": 9,
+      "badgeId": 16000167
+    },
+    {
+      "tag": "#GQ9C0Q",
+      "name": "Royale Rage",
+      "rank": 127,
+      "previousRank": 125,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 138,
+      "members": 26,
+      "badgeId": 16000165
+    },
+    {
+      "tag": "#LR0RGC28",
+      "name": "ClanRoyale",
+      "rank": 128,
+      "previousRank": 126,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 129,
+      "members": 11,
+      "badgeId": 16000077
+    },
+    {
+      "tag": "#L8U9G0PG",
+      "name": "Les Pangolins",
+      "rank": 129,
+      "previousRank": 127,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 128,
+      "members": 5,
+      "badgeId": 16000024
+    },
+    {
+      "tag": "#8JUYLVJG",
+      "name": "STORM",
+      "rank": 130,
+      "previousRank": 128,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 124,
+      "members": 1,
+      "badgeId": 16000114
+    },
+    {
+      "tag": "#989LQP02",
+      "name": "Pan Con Queso",
+      "rank": 131,
+      "previousRank": 129,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 118,
+      "members": 1,
+      "badgeId": 16000146
+    },
+    {
+      "tag": "#L0PRR2P",
+      "name": "The Brotherhood",
+      "rank": 132,
+      "previousRank": 130,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 116,
+      "members": 7,
+      "badgeId": 16000125
+    },
+    {
+      "tag": "#PVGLR8QJ",
+      "name": "Sburro",
+      "rank": 133,
+      "previousRank": 131,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 114,
+      "members": 2,
+      "badgeId": 16000004
+    },
+    {
+      "tag": "#2G2CCP9P",
+      "name": "Unables",
+      "rank": 134,
+      "previousRank": 132,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 112,
+      "members": 2,
+      "badgeId": 16000113
+    },
+    {
+      "tag": "#YQRVJR0V",
+      "name": "ラリ",
+      "rank": 135,
+      "previousRank": 133,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 110,
+      "members": 3,
+      "badgeId": 16000155
+    },
+    {
+      "tag": "#QQP9GRCY",
+      "name": "صديقات العمر",
+      "rank": 136,
+      "previousRank": 134,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 110,
+      "members": 4,
+      "badgeId": 16000122
+    },
+    {
+      "tag": "#LY28P9C0",
+      "name": "Malamuerte",
+      "rank": 137,
+      "previousRank": 135,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 110,
+      "members": 6,
+      "badgeId": 16000029
+    },
+    {
+      "tag": "#YPRY2QPC",
+      "name": "SYRIANS AR",
+      "rank": 138,
+      "previousRank": 136,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 110,
+      "members": 3,
+      "badgeId": 16000009
+    },
+    {
+      "tag": "#L2QPGGCG",
+      "name": "lafamax",
+      "rank": 139,
+      "previousRank": 137,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 110,
+      "members": 3,
+      "badgeId": 16000108
+    },
+    {
+      "tag": "#V9CQ9U",
+      "name": "Diversity",
+      "rank": 140,
+      "previousRank": 138,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 106,
+      "members": 15,
+      "badgeId": 16000106
+    },
+    {
+      "tag": "#LQUPVL",
+      "name": "lorenzo tocci",
+      "rank": 141,
+      "previousRank": 139,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 106,
+      "members": 43,
+      "badgeId": 16000081
+    },
+    {
+      "tag": "#YVLUJV89",
+      "name": "marokanen buite",
+      "rank": 142,
+      "previousRank": 140,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 100,
+      "members": 3,
+      "badgeId": 16000179
+    },
+    {
+      "tag": "#9U92VP",
+      "name": "Royal Flach 777",
+      "rank": 143,
+      "previousRank": 141,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 98,
+      "members": 17,
+      "badgeId": 16000162
+    },
+    {
+      "tag": "#P29G2RQ",
+      "name": "Oero",
+      "rank": 144,
+      "previousRank": 142,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 98,
+      "members": 11,
+      "badgeId": 16000025
+    },
+    {
+      "tag": "#CCPJP0",
+      "name": "WetDreams.PH",
+      "rank": 145,
+      "previousRank": 143,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 96,
+      "members": 10,
+      "badgeId": 16000039
+    },
+    {
+      "tag": "#2CLCJYL",
+      "name": "Firework",
+      "rank": 146,
+      "previousRank": 144,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 96,
+      "members": 12,
+      "badgeId": 16000058
+    },
+    {
+      "tag": "#PP8CQPRU",
+      "name": "asphalt",
+      "rank": 147,
+      "previousRank": 145,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 92,
+      "members": 28,
+      "badgeId": 16000161
+    },
+    {
+      "tag": "#PGQRGRVR",
+      "name": "Pulu Nation",
+      "rank": 148,
+      "previousRank": 146,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 88,
+      "members": 9,
+      "badgeId": 16000101
+    },
+    {
+      "tag": "#L0CCLGQJ",
+      "name": "NIEBRAS",
+      "rank": 149,
+      "previousRank": 147,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 88,
+      "members": 3,
+      "badgeId": 16000009
+    },
+    {
+      "tag": "#C9GULP",
+      "name": "Finesse Fathers",
+      "rank": 150,
+      "previousRank": 148,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 86,
+      "members": 7,
+      "badgeId": 16000135
+    },
+    {
+      "tag": "#209GGL92",
+      "name": "losputos",
+      "rank": 151,
+      "previousRank": 149,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 84,
+      "members": 41,
+      "badgeId": 16000026
+    },
+    {
+      "tag": "#8C92R2U",
+      "name": "111",
+      "rank": 152,
+      "previousRank": 150,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 82,
+      "members": 7,
+      "badgeId": 16000044
+    },
+    {
+      "tag": "#LRULPRPJ",
+      "name": "topochofoodtruc",
+      "rank": 153,
+      "previousRank": 151,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 80,
+      "members": 4,
+      "badgeId": 16000139
+    },
+    {
+      "tag": "#Q82QLRCV",
+      "name": "Big Dubz",
+      "rank": 154,
+      "previousRank": 152,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 80,
+      "members": 6,
+      "badgeId": 16000162
+    },
+    {
+      "tag": "#L2LQYC8L",
+      "name": "Super Giants",
+      "rank": 155,
+      "previousRank": 153,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 72,
+      "members": 6,
+      "badgeId": 16000031
+    },
+    {
+      "tag": "#2YGUVLQ",
+      "name": "MiltonsMilitia",
+      "rank": 156,
+      "previousRank": 154,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 64,
+      "members": 13,
+      "badgeId": 16000087
+    },
+    {
+      "tag": "#YL9GVUQ2",
+      "name": "あすふぁると",
+      "rank": 157,
+      "previousRank": 155,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 64,
+      "members": 7,
+      "badgeId": 16000018
+    },
+    {
+      "tag": "#JVP0J",
+      "name": "Rance Empire",
+      "rank": 158,
+      "previousRank": 156,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 64,
+      "members": 17,
+      "badgeId": 16000039
+    },
+    {
+      "tag": "#YL9GGRYR",
+      "name": "1v1",
+      "rank": 159,
+      "previousRank": 157,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 48,
+      "members": 1,
+      "badgeId": 16000165
+    },
+    {
+      "tag": "#89RLV2L",
+      "name": "W&F island",
+      "rank": 160,
+      "previousRank": 158,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 46,
+      "members": 12,
+      "badgeId": 16000146
+    },
+    {
+      "tag": "#88C89L2",
+      "name": "GOBLIN MAFIA",
+      "rank": 161,
+      "previousRank": 159,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 46,
+      "members": 33,
+      "badgeId": 16000024
+    },
+    {
+      "tag": "#Y2RQ0R90",
+      "name": "la gitoon",
+      "rank": 162,
+      "previousRank": 160,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 44,
+      "members": 7,
+      "badgeId": 16000163
+    },
+    {
+      "tag": "#8PYYYYY",
+      "name": "CIDE INFANTIL",
+      "rank": 163,
+      "previousRank": 161,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 40,
+      "members": 47,
+      "badgeId": 16000029
+    },
+    {
+      "tag": "#QL9LYC8P",
+      "name": "drew",
+      "rank": 164,
+      "previousRank": 162,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 40,
+      "members": 14,
+      "badgeId": 16000005
+    },
+    {
+      "tag": "#28JUC9QY",
+      "name": "xi ips 1",
+      "rank": 165,
+      "previousRank": 163,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 40,
+      "members": 22,
+      "badgeId": 16000142
+    },
+    {
+      "tag": "#2JVLQCL",
+      "name": "HOOFHEARTED",
+      "rank": 166,
+      "previousRank": 164,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 38,
+      "members": 20,
+      "badgeId": 16000036
+    },
+    {
+      "tag": "#9LCP90",
+      "name": "饿狼传说",
+      "rank": 167,
+      "previousRank": 165,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 38,
+      "members": 2,
+      "badgeId": 16000125
+    },
+    {
+      "tag": "#YGUCVLRP",
+      "name": "e-sport部",
+      "rank": 168,
+      "previousRank": 166,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 38,
+      "members": 4,
+      "badgeId": 16000017
+    },
+    {
+      "tag": "#LJ9Y0L0Y",
+      "name": "[ ]",
+      "rank": 169,
+      "previousRank": 167,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 38,
+      "members": 10,
+      "badgeId": 16000109
+    },
+    {
+      "tag": "#QURJ22",
+      "name": "FraToz",
+      "rank": 170,
+      "previousRank": 168,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 36,
+      "members": 8,
+      "badgeId": 16000171
+    },
+    {
+      "tag": "#29GY8RR",
+      "name": "Royale Masters",
+      "rank": 171,
+      "previousRank": 169,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 34,
+      "members": 3,
+      "badgeId": 16000024
+    },
+    {
+      "tag": "#2CLRJ0VJ",
+      "name": "wizard team",
+      "rank": 172,
+      "previousRank": 170,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 34,
+      "members": 11,
+      "badgeId": 16000075
+    },
+    {
+      "tag": "#G8U2J8",
+      "name": "The pioneers",
+      "rank": 173,
+      "previousRank": 171,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 26,
+      "members": 13,
+      "badgeId": 16000012
+    },
+    {
+      "tag": "#29V8QJJ",
+      "name": "Unknows",
+      "rank": 174,
+      "previousRank": 172,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 20,
+      "members": 19,
+      "badgeId": 16000139
+    },
+    {
+      "tag": "#8YGGR2L",
+      "name": "The clashers",
+      "rank": 175,
+      "previousRank": 173,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 20,
+      "members": 9,
+      "badgeId": 16000021
+    },
+    {
+      "tag": "#2YCRPY9",
+      "name": "Binbas Warriors",
+      "rank": 176,
+      "previousRank": 174,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 16,
+      "members": 21,
+      "badgeId": 16000026
+    },
+    {
+      "tag": "#LCJVJVCU",
+      "name": "عراق",
+      "rank": 177,
+      "previousRank": 175,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 16,
+      "members": 8,
+      "badgeId": 16000115
+    },
+    {
+      "tag": "#89YV0P2",
+      "name": "Alliances",
+      "rank": 178,
+      "previousRank": 176,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 14,
+      "members": 11,
+      "badgeId": 16000024
+    },
+    {
+      "tag": "#8C92V29",
+      "name": "Казахи Рулят",
+      "rank": 179,
+      "previousRank": 177,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 12,
+      "members": 45,
+      "badgeId": 16000077
+    },
+    {
+      "tag": "#LLY0P0Y9",
+      "name": "hotline Lolis",
+      "rank": 180,
+      "previousRank": 178,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 10,
+      "members": 6,
+      "badgeId": 16000175
+    },
+    {
+      "tag": "#208Q098P",
+      "name": "Les Chybres",
+      "rank": 181,
+      "previousRank": 179,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 10,
+      "members": 18,
+      "badgeId": 16000078
+    },
+    {
+      "tag": "#8L0JL",
+      "name": "Victory Matters",
+      "rank": 182,
+      "previousRank": 180,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 8,
+      "members": 13,
+      "badgeId": 16000029
+    },
+    {
+      "tag": "#2002CJ08",
+      "name": "Gas the dews",
+      "rank": 183,
+      "previousRank": 181,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 4,
+      "members": 20,
+      "badgeId": 16000002
+    },
+    {
+      "tag": "#9L822RC",
+      "name": "The Crekk",
+      "rank": 184,
+      "previousRank": 182,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 2,
+      "members": 14,
+      "badgeId": 16000155
+    },
+    {
+      "tag": "#L0GQVL",
+      "name": "CouscousMerguez",
+      "rank": 185,
+      "previousRank": 183,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 2,
+      "members": 11,
+      "badgeId": 16000076
+    },
+    {
+      "tag": "#QVPG00QG",
+      "name": "SKARX",
+      "rank": 186,
+      "previousRank": 184,
+      "location": {
+        "id": 57000256,
+        "name": "Wallis and Futuna",
+        "isCountry": true,
+        "countryCode": "WF"
+      },
+      "clanScore": 2,
+      "members": 6,
+      "badgeId": 16000144
+    }
+  ],
+  "paging": {
+    "cursors": {}
+  }
+}

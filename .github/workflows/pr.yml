@@ -1,0 +1,16 @@
+# This workflow starts build and test for PR commits
+name: Pull Request
+on: [pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: zulu
+          java-version: 8.0.322+6
+      - name: Build with Maven
+        run:
+          mvn -B package

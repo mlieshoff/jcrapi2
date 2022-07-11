@@ -16,6 +16,8 @@
  */
 package jcrapi2;
 
+import static java.lang.System.getProperty;
+import static java.lang.System.getenv;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static wiremock.org.apache.commons.lang3.StringUtils.EMPTY;
 
@@ -84,7 +86,13 @@ public class EndToEnd {
 
   private static final Gson GSON = new GsonBuilder().disableHtmlEscaping().create();
 
-  private JCrApi jCrApi;
+  private static final String CLAN_TAG = "#RP88QQG";
+  private static final String PLAYER_TAG = "#2PGGCJJL";
+  private static final String TOURNAMENT_NAME = "de";
+  private static final String TOURNAMENT_TAG = "#U2QQQL2";
+  private static final String SEASON_ID = "2022-04";
+
+  private static final long LOCATION_ID = 57000256L;
 
   private ClanApi clanApi;
 
@@ -102,9 +110,10 @@ public class EndToEnd {
 
   @BeforeEach
   void setUp() {
-    jCrApi =
-        new JCrApi("https://proxy.royaleapi.dev/v1", System.getProperty("apiKey", System.getenv("API_KEY")),
-            new StandardConnector());
+    JCrApi jCrApi = new JCrApi(
+        "https://proxy.royaleapi.dev/v1",
+        getProperty("apiKey", getenv("API_KEY")),
+        new StandardConnector());
     clanApi = jCrApi.getApi(ClanApi.class);
     playerApi = jCrApi.getApi(PlayerApi.class);
     cardApi = jCrApi.getApi(CardApi.class);
@@ -114,7 +123,7 @@ public class EndToEnd {
     globalTournamentApi = jCrApi.getApi(GlobalTournamentApi.class);
   }
 
-  private void assertDiff(String expected, String actual) {
+  private static void assertDiff(String expected, String actual) {
     JsonValue source = Json.createReader(new StringReader(actual)).readValue();
     JsonValue target = Json.createReader(new StringReader(expected)).readValue();
     JsonPatch diff;
@@ -124,7 +133,7 @@ public class EndToEnd {
       diff = Json.createDiff(source.asJsonArray(), target.asJsonArray());
     }
     StringBuilder diffOutput = new StringBuilder();
-    diff.toJsonArray().forEach(entry -> diffOutput.append(entry + "\n"));
+    diff.toJsonArray().forEach(entry -> diffOutput.append(entry).append('\n'));
     assertEquals(EMPTY, diffOutput.toString());
   }
 
@@ -148,7 +157,7 @@ public class EndToEnd {
   void clans_findByTag() throws Exception {
     ClanResponse
         response =
-        clanApi.findByTag(ClanRequest.builder("#RP88QQG").storeRawResponse(true).build()).get();
+        clanApi.findByTag(ClanRequest.builder(CLAN_TAG).storeRawResponse(true).build()).get();
     String actual = GSON.toJson(response);
     String expected = response.getRawResponse().getRaw();
 
@@ -159,7 +168,7 @@ public class EndToEnd {
   void clans_getRiverRaceLog() throws Exception {
     RiverRaceLogResponse
         response =
-        clanApi.getRiverRaceLog(RiverRaceLogRequest.builder("#RP88QQG").storeRawResponse(true).build()).get();
+        clanApi.getRiverRaceLog(RiverRaceLogRequest.builder(CLAN_TAG).storeRawResponse(true).build()).get();
     String actual = GSON.toJson(response);
     String expected = response.getRawResponse().getRaw();
 
@@ -170,7 +179,7 @@ public class EndToEnd {
   void clans_getMembers() throws Exception {
     ClanMembersResponse
         response =
-        clanApi.getMembers(ClanMembersRequest.builder("#RP88QQG").storeRawResponse(true).build()).get();
+        clanApi.getMembers(ClanMembersRequest.builder(CLAN_TAG).storeRawResponse(true).build()).get();
     String actual = GSON.toJson(response);
     String expected = response.getRawResponse().getRaw();
 
@@ -181,7 +190,7 @@ public class EndToEnd {
   void clans_getCurrentRiverRaceLog() throws Exception {
     CurrentRiverRaceResponse
         response =
-        clanApi.getCurrentRiverRace(CurrentRiverRaceRequest.builder("#RP88QQG").storeRawResponse(true).build()).get();
+        clanApi.getCurrentRiverRace(CurrentRiverRaceRequest.builder(CLAN_TAG).storeRawResponse(true).build()).get();
     String actual = GSON.toJson(response);
     String expected = response.getRawResponse().getRaw();
 
@@ -192,11 +201,13 @@ public class EndToEnd {
   void players_findByTag() throws Exception {
     PlayerResponse
         response =
-        playerApi.findByTag(PlayerRequest.builder("#2PGGCJJL").storeRawResponse(true).build()).get();
+        playerApi.findByTag(PlayerRequest.builder(PLAYER_TAG).storeRawResponse(true).build()).get();
     String actual = GSON.toJson(response)
         .replace(",\"starLevel\":0", "")
-        .replace(",\"target\":0", "");
-    String expected = response.getRawResponse().getRaw().replace(",\"completionInfo\":null", "");
+        .replace(",\"target\":0", "")
+        .replace(",\"bestTrophies\":0", "");
+    String expected = response.getRawResponse().getRaw()
+        .replace(",\"completionInfo\":null", "");
 
     assertDiff(expected, actual);
   }
@@ -205,7 +216,7 @@ public class EndToEnd {
   void players_getUpcomingChests() throws Exception {
     UpcomingChestsResponse
         response =
-        playerApi.getUpcomingChests(UpcomingChestsRequest.builder("#2PGGCJJL").storeRawResponse(true).build()).get();
+        playerApi.getUpcomingChests(UpcomingChestsRequest.builder(PLAYER_TAG).storeRawResponse(true).build()).get();
     String actual = GSON.toJson(response);
     String expected = response.getRawResponse().getRaw();
 
@@ -216,7 +227,7 @@ public class EndToEnd {
   void players_getBattleLog() throws Exception {
     BattleLogResponse
         response =
-        playerApi.getBattleLog(BattleLogRequest.builder("#2PGGCJJL").storeRawResponse(true).build()).get();
+        playerApi.getBattleLog(BattleLogRequest.builder(PLAYER_TAG).storeRawResponse(true).build()).get();
     String actual = GSON.toJson(response)
         .replace(",\"startingTrophies\":0", "")
         .replace(",\"crowns\":0", "")
@@ -253,7 +264,7 @@ public class EndToEnd {
   void tournaments_findAll() throws Exception {
     TournamentsResponse
         response =
-        tournamentApi.findAll(TournamentsRequest.builder().name("de").storeRawResponse(true).build()).get();
+        tournamentApi.findAll(TournamentsRequest.builder().name(TOURNAMENT_NAME).storeRawResponse(true).build()).get();
     String actual = GSON.toJson(response);
     String expected = response.getRawResponse().getRaw();
 
@@ -264,7 +275,7 @@ public class EndToEnd {
   void tournaments_findByTag() throws Exception {
     TournamentResponse
         response =
-        tournamentApi.findByTag(TournamentRequest.builder("#U2QQQL2").storeRawResponse(true).build()).get();
+        tournamentApi.findByTag(TournamentRequest.builder(TOURNAMENT_TAG).storeRawResponse(true).build()).get();
     String actual = GSON.toJson(response);
     String expected = response.getRawResponse().getRaw();
 
@@ -286,7 +297,7 @@ public class EndToEnd {
   void locations_findById() throws Exception {
     LocationResponse
         response =
-        locationApi.findById(LocationRequest.builder(57000256L).storeRawResponse(true).build()).get();
+        locationApi.findById(LocationRequest.builder(LOCATION_ID).storeRawResponse(true).build()).get();
     String actual = GSON.toJson(response);
     String expected = response.getRawResponse().getRaw();
 
@@ -297,7 +308,7 @@ public class EndToEnd {
   void locations_getClanRankings() throws Exception {
     ClanRankingsResponse
         response =
-        locationApi.getClanRankings(ClanRankingsRequest.builder(57000256L).storeRawResponse(true).build()).get();
+        locationApi.getClanRankings(ClanRankingsRequest.builder(LOCATION_ID).storeRawResponse(true).build()).get();
     String actual = GSON.toJson(response);
     String expected = response.getRawResponse().getRaw();
 
@@ -308,7 +319,7 @@ public class EndToEnd {
   void locations_getPlayerRankings() throws Exception {
     PlayerRankingsResponse
         response =
-        locationApi.getPlayerRankings(PlayerRankingsRequest.builder(57000256L).storeRawResponse(true).build()).get();
+        locationApi.getPlayerRankings(PlayerRankingsRequest.builder(LOCATION_ID).storeRawResponse(true).build()).get();
     String actual = GSON.toJson(response);
     String expected = response.getRawResponse().getRaw();
 
@@ -319,7 +330,8 @@ public class EndToEnd {
   void locations_getClanWarRankings() throws Exception {
     ClanWarRankingsResponse
         response =
-        locationApi.getClanWarRankings(ClanWarRankingsRequest.builder(57000256L).storeRawResponse(true).build()).get();
+        locationApi.getClanWarRankings(ClanWarRankingsRequest.builder(LOCATION_ID).storeRawResponse(true).build())
+            .get();
     String actual = GSON.toJson(response);
     String expected = response.getRawResponse().getRaw();
 
@@ -343,7 +355,7 @@ public class EndToEnd {
     TopPlayerLeagueSeasonResponse
         response =
         locationApi.getTopPlayerLeagueSeason(
-            TopPlayerLeagueSeasonRequest.builder("2022-04").storeRawResponse(true).build()).get();
+            TopPlayerLeagueSeasonRequest.builder(SEASON_ID).storeRawResponse(true).build()).get();
     String actual = GSON.toJson(response);
     String expected = response.getRawResponse().getRaw();
 
@@ -355,7 +367,7 @@ public class EndToEnd {
     TopPlayerLeagueSeasonRankingsResponse
         response =
         locationApi.getTopPlayerLeagueSeasonRankings(
-            TopPlayerLeagueSeasonRankingsRequest.builder("2022-04").storeRawResponse(true).build()).get();
+            TopPlayerLeagueSeasonRankingsRequest.builder(SEASON_ID).storeRawResponse(true).build()).get();
     String actual = GSON.toJson(response);
     String expected = response.getRawResponse().getRaw();
 

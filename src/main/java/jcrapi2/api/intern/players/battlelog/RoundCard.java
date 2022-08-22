@@ -18,33 +18,24 @@ package jcrapi2.api.intern.players.battlelog;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
 import lombok.Data;
 
 @Data
-public class Opponent {
+public class RoundCard {
 
-  @SerializedName("tag")
-  private String tag;
+  @SerializedName("used")
+  private boolean used;
   @SerializedName("name")
   private String name;
-  @SerializedName("startingTrophies")
-  private int startingTrophies;
-  @SerializedName("crowns")
-  private int crowns;
-  @SerializedName("trophyChange")
-  private int trophyChange;
-  @SerializedName("kingTowerHitPoints")
-  private int kingTowerHitPoints;
-  @SerializedName("princessTowersHitPoints")
-  private List<Integer> princessTowersHitPoints;
-  @SerializedName("clan")
-  private Clan clan;
-  @SerializedName("cards")
-  private List<Card> cards;
-  @SerializedName("elixirLeaked")
-  private int elixirLeaked;
-  @SerializedName("rounds")
-  private List<Round> rounds;
+  @SerializedName("id")
+  private long id;
+  @SerializedName("level")
+  private int level;
+  @SerializedName("maxLevel")
+  private int maxLevel;
+  @SerializedName("starLevel")
+  private int starLevel;
+  @SerializedName("iconUrls")
+  private IconUrls iconUrls;
 
 }

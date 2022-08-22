@@ -238,13 +238,18 @@ public class EndToEnd {
         .replace(",\"prevTowersDestroyed\":0", "")
         .replace(",\"prevTowersDestroyedprevTowersDestroyed\":0", "")
         .replace(",\"remainingTowers\":0", "")
-        .replace(",\"starLevel\":0", "");
+        .replace(",\"starLevel\":0", "")
+        .replace(",\"elixirLeaked\":0", "");
     String expected = response.getRawResponse().getRaw()
         .replace(",\"crowns\":0", "")
         .replace(",\"boatBattleWon\":false", "")
         .replace(",\"remainingTowers\":0", "")
         .replace(",\"prevTowersDestroyed\":0", "")
-        .replace(",\"newTowersDestroyed\":0", "");
+        .replace(",\"newTowersDestroyed\":0", "")
+        .replace(",\"kingTowerHitPoints\":0", "")
+        .replace(",\"princessTowersHitPoints\":null", "")
+        .replace(",\"elixirLeaked\":0", "")
+        .replace("\"name\":null,", "");
 
     assertDiff(expected, actual);
   }

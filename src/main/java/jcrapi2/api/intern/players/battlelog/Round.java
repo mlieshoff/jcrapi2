@@ -22,29 +22,11 @@ import java.util.List;
 import lombok.Data;
 
 @Data
-public class Opponent {
+public class Round {
 
-  @SerializedName("tag")
-  private String tag;
-  @SerializedName("name")
-  private String name;
-  @SerializedName("startingTrophies")
-  private int startingTrophies;
   @SerializedName("crowns")
   private int crowns;
-  @SerializedName("trophyChange")
-  private int trophyChange;
-  @SerializedName("kingTowerHitPoints")
-  private int kingTowerHitPoints;
-  @SerializedName("princessTowersHitPoints")
-  private List<Integer> princessTowersHitPoints;
-  @SerializedName("clan")
-  private Clan clan;
   @SerializedName("cards")
-  private List<Card> cards;
-  @SerializedName("elixirLeaked")
-  private int elixirLeaked;
-  @SerializedName("rounds")
-  private List<Round> rounds;
+  private List<RoundCard> cards;
 
 }

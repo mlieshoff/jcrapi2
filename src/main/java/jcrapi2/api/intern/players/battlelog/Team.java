@@ -42,5 +42,9 @@ public class Team {
   private Clan clan;
   @SerializedName("cards")
   private List<Card> cards;
+  @SerializedName("elixirLeaked")
+  private int elixirLeaked;
+  @SerializedName("rounds")
+  private List<Round> rounds;
 
 }

@@ -43,7 +43,7 @@ public class Opponent {
   @SerializedName("cards")
   private List<Card> cards;
   @SerializedName("elixirLeaked")
-  private int elixirLeaked;
+  private double elixirLeaked;
   @SerializedName("rounds")
   private List<Round> rounds;
 

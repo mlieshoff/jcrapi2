@@ -52,5 +52,11 @@ public class LogEntry {
   private List<Team> team;
   @SerializedName("opponent")
   private List<Opponent> opponent;
+  @SerializedName("challengeId")
+  private long challengeId;
+  @SerializedName("challengeWinCountBefore")
+  private int challengeWinCountBefore;
+  @SerializedName("challengeTitle")
+  private String challengeTitle;
 
 }

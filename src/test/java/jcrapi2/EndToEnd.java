@@ -259,11 +259,6 @@ public class EndToEnd {
   }
 
   @Test
-  void test() {
-    assertDiff("{\"elixirLeaked\":11.33}", "{\"elixirLeaked\":11.33}");
-  }
-
-  @Test
   void cards_findAll() throws Exception {
     CardsResponse
         response =

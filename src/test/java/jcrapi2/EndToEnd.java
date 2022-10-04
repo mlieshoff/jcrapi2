@@ -228,6 +228,7 @@ public class EndToEnd {
     BattleLogResponse
         response =
         playerApi.getBattleLog(BattleLogRequest.builder(PLAYER_TAG).storeRawResponse(true).build()).get();
+
     String actual = GSON.toJson(response)
         .replace(",\"startingTrophies\":0", "")
         .replace(",\"crowns\":0", "")
@@ -239,7 +240,9 @@ public class EndToEnd {
         .replace(",\"prevTowersDestroyedprevTowersDestroyed\":0", "")
         .replace(",\"remainingTowers\":0", "")
         .replace(",\"starLevel\":0", "")
-        .replace(",\"elixirLeaked\":0", "");
+        .replace(",\"elixirLeaked\":0.0,", ",")
+        .replace(",\"challengeId\":0", "")
+        .replace(",\"challengeWinCountBefore\":0", "");
     String expected = response.getRawResponse().getRaw()
         .replace(",\"crowns\":0", "")
         .replace(",\"boatBattleWon\":false", "")
@@ -248,10 +251,16 @@ public class EndToEnd {
         .replace(",\"newTowersDestroyed\":0", "")
         .replace(",\"kingTowerHitPoints\":0", "")
         .replace(",\"princessTowersHitPoints\":null", "")
-        .replace(",\"elixirLeaked\":0", "")
-        .replace("\"name\":null,", "");
+        .replace(",\"elixirLeaked\":0.0,", ",")
+        .replace("\"name\":null,", "")
+        .replace(",\"challengeWinCountBefore\":0", "");
 
     assertDiff(expected, actual);
+  }
+
+  @Test
+  void test() {
+    assertDiff("{\"elixirLeaked\":11.33}", "{\"elixirLeaked\":11.33}");
   }
 
   @Test

@@ -66,6 +66,8 @@ public class Player {
   private int starPoints;
   @SerializedName("expPoints")
   private int expPoints;
+  @SerializedName("totalExpPoints")
+  private int totalExpPoints;
   @SerializedName("clan")
   private Clan clan;
   @SerializedName("arena")

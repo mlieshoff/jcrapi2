@@ -223,7 +223,10 @@ public class EndToEnd {
                         .replace(",\"target\":0", "")
                         .replace(",\"bestTrophies\":0", "");
         String expected =
-                response.getRawResponse().getRaw().replace(",\"completionInfo\":null", "");
+                response.getRawResponse()
+                        .getRaw()
+                        .replace(",\"completionInfo\":null", "")
+                        .replace(",\"rank\":null", "");
 
         assertDiff(expected, actual);
     }

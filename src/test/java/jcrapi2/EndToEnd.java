@@ -265,7 +265,8 @@ public class EndToEnd {
                         .replace(",\"starLevel\":0", "")
                         .replace(",\"elixirLeaked\":0.0,", ",")
                         .replace(",\"challengeId\":0", "")
-                        .replace(",\"challengeWinCountBefore\":0", "");
+                        .replace(",\"challengeWinCountBefore\":0", "")
+                        .replace(",\"globalRank\":null", "");
         String expected =
                 response.getRawResponse()
                         .getRaw()
@@ -278,7 +279,9 @@ public class EndToEnd {
                         .replace(",\"princessTowersHitPoints\":null", "")
                         .replace(",\"elixirLeaked\":0.0,", ",")
                         .replace("\"name\":null,", "")
-                        .replace(",\"challengeWinCountBefore\":0", "");
+                        .replace(",\"challengeWinCountBefore\":0", "")
+                        .replace(",\"maxEvolutionLevel\":null", "")
+                        .replace(",\"globalRank\":null", "");
 
         assertDiff(expected, actual);
     }

@@ -18,13 +18,13 @@ package jcrapi2.api.intern.players.upcomingchests;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 public class UpcomingChests {
 
-  @SerializedName("items")
-  private List<UpcomingChest> items;
-
+    @SerializedName("items")
+    private List<UpcomingChest> items;
 }

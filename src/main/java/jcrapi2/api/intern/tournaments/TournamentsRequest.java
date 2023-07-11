@@ -16,35 +16,37 @@
  */
 package jcrapi2.api.intern.tournaments;
 
-import java.util.Map;
 import jcrapi2.common.PaginationRequest;
+
 import lombok.Builder;
+
+import java.util.Map;
 
 public class TournamentsRequest extends PaginationRequest {
 
-  private final String name;
+    private final String name;
 
-  @Builder
-  private TournamentsRequest(int limit, String after, String before, boolean storeRawResponse, String name) {
-    super(limit, after, before, storeRawResponse);
-    this.name = name;
-  }
+    @Builder
+    private TournamentsRequest(
+            int limit, String after, String before, boolean storeRawResponse, String name) {
+        super(limit, after, before, storeRawResponse);
+        this.name = name;
+    }
 
-  public static TournamentsRequestBuilder builder() {
-    return new TournamentsRequestBuilder();
-  }
+    public static TournamentsRequestBuilder builder() {
+        return new TournamentsRequestBuilder();
+    }
 
-  @Override
-  public Map<String, Object> getRestParameters() {
-    Map<String, Object> map = super.getRestParameters();
-    return map;
-  }
+    @Override
+    public Map<String, Object> getRestParameters() {
+        Map<String, Object> map = super.getRestParameters();
+        return map;
+    }
 
-  @Override
-  public Map<String, Object> getQueryParameters() {
-    Map<String, Object> map = super.getQueryParameters();
-    map.put("name", name);
-    return map;
-  }
-
+    @Override
+    public Map<String, Object> getQueryParameters() {
+        Map<String, Object> map = super.getQueryParameters();
+        map.put("name", name);
+        return map;
+    }
 }

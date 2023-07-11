@@ -16,19 +16,19 @@
  */
 package jcrapi2.common;
 
-import java.util.HashMap;
-import java.util.Map;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @Getter
 @Setter
 @ToString
 public class RawResponse {
 
-  private final Map<String, String> responseHeaders = new HashMap<>();
+    private final Map<String, String> responseHeaders = new HashMap<>();
 
-  private String raw;
-
+    private String raw;
 }

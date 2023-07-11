@@ -23,29 +23,39 @@ import lombok.Data;
 @Data
 public class Clan {
 
-  @SerializedName("tag")
-  private String tag;
-  @SerializedName("name")
-  private String name;
-  @SerializedName("type")
-  private String type;
-  @SerializedName("badgeId")
-  private long badgeId;
-  @SerializedName("clanScore")
-  private int clanScore;
-  @SerializedName("clanWarTrophies")
-  private int clanWarTrophies;
-  @SerializedName("location")
-  private Location location;
-  @SerializedName("requiredTrophies")
-  private int requiredTrophies;
-  @SerializedName("donationsPerWeek")
-  private int donationsPerWeek;
-  @SerializedName("clanChestLevel")
-  private int clanChestLevel;
-  @SerializedName("clanChestMaxLevel")
-  private int clanChestMaxLevel;
-  @SerializedName("members")
-  private int members;
+    @SerializedName("tag")
+    private String tag;
 
+    @SerializedName("name")
+    private String name;
+
+    @SerializedName("type")
+    private String type;
+
+    @SerializedName("badgeId")
+    private long badgeId;
+
+    @SerializedName("clanScore")
+    private int clanScore;
+
+    @SerializedName("clanWarTrophies")
+    private int clanWarTrophies;
+
+    @SerializedName("location")
+    private Location location;
+
+    @SerializedName("requiredTrophies")
+    private int requiredTrophies;
+
+    @SerializedName("donationsPerWeek")
+    private int donationsPerWeek;
+
+    @SerializedName("clanChestLevel")
+    private int clanChestLevel;
+
+    @SerializedName("clanChestMaxLevel")
+    private int clanChestMaxLevel;
+
+    @SerializedName("members")
+    private int members;
 }

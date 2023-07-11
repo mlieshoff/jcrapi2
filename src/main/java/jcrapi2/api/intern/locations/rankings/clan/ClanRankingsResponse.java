@@ -18,6 +18,4 @@ package jcrapi2.api.intern.locations.rankings.clan;
 
 import jcrapi2.common.PaginationResponse;
 
-public class ClanRankingsResponse extends PaginationResponse<ClanRanking> {
-
-}
+public class ClanRankingsResponse extends PaginationResponse<ClanRanking> {}

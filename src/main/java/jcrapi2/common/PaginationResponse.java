@@ -18,39 +18,37 @@ package jcrapi2.common;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.Collection;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+
+import java.util.Collection;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public class PaginationResponse<T> extends Response {
 
-  @SerializedName("items")
-  private Collection<T> items;
+    @SerializedName("items")
+    private Collection<T> items;
 
-  @SerializedName("paging")
-  private Paging paging;
-
-  @Data
-  public static class Paging {
-
-    @SerializedName("cursors")
-    private Cursors cursors;
+    @SerializedName("paging")
+    private Paging paging;
 
     @Data
-    public static class Cursors {
+    public static class Paging {
 
-      @SerializedName("after")
-      private String after;
+        @SerializedName("cursors")
+        private Cursors cursors;
 
-      @SerializedName("before")
-      private String before;
+        @Data
+        public static class Cursors {
 
+            @SerializedName("after")
+            private String after;
+
+            @SerializedName("before")
+            private String before;
+        }
     }
-
-  }
-
 }

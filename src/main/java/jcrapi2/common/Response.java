@@ -23,12 +23,11 @@ import lombok.Data;
 @Data
 public class Response implements IResponse {
 
-  @SerializedName("reason")
-  private String reason;
+    @SerializedName("reason")
+    private String reason;
 
-  @SerializedName("message")
-  private String message;
+    @SerializedName("message")
+    private String message;
 
-  private transient RawResponse rawResponse;
-
+    private transient RawResponse rawResponse;
 }

@@ -23,9 +23,9 @@ import lombok.Data;
 @Data
 public class UpcomingChest {
 
-  @SerializedName("index")
-  private int index;
-  @SerializedName("name")
-  private String name;
+    @SerializedName("index")
+    private int index;
 
+    @SerializedName("name")
+    private String name;
 }

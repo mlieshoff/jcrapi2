@@ -16,32 +16,42 @@
  */
 package jcrapi2.api.intern;
 
+import jcrapi2.api.Api;
+import jcrapi2.api.intern.cards.CardApi;
+import jcrapi2.api.intern.challenges.ChallengeApi;
+import jcrapi2.api.intern.clans.ClanApi;
+import jcrapi2.api.intern.globaltournaments.GlobalTournamentApi;
+import jcrapi2.api.intern.locations.LocationApi;
+import jcrapi2.api.intern.players.PlayerApi;
+import jcrapi2.api.intern.tournament.TournamentApi;
+
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import jcrapi2.api.Api;
-import jcrapi2.api.intern.clans.ClanApi;
-import jcrapi2.api.intern.players.PlayerApi;
-import jcrapi2.api.intern.cards.CardApi;
-import jcrapi2.api.intern.tournament.TournamentApi;
-import jcrapi2.api.intern.locations.LocationApi;
-import jcrapi2.api.intern.challenges.ChallengeApi;
-import jcrapi2.api.intern.globaltournaments.GlobalTournamentApi;
 
 public class DefaultApiClasses {
 
-  private final Map<Class<? extends Api>, String> apiClassMap = Collections.unmodifiableMap(new HashMap<Class<? extends Api>, String>(){{
-    put(ClanApi.class, "jcrapi2.api.intern.clans.ClanApiImpl");
-    put(PlayerApi.class, "jcrapi2.api.intern.players.PlayerApiImpl");
-    put(CardApi.class, "jcrapi2.api.intern.cards.CardApiImpl");
-    put(TournamentApi.class, "jcrapi2.api.intern.tournament.TournamentApiImpl");
-    put(LocationApi.class, "jcrapi2.api.intern.locations.LocationApiImpl");
-    put(ChallengeApi.class, "jcrapi2.api.intern.challenges.ChallengeApiImpl");
-    put(GlobalTournamentApi.class, "jcrapi2.api.intern.globaltournaments.GlobalTournamentApiImpl");
-  }});
+    private final Map<Class<? extends Api>, String> apiClassMap =
+            Collections.unmodifiableMap(
+                    new HashMap<Class<? extends Api>, String>() {
+                        {
+                            put(ClanApi.class, "jcrapi2.api.intern.clans.ClanApiImpl");
+                            put(PlayerApi.class, "jcrapi2.api.intern.players.PlayerApiImpl");
+                            put(CardApi.class, "jcrapi2.api.intern.cards.CardApiImpl");
+                            put(
+                                    TournamentApi.class,
+                                    "jcrapi2.api.intern.tournament.TournamentApiImpl");
+                            put(LocationApi.class, "jcrapi2.api.intern.locations.LocationApiImpl");
+                            put(
+                                    ChallengeApi.class,
+                                    "jcrapi2.api.intern.challenges.ChallengeApiImpl");
+                            put(
+                                    GlobalTournamentApi.class,
+                                    "jcrapi2.api.intern.globaltournaments.GlobalTournamentApiImpl");
+                        }
+                    });
 
-  public Map<Class<? extends Api>, String> getApiClassMap() {
-    return apiClassMap;
-  }
-
+    public Map<Class<? extends Api>, String> getApiClassMap() {
+        return apiClassMap;
+    }
 }

@@ -18,19 +18,22 @@ package jcrapi2.api.intern.clans.riverracelog;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 public class RiverRaceLog {
 
-  @SerializedName("seasonId")
-  private long seasonId;
-  @SerializedName("sectionIndex")
-  private int sectionIndex;
-  @SerializedName("createdDate")
-  private String createdDate;
-  @SerializedName("standings")
-  private List<Standing> standings;
+    @SerializedName("seasonId")
+    private long seasonId;
 
+    @SerializedName("sectionIndex")
+    private int sectionIndex;
+
+    @SerializedName("createdDate")
+    private String createdDate;
+
+    @SerializedName("standings")
+    private List<Standing> standings;
 }

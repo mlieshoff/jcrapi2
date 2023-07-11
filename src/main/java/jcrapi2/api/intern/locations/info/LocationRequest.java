@@ -16,37 +16,36 @@
  */
 package jcrapi2.api.intern.locations.info;
 
-import java.util.Map;
 import jcrapi2.common.Request;
+
 import lombok.Builder;
+
+import java.util.Map;
 
 public class LocationRequest extends Request {
 
-  private final long locationId;
+    private final long locationId;
 
-  @Builder
-  private LocationRequest(boolean storeRawResponse, long locationId) {
-    super(storeRawResponse);
-    this.locationId = locationId;
-  }
+    @Builder
+    private LocationRequest(boolean storeRawResponse, long locationId) {
+        super(storeRawResponse);
+        this.locationId = locationId;
+    }
 
-  public static LocationRequestBuilder builder(long locationId) {
-    return new LocationRequestBuilder()
-      .locationId(locationId)
-    ;
-  }
+    public static LocationRequestBuilder builder(long locationId) {
+        return new LocationRequestBuilder().locationId(locationId);
+    }
 
-  @Override
-  public Map<String, Object> getRestParameters() {
-    Map<String, Object> map = super.getRestParameters();
-    map.put("locationId", locationId);
-    return map;
-  }
+    @Override
+    public Map<String, Object> getRestParameters() {
+        Map<String, Object> map = super.getRestParameters();
+        map.put("locationId", locationId);
+        return map;
+    }
 
-  @Override
-  public Map<String, Object> getQueryParameters() {
-    Map<String, Object> map = super.getQueryParameters();
-    return map;
-  }
-
+    @Override
+    public Map<String, Object> getQueryParameters() {
+        Map<String, Object> map = super.getQueryParameters();
+        return map;
+    }
 }

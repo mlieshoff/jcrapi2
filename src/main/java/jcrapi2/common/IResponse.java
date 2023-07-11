@@ -18,16 +18,15 @@ package jcrapi2.common;
 
 public interface IResponse {
 
-  String getMessage();
+    String getMessage();
 
-  void setMessage(String message);
+    void setMessage(String message);
 
-  String getReason();
+    String getReason();
 
-  void setReason(String reason);
+    void setReason(String reason);
 
-  RawResponse getRawResponse();
+    RawResponse getRawResponse();
 
-  void setRawResponse(RawResponse rawResponse);
-
+    void setRawResponse(RawResponse rawResponse);
 }

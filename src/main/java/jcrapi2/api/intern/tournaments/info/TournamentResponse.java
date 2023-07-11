@@ -16,11 +16,11 @@
  */
 package jcrapi2.api.intern.tournaments.info;
 
-import jcrapi2.common.IResponse;
-
 import com.google.gson.annotations.SerializedName;
 
+import jcrapi2.common.IResponse;
 import jcrapi2.common.RawResponse;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -28,12 +28,11 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 public class TournamentResponse extends Tournament implements IResponse {
 
-  @SerializedName("reason")
-  private String reason;
+    @SerializedName("reason")
+    private String reason;
 
-  @SerializedName("message")
-  private String message;
+    @SerializedName("message")
+    private String message;
 
-  private transient RawResponse rawResponse;
-
+    private transient RawResponse rawResponse;
 }

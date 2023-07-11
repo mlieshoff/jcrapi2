@@ -23,13 +23,15 @@ import lombok.Data;
 @Data
 public class Location {
 
-  @SerializedName("id")
-  private long id;
-  @SerializedName("name")
-  private String name;
-  @SerializedName("isCountry")
-  private boolean isCountry;
-  @SerializedName("countryCode")
-  private String countryCode;
+    @SerializedName("id")
+    private long id;
 
+    @SerializedName("name")
+    private String name;
+
+    @SerializedName("isCountry")
+    private boolean isCountry;
+
+    @SerializedName("countryCode")
+    private String countryCode;
 }

@@ -17,17 +17,17 @@
 package jcrapi2.api.intern.locations;
 
 import jcrapi2.common.PaginationRequest;
+
 import lombok.Builder;
 
 public class LocationsRequest extends PaginationRequest {
 
-  @Builder
-  private LocationsRequest(int limit, String after, String before, boolean storeRawResponse) {
-    super(limit, after, before, storeRawResponse);
-  }
+    @Builder
+    private LocationsRequest(int limit, String after, String before, boolean storeRawResponse) {
+        super(limit, after, before, storeRawResponse);
+    }
 
-  public static LocationsRequestBuilder builder() {
-    return new LocationsRequestBuilder();
-  }
-
+    public static LocationsRequestBuilder builder() {
+        return new LocationsRequestBuilder();
+    }
 }

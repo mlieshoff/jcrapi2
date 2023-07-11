@@ -23,11 +23,12 @@ import lombok.Data;
 @Data
 public class Clan {
 
-  @SerializedName("tag")
-  private String tag;
-  @SerializedName("name")
-  private String name;
-  @SerializedName("badgeId")
-  private long badgeId;
+    @SerializedName("tag")
+    private String tag;
 
+    @SerializedName("name")
+    private String name;
+
+    @SerializedName("badgeId")
+    private long badgeId;
 }

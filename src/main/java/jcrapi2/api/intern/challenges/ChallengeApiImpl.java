@@ -16,19 +16,19 @@
  */
 package jcrapi2.api.intern.challenges;
 
-import java.util.concurrent.Future;
 import jcrapi2.api.ApiContext;
 import jcrapi2.api.BaseApi;
 
+import java.util.concurrent.Future;
+
 class ChallengeApiImpl extends BaseApi implements ChallengeApi {
 
-  ChallengeApiImpl(ApiContext apiContext) {
-    super(apiContext);
-  }
+    ChallengeApiImpl(ApiContext apiContext) {
+        super(apiContext);
+    }
 
-  @Override
-  public Future<ChallengesResponse> findAll(ChallengesRequest challengesRequest) {
-    return get("/challenges", challengesRequest, ChallengesResponse.class);
-  }
-
+    @Override
+    public Future<ChallengesResponse> findAll(ChallengesRequest challengesRequest) {
+        return get("/challenges", challengesRequest, ChallengesResponse.class);
+    }
 }

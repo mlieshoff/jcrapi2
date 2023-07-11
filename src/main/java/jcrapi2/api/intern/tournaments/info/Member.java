@@ -23,15 +23,18 @@ import lombok.Data;
 @Data
 public class Member {
 
-  @SerializedName("tag")
-  private String tag;
-  @SerializedName("name")
-  private String name;
-  @SerializedName("score")
-  private int score;
-  @SerializedName("rank")
-  private int rank;
-  @SerializedName("clan")
-  private Clan clan;
+    @SerializedName("tag")
+    private String tag;
 
+    @SerializedName("name")
+    private String name;
+
+    @SerializedName("score")
+    private int score;
+
+    @SerializedName("rank")
+    private int rank;
+
+    @SerializedName("clan")
+    private Clan clan;
 }

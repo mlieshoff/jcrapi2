@@ -16,12 +16,11 @@
  */
 package jcrapi2.api.intern.players.battlelog;
 
-import java.util.ArrayList;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.util.ArrayList;
+
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class BattleLog extends ArrayList<LogEntry> {
-
-}
+public class BattleLog extends ArrayList<LogEntry> {}

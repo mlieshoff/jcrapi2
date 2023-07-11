@@ -17,20 +17,17 @@
 package jcrapi2.api.intern.cards;
 
 import jcrapi2.common.Request;
+
 import lombok.Builder;
 
 public class CardsRequest extends Request {
 
+    @Builder
+    private CardsRequest(boolean storeRawResponse) {
+        super(storeRawResponse);
+    }
 
-  @Builder
-  private CardsRequest(boolean storeRawResponse) {
-    super(storeRawResponse);
-  }
-
-  public static CardsRequestBuilder builder() {
-    return new CardsRequestBuilder()
-    ;
-  }
-
-
+    public static CardsRequestBuilder builder() {
+        return new CardsRequestBuilder();
+    }
 }

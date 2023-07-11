@@ -16,35 +16,37 @@
  */
 package jcrapi2.api.intern.clans.riverracelog;
 
-import java.util.Map;
 import jcrapi2.common.PaginationRequest;
+
 import lombok.Builder;
+
+import java.util.Map;
 
 public class RiverRaceLogRequest extends PaginationRequest {
 
-  private final String clanTag;
+    private final String clanTag;
 
-  @Builder
-  private RiverRaceLogRequest(int limit, String after, String before, boolean storeRawResponse, String clanTag) {
-    super(limit, after, before, storeRawResponse);
-    this.clanTag = clanTag;
-  }
+    @Builder
+    private RiverRaceLogRequest(
+            int limit, String after, String before, boolean storeRawResponse, String clanTag) {
+        super(limit, after, before, storeRawResponse);
+        this.clanTag = clanTag;
+    }
 
-  public static RiverRaceLogRequestBuilder builder(String clanTag) {
-    return new RiverRaceLogRequestBuilder().clanTag(clanTag);
-  }
+    public static RiverRaceLogRequestBuilder builder(String clanTag) {
+        return new RiverRaceLogRequestBuilder().clanTag(clanTag);
+    }
 
-  @Override
-  public Map<String, Object> getRestParameters() {
-    Map<String, Object> map = super.getRestParameters();
-    map.put("clanTag", clanTag);
-    return map;
-  }
+    @Override
+    public Map<String, Object> getRestParameters() {
+        Map<String, Object> map = super.getRestParameters();
+        map.put("clanTag", clanTag);
+        return map;
+    }
 
-  @Override
-  public Map<String, Object> getQueryParameters() {
-    Map<String, Object> map = super.getQueryParameters();
-    return map;
-  }
-
+    @Override
+    public Map<String, Object> getQueryParameters() {
+        Map<String, Object> map = super.getQueryParameters();
+        return map;
+    }
 }

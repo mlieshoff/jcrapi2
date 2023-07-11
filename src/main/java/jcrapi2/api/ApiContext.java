@@ -19,23 +19,23 @@ package jcrapi2.api;
 import static jcrapi2.common.Utils.require;
 
 import jcrapi2.connector.Connector;
+
 import lombok.Getter;
 
 @Getter
 public class ApiContext {
 
-  private final String url;
-  private final String apiKey;
+    private final String url;
+    private final String apiKey;
 
-  private final Connector connector;
+    private final Connector connector;
 
-  public ApiContext(String url, String apiKey, Connector connector) {
-    require("url", url);
-    require("apiKey", apiKey);
-    require("connector", connector);
-    this.url = url;
-    this.apiKey = apiKey;
-    this.connector = connector;
-  }
-
+    public ApiContext(String url, String apiKey, Connector connector) {
+        require("url", url);
+        require("apiKey", apiKey);
+        require("connector", connector);
+        this.url = url;
+        this.apiKey = apiKey;
+        this.connector = connector;
+    }
 }

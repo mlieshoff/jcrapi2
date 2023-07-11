@@ -23,17 +23,21 @@ import lombok.Data;
 @Data
 public class Achievment {
 
-  @SerializedName("name")
-  private String name;
-  @SerializedName("stars")
-  private int stars;
-  @SerializedName("value")
-  private int value;
-  @SerializedName("target")
-  private int target;
-  @SerializedName("info")
-  private String info;
-  @SerializedName("completionInfo")
-  private String completionInfo;
+    @SerializedName("name")
+    private String name;
 
+    @SerializedName("stars")
+    private int stars;
+
+    @SerializedName("value")
+    private int value;
+
+    @SerializedName("target")
+    private int target;
+
+    @SerializedName("info")
+    private String info;
+
+    @SerializedName("completionInfo")
+    private String completionInfo;
 }

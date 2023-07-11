@@ -16,37 +16,36 @@
  */
 package jcrapi2.api.intern.players.upcomingchests;
 
-import java.util.Map;
 import jcrapi2.common.Request;
+
 import lombok.Builder;
+
+import java.util.Map;
 
 public class UpcomingChestsRequest extends Request {
 
-  private final String playerTag;
+    private final String playerTag;
 
-  @Builder
-  private UpcomingChestsRequest(boolean storeRawResponse, String playerTag) {
-    super(storeRawResponse);
-    this.playerTag = playerTag;
-  }
+    @Builder
+    private UpcomingChestsRequest(boolean storeRawResponse, String playerTag) {
+        super(storeRawResponse);
+        this.playerTag = playerTag;
+    }
 
-  public static UpcomingChestsRequestBuilder builder(String playerTag) {
-    return new UpcomingChestsRequestBuilder()
-      .playerTag(playerTag)
-    ;
-  }
+    public static UpcomingChestsRequestBuilder builder(String playerTag) {
+        return new UpcomingChestsRequestBuilder().playerTag(playerTag);
+    }
 
-  @Override
-  public Map<String, Object> getRestParameters() {
-    Map<String, Object> map = super.getRestParameters();
-    map.put("playerTag", playerTag);
-    return map;
-  }
+    @Override
+    public Map<String, Object> getRestParameters() {
+        Map<String, Object> map = super.getRestParameters();
+        map.put("playerTag", playerTag);
+        return map;
+    }
 
-  @Override
-  public Map<String, Object> getQueryParameters() {
-    Map<String, Object> map = super.getQueryParameters();
-    return map;
-  }
-
+    @Override
+    public Map<String, Object> getQueryParameters() {
+        Map<String, Object> map = super.getQueryParameters();
+        return map;
+    }
 }

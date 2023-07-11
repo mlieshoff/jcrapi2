@@ -23,21 +23,27 @@ import lombok.Data;
 @Data
 public class MilestoneReward {
 
-  @SerializedName("wins")
-  private int wins;
-  @SerializedName("type")
-  private String type;
-  @SerializedName("chest")
-  private String chest;
-  @SerializedName("amount")
-  private int amount;
-  @SerializedName("resource")
-  private String resource;
-  @SerializedName("consumableName")
-  private String consumableName;
-  @SerializedName("rarity")
-  private String rarity;
-  @SerializedName("card")
-  private Card card;
+    @SerializedName("wins")
+    private int wins;
 
+    @SerializedName("type")
+    private String type;
+
+    @SerializedName("chest")
+    private String chest;
+
+    @SerializedName("amount")
+    private int amount;
+
+    @SerializedName("resource")
+    private String resource;
+
+    @SerializedName("consumableName")
+    private String consumableName;
+
+    @SerializedName("rarity")
+    private String rarity;
+
+    @SerializedName("card")
+    private Card card;
 }

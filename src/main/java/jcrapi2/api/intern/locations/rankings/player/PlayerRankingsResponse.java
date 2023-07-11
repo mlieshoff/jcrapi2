@@ -18,6 +18,4 @@ package jcrapi2.api.intern.locations.rankings.player;
 
 import jcrapi2.common.PaginationResponse;
 
-public class PlayerRankingsResponse extends PaginationResponse<PlayerRanking> {
-
-}
+public class PlayerRankingsResponse extends PaginationResponse<PlayerRanking> {}

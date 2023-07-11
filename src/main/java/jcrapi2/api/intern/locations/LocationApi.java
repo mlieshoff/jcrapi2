@@ -16,33 +16,43 @@
  */
 package jcrapi2.api.intern.locations;
 
-import java.util.concurrent.Future;
 import jcrapi2.api.Api;
-
-import jcrapi2.api.intern.locations.info.LocationResponse;
 import jcrapi2.api.intern.locations.info.LocationRequest;
-import jcrapi2.api.intern.locations.rankings.clan.ClanRankingsResponse;
+import jcrapi2.api.intern.locations.info.LocationResponse;
 import jcrapi2.api.intern.locations.rankings.clan.ClanRankingsRequest;
-import jcrapi2.api.intern.locations.rankings.player.PlayerRankingsResponse;
-import jcrapi2.api.intern.locations.rankings.player.PlayerRankingsRequest;
-import jcrapi2.api.intern.locations.rankings.clanwar.ClanWarRankingsResponse;
+import jcrapi2.api.intern.locations.rankings.clan.ClanRankingsResponse;
 import jcrapi2.api.intern.locations.rankings.clanwar.ClanWarRankingsRequest;
-import jcrapi2.api.intern.locations.seasons.global.TopPlayerLeagueSeasonsResponse;
+import jcrapi2.api.intern.locations.rankings.clanwar.ClanWarRankingsResponse;
+import jcrapi2.api.intern.locations.rankings.player.PlayerRankingsRequest;
+import jcrapi2.api.intern.locations.rankings.player.PlayerRankingsResponse;
 import jcrapi2.api.intern.locations.seasons.global.TopPlayerLeagueSeasonsRequest;
-import jcrapi2.api.intern.locations.seasons.global.info.TopPlayerLeagueSeasonResponse;
+import jcrapi2.api.intern.locations.seasons.global.TopPlayerLeagueSeasonsResponse;
 import jcrapi2.api.intern.locations.seasons.global.info.TopPlayerLeagueSeasonRequest;
-import jcrapi2.api.intern.locations.seasons.global.rankings.TopPlayerLeagueSeasonRankingsResponse;
+import jcrapi2.api.intern.locations.seasons.global.info.TopPlayerLeagueSeasonResponse;
 import jcrapi2.api.intern.locations.seasons.global.rankings.TopPlayerLeagueSeasonRankingsRequest;
+import jcrapi2.api.intern.locations.seasons.global.rankings.TopPlayerLeagueSeasonRankingsResponse;
+
+import java.util.concurrent.Future;
 
 public interface LocationApi extends Api {
 
-  Future<LocationsResponse> findAll(LocationsRequest locationsRequest);
-  Future<LocationResponse> findById(LocationRequest locationRequest);
-  Future<ClanRankingsResponse> getClanRankings(ClanRankingsRequest clanRankingsRequest);
-  Future<PlayerRankingsResponse> getPlayerRankings(PlayerRankingsRequest playerRankingsRequest);
-  Future<ClanWarRankingsResponse> getClanWarRankings(ClanWarRankingsRequest clanWarRankingsRequest);
-  Future<TopPlayerLeagueSeasonsResponse> getTopPlayerLeagueSeasons(TopPlayerLeagueSeasonsRequest topPlayerLeagueSeasonsRequest);
-  Future<TopPlayerLeagueSeasonResponse> getTopPlayerLeagueSeason(TopPlayerLeagueSeasonRequest topPlayerLeagueSeasonRequest);
-  Future<TopPlayerLeagueSeasonRankingsResponse> getTopPlayerLeagueSeasonRankings(TopPlayerLeagueSeasonRankingsRequest topPlayerLeagueSeasonRankingsRequest);
+    Future<LocationsResponse> findAll(LocationsRequest locationsRequest);
 
+    Future<LocationResponse> findById(LocationRequest locationRequest);
+
+    Future<ClanRankingsResponse> getClanRankings(ClanRankingsRequest clanRankingsRequest);
+
+    Future<PlayerRankingsResponse> getPlayerRankings(PlayerRankingsRequest playerRankingsRequest);
+
+    Future<ClanWarRankingsResponse> getClanWarRankings(
+            ClanWarRankingsRequest clanWarRankingsRequest);
+
+    Future<TopPlayerLeagueSeasonsResponse> getTopPlayerLeagueSeasons(
+            TopPlayerLeagueSeasonsRequest topPlayerLeagueSeasonsRequest);
+
+    Future<TopPlayerLeagueSeasonResponse> getTopPlayerLeagueSeason(
+            TopPlayerLeagueSeasonRequest topPlayerLeagueSeasonRequest);
+
+    Future<TopPlayerLeagueSeasonRankingsResponse> getTopPlayerLeagueSeasonRankings(
+            TopPlayerLeagueSeasonRankingsRequest topPlayerLeagueSeasonRankingsRequest);
 }

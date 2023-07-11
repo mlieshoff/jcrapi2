@@ -23,11 +23,12 @@ import lombok.Data;
 @Data
 public class LeagueStatistics {
 
-  @SerializedName("currentSeason")
-  private CurrentSeason currentSeason;
-  @SerializedName("previousSeason")
-  private PreviousSeason previousSeason;
-  @SerializedName("bestSeason")
-  private BestSeason bestSeason;
+    @SerializedName("currentSeason")
+    private CurrentSeason currentSeason;
 
+    @SerializedName("previousSeason")
+    private PreviousSeason previousSeason;
+
+    @SerializedName("bestSeason")
+    private BestSeason bestSeason;
 }

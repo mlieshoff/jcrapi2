@@ -16,34 +16,37 @@
  */
 package jcrapi2.api.intern.players;
 
-import java.util.concurrent.Future;
 import jcrapi2.api.ApiContext;
 import jcrapi2.api.BaseApi;
-
-import jcrapi2.api.intern.players.info.PlayerResponse;
-import jcrapi2.api.intern.players.info.PlayerRequest;
-import jcrapi2.api.intern.players.upcomingchests.UpcomingChestsResponse;
-import jcrapi2.api.intern.players.upcomingchests.UpcomingChestsRequest;
-import jcrapi2.api.intern.players.battlelog.BattleLogResponse;
 import jcrapi2.api.intern.players.battlelog.BattleLogRequest;
+import jcrapi2.api.intern.players.battlelog.BattleLogResponse;
+import jcrapi2.api.intern.players.info.PlayerRequest;
+import jcrapi2.api.intern.players.info.PlayerResponse;
+import jcrapi2.api.intern.players.upcomingchests.UpcomingChestsRequest;
+import jcrapi2.api.intern.players.upcomingchests.UpcomingChestsResponse;
+
+import java.util.concurrent.Future;
 
 class PlayerApiImpl extends BaseApi implements PlayerApi {
 
-  PlayerApiImpl(ApiContext apiContext) {
-    super(apiContext);
-  }
+    PlayerApiImpl(ApiContext apiContext) {
+        super(apiContext);
+    }
 
-  @Override
-  public Future<PlayerResponse> findByTag(PlayerRequest playerRequest) {
-    return get("/players/{playerTag}", playerRequest, PlayerResponse.class);
-  }
+    @Override
+    public Future<PlayerResponse> findByTag(PlayerRequest playerRequest) {
+        return get("/players/{playerTag}", playerRequest, PlayerResponse.class);
+    }
 
-  public Future<UpcomingChestsResponse> getUpcomingChests(UpcomingChestsRequest upcomingChestsRequest) {
-    return get("/players/{playerTag}/upcomingchests", upcomingChestsRequest, UpcomingChestsResponse.class);
-  }
+    public Future<UpcomingChestsResponse> getUpcomingChests(
+            UpcomingChestsRequest upcomingChestsRequest) {
+        return get(
+                "/players/{playerTag}/upcomingchests",
+                upcomingChestsRequest,
+                UpcomingChestsResponse.class);
+    }
 
-  public Future<BattleLogResponse> getBattleLog(BattleLogRequest battleLogRequest) {
-    return get("/players/{playerTag}/battlelog", battleLogRequest, BattleLogResponse.class);
-  }
-
+    public Future<BattleLogResponse> getBattleLog(BattleLogRequest battleLogRequest) {
+        return get("/players/{playerTag}/battlelog", battleLogRequest, BattleLogResponse.class);
+    }
 }

@@ -23,19 +23,24 @@ import lombok.Data;
 @Data
 public class Participant {
 
-  @SerializedName("tag")
-  private String tag;
-  @SerializedName("name")
-  private String name;
-  @SerializedName("fame")
-  private int fame;
-  @SerializedName("repairPoints")
-  private int repairPoints;
-  @SerializedName("boatAttacks")
-  private int boatAttacks;
-  @SerializedName("decksUsed")
-  private int decksUsed;
-  @SerializedName("decksUsedToday")
-  private int decksUsedToday;
+    @SerializedName("tag")
+    private String tag;
 
+    @SerializedName("name")
+    private String name;
+
+    @SerializedName("fame")
+    private int fame;
+
+    @SerializedName("repairPoints")
+    private int repairPoints;
+
+    @SerializedName("boatAttacks")
+    private int boatAttacks;
+
+    @SerializedName("decksUsed")
+    private int decksUsed;
+
+    @SerializedName("decksUsedToday")
+    private int decksUsedToday;
 }

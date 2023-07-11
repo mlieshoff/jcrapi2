@@ -23,29 +23,39 @@ import lombok.Data;
 @Data
 public class Member {
 
-  @SerializedName("tag")
-  private String tag;
-  @SerializedName("name")
-  private String name;
-  @SerializedName("role")
-  private String role;
-  @SerializedName("lastSeen")
-  private String lastSeen;
-  @SerializedName("expLevel")
-  private int expLevel;
-  @SerializedName("trophies")
-  private int trophies;
-  @SerializedName("arena")
-  private Arena arena;
-  @SerializedName("clanRank")
-  private int clanRank;
-  @SerializedName("previousClanRank")
-  private int previousClanRank;
-  @SerializedName("donations")
-  private int donations;
-  @SerializedName("donationsReceived")
-  private int donationsReceived;
-  @SerializedName("clanChestPoints")
-  private int clanChestPoints;
+    @SerializedName("tag")
+    private String tag;
 
+    @SerializedName("name")
+    private String name;
+
+    @SerializedName("role")
+    private String role;
+
+    @SerializedName("lastSeen")
+    private String lastSeen;
+
+    @SerializedName("expLevel")
+    private int expLevel;
+
+    @SerializedName("trophies")
+    private int trophies;
+
+    @SerializedName("arena")
+    private Arena arena;
+
+    @SerializedName("clanRank")
+    private int clanRank;
+
+    @SerializedName("previousClanRank")
+    private int previousClanRank;
+
+    @SerializedName("donations")
+    private int donations;
+
+    @SerializedName("donationsReceived")
+    private int donationsReceived;
+
+    @SerializedName("clanChestPoints")
+    private int clanChestPoints;
 }

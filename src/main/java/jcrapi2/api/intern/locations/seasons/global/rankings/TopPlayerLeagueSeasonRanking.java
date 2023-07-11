@@ -23,17 +23,21 @@ import lombok.Data;
 @Data
 public class TopPlayerLeagueSeasonRanking {
 
-  @SerializedName("tag")
-  private String tag;
-  @SerializedName("name")
-  private String name;
-  @SerializedName("expLevel")
-  private int expLevel;
-  @SerializedName("trophies")
-  private int trophies;
-  @SerializedName("rank")
-  private int rank;
-  @SerializedName("clan")
-  private Clan clan;
+    @SerializedName("tag")
+    private String tag;
 
+    @SerializedName("name")
+    private String name;
+
+    @SerializedName("expLevel")
+    private int expLevel;
+
+    @SerializedName("trophies")
+    private int trophies;
+
+    @SerializedName("rank")
+    private int rank;
+
+    @SerializedName("clan")
+    private Clan clan;
 }

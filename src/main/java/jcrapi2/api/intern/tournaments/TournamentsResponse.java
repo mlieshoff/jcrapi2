@@ -18,6 +18,4 @@ package jcrapi2.api.intern.tournaments;
 
 import jcrapi2.common.PaginationResponse;
 
-public class TournamentsResponse extends PaginationResponse<Tournament> {
-
-}
+public class TournamentsResponse extends PaginationResponse<Tournament> {}

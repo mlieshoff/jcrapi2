@@ -16,13 +16,20 @@
  */
 package jcrapi2.connector;
 
-import static java.nio.charset.StandardCharsets.UTF_8;
 import static jcrapi2.common.Utils.isNotEmpty;
 import static jcrapi2.common.Utils.require;
+
 import static org.apache.http.HttpStatus.SC_OK;
+
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
+import jcrapi2.common.IResponse;
+import jcrapi2.common.RawResponse;
+
+import lombok.extern.slf4j.Slf4j;
 
 import org.apache.http.Header;
 import org.apache.http.HttpMessage;
@@ -42,112 +49,117 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import jcrapi2.common.IResponse;
-import jcrapi2.common.RawResponse;
-import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class StandardConnector implements Connector {
 
-  private static final Gson GSON = new GsonBuilder().disableHtmlEscaping().create();
+    private static final Gson GSON = new GsonBuilder().disableHtmlEscaping().create();
 
-  private static void logResponse(HttpResponse httpResponse) {
-    if (log.isInfoEnabled()) {
-      for (Header header : httpResponse.getAllHeaders()) {
-        log.info("    response header: {}={}", header.getName(), header.getValue());
-      }
-      StatusLine statusLine = httpResponse.getStatusLine();
-      log.info("    status code: {}- {}", statusLine.getStatusCode(), statusLine.getReasonPhrase());
-    }
-  }
-
-  private static String encode(String s) throws UnsupportedEncodingException {
-    return URLEncoder.encode(s, "UTF-8");
-  }
-
-  private static HttpGet createRequest(String url, String apiKey) {
-    HttpGet httpGet = new HttpGet(url);
-    httpGet.addHeader("Authorization", "Bearer " + apiKey);
-    return httpGet;
-  }
-
-  @Override
-  public <T extends IResponse> T get(RequestContext requestContext) throws ConnectorException {
-    require("requestContext", requestContext);
-    try {
-      String url = requestContext.getUrl();
-      String
-          replacedUrl =
-          appendToUrl(url, requestContext.getRequest().getQueryParameters(),
-              requestContext.getRequest().getRestParameters());
-      HttpClient client = HttpClientBuilder.create().build();
-      HttpGet request = createRequest(replacedUrl, requestContext.getApiKey());
-      HttpResponse response = client.execute(request);
-      logResponse(response);
-      StatusLine statusLine = response.getStatusLine();
-      if (statusLine.getStatusCode() != SC_OK) {
-        throw new ConnectorException(statusLine.toString());
-      }
-      StringBuilder content = new StringBuilder();
-      try (BufferedReader rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent(), UTF_8))) {
-        String line;
-        while ((line = rd.readLine()) != null) {
-          content.append(line);
+    private static void logResponse(HttpResponse httpResponse) {
+        if (log.isInfoEnabled()) {
+            for (Header header : httpResponse.getAllHeaders()) {
+                log.info("    response header: {}={}", header.getName(), header.getValue());
+            }
+            StatusLine statusLine = httpResponse.getStatusLine();
+            log.info(
+                    "    status code: {}- {}",
+                    statusLine.getStatusCode(),
+                    statusLine.getReasonPhrase());
         }
-      }
-      String json = content.toString();
-      log.info("    response content: {}", json);
-      T result = (T) GSON.fromJson(json, requestContext.getResponseClass());
-      if (requestContext.getRequest().isStoreRawResponse()) {
-        setRawResponse(result, json, response);
-      }
-      return result;
-    } catch (IOException e) {
-      throw new ConnectorException(e);
     }
-  }
 
-  private <T extends IResponse> void setRawResponse(T result, String json, HttpMessage response) {
-    RawResponse rawResponse = new RawResponse();
-    rawResponse.setRaw(json);
-    if (isNotEmpty(response.getAllHeaders())) {
-      rawResponse.getResponseHeaders().clear();
-      for (Header header : response.getAllHeaders()) {
-        rawResponse.getResponseHeaders().put(header.getName().toLowerCase(Locale.ROOT), header.getValue());
-      }
+    private static String encode(String s) throws UnsupportedEncodingException {
+        return URLEncoder.encode(s, "UTF-8");
     }
-    result.setRawResponse(rawResponse);
-  }
 
-  private String appendToUrl(String url, Map<String, Object> parameters, Map<String, Object> restParameters)
-      throws UnsupportedEncodingException {
-    StringBuilder appendedUrl = new StringBuilder(url);
-    List<String> queries = new ArrayList<>();
-    if (isNotEmpty(parameters)) {
-      for (Map.Entry<String, Object> entry : parameters.entrySet()) {
-        String name = entry.getKey();
-        Object value = entry.getValue();
-        if (value != null) {
-          queries.add(name + '=' + encode(String.valueOf(value)));
+    private static HttpGet createRequest(String url, String apiKey) {
+        HttpGet httpGet = new HttpGet(url);
+        httpGet.addHeader("Authorization", "Bearer " + apiKey);
+        return httpGet;
+    }
+
+    @Override
+    public <T extends IResponse> T get(RequestContext requestContext) throws ConnectorException {
+        require("requestContext", requestContext);
+        try {
+            String url = requestContext.getUrl();
+            String replacedUrl =
+                    appendToUrl(
+                            url,
+                            requestContext.getRequest().getQueryParameters(),
+                            requestContext.getRequest().getRestParameters());
+            HttpClient client = HttpClientBuilder.create().build();
+            HttpGet request = createRequest(replacedUrl, requestContext.getApiKey());
+            HttpResponse response = client.execute(request);
+            logResponse(response);
+            StatusLine statusLine = response.getStatusLine();
+            if (statusLine.getStatusCode() != SC_OK) {
+                throw new ConnectorException(statusLine.toString());
+            }
+            StringBuilder content = new StringBuilder();
+            try (BufferedReader rd =
+                    new BufferedReader(
+                            new InputStreamReader(response.getEntity().getContent(), UTF_8))) {
+                String line;
+                while ((line = rd.readLine()) != null) {
+                    content.append(line);
+                }
+            }
+            String json = content.toString();
+            log.info("    response content: {}", json);
+            T result = (T) GSON.fromJson(json, requestContext.getResponseClass());
+            if (requestContext.getRequest().isStoreRawResponse()) {
+                setRawResponse(result, json, response);
+            }
+            return result;
+        } catch (IOException e) {
+            throw new ConnectorException(e);
         }
-      }
-      if (!queries.isEmpty()) {
-        appendedUrl.append('?');
-        for (Iterator<String> iterator = queries.iterator(); iterator.hasNext(); ) {
-          appendedUrl.append(iterator.next());
-          if (iterator.hasNext()) {
-            appendedUrl.append('&');
-          }
-        }
-      }
     }
-    String result = appendedUrl.toString();
-    for (Map.Entry<String, Object> entry : restParameters.entrySet()) {
-      String encodedValue = encode(String.valueOf(entry.getValue()));
-      result = result.replace('{' + entry.getKey() + '}', encodedValue);
-    }
-    log.info("request to: {}", result);
-    return result;
-  }
 
+    private <T extends IResponse> void setRawResponse(T result, String json, HttpMessage response) {
+        RawResponse rawResponse = new RawResponse();
+        rawResponse.setRaw(json);
+        if (isNotEmpty(response.getAllHeaders())) {
+            rawResponse.getResponseHeaders().clear();
+            for (Header header : response.getAllHeaders()) {
+                rawResponse
+                        .getResponseHeaders()
+                        .put(header.getName().toLowerCase(Locale.ROOT), header.getValue());
+            }
+        }
+        result.setRawResponse(rawResponse);
+    }
+
+    private String appendToUrl(
+            String url, Map<String, Object> parameters, Map<String, Object> restParameters)
+            throws UnsupportedEncodingException {
+        StringBuilder appendedUrl = new StringBuilder(url);
+        List<String> queries = new ArrayList<>();
+        if (isNotEmpty(parameters)) {
+            for (Map.Entry<String, Object> entry : parameters.entrySet()) {
+                String name = entry.getKey();
+                Object value = entry.getValue();
+                if (value != null) {
+                    queries.add(name + '=' + encode(String.valueOf(value)));
+                }
+            }
+            if (!queries.isEmpty()) {
+                appendedUrl.append('?');
+                for (Iterator<String> iterator = queries.iterator(); iterator.hasNext(); ) {
+                    appendedUrl.append(iterator.next());
+                    if (iterator.hasNext()) {
+                        appendedUrl.append('&');
+                    }
+                }
+            }
+        }
+        String result = appendedUrl.toString();
+        for (Map.Entry<String, Object> entry : restParameters.entrySet()) {
+            String encodedValue = encode(String.valueOf(entry.getValue()));
+            result = result.replace('{' + entry.getKey() + '}', encodedValue);
+        }
+        log.info("request to: {}", result);
+        return result;
+    }
 }

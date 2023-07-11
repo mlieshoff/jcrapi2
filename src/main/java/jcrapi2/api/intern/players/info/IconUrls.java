@@ -23,9 +23,9 @@ import lombok.Data;
 @Data
 public class IconUrls {
 
-  @SerializedName("large")
-  private String large;
-  @SerializedName("medium")
-  private String medium;
+    @SerializedName("large")
+    private String large;
 
+    @SerializedName("medium")
+    private String medium;
 }

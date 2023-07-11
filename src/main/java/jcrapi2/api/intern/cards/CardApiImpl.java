@@ -16,19 +16,19 @@
  */
 package jcrapi2.api.intern.cards;
 
-import java.util.concurrent.Future;
 import jcrapi2.api.ApiContext;
 import jcrapi2.api.BaseApi;
 
+import java.util.concurrent.Future;
+
 class CardApiImpl extends BaseApi implements CardApi {
 
-  CardApiImpl(ApiContext apiContext) {
-    super(apiContext);
-  }
+    CardApiImpl(ApiContext apiContext) {
+        super(apiContext);
+    }
 
-  @Override
-  public Future<CardsResponse> findAll(CardsRequest cardsRequest) {
-    return get("/cards", cardsRequest, CardsResponse.class);
-  }
-
+    @Override
+    public Future<CardsResponse> findAll(CardsRequest cardsRequest) {
+        return get("/cards", cardsRequest, CardsResponse.class);
+    }
 }

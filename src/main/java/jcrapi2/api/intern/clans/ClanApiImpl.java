@@ -16,44 +16,48 @@
  */
 package jcrapi2.api.intern.clans;
 
-import java.util.concurrent.Future;
 import jcrapi2.api.ApiContext;
 import jcrapi2.api.BaseApi;
-
-import jcrapi2.api.intern.clans.info.ClanResponse;
-import jcrapi2.api.intern.clans.info.ClanRequest;
-import jcrapi2.api.intern.clans.riverracelog.RiverRaceLogResponse;
-import jcrapi2.api.intern.clans.riverracelog.RiverRaceLogRequest;
-import jcrapi2.api.intern.clans.members.ClanMembersResponse;
-import jcrapi2.api.intern.clans.members.ClanMembersRequest;
-import jcrapi2.api.intern.clans.currentriverrace.CurrentRiverRaceResponse;
 import jcrapi2.api.intern.clans.currentriverrace.CurrentRiverRaceRequest;
+import jcrapi2.api.intern.clans.currentriverrace.CurrentRiverRaceResponse;
+import jcrapi2.api.intern.clans.info.ClanRequest;
+import jcrapi2.api.intern.clans.info.ClanResponse;
+import jcrapi2.api.intern.clans.members.ClanMembersRequest;
+import jcrapi2.api.intern.clans.members.ClanMembersResponse;
+import jcrapi2.api.intern.clans.riverracelog.RiverRaceLogRequest;
+import jcrapi2.api.intern.clans.riverracelog.RiverRaceLogResponse;
+
+import java.util.concurrent.Future;
 
 class ClanApiImpl extends BaseApi implements ClanApi {
 
-  ClanApiImpl(ApiContext apiContext) {
-    super(apiContext);
-  }
+    ClanApiImpl(ApiContext apiContext) {
+        super(apiContext);
+    }
 
-  @Override
-  public Future<ClansResponse> findAll(ClansRequest clansRequest) {
-    return get("/clans", clansRequest, ClansResponse.class);
-  }
+    @Override
+    public Future<ClansResponse> findAll(ClansRequest clansRequest) {
+        return get("/clans", clansRequest, ClansResponse.class);
+    }
 
-  public Future<ClanResponse> findByTag(ClanRequest clanRequest) {
-    return get("/clans/{clanTag}", clanRequest, ClanResponse.class);
-  }
+    public Future<ClanResponse> findByTag(ClanRequest clanRequest) {
+        return get("/clans/{clanTag}", clanRequest, ClanResponse.class);
+    }
 
-  public Future<RiverRaceLogResponse> getRiverRaceLog(RiverRaceLogRequest riverRaceLogRequest) {
-    return get("/clans/{clanTag}/riverracelog", riverRaceLogRequest, RiverRaceLogResponse.class);
-  }
+    public Future<RiverRaceLogResponse> getRiverRaceLog(RiverRaceLogRequest riverRaceLogRequest) {
+        return get(
+                "/clans/{clanTag}/riverracelog", riverRaceLogRequest, RiverRaceLogResponse.class);
+    }
 
-  public Future<ClanMembersResponse> getMembers(ClanMembersRequest clanMembersRequest) {
-    return get("/clans/{clanTag}/members", clanMembersRequest, ClanMembersResponse.class);
-  }
+    public Future<ClanMembersResponse> getMembers(ClanMembersRequest clanMembersRequest) {
+        return get("/clans/{clanTag}/members", clanMembersRequest, ClanMembersResponse.class);
+    }
 
-  public Future<CurrentRiverRaceResponse> getCurrentRiverRace(CurrentRiverRaceRequest currentRiverRaceRequest) {
-    return get("/clans/{clanTag}/currentriverrace", currentRiverRaceRequest, CurrentRiverRaceResponse.class);
-  }
-
+    public Future<CurrentRiverRaceResponse> getCurrentRiverRace(
+            CurrentRiverRaceRequest currentRiverRaceRequest) {
+        return get(
+                "/clans/{clanTag}/currentriverrace",
+                currentRiverRaceRequest,
+                CurrentRiverRaceResponse.class);
+    }
 }

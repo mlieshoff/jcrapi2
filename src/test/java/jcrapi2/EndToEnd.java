@@ -16,21 +16,16 @@
  */
 package jcrapi2;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import static wiremock.org.apache.commons.lang3.StringUtils.EMPTY;
+
 import static java.lang.System.getProperty;
 import static java.lang.System.getenv;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static wiremock.org.apache.commons.lang3.StringUtils.EMPTY;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
-import java.io.StringReader;
-import javax.json.Json;
-import javax.json.JsonPatch;
-import javax.json.JsonValue;
 import jcrapi2.api.intern.cards.CardApi;
 import jcrapi2.api.intern.cards.CardsRequest;
 import jcrapi2.api.intern.cards.CardsResponse;
@@ -82,335 +77,402 @@ import jcrapi2.api.intern.tournaments.info.TournamentRequest;
 import jcrapi2.api.intern.tournaments.info.TournamentResponse;
 import jcrapi2.connector.StandardConnector;
 
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import java.io.StringReader;
+
+import javax.json.Json;
+import javax.json.JsonPatch;
+import javax.json.JsonValue;
+
 public class EndToEnd {
 
-  private static final Gson GSON = new GsonBuilder().disableHtmlEscaping().create();
+    private static final Gson GSON = new GsonBuilder().disableHtmlEscaping().create();
 
-  private static final String CLAN_TAG = "#RP88QQG";
-  private static final String PLAYER_TAG = "#2PGGCJJL";
-  private static final String TOURNAMENT_NAME = "de";
-  private static final String TOURNAMENT_TAG = "#U2QQQL2";
-  private static final String SEASON_ID = "2022-04";
+    private static final String CLAN_TAG = "#RP88QQG";
+    private static final String PLAYER_TAG = "#2PGGCJJL";
+    private static final String TOURNAMENT_NAME = "de";
+    private static final String TOURNAMENT_TAG = "#U2QQQL2";
+    private static final String SEASON_ID = "2022-04";
 
-  private static final long LOCATION_ID = 57000256L;
+    private static final long LOCATION_ID = 57000256L;
 
-  private ClanApi clanApi;
+    private ClanApi clanApi;
 
-  private PlayerApi playerApi;
+    private PlayerApi playerApi;
 
-  private CardApi cardApi;
+    private CardApi cardApi;
 
-  private TournamentApi tournamentApi;
+    private TournamentApi tournamentApi;
 
-  private LocationApi locationApi;
+    private LocationApi locationApi;
 
-  private ChallengeApi challengeApi;
+    private ChallengeApi challengeApi;
 
-  private GlobalTournamentApi globalTournamentApi;
+    private GlobalTournamentApi globalTournamentApi;
 
-  @BeforeEach
-  void setUp() {
-    JCrApi jCrApi = new JCrApi(
-        "https://proxy.royaleapi.dev/v1",
-        getProperty("apiKey", getenv("API_KEY")),
-        new StandardConnector());
-    clanApi = jCrApi.getApi(ClanApi.class);
-    playerApi = jCrApi.getApi(PlayerApi.class);
-    cardApi = jCrApi.getApi(CardApi.class);
-    tournamentApi = jCrApi.getApi(TournamentApi.class);
-    locationApi = jCrApi.getApi(LocationApi.class);
-    challengeApi = jCrApi.getApi(ChallengeApi.class);
-    globalTournamentApi = jCrApi.getApi(GlobalTournamentApi.class);
-  }
-
-  private static void assertDiff(String expected, String actual) {
-    JsonValue source = Json.createReader(new StringReader(actual)).readValue();
-    JsonValue target = Json.createReader(new StringReader(expected)).readValue();
-    JsonPatch diff;
-    try {
-      diff = Json.createDiff(source.asJsonObject(), target.asJsonObject());
-    } catch (ClassCastException e) {
-      diff = Json.createDiff(source.asJsonArray(), target.asJsonArray());
+    @BeforeEach
+    void setUp() {
+        JCrApi jCrApi =
+                new JCrApi(
+                        "https://proxy.royaleapi.dev/v1",
+                        getProperty("apiKey", getenv("API_KEY")),
+                        new StandardConnector());
+        clanApi = jCrApi.getApi(ClanApi.class);
+        playerApi = jCrApi.getApi(PlayerApi.class);
+        cardApi = jCrApi.getApi(CardApi.class);
+        tournamentApi = jCrApi.getApi(TournamentApi.class);
+        locationApi = jCrApi.getApi(LocationApi.class);
+        challengeApi = jCrApi.getApi(ChallengeApi.class);
+        globalTournamentApi = jCrApi.getApi(GlobalTournamentApi.class);
     }
-    StringBuilder diffOutput = new StringBuilder();
-    diff.toJsonArray().forEach(entry -> diffOutput.append(entry).append('\n'));
-    assertEquals(EMPTY, diffOutput.toString());
-  }
 
-  @Test
-  void clans_findAll() throws Exception {
-    ClansResponse
-        clansResponse =
-        clanApi.findAll(ClansRequest.builder()
-            .name("puz")
-            .locationId(57000120)
-            .minMembers(5)
-            .maxMembers(20)
-            .storeRawResponse(true).build()).get();
-    String actual = GSON.toJson(clansResponse);
-    String expected = clansResponse.getRawResponse().getRaw();
+    private static void assertDiff(String expected, String actual) {
+        JsonValue source = Json.createReader(new StringReader(actual)).readValue();
+        JsonValue target = Json.createReader(new StringReader(expected)).readValue();
+        JsonPatch diff;
+        try {
+            diff = Json.createDiff(source.asJsonObject(), target.asJsonObject());
+        } catch (ClassCastException e) {
+            diff = Json.createDiff(source.asJsonArray(), target.asJsonArray());
+        }
+        StringBuilder diffOutput = new StringBuilder();
+        diff.toJsonArray().forEach(entry -> diffOutput.append(entry).append('\n'));
+        assertEquals(EMPTY, diffOutput.toString());
+    }
 
-    assertDiff(expected, actual);
-  }
+    @Test
+    void clans_findAll() throws Exception {
+        ClansResponse clansResponse =
+                clanApi.findAll(
+                                ClansRequest.builder()
+                                        .name("puz")
+                                        .locationId(57000120)
+                                        .minMembers(5)
+                                        .maxMembers(20)
+                                        .storeRawResponse(true)
+                                        .build())
+                        .get();
+        String actual = GSON.toJson(clansResponse);
+        String expected = clansResponse.getRawResponse().getRaw();
 
-  @Test
-  void clans_findByTag() throws Exception {
-    ClanResponse
-        response =
-        clanApi.findByTag(ClanRequest.builder(CLAN_TAG).storeRawResponse(true).build()).get();
-    String actual = GSON.toJson(response);
-    String expected = response.getRawResponse().getRaw();
+        assertDiff(expected, actual);
+    }
 
-    assertDiff(expected, actual);
-  }
+    @Test
+    void clans_findByTag() throws Exception {
+        ClanResponse response =
+                clanApi.findByTag(ClanRequest.builder(CLAN_TAG).storeRawResponse(true).build())
+                        .get();
+        String actual = GSON.toJson(response);
+        String expected = response.getRawResponse().getRaw();
 
-  @Test
-  void clans_getRiverRaceLog() throws Exception {
-    RiverRaceLogResponse
-        response =
-        clanApi.getRiverRaceLog(RiverRaceLogRequest.builder(CLAN_TAG).storeRawResponse(true).build()).get();
-    String actual = GSON.toJson(response);
-    String expected = response.getRawResponse().getRaw();
+        assertDiff(expected, actual);
+    }
 
-    assertDiff(expected, actual);
-  }
+    @Test
+    void clans_getRiverRaceLog() throws Exception {
+        RiverRaceLogResponse response =
+                clanApi.getRiverRaceLog(
+                                RiverRaceLogRequest.builder(CLAN_TAG)
+                                        .storeRawResponse(true)
+                                        .build())
+                        .get();
+        String actual = GSON.toJson(response);
+        String expected = response.getRawResponse().getRaw();
 
-  @Test
-  void clans_getMembers() throws Exception {
-    ClanMembersResponse
-        response =
-        clanApi.getMembers(ClanMembersRequest.builder(CLAN_TAG).storeRawResponse(true).build()).get();
-    String actual = GSON.toJson(response);
-    String expected = response.getRawResponse().getRaw();
+        assertDiff(expected, actual);
+    }
 
-    assertDiff(expected, actual);
-  }
+    @Test
+    void clans_getMembers() throws Exception {
+        ClanMembersResponse response =
+                clanApi.getMembers(
+                                ClanMembersRequest.builder(CLAN_TAG).storeRawResponse(true).build())
+                        .get();
+        String actual = GSON.toJson(response);
+        String expected = response.getRawResponse().getRaw();
 
-  @Test
-  void clans_getCurrentRiverRaceLog() throws Exception {
-    CurrentRiverRaceResponse
-        response =
-        clanApi.getCurrentRiverRace(CurrentRiverRaceRequest.builder(CLAN_TAG).storeRawResponse(true).build()).get();
-    String actual = GSON.toJson(response);
-    String expected = response.getRawResponse().getRaw();
+        assertDiff(expected, actual);
+    }
 
-    assertDiff(expected, actual);
-  }
+    @Test
+    void clans_getCurrentRiverRaceLog() throws Exception {
+        CurrentRiverRaceResponse response =
+                clanApi.getCurrentRiverRace(
+                                CurrentRiverRaceRequest.builder(CLAN_TAG)
+                                        .storeRawResponse(true)
+                                        .build())
+                        .get();
+        String actual = GSON.toJson(response);
+        String expected = response.getRawResponse().getRaw();
 
-  @Test
-  void players_findByTag() throws Exception {
-    PlayerResponse
-        response =
-        playerApi.findByTag(PlayerRequest.builder(PLAYER_TAG).storeRawResponse(true).build()).get();
-    String actual = GSON.toJson(response)
-        .replace(",\"starLevel\":0", "")
-        .replace(",\"target\":0", "")
-        .replace(",\"bestTrophies\":0", "");
-    String expected = response.getRawResponse().getRaw()
-        .replace(",\"completionInfo\":null", "");
+        assertDiff(expected, actual);
+    }
 
-    assertDiff(expected, actual);
-  }
+    @Test
+    void players_findByTag() throws Exception {
+        PlayerResponse response =
+                playerApi
+                        .findByTag(PlayerRequest.builder(PLAYER_TAG).storeRawResponse(true).build())
+                        .get();
+        String actual =
+                GSON.toJson(response)
+                        .replace(",\"starLevel\":0", "")
+                        .replace(",\"target\":0", "")
+                        .replace(",\"bestTrophies\":0", "");
+        String expected =
+                response.getRawResponse().getRaw().replace(",\"completionInfo\":null", "");
 
-  @Test
-  void players_getUpcomingChests() throws Exception {
-    UpcomingChestsResponse
-        response =
-        playerApi.getUpcomingChests(UpcomingChestsRequest.builder(PLAYER_TAG).storeRawResponse(true).build()).get();
-    String actual = GSON.toJson(response);
-    String expected = response.getRawResponse().getRaw();
+        assertDiff(expected, actual);
+    }
 
-    assertDiff(expected, actual);
-  }
+    @Test
+    void players_getUpcomingChests() throws Exception {
+        UpcomingChestsResponse response =
+                playerApi
+                        .getUpcomingChests(
+                                UpcomingChestsRequest.builder(PLAYER_TAG)
+                                        .storeRawResponse(true)
+                                        .build())
+                        .get();
+        String actual = GSON.toJson(response);
+        String expected = response.getRawResponse().getRaw();
 
-  @Test
-  void players_getBattleLog() throws Exception {
-    BattleLogResponse
-        response =
-        playerApi.getBattleLog(BattleLogRequest.builder(PLAYER_TAG).storeRawResponse(true).build()).get();
+        assertDiff(expected, actual);
+    }
 
-    String actual = GSON.toJson(response)
-        .replace(",\"startingTrophies\":0", "")
-        .replace(",\"crowns\":0", "")
-        .replace(",\"trophyChange\":0", "")
-        .replace(",\"kingTowerHitPoints\":0", "")
-        .replace(",\"boatBattleWon\":false", "")
-        .replace(",\"newTowersDestroyed\":0", "")
-        .replace(",\"prevTowersDestroyed\":0", "")
-        .replace(",\"prevTowersDestroyedprevTowersDestroyed\":0", "")
-        .replace(",\"remainingTowers\":0", "")
-        .replace(",\"starLevel\":0", "")
-        .replace(",\"elixirLeaked\":0.0,", ",")
-        .replace(",\"challengeId\":0", "")
-        .replace(",\"challengeWinCountBefore\":0", "");
-    String expected = response.getRawResponse().getRaw()
-        .replace(",\"crowns\":0", "")
-        .replace(",\"boatBattleWon\":false", "")
-        .replace(",\"remainingTowers\":0", "")
-        .replace(",\"prevTowersDestroyed\":0", "")
-        .replace(",\"newTowersDestroyed\":0", "")
-        .replace(",\"kingTowerHitPoints\":0", "")
-        .replace(",\"princessTowersHitPoints\":null", "")
-        .replace(",\"elixirLeaked\":0.0,", ",")
-        .replace("\"name\":null,", "")
-        .replace(",\"challengeWinCountBefore\":0", "");
+    @Test
+    void players_getBattleLog() throws Exception {
+        BattleLogResponse response =
+                playerApi
+                        .getBattleLog(
+                                BattleLogRequest.builder(PLAYER_TAG).storeRawResponse(true).build())
+                        .get();
 
-    assertDiff(expected, actual);
-  }
+        String actual =
+                GSON.toJson(response)
+                        .replace(",\"startingTrophies\":0", "")
+                        .replace(",\"crowns\":0", "")
+                        .replace(",\"trophyChange\":0", "")
+                        .replace(",\"kingTowerHitPoints\":0", "")
+                        .replace(",\"boatBattleWon\":false", "")
+                        .replace(",\"newTowersDestroyed\":0", "")
+                        .replace(",\"prevTowersDestroyed\":0", "")
+                        .replace(",\"prevTowersDestroyedprevTowersDestroyed\":0", "")
+                        .replace(",\"remainingTowers\":0", "")
+                        .replace(",\"starLevel\":0", "")
+                        .replace(",\"elixirLeaked\":0.0,", ",")
+                        .replace(",\"challengeId\":0", "")
+                        .replace(",\"challengeWinCountBefore\":0", "");
+        String expected =
+                response.getRawResponse()
+                        .getRaw()
+                        .replace(",\"crowns\":0", "")
+                        .replace(",\"boatBattleWon\":false", "")
+                        .replace(",\"remainingTowers\":0", "")
+                        .replace(",\"prevTowersDestroyed\":0", "")
+                        .replace(",\"newTowersDestroyed\":0", "")
+                        .replace(",\"kingTowerHitPoints\":0", "")
+                        .replace(",\"princessTowersHitPoints\":null", "")
+                        .replace(",\"elixirLeaked\":0.0,", ",")
+                        .replace("\"name\":null,", "")
+                        .replace(",\"challengeWinCountBefore\":0", "");
 
-  @Test
-  void cards_findAll() throws Exception {
-    CardsResponse
-        response =
-        cardApi.findAll(CardsRequest.builder().storeRawResponse(true).build()).get();
-    String actual = GSON.toJson(response);
-    String expected = response.getRawResponse().getRaw();
+        assertDiff(expected, actual);
+    }
 
-    assertDiff(expected, actual);
-  }
+    @Test
+    void cards_findAll() throws Exception {
+        CardsResponse response =
+                cardApi.findAll(CardsRequest.builder().storeRawResponse(true).build()).get();
+        String actual = GSON.toJson(response);
+        String expected = response.getRawResponse().getRaw();
 
-  @Test
-  void tournaments_findAll() throws Exception {
-    TournamentsResponse
-        response =
-        tournamentApi.findAll(TournamentsRequest.builder().name(TOURNAMENT_NAME).storeRawResponse(true).build()).get();
-    String actual = GSON.toJson(response);
-    String expected = response.getRawResponse().getRaw();
+        assertDiff(expected, actual);
+    }
 
-    assertDiff(expected, actual);
-  }
+    @Test
+    void tournaments_findAll() throws Exception {
+        TournamentsResponse response =
+                tournamentApi
+                        .findAll(
+                                TournamentsRequest.builder()
+                                        .name(TOURNAMENT_NAME)
+                                        .storeRawResponse(true)
+                                        .build())
+                        .get();
+        String actual = GSON.toJson(response);
+        String expected = response.getRawResponse().getRaw();
 
-  @Test
-  void tournaments_findByTag() throws Exception {
-    TournamentResponse
-        response =
-        tournamentApi.findByTag(TournamentRequest.builder(TOURNAMENT_TAG).storeRawResponse(true).build()).get();
-    String actual = GSON.toJson(response);
-    String expected = response.getRawResponse().getRaw();
+        assertDiff(expected, actual);
+    }
 
-    assertDiff(expected, actual);
-  }
+    @Test
+    void tournaments_findByTag() throws Exception {
+        TournamentResponse response =
+                tournamentApi
+                        .findByTag(
+                                TournamentRequest.builder(TOURNAMENT_TAG)
+                                        .storeRawResponse(true)
+                                        .build())
+                        .get();
+        String actual = GSON.toJson(response);
+        String expected = response.getRawResponse().getRaw();
 
-  @Test
-  void locations_findAll() throws Exception {
-    LocationsResponse
-        response =
-        locationApi.findAll(LocationsRequest.builder().storeRawResponse(true).build()).get();
-    String actual = GSON.toJson(response);
-    String expected = response.getRawResponse().getRaw();
+        assertDiff(expected, actual);
+    }
 
-    assertDiff(expected, actual);
-  }
+    @Test
+    void locations_findAll() throws Exception {
+        LocationsResponse response =
+                locationApi
+                        .findAll(LocationsRequest.builder().storeRawResponse(true).build())
+                        .get();
+        String actual = GSON.toJson(response);
+        String expected = response.getRawResponse().getRaw();
 
-  @Test
-  void locations_findById() throws Exception {
-    LocationResponse
-        response =
-        locationApi.findById(LocationRequest.builder(LOCATION_ID).storeRawResponse(true).build()).get();
-    String actual = GSON.toJson(response);
-    String expected = response.getRawResponse().getRaw();
+        assertDiff(expected, actual);
+    }
 
-    assertDiff(expected, actual);
-  }
+    @Test
+    void locations_findById() throws Exception {
+        LocationResponse response =
+                locationApi
+                        .findById(
+                                LocationRequest.builder(LOCATION_ID).storeRawResponse(true).build())
+                        .get();
+        String actual = GSON.toJson(response);
+        String expected = response.getRawResponse().getRaw();
 
-  @Test
-  void locations_getClanRankings() throws Exception {
-    ClanRankingsResponse
-        response =
-        locationApi.getClanRankings(ClanRankingsRequest.builder(LOCATION_ID).storeRawResponse(true).build()).get();
-    String actual = GSON.toJson(response);
-    String expected = response.getRawResponse().getRaw();
+        assertDiff(expected, actual);
+    }
 
-    assertDiff(expected, actual);
-  }
+    @Test
+    void locations_getClanRankings() throws Exception {
+        ClanRankingsResponse response =
+                locationApi
+                        .getClanRankings(
+                                ClanRankingsRequest.builder(LOCATION_ID)
+                                        .storeRawResponse(true)
+                                        .build())
+                        .get();
+        String actual = GSON.toJson(response);
+        String expected = response.getRawResponse().getRaw();
 
-  @Test
-  void locations_getPlayerRankings() throws Exception {
-    PlayerRankingsResponse
-        response =
-        locationApi.getPlayerRankings(PlayerRankingsRequest.builder(LOCATION_ID).storeRawResponse(true).build()).get();
-    String actual = GSON.toJson(response);
-    String expected = response.getRawResponse().getRaw();
+        assertDiff(expected, actual);
+    }
 
-    assertDiff(expected, actual);
-  }
+    @Test
+    void locations_getPlayerRankings() throws Exception {
+        PlayerRankingsResponse response =
+                locationApi
+                        .getPlayerRankings(
+                                PlayerRankingsRequest.builder(LOCATION_ID)
+                                        .storeRawResponse(true)
+                                        .build())
+                        .get();
+        String actual = GSON.toJson(response);
+        String expected = response.getRawResponse().getRaw();
 
-  @Test
-  void locations_getClanWarRankings() throws Exception {
-    ClanWarRankingsResponse
-        response =
-        locationApi.getClanWarRankings(ClanWarRankingsRequest.builder(LOCATION_ID).storeRawResponse(true).build())
-            .get();
-    String actual = GSON.toJson(response);
-    String expected = response.getRawResponse().getRaw();
+        assertDiff(expected, actual);
+    }
 
-    assertDiff(expected, actual);
-  }
+    @Test
+    void locations_getClanWarRankings() throws Exception {
+        ClanWarRankingsResponse response =
+                locationApi
+                        .getClanWarRankings(
+                                ClanWarRankingsRequest.builder(LOCATION_ID)
+                                        .storeRawResponse(true)
+                                        .build())
+                        .get();
+        String actual = GSON.toJson(response);
+        String expected = response.getRawResponse().getRaw();
 
-  @Test
-  void locations_getTopPlayerLeagueSeasons() throws Exception {
-    TopPlayerLeagueSeasonsResponse
-        response =
-        locationApi.getTopPlayerLeagueSeasons(TopPlayerLeagueSeasonsRequest.builder().storeRawResponse(true).build())
-            .get();
-    String actual = GSON.toJson(response);
-    String expected = response.getRawResponse().getRaw();
+        assertDiff(expected, actual);
+    }
 
-    assertDiff(expected, actual);
-  }
+    @Test
+    void locations_getTopPlayerLeagueSeasons() throws Exception {
+        TopPlayerLeagueSeasonsResponse response =
+                locationApi
+                        .getTopPlayerLeagueSeasons(
+                                TopPlayerLeagueSeasonsRequest.builder()
+                                        .storeRawResponse(true)
+                                        .build())
+                        .get();
+        String actual = GSON.toJson(response);
+        String expected = response.getRawResponse().getRaw();
 
-  @Test
-  void locations_getTopPlayerLeagueSeason() throws Exception {
-    TopPlayerLeagueSeasonResponse
-        response =
-        locationApi.getTopPlayerLeagueSeason(
-            TopPlayerLeagueSeasonRequest.builder(SEASON_ID).storeRawResponse(true).build()).get();
-    String actual = GSON.toJson(response);
-    String expected = response.getRawResponse().getRaw();
+        assertDiff(expected, actual);
+    }
 
-    assertDiff(expected, actual);
-  }
+    @Test
+    void locations_getTopPlayerLeagueSeason() throws Exception {
+        TopPlayerLeagueSeasonResponse response =
+                locationApi
+                        .getTopPlayerLeagueSeason(
+                                TopPlayerLeagueSeasonRequest.builder(SEASON_ID)
+                                        .storeRawResponse(true)
+                                        .build())
+                        .get();
+        String actual = GSON.toJson(response);
+        String expected = response.getRawResponse().getRaw();
 
-  @Test
-  void locations_getTopPlayerLeagueSeasonRankings() throws Exception {
-    TopPlayerLeagueSeasonRankingsResponse
-        response =
-        locationApi.getTopPlayerLeagueSeasonRankings(
-            TopPlayerLeagueSeasonRankingsRequest.builder(SEASON_ID).storeRawResponse(true).build()).get();
-    String actual = GSON.toJson(response);
-    String expected = response.getRawResponse().getRaw();
+        assertDiff(expected, actual);
+    }
 
-    assertDiff(expected, actual);
-  }
+    @Test
+    void locations_getTopPlayerLeagueSeasonRankings() throws Exception {
+        TopPlayerLeagueSeasonRankingsResponse response =
+                locationApi
+                        .getTopPlayerLeagueSeasonRankings(
+                                TopPlayerLeagueSeasonRankingsRequest.builder(SEASON_ID)
+                                        .storeRawResponse(true)
+                                        .build())
+                        .get();
+        String actual = GSON.toJson(response);
+        String expected = response.getRawResponse().getRaw();
 
-  @Test
-  void challenges_findAll() throws Exception {
-    ChallengesResponse
-        response =
-        challengeApi.findAll(ChallengesRequest.builder().storeRawResponse(true).build()).get();
-    String actual = GSON.toJson(response)
-        .replace(",\"amount\":0", "")
-        .replace(",{\"amount\":0}", "")
-        .replace(",{\"type\":null}", "")
-        .replace(",\"type\":null", "");
-    String expected = response.getRawResponse().getRaw()
-        .replace(",{\"type\":null}", "")
-        .replace("\"name\":null,", "");
+        assertDiff(expected, actual);
+    }
 
-    assertDiff(expected, actual);
-  }
+    @Test
+    void challenges_findAll() throws Exception {
+        ChallengesResponse response =
+                challengeApi
+                        .findAll(ChallengesRequest.builder().storeRawResponse(true).build())
+                        .get();
+        String actual =
+                GSON.toJson(response)
+                        .replace(",\"amount\":0", "")
+                        .replace(",{\"amount\":0}", "")
+                        .replace(",{\"type\":null}", "")
+                        .replace(",\"type\":null", "");
+        String expected =
+                response.getRawResponse()
+                        .getRaw()
+                        .replace(",{\"type\":null}", "")
+                        .replace("\"name\":null,", "");
 
-  @Test
-  void globalTournaments_findAll() throws Exception {
-    GlobalTournamentsResponse
-        response = globalTournamentApi.findAll(GlobalTournamentsRequest.builder().storeRawResponse(true).build()).get();
-    String actual = GSON.toJson(response)
-        .replace(",\"amount\":0", "");
-    String expected = response.getRawResponse().getRaw()
-        .replace(",\"type\":null", "")
-        .replace("\"name\":null,", "");
+        assertDiff(expected, actual);
+    }
 
-    assertDiff(expected, actual);
-  }
+    @Test
+    void globalTournaments_findAll() throws Exception {
+        GlobalTournamentsResponse response =
+                globalTournamentApi
+                        .findAll(GlobalTournamentsRequest.builder().storeRawResponse(true).build())
+                        .get();
+        String actual = GSON.toJson(response).replace(",\"amount\":0", "");
+        String expected =
+                response.getRawResponse()
+                        .getRaw()
+                        .replace(",\"type\":null", "")
+                        .replace("\"name\":null,", "");
 
+        assertDiff(expected, actual);
+    }
 }

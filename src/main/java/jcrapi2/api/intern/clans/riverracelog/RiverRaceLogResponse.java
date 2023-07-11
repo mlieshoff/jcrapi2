@@ -18,6 +18,4 @@ package jcrapi2.api.intern.clans.riverracelog;
 
 import jcrapi2.common.PaginationResponse;
 
-public class RiverRaceLogResponse extends PaginationResponse<RiverRaceLog> {
-
-}
+public class RiverRaceLogResponse extends PaginationResponse<RiverRaceLog> {}

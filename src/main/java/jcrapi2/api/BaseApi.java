@@ -18,33 +18,35 @@ package jcrapi2.api;
 
 import static jcrapi2.common.Utils.require;
 
-import java.util.concurrent.Future;
 import jcrapi2.common.IResponse;
 import jcrapi2.common.Request;
 import jcrapi2.connector.Connector;
 import jcrapi2.connector.RequestContext;
+
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+
+import java.util.concurrent.Future;
 
 @Slf4j
 @RequiredArgsConstructor
 public class BaseApi implements Api {
 
-  private final ExecutorServiceDecorator executorServiceDecorator = new ExecutorServiceDecorator();
+    private final ExecutorServiceDecorator executorServiceDecorator =
+            new ExecutorServiceDecorator();
 
-  @NonNull
-  private final ApiContext apiContext;
+    @NonNull private final ApiContext apiContext;
 
-  protected <T extends IResponse> Future<T> get(String part, Request request, Class<T> responseClass) {
-    require("part", part);
-    require("request", request);
-    require("responseClass", responseClass);
-    String apiKey = apiContext.getApiKey();
-    Connector connector = apiContext.getConnector();
-    String url = apiContext.getUrl() + part;
-    RequestContext requestContext = new RequestContext(url, apiKey, request, responseClass);
-    return executorServiceDecorator.submit(connector, requestContext);
-  }
-
+    protected <T extends IResponse> Future<T> get(
+            String part, Request request, Class<T> responseClass) {
+        require("part", part);
+        require("request", request);
+        require("responseClass", responseClass);
+        String apiKey = apiContext.getApiKey();
+        Connector connector = apiContext.getConnector();
+        String url = apiContext.getUrl() + part;
+        RequestContext requestContext = new RequestContext(url, apiKey, request, responseClass);
+        return executorServiceDecorator.submit(connector, requestContext);
+    }
 }

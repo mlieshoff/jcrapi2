@@ -16,19 +16,20 @@
  */
 package jcrapi2.api;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 import jcrapi2.common.IResponse;
 import jcrapi2.connector.Connector;
 import jcrapi2.connector.RequestContext;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
 class ExecutorServiceDecorator {
 
-  private static final ExecutorService EXECUTOR_SERVICE = Executors.newFixedThreadPool(8);
+    private static final ExecutorService EXECUTOR_SERVICE = Executors.newFixedThreadPool(8);
 
-  public <T extends IResponse> Future<T> submit(Connector connector, RequestContext requestContext) {
-    return EXECUTOR_SERVICE.submit(() -> connector.get(requestContext));
-  }
-
+    public <T extends IResponse> Future<T> submit(
+            Connector connector, RequestContext requestContext) {
+        return EXECUTOR_SERVICE.submit(() -> connector.get(requestContext));
+    }
 }

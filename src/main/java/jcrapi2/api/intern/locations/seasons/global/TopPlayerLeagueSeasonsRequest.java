@@ -17,17 +17,18 @@
 package jcrapi2.api.intern.locations.seasons.global;
 
 import jcrapi2.common.PaginationRequest;
+
 import lombok.Builder;
 
 public class TopPlayerLeagueSeasonsRequest extends PaginationRequest {
 
-  @Builder
-  private TopPlayerLeagueSeasonsRequest(int limit, String after, String before, boolean storeRawResponse) {
-    super(limit, after, before, storeRawResponse);
-  }
+    @Builder
+    private TopPlayerLeagueSeasonsRequest(
+            int limit, String after, String before, boolean storeRawResponse) {
+        super(limit, after, before, storeRawResponse);
+    }
 
-  public static TopPlayerLeagueSeasonsRequestBuilder builder() {
-    return new TopPlayerLeagueSeasonsRequestBuilder();
-  }
-
+    public static TopPlayerLeagueSeasonsRequestBuilder builder() {
+        return new TopPlayerLeagueSeasonsRequestBuilder();
+    }
 }

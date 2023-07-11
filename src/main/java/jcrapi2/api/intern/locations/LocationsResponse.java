@@ -18,6 +18,4 @@ package jcrapi2.api.intern.locations;
 
 import jcrapi2.common.PaginationResponse;
 
-public class LocationsResponse extends PaginationResponse<Location> {
-
-}
+public class LocationsResponse extends PaginationResponse<Location> {}

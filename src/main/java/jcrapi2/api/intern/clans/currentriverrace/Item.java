@@ -23,21 +23,27 @@ import lombok.Data;
 @Data
 public class Item {
 
-  @SerializedName("clan")
-  private ItemClan clan;
-  @SerializedName("pointsEarned")
-  private int pointsEarned;
-  @SerializedName("progressStartOfDay")
-  private int progressStartOfDay;
-  @SerializedName("progressEndOfDay")
-  private int progressEndOfDay;
-  @SerializedName("progressEarned")
-  private int progressEarned;
-  @SerializedName("progressEarnedFromDefenses")
-  private int progressEarnedFromDefenses;
-  @SerializedName("endOfDayRank")
-  private int endOfDayRank;
-  @SerializedName("numOfDefensesRemaining")
-  private int numOfDefensesRemaining;
+    @SerializedName("clan")
+    private ItemClan clan;
 
+    @SerializedName("pointsEarned")
+    private int pointsEarned;
+
+    @SerializedName("progressStartOfDay")
+    private int progressStartOfDay;
+
+    @SerializedName("progressEndOfDay")
+    private int progressEndOfDay;
+
+    @SerializedName("progressEarned")
+    private int progressEarned;
+
+    @SerializedName("progressEarnedFromDefenses")
+    private int progressEarnedFromDefenses;
+
+    @SerializedName("endOfDayRank")
+    private int endOfDayRank;
+
+    @SerializedName("numOfDefensesRemaining")
+    private int numOfDefensesRemaining;
 }

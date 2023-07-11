@@ -16,37 +16,36 @@
  */
 package jcrapi2.api.intern.clans.currentriverrace;
 
-import java.util.Map;
 import jcrapi2.common.Request;
+
 import lombok.Builder;
+
+import java.util.Map;
 
 public class CurrentRiverRaceRequest extends Request {
 
-  private final String clanTag;
+    private final String clanTag;
 
-  @Builder
-  private CurrentRiverRaceRequest(boolean storeRawResponse, String clanTag) {
-    super(storeRawResponse);
-    this.clanTag = clanTag;
-  }
+    @Builder
+    private CurrentRiverRaceRequest(boolean storeRawResponse, String clanTag) {
+        super(storeRawResponse);
+        this.clanTag = clanTag;
+    }
 
-  public static CurrentRiverRaceRequestBuilder builder(String clanTag) {
-    return new CurrentRiverRaceRequestBuilder()
-      .clanTag(clanTag)
-    ;
-  }
+    public static CurrentRiverRaceRequestBuilder builder(String clanTag) {
+        return new CurrentRiverRaceRequestBuilder().clanTag(clanTag);
+    }
 
-  @Override
-  public Map<String, Object> getRestParameters() {
-    Map<String, Object> map = super.getRestParameters();
-    map.put("clanTag", clanTag);
-    return map;
-  }
+    @Override
+    public Map<String, Object> getRestParameters() {
+        Map<String, Object> map = super.getRestParameters();
+        map.put("clanTag", clanTag);
+        return map;
+    }
 
-  @Override
-  public Map<String, Object> getQueryParameters() {
-    Map<String, Object> map = super.getQueryParameters();
-    return map;
-  }
-
+    @Override
+    public Map<String, Object> getQueryParameters() {
+        Map<String, Object> map = super.getQueryParameters();
+        return map;
+    }
 }

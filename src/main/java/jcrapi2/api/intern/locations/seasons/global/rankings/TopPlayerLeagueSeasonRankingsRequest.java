@@ -16,35 +16,37 @@
  */
 package jcrapi2.api.intern.locations.seasons.global.rankings;
 
-import java.util.Map;
 import jcrapi2.common.PaginationRequest;
+
 import lombok.Builder;
+
+import java.util.Map;
 
 public class TopPlayerLeagueSeasonRankingsRequest extends PaginationRequest {
 
-  private final String seasonId;
+    private final String seasonId;
 
-  @Builder
-  private TopPlayerLeagueSeasonRankingsRequest(int limit, String after, String before, boolean storeRawResponse, String seasonId) {
-    super(limit, after, before, storeRawResponse);
-    this.seasonId = seasonId;
-  }
+    @Builder
+    private TopPlayerLeagueSeasonRankingsRequest(
+            int limit, String after, String before, boolean storeRawResponse, String seasonId) {
+        super(limit, after, before, storeRawResponse);
+        this.seasonId = seasonId;
+    }
 
-  public static TopPlayerLeagueSeasonRankingsRequestBuilder builder(String seasonId) {
-    return new TopPlayerLeagueSeasonRankingsRequestBuilder().seasonId(seasonId);
-  }
+    public static TopPlayerLeagueSeasonRankingsRequestBuilder builder(String seasonId) {
+        return new TopPlayerLeagueSeasonRankingsRequestBuilder().seasonId(seasonId);
+    }
 
-  @Override
-  public Map<String, Object> getRestParameters() {
-    Map<String, Object> map = super.getRestParameters();
-    map.put("seasonId", seasonId);
-    return map;
-  }
+    @Override
+    public Map<String, Object> getRestParameters() {
+        Map<String, Object> map = super.getRestParameters();
+        map.put("seasonId", seasonId);
+        return map;
+    }
 
-  @Override
-  public Map<String, Object> getQueryParameters() {
-    Map<String, Object> map = super.getQueryParameters();
-    return map;
-  }
-
+    @Override
+    public Map<String, Object> getQueryParameters() {
+        Map<String, Object> map = super.getQueryParameters();
+        return map;
+    }
 }

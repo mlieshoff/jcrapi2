@@ -16,6 +16,4 @@
  */
 package jcrapi2.api;
 
-public interface Api {
-
-}
+public interface Api {}

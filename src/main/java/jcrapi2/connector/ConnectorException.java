@@ -20,12 +20,11 @@ import java.io.IOException;
 
 public class ConnectorException extends RuntimeException {
 
-  public ConnectorException(String s) {
-    super(s);
-  }
+    public ConnectorException(String s) {
+        super(s);
+    }
 
-  public ConnectorException(IOException e) {
-    super(e);
-  }
-
+    public ConnectorException(IOException e) {
+        super(e);
+    }
 }

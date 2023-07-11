@@ -16,11 +16,11 @@
  */
 package jcrapi2.api.intern.cards;
 
-import java.util.concurrent.Future;
 import jcrapi2.api.Api;
+
+import java.util.concurrent.Future;
 
 public interface CardApi extends Api {
 
-  Future<CardsResponse> findAll(CardsRequest cardsRequest);
-
+    Future<CardsResponse> findAll(CardsRequest cardsRequest);
 }

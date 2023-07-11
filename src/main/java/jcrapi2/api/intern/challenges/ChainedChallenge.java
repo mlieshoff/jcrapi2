@@ -18,31 +18,40 @@ package jcrapi2.api.intern.challenges;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 public class ChainedChallenge {
 
-  @SerializedName("id")
-  private int id;
-  @SerializedName("name")
-  private String name;
-  @SerializedName("description")
-  private String description;
-  @SerializedName("winMode")
-  private String winMode;
-  @SerializedName("casual")
-  private boolean casual;
-  @SerializedName("maxLosses")
-  private int maxLosses;
-  @SerializedName("maxWins")
-  private int maxWins;
-  @SerializedName("iconUrl")
-  private String iconUrl;
-  @SerializedName("gameMode")
-  private GameMode gameMode;
-  @SerializedName("prizes")
-  private List<Prize> prizes;
+    @SerializedName("id")
+    private int id;
 
+    @SerializedName("name")
+    private String name;
+
+    @SerializedName("description")
+    private String description;
+
+    @SerializedName("winMode")
+    private String winMode;
+
+    @SerializedName("casual")
+    private boolean casual;
+
+    @SerializedName("maxLosses")
+    private int maxLosses;
+
+    @SerializedName("maxWins")
+    private int maxWins;
+
+    @SerializedName("iconUrl")
+    private String iconUrl;
+
+    @SerializedName("gameMode")
+    private GameMode gameMode;
+
+    @SerializedName("prizes")
+    private List<Prize> prizes;
 }

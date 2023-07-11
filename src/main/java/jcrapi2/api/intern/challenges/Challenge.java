@@ -18,21 +18,25 @@ package jcrapi2.api.intern.challenges;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 public class Challenge {
 
-  @SerializedName("type")
-  private String type;
-  @SerializedName("title")
-  private String title;
-  @SerializedName("startTime")
-  private String startTime;
-  @SerializedName("endTime")
-  private String endTime;
-  @SerializedName("challenges")
-  private List<ChainedChallenge> challenges;
+    @SerializedName("type")
+    private String type;
 
+    @SerializedName("title")
+    private String title;
+
+    @SerializedName("startTime")
+    private String startTime;
+
+    @SerializedName("endTime")
+    private String endTime;
+
+    @SerializedName("challenges")
+    private List<ChainedChallenge> challenges;
 }

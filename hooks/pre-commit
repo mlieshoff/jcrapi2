@@ -1,0 +1,32 @@
+#!/bin/bash
+set -e
+
+echo "*********************************"
+echo "*** jCrApi2 Pre Commit Hook ***"
+echo "*********************************"
+
+java --version
+
+JAR_FILE=libs/google-java-format-1.17.0-all-deps.jar
+
+echo "get staged files..."
+filesToFormat="$(git --no-pager diff --name-status --no-color --staged | awk '$1 != "D" && $2 ~ /\.kts|\.java|\.kt/ { print $NF}')"
+
+echo "staged files to check for formatting $filesToFormat"
+
+for sourceFilePath in $filesToFormat
+do
+  if ! java  \
+        -jar "$JAR_FILE" \
+        --aosp \
+        --replace \
+        --set-exit-if-changed \
+        "$sourceFilePath";
+  then
+    echo "formatted file: $sourceFilePath"
+    echo "re-add to stage $sourceFilePath"
+    git add "$sourceFilePath"
+  fi
+done;
+
+echo "*** FINISHED ***"

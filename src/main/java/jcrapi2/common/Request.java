@@ -16,28 +16,26 @@
  */
 package jcrapi2.common;
 
+import lombok.Getter;
+
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import lombok.Getter;
 
 @Getter
 public class Request {
 
-  private final boolean storeRawResponse;
+    private final boolean storeRawResponse;
 
-  protected Request(boolean storeRawResponse) {
-    this.storeRawResponse = storeRawResponse;
-  }
+    protected Request(boolean storeRawResponse) {
+        this.storeRawResponse = storeRawResponse;
+    }
 
-  public Map<String, Object> getQueryParameters() {
-    return new LinkedHashMap<>();
-  }
+    public Map<String, Object> getQueryParameters() {
+        return new LinkedHashMap<>();
+    }
 
-  public Map<String, Object> getRestParameters() {
-    return new HashMap<>();
-  }
-
+    public Map<String, Object> getRestParameters() {
+        return new HashMap<>();
+    }
 }
-
-

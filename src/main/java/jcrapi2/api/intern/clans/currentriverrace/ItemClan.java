@@ -23,8 +23,6 @@ import lombok.Data;
 @Data
 public class ItemClan {
 
-  @SerializedName("tag")
-  private String tag;
-
+    @SerializedName("tag")
+    private String tag;
 }
-

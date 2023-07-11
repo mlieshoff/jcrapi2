@@ -16,19 +16,17 @@
  */
 package jcrapi2.api.intern.tournament;
 
-import java.util.concurrent.Future;
 import jcrapi2.api.Api;
-
-import jcrapi2.api.intern.tournaments.TournamentsResponse;
 import jcrapi2.api.intern.tournaments.TournamentsRequest;
-import jcrapi2.api.intern.tournaments.info.TournamentResponse;
+import jcrapi2.api.intern.tournaments.TournamentsResponse;
 import jcrapi2.api.intern.tournaments.info.TournamentRequest;
+import jcrapi2.api.intern.tournaments.info.TournamentResponse;
+
+import java.util.concurrent.Future;
 
 public interface TournamentApi extends Api {
 
-  Future<TournamentsResponse> findAll(TournamentsRequest tournamentsRequest);
-  Future<TournamentResponse> findByTag(TournamentRequest tournamentRequest);
+    Future<TournamentsResponse> findAll(TournamentsRequest tournamentsRequest);
 
+    Future<TournamentResponse> findByTag(TournamentRequest tournamentRequest);
 }
-
-

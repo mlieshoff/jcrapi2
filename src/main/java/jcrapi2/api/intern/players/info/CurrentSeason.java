@@ -23,10 +23,9 @@ import lombok.Data;
 @Data
 public class CurrentSeason {
 
-  @SerializedName("trophies")
-  private int trophies;
-  @SerializedName("bestTrophies")
-  private int bestTrophies;
+    @SerializedName("trophies")
+    private int trophies;
 
+    @SerializedName("bestTrophies")
+    private int bestTrophies;
 }
-

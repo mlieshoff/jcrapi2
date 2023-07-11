@@ -18,16 +18,16 @@ package jcrapi2.api.intern.clans.currentriverrace;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 public class PeriodLog {
 
-  @SerializedName("periodIndex")
-  private int periodIndex;
-  @SerializedName("items")
-  private List<Item> items;
+    @SerializedName("periodIndex")
+    private int periodIndex;
 
+    @SerializedName("items")
+    private List<Item> items;
 }
-

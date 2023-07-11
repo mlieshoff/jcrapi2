@@ -23,26 +23,33 @@ import lombok.Data;
 @Data
 public class ClanWarRanking {
 
-  @SerializedName("tag")
-  private String tag;
-  @SerializedName("name")
-  private String name;
-  @SerializedName("rank")
-  private int rank;
-  @SerializedName("previousRank")
-  private int previousRank;
-  @SerializedName("clanScore")
-  private int clanScore;
-  @SerializedName("members")
-  private int members;
-  @SerializedName("badgeId")
-  private long badgeId;
-  @SerializedName("location")
-  private Location location;
-  @SerializedName("clan")
-  private Clan clan;
-  @SerializedName("arena")
-  private Arena arena;
+    @SerializedName("tag")
+    private String tag;
 
+    @SerializedName("name")
+    private String name;
+
+    @SerializedName("rank")
+    private int rank;
+
+    @SerializedName("previousRank")
+    private int previousRank;
+
+    @SerializedName("clanScore")
+    private int clanScore;
+
+    @SerializedName("members")
+    private int members;
+
+    @SerializedName("badgeId")
+    private long badgeId;
+
+    @SerializedName("location")
+    private Location location;
+
+    @SerializedName("clan")
+    private Clan clan;
+
+    @SerializedName("arena")
+    private Arena arena;
 }
-

@@ -17,21 +17,17 @@
 package jcrapi2.api.intern.challenges;
 
 import jcrapi2.common.Request;
+
 import lombok.Builder;
 
 public class ChallengesRequest extends Request {
 
+    @Builder
+    private ChallengesRequest(boolean storeRawResponse) {
+        super(storeRawResponse);
+    }
 
-  @Builder
-  private ChallengesRequest(boolean storeRawResponse) {
-    super(storeRawResponse);
-  }
-
-  public static ChallengesRequestBuilder builder() {
-    return new ChallengesRequestBuilder()
-    ;
-  }
-
-
+    public static ChallengesRequestBuilder builder() {
+        return new ChallengesRequestBuilder();
+    }
 }
-

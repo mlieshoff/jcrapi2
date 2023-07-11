@@ -18,34 +18,43 @@ package jcrapi2.api.intern.players.battlelog;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 public class Team {
 
-  @SerializedName("tag")
-  private String tag;
-  @SerializedName("name")
-  private String name;
-  @SerializedName("startingTrophies")
-  private int startingTrophies;
-  @SerializedName("crowns")
-  private int crowns;
-  @SerializedName("trophyChange")
-  private int trophyChange;
-  @SerializedName("kingTowerHitPoints")
-  private int kingTowerHitPoints;
-  @SerializedName("princessTowersHitPoints")
-  private List<Integer> princessTowersHitPoints;
-  @SerializedName("clan")
-  private Clan clan;
-  @SerializedName("cards")
-  private List<Card> cards;
-  @SerializedName("elixirLeaked")
-  private double elixirLeaked;
-  @SerializedName("rounds")
-  private List<Round> rounds;
+    @SerializedName("tag")
+    private String tag;
 
+    @SerializedName("name")
+    private String name;
+
+    @SerializedName("startingTrophies")
+    private int startingTrophies;
+
+    @SerializedName("crowns")
+    private int crowns;
+
+    @SerializedName("trophyChange")
+    private int trophyChange;
+
+    @SerializedName("kingTowerHitPoints")
+    private int kingTowerHitPoints;
+
+    @SerializedName("princessTowersHitPoints")
+    private List<Integer> princessTowersHitPoints;
+
+    @SerializedName("clan")
+    private Clan clan;
+
+    @SerializedName("cards")
+    private List<Card> cards;
+
+    @SerializedName("elixirLeaked")
+    private double elixirLeaked;
+
+    @SerializedName("rounds")
+    private List<Round> rounds;
 }
-

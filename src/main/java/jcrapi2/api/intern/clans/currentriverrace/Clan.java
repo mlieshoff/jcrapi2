@@ -18,30 +18,37 @@ package jcrapi2.api.intern.clans.currentriverrace;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 public class Clan {
 
-  @SerializedName("tag")
-  private String tag;
-  @SerializedName("name")
-  private String name;
-  @SerializedName("badgeId")
-  private long badgeId;
-  @SerializedName("fame")
-  private int fame;
-  @SerializedName("repairPoints")
-  private int repairPoints;
-  @SerializedName("periodPoints")
-  private int periodPoints;
-  @SerializedName("clanScore")
-  private int clanScore;
-  @SerializedName("finishTime")
-  private String finishTime;
-  @SerializedName("participants")
-  private List<Participant> participants;
+    @SerializedName("tag")
+    private String tag;
 
+    @SerializedName("name")
+    private String name;
+
+    @SerializedName("badgeId")
+    private long badgeId;
+
+    @SerializedName("fame")
+    private int fame;
+
+    @SerializedName("repairPoints")
+    private int repairPoints;
+
+    @SerializedName("periodPoints")
+    private int periodPoints;
+
+    @SerializedName("clanScore")
+    private int clanScore;
+
+    @SerializedName("finishTime")
+    private String finishTime;
+
+    @SerializedName("participants")
+    private List<Participant> participants;
 }
-

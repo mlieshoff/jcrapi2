@@ -23,10 +23,9 @@ import lombok.Data;
 @Data
 public class BestSeason {
 
-  @SerializedName("id")
-  private String id;
-  @SerializedName("trophies")
-  private int trophies;
+    @SerializedName("id")
+    private String id;
 
+    @SerializedName("trophies")
+    private int trophies;
 }
-

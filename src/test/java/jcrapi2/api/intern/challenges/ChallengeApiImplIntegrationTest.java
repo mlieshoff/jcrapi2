@@ -18,43 +18,41 @@ package jcrapi2.api.intern.challenges;
 
 import static wiremock.org.apache.commons.lang3.StringUtils.EMPTY;
 
+import jcrapi2.IntegrationTestBase;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import jcrapi2.IntegrationTestBase;
-
 public class ChallengeApiImplIntegrationTest extends IntegrationTestBase {
 
-  private ChallengeApi unitUnderTest;
+    private ChallengeApi unitUnderTest;
 
-  @BeforeEach
-  void setUp() {
-    unitUnderTest = getJCrApi().getApi(ChallengeApi.class);
-  }
+    @BeforeEach
+    void setUp() {
+        unitUnderTest = getJCrApi().getApi(ChallengeApi.class);
+    }
 
-  @Test
-  void findAll() throws Exception {
-    jcrapi2.api.intern.challenges.ChallengesRequest.ChallengesRequestBuilder builder = jcrapi2.api.intern.challenges.ChallengesRequest.builder();
-    jcrapi2.api.intern.challenges.ChallengesRequest request = builder
+    @Test
+    void findAll() throws Exception {
+        jcrapi2.api.intern.challenges.ChallengesRequest.ChallengesRequestBuilder builder =
+                jcrapi2.api.intern.challenges.ChallengesRequest.builder();
+        jcrapi2.api.intern.challenges.ChallengesRequest request =
+                builder.storeRawResponse(true).build();
+        prepare("/challenges", EMPTY, "src/test/resources/challenge-findAll.json", request);
+        jcrapi2.api.intern.challenges.ChallengesResponse expected =
+                toJson(jcrapi2.api.intern.challenges.ChallengesResponse.class, getExpected());
 
-      .storeRawResponse(true)
-      .build();
-    prepare("/challenges", EMPTY, "src/test/resources/challenge-findAll.json", request);
-    jcrapi2.api.intern.challenges.ChallengesResponse expected = toJson(jcrapi2.api.intern.challenges.ChallengesResponse.class, getExpected());
+        run(expected, () -> unitUnderTest.findAll(request).get());
+    }
 
-    run(expected, () -> unitUnderTest.findAll(request).get());
-  }
+    @Test
+    void findAll_whenWithException() {
+        jcrapi2.api.intern.challenges.ChallengesRequest.ChallengesRequestBuilder builder =
+                jcrapi2.api.intern.challenges.ChallengesRequest.builder();
+        jcrapi2.api.intern.challenges.ChallengesRequest request =
+                builder.storeRawResponse(true).build();
 
-  @Test
-  void findAll_whenWithException() {
-    jcrapi2.api.intern.challenges.ChallengesRequest.ChallengesRequestBuilder builder = jcrapi2.api.intern.challenges.ChallengesRequest.builder();
-    jcrapi2.api.intern.challenges.ChallengesRequest request = builder
-
-      .storeRawResponse(true)
-      .build();
-
-    prepareWithErrorAndRun("/challenges", EMPTY, request, () -> unitUnderTest.findAll(request).get());
-  }
-
+        prepareWithErrorAndRun(
+                "/challenges", EMPTY, request, () -> unitUnderTest.findAll(request).get());
+    }
 }
-

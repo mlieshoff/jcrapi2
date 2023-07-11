@@ -17,18 +17,18 @@
 package jcrapi2.api.intern.globaltournaments;
 
 import jcrapi2.common.PaginationRequest;
+
 import lombok.Builder;
 
 public class GlobalTournamentsRequest extends PaginationRequest {
 
-  @Builder
-  private GlobalTournamentsRequest(int limit, String after, String before, boolean storeRawResponse) {
-    super(limit, after, before, storeRawResponse);
-  }
+    @Builder
+    private GlobalTournamentsRequest(
+            int limit, String after, String before, boolean storeRawResponse) {
+        super(limit, after, before, storeRawResponse);
+    }
 
-  public static GlobalTournamentsRequestBuilder builder() {
-    return new GlobalTournamentsRequestBuilder();
-  }
-
+    public static GlobalTournamentsRequestBuilder builder() {
+        return new GlobalTournamentsRequestBuilder();
+    }
 }
-

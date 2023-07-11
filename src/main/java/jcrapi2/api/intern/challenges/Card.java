@@ -23,12 +23,12 @@ import lombok.Data;
 @Data
 public class Card {
 
-  @SerializedName("name")
-  private String name;
-  @SerializedName("id")
-  private long id;
-  @SerializedName("maxLevel")
-  private int maxLevel;
+    @SerializedName("name")
+    private String name;
 
+    @SerializedName("id")
+    private long id;
+
+    @SerializedName("maxLevel")
+    private int maxLevel;
 }
-

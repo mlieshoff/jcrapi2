@@ -16,38 +16,36 @@
  */
 package jcrapi2.api.intern.clans.info;
 
-import java.util.Map;
 import jcrapi2.common.Request;
+
 import lombok.Builder;
+
+import java.util.Map;
 
 public class ClanRequest extends Request {
 
-  private final String clanTag;
+    private final String clanTag;
 
-  @Builder
-  private ClanRequest(boolean storeRawResponse, String clanTag) {
-    super(storeRawResponse);
-    this.clanTag = clanTag;
-  }
+    @Builder
+    private ClanRequest(boolean storeRawResponse, String clanTag) {
+        super(storeRawResponse);
+        this.clanTag = clanTag;
+    }
 
-  public static ClanRequestBuilder builder(String clanTag) {
-    return new ClanRequestBuilder()
-      .clanTag(clanTag)
-    ;
-  }
+    public static ClanRequestBuilder builder(String clanTag) {
+        return new ClanRequestBuilder().clanTag(clanTag);
+    }
 
-  @Override
-  public Map<String, Object> getRestParameters() {
-    Map<String, Object> map = super.getRestParameters();
-    map.put("clanTag", clanTag);
-    return map;
-  }
+    @Override
+    public Map<String, Object> getRestParameters() {
+        Map<String, Object> map = super.getRestParameters();
+        map.put("clanTag", clanTag);
+        return map;
+    }
 
-  @Override
-  public Map<String, Object> getQueryParameters() {
-    Map<String, Object> map = super.getQueryParameters();
-    return map;
-  }
-
+    @Override
+    public Map<String, Object> getQueryParameters() {
+        Map<String, Object> map = super.getQueryParameters();
+        return map;
+    }
 }
-

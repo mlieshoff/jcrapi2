@@ -23,20 +23,24 @@ import lombok.Data;
 @Data
 public class TopRankReward {
 
-  @SerializedName("type")
-  private String type;
-  @SerializedName("chest")
-  private String chest;
-  @SerializedName("amount")
-  private int amount;
-  @SerializedName("resource")
-  private String resource;
-  @SerializedName("consumableName")
-  private String consumableName;
-  @SerializedName("rarity")
-  private String rarity;
-  @SerializedName("card")
-  private Card card;
+    @SerializedName("type")
+    private String type;
 
+    @SerializedName("chest")
+    private String chest;
+
+    @SerializedName("amount")
+    private int amount;
+
+    @SerializedName("resource")
+    private String resource;
+
+    @SerializedName("consumableName")
+    private String consumableName;
+
+    @SerializedName("rarity")
+    private String rarity;
+
+    @SerializedName("card")
+    private Card card;
 }
-

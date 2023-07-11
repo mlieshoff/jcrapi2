@@ -16,13 +16,11 @@
  */
 package jcrapi2.api.intern.challenges;
 
-import java.util.ArrayList;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.util.ArrayList;
+
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class Challenges extends ArrayList<Challenge> {
-
-}
-
+public class Challenges extends ArrayList<Challenge> {}

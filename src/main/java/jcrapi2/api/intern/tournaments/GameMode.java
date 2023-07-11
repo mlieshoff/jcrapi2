@@ -23,8 +23,6 @@ import lombok.Data;
 @Data
 public class GameMode {
 
-  @SerializedName("id")
-  private long id;
-
+    @SerializedName("id")
+    private long id;
 }
-

@@ -17,6 +17,7 @@
 package jcrapi2.connector;
 
 import jcrapi2.common.Request;
+
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
@@ -24,13 +25,10 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class RequestContext {
 
-  private final String url;
-  private final String apiKey;
+    private final String url;
+    private final String apiKey;
 
-  private final Request request;
+    private final Request request;
 
-  private final Class<?> responseClass;
-
+    private final Class<?> responseClass;
 }
-
-

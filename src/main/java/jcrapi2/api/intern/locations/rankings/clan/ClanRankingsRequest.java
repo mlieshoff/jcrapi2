@@ -16,36 +16,37 @@
  */
 package jcrapi2.api.intern.locations.rankings.clan;
 
-import java.util.Map;
 import jcrapi2.common.PaginationRequest;
+
 import lombok.Builder;
+
+import java.util.Map;
 
 public class ClanRankingsRequest extends PaginationRequest {
 
-  private final long locationId;
+    private final long locationId;
 
-  @Builder
-  private ClanRankingsRequest(int limit, String after, String before, boolean storeRawResponse, long locationId) {
-    super(limit, after, before, storeRawResponse);
-    this.locationId = locationId;
-  }
+    @Builder
+    private ClanRankingsRequest(
+            int limit, String after, String before, boolean storeRawResponse, long locationId) {
+        super(limit, after, before, storeRawResponse);
+        this.locationId = locationId;
+    }
 
-  public static ClanRankingsRequestBuilder builder(long locationId) {
-    return new ClanRankingsRequestBuilder().locationId(locationId);
-  }
+    public static ClanRankingsRequestBuilder builder(long locationId) {
+        return new ClanRankingsRequestBuilder().locationId(locationId);
+    }
 
-  @Override
-  public Map<String, Object> getRestParameters() {
-    Map<String, Object> map = super.getRestParameters();
-    map.put("locationId", locationId);
-    return map;
-  }
+    @Override
+    public Map<String, Object> getRestParameters() {
+        Map<String, Object> map = super.getRestParameters();
+        map.put("locationId", locationId);
+        return map;
+    }
 
-  @Override
-  public Map<String, Object> getQueryParameters() {
-    Map<String, Object> map = super.getQueryParameters();
-    return map;
-  }
-
+    @Override
+    public Map<String, Object> getQueryParameters() {
+        Map<String, Object> map = super.getQueryParameters();
+        return map;
+    }
 }
-

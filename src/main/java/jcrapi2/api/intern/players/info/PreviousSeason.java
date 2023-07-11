@@ -23,12 +23,12 @@ import lombok.Data;
 @Data
 public class PreviousSeason {
 
-  @SerializedName("id")
-  private String id;
-  @SerializedName("trophies")
-  private int trophies;
-  @SerializedName("bestTrophies")
-  private int bestTrophies;
+    @SerializedName("id")
+    private String id;
 
+    @SerializedName("trophies")
+    private int trophies;
+
+    @SerializedName("bestTrophies")
+    private int bestTrophies;
 }
-

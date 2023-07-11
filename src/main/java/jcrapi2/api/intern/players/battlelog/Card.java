@@ -23,18 +23,21 @@ import lombok.Data;
 @Data
 public class Card {
 
-  @SerializedName("name")
-  private String name;
-  @SerializedName("id")
-  private long id;
-  @SerializedName("level")
-  private int level;
-  @SerializedName("maxLevel")
-  private int maxLevel;
-  @SerializedName("starLevel")
-  private int starLevel;
-  @SerializedName("iconUrls")
-  private IconUrls iconUrls;
+    @SerializedName("name")
+    private String name;
 
+    @SerializedName("id")
+    private long id;
+
+    @SerializedName("level")
+    private int level;
+
+    @SerializedName("maxLevel")
+    private int maxLevel;
+
+    @SerializedName("starLevel")
+    private int starLevel;
+
+    @SerializedName("iconUrls")
+    private IconUrls iconUrls;
 }
-

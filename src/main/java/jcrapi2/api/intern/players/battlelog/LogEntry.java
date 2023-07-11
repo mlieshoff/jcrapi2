@@ -18,46 +18,61 @@ package jcrapi2.api.intern.players.battlelog;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 public class LogEntry {
 
-  @SerializedName("type")
-  private String type;
-  @SerializedName("battleTime")
-  private String battleTime;
-  @SerializedName("isLadderTournament")
-  private boolean isLadderTournament;
-  @SerializedName("boatBattleSide")
-  private String boatBattleSide;
-  @SerializedName("boatBattleWon")
-  private boolean boatBattleWon;
-  @SerializedName("newTowersDestroyed")
-  private int newTowersDestroyed;
-  @SerializedName("prevTowersDestroyed")
-  private int prevTowersDestroyed;
-  @SerializedName("remainingTowers")
-  private int remainingTowers;
-  @SerializedName("isHostedMatch")
-  private boolean isHostedMatch;
-  @SerializedName("deckSelection")
-  private String deckSelection;
-  @SerializedName("arena")
-  private Arena arena;
-  @SerializedName("gameMode")
-  private GameMode gameMode;
-  @SerializedName("team")
-  private List<Team> team;
-  @SerializedName("opponent")
-  private List<Opponent> opponent;
-  @SerializedName("challengeId")
-  private long challengeId;
-  @SerializedName("challengeWinCountBefore")
-  private int challengeWinCountBefore;
-  @SerializedName("challengeTitle")
-  private String challengeTitle;
+    @SerializedName("type")
+    private String type;
 
+    @SerializedName("battleTime")
+    private String battleTime;
+
+    @SerializedName("isLadderTournament")
+    private boolean isLadderTournament;
+
+    @SerializedName("boatBattleSide")
+    private String boatBattleSide;
+
+    @SerializedName("boatBattleWon")
+    private boolean boatBattleWon;
+
+    @SerializedName("newTowersDestroyed")
+    private int newTowersDestroyed;
+
+    @SerializedName("prevTowersDestroyed")
+    private int prevTowersDestroyed;
+
+    @SerializedName("remainingTowers")
+    private int remainingTowers;
+
+    @SerializedName("isHostedMatch")
+    private boolean isHostedMatch;
+
+    @SerializedName("deckSelection")
+    private String deckSelection;
+
+    @SerializedName("arena")
+    private Arena arena;
+
+    @SerializedName("gameMode")
+    private GameMode gameMode;
+
+    @SerializedName("team")
+    private List<Team> team;
+
+    @SerializedName("opponent")
+    private List<Opponent> opponent;
+
+    @SerializedName("challengeId")
+    private long challengeId;
+
+    @SerializedName("challengeWinCountBefore")
+    private int challengeWinCountBefore;
+
+    @SerializedName("challengeTitle")
+    private String challengeTitle;
 }
-

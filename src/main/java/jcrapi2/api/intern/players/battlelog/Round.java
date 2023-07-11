@@ -18,16 +18,16 @@ package jcrapi2.api.intern.players.battlelog;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 public class Round {
 
-  @SerializedName("crowns")
-  private int crowns;
-  @SerializedName("cards")
-  private List<RoundCard> cards;
+    @SerializedName("crowns")
+    private int crowns;
 
+    @SerializedName("cards")
+    private List<RoundCard> cards;
 }
-

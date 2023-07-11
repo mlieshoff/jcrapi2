@@ -18,26 +18,31 @@ package jcrapi2.api.intern.clans.currentriverrace;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 public class CurrentRiverRace {
 
-  @SerializedName("state")
-  private String state;
-  @SerializedName("sectionIndex")
-  private int sectionIndex;
-  @SerializedName("periodIndex")
-  private int periodIndex;
-  @SerializedName("periodType")
-  private String periodType;
-  @SerializedName("periodLogs")
-  private List<PeriodLog> periodLogs;
-  @SerializedName("clan")
-  private Clan clan;
-  @SerializedName("clans")
-  private List<Clan> clans;
+    @SerializedName("state")
+    private String state;
 
+    @SerializedName("sectionIndex")
+    private int sectionIndex;
+
+    @SerializedName("periodIndex")
+    private int periodIndex;
+
+    @SerializedName("periodType")
+    private String periodType;
+
+    @SerializedName("periodLogs")
+    private List<PeriodLog> periodLogs;
+
+    @SerializedName("clan")
+    private Clan clan;
+
+    @SerializedName("clans")
+    private List<Clan> clans;
 }
-

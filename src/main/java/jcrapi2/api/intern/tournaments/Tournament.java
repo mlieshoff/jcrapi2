@@ -23,36 +23,48 @@ import lombok.Data;
 @Data
 public class Tournament {
 
-  @SerializedName("name")
-  private String name;
-  @SerializedName("tag")
-  private String tag;
-  @SerializedName("type")
-  private String type;
-  @SerializedName("status")
-  private String status;
-  @SerializedName("creatorTag")
-  private String creatorTag;
-  @SerializedName("description")
-  private String description;
-  @SerializedName("levelCap")
-  private int levelCap;
-  @SerializedName("firstPlaceCardPrize")
-  private int firstPlaceCardPrize;
-  @SerializedName("capacity")
-  private int capacity;
-  @SerializedName("maxCapacity")
-  private int maxCapacity;
-  @SerializedName("preparationDuration")
-  private int preparationDuration;
-  @SerializedName("duration")
-  private int duration;
-  @SerializedName("createdTime")
-  private String createdTime;
-  @SerializedName("gameMode")
-  private GameMode gameMode;
-  @SerializedName("iconUrls")
-  private IconUrls iconUrls;
+    @SerializedName("name")
+    private String name;
 
+    @SerializedName("tag")
+    private String tag;
+
+    @SerializedName("type")
+    private String type;
+
+    @SerializedName("status")
+    private String status;
+
+    @SerializedName("creatorTag")
+    private String creatorTag;
+
+    @SerializedName("description")
+    private String description;
+
+    @SerializedName("levelCap")
+    private int levelCap;
+
+    @SerializedName("firstPlaceCardPrize")
+    private int firstPlaceCardPrize;
+
+    @SerializedName("capacity")
+    private int capacity;
+
+    @SerializedName("maxCapacity")
+    private int maxCapacity;
+
+    @SerializedName("preparationDuration")
+    private int preparationDuration;
+
+    @SerializedName("duration")
+    private int duration;
+
+    @SerializedName("createdTime")
+    private String createdTime;
+
+    @SerializedName("gameMode")
+    private GameMode gameMode;
+
+    @SerializedName("iconUrls")
+    private IconUrls iconUrls;
 }
-

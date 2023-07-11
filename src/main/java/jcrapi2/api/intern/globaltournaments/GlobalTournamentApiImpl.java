@@ -16,20 +16,20 @@
  */
 package jcrapi2.api.intern.globaltournaments;
 
-import java.util.concurrent.Future;
 import jcrapi2.api.ApiContext;
 import jcrapi2.api.BaseApi;
 
+import java.util.concurrent.Future;
+
 class GlobalTournamentApiImpl extends BaseApi implements GlobalTournamentApi {
 
-  GlobalTournamentApiImpl(ApiContext apiContext) {
-    super(apiContext);
-  }
+    GlobalTournamentApiImpl(ApiContext apiContext) {
+        super(apiContext);
+    }
 
-  @Override
-  public Future<GlobalTournamentsResponse> findAll(GlobalTournamentsRequest globalTournamentsRequest) {
-    return get("/globaltournaments", globalTournamentsRequest, GlobalTournamentsResponse.class);
-  }
-
+    @Override
+    public Future<GlobalTournamentsResponse> findAll(
+            GlobalTournamentsRequest globalTournamentsRequest) {
+        return get("/globaltournaments", globalTournamentsRequest, GlobalTournamentsResponse.class);
+    }
 }
-

@@ -18,43 +18,40 @@ package jcrapi2.api.intern.cards;
 
 import static wiremock.org.apache.commons.lang3.StringUtils.EMPTY;
 
+import jcrapi2.IntegrationTestBase;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import jcrapi2.IntegrationTestBase;
-
 public class CardApiImplIntegrationTest extends IntegrationTestBase {
 
-  private CardApi unitUnderTest;
+    private CardApi unitUnderTest;
 
-  @BeforeEach
-  void setUp() {
-    unitUnderTest = getJCrApi().getApi(CardApi.class);
-  }
+    @BeforeEach
+    void setUp() {
+        unitUnderTest = getJCrApi().getApi(CardApi.class);
+    }
 
-  @Test
-  void findAll() throws Exception {
-    jcrapi2.api.intern.cards.CardsRequest.CardsRequestBuilder builder = jcrapi2.api.intern.cards.CardsRequest.builder();
-    jcrapi2.api.intern.cards.CardsRequest request = builder
+    @Test
+    void findAll() throws Exception {
+        jcrapi2.api.intern.cards.CardsRequest.CardsRequestBuilder builder =
+                jcrapi2.api.intern.cards.CardsRequest.builder();
+        jcrapi2.api.intern.cards.CardsRequest request = builder.storeRawResponse(true).build();
 
-      .storeRawResponse(true)
-      .build();
-    prepare("/cards", EMPTY, "src/test/resources/card-findAll.json", request);
-    jcrapi2.api.intern.cards.CardsResponse expected = toJson(jcrapi2.api.intern.cards.CardsResponse.class, getExpected());
+        prepare("/cards", EMPTY, "src/test/resources/card-findAll.json", request);
+        jcrapi2.api.intern.cards.CardsResponse expected =
+                toJson(jcrapi2.api.intern.cards.CardsResponse.class, getExpected());
 
-    run(expected, () -> unitUnderTest.findAll(request).get());
-  }
+        run(expected, () -> unitUnderTest.findAll(request).get());
+    }
 
-  @Test
-  void findAll_whenWithException() {
-    jcrapi2.api.intern.cards.CardsRequest.CardsRequestBuilder builder = jcrapi2.api.intern.cards.CardsRequest.builder();
-    jcrapi2.api.intern.cards.CardsRequest request = builder
+    @Test
+    void findAll_whenWithException() {
+        jcrapi2.api.intern.cards.CardsRequest.CardsRequestBuilder builder =
+                jcrapi2.api.intern.cards.CardsRequest.builder();
+        jcrapi2.api.intern.cards.CardsRequest request = builder.storeRawResponse(true).build();
 
-      .storeRawResponse(true)
-      .build();
-
-    prepareWithErrorAndRun("/cards", EMPTY, request, () -> unitUnderTest.findAll(request).get());
-  }
-
+        prepareWithErrorAndRun(
+                "/cards", EMPTY, request, () -> unitUnderTest.findAll(request).get());
+    }
 }
-

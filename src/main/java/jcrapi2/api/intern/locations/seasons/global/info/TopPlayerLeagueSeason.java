@@ -23,8 +23,6 @@ import lombok.Data;
 @Data
 public class TopPlayerLeagueSeason {
 
-  @SerializedName("id")
-  private String id;
-
+    @SerializedName("id")
+    private String id;
 }
-

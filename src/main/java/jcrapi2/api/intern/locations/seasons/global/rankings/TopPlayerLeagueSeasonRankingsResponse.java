@@ -18,7 +18,5 @@ package jcrapi2.api.intern.locations.seasons.global.rankings;
 
 import jcrapi2.common.PaginationResponse;
 
-public class TopPlayerLeagueSeasonRankingsResponse extends PaginationResponse<TopPlayerLeagueSeasonRanking> {
-
-}
-
+public class TopPlayerLeagueSeasonRankingsResponse
+        extends PaginationResponse<TopPlayerLeagueSeasonRanking> {}

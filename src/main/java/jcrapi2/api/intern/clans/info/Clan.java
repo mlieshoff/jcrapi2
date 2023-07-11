@@ -18,42 +18,55 @@ package jcrapi2.api.intern.clans.info;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 public class Clan {
 
-  @SerializedName("tag")
-  private String tag;
-  @SerializedName("name")
-  private String name;
-  @SerializedName("type")
-  private String type;
-  @SerializedName("description")
-  private String description;
-  @SerializedName("badgeId")
-  private long badgeId;
-  @SerializedName("clanScore")
-  private int clanScore;
-  @SerializedName("clanWarTrophies")
-  private int clanWarTrophies;
-  @SerializedName("location")
-  private Location location;
-  @SerializedName("requiredTrophies")
-  private int requiredTrophies;
-  @SerializedName("donationsPerWeek")
-  private int donationsPerWeek;
-  @SerializedName("clanChestStatus")
-  private String clanChestStatus;
-  @SerializedName("clanChestLevel")
-  private int clanChestLevel;
-  @SerializedName("clanChestMaxLevel")
-  private int clanChestMaxLevel;
-  @SerializedName("members")
-  private int members;
-  @SerializedName("memberList")
-  private List<Member> memberList;
+    @SerializedName("tag")
+    private String tag;
 
+    @SerializedName("name")
+    private String name;
+
+    @SerializedName("type")
+    private String type;
+
+    @SerializedName("description")
+    private String description;
+
+    @SerializedName("badgeId")
+    private long badgeId;
+
+    @SerializedName("clanScore")
+    private int clanScore;
+
+    @SerializedName("clanWarTrophies")
+    private int clanWarTrophies;
+
+    @SerializedName("location")
+    private Location location;
+
+    @SerializedName("requiredTrophies")
+    private int requiredTrophies;
+
+    @SerializedName("donationsPerWeek")
+    private int donationsPerWeek;
+
+    @SerializedName("clanChestStatus")
+    private String clanChestStatus;
+
+    @SerializedName("clanChestLevel")
+    private int clanChestLevel;
+
+    @SerializedName("clanChestMaxLevel")
+    private int clanChestMaxLevel;
+
+    @SerializedName("members")
+    private int members;
+
+    @SerializedName("memberList")
+    private List<Member> memberList;
 }
-

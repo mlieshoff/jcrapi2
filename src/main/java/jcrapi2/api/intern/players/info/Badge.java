@@ -23,18 +23,21 @@ import lombok.Data;
 @Data
 public class Badge {
 
-  @SerializedName("name")
-  private String name;
-  @SerializedName("level")
-  private int level;
-  @SerializedName("maxLevel")
-  private int maxLevel;
-  @SerializedName("progress")
-  private int progress;
-  @SerializedName("iconUrls")
-  private IconUrls iconUrls;
-  @SerializedName("target")
-  private int target;
+    @SerializedName("name")
+    private String name;
 
+    @SerializedName("level")
+    private int level;
+
+    @SerializedName("maxLevel")
+    private int maxLevel;
+
+    @SerializedName("progress")
+    private int progress;
+
+    @SerializedName("iconUrls")
+    private IconUrls iconUrls;
+
+    @SerializedName("target")
+    private int target;
 }
-

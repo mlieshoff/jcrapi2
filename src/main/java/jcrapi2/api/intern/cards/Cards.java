@@ -18,14 +18,13 @@ package jcrapi2.api.intern.cards;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 public class Cards {
 
-  @SerializedName("items")
-  private List<Card> items;
-
+    @SerializedName("items")
+    private List<Card> items;
 }
-

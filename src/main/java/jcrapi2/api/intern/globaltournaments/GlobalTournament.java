@@ -18,36 +18,46 @@ package jcrapi2.api.intern.globaltournaments;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 public class GlobalTournament {
 
-  @SerializedName("tag")
-  private String tag;
-  @SerializedName("title")
-  private String title;
-  @SerializedName("startTime")
-  private String startTime;
-  @SerializedName("endTime")
-  private String endTime;
-  @SerializedName("maxTopRewardRank")
-  private int maxTopRewardRank;
-  @SerializedName("maxLosses")
-  private int maxLosses;
-  @SerializedName("minExpLevel")
-  private int minExpLevel;
-  @SerializedName("tournamentLevel")
-  private int tournamentLevel;
-  @SerializedName("milestoneRewards")
-  private List<MilestoneReward> milestoneRewards;
-  @SerializedName("freeTierRewards")
-  private List<FreeTierReward> freeTierRewards;
-  @SerializedName("topRankReward")
-  private List<TopRankReward> topRankReward;
-  @SerializedName("gameMode")
-  private GameMode gameMode;
+    @SerializedName("tag")
+    private String tag;
 
+    @SerializedName("title")
+    private String title;
+
+    @SerializedName("startTime")
+    private String startTime;
+
+    @SerializedName("endTime")
+    private String endTime;
+
+    @SerializedName("maxTopRewardRank")
+    private int maxTopRewardRank;
+
+    @SerializedName("maxLosses")
+    private int maxLosses;
+
+    @SerializedName("minExpLevel")
+    private int minExpLevel;
+
+    @SerializedName("tournamentLevel")
+    private int tournamentLevel;
+
+    @SerializedName("milestoneRewards")
+    private List<MilestoneReward> milestoneRewards;
+
+    @SerializedName("freeTierRewards")
+    private List<FreeTierReward> freeTierRewards;
+
+    @SerializedName("topRankReward")
+    private List<TopRankReward> topRankReward;
+
+    @SerializedName("gameMode")
+    private GameMode gameMode;
 }
-

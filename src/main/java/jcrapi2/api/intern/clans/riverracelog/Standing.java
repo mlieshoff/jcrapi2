@@ -23,12 +23,12 @@ import lombok.Data;
 @Data
 public class Standing {
 
-  @SerializedName("rank")
-  private int rank;
-  @SerializedName("trophyChange")
-  private int trophyChange;
-  @SerializedName("clan")
-  private Clan clan;
+    @SerializedName("rank")
+    private int rank;
 
+    @SerializedName("trophyChange")
+    private int trophyChange;
+
+    @SerializedName("clan")
+    private Clan clan;
 }
-

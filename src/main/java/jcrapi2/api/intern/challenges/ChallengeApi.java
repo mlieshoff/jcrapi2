@@ -16,13 +16,11 @@
  */
 package jcrapi2.api.intern.challenges;
 
-import java.util.concurrent.Future;
 import jcrapi2.api.Api;
+
+import java.util.concurrent.Future;
 
 public interface ChallengeApi extends Api {
 
-  Future<ChallengesResponse> findAll(ChallengesRequest challengesRequest);
-
+    Future<ChallengesResponse> findAll(ChallengesRequest challengesRequest);
 }
-
-

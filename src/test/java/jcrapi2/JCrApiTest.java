@@ -20,6 +20,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import jcrapi2.api.Api;
+import jcrapi2.api.ApiContext;
+import jcrapi2.api.BaseApi;
+import jcrapi2.api.intern.clans.ClanApi;
+import jcrapi2.connector.Connector;
+
+import lombok.NonNull;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -32,83 +40,69 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import jcrapi2.api.Api;
-import jcrapi2.api.ApiContext;
-import jcrapi2.api.BaseApi;
-import jcrapi2.api.intern.clans.ClanApi;
-import jcrapi2.connector.Connector;
-import lombok.NonNull;
 
 @ExtendWith(MockitoExtension.class)
 class JCrApiTest {
 
-  private static final String URL = "url";
-  private static final String API_KEY = "apiKey";
+    private static final String URL = "url";
+    private static final String API_KEY = "apiKey";
 
-  private JCrApi unitUnderTest;
+    private JCrApi unitUnderTest;
 
-  @Mock
-  private Connector connector;
+    @Mock private Connector connector;
 
-  @BeforeEach
-  void setUp() {
-    unitUnderTest = new JCrApi(URL, API_KEY, connector);
-  }
-
-  @Test
-  void listApis_whenCalled_shouldReturnListOfApiInterfaceNames() {
-    Set<String>
-        expected =
-        new HashSet<>(
-            Arrays.asList(
-                "jcrapi2.api.intern.cards.CardApi",
-                "jcrapi2.api.intern.challenges.ChallengeApi",
-                "jcrapi2.api.intern.clans.ClanApi",
-                "jcrapi2.api.intern.globaltournaments.GlobalTournamentApi",
-                "jcrapi2.api.intern.locations.LocationApi",
-                "jcrapi2.api.intern.players.PlayerApi",
-                "jcrapi2.api.intern.tournament.TournamentApi"
-            )
-        );
-
-    List<String> actual = unitUnderTest.listApis();
-
-    assertEquals(expected, new HashSet<>(actual));
-  }
-
-  @Test
-  void getApi_whenWithValidParameter_shouldReturnApiInstance() {
-    ClanApi actual = unitUnderTest.getApi(ClanApi.class);
-
-    assertNotNull(actual);
-  }
-
-  @ParameterizedTest
-  @CsvSource(value = "null,", nullValues = "null")
-  void registerApi_whenWithNull_thenThrowException(String actual) {
-
-    assertThrows(IllegalArgumentException.class, () -> unitUnderTest.register(FooApi.class, actual));
-  }
-
-  @Test
-  void registerAndGetApi_whenWithValidParameter_shouldRegister() {
-    unitUnderTest.register(FooApi.class, FooApiImpl.class.getName());
-    FooApi actual = unitUnderTest.getApi(FooApi.class);
-
-    assertNotNull(actual);
-  }
-
-  public interface FooApi extends Api {
-
-  }
-
-  public static class FooApiImpl extends BaseApi implements FooApi {
-
-    public FooApiImpl(@NonNull ApiContext apiContext) {
-      super(apiContext);
+    @BeforeEach
+    void setUp() {
+        unitUnderTest = new JCrApi(URL, API_KEY, connector);
     }
 
-  }
+    @Test
+    void listApis_whenCalled_shouldReturnListOfApiInterfaceNames() {
+        Set<String> expected =
+                new HashSet<>(
+                        Arrays.asList(
+                                "jcrapi2.api.intern.cards.CardApi",
+                                "jcrapi2.api.intern.challenges.ChallengeApi",
+                                "jcrapi2.api.intern.clans.ClanApi",
+                                "jcrapi2.api.intern.globaltournaments.GlobalTournamentApi",
+                                "jcrapi2.api.intern.locations.LocationApi",
+                                "jcrapi2.api.intern.players.PlayerApi",
+                                "jcrapi2.api.intern.tournament.TournamentApi"));
 
+        List<String> actual = unitUnderTest.listApis();
+
+        assertEquals(expected, new HashSet<>(actual));
+    }
+
+    @Test
+    void getApi_whenWithValidParameter_shouldReturnApiInstance() {
+        ClanApi actual = unitUnderTest.getApi(ClanApi.class);
+
+        assertNotNull(actual);
+    }
+
+    @ParameterizedTest
+    @CsvSource(value = "null,", nullValues = "null")
+    void registerApi_whenWithNull_thenThrowException(String actual) {
+
+        assertThrows(
+                IllegalArgumentException.class, () -> unitUnderTest.register(FooApi.class, actual));
+    }
+
+    @Test
+    void registerAndGetApi_whenWithValidParameter_shouldRegister() {
+        unitUnderTest.register(FooApi.class, FooApiImpl.class.getName());
+        FooApi actual = unitUnderTest.getApi(FooApi.class);
+
+        assertNotNull(actual);
+    }
+
+    public interface FooApi extends Api {}
+
+    public static class FooApiImpl extends BaseApi implements FooApi {
+
+        public FooApiImpl(@NonNull ApiContext apiContext) {
+            super(apiContext);
+        }
+    }
 }
-

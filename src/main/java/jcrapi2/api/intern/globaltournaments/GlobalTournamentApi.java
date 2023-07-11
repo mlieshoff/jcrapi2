@@ -16,13 +16,11 @@
  */
 package jcrapi2.api.intern.globaltournaments;
 
-import java.util.concurrent.Future;
 import jcrapi2.api.Api;
+
+import java.util.concurrent.Future;
 
 public interface GlobalTournamentApi extends Api {
 
-  Future<GlobalTournamentsResponse> findAll(GlobalTournamentsRequest globalTournamentsRequest);
-
+    Future<GlobalTournamentsResponse> findAll(GlobalTournamentsRequest globalTournamentsRequest);
 }
-
-

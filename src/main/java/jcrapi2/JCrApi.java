@@ -16,56 +16,58 @@
  */
 package jcrapi2;
 
-import static java.util.stream.Collectors.toList;
 import static jcrapi2.common.Utils.require;
+
+import static java.util.stream.Collectors.toList;
+
+import jcrapi2.api.Api;
+import jcrapi2.api.ApiContext;
+import jcrapi2.api.intern.DefaultApiClasses;
+import jcrapi2.connector.Connector;
 
 import java.lang.reflect.Constructor;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import jcrapi2.api.Api;
-import jcrapi2.api.ApiContext;
-import jcrapi2.api.intern.DefaultApiClasses;
-import jcrapi2.connector.Connector;
 
 public class JCrApi {
 
-  private final ApiContext apiContext;
+    private final ApiContext apiContext;
 
-  private final ConcurrentHashMap<Class<? extends Api>, ?> apiInstanceMap = new ConcurrentHashMap<>();
-  private final Map<Class<? extends Api>, String> apiClassMap = new HashMap<>();
+    private final ConcurrentHashMap<Class<? extends Api>, ?> apiInstanceMap =
+            new ConcurrentHashMap<>();
+    private final Map<Class<? extends Api>, String> apiClassMap = new HashMap<>();
 
-  public JCrApi(String url, String apiKey, Connector connector) {
-    apiContext = new ApiContext(url, apiKey, connector);
-    apiClassMap.putAll(new DefaultApiClasses().getApiClassMap());
-  }
-
-  public <T extends Api> T getApi(Class<T> apiInterface) {
-    return (T) apiInstanceMap.computeIfAbsent(apiInterface, key -> instantiateApi(apiClassMap.get(key)));
-  }
-
-  private <T extends Api> T instantiateApi(String apiImplClassname) {
-    try {
-      Class<?> apiImplClass = Class.forName(apiImplClassname);
-      Constructor<?> constructor = apiImplClass.getDeclaredConstructor(ApiContext.class);
-      constructor.setAccessible(true);
-      return (T) constructor.newInstance(apiContext);
-    } catch (Exception e) {
-      throw new IllegalStateException(e);
+    public JCrApi(String url, String apiKey, Connector connector) {
+        apiContext = new ApiContext(url, apiKey, connector);
+        apiClassMap.putAll(new DefaultApiClasses().getApiClassMap());
     }
-  }
 
-  public List<String> listApis() {
-    return apiClassMap.keySet().stream().map(Class::getName).collect(toList());
-  }
+    public <T extends Api> T getApi(Class<T> apiInterface) {
+        return (T)
+                apiInstanceMap.computeIfAbsent(
+                        apiInterface, key -> instantiateApi(apiClassMap.get(key)));
+    }
 
-  public <T extends Api> void register(Class<T> apiInterface, String apiImplClassname) {
-    require("apiInterface", apiInterface);
-    require("apiImplClassname", apiImplClassname);
-    apiClassMap.put(apiInterface, apiImplClassname);
-  }
+    private <T extends Api> T instantiateApi(String apiImplClassname) {
+        try {
+            Class<?> apiImplClass = Class.forName(apiImplClassname);
+            Constructor<?> constructor = apiImplClass.getDeclaredConstructor(ApiContext.class);
+            constructor.setAccessible(true);
+            return (T) constructor.newInstance(apiContext);
+        } catch (Exception e) {
+            throw new IllegalStateException(e);
+        }
+    }
 
+    public List<String> listApis() {
+        return apiClassMap.keySet().stream().map(Class::getName).collect(toList());
+    }
+
+    public <T extends Api> void register(Class<T> apiInterface, String apiImplClassname) {
+        require("apiInterface", apiInterface);
+        require("apiImplClassname", apiImplClassname);
+        apiClassMap.put(apiInterface, apiImplClassname);
+    }
 }
-
-

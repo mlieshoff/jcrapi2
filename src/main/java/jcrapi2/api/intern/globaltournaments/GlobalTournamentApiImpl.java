@@ -32,3 +32,4 @@ class GlobalTournamentApiImpl extends BaseApi implements GlobalTournamentApi {
   }
 
 }
+

@@ -37,3 +37,4 @@ public class CardsResponse extends Cards implements IResponse {
   private transient RawResponse rawResponse;
 
 }
+

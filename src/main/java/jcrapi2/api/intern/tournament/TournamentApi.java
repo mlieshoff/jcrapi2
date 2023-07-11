@@ -30,3 +30,5 @@ public interface TournamentApi extends Api {
   Future<TournamentResponse> findByTag(TournamentRequest tournamentRequest);
 
 }
+
+

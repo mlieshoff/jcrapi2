@@ -46,3 +46,5 @@ public interface LocationApi extends Api {
   Future<TopPlayerLeagueSeasonRankingsResponse> getTopPlayerLeagueSeasonRankings(TopPlayerLeagueSeasonRankingsRequest topPlayerLeagueSeasonRankingsRequest);
 
 }
+
+

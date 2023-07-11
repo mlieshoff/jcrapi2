@@ -31,3 +31,4 @@ public class LeagueStatistics {
   private BestSeason bestSeason;
 
 }
+

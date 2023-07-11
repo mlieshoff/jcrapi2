@@ -32,3 +32,4 @@ class CardApiImpl extends BaseApi implements CardApi {
   }
 
 }
+

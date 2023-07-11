@@ -39,3 +39,4 @@ public class TopRankReward {
   private Card card;
 
 }
+

@@ -55,3 +55,4 @@ public class Tournament {
   private IconUrls iconUrls;
 
 }
+

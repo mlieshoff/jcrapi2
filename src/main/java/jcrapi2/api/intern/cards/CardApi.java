@@ -24,3 +24,5 @@ public interface CardApi extends Api {
   Future<CardsResponse> findAll(CardsRequest cardsRequest);
 
 }
+
+

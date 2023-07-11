@@ -61,3 +61,4 @@ public class GlobalTournamentApiImplIntegrationTest extends IntegrationTestBase 
   }
 
 }
+

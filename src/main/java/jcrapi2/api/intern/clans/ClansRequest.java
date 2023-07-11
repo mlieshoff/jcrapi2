@@ -57,3 +57,4 @@ public class ClansRequest extends PaginationRequest {
   }
 
 }
+

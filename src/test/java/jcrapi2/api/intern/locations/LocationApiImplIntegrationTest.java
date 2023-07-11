@@ -212,7 +212,7 @@ public class LocationApiImplIntegrationTest extends IntegrationTestBase {
 
       .storeRawResponse(true)
       .build();
-    prepare("/locations/global/seasons/{seasonId}".replace("{seasonId}", seasonId), EMPTY, "src/test/resources/location-getTopPlayerLeagueSeason.json", request);
+    prepare("/locations/global/seasons/{seasonId}".replace("{seasonId}", String.valueOf(seasonId)), EMPTY, "src/test/resources/location-getTopPlayerLeagueSeason.json", request);
     jcrapi2.api.intern.locations.seasons.global.info.TopPlayerLeagueSeasonResponse expected = toJson(jcrapi2.api.intern.locations.seasons.global.info.TopPlayerLeagueSeasonResponse.class, getExpected());
 
     run(expected, () -> unitUnderTest.getTopPlayerLeagueSeason(request).get());
@@ -227,7 +227,7 @@ public class LocationApiImplIntegrationTest extends IntegrationTestBase {
       .storeRawResponse(true)
       .build();
 
-    prepareWithErrorAndRun("/locations/global/seasons/{seasonId}".replace("{seasonId}", seasonId), EMPTY, request, () -> unitUnderTest.getTopPlayerLeagueSeason(request).get());
+    prepareWithErrorAndRun("/locations/global/seasons/{seasonId}".replace("{seasonId}", String.valueOf(seasonId)), EMPTY, request, () -> unitUnderTest.getTopPlayerLeagueSeason(request).get());
   }
 
   @Test
@@ -240,7 +240,7 @@ public class LocationApiImplIntegrationTest extends IntegrationTestBase {
       .after("aaa")
       .storeRawResponse(true)
       .build();
-    prepare("/locations/global/seasons/{seasonId}/rankings/players".replace("{seasonId}", seasonId), EMPTY, "src/test/resources/location-getTopPlayerLeagueSeasonRankings.json", request);
+    prepare("/locations/global/seasons/{seasonId}/rankings/players".replace("{seasonId}", String.valueOf(seasonId)), EMPTY, "src/test/resources/location-getTopPlayerLeagueSeasonRankings.json", request);
     jcrapi2.api.intern.locations.seasons.global.rankings.TopPlayerLeagueSeasonRankingsResponse expected = toJson(jcrapi2.api.intern.locations.seasons.global.rankings.TopPlayerLeagueSeasonRankingsResponse.class, getExpected());
 
     run(expected, () -> unitUnderTest.getTopPlayerLeagueSeasonRankings(request).get());
@@ -257,7 +257,8 @@ public class LocationApiImplIntegrationTest extends IntegrationTestBase {
       .storeRawResponse(true)
       .build();
 
-    prepareWithErrorAndRun("/locations/global/seasons/{seasonId}/rankings/players".replace("{seasonId}", seasonId), EMPTY, request, () -> unitUnderTest.getTopPlayerLeagueSeasonRankings(request).get());
+    prepareWithErrorAndRun("/locations/global/seasons/{seasonId}/rankings/players".replace("{seasonId}", String.valueOf(seasonId)), EMPTY, request, () -> unitUnderTest.getTopPlayerLeagueSeasonRankings(request).get());
   }
 
 }
+

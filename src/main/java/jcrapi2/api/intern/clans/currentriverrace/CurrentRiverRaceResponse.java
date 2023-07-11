@@ -37,3 +37,4 @@ public class CurrentRiverRaceResponse extends CurrentRiverRace implements IRespo
   private transient RawResponse rawResponse;
 
 }
+

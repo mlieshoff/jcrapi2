@@ -60,3 +60,4 @@ public class LogEntry {
   private String challengeTitle;
 
 }
+

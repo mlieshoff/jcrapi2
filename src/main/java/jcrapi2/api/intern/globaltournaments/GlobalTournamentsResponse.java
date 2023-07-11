@@ -21,3 +21,4 @@ import jcrapi2.common.PaginationResponse;
 public class GlobalTournamentsResponse extends PaginationResponse<GlobalTournament> {
 
 }
+

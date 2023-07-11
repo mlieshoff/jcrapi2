@@ -33,3 +33,4 @@ public class Location {
   private String countryCode;
 
 }
+

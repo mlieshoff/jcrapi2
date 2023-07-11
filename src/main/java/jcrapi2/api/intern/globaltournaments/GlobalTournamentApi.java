@@ -24,3 +24,5 @@ public interface GlobalTournamentApi extends Api {
   Future<GlobalTournamentsResponse> findAll(GlobalTournamentsRequest globalTournamentsRequest);
 
 }
+
+

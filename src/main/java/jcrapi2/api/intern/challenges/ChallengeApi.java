@@ -24,3 +24,5 @@ public interface ChallengeApi extends Api {
   Future<ChallengesResponse> findAll(ChallengesRequest challengesRequest);
 
 }
+
+

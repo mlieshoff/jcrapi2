@@ -29,3 +29,4 @@ public class UpcomingChest {
   private String name;
 
 }
+

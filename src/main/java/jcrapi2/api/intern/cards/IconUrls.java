@@ -27,3 +27,4 @@ public class IconUrls {
   private String medium;
 
 }
+

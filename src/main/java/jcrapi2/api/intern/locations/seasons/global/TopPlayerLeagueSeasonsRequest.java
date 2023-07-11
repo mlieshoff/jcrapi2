@@ -31,3 +31,4 @@ public class TopPlayerLeagueSeasonsRequest extends PaginationRequest {
   }
 
 }
+

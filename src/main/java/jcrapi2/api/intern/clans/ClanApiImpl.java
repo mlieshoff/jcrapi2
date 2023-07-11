@@ -57,3 +57,4 @@ class ClanApiImpl extends BaseApi implements ClanApi {
   }
 
 }
+

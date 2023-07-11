@@ -60,3 +60,4 @@ public class Tournament {
   private List<Member> membersList;
 
 }
+

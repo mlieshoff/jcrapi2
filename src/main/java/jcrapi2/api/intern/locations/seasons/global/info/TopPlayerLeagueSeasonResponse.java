@@ -37,3 +37,4 @@ public class TopPlayerLeagueSeasonResponse extends TopPlayerLeagueSeason impleme
   private transient RawResponse rawResponse;
 
 }
+

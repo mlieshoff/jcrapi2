@@ -48,3 +48,4 @@ public class ClanMembersRequest extends PaginationRequest {
   }
 
 }
+

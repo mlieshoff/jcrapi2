@@ -31,3 +31,4 @@ public class GlobalTournamentsRequest extends PaginationRequest {
   }
 
 }
+

@@ -37,3 +37,4 @@ public class Badge {
   private int target;
 
 }
+

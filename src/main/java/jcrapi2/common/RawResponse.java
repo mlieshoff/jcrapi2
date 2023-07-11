@@ -32,3 +32,4 @@ public class RawResponse {
   private String raw;
 
 }
+

@@ -39,3 +39,4 @@ public class RoundCard {
   private IconUrls iconUrls;
 
 }
+

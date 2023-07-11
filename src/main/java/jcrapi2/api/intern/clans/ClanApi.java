@@ -37,3 +37,5 @@ public interface ClanApi extends Api {
   Future<CurrentRiverRaceResponse> getCurrentRiverRace(CurrentRiverRaceRequest currentRiverRaceRequest);
 
 }
+
+

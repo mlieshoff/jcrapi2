@@ -35,20 +35,16 @@ public class TournamentApiImplIntegrationTest extends IntegrationTestBase {
   @Test
   void findAll() throws Exception {
     String name = "name";
-    jcrapi2.api.intern.tournaments.TournamentsRequest.TournamentsRequestBuilder
-        builder =
-        jcrapi2.api.intern.tournaments.TournamentsRequest.builder();
+    jcrapi2.api.intern.tournaments.TournamentsRequest.TournamentsRequestBuilder builder = jcrapi2.api.intern.tournaments.TournamentsRequest.builder();
     jcrapi2.api.intern.tournaments.TournamentsRequest request = builder
-        .name(name)
-        .limit(100)
-        .before("zzz")
-        .after("aaa")
-        .storeRawResponse(true)
-        .build();
-    prepare("/tournaments", "name=" + name, "src/test/resources/tournament-findAll.json", request);
-    jcrapi2.api.intern.tournaments.TournamentsResponse
-        expected =
-        toJson(jcrapi2.api.intern.tournaments.TournamentsResponse.class, getExpected());
+      .name(name)
+      .limit(100)
+      .before("zzz")
+      .after("aaa")
+      .storeRawResponse(true)
+      .build();
+    prepare("/tournaments", "name=" + name + "", "src/test/resources/tournament-findAll.json", request);
+    jcrapi2.api.intern.tournaments.TournamentsResponse expected = toJson(jcrapi2.api.intern.tournaments.TournamentsResponse.class, getExpected());
 
     run(expected, () -> unitUnderTest.findAll(request).get());
   }
@@ -56,38 +52,30 @@ public class TournamentApiImplIntegrationTest extends IntegrationTestBase {
   @Test
   void findAll_whenWithException() {
     String name = "name";
-    jcrapi2.api.intern.tournaments.TournamentsRequest.TournamentsRequestBuilder
-        builder =
-        jcrapi2.api.intern.tournaments.TournamentsRequest.builder();
+    jcrapi2.api.intern.tournaments.TournamentsRequest.TournamentsRequestBuilder builder = jcrapi2.api.intern.tournaments.TournamentsRequest.builder();
     jcrapi2.api.intern.tournaments.TournamentsRequest request = builder
-        .name(name)
-        .limit(100)
-        .before("zzz")
-        .after("aaa")
-        .storeRawResponse(true)
-        .build();
+      .name(name)
+      .limit(100)
+      .before("zzz")
+      .after("aaa")
+      .storeRawResponse(true)
+      .build();
 
-    prepareWithErrorAndRun("/tournaments".replace("{name}", name),
-        "name=" + name, request, () -> unitUnderTest.findAll(request).get());
+    prepareWithErrorAndRun("/tournaments".replace("{name}", String.valueOf(name)), "name=" + name + "", request, () -> unitUnderTest.findAll(request).get());
   }
 
   @Test
   void findByTag() throws Exception {
     String tournamentTag = "tournamentTag";
-    jcrapi2.api.intern.tournaments.info.TournamentRequest.TournamentRequestBuilder
-        builder =
-        jcrapi2.api.intern.tournaments.info.TournamentRequest.builder(tournamentTag);
+    jcrapi2.api.intern.tournaments.info.TournamentRequest.TournamentRequestBuilder builder = jcrapi2.api.intern.tournaments.info.TournamentRequest.builder(tournamentTag);
     jcrapi2.api.intern.tournaments.info.TournamentRequest request = builder
-        .limit(100)
-        .before("zzz")
-        .after("aaa")
-        .storeRawResponse(true)
-        .build();
-    prepare("/tournaments/{tournamentTag}".replace("{tournamentTag}", tournamentTag), EMPTY,
-        "src/test/resources/tournament-findByTag.json", request);
-    jcrapi2.api.intern.tournaments.info.TournamentResponse
-        expected =
-        toJson(jcrapi2.api.intern.tournaments.info.TournamentResponse.class, getExpected());
+      .limit(100)
+      .before("zzz")
+      .after("aaa")
+      .storeRawResponse(true)
+      .build();
+    prepare("/tournaments/{tournamentTag}".replace("{tournamentTag}", String.valueOf(tournamentTag)), EMPTY, "src/test/resources/tournament-findByTag.json", request);
+    jcrapi2.api.intern.tournaments.info.TournamentResponse expected = toJson(jcrapi2.api.intern.tournaments.info.TournamentResponse.class, getExpected());
 
     run(expected, () -> unitUnderTest.findByTag(request).get());
   }
@@ -95,18 +83,16 @@ public class TournamentApiImplIntegrationTest extends IntegrationTestBase {
   @Test
   void findByTag_whenWithException() {
     String tournamentTag = "tournamentTag";
-    jcrapi2.api.intern.tournaments.info.TournamentRequest.TournamentRequestBuilder
-        builder =
-        jcrapi2.api.intern.tournaments.info.TournamentRequest.builder(tournamentTag);
+    jcrapi2.api.intern.tournaments.info.TournamentRequest.TournamentRequestBuilder builder = jcrapi2.api.intern.tournaments.info.TournamentRequest.builder(tournamentTag);
     jcrapi2.api.intern.tournaments.info.TournamentRequest request = builder
-        .limit(100)
-        .before("zzz")
-        .after("aaa")
-        .storeRawResponse(true)
-        .build();
+      .limit(100)
+      .before("zzz")
+      .after("aaa")
+      .storeRawResponse(true)
+      .build();
 
-    prepareWithErrorAndRun("/tournaments/{tournamentTag}".replace("{tournamentTag}", tournamentTag), EMPTY, request,
-        () -> unitUnderTest.findByTag(request).get());
+    prepareWithErrorAndRun("/tournaments/{tournamentTag}".replace("{tournamentTag}", String.valueOf(tournamentTag)), EMPTY, request, () -> unitUnderTest.findByTag(request).get());
   }
 
 }
+

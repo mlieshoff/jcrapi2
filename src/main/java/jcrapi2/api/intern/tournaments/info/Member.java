@@ -35,3 +35,4 @@ public class Member {
   private Clan clan;
 
 }
+

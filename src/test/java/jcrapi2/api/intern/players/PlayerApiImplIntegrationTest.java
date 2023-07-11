@@ -40,7 +40,7 @@ public class PlayerApiImplIntegrationTest extends IntegrationTestBase {
 
       .storeRawResponse(true)
       .build();
-    prepare("/players/{playerTag}".replace("{playerTag}", playerTag), EMPTY, "src/test/resources/player-findByTag.json", request);
+    prepare("/players/{playerTag}".replace("{playerTag}", String.valueOf(playerTag)), EMPTY, "src/test/resources/player-findByTag.json", request);
     jcrapi2.api.intern.players.info.PlayerResponse expected = toJson(jcrapi2.api.intern.players.info.PlayerResponse.class, getExpected());
 
     run(expected, () -> unitUnderTest.findByTag(request).get());
@@ -55,7 +55,7 @@ public class PlayerApiImplIntegrationTest extends IntegrationTestBase {
       .storeRawResponse(true)
       .build();
 
-    prepareWithErrorAndRun("/players/{playerTag}".replace("{playerTag}", playerTag), EMPTY, request, () -> unitUnderTest.findByTag(request).get());
+    prepareWithErrorAndRun("/players/{playerTag}".replace("{playerTag}", String.valueOf(playerTag)), EMPTY, request, () -> unitUnderTest.findByTag(request).get());
   }
 
   @Test
@@ -66,7 +66,7 @@ public class PlayerApiImplIntegrationTest extends IntegrationTestBase {
 
       .storeRawResponse(true)
       .build();
-    prepare("/players/{playerTag}/upcomingchests".replace("{playerTag}", playerTag), EMPTY, "src/test/resources/player-getUpcomingChests.json", request);
+    prepare("/players/{playerTag}/upcomingchests".replace("{playerTag}", String.valueOf(playerTag)), EMPTY, "src/test/resources/player-getUpcomingChests.json", request);
     jcrapi2.api.intern.players.upcomingchests.UpcomingChestsResponse expected = toJson(jcrapi2.api.intern.players.upcomingchests.UpcomingChestsResponse.class, getExpected());
 
     run(expected, () -> unitUnderTest.getUpcomingChests(request).get());
@@ -81,7 +81,7 @@ public class PlayerApiImplIntegrationTest extends IntegrationTestBase {
       .storeRawResponse(true)
       .build();
 
-    prepareWithErrorAndRun("/players/{playerTag}/upcomingchests".replace("{playerTag}", playerTag), EMPTY, request, () -> unitUnderTest.getUpcomingChests(request).get());
+    prepareWithErrorAndRun("/players/{playerTag}/upcomingchests".replace("{playerTag}", String.valueOf(playerTag)), EMPTY, request, () -> unitUnderTest.getUpcomingChests(request).get());
   }
 
   @Test
@@ -92,7 +92,7 @@ public class PlayerApiImplIntegrationTest extends IntegrationTestBase {
 
       .storeRawResponse(true)
       .build();
-    prepare("/players/{playerTag}/battlelog".replace("{playerTag}", playerTag), EMPTY, "src/test/resources/player-getBattleLog.json", request);
+    prepare("/players/{playerTag}/battlelog".replace("{playerTag}", String.valueOf(playerTag)), EMPTY, "src/test/resources/player-getBattleLog.json", request);
     jcrapi2.api.intern.players.battlelog.BattleLogResponse expected = toJson(jcrapi2.api.intern.players.battlelog.BattleLogResponse.class, getExpected());
 
     run(expected, () -> unitUnderTest.getBattleLog(request).get());
@@ -107,7 +107,8 @@ public class PlayerApiImplIntegrationTest extends IntegrationTestBase {
       .storeRawResponse(true)
       .build();
 
-    prepareWithErrorAndRun("/players/{playerTag}/battlelog".replace("{playerTag}", playerTag), EMPTY, request, () -> unitUnderTest.getBattleLog(request).get());
+    prepareWithErrorAndRun("/players/{playerTag}/battlelog".replace("{playerTag}", String.valueOf(playerTag)), EMPTY, request, () -> unitUnderTest.getBattleLog(request).get());
   }
 
 }
+

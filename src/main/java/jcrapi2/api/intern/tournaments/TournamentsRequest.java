@@ -48,3 +48,4 @@ public class TournamentsRequest extends PaginationRequest {
   }
 
 }
+

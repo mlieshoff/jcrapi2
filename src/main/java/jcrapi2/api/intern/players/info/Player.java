@@ -86,3 +86,4 @@ public class Player {
   private CurrentFavouriteCard currentFavouriteCard;
 
 }
+

@@ -75,3 +75,4 @@ class LocationApiImpl extends BaseApi implements LocationApi {
   }
 
 }
+

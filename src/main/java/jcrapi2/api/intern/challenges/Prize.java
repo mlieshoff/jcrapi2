@@ -39,3 +39,4 @@ public class Prize {
   private Card card;
 
 }
+

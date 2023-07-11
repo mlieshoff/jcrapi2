@@ -31,3 +31,4 @@ public class PreviousSeason {
   private int bestTrophies;
 
 }
+

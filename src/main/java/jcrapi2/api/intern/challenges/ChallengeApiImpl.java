@@ -32,3 +32,4 @@ class ChallengeApiImpl extends BaseApi implements ChallengeApi {
   }
 
 }
+

@@ -44,3 +44,4 @@ public class Clan {
   private List<Participant> participants;
 
 }
+

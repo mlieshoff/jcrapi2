@@ -43,3 +43,4 @@ public class PlayerRanking {
   private Arena arena;
 
 }
+

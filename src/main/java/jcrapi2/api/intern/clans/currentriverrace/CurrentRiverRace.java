@@ -40,3 +40,4 @@ public class CurrentRiverRace {
   private List<Clan> clans;
 
 }
+

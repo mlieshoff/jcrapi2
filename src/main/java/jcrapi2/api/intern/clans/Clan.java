@@ -49,3 +49,4 @@ public class Clan {
   private int members;
 
 }
+

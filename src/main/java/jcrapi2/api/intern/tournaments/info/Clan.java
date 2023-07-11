@@ -31,3 +31,4 @@ public class Clan {
   private long badgeId;
 
 }
+

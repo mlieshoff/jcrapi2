@@ -57,3 +57,4 @@ public class ChallengeApiImplIntegrationTest extends IntegrationTestBase {
   }
 
 }
+

@@ -25,3 +25,4 @@ import lombok.EqualsAndHashCode;
 public class Challenges extends ArrayList<Challenge> {
 
 }
+

@@ -37,3 +37,4 @@ public class UpcomingChestsResponse extends UpcomingChests implements IResponse 
   private transient RawResponse rawResponse;
 
 }
+

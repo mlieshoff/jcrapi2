@@ -50,3 +50,4 @@ public class CurrentRiverRaceRequest extends Request {
   }
 
 }
+

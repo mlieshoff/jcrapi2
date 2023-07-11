@@ -37,3 +37,4 @@ public class LocationResponse extends Location implements IResponse {
   private transient RawResponse rawResponse;
 
 }
+

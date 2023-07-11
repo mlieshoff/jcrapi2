@@ -37,3 +37,4 @@ public class BattleLogResponse extends BattleLog implements IResponse {
   private transient RawResponse rawResponse;
 
 }
+

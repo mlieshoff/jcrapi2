@@ -33,3 +33,4 @@ public class CurrentFavouriteCard {
   private IconUrls iconUrls;
 
 }
+

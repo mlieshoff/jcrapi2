@@ -33,3 +33,4 @@ public class Card {
   private IconUrls iconUrls;
 
 }
+

@@ -37,3 +37,4 @@ public class TournamentResponse extends Tournament implements IResponse {
   private transient RawResponse rawResponse;
 
 }
+

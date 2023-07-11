@@ -37,3 +37,4 @@ public class ChallengesResponse extends Challenges implements IResponse {
   private transient RawResponse rawResponse;
 
 }
+

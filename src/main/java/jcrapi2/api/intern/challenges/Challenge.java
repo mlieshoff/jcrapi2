@@ -36,3 +36,4 @@ public class Challenge {
   private List<ChainedChallenge> challenges;
 
 }
+

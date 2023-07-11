@@ -34,3 +34,4 @@ public class RiverRaceLog {
   private List<Standing> standings;
 
 }
+

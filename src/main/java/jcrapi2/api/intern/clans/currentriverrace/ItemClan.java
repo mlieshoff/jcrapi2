@@ -27,3 +27,4 @@ public class ItemClan {
   private String tag;
 
 }
+

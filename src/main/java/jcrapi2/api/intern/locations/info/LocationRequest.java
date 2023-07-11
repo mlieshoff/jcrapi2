@@ -50,3 +50,4 @@ public class LocationRequest extends Request {
   }
 
 }
+

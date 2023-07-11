@@ -27,3 +27,4 @@ public class GameMode {
   private long id;
 
 }
+

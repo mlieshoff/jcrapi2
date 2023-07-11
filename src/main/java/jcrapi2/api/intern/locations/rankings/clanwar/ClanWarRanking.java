@@ -45,3 +45,4 @@ public class ClanWarRanking {
   private Arena arena;
 
 }
+

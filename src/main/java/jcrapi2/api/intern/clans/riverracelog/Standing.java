@@ -31,3 +31,4 @@ public class Standing {
   private Clan clan;
 
 }
+

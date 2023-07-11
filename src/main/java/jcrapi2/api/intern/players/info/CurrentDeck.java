@@ -39,3 +39,4 @@ public class CurrentDeck {
   private IconUrls iconUrls;
 
 }
+

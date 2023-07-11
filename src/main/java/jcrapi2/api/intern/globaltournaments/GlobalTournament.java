@@ -50,3 +50,4 @@ public class GlobalTournament {
   private GameMode gameMode;
 
 }
+

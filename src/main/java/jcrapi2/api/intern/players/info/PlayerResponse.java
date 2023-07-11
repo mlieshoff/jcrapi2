@@ -37,3 +37,4 @@ public class PlayerResponse extends Player implements IResponse {
   private transient RawResponse rawResponse;
 
 }
+

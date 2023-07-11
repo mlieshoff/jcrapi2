@@ -41,3 +41,4 @@ public class ClanRanking {
   private Location location;
 
 }
+

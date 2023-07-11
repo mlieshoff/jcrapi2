@@ -41,3 +41,4 @@ public class Item {
   private int numOfDefensesRemaining;
 
 }
+

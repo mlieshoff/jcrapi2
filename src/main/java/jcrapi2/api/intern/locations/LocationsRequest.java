@@ -31,3 +31,4 @@ public class LocationsRequest extends PaginationRequest {
   }
 
 }
+

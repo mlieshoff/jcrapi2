@@ -37,3 +37,4 @@ public class ClanResponse extends Clan implements IResponse {
   private transient RawResponse rawResponse;
 
 }
+

@@ -48,3 +48,4 @@ public class Opponent {
   private List<Round> rounds;
 
 }
+

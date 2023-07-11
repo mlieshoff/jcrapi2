@@ -48,3 +48,4 @@ public class PlayerRankingsRequest extends PaginationRequest {
   }
 
 }
+

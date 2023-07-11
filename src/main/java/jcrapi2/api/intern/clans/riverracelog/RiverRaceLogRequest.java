@@ -48,3 +48,4 @@ public class RiverRaceLogRequest extends PaginationRequest {
   }
 
 }
+

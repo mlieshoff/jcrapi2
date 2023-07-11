@@ -49,3 +49,4 @@ public class Member {
   private int clanChestPoints;
 
 }
+

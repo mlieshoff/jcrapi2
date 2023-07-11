@@ -33,3 +33,5 @@ public interface PlayerApi extends Api {
   Future<BattleLogResponse> getBattleLog(BattleLogRequest battleLogRequest);
 
 }
+
+

@@ -37,3 +37,4 @@ public class TopPlayerLeagueSeasonRanking {
   private Clan clan;
 
 }
+

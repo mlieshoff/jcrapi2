@@ -47,3 +47,4 @@ class PlayerApiImpl extends BaseApi implements PlayerApi {
   }
 
 }
+

@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jcrapi2.api.intern.tournament;
+package jcrapi2.api.intern.tournaments;
 
 import static wiremock.org.apache.commons.lang3.StringUtils.EMPTY;
 

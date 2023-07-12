@@ -18,14 +18,11 @@ jobs:
         id: tagname
         run: |
             VER=$(cat VERSION.txt)
-            echo "VERSION=$VER" >> $GITHUB_OUTPUT
-            #echo \"RELEASE_TAG=`cat VERSION.txt`\" >> $GITHUB_OUTPUT
-            #RELEASE_TAG="refs/tags/"$RELEASE_TAG
-            echo version: $VERSION
             echo ver: $VER
+            echo "VERSION=$VER" >> "$GITHUB_OUTPUT"
       - name: Show tag name
         run: |
-            echo env: "${{ steps.envvars.outputs.VERSION }}"
+            echo env: "${{ steps.tagname.outputs.VERSION }}"
   #      - name: Create tag
 #        uses: actions/github-script@v5
 #        with:

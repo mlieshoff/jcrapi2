@@ -27,9 +27,9 @@ jobs:
         uses: actions/github-script@v5
         with:
           script: |
-              github.rest.git.createRef({
+            github.rest.git.createRef({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              ref: ${{ steps.tagname.outputs.RELEASE_TAG }},
+              ref: 'refs/tags/<tagname>',
               sha: context.sha
             })

@@ -14,18 +14,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jcrapi2.api.intern.players.battlelog;
+package jcrapi2.api.intern.players.info;
 
 import com.google.gson.annotations.SerializedName;
 
 import lombok.Data;
 
 @Data
-public class IconUrls {
+public class PathOfLegendSeasonResult {
 
-    @SerializedName("medium")
-    private String medium;
+    @SerializedName("leagueNumber")
+    private int leagueNumber;
 
-    @SerializedName("evolutionMedium")
-    private String evolutionMedium;
+    @SerializedName("trophies")
+    private int trophies;
+
+    @SerializedName("rank")
+    private Integer rank;
 }

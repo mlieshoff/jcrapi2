@@ -223,7 +223,10 @@ public class EndToEnd {
                         .replace(",\"target\":0", "")
                         .replace(",\"bestTrophies\":0", "");
         String expected =
-                response.getRawResponse().getRaw().replace(",\"completionInfo\":null", "");
+                response.getRawResponse()
+                        .getRaw()
+                        .replace(",\"completionInfo\":null", "")
+                        .replace(",\"rank\":null", "");
 
         assertDiff(expected, actual);
     }
@@ -265,7 +268,8 @@ public class EndToEnd {
                         .replace(",\"starLevel\":0", "")
                         .replace(",\"elixirLeaked\":0.0,", ",")
                         .replace(",\"challengeId\":0", "")
-                        .replace(",\"challengeWinCountBefore\":0", "");
+                        .replace(",\"challengeWinCountBefore\":0", "")
+                        .replace(",\"globalRank\":null", "");
         String expected =
                 response.getRawResponse()
                         .getRaw()
@@ -278,7 +282,9 @@ public class EndToEnd {
                         .replace(",\"princessTowersHitPoints\":null", "")
                         .replace(",\"elixirLeaked\":0.0,", ",")
                         .replace("\"name\":null,", "")
-                        .replace(",\"challengeWinCountBefore\":0", "");
+                        .replace(",\"challengeWinCountBefore\":0", "")
+                        .replace(",\"maxEvolutionLevel\":null", "")
+                        .replace(",\"globalRank\":null", "");
 
         assertDiff(expected, actual);
     }

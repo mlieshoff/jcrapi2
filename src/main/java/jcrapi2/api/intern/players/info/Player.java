@@ -114,4 +114,16 @@ public class Player {
 
     @SerializedName("currentFavouriteCard")
     private CurrentFavouriteCard currentFavouriteCard;
+
+    @SerializedName("legacyTrophyRoadHighScore")
+    private int legacyTrophyRoadHighScore;
+
+    @SerializedName("currentPathOfLegendSeasonResult")
+    private PathOfLegendSeasonResult currentPathOfLegendSeasonResult;
+
+    @SerializedName("lastPathOfLegendSeasonResult")
+    private PathOfLegendSeasonResult lastPathOfLegendSeasonResult;
+
+    @SerializedName("bestPathOfLegendSeasonResult")
+    private PathOfLegendSeasonResult bestPathOfLegendSeasonResult;
 }

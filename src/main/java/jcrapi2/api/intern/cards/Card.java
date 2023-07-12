@@ -34,4 +34,7 @@ public class Card {
 
     @SerializedName("iconUrls")
     private IconUrls iconUrls;
+
+    @SerializedName("maxEvolutionLevel")
+    private Integer maxEvolutionLevel;
 }

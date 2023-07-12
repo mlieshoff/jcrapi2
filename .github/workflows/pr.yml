@@ -14,5 +14,18 @@ jobs:
 #      - name: Build with Maven
 #        run:
 #          mvn -B package
-      - name: Create tag
-        run: "echo \"RELEASE_TAG=`cat VERSION.txt`\" >> $GITHUB_ENV"
+      - name: Get tag name
+        run: |
+            echo \"RELEASE_TAG=`cat VERSION.txt`\" >> $GITHUB_ENV
+            RELEASE_TAG="refs/tags/"$RELEASE_TAG
+            echo $RELEASE_TAG
+#      - name: Create tag
+#        uses: actions/github-script@v5
+#        with:
+#          script: |
+#              github.rest.git.createRef({
+#              owner: context.repo.owner,
+#              repo: context.repo.repo,
+#              ref: 'refs/tags/',
+#              sha: context.sha
+#            })

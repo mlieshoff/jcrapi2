@@ -30,6 +30,6 @@ jobs:
             github.rest.git.createRef({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              ref: 'refs/tags/<tagname>',
+              ref: steps.tagname.outputs.RELEASE_TAG,
               sha: context.sha
             })

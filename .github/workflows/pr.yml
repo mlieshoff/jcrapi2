@@ -22,7 +22,8 @@ jobs:
             #RELEASE_TAG="refs/tags/"$RELEASE_TAG
             echo version: $VERSION
             echo ver: $VER
-#      - name: Create tag
+            echo env: "${{ env.VERSION }} < VERSION"
+  #      - name: Create tag
 #        uses: actions/github-script@v5
 #        with:
 #          script: |

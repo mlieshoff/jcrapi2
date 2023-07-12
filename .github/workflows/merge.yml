@@ -22,3 +22,23 @@ jobs:
         env:
           MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
+      - name: Get tag name
+        id: tagname
+        run: |
+          VERSION=$(cat VERSION.txt)
+          echo version: VERSION
+          echo "RELEASE_TAG=$VERSION" >> "$GITHUB_ENV"
+      - name: Show tag name
+        run: |
+          echo env: "${{ env.RELEASE_TAG }}"
+      - name: Create release
+        uses: actions/create-release@v1
+        id: create_release
+        with:
+          draft: false
+          prerelease: false
+          release_name: ${{ env.RELEASE_TAG }}
+          tag_name: ${{ env.RELEASE_TAG }}
+          body_path: CHANGELOG.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

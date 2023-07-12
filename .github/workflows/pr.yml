@@ -19,7 +19,7 @@ jobs:
         run: |
             VER=$(cat VERSION.txt)
             echo ver: $VER
-            echo "RELEASE_TAG=refs/tag/test$VER" >> "$GITHUB_OUTPUT"
+            echo "RELEASE_TAG=test$VER" >> "$GITHUB_OUTPUT"
       - name: Show tag name
         run: |
             echo env: "${{ steps.tagname.outputs.RELEASE_TAG }}"

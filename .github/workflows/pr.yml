@@ -18,7 +18,7 @@ jobs:
         id: tagname
         run: |
             VER=$(cat VERSION.txt)
-            echo ver: $VER
+            echo version: $VER
             echo "RELEASE_TAG=test$VER" >> "$GITHUB_ENV"
       - name: Show tag name
         run: |

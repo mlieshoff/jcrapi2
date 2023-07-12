@@ -15,14 +15,15 @@ jobs:
 #        run:
 #          mvn -B package
       - name: Get tag name
+        id: tagname
         run: |
             VER=$(cat VERSION.txt)
-            echo "VERSION=$VER" >> $GITHUB_ENV
-            #echo \"RELEASE_TAG=`cat VERSION.txt`\" >> $GITHUB_ENV
+            echo "VERSION=$VER" >> GITHUB_OUTPUT
+            #echo \"RELEASE_TAG=`cat VERSION.txt`\" >> GITHUB_OUTPUT
             #RELEASE_TAG="refs/tags/"$RELEASE_TAG
             echo version: $VERSION
             echo ver: $VER
-            echo env: "${{ env.VERSION }} < VERSION"
+            echo env: "${{ steps.envvars.outputs.VERSION }}"
   #      - name: Create tag
 #        uses: actions/github-script@v5
 #        with:

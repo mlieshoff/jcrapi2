@@ -11,6 +11,25 @@ jobs:
         with:
           distribution: zulu
           java-version: 8.0.322+6
-      - name: Build with Maven
-        run:
-          mvn -B package
+#      - name: Build with Maven
+#        run:
+#          mvn -B package
+      - name: Get tag name
+        id: tagname
+        run: |
+            VER=$(cat VERSION.txt)
+            echo ver: $VER
+            echo "RELEASE_TAG=refs/tag/test$VER" >> "$GITHUB_OUTPUT"
+      - name: Show tag name
+        run: |
+            echo env: "${{ steps.tagname.outputs.RELEASE_TAG }}"
+      - name: Create tag
+        uses: actions/github-script@v5
+        with:
+          script: |
+            github.rest.git.createRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: "${{ steps.tagname.outputs.RELEASE_TAG }}",
+              sha: context.sha
+            })

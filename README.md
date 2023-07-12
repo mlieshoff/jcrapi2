@@ -1,6 +1,6 @@
 [![](https://img.shields.io/badge/java-packagecloud.io-844fec.svg)](https://packagecloud.io/)
 
-# jCrApi 2 2.0.5
+# jcrapi2 2.0.5
 A Java Wrapper For Official Supercell Clash Royal Api
 
 ## Why we don't use the Swagger scheme?

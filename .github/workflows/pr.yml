@@ -23,11 +23,6 @@ jobs:
       - name: Show tag name
         run: |
             echo env: "${{ env.RELEASE_TAG }}"
-      - name: Create tag
-        uses: tvdias/github-tagger@v0.0.1
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          tag: env.RELEASE_TAG
       - name: "Create release"
         uses: "actions/github-script@v6"
         with:

@@ -43,7 +43,4 @@ public class CurrentDeck {
 
     @SerializedName("iconUrls")
     private IconUrls iconUrls;
-
-    @SerializedName("maxEvolutionLevel")
-    private Integer maxEvolutionLevel;
 }

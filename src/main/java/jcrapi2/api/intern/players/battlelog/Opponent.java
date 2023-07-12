@@ -57,7 +57,4 @@ public class Opponent {
 
     @SerializedName("rounds")
     private List<Round> rounds;
-
-    @SerializedName("globalRank")
-    private Integer globalRank;
 }

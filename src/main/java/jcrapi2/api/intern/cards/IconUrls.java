@@ -25,7 +25,4 @@ public class IconUrls {
 
     @SerializedName("medium")
     private String medium;
-
-    @SerializedName("evolutionMedium")
-    private String evolutionMedium;
 }

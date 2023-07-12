@@ -17,8 +17,8 @@ jobs:
       - name: Get tag name
         run: |
             echo \"RELEASE_TAG=`cat VERSION.txt`\" >> $GITHUB_ENV
-            RELEASE_TAG="refs/tags/"$RELEASE_TAG
-            echo $RELEASE_TAG
+            #RELEASE_TAG="refs/tags/"$RELEASE_TAG
+            echo RELEASE_TAG: $RELEASE_TAG
 #      - name: Create tag
 #        uses: actions/github-script@v5
 #        with:

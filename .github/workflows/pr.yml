@@ -17,12 +17,12 @@ jobs:
       - name: Get tag name
         id: tagname
         run: |
-            VER=$(cat VERSION.txt)
-            echo version: $VER
-            echo "RELEASE_TAG=test$VER" >> "$GITHUB_ENV"
+          VERSION=$(cat VERSION.txt)
+          echo version: VERSION
+          echo "RELEASE_TAG=$VERSION" >> "$GITHUB_ENV"
       - name: Show tag name
         run: |
-            echo env: "${{ env.RELEASE_TAG }}"
+          echo env: "${{ env.RELEASE_TAG }}"
       - name: "Create release"
         uses: "actions/github-script@v6"
         with:
@@ -37,8 +37,8 @@ jobs:
                 prerelease: false,
                 repo: context.repo.repo,
                 tag_name: process.env.RELEASE_TAG,
+                body_path: CHANGELOG.md,
               });
-
               core.exportVariable('RELEASE_ID', response.data.id);
               core.exportVariable('RELEASE_UPLOAD_URL', response.data.upload_url);
             } catch (error) {

@@ -15,6 +15,4 @@ jobs:
 #        run:
 #          mvn -B package
       - name: Create tag
-        run: |
-          echo \"RELEASE_TAG=`cat VERSION.txt`\" >> $GITHUB_ENV
-          echo $RELEASE_TAG
+        run: "echo \"RELEASE_TAG=`cat VERSION.txt`\" >> $GITHUB_ENV"

@@ -22,7 +22,7 @@ jobs:
             echo "RELEASE_TAG=test$VER" >> "$GITHUB_ENV"
       - name: Show tag name
         run: |
-            echo env: "${{ process.env.RELEASE_TAG }}"
+            echo env: "${{ env.RELEASE_TAG }}"
       - name: Create tag
         uses: tvdias/github-tagger@v0.0.1
         with:
@@ -37,11 +37,11 @@ jobs:
               const response = await github.rest.repos.createRelease({
                 draft: false,
                 generate_release_notes: true,
-                name: process.env.RELEASE_TAG,
+                name: env.RELEASE_TAG,
                 owner: context.repo.owner,
                 prerelease: false,
                 repo: context.repo.repo,
-                tag_name: process.env.RELEASE_TAG,
+                tag_name: env.RELEASE_TAG,
               });
 
               core.exportVariable('RELEASE_ID', response.data.id);

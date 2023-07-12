@@ -14,12 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jcrapi2.api.intern.tournament;
+package jcrapi2.api.intern.tournaments;
 
 import jcrapi2.api.ApiContext;
 import jcrapi2.api.BaseApi;
-import jcrapi2.api.intern.tournaments.TournamentsRequest;
-import jcrapi2.api.intern.tournaments.TournamentsResponse;
 import jcrapi2.api.intern.tournaments.info.TournamentRequest;
 import jcrapi2.api.intern.tournaments.info.TournamentResponse;
 

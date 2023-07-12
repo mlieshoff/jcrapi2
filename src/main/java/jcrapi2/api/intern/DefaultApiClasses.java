@@ -23,7 +23,7 @@ import jcrapi2.api.intern.clans.ClanApi;
 import jcrapi2.api.intern.globaltournaments.GlobalTournamentApi;
 import jcrapi2.api.intern.locations.LocationApi;
 import jcrapi2.api.intern.players.PlayerApi;
-import jcrapi2.api.intern.tournament.TournamentApi;
+import jcrapi2.api.intern.tournaments.TournamentApi;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -40,7 +40,7 @@ public class DefaultApiClasses {
                             put(CardApi.class, "jcrapi2.api.intern.cards.CardApiImpl");
                             put(
                                     TournamentApi.class,
-                                    "jcrapi2.api.intern.tournament.TournamentApiImpl");
+                                    "jcrapi2.api.intern.tournaments.TournamentApiImpl");
                             put(LocationApi.class, "jcrapi2.api.intern.locations.LocationApiImpl");
                             put(
                                     ChallengeApi.class,

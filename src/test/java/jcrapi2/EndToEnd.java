@@ -70,7 +70,7 @@ import jcrapi2.api.intern.players.info.PlayerRequest;
 import jcrapi2.api.intern.players.info.PlayerResponse;
 import jcrapi2.api.intern.players.upcomingchests.UpcomingChestsRequest;
 import jcrapi2.api.intern.players.upcomingchests.UpcomingChestsResponse;
-import jcrapi2.api.intern.tournament.TournamentApi;
+import jcrapi2.api.intern.tournaments.TournamentApi;
 import jcrapi2.api.intern.tournaments.TournamentsRequest;
 import jcrapi2.api.intern.tournaments.TournamentsResponse;
 import jcrapi2.api.intern.tournaments.info.TournamentRequest;

@@ -75,7 +75,4 @@ public class LogEntry {
 
     @SerializedName("challengeTitle")
     private String challengeTitle;
-
-    @SerializedName("leagueNumber")
-    private int leagueNumber;
 }

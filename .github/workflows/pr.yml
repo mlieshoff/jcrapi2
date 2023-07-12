@@ -26,11 +26,10 @@ jobs:
       - name: Create tag
         uses: actions/github-script@v5
         with:
-          tag: ${{ steps.tagname.outputs.RELEASE_TAG }}
           script: |
             github.rest.git.createRef({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              ref: tag,
+              ref: ${{ steps.tagname.outputs.RELEASE_TAG }},
               sha: context.sha
             })

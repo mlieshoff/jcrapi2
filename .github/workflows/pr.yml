@@ -24,12 +24,7 @@ jobs:
         run: |
             echo env: "${{ steps.tagname.outputs.RELEASE_TAG }}"
       - name: Create tag
-        uses: actions/github-script@v5
+        uses: tvdias/github-tagger@v0.0.1
         with:
-          script: |
-            github.rest.git.createRef({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              ref: "${{ steps.tagname.outputs.RELEASE_TAG }}",
-              sha: context.sha
-            })
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ steps.tagname.outputs.RELEASE_TAG }}

@@ -16,9 +16,12 @@ jobs:
 #          mvn -B package
       - name: Get tag name
         run: |
-            echo \"RELEASE_TAG=`cat VERSION.txt`\" >> $GITHUB_ENV
+            VER=$(cat VERSION.txt)
+            echo "VERSION=$VER" >> $GITHUB_ENV
+            #echo \"RELEASE_TAG=`cat VERSION.txt`\" >> $GITHUB_ENV
             #RELEASE_TAG="refs/tags/"$RELEASE_TAG
-            echo RELEASE_TAG: $RELEASE_TAG
+            echo version: $VERSION
+            echo ver: $VERSION
 #      - name: Create tag
 #        uses: actions/github-script@v5
 #        with:

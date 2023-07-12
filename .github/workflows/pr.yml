@@ -19,17 +19,17 @@ jobs:
         run: |
             VER=$(cat VERSION.txt)
             echo ver: $VER
-            echo "VERSION=$VER" >> "$GITHUB_OUTPUT"
+            echo "RELEASE_TAG=refs/tag/$VER" >> "$GITHUB_OUTPUT"
       - name: Show tag name
         run: |
-            echo env: "${{ steps.tagname.outputs.VERSION }}"
-  #      - name: Create tag
-#        uses: actions/github-script@v5
-#        with:
-#          script: |
-#              github.rest.git.createRef({
-#              owner: context.repo.owner,
-#              repo: context.repo.repo,
-#              ref: 'refs/tags/',
-#              sha: context.sha
-#            })
+            echo env: "${{ steps.tagname.outputs.RELEASE_TAG }}"
+      - name: Create tag
+        uses: actions/github-script@v5
+        with:
+          script: |
+              github.rest.git.createRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: steps.tagname.outputs.RELEASE_TAG,
+              sha: context.sha
+            })

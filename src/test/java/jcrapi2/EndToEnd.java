@@ -490,7 +490,8 @@ class EndToEnd {
         TopPlayerPathOfLegendSeasonRankingsResponse response =
                 locationApi
                         .getTopPlayerPathOfLegendSeasonRankings(
-                                TopPlayerPathOfLegendSeasonRankingsRequest.builder("2023-04")
+                                TopPlayerPathOfLegendSeasonRankingsRequest.builder(
+                                                PATH_OF_LEGEND_SEASON_ID)
                                         .storeRawResponse(true)
                                         .limit(10)
                                         .build())

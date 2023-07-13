@@ -34,20 +34,16 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.http.Header;
 import org.apache.http.HttpMessage;
 import org.apache.http.HttpResponse;
-import org.apache.http.ProtocolVersion;
 import org.apache.http.StatusLine;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.message.BasicHttpResponse;
-import org.apache.http.message.BasicStatusLine;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -57,34 +53,7 @@ import java.util.Map;
 @Slf4j
 public class StandardConnector implements Connector {
 
-    public static final Duration CACHE_TIMEOUT = Duration.ofMinutes(5);
-
-    //    public static final boolean CACHE = true;
-
     private static final Gson GSON = new GsonBuilder().disableHtmlEscaping().create();
-
-    private static void logResponse(HttpResponse httpResponse) {
-        if (log.isInfoEnabled()) {
-            for (Header header : httpResponse.getAllHeaders()) {
-                log.info("    response header: {}={}", header.getName(), header.getValue());
-            }
-            StatusLine statusLine = httpResponse.getStatusLine();
-            log.info(
-                    "    status code: {}- {}",
-                    statusLine.getStatusCode(),
-                    statusLine.getReasonPhrase());
-        }
-    }
-
-    private static String encode(String s) {
-        return URLEncoder.encode(s, UTF_8);
-    }
-
-    private static HttpGet createRequest(String url, String apiKey) {
-        HttpGet httpGet = new HttpGet(url);
-        httpGet.addHeader("Authorization", "Bearer " + apiKey);
-        return httpGet;
-    }
 
     @Override
     public <T extends IResponse> T get(RequestContext requestContext) throws ConnectorException {
@@ -96,29 +65,9 @@ public class StandardConnector implements Connector {
                             url,
                             requestContext.getRequest().getQueryParameters(),
                             requestContext.getRequest().getRestParameters());
-            String json = null;
-            boolean makeRequest = true;
-            //            if (CACHE) {
-            //                String hash = String.valueOf(replacedUrl.hashCode());
-            //                Path path = Files.createTempFile(hash, ".json");
-            //                File file = path.toFile();
-            //                if (file.exists()) {
-            //                    long millis = file.lastModified();
-            //                    json = Files.readString(path);
-            //                    makeRequest =
-            //                            json == null
-            //                                    || json.isEmpty()
-            //                                    || millis + CACHE_TIMEOUT.toMillis() < new
-            // Date().getTime();
-            //                    if (!makeRequest) {
-            //                        log.info(
-            //                                "found cached file {} for {}",
-            //                                path.toFile().getAbsolutePath(),
-            //                                replacedUrl);
-            //                    }
-            //                }
-            //            }
-            HttpResponse response;
+            String json = getInitialValue(replacedUrl);
+            boolean makeRequest = json == null || json.isEmpty();
+            HttpResponse response = null;
             if (makeRequest) {
                 HttpClient client = HttpClientBuilder.create().build();
                 HttpGet request = createRequest(replacedUrl, requestContext.getApiKey());
@@ -131,33 +80,21 @@ public class StandardConnector implements Connector {
                 StringBuilder content = new StringBuilder();
                 try (BufferedReader rd =
                         new BufferedReader(
-                                new InputStreamReader(response.getEntity().getContent(), UTF_8))) {
+                                new InputStreamReader(
+                                        response.getEntity().getContent(), UTF_8.name()))) {
                     String line;
                     while ((line = rd.readLine()) != null) {
                         content.append(line);
                     }
                 }
                 json = content.toString();
-                //                if (CACHE) {
-                //                    String hash = String.valueOf(replacedUrl.hashCode());
-                //                    Path path = Files.createTempFile(hash, ".json");
-                //                    Files.writeString(path, json);
-                //                    log.info(
-                //                            "save file {} for cache of {}",
-                //                            path.toFile().getAbsolutePath(),
-                //                            replacedUrl);
-                //                }
-            } else {
-                response =
-                        new BasicHttpResponse(
-                                new BasicStatusLine(
-                                        new ProtocolVersion("https", 1, 2), SC_OK, "cached"));
-                response.setEntity(new StringEntity(json));
+                onJsonReceived(replacedUrl, json);
             }
+            HttpResponse checkedResponse = checkResponse(json, response);
             log.info("    response content: {}", json);
             T result = (T) GSON.fromJson(json, requestContext.getResponseClass());
             if (requestContext.getRequest().isStoreRawResponse()) {
-                setRawResponse(result, json, response);
+                setRawResponse(result, json, checkedResponse);
             }
             return result;
         } catch (IOException e) {
@@ -165,22 +102,9 @@ public class StandardConnector implements Connector {
         }
     }
 
-    private <T extends IResponse> void setRawResponse(T result, String json, HttpMessage response) {
-        RawResponse rawResponse = new RawResponse();
-        rawResponse.setRaw(json);
-        if (isNotEmpty(response.getAllHeaders())) {
-            rawResponse.getResponseHeaders().clear();
-            for (Header header : response.getAllHeaders()) {
-                rawResponse
-                        .getResponseHeaders()
-                        .put(header.getName().toLowerCase(Locale.ROOT), header.getValue());
-            }
-        }
-        result.setRawResponse(rawResponse);
-    }
-
     private String appendToUrl(
-            String url, Map<String, Object> parameters, Map<String, Object> restParameters) {
+            String url, Map<String, Object> parameters, Map<String, Object> restParameters)
+            throws UnsupportedEncodingException {
         StringBuilder appendedUrl = new StringBuilder(url);
         List<String> queries = new ArrayList<>();
         if (isNotEmpty(parameters)) {
@@ -208,5 +132,55 @@ public class StandardConnector implements Connector {
         }
         log.info("request to: {}", result);
         return result;
+    }
+
+    private static String encode(String s) throws UnsupportedEncodingException {
+        return URLEncoder.encode(s, UTF_8.name());
+    }
+
+    protected String getInitialValue(String url) throws IOException {
+        return null;
+    }
+
+    private static HttpGet createRequest(String url, String apiKey) {
+        HttpGet httpGet = new HttpGet(url);
+        httpGet.addHeader("Authorization", "Bearer " + apiKey);
+        return httpGet;
+    }
+
+    private static void logResponse(HttpResponse httpResponse) {
+        if (log.isInfoEnabled()) {
+            for (Header header : httpResponse.getAllHeaders()) {
+                log.info("    response header: {}={}", header.getName(), header.getValue());
+            }
+            StatusLine statusLine = httpResponse.getStatusLine();
+            log.info(
+                    "    status code: {}- {}",
+                    statusLine.getStatusCode(),
+                    statusLine.getReasonPhrase());
+        }
+    }
+
+    protected void onJsonReceived(String url, String json) throws IOException {
+        // do nothing here
+    }
+
+    protected HttpResponse checkResponse(String json, HttpResponse response)
+            throws UnsupportedEncodingException {
+        return response;
+    }
+
+    private <T extends IResponse> void setRawResponse(T result, String json, HttpMessage response) {
+        RawResponse rawResponse = new RawResponse();
+        rawResponse.setRaw(json);
+        if (isNotEmpty(response.getAllHeaders())) {
+            rawResponse.getResponseHeaders().clear();
+            for (Header header : response.getAllHeaders()) {
+                rawResponse
+                        .getResponseHeaders()
+                        .put(header.getName().toLowerCase(Locale.ROOT), header.getValue());
+            }
+        }
+        result.setRawResponse(rawResponse);
     }
 }

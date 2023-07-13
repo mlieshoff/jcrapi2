@@ -1,0 +1,129 @@
+{
+  "items": [
+    {
+      "tag": "#UYL8820RJ",
+      "name": "Flash Light",
+      "expLevel": 45,
+      "eloRating": 3295,
+      "rank": 1,
+      "clan": {
+        "tag": "#QRGR0CQ9",
+        "name": "The Golden Wing",
+        "badgeId": 16000020
+      }
+    },
+    {
+      "tag": "#GU2YR209R",
+      "name": "Light Bulb",
+      "expLevel": 50,
+      "eloRating": 3284,
+      "rank": 2,
+      "clan": {
+        "tag": "#QRGR0CQ9",
+        "name": "The Golden Wing",
+        "badgeId": 16000020
+      }
+    },
+    {
+      "tag": "#G9YV9GR8R",
+      "name": "Mohamed Light",
+      "expLevel": 50,
+      "eloRating": 3282,
+      "rank": 3,
+      "clan": {
+        "tag": "#Q9YR202U",
+        "name": "@SHLeague_GG",
+        "badgeId": 16000020
+      }
+    },
+    {
+      "tag": "#RJ88Y8U08",
+      "name": "CAL Pedro™️",
+      "expLevel": 50,
+      "eloRating": 3263,
+      "rank": 4,
+      "clan": {
+        "tag": "#G0QCUJ29",
+        "name": "YT : PedroTm CR",
+        "badgeId": 16000058
+      }
+    },
+    {
+      "tag": "#R90PRV0PY",
+      "name": "Ryley",
+      "expLevel": 50,
+      "eloRating": 3258,
+      "rank": 5,
+      "clan": {
+        "tag": "#QLUY0PP2",
+        "name": "YT; Ryley CR",
+        "badgeId": 16000166
+      }
+    },
+    {
+      "tag": "#C0GQ89UG2",
+      "name": "Spark",
+      "expLevel": 43,
+      "eloRating": 3249,
+      "rank": 6,
+      "clan": {
+        "tag": "#GV08CLYC",
+        "name": "火鸡味锅巴",
+        "badgeId": 16000155
+      }
+    },
+    {
+      "tag": "#290VGG28",
+      "name": "Pedro™️",
+      "expLevel": 50,
+      "eloRating": 3221,
+      "rank": 7,
+      "clan": {
+        "tag": "#L9VRJ",
+        "name": "Calalas España",
+        "badgeId": 16000161
+      }
+    },
+    {
+      "tag": "#L009UCJ2Q",
+      "name": "OS Nico",
+      "expLevel": 50,
+      "eloRating": 3213,
+      "rank": 8,
+      "clan": {
+        "tag": "#PQRUQJ",
+        "name": "Vengeance",
+        "badgeId": 16000124
+      }
+    },
+    {
+      "tag": "#RUQ0JU2P",
+      "name": "Asaf",
+      "expLevel": 50,
+      "eloRating": 3211,
+      "rank": 9,
+      "clan": {
+        "tag": "#GG8CQCYU",
+        "name": "LOL",
+        "badgeId": 16000000
+      }
+    },
+    {
+      "tag": "#2YLRGVVC",
+      "name": "Distrughy 毀滅者",
+      "expLevel": 50,
+      "eloRating": 3209,
+      "rank": 10,
+      "clan": {
+        "tag": "#GQP2GYYC",
+        "name": "Romania Gods",
+        "badgeId": 16000166
+      }
+    }
+  ],
+  "paging": {
+    "cursors": {
+      "after": "eyJwb3MiOjEwfQ"
+    }
+  }
+}

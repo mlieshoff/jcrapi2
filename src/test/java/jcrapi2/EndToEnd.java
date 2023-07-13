@@ -63,6 +63,8 @@ import jcrapi2.api.intern.locations.seasons.global.info.TopPlayerLeagueSeasonReq
 import jcrapi2.api.intern.locations.seasons.global.info.TopPlayerLeagueSeasonResponse;
 import jcrapi2.api.intern.locations.seasons.global.rankings.TopPlayerLeagueSeasonRankingsRequest;
 import jcrapi2.api.intern.locations.seasons.global.rankings.TopPlayerLeagueSeasonRankingsResponse;
+import jcrapi2.api.intern.locations.seasons.global.rankings.pathoflegend.TopPlayerPathOfLegendSeasonRankingsRequest;
+import jcrapi2.api.intern.locations.seasons.global.rankings.pathoflegend.TopPlayerPathOfLegendSeasonRankingsResponse;
 import jcrapi2.api.intern.players.PlayerApi;
 import jcrapi2.api.intern.players.battlelog.BattleLogRequest;
 import jcrapi2.api.intern.players.battlelog.BattleLogResponse;
@@ -86,11 +88,12 @@ import javax.json.Json;
 import javax.json.JsonPatch;
 import javax.json.JsonValue;
 
-public class EndToEnd {
+class EndToEnd {
 
     private static final Gson GSON = new GsonBuilder().disableHtmlEscaping().create();
 
     private static final String CLAN_TAG = "#RP88QQG";
+    private static final String PATH_OF_LEGEND_SEASON_ID = "2023-04";
     private static final String PLAYER_TAG = "#2PGGCJJL";
     private static final String TOURNAMENT_NAME = "de";
     private static final String TOURNAMENT_TAG = "#U2QQQL2";
@@ -478,6 +481,23 @@ public class EndToEnd {
                         .getRaw()
                         .replace(",\"type\":null", "")
                         .replace("\"name\":null,", "");
+
+        assertDiff(expected, actual);
+    }
+
+    @Test
+    void locations_getTopPlayerPathOfLegendSeasonRankings() throws Exception {
+        TopPlayerPathOfLegendSeasonRankingsResponse response =
+                locationApi
+                        .getTopPlayerPathOfLegendSeasonRankings(
+                                TopPlayerPathOfLegendSeasonRankingsRequest.builder(
+                                                PATH_OF_LEGEND_SEASON_ID)
+                                        .storeRawResponse(true)
+                                        .limit(10)
+                                        .build())
+                        .get();
+        String actual = GSON.toJson(response);
+        String expected = response.getRawResponse().getRaw();
 
         assertDiff(expected, actual);
     }

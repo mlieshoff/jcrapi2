@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>jcrapi2</artifactId>
     <packaging>jar</packaging>
-    <version>2.1.1</version>
+    <version>2.1.2</version>
     <groupId>jcrapi2</groupId>
     <url>https://maven.apache.org</url>
     <inceptionYear>2018</inceptionYear>
@@ -34,7 +34,7 @@
         <version.gson>2.9.0</version.gson>
         <version.httpclient>4.5.13</version.httpclient>
         <version.io>2.11.0</version.io>
-        <version.java>1.8</version.java>
+        <version.java>17</version.java>
         <version.json>1.1.4</version.json>
         <version.junit>5.8.2</version.junit>
         <version.lombok>1.18.24</version.lombok>

@@ -1,0 +1,139 @@
+{
+  "items": [
+    {
+      "tag": "#P8VUY20C",
+      "name": "airsurfer",
+      "wins": 90,
+      "losses": 4,
+      "rank": 1,
+      "previousRank": 0,
+      "clan": {
+        "tag": "#PU9P20JP",
+        "name": "@TSM_airsurfer",
+        "badgeId": 16000111
+      }
+    },
+    {
+      "tag": "#8YLUJRYUY",
+      "name": "Jin TV",
+      "wins": 85,
+      "losses": 4,
+      "rank": 2,
+      "previousRank": 0,
+      "clan": {
+        "tag": "#228YYL99",
+        "name": "AllinForce",
+        "badgeId": 16000017
+      }
+    },
+    {
+      "tag": "#JUJRQV",
+      "name": "Zub-Zero!",
+      "wins": 83,
+      "losses": 4,
+      "rank": 3,
+      "previousRank": 0,
+      "clan": {
+        "tag": "#PLUG2Y2Y",
+        "name": "En directo!!",
+        "badgeId": 16000028
+      }
+    },
+    {
+      "tag": "#LPRR9P",
+      "name": "RUBÉN",
+      "wins": 78,
+      "losses": 4,
+      "rank": 4,
+      "previousRank": 0,
+      "clan": {
+        "tag": "#Y09YQGJJ",
+        "name": "@rubizalez",
+        "badgeId": 16000033
+      }
+    },
+    {
+      "tag": "#8LQVL0YP",
+      "name": "ارتش سرخ آسیا",
+      "wins": 70,
+      "losses": 3,
+      "rank": 5,
+      "previousRank": 0,
+      "clan": {
+        "tag": "#PU2U88JG",
+        "name": "@naser_cr",
+        "badgeId": 16000014
+      }
+    },
+    {
+      "tag": "#8V0QVV2Y",
+      "name": "✨Dark Sky✨",
+      "wins": 65,
+      "losses": 4,
+      "rank": 6,
+      "previousRank": 0,
+      "clan": {
+        "tag": "#PLR9G8LL",
+        "name": "@Mikeel04",
+        "badgeId": 16000153
+      }
+    },
+    {
+      "tag": "#2LR2L28PU",
+      "name": "cielo",
+      "wins": 64,
+      "losses": 4,
+      "rank": 7,
+      "previousRank": 0,
+      "clan": {
+        "tag": "#2LUJ09CC",
+        "name": "GRAND CROWN",
+        "badgeId": 16000014
+      }
+    },
+    {
+      "tag": "#P2J8P08",
+      "name": "Revolution",
+      "wins": 63,
+      "losses": 4,
+      "rank": 8,
+      "previousRank": 0,
+      "clan": {
+        "tag": "#Y09GY9UP",
+        "name": "@RevolutionRcQ",
+        "badgeId": 16000014
+      }
+    },
+    {
+      "tag": "#9PQVVJJJ",
+      "name": "foxie fox",
+      "wins": 62,
+      "losses": 4,
+      "rank": 9,
+      "previousRank": 0,
+      "clan": {
+        "tag": "#PLUUV2PU",
+        "name": "@G2KaNaRiOoo",
+        "badgeId": 16000010
+      }
+    },
+    {
+      "tag": "#9P9J92R",
+      "name": "helge andre",
+      "wins": 61,
+      "losses": 4,
+      "rank": 10,
+      "previousRank": 0,
+      "clan": {
+        "tag": "#P9YGRQCV",
+        "name": "@helgeandrecr",
+        "badgeId": 16000077
+      }
+    }
+  ],
+  "paging": {
+    "cursors": {
+      "after": "eyJwb3MiOjEwfQ"
+    }
+  }
+}

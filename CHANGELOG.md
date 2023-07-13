@@ -2,8 +2,24 @@
 
 ## [Unreleased]
 
+## [2.1.2] - 2023-07-13
 
-## [2.1.1] - 2023-07-12
+### Added
+
+- new endpoint /locations/global/rankings/tournaments/{tournamentTag}
+
+### Changed
+
+- E2E testing to check if received JSON was empty
+
+## [2.1.1] - 2023-07-13
+
+### Added
+
+- new endpoint /locations/{locationId}/pathoflegend/players (#158)
+- possibility to create cached connector for E2E testing (for now)
+
+## [2.1.0] - 2023-07-12
 
 ### Changed
 
@@ -41,7 +57,9 @@
 
 - Create a Release job (#152)
 
-[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v2.1.1...HEAD
-[2.1.1]: https://github.com/mlieshoff/jcrapi2/compare/v2.0.6...v2.1.1
+[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v2.1.2...HEAD
+[2.1.2]: https://github.com/mlieshoff/jcrapi2/compare/v2.1.1...v2.1.2}
+[2.1.1]: https://github.com/mlieshoff/jcrapi2/compare/v2.1.0...v2.1.1
+[2.1.0]: https://github.com/mlieshoff/jcrapi2/compare/v2.0.6...v2.1.0
 [2.0.6]: https://github.com/mlieshoff/jcrapi2/compare/v2.0.5...v2.0.6
 [2.0.5]: https://github.com/mlieshoff/jcrapi2/compare/v2.0.5...v2.0.5

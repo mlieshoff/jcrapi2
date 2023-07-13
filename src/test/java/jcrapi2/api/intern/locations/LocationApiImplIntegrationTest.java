@@ -414,4 +414,64 @@ public class LocationApiImplIntegrationTest extends IntegrationTestBase {
                 request,
                 () -> unitUnderTest.getTopPlayerPathOfLegendSeasonRankings(request).get());
     }
+
+    @Test
+    void getTopPlayerTournamentRankings() throws Exception {
+        String tournamentTag = "tournamentTag";
+        jcrapi2.api.intern.locations.seasons.global.rankings.tournament
+                        .TopPlayerTournamentRankingsRequest
+                        .TopPlayerTournamentRankingsRequestBuilder
+                builder =
+                        jcrapi2.api.intern.locations.seasons.global.rankings.tournament
+                                .TopPlayerTournamentRankingsRequest.builder(tournamentTag);
+        jcrapi2.api.intern.locations.seasons.global.rankings.tournament
+                        .TopPlayerTournamentRankingsRequest
+                request =
+                        builder.limit(100)
+                                .before("zzz")
+                                .after("aaa")
+                                .storeRawResponse(true)
+                                .build();
+        prepare(
+                "/locations/global/rankings/tournaments/{tournamentTag}"
+                        .replace("{tournamentTag}", String.valueOf(tournamentTag)),
+                EMPTY,
+                "src/test/resources/location-getTopPlayerTournamentRankings.json",
+                request);
+        jcrapi2.api.intern.locations.seasons.global.rankings.tournament
+                        .TopPlayerTournamentRankingsResponse
+                expected =
+                        toJson(
+                                jcrapi2.api.intern.locations.seasons.global.rankings.tournament
+                                        .TopPlayerTournamentRankingsResponse.class,
+                                getExpected());
+
+        run(expected, () -> unitUnderTest.getTopPlayerTournamentRankings(request).get());
+    }
+
+    @Test
+    void getTopPlayerTournamentRankings_whenWithException() {
+        String tournamentTag = "tournamentTag";
+        jcrapi2.api.intern.locations.seasons.global.rankings.tournament
+                        .TopPlayerTournamentRankingsRequest
+                        .TopPlayerTournamentRankingsRequestBuilder
+                builder =
+                        jcrapi2.api.intern.locations.seasons.global.rankings.tournament
+                                .TopPlayerTournamentRankingsRequest.builder(tournamentTag);
+        jcrapi2.api.intern.locations.seasons.global.rankings.tournament
+                        .TopPlayerTournamentRankingsRequest
+                request =
+                        builder.limit(100)
+                                .before("zzz")
+                                .after("aaa")
+                                .storeRawResponse(true)
+                                .build();
+
+        prepareWithErrorAndRun(
+                "/locations/global/rankings/tournaments/{tournamentTag}"
+                        .replace("{tournamentTag}", String.valueOf(tournamentTag)),
+                EMPTY,
+                request,
+                () -> unitUnderTest.getTopPlayerTournamentRankings(request).get());
+    }
 }

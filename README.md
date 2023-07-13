@@ -1,6 +1,6 @@
 [![](https://img.shields.io/badge/java-packagecloud.io-844fec.svg)](https://packagecloud.io/)
 
-# jcrapi2 2.1.2
+# jcrapi2 2.1.3
 A Java Wrapper For Official Supercell Clash Royal Api
 
 ## Why we don't use the Swagger scheme?
@@ -331,6 +331,18 @@ list all supported apis
         .build()
     ).get();
 ```
+```java
+    // getTopPlayerLeagueSeasonsV2
+    TopPlayerLeagueSeasonsV2Response response = api.getTopPlayerLeagueSeasonsV2(topPlayerLeagueSeasonsV2Request.builder()
+           // pagination
+           .limit()
+           .after()
+           .before()
+           // store raw response
+           .storeRawResponse()
+        .build()
+    ).get();
+```
 #### ChallengeApi
 ```java
     // create an instance for the api
@@ -398,7 +410,7 @@ All requests are returning *java.concurrent.Future*. The execution will be async
 
 to Gradle:
 ```groovy
-    implementation group: 'jcrapi2', name: 'jcrapi2', version: '2.1.2'
+    implementation group: 'jcrapi2', name: 'jcrapi2', version: '2.1.3'
 ```
 
 to Maven:
@@ -406,7 +418,7 @@ to Maven:
     <dependency>
         <groupId>jcrapi2</groupId>
         <artifactId>jcrapi2</artifactId>
-        <version>2.1.2</version>
+        <version>2.1.3</version>
     </dependency>
 ```
 

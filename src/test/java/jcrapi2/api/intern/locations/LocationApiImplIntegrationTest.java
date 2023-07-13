@@ -474,4 +474,44 @@ public class LocationApiImplIntegrationTest extends IntegrationTestBase {
                 request,
                 () -> unitUnderTest.getTopPlayerTournamentRankings(request).get());
     }
+
+    @Test
+    void getTopPlayerLeagueSeasonsV2() throws Exception {
+        jcrapi2.api.intern.locations.seasons.global.TopPlayerLeagueSeasonsV2Request
+                        .TopPlayerLeagueSeasonsV2RequestBuilder
+                builder =
+                        jcrapi2.api.intern.locations.seasons.global.TopPlayerLeagueSeasonsV2Request
+                                .builder();
+        jcrapi2.api.intern.locations.seasons.global.TopPlayerLeagueSeasonsV2Request request =
+                builder.limit(100).before("zzz").after("aaa").storeRawResponse(true).build();
+        prepare(
+                "/locations/global/seasonsV2",
+                EMPTY,
+                "src/test/resources/location-getTopPlayerLeagueSeasonsV2.json",
+                request);
+        jcrapi2.api.intern.locations.seasons.global.TopPlayerLeagueSeasonsV2Response expected =
+                toJson(
+                        jcrapi2.api.intern.locations.seasons.global.TopPlayerLeagueSeasonsV2Response
+                                .class,
+                        getExpected());
+
+        run(expected, () -> unitUnderTest.getTopPlayerLeagueSeasonsV2(request).get());
+    }
+
+    @Test
+    void getTopPlayerLeagueSeasonsV2_whenWithException() {
+        jcrapi2.api.intern.locations.seasons.global.TopPlayerLeagueSeasonsV2Request
+                        .TopPlayerLeagueSeasonsV2RequestBuilder
+                builder =
+                        jcrapi2.api.intern.locations.seasons.global.TopPlayerLeagueSeasonsV2Request
+                                .builder();
+        jcrapi2.api.intern.locations.seasons.global.TopPlayerLeagueSeasonsV2Request request =
+                builder.limit(100).before("zzz").after("aaa").storeRawResponse(true).build();
+
+        prepareWithErrorAndRun(
+                "/locations/global/seasonsV2",
+                EMPTY,
+                request,
+                () -> unitUnderTest.getTopPlayerLeagueSeasonsV2(request).get());
+    }
 }

@@ -2,6 +2,18 @@
 
 ## [Unreleased]
 
+## [2.1.3] - 2023-07-13
+
+### Added
+
+- new endpoint endpoint /locations/global/seasonsV2
+
+### Fixed
+
+### Changed
+
+### Removed
+
 ## [2.1.2] - 2023-07-13
 
 ### Added
@@ -57,7 +69,8 @@
 
 - Create a Release job (#152)
 
-[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v2.1.2...HEAD
+[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v2.1.3...HEAD
+[2.1.3]: https://github.com/mlieshoff/jcrapi2/compare/v2.1.2...v2.1.3}
 [2.1.2]: https://github.com/mlieshoff/jcrapi2/compare/v2.1.1...v2.1.2}
 [2.1.1]: https://github.com/mlieshoff/jcrapi2/compare/v2.1.0...v2.1.1
 [2.1.0]: https://github.com/mlieshoff/jcrapi2/compare/v2.0.6...v2.1.0

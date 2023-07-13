@@ -44,15 +44,11 @@ import org.apache.http.message.BasicHttpResponse;
 import org.apache.http.message.BasicStatusLine;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URLEncoder;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.time.Duration;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
@@ -63,7 +59,7 @@ public class StandardConnector implements Connector {
 
     public static final Duration CACHE_TIMEOUT = Duration.ofMinutes(5);
 
-    public static final boolean CACHE = true;
+    //    public static final boolean CACHE = true;
 
     private static final Gson GSON = new GsonBuilder().disableHtmlEscaping().create();
 
@@ -102,25 +98,26 @@ public class StandardConnector implements Connector {
                             requestContext.getRequest().getRestParameters());
             String json = null;
             boolean makeRequest = true;
-            if (CACHE) {
-                String hash = String.valueOf(replacedUrl.hashCode());
-                Path path = Files.createTempFile(hash, ".json");
-                File file = path.toFile();
-                if (file.exists()) {
-                    long millis = file.lastModified();
-                    json = Files.readString(path);
-                    makeRequest =
-                            json == null
-                                    || json.isEmpty()
-                                    || millis + CACHE_TIMEOUT.toMillis() < new Date().getTime();
-                    if (!makeRequest) {
-                        log.info(
-                                "found cached file {} for {}",
-                                path.toFile().getAbsolutePath(),
-                                replacedUrl);
-                    }
-                }
-            }
+            //            if (CACHE) {
+            //                String hash = String.valueOf(replacedUrl.hashCode());
+            //                Path path = Files.createTempFile(hash, ".json");
+            //                File file = path.toFile();
+            //                if (file.exists()) {
+            //                    long millis = file.lastModified();
+            //                    json = Files.readString(path);
+            //                    makeRequest =
+            //                            json == null
+            //                                    || json.isEmpty()
+            //                                    || millis + CACHE_TIMEOUT.toMillis() < new
+            // Date().getTime();
+            //                    if (!makeRequest) {
+            //                        log.info(
+            //                                "found cached file {} for {}",
+            //                                path.toFile().getAbsolutePath(),
+            //                                replacedUrl);
+            //                    }
+            //                }
+            //            }
             HttpResponse response;
             if (makeRequest) {
                 HttpClient client = HttpClientBuilder.create().build();
@@ -141,15 +138,15 @@ public class StandardConnector implements Connector {
                     }
                 }
                 json = content.toString();
-                if (CACHE) {
-                    String hash = String.valueOf(replacedUrl.hashCode());
-                    Path path = Files.createTempFile(hash, ".json");
-                    Files.writeString(path, json);
-                    log.info(
-                            "save file {} for cache of {}",
-                            path.toFile().getAbsolutePath(),
-                            replacedUrl);
-                }
+                //                if (CACHE) {
+                //                    String hash = String.valueOf(replacedUrl.hashCode());
+                //                    Path path = Files.createTempFile(hash, ".json");
+                //                    Files.writeString(path, json);
+                //                    log.info(
+                //                            "save file {} for cache of {}",
+                //                            path.toFile().getAbsolutePath(),
+                //                            replacedUrl);
+                //                }
             } else {
                 response =
                         new BasicHttpResponse(

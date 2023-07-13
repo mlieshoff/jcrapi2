@@ -2,17 +2,17 @@
 
 ## [Unreleased]
 
+## [2.1.4] - 2023-07-13
+
+### Added
+
+- new endpoint /locations/{locationId}/pathoflegend/players (#158)
+
 ## [2.1.3] - 2023-07-13
 
 ### Added
 
-- new endpoint endpoint /locations/global/seasonsV2
-
-### Fixed
-
-### Changed
-
-### Removed
+- new endpoint /locations/global/seasonsV2
 
 ## [2.1.2] - 2023-07-13
 
@@ -28,7 +28,7 @@
 
 ### Added
 
-- new endpoint /locations/{locationId}/pathoflegend/players (#158)
+- new endpoint /locations/global/pathoflegend/{seasonId}/rankings/players (#143)
 - possibility to create cached connector for E2E testing (for now)
 
 ## [2.1.0] - 2023-07-12
@@ -69,7 +69,8 @@
 
 - Create a Release job (#152)
 
-[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v2.1.3...HEAD
+[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v2.1.4...HEAD
+[2.1.4]: https://github.com/mlieshoff/jcrapi2/compare/v2.1.3...v2.1.4}
 [2.1.3]: https://github.com/mlieshoff/jcrapi2/compare/v2.1.2...v2.1.3}
 [2.1.2]: https://github.com/mlieshoff/jcrapi2/compare/v2.1.1...v2.1.2}
 [2.1.1]: https://github.com/mlieshoff/jcrapi2/compare/v2.1.0...v2.1.1

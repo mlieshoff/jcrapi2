@@ -416,6 +416,66 @@ public class LocationApiImplIntegrationTest extends IntegrationTestBase {
     }
 
     @Test
+    void getTopPlayerPathOfLegendRankings() throws Exception {
+        long locationId = 4711L;
+        jcrapi2.api.intern.locations.seasons.global.rankings.pathoflegend.player
+                        .TopPlayerPathOfLegendRankingsRequest
+                        .TopPlayerPathOfLegendRankingsRequestBuilder
+                builder =
+                        jcrapi2.api.intern.locations.seasons.global.rankings.pathoflegend.player
+                                .TopPlayerPathOfLegendRankingsRequest.builder(locationId);
+        jcrapi2.api.intern.locations.seasons.global.rankings.pathoflegend.player
+                        .TopPlayerPathOfLegendRankingsRequest
+                request =
+                        builder.limit(100)
+                                .before("zzz")
+                                .after("aaa")
+                                .storeRawResponse(true)
+                                .build();
+        prepare(
+                "/locations/{locationId}/pathoflegend/players"
+                        .replace("{locationId}", String.valueOf(locationId)),
+                EMPTY,
+                "src/test/resources/location-getTopPlayerPathOfLegendRankings.json",
+                request);
+        jcrapi2.api.intern.locations.seasons.global.rankings.pathoflegend.player
+                        .TopPlayerPathOfLegendRankingsResponse
+                expected =
+                        toJson(
+                                jcrapi2.api.intern.locations.seasons.global.rankings.pathoflegend
+                                        .player.TopPlayerPathOfLegendRankingsResponse.class,
+                                getExpected());
+
+        run(expected, () -> unitUnderTest.getTopPlayerPathOfLegendRankings(request).get());
+    }
+
+    @Test
+    void getTopPlayerPathOfLegendRankings_whenWithException() {
+        long locationId = 4711L;
+        jcrapi2.api.intern.locations.seasons.global.rankings.pathoflegend.player
+                        .TopPlayerPathOfLegendRankingsRequest
+                        .TopPlayerPathOfLegendRankingsRequestBuilder
+                builder =
+                        jcrapi2.api.intern.locations.seasons.global.rankings.pathoflegend.player
+                                .TopPlayerPathOfLegendRankingsRequest.builder(locationId);
+        jcrapi2.api.intern.locations.seasons.global.rankings.pathoflegend.player
+                        .TopPlayerPathOfLegendRankingsRequest
+                request =
+                        builder.limit(100)
+                                .before("zzz")
+                                .after("aaa")
+                                .storeRawResponse(true)
+                                .build();
+
+        prepareWithErrorAndRun(
+                "/locations/{locationId}/pathoflegend/players"
+                        .replace("{locationId}", String.valueOf(locationId)),
+                EMPTY,
+                request,
+                () -> unitUnderTest.getTopPlayerPathOfLegendRankings(request).get());
+    }
+
+    @Test
     void getTopPlayerTournamentRankings() throws Exception {
         String tournamentTag = "tournamentTag";
         jcrapi2.api.intern.locations.seasons.global.rankings.tournament

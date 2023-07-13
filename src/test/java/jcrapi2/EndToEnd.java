@@ -68,6 +68,8 @@ import jcrapi2.api.intern.locations.seasons.global.rankings.TopPlayerLeagueSeaso
 import jcrapi2.api.intern.locations.seasons.global.rankings.TopPlayerLeagueSeasonRankingsResponse;
 import jcrapi2.api.intern.locations.seasons.global.rankings.pathoflegend.TopPlayerPathOfLegendSeasonRankingsRequest;
 import jcrapi2.api.intern.locations.seasons.global.rankings.pathoflegend.TopPlayerPathOfLegendSeasonRankingsResponse;
+import jcrapi2.api.intern.locations.seasons.global.rankings.pathoflegend.player.TopPlayerPathOfLegendRankingsRequest;
+import jcrapi2.api.intern.locations.seasons.global.rankings.pathoflegend.player.TopPlayerPathOfLegendRankingsResponse;
 import jcrapi2.api.intern.locations.seasons.global.rankings.tournament.TopPlayerTournamentRankingsRequest;
 import jcrapi2.api.intern.locations.seasons.global.rankings.tournament.TopPlayerTournamentRankingsResponse;
 import jcrapi2.api.intern.players.PlayerApi;
@@ -532,6 +534,22 @@ class EndToEnd {
                         .getTopPlayerLeagueSeasonsV2(
                                 TopPlayerLeagueSeasonsV2Request.builder()
                                         .storeRawResponse(true)
+                                        .build())
+                        .get();
+        String actual = GSON.toJson(response);
+        String expected = response.getRawResponse().getRaw();
+
+        assertDiff(expected, actual);
+    }
+
+    @Test
+    void locations_getTopPlayerPathOfLegendRankings() throws Exception {
+        TopPlayerPathOfLegendRankingsResponse response =
+                locationApi
+                        .getTopPlayerPathOfLegendRankings(
+                                TopPlayerPathOfLegendRankingsRequest.builder(LOCATION_ID)
+                                        .storeRawResponse(true)
+                                        .limit(10)
                                         .build())
                         .get();
         String actual = GSON.toJson(response);

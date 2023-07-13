@@ -8,23 +8,11 @@
 
 - new endpoint /locations/{locationId}/pathoflegend/players (#158)
 
-### Fixed
-
-### Changed
-
-### Removed
-
 ## [2.1.3] - 2023-07-13
 
 ### Added
 
 - new endpoint /locations/global/seasonsV2
-
-### Fixed
-
-### Changed
-
-### Removed
 
 ## [2.1.2] - 2023-07-13
 

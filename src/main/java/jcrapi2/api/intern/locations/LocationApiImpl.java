@@ -34,6 +34,8 @@ import jcrapi2.api.intern.locations.seasons.global.rankings.TopPlayerLeagueSeaso
 import jcrapi2.api.intern.locations.seasons.global.rankings.TopPlayerLeagueSeasonRankingsResponse;
 import jcrapi2.api.intern.locations.seasons.global.rankings.pathoflegend.TopPlayerPathOfLegendSeasonRankingsRequest;
 import jcrapi2.api.intern.locations.seasons.global.rankings.pathoflegend.TopPlayerPathOfLegendSeasonRankingsResponse;
+import jcrapi2.api.intern.locations.seasons.global.rankings.tournament.TopPlayerTournamentRankingsRequest;
+import jcrapi2.api.intern.locations.seasons.global.rankings.tournament.TopPlayerTournamentRankingsResponse;
 
 import java.util.concurrent.Future;
 
@@ -107,5 +109,13 @@ class LocationApiImpl extends BaseApi implements LocationApi {
                 "/locations/global/pathoflegend/{seasonId}/rankings/players",
                 topPlayerPathOfLegendSeasonRankingsRequest,
                 TopPlayerPathOfLegendSeasonRankingsResponse.class);
+    }
+
+    public Future<TopPlayerTournamentRankingsResponse> getTopPlayerTournamentRankings(
+            TopPlayerTournamentRankingsRequest topPlayerTournamentRankingsRequest) {
+        return get(
+                "/locations/global/rankings/tournaments/{tournamentTag}",
+                topPlayerTournamentRankingsRequest,
+                TopPlayerTournamentRankingsResponse.class);
     }
 }

@@ -17,6 +17,7 @@
 package jcrapi2;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import static wiremock.org.apache.commons.lang3.StringUtils.EMPTY;
 
@@ -65,6 +66,8 @@ import jcrapi2.api.intern.locations.seasons.global.rankings.TopPlayerLeagueSeaso
 import jcrapi2.api.intern.locations.seasons.global.rankings.TopPlayerLeagueSeasonRankingsResponse;
 import jcrapi2.api.intern.locations.seasons.global.rankings.pathoflegend.TopPlayerPathOfLegendSeasonRankingsRequest;
 import jcrapi2.api.intern.locations.seasons.global.rankings.pathoflegend.TopPlayerPathOfLegendSeasonRankingsResponse;
+import jcrapi2.api.intern.locations.seasons.global.rankings.tournament.TopPlayerTournamentRankingsRequest;
+import jcrapi2.api.intern.locations.seasons.global.rankings.tournament.TopPlayerTournamentRankingsResponse;
 import jcrapi2.api.intern.players.PlayerApi;
 import jcrapi2.api.intern.players.battlelog.BattleLogRequest;
 import jcrapi2.api.intern.players.battlelog.BattleLogResponse;
@@ -93,6 +96,7 @@ class EndToEnd {
     private static final Gson GSON = new GsonBuilder().disableHtmlEscaping().create();
 
     private static final String CLAN_TAG = "#RP88QQG";
+    private static final String GLOBAL_TOURNAMENT_TAG = "#URP0P0LU0";
     private static final String PATH_OF_LEGEND_SEASON_ID = "2023-04";
     private static final String PLAYER_TAG = "#2PGGCJJL";
     private static final String TOURNAMENT_NAME = "de";
@@ -132,6 +136,7 @@ class EndToEnd {
     }
 
     private static void assertDiff(String expected, String actual) {
+        assertNotEquals("", actual);
         JsonValue source = Json.createReader(new StringReader(actual)).readValue();
         JsonValue target = Json.createReader(new StringReader(expected)).readValue();
         JsonPatch diff;
@@ -492,6 +497,22 @@ class EndToEnd {
                         .getTopPlayerPathOfLegendSeasonRankings(
                                 TopPlayerPathOfLegendSeasonRankingsRequest.builder(
                                                 PATH_OF_LEGEND_SEASON_ID)
+                                        .storeRawResponse(true)
+                                        .limit(10)
+                                        .build())
+                        .get();
+        String actual = GSON.toJson(response);
+        String expected = response.getRawResponse().getRaw();
+
+        assertDiff(expected, actual);
+    }
+
+    @Test
+    void locations_getTopPlayerTournamentRankings() throws Exception {
+        TopPlayerTournamentRankingsResponse response =
+                locationApi
+                        .getTopPlayerTournamentRankings(
+                                TopPlayerTournamentRankingsRequest.builder(GLOBAL_TOURNAMENT_TAG)
                                         .storeRawResponse(true)
                                         .limit(10)
                                         .build())

@@ -61,8 +61,8 @@ class ApiContextTest {
     void construct_whenWithParameters_shouldSetValues() {
         ApiContext actual = new ApiContext(URL, API_KEY, connector);
 
-        assertEquals(URL, actual.getUrl());
-        assertEquals(API_KEY, actual.getApiKey());
-        assertEquals(connector, actual.getConnector());
+        assertEquals(URL, actual.url());
+        assertEquals(API_KEY, actual.apiKey());
+        assertEquals(connector, actual.connector());
     }
 }

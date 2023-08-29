@@ -44,7 +44,7 @@ public class Utils {
 
     public static void require(String key, Object o) {
         if (o == null) {
-            throw new IllegalArgumentException(key + " must be set! But was: " + o);
+            throw new IllegalArgumentException(key + " must be set!");
         }
     }
 }

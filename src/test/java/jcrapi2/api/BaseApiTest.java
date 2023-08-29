@@ -55,24 +55,22 @@ class BaseApiTest {
 
     @Mock private Connector connector;
 
-    private ApiContext apiContext;
-
     private PaginationRequest request;
 
     private static ArgumentMatcher<RequestContext> createRequestContextArgumentMatcher(
             RequestContext expected) {
         return actual -> {
             assertNotNull(actual);
-            assertEquals(expected.getApiKey(), actual.getApiKey());
-            assertEquals(expected.getUrl(), actual.getUrl());
-            assertEquals(expected.getResponseClass(), actual.getResponseClass());
+            assertEquals(expected.apiKey(), actual.apiKey());
+            assertEquals(expected.url(), actual.url());
+            assertEquals(expected.responseClass(), actual.responseClass());
             return true;
         };
     }
 
     @BeforeEach
     void setUp() {
-        apiContext = new ApiContext(URL, API_KEY, connector);
+        ApiContext apiContext = new ApiContext(URL, API_KEY, connector);
         request = new FooRequest(100, "after", "before", true);
         unitUnderTest = new BaseApi(apiContext);
     }
@@ -129,7 +127,7 @@ class BaseApiTest {
     void get_whenWithValidParameters_shouldReturnResponse() throws Exception {
         FooResponse expected = new FooResponse();
         RequestContext requestContext =
-                new RequestContext("urlpart", API_KEY, request, FooResponse.class);
+                new RequestContext(URL + PART, API_KEY, request, FooResponse.class);
         when(connector.get(argThat(createRequestContextArgumentMatcher(requestContext))))
                 .thenReturn(expected);
 

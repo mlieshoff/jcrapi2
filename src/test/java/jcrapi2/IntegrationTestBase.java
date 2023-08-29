@@ -31,6 +31,8 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 import static wiremock.org.apache.commons.lang3.StringUtils.EMPTY;
 import static wiremock.org.apache.commons.lang3.StringUtils.isNotBlank;
+import static wiremock.org.apache.http.HttpHeaders.AUTHORIZATION;
+import static wiremock.org.apache.http.HttpStatus.SC_OK;
 
 import static java.util.Collections.emptyMap;
 
@@ -44,11 +46,11 @@ import jcrapi2.common.PaginationRequest;
 import jcrapi2.common.Request;
 import jcrapi2.connector.StandardConnector;
 
-import org.apache.http.HttpHeaders;
-import org.apache.http.HttpStatus;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+
+import wiremock.org.apache.http.HttpStatus;
 
 import java.io.File;
 import java.io.IOException;
@@ -77,10 +79,6 @@ public abstract class IntegrationTestBase {
     private static JCrApi createJCrApi() {
         return new JCrApi(
                 "http://localhost:" + wireMockServer.port(), "myApiKey", new StandardConnector());
-    }
-
-    protected static String json(Object o) {
-        return GSON.toJson(o);
     }
 
     protected static <T> T toJson(Class<T> clazz, String s) {
@@ -114,9 +112,8 @@ public abstract class IntegrationTestBase {
             throws Exception {
         stubFor(
                 get(urlEqualTo(createUrl(url, queryPart, request)))
-                        .withHeader(HttpHeaders.AUTHORIZATION, equalTo("Bearer myApiKey"))
-                        .willReturn(
-                                aResponse().withBody(body(filename)).withStatus(HttpStatus.SC_OK)));
+                        .withHeader(AUTHORIZATION, equalTo("Bearer myApiKey"))
+                        .willReturn(aResponse().withBody(body(filename)).withStatus(SC_OK)));
     }
 
     private String createUrl(String url, String queryPart, Request request) {
@@ -149,16 +146,14 @@ public abstract class IntegrationTestBase {
             testRunner.execute();
             fail();
         } catch (Exception e) {
-            assertEquals(
-                    "jcrapi2.connector.ConnectorException: HTTP/1.1 400 Bad Request",
-                    e.getMessage());
+            assertEquals("jcrapi2.connector.ConnectorException: 400", e.getMessage());
         }
     }
 
     private void prepareWithError(String url, String queryPart, Request request) {
         stubFor(
                 get(urlEqualTo(createUrl(url, queryPart, request)))
-                        .withHeader(HttpHeaders.AUTHORIZATION, equalTo("Bearer myApiKey"))
+                        .withHeader(AUTHORIZATION, equalTo("Bearer myApiKey"))
                         .willReturn(
                                 aResponse()
                                         .withBody("body")

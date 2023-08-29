@@ -27,6 +27,7 @@ import static java.lang.System.getenv;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import jcrapi2.api.connector.FilesystemCachedConnector;
 import jcrapi2.api.intern.cards.CardApi;
 import jcrapi2.api.intern.cards.CardsRequest;
 import jcrapi2.api.intern.cards.CardsResponse;
@@ -84,7 +85,6 @@ import jcrapi2.api.intern.tournaments.TournamentsRequest;
 import jcrapi2.api.intern.tournaments.TournamentsResponse;
 import jcrapi2.api.intern.tournaments.info.TournamentRequest;
 import jcrapi2.api.intern.tournaments.info.TournamentResponse;
-import jcrapi2.connector.StandardConnector;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -129,7 +129,7 @@ class EndToEnd {
                 new JCrApi(
                         "https://proxy.royaleapi.dev/v1",
                         getProperty("apiKey", getenv("API_KEY")),
-                        new StandardConnector());
+                        new FilesystemCachedConnector());
         clanApi = jCrApi.getApi(ClanApi.class);
         playerApi = jCrApi.getApi(PlayerApi.class);
         cardApi = jCrApi.getApi(CardApi.class);

@@ -46,4 +46,7 @@ public class Card {
 
     @SerializedName("maxEvolutionLevel")
     private Integer maxEvolutionLevel;
+
+    @SerializedName("evolutionLevel")
+    private int evolutionLevel;
 }

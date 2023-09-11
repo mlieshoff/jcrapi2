@@ -47,10 +47,4 @@ public class TopPlayerTournamentRankingsRequest extends PaginationRequest {
         map.put("tournamentTag", tournamentTag);
         return map;
     }
-
-    @Override
-    public Map<String, Object> getQueryParameters() {
-        Map<String, Object> map = super.getQueryParameters();
-        return map;
-    }
 }

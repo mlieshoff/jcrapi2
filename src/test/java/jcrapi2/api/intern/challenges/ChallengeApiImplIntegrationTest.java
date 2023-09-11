@@ -39,6 +39,7 @@ public class ChallengeApiImplIntegrationTest extends IntegrationTestBase {
         jcrapi2.api.intern.challenges.ChallengesRequest request =
                 builder.storeRawResponse(true).build();
         prepare("/challenges", EMPTY, "src/test/resources/challenge-findAll.json", request);
+
         jcrapi2.api.intern.challenges.ChallengesResponse expected =
                 toJson(jcrapi2.api.intern.challenges.ChallengesResponse.class, getExpected());
 

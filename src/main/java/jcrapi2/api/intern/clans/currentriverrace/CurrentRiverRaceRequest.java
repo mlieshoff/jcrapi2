@@ -42,10 +42,4 @@ public class CurrentRiverRaceRequest extends Request {
         map.put("clanTag", clanTag);
         return map;
     }
-
-    @Override
-    public Map<String, Object> getQueryParameters() {
-        Map<String, Object> map = super.getQueryParameters();
-        return map;
-    }
 }

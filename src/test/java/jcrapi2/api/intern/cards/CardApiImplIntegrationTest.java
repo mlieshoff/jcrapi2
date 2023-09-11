@@ -39,6 +39,7 @@ public class CardApiImplIntegrationTest extends IntegrationTestBase {
         jcrapi2.api.intern.cards.CardsRequest request = builder.storeRawResponse(true).build();
 
         prepare("/cards", EMPTY, "src/test/resources/card-findAll.json", request);
+
         jcrapi2.api.intern.cards.CardsResponse expected =
                 toJson(jcrapi2.api.intern.cards.CardsResponse.class, getExpected());
 

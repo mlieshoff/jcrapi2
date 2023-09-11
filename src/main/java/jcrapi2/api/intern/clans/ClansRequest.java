@@ -51,12 +51,6 @@ public class ClansRequest extends PaginationRequest {
     }
 
     @Override
-    public Map<String, Object> getRestParameters() {
-        Map<String, Object> map = super.getRestParameters();
-        return map;
-    }
-
-    @Override
     public Map<String, Object> getQueryParameters() {
         Map<String, Object> map = super.getQueryParameters();
         map.put("name", name);

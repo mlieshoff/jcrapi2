@@ -2,13 +2,23 @@
 
 ## [Unreleased]
 
+## [3.0.0] - 2023-09-08
+
+### Added
+
+### Fixed
+
+### Changed
+
+### Removed
+
 ## [2.1.5] - 2023-08-30
 
 ### Added
 
 - Apply data model changes on different endpoints (#162)
-  * (new field) player.info.Card.evolutionLevel
-  * (new field) player.info.CurrentDeck.evolutionLevel
+* (new field) player.info.Card.evolutionLevel
+* (new field) player.info.CurrentDeck.evolutionLevel
 
 ### Changed
 
@@ -81,7 +91,7 @@
 
 - Create a Release job (#152)
 
-[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v2.1.5...HEAD
+[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v3.0.0...HEAD
 [2.1.5]: https://github.com/mlieshoff/jcrapi2/compare/v2.1.4...v2.1.5}
 [2.1.4]: https://github.com/mlieshoff/jcrapi2/compare/v2.1.3...v2.1.4}
 [2.1.3]: https://github.com/mlieshoff/jcrapi2/compare/v2.1.2...v2.1.3}

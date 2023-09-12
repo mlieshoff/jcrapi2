@@ -2,15 +2,12 @@
 
 ## [Unreleased]
 
-## [3.0.0] - 2023-09-08
-
-### Added
-
-### Fixed
+## [3.0.0] - 2023-09-12
 
 ### Changed
 
-### Removed
+- Source code is now ready for Java 17 (#149)
+- Binary code is now Java 17 compliant (#149)
 
 ## [2.1.5] - 2023-08-30
 
@@ -22,25 +19,25 @@
 
 ### Changed
 
-+ locations_getTopPlayerLeagueSeasons end-to-end test for being more robust
+- Making locations_getTopPlayerLeagueSeasons end-to-end test more robust
 
 ## [2.1.4] - 2023-07-13
 
 ### Added
 
-- new endpoint /locations/{locationId}/pathoflegend/players (#158)
+- New endpoint /locations/{locationId}/pathoflegend/players (#158)
 
 ## [2.1.3] - 2023-07-13
 
 ### Added
 
-- new endpoint /locations/global/seasonsV2
+- New endpoint /locations/global/seasonsV2
 
 ## [2.1.2] - 2023-07-13
 
 ### Added
 
-- new endpoint /locations/global/rankings/tournaments/{tournamentTag}
+- New endpoint /locations/global/rankings/tournaments/{tournamentTag}
 
 ### Changed
 
@@ -50,8 +47,8 @@
 
 ### Added
 
-- new endpoint /locations/global/pathoflegend/{seasonId}/rankings/players (#143)
-- possibility to create cached connector for E2E testing (for now)
+- New endpoint /locations/global/pathoflegend/{seasonId}/rankings/players (#143)
+- Possibility to create cached connector for E2E testing (for now)
 
 ## [2.1.0] - 2023-07-12
 
@@ -92,10 +89,11 @@
 - Create a Release job (#152)
 
 [unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v3.0.0...HEAD
-[2.1.5]: https://github.com/mlieshoff/jcrapi2/compare/v2.1.4...v2.1.5}
-[2.1.4]: https://github.com/mlieshoff/jcrapi2/compare/v2.1.3...v2.1.4}
-[2.1.3]: https://github.com/mlieshoff/jcrapi2/compare/v2.1.2...v2.1.3}
-[2.1.2]: https://github.com/mlieshoff/jcrapi2/compare/v2.1.1...v2.1.2}
+[3.0.0]: https://github.com/mlieshoff/jcrapi2/compare/v2.1.5...3.0.0
+[2.1.5]: https://github.com/mlieshoff/jcrapi2/compare/v2.1.4...v2.1.5
+[2.1.4]: https://github.com/mlieshoff/jcrapi2/compare/v2.1.3...v2.1.4
+[2.1.3]: https://github.com/mlieshoff/jcrapi2/compare/v2.1.2...v2.1.3
+[2.1.2]: https://github.com/mlieshoff/jcrapi2/compare/v2.1.1...v2.1.2
 [2.1.1]: https://github.com/mlieshoff/jcrapi2/compare/v2.1.0...v2.1.1
 [2.1.0]: https://github.com/mlieshoff/jcrapi2/compare/v2.0.6...v2.1.0
 [2.0.6]: https://github.com/mlieshoff/jcrapi2/compare/v2.0.5...v2.0.6

@@ -43,9 +43,9 @@ public class BaseApi implements Api {
         require("part", part);
         require("request", request);
         require("responseClass", responseClass);
-        String apiKey = apiContext.getApiKey();
-        Connector connector = apiContext.getConnector();
-        String url = apiContext.getUrl() + part;
+        String apiKey = apiContext.apiKey();
+        Connector connector = apiContext.connector();
+        String url = apiContext.url() + part;
         RequestContext requestContext = new RequestContext(url, apiKey, request, responseClass);
         return executorServiceDecorator.submit(connector, requestContext);
     }

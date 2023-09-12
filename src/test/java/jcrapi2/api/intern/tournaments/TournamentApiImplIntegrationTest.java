@@ -46,7 +46,7 @@ public class TournamentApiImplIntegrationTest extends IntegrationTestBase {
                         .build();
         prepare(
                 "/tournaments",
-                "name=" + name + "",
+                "name=" + name,
                 "src/test/resources/tournament-findAll.json",
                 request);
         jcrapi2.api.intern.tournaments.TournamentsResponse expected =
@@ -69,8 +69,8 @@ public class TournamentApiImplIntegrationTest extends IntegrationTestBase {
                         .build();
 
         prepareWithErrorAndRun(
-                "/tournaments".replace("{name}", String.valueOf(name)),
-                "name=" + name + "",
+                "/tournaments",
+                "name=" + name,
                 request,
                 () -> unitUnderTest.findAll(request).get());
     }
@@ -83,8 +83,7 @@ public class TournamentApiImplIntegrationTest extends IntegrationTestBase {
         jcrapi2.api.intern.tournaments.info.TournamentRequest request =
                 builder.limit(100).before("zzz").after("aaa").storeRawResponse(true).build();
         prepare(
-                "/tournaments/{tournamentTag}"
-                        .replace("{tournamentTag}", String.valueOf(tournamentTag)),
+                "/tournaments/{tournamentTag}".replace("{tournamentTag}", tournamentTag),
                 EMPTY,
                 "src/test/resources/tournament-findByTag.json",
                 request);
@@ -103,8 +102,7 @@ public class TournamentApiImplIntegrationTest extends IntegrationTestBase {
                 builder.limit(100).before("zzz").after("aaa").storeRawResponse(true).build();
 
         prepareWithErrorAndRun(
-                "/tournaments/{tournamentTag}"
-                        .replace("{tournamentTag}", String.valueOf(tournamentTag)),
+                "/tournaments/{tournamentTag}".replace("{tournamentTag}", tournamentTag),
                 EMPTY,
                 request,
                 () -> unitUnderTest.findByTag(request).get());

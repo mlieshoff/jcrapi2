@@ -25,33 +25,21 @@ import jcrapi2.api.intern.locations.LocationApi;
 import jcrapi2.api.intern.players.PlayerApi;
 import jcrapi2.api.intern.tournaments.TournamentApi;
 
-import java.util.Collections;
-import java.util.HashMap;
+import lombok.Getter;
+
 import java.util.Map;
 
+@Getter
 public class DefaultApiClasses {
 
     private final Map<Class<? extends Api>, String> apiClassMap =
-            Collections.unmodifiableMap(
-                    new HashMap<Class<? extends Api>, String>() {
-                        {
-                            put(ClanApi.class, "jcrapi2.api.intern.clans.ClanApiImpl");
-                            put(PlayerApi.class, "jcrapi2.api.intern.players.PlayerApiImpl");
-                            put(CardApi.class, "jcrapi2.api.intern.cards.CardApiImpl");
-                            put(
-                                    TournamentApi.class,
-                                    "jcrapi2.api.intern.tournaments.TournamentApiImpl");
-                            put(LocationApi.class, "jcrapi2.api.intern.locations.LocationApiImpl");
-                            put(
-                                    ChallengeApi.class,
-                                    "jcrapi2.api.intern.challenges.ChallengeApiImpl");
-                            put(
-                                    GlobalTournamentApi.class,
-                                    "jcrapi2.api.intern.globaltournaments.GlobalTournamentApiImpl");
-                        }
-                    });
-
-    public Map<Class<? extends Api>, String> getApiClassMap() {
-        return apiClassMap;
-    }
+            Map.of(
+                    ClanApi.class, "jcrapi2.api.intern.clans.ClanApiImpl",
+                    PlayerApi.class, "jcrapi2.api.intern.players.PlayerApiImpl",
+                    CardApi.class, "jcrapi2.api.intern.cards.CardApiImpl",
+                    TournamentApi.class, "jcrapi2.api.intern.tournaments.TournamentApiImpl",
+                    LocationApi.class, "jcrapi2.api.intern.locations.LocationApiImpl",
+                    ChallengeApi.class, "jcrapi2.api.intern.challenges.ChallengeApiImpl",
+                    GlobalTournamentApi.class,
+                            "jcrapi2.api.intern.globaltournaments.GlobalTournamentApiImpl");
 }

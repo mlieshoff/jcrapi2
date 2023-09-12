@@ -42,10 +42,4 @@ public class LocationRequest extends Request {
         map.put("locationId", locationId);
         return map;
     }
-
-    @Override
-    public Map<String, Object> getQueryParameters() {
-        Map<String, Object> map = super.getQueryParameters();
-        return map;
-    }
 }

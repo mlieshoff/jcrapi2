@@ -16,15 +16,13 @@
  */
 package jcrapi2.connector;
 
-import java.io.IOException;
-
 public class ConnectorException extends RuntimeException {
 
     public ConnectorException(String s) {
         super(s);
     }
 
-    public ConnectorException(IOException e) {
+    public ConnectorException(Exception e) {
         super(e);
     }
 }

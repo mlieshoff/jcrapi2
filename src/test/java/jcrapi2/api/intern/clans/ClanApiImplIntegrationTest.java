@@ -59,8 +59,7 @@ public class ClanApiImplIntegrationTest extends IntegrationTestBase {
                         + "&minMembers="
                         + minMembers
                         + "&maxMembers="
-                        + maxMembers
-                        + "",
+                        + maxMembers,
                 "src/test/resources/clan-findAll.json",
                 request);
         jcrapi2.api.intern.clans.ClansResponse expected =
@@ -89,11 +88,7 @@ public class ClanApiImplIntegrationTest extends IntegrationTestBase {
                         .build();
 
         prepareWithErrorAndRun(
-                "/clans"
-                        .replace("{name}", String.valueOf(name))
-                        .replace("{locationId}", String.valueOf(locationId))
-                        .replace("{minMembers}", String.valueOf(minMembers))
-                        .replace("{maxMembers}", String.valueOf(maxMembers)),
+                "/clans",
                 "name="
                         + name
                         + "&locationId="
@@ -101,8 +96,7 @@ public class ClanApiImplIntegrationTest extends IntegrationTestBase {
                         + "&minMembers="
                         + minMembers
                         + "&maxMembers="
-                        + maxMembers
-                        + "",
+                        + maxMembers,
                 request,
                 () -> unitUnderTest.findAll(request).get());
     }
@@ -115,7 +109,7 @@ public class ClanApiImplIntegrationTest extends IntegrationTestBase {
         jcrapi2.api.intern.clans.info.ClanRequest request = builder.storeRawResponse(true).build();
 
         prepare(
-                "/clans/{clanTag}".replace("{clanTag}", String.valueOf(clanTag)),
+                "/clans/{clanTag}".replace("{clanTag}", clanTag),
                 EMPTY,
                 "src/test/resources/clan-findByTag.json",
                 request);
@@ -133,7 +127,7 @@ public class ClanApiImplIntegrationTest extends IntegrationTestBase {
         jcrapi2.api.intern.clans.info.ClanRequest request = builder.storeRawResponse(true).build();
 
         prepareWithErrorAndRun(
-                "/clans/{clanTag}".replace("{clanTag}", String.valueOf(clanTag)),
+                "/clans/{clanTag}".replace("{clanTag}", clanTag),
                 EMPTY,
                 request,
                 () -> unitUnderTest.findByTag(request).get());
@@ -148,7 +142,7 @@ public class ClanApiImplIntegrationTest extends IntegrationTestBase {
         jcrapi2.api.intern.clans.riverracelog.RiverRaceLogRequest request =
                 builder.limit(100).before("zzz").after("aaa").storeRawResponse(true).build();
         prepare(
-                "/clans/{clanTag}/riverracelog".replace("{clanTag}", String.valueOf(clanTag)),
+                "/clans/{clanTag}/riverracelog".replace("{clanTag}", clanTag),
                 EMPTY,
                 "src/test/resources/clan-getRiverRaceLog.json",
                 request);
@@ -170,7 +164,7 @@ public class ClanApiImplIntegrationTest extends IntegrationTestBase {
                 builder.limit(100).before("zzz").after("aaa").storeRawResponse(true).build();
 
         prepareWithErrorAndRun(
-                "/clans/{clanTag}/riverracelog".replace("{clanTag}", String.valueOf(clanTag)),
+                "/clans/{clanTag}/riverracelog".replace("{clanTag}", clanTag),
                 EMPTY,
                 request,
                 () -> unitUnderTest.getRiverRaceLog(request).get());
@@ -184,7 +178,7 @@ public class ClanApiImplIntegrationTest extends IntegrationTestBase {
         jcrapi2.api.intern.clans.members.ClanMembersRequest request =
                 builder.limit(100).before("zzz").after("aaa").storeRawResponse(true).build();
         prepare(
-                "/clans/{clanTag}/members".replace("{clanTag}", String.valueOf(clanTag)),
+                "/clans/{clanTag}/members".replace("{clanTag}", clanTag),
                 EMPTY,
                 "src/test/resources/clan-getMembers.json",
                 request);
@@ -203,7 +197,7 @@ public class ClanApiImplIntegrationTest extends IntegrationTestBase {
                 builder.limit(100).before("zzz").after("aaa").storeRawResponse(true).build();
 
         prepareWithErrorAndRun(
-                "/clans/{clanTag}/members".replace("{clanTag}", String.valueOf(clanTag)),
+                "/clans/{clanTag}/members".replace("{clanTag}", clanTag),
                 EMPTY,
                 request,
                 () -> unitUnderTest.getMembers(request).get());
@@ -220,7 +214,7 @@ public class ClanApiImplIntegrationTest extends IntegrationTestBase {
         jcrapi2.api.intern.clans.currentriverrace.CurrentRiverRaceRequest request =
                 builder.storeRawResponse(true).build();
         prepare(
-                "/clans/{clanTag}/currentriverrace".replace("{clanTag}", String.valueOf(clanTag)),
+                "/clans/{clanTag}/currentriverrace".replace("{clanTag}", clanTag),
                 EMPTY,
                 "src/test/resources/clan-getCurrentRiverRace.json",
                 request);
@@ -244,7 +238,7 @@ public class ClanApiImplIntegrationTest extends IntegrationTestBase {
                 builder.storeRawResponse(true).build();
 
         prepareWithErrorAndRun(
-                "/clans/{clanTag}/currentriverrace".replace("{clanTag}", String.valueOf(clanTag)),
+                "/clans/{clanTag}/currentriverrace".replace("{clanTag}", clanTag),
                 EMPTY,
                 request,
                 () -> unitUnderTest.getCurrentRiverRace(request).get());

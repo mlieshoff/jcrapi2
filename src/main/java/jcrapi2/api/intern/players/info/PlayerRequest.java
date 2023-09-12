@@ -42,10 +42,4 @@ public class PlayerRequest extends Request {
         map.put("playerTag", playerTag);
         return map;
     }
-
-    @Override
-    public Map<String, Object> getQueryParameters() {
-        Map<String, Object> map = super.getQueryParameters();
-        return map;
-    }
 }

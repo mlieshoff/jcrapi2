@@ -2,6 +2,13 @@
 
 ## [Unreleased]
 
+## [3.0.1] - 2023-09-23
+
+### Added
+
+- Qodana code quality support via actions
+- Badges for Nightlies and Qodana
+
 ## [3.0.0] - 2023-09-12
 
 ### Changed
@@ -88,7 +95,8 @@
 
 - Create a Release job (#152)
 
-[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v3.0.0...HEAD
+[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v3.0.1...HEAD
+[3.0.1]: https://github.com/mlieshoff/jcrapi2/compare/v3.0.0...3.0.1
 [3.0.0]: https://github.com/mlieshoff/jcrapi2/compare/v2.1.5...3.0.0
 [2.1.5]: https://github.com/mlieshoff/jcrapi2/compare/v2.1.4...v2.1.5
 [2.1.4]: https://github.com/mlieshoff/jcrapi2/compare/v2.1.3...v2.1.4

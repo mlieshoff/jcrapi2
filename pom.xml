@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>jcrapi2</artifactId>
     <packaging>jar</packaging>
-    <version>3.0.1</version>
+    <version>3.0.2</version>
     <groupId>jcrapi2</groupId>
     <url>https://maven.apache.org</url>
     <inceptionYear>2018</inceptionYear>
@@ -106,6 +106,26 @@
                         <goals>
                             <goal>report</goal>
                         </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>ReleaseVersion</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>jcrapi2.build.ReleaseVersionChecker</mainClass>
+                            <arguments>
+                                <argument>./VERSION.txt</argument>
+                                <argument>./pom.xml</argument>
+                            </arguments>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>

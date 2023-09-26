@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [3.0.2] - 2023-09-25
+
+### Added
+
+- Release version check on build time
+
 ## [3.0.1] - 2023-09-23
 
 ### Added
@@ -95,7 +101,7 @@
 
 - Create a Release job (#152)
 
-[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v3.0.1...HEAD
+[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v3.0.2...HEAD
 [3.0.1]: https://github.com/mlieshoff/jcrapi2/compare/v3.0.0...3.0.1
 [3.0.0]: https://github.com/mlieshoff/jcrapi2/compare/v2.1.5...3.0.0
 [2.1.5]: https://github.com/mlieshoff/jcrapi2/compare/v2.1.4...v2.1.5

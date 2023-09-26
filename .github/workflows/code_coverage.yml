@@ -29,22 +29,20 @@ jobs:
 
       - name: Validate Maven Wrapper
         run: mvn --version
-        working-directory: JVM/jacoco/maven
 
       - name: Run Tests
         run: mvn test
-        working-directory: JVM/jacoco/maven
 
       - name: Archive coverage data
         uses: actions/upload-artifact@v2
         with:
           name: maven-coverage-data-jacoco
-          path: JVM/jacoco/maven/.qodana/code-coverage
+          path: .qodana/code-coverage
 
       - name: Qodana Scan
         uses: JetBrains/qodana-action@main
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
         with:
-          args: "-i,JVM/jacoco/maven,--linter,jetbrains/qodana-jvm:2023.2-eap"
+          args: "-i,--linter,jetbrains/qodana-jvm:2023.2-eap"
           pr-mode: false

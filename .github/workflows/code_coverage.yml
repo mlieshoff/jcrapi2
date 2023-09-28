@@ -1,12 +1,8 @@
 name: Code Coverage Overall
 
 on:
-  workflow_dispatch:
-  pull_request:
-  push:
-    branches:
-      - master
-      - 'releases/*'
+  schedule:
+    - cron: "1 0 * * *"
 
 jobs:
   build:
@@ -17,20 +13,16 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
-          fetch-depth: 0
+          ref: master
 
-      - name: Set up JDK 17
-        uses: actions/setup-java@v2
+      - name: Set up JDK
+        uses: actions/setup-java@v3
         with:
-          java-version: '17'
-          distribution: 'adopt'
-          cache: 'maven'
+          distribution: zulu
+          java-version: 17
+          cache: maven
 
-      - name: Validate Maven Wrapper
-        run: mvn --version
-
-      - name: Run Tests
+      - name: Start E2E tests
         run: mvn test
 
       - name: Archive coverage data
@@ -44,5 +36,5 @@ jobs:
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
         with:
-          args: "-i,.,--linter,jetbrains/qodana-jvm:2023.2-eap"
+          args: "--linter,jetbrains/qodana-jvm:2023.2-eap"
           pr-mode: false

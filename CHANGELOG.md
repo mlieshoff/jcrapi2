@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [3.0.3] - 2023-09-26
+
+### Added
+
+- Test Coverage via Qodana
+
 ## [3.0.2] - 2023-09-25
 
 ### Added
@@ -101,7 +107,7 @@
 
 - Create a Release job (#152)
 
-[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v3.0.2...HEAD
+[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v3.0.3...HEAD
 [3.0.1]: https://github.com/mlieshoff/jcrapi2/compare/v3.0.0...3.0.1
 [3.0.0]: https://github.com/mlieshoff/jcrapi2/compare/v2.1.5...3.0.0
 [2.1.5]: https://github.com/mlieshoff/jcrapi2/compare/v2.1.4...v2.1.5

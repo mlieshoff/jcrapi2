@@ -31,7 +31,7 @@
         </license>
     </licenses>
     <properties>
-        <version.gson>2.9.0</version.gson>
+        <version.gson>2.10.1</version.gson>
         <version.io>2.11.0</version.io>
         <version.jacoco>0.8.10</version.jacoco>
         <version.java>17</version.java>

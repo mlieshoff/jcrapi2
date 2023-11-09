@@ -37,7 +37,7 @@
         <version.java>17</version.java>
         <version.json>1.1.4</version.json>
         <version.junit>5.8.2</version.junit>
-        <version.lombok>1.18.24</version.lombok>
+        <version.lombok>1.18.30</version.lombok>
         <version.maven.source>3.0.1</version.maven.source>
         <version.maven.surfire>2.22.2</version.maven.surfire>
         <version.maven.surfire.junit>1.0.3</version.maven.surfire.junit>

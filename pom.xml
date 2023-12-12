@@ -94,13 +94,6 @@
                         <goals>
                             <goal>report</goal>
                         </goals>
-                        <configuration>
-                            <outputDirectory>${project.basedir}/.qodana/code-coverage/</outputDirectory>
-                            <formats>XML</formats>
-                            <includes>
-                                <include>jcrapi2/**</include>
-                            </includes>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>

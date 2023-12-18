@@ -16,10 +16,11 @@
  */
 package jcrapi2.api.intern.tournaments;
 
-import jcrapi2.api.ApiContext;
-import jcrapi2.api.BaseApi;
 import jcrapi2.api.intern.tournaments.info.TournamentRequest;
 import jcrapi2.api.intern.tournaments.info.TournamentResponse;
+
+import supercell.api.wrapper.essentials.api.ApiContext;
+import supercell.api.wrapper.essentials.api.BaseApi;
 
 import java.util.concurrent.Future;
 

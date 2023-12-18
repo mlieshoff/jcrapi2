@@ -16,7 +16,7 @@
  */
 package jcrapi2.api.intern.globaltournaments;
 
-import jcrapi2.api.Api;
+import supercell.api.wrapper.essentials.api.Api;
 
 import java.util.concurrent.Future;
 

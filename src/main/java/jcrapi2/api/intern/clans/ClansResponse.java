@@ -16,6 +16,6 @@
  */
 package jcrapi2.api.intern.clans;
 
-import jcrapi2.common.PaginationResponse;
+import supercell.api.wrapper.essentials.common.PaginationResponse;
 
 public class ClansResponse extends PaginationResponse<Clan> {}

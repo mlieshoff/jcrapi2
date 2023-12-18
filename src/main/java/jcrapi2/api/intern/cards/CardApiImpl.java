@@ -16,8 +16,8 @@
  */
 package jcrapi2.api.intern.cards;
 
-import jcrapi2.api.ApiContext;
-import jcrapi2.api.BaseApi;
+import supercell.api.wrapper.essentials.api.ApiContext;
+import supercell.api.wrapper.essentials.api.BaseApi;
 
 import java.util.concurrent.Future;
 

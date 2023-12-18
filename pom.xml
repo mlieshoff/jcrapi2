@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>jcrapi2</artifactId>
     <packaging>jar</packaging>
-    <version>3.0.5</version>
+    <version>3.0.6</version>
     <groupId>jcrapi2</groupId>
     <url>https://maven.apache.org</url>
     <inceptionYear>2018</inceptionYear>
@@ -48,6 +48,7 @@
         <version.maven.packagecloud>0.0.4</version.maven.packagecloud>
         <version.mockito>5.8.0</version.mockito>
         <version.slf4j>2.0.9</version.slf4j>
+        <version.supercell.api.wrapper.essentials>1.0.0</version.supercell.api.wrapper.essentials>
         <version.wiremock>3.0.1</version.wiremock>
     </properties>
     <build>
@@ -135,7 +136,7 @@
                             <goal>java</goal>
                         </goals>
                         <configuration>
-                            <mainClass>jcrapi2.build.ReleaseVersionChecker</mainClass>
+                            <mainClass>supercell.api.wrapper.essentials.build.ReleaseVersionChecker</mainClass>
                             <arguments>
                                 <argument>./VERSION.txt</argument>
                                 <argument>./pom.xml</argument>
@@ -200,6 +201,11 @@
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>${version.gson}</version>
+        </dependency>
+        <dependency>
+            <groupId>supercell-api-wrapper-essentials</groupId>
+            <artifactId>supercell-api-wrapper-essentials</artifactId>
+            <version>1.0.1</version>
         </dependency>
 
         <!-- others -->
@@ -282,6 +288,16 @@
         <repository>
             <id>mlieshoff-jcrapi2</id>
             <url>https://packagecloud.io/mlieshoff/jcrapi2/maven2</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>packagecloud-supercell-api-wrapper-essentials</id>
+            <url>https://packagecloud.io/mlieshoff/supercell-api-wrapper-essentials/maven2</url>
             <releases>
                 <enabled>true</enabled>
             </releases>

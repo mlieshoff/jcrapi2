@@ -16,7 +16,6 @@
  */
 package jcrapi2.api.intern;
 
-import jcrapi2.api.Api;
 import jcrapi2.api.intern.cards.CardApi;
 import jcrapi2.api.intern.challenges.ChallengeApi;
 import jcrapi2.api.intern.clans.ClanApi;
@@ -26,6 +25,8 @@ import jcrapi2.api.intern.players.PlayerApi;
 import jcrapi2.api.intern.tournaments.TournamentApi;
 
 import lombok.Getter;
+
+import supercell.api.wrapper.essentials.api.Api;
 
 import java.util.Map;
 

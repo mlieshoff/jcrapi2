@@ -18,11 +18,11 @@ package jcrapi2.api.intern.tournaments.info;
 
 import com.google.gson.annotations.SerializedName;
 
-import jcrapi2.common.IResponse;
-import jcrapi2.common.RawResponse;
-
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+
+import supercell.api.wrapper.essentials.common.IResponse;
+import supercell.api.wrapper.essentials.common.RawResponse;
 
 @Data
 @EqualsAndHashCode(callSuper = true)

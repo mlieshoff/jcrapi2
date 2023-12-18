@@ -2,6 +2,20 @@
 
 ## [Unreleased]
 
+## [4.0.0] - 2023-12-18
+
+### Added
+
+- new dependency supercell-api-wrapper-essentials
+
+### Changed
+
+- classes in package jcrapi2.api.* moved to supercell.api.wrapper.essentials.api.*
+- classes in package jcrapi2.connector moved to supercell.api.wrapper.essentials.connector
+- classes in package jcrapi2.api.connector moved to supercell.api.wrapper.essentials.api.connector
+- classes in package jcrapi2.build moved to supercell.api.wrapper.essentials.build
+- classes in package jcrapi2.common moved to supercell.api.wrapper.essentials.common
+
 ## [3.0.5] - 2023-12-18
 
 ### Added
@@ -132,7 +146,8 @@
 
 - Create a Release job (#152)
 
-[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v3.0.5...HEAD
+[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.0...HEAD
+[4.0.0]: https://github.com/mlieshoff/jcrapi2/compare/v3.0.5...4.0.0
 [3.0.5]: https://github.com/mlieshoff/jcrapi2/compare/v3.0.4...3.0.5
 [3.0.4]: https://github.com/mlieshoff/jcrapi2/compare/v3.0.3...3.0.4
 [3.0.3]: https://github.com/mlieshoff/jcrapi2/compare/v3.0.2...3.0.3

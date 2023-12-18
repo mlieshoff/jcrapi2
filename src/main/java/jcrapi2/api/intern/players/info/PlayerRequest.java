@@ -16,9 +16,9 @@
  */
 package jcrapi2.api.intern.players.info;
 
-import jcrapi2.common.Request;
-
 import lombok.Builder;
+
+import supercell.api.wrapper.essentials.common.Request;
 
 import java.util.Map;
 

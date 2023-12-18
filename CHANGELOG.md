@@ -16,6 +16,11 @@
 - classes in package jcrapi2.build moved to supercell.api.wrapper.essentials.build
 - classes in package jcrapi2.common moved to supercell.api.wrapper.essentials.common
 
+### Removed
+
+- class jcrapi2.api.intern.locations.seasons.global.v2.TopPlayerLeagueSeasonsRequest
+- class jcrapi2.api.intern.locations.seasons.global.v2.TopPlayerLeagueSeasonsResponse
+
 ## [3.0.5] - 2023-12-18
 
 ### Added

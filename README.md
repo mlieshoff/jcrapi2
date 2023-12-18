@@ -1,7 +1,7 @@
 [![](https://img.shields.io/badge/java-packagecloud.io-844fec.svg)](https://packagecloud.io/)
 [![Nightlies](https://github.com/mlieshoff/jcrapi2/actions/workflows/nightlies.yml/badge.svg)](https://github.com/mlieshoff/jcrapi2/actions/workflows/nightlies.yml)
 
-# jcrapi2 3.0.4
+# jcrapi2 3.0.5
 A Java Wrapper For Official Supercell Clash Royal Api
 
 ## Why we don't use the Swagger scheme?
@@ -424,7 +424,7 @@ All requests are returning *java.concurrent.Future*. The execution will be async
 
 to Gradle:
 ```groovy
-    implementation group: 'jcrapi2', name: 'jcrapi2', version: '3.0.4'
+    implementation group: 'jcrapi2', name: 'jcrapi2', version: '3.0.5'
 ```
 
 to Maven:
@@ -432,7 +432,7 @@ to Maven:
     <dependency>
         <groupId>jcrapi2</groupId>
         <artifactId>jcrapi2</artifactId>
-        <version>3.0.4</version>
+        <version>3.0.5</version>
     </dependency>
 ```
 

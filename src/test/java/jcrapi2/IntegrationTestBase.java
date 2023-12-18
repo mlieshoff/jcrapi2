@@ -42,14 +42,14 @@ import com.github.tomakehurst.wiremock.core.WireMockConfiguration;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import jcrapi2.common.IResponse;
-import jcrapi2.common.PaginationRequest;
-import jcrapi2.common.Request;
-import jcrapi2.connector.StandardConnector;
-
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+
+import supercell.api.wrapper.essentials.common.IResponse;
+import supercell.api.wrapper.essentials.common.PaginationRequest;
+import supercell.api.wrapper.essentials.common.Request;
+import supercell.api.wrapper.essentials.connector.StandardConnector;
 
 import java.io.File;
 import java.io.IOException;
@@ -145,7 +145,9 @@ public abstract class IntegrationTestBase {
             testRunner.execute();
             fail();
         } catch (Exception e) {
-            assertEquals("jcrapi2.connector.ConnectorException: 400", e.getMessage());
+            assertEquals(
+                    "supercell.api.wrapper.essentials.connector.ConnectorException: 400",
+                    e.getMessage());
         }
     }
 

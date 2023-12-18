@@ -16,9 +16,9 @@
  */
 package jcrapi2.api.intern.challenges;
 
-import jcrapi2.common.Request;
-
 import lombok.Builder;
+
+import supercell.api.wrapper.essentials.common.Request;
 
 public class ChallengesRequest extends Request {
 

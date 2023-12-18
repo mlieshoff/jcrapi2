@@ -16,6 +16,6 @@
  */
 package jcrapi2.api.intern.locations.seasons.global;
 
-import jcrapi2.common.PaginationResponse;
+import supercell.api.wrapper.essentials.common.PaginationResponse;
 
 public class TopPlayerLeagueSeasonsV2Response extends PaginationResponse<TopPlayerLeagueSeasonV2> {}

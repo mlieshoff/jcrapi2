@@ -16,9 +16,9 @@
  */
 package jcrapi2.api.intern.locations.seasons.global.rankings.pathoflegend;
 
-import jcrapi2.common.PaginationRequest;
-
 import lombok.Builder;
+
+import supercell.api.wrapper.essentials.common.PaginationRequest;
 
 import java.util.Map;
 

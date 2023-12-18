@@ -16,14 +16,15 @@
  */
 package jcrapi2;
 
-import static jcrapi2.common.Utils.require;
+import static supercell.api.wrapper.essentials.common.Utils.require;
 
 import static java.util.stream.Collectors.toList;
 
-import jcrapi2.api.Api;
-import jcrapi2.api.ApiContext;
 import jcrapi2.api.intern.DefaultApiClasses;
-import jcrapi2.connector.Connector;
+
+import supercell.api.wrapper.essentials.api.Api;
+import supercell.api.wrapper.essentials.api.ApiContext;
+import supercell.api.wrapper.essentials.connector.Connector;
 
 import java.lang.reflect.Constructor;
 import java.util.HashMap;

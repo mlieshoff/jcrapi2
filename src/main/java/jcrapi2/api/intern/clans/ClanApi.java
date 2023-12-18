@@ -16,7 +16,6 @@
  */
 package jcrapi2.api.intern.clans;
 
-import jcrapi2.api.Api;
 import jcrapi2.api.intern.clans.currentriverrace.CurrentRiverRaceRequest;
 import jcrapi2.api.intern.clans.currentriverrace.CurrentRiverRaceResponse;
 import jcrapi2.api.intern.clans.info.ClanRequest;
@@ -25,6 +24,8 @@ import jcrapi2.api.intern.clans.members.ClanMembersRequest;
 import jcrapi2.api.intern.clans.members.ClanMembersResponse;
 import jcrapi2.api.intern.clans.riverracelog.RiverRaceLogRequest;
 import jcrapi2.api.intern.clans.riverracelog.RiverRaceLogResponse;
+
+import supercell.api.wrapper.essentials.api.Api;
 
 import java.util.concurrent.Future;
 

@@ -16,9 +16,9 @@
  */
 package jcrapi2.api.intern.globaltournaments;
 
-import jcrapi2.common.PaginationRequest;
-
 import lombok.Builder;
+
+import supercell.api.wrapper.essentials.common.PaginationRequest;
 
 public class GlobalTournamentsRequest extends PaginationRequest {
 

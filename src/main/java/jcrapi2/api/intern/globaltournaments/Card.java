@@ -31,4 +31,7 @@ public class Card {
 
     @SerializedName("maxLevel")
     private int maxLevel;
+
+    @SerializedName("rarity")
+    private String rarity;
 }

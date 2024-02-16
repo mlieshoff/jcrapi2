@@ -20,47 +20,24 @@ import com.google.gson.annotations.SerializedName;
 
 import lombok.Data;
 
-import java.util.List;
-
 @Data
-public class Team {
-
-    @SerializedName("tag")
-    private String tag;
+public class SupportCard {
 
     @SerializedName("name")
     private String name;
 
-    @SerializedName("startingTrophies")
-    private int startingTrophies;
+    @SerializedName("id")
+    private long id;
 
-    @SerializedName("crowns")
-    private int crowns;
+    @SerializedName("level")
+    private int level;
 
-    @SerializedName("trophyChange")
-    private int trophyChange;
+    @SerializedName("maxLevel")
+    private int maxLevel;
 
-    @SerializedName("kingTowerHitPoints")
-    private int kingTowerHitPoints;
+    @SerializedName("rarity")
+    private String rarity;
 
-    @SerializedName("princessTowersHitPoints")
-    private List<Integer> princessTowersHitPoints;
-
-    @SerializedName("clan")
-    private Clan clan;
-
-    @SerializedName("cards")
-    private List<Card> cards;
-
-    @SerializedName("elixirLeaked")
-    private double elixirLeaked;
-
-    @SerializedName("rounds")
-    private List<Round> rounds;
-
-    @SerializedName("globalRank")
-    private Integer globalRank;
-
-    @SerializedName("supportCards")
-    private List<SupportCard> supportCards;
+    @SerializedName("iconUrls")
+    private IconUrls iconUrls;
 }

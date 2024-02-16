@@ -60,4 +60,7 @@ public class Opponent {
 
     @SerializedName("globalRank")
     private Integer globalRank;
+
+    @SerializedName("supportCards")
+    private List<SupportCard> supportCards;
 }

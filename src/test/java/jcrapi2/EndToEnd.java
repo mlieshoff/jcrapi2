@@ -282,6 +282,7 @@ class EndToEnd {
                         .replace(",\"remainingTowers\":0", "")
                         .replace(",\"starLevel\":0", "")
                         .replace(",\"elixirLeaked\":0.0,", ",")
+                        .replace(",\"elixirLeaked\":0.0}", "}")
                         .replace(",\"challengeId\":0", "")
                         .replace(",\"challengeWinCountBefore\":0", "")
                         .replace(",\"globalRank\":null", "");
@@ -296,6 +297,7 @@ class EndToEnd {
                         .replace(",\"kingTowerHitPoints\":0", "")
                         .replace(",\"princessTowersHitPoints\":null", "")
                         .replace(",\"elixirLeaked\":0.0,", ",")
+                        .replace(",\"elixirLeaked\":0.0}", "}")
                         .replace("\"name\":null,", "")
                         .replace(",\"challengeWinCountBefore\":0", "")
                         .replace(",\"maxEvolutionLevel\":null", "")
@@ -490,6 +492,7 @@ class EndToEnd {
                 response.getRawResponse()
                         .getRaw()
                         .replace(",\"type\":null", "")
+                        .replace(",\"rarity\":null", "")
                         .replace("\"name\":null,", "");
 
         assertDiff(expected, actual);

@@ -126,4 +126,10 @@ public class Player {
 
     @SerializedName("bestPathOfLegendSeasonResult")
     private PathOfLegendSeasonResult bestPathOfLegendSeasonResult;
+
+    @SerializedName("supportCards")
+    private List<SupportCard> supportCards;
+
+    @SerializedName("currentDeckSupportCards")
+    private List<CurrentDeckSupportCard> currentDeckSupportCards;
 }

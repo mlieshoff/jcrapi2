@@ -14,53 +14,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jcrapi2.api.intern.players.battlelog;
+package jcrapi2.api.intern.cards;
 
 import com.google.gson.annotations.SerializedName;
 
 import lombok.Data;
 
-import java.util.List;
-
 @Data
-public class Team {
-
-    @SerializedName("tag")
-    private String tag;
+public class SupportItem {
 
     @SerializedName("name")
     private String name;
 
-    @SerializedName("startingTrophies")
-    private int startingTrophies;
+    @SerializedName("id")
+    private long id;
 
-    @SerializedName("crowns")
-    private int crowns;
+    @SerializedName("maxLevel")
+    private int maxLevel;
 
-    @SerializedName("trophyChange")
-    private int trophyChange;
+    @SerializedName("iconUrls")
+    private IconUrls iconUrls;
 
-    @SerializedName("kingTowerHitPoints")
-    private int kingTowerHitPoints;
-
-    @SerializedName("princessTowersHitPoints")
-    private List<Integer> princessTowersHitPoints;
-
-    @SerializedName("clan")
-    private Clan clan;
-
-    @SerializedName("cards")
-    private List<Card> cards;
-
-    @SerializedName("elixirLeaked")
-    private double elixirLeaked;
-
-    @SerializedName("rounds")
-    private List<Round> rounds;
-
-    @SerializedName("globalRank")
-    private Integer globalRank;
-
-    @SerializedName("supportCards")
-    private List<SupportCard> supportCards;
+    @SerializedName("rarity")
+    private String rarity;
 }

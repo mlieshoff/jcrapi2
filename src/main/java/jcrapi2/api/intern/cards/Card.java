@@ -37,4 +37,10 @@ public class Card {
 
     @SerializedName("maxEvolutionLevel")
     private Integer maxEvolutionLevel;
+
+    @SerializedName("rarity")
+    private String rarity;
+
+    @SerializedName("elixirCost")
+    private Integer elixirCost;
 }

@@ -2,7 +2,27 @@
 
 ## [Unreleased]
 
-## [4.0.1] - 2024-05-15
+## [4.0.2] - 2024-02-16
+
+- Apply data model changes on different endpoints (#185)
+    * (new field) players.info.Player.supportCards
+    * (new field) players.info.Player.currentDeckSupportCards
+    * (new field) players.info.Card.rarity
+    * (new field) players.info.Card.elixirCost
+    * (new field) players.info.CurrentDeck.rarity
+    * (new field) players.info.CurrentDeck.elixirCost
+    * (new field) players.info.CurrentFavouriteCard.rarity
+    * (new field) players.info.CurrentFavouriteCard.elixirCost
+    * (new field) players.battlelog.Team.supportCards
+    * (new field) players.battlelog.Card.rarity
+    * (new field) players.battlelog.Card.elixirCost
+    * (new field) players.battlelog.Opponent.supportCards
+    * (new field) cards.Cards.supportItems
+    * (new field) cards.Card.rarity
+    * (new field) cards.Card.elixirCost
+    * (new field) globaltournaments.Card.rarity
+
+## [4.0.1] - 2024-02-15
 
 ### Fixed
 
@@ -157,7 +177,8 @@
 
 - Create a Release job (#152)
 
-[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.1...HEAD
+[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.2...HEAD
+[4.0.2]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.1...4.0.2
 [4.0.1]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.0...4.0.1
 [4.0.0]: https://github.com/mlieshoff/jcrapi2/compare/v3.0.5...4.0.0
 [3.0.5]: https://github.com/mlieshoff/jcrapi2/compare/v3.0.4...3.0.5

@@ -34,4 +34,10 @@ public class CurrentFavouriteCard {
 
     @SerializedName("iconUrls")
     private IconUrls iconUrls;
+
+    @SerializedName("rarity")
+    private String rarity;
+
+    @SerializedName("elixirCost")
+    private Integer elixirCost;
 }

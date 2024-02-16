@@ -27,4 +27,7 @@ public class Cards {
 
     @SerializedName("items")
     private List<Card> items;
+
+    @SerializedName("supportItems")
+    private List<SupportItem> supportItems;
 }

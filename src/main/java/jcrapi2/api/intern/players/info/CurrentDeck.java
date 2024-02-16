@@ -49,4 +49,10 @@ public class CurrentDeck {
 
     @SerializedName("evolutionLevel")
     private int evolutionLevel;
+
+    @SerializedName("rarity")
+    private String rarity;
+
+    @SerializedName("elixirCost")
+    private Integer elixirCost;
 }

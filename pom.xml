@@ -37,7 +37,7 @@
         <version.java>17</version.java>
         <version.json>1.1.4</version.json>
         <version.junit>5.10.1</version.junit>
-        <version.lombok>1.18.30</version.lombok>
+        <version.lombok>1.18.32</version.lombok>
         <version.maven.compiler>3.11.0</version.maven.compiler>
         <version.maven.dependency>3.6.1</version.maven.dependency>
         <version.maven.enforcer>3.4.1</version.maven.enforcer>

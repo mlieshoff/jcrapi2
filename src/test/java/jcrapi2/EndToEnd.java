@@ -86,10 +86,10 @@ import jcrapi2.api.intern.tournaments.TournamentsResponse;
 import jcrapi2.api.intern.tournaments.info.TournamentRequest;
 import jcrapi2.api.intern.tournaments.info.TournamentResponse;
 
+import lombok.extern.slf4j.Slf4j;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import supercell.api.wrapper.essentials.connector.FilesystemCachedConnector;
 
@@ -99,6 +99,7 @@ import javax.json.Json;
 import javax.json.JsonPatch;
 import javax.json.JsonValue;
 
+@Slf4j
 class EndToEnd {
 
     private static final Gson GSON = new GsonBuilder().disableHtmlEscaping().create();
@@ -112,7 +113,6 @@ class EndToEnd {
     private static final String SEASON_ID = "2022-04";
 
     private static final long LOCATION_ID = 57000256L;
-    private static final Logger log = LoggerFactory.getLogger(EndToEnd.class);
 
     private ClanApi clanApi;
 

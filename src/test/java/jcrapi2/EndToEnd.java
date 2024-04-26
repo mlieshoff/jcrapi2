@@ -86,8 +86,6 @@ import jcrapi2.api.intern.tournaments.TournamentsResponse;
 import jcrapi2.api.intern.tournaments.info.TournamentRequest;
 import jcrapi2.api.intern.tournaments.info.TournamentResponse;
 
-import lombok.extern.slf4j.Slf4j;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -99,7 +97,6 @@ import javax.json.Json;
 import javax.json.JsonPatch;
 import javax.json.JsonValue;
 
-@Slf4j
 class EndToEnd {
 
     private static final Gson GSON = new GsonBuilder().disableHtmlEscaping().create();

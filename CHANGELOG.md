@@ -2,7 +2,20 @@
 
 ## [Unreleased]
 
+## [4.0.3] - 2024-04-26
+
+### Added
+
+- Apply data model changes on different endpoints (#185)
+    * (new field) players.info.CurrentFavouriteCard.maxEvolutionLevel
+
+### Changed
+
+- Upgrade to newer versions for several libraries
+
 ## [4.0.2] - 2024-02-16
+
+### Added
 
 - Apply data model changes on different endpoints (#185)
     * (new field) players.info.Player.supportCards
@@ -177,7 +190,8 @@
 
 - Create a Release job (#152)
 
-[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.2...HEAD
+[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.3...HEAD
+[4.0.3]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.2...4.0.3
 [4.0.2]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.1...4.0.2
 [4.0.1]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.0...4.0.1
 [4.0.0]: https://github.com/mlieshoff/jcrapi2/compare/v3.0.5...4.0.0

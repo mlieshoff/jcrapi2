@@ -88,6 +88,8 @@ import jcrapi2.api.intern.tournaments.info.TournamentResponse;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import supercell.api.wrapper.essentials.connector.FilesystemCachedConnector;
 
@@ -110,6 +112,7 @@ class EndToEnd {
     private static final String SEASON_ID = "2022-04";
 
     private static final long LOCATION_ID = 57000256L;
+    private static final Logger log = LoggerFactory.getLogger(EndToEnd.class);
 
     private ClanApi clanApi;
 

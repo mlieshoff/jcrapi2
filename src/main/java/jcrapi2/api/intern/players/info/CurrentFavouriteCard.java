@@ -33,7 +33,7 @@ public class CurrentFavouriteCard {
     private int maxLevel;
 
     @SerializedName("maxEvolutionLevel")
-    private int maxEvolutionLevel;
+    private Integer maxEvolutionLevel;
 
     @SerializedName("iconUrls")
     private IconUrls iconUrls;

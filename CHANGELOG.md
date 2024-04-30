@@ -7,7 +7,7 @@
 ### Changed
 
 - test scope: isNotBlank() and EMPTY not depending on wiremock anymore
-- test scope: clean uo integration test base & tests
+- test scope: clean up integration test base & tests
 - Source code is now ready for Java 21 (#173)
 - Binary code is now Java 21 compliant (#173)
 - JaCoCo from 0.8.11 to 0.8.12

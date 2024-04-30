@@ -25,15 +25,14 @@ import static com.github.tomakehurst.wiremock.client.WireMock.urlEqualTo;
 import static com.github.tomakehurst.wiremock.common.ContentTypes.AUTHORIZATION;
 
 import static org.apache.commons.io.FileUtils.readLines;
+import static org.apache.hc.core5.http.HttpStatus.SC_BAD_REQUEST;
+import static org.apache.hc.core5.http.HttpStatus.SC_OK;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.fail;
 
-import static wiremock.org.apache.commons.lang3.StringUtils.EMPTY;
-import static wiremock.org.apache.commons.lang3.StringUtils.isNotBlank;
-import static wiremock.org.apache.hc.core5.http.HttpStatus.SC_BAD_REQUEST;
-import static wiremock.org.apache.hc.core5.http.HttpStatus.SC_OK;
+import static supercell.api.wrapper.essentials.common.Utils.isNotBlank;
 
 import static java.util.Collections.emptyMap;
 
@@ -41,6 +40,8 @@ import com.github.tomakehurst.wiremock.WireMockServer;
 import com.github.tomakehurst.wiremock.core.WireMockConfiguration;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
+import lombok.Getter;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -62,11 +63,13 @@ public abstract class IntegrationTestBase {
     private static final Gson GSON =
             new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
 
-    private static final ThreadLocal<String> expected = new ThreadLocal<>();
+    public static final String EMPTY = "";
 
     private static WireMockServer wireMockServer;
 
-    JCrApi jCrApi;
+    @Getter private String expected;
+
+    private JCrApi jCrApi;
 
     @BeforeAll
     public static void beforeAll() {
@@ -84,11 +87,10 @@ public abstract class IntegrationTestBase {
         return GSON.fromJson(s, clazz);
     }
 
-    protected static String body(String filename) throws IOException {
+    protected String body(String filename) throws IOException {
         List<String> lines = readLines(new File(filename), StandardCharsets.UTF_8);
-        String s = lines.stream().map(String::trim).collect(Collectors.joining());
-        expected.set(s);
-        return s;
+        expected = lines.stream().map(String::trim).collect(Collectors.joining());
+        return expected;
     }
 
     @BeforeEach
@@ -101,10 +103,6 @@ public abstract class IntegrationTestBase {
     public void afterEach() {
         wireMockServer.resetAll();
         jCrApi = createJCrApi();
-    }
-
-    protected String getExpected() {
-        return expected.get();
     }
 
     protected void prepare(String url, String queryPart, String filename, Request request)
@@ -128,13 +126,14 @@ public abstract class IntegrationTestBase {
         return createdUrl;
     }
 
-    protected void run(IResponse expected, ResultTestRunner<? extends IResponse> resultTestRunner)
+    protected void run(
+            IResponse expectedResponse, ResultTestRunner<? extends IResponse> resultTestRunner)
             throws Exception {
         IResponse actual = resultTestRunner.execute();
-        assertEquals(expected, actual);
+        assertEquals(expectedResponse, actual);
         assertNotNull(actual.getRawResponse());
         assertNotEquals(emptyMap(), actual.getRawResponse().getResponseHeaders());
-        assertEquals(getExpected(), actual.getRawResponse().getRaw());
+        assertEquals(expected, actual.getRawResponse().getRaw());
         assertNotEquals(EMPTY, actual.toString());
     }
 

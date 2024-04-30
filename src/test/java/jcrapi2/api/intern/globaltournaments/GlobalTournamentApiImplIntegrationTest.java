@@ -16,8 +16,6 @@
  */
 package jcrapi2.api.intern.globaltournaments;
 
-import static wiremock.org.apache.commons.lang3.StringUtils.EMPTY;
-
 import jcrapi2.IntegrationTestBase;
 
 import org.junit.jupiter.api.BeforeEach;

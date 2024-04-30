@@ -2,6 +2,26 @@
 
 ## [Unreleased]
 
+## [4.0.5] - 2024-04-30
+
+### Changed
+
+- test scope: isNotBlank() and EMPTY not depending on wiremock anymore
+- test scope: clean up integration test base & tests
+- Source code is now ready for Java 21 (#173)
+- Binary code is now Java 21 compliant (#173)
+- JaCoCo from 0.8.11 to 0.8.12
+- Maven Compiler Plugin from 3.11.0 to 3.13.0
+- Maven Exec Plugin from 3.1.1 to 3.2.0
+- Maven Source Plugin from 3.3.0 to 3.3.1
+- Maven Surefire Plugin from 3.2.3 to 3.2.5
+- WireMock from 3.0.1 to 3.5.4
+- Google Formatter from 1.17.0 to 1.22.0
+
+### Removed
+
+- formatter file intellij_code_formatter.xml
+
 ## [4.0.4] - 2024-04-30
 
 ### Fixed
@@ -23,6 +43,7 @@
 - Lombok from 1.18.30 to 1.18.32
 - Mockito from 5.8.0 to 5.11.0
 - SLF4j from 2.0.9 to 2.0.13
+- Supercell API Wrapper Essentials from 1.0.0 to 1.0.1
 
 ## [4.0.2] - 2024-02-16
 
@@ -201,7 +222,8 @@
 
 - Create a Release job (#152)
 
-[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.4...HEAD
+[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.5...HEAD
+[4.0.5]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.4...4.0.5
 [4.0.4]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.3...4.0.4
 [4.0.3]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.2...4.0.3
 [4.0.2]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.1...4.0.2

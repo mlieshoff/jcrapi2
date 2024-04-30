@@ -16,10 +16,10 @@
  */
 package jcrapi2;
 
+import static jcrapi2.IntegrationTestBase.EMPTY;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
-
-import static wiremock.org.apache.commons.lang3.StringUtils.EMPTY;
 
 import static java.lang.System.getProperty;
 import static java.lang.System.getenv;

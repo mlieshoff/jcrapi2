@@ -7,7 +7,7 @@ echo "*********************************"
 
 java --version
 
-JAR_FILE=libs/google-java-format-1.17.0-all-deps.jar
+JAR_FILE=libs/google-java-format-1.22.0-all-deps.jar
 
 echo "get staged files..."
 filesToFormat="$(git --no-pager diff --name-status --no-color --staged | awk '$1 != "D" && $2 ~ /\.kts|\.java|\.kt/ { print $NF}')"

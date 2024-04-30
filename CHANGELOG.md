@@ -16,6 +16,7 @@
 - Maven Source Plugin from 3.3.0 to 3.3.1
 - Maven Surefire Plugin from 3.2.3 to 3.2.5
 - WireMock from 3.0.1 to 3.5.4
+- Google Formatter from 1.17.0 to 1.22.0
 
 ### Removed
 

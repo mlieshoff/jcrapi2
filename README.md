@@ -510,4 +510,4 @@ mvn versions:display-plugin-updates -U
 ```
 ## Contributing
 
-1. Set up the formatting hook, via copying the files under ./jcrapi2/hooks to ./jcrapi2/.git/hooks
+1. Feel free to open Pull Requests with your ideas :)

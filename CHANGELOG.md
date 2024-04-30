@@ -2,6 +2,13 @@
 
 ## [Unreleased]
 
+## [4.0.4] - 2024-04-30
+
+### Fixed
+
+- Correct datatype for CurrentFavouriteCard.maxEvolutionLevel (#190)
+    * (changed field) players.info.CurrentFavouriteCard.maxEvolutionLevel to Integer
+
 ## [4.0.3] - 2024-04-26
 
 ### Added
@@ -11,7 +18,11 @@
 
 ### Changed
 
-- Upgrade to newer versions for several libraries
+- Apache Commons IO from 2.15.1 to 2.16.1
+- JUnit from 5.10.10 to 5.10.2
+- Lombok from 1.18.30 to 1.18.32
+- Mockito from 5.8.0 to 5.11.0
+- SLF4j from 2.0.9 to 2.0.13
 
 ## [4.0.2] - 2024-02-16
 
@@ -190,7 +201,8 @@
 
 - Create a Release job (#152)
 
-[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.3...HEAD
+[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.4...HEAD
+[4.0.4]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.3...4.0.4
 [4.0.3]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.2...4.0.3
 [4.0.2]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.1...4.0.2
 [4.0.1]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.0...4.0.1

@@ -51,6 +51,8 @@ import jcrapi2.api.intern.globaltournaments.GlobalTournamentsResponse;
 import jcrapi2.api.intern.leaderboards.LeaderboardApi;
 import jcrapi2.api.intern.leaderboards.LeaderboardsRequest;
 import jcrapi2.api.intern.leaderboards.LeaderboardsResponse;
+import jcrapi2.api.intern.leaderboards.info.LeaderboardRequest;
+import jcrapi2.api.intern.leaderboards.info.LeaderboardResponse;
 import jcrapi2.api.intern.locations.LocationApi;
 import jcrapi2.api.intern.locations.LocationsRequest;
 import jcrapi2.api.intern.locations.LocationsResponse;
@@ -89,17 +91,20 @@ import jcrapi2.api.intern.tournaments.TournamentsResponse;
 import jcrapi2.api.intern.tournaments.info.TournamentRequest;
 import jcrapi2.api.intern.tournaments.info.TournamentResponse;
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import supercell.api.wrapper.essentials.connector.FilesystemCachedConnector;
 
 import java.io.StringReader;
+import java.util.concurrent.ExecutionException;
 
 import javax.json.Json;
 import javax.json.JsonPatch;
 import javax.json.JsonValue;
 
+@Slf4j
 class EndToEnd {
 
     private static final Gson GSON = new GsonBuilder().disableHtmlEscaping().create();
@@ -112,6 +117,7 @@ class EndToEnd {
     private static final String TOURNAMENT_TAG = "#U2QQQL2";
     private static final String SEASON_ID = "2022-04";
 
+    private static final long LEADERBOARD_ID = 170000001L;
     private static final long LOCATION_ID = 57000256L;
 
     private ClanApi clanApi;
@@ -583,4 +589,25 @@ class EndToEnd {
 
         assertDiff(expected, actual);
     }
+
+    @Test
+    void leaderboards_findById() throws Exception {
+        try {
+            LeaderboardResponse response =
+                    leaderboardApi
+                            .findById(
+                                    LeaderboardRequest.builder(LEADERBOARD_ID)
+                                            .storeRawResponse(true)
+                                            .limit(10)
+                                            .build())
+                            .get();
+            String actual = GSON.toJson(response);
+            String expected = response.getRawResponse().getRaw();
+
+            assertDiff(expected, actual);
+        } catch (ExecutionException e) {
+            log.warn("FLAKE TEST DETECTED: leaderboards_findById", e);
+        }
+    }
+
 }

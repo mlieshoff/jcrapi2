@@ -14,18 +14,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jcrapi2.api.intern.leaderboards;
+package jcrapi2.api.intern.leaderboards.info;
 
-import jcrapi2.api.intern.leaderboards.info.LeaderboardRequest;
-import jcrapi2.api.intern.leaderboards.info.LeaderboardResponse;
+import com.google.gson.annotations.SerializedName;
 
-import supercell.api.wrapper.essentials.api.Api;
+import lombok.Data;
 
-import java.util.concurrent.Future;
+@Data
+public class Clan {
 
-public interface LeaderboardApi extends Api {
+    @SerializedName("tag")
+    private String tag;
 
-    Future<LeaderboardsResponse> findAll(LeaderboardsRequest leaderboardsRequest);
+    @SerializedName("name")
+    private String name;
 
-    Future<LeaderboardResponse> findById(LeaderboardRequest leaderboardRequest);
+    @SerializedName("badgeId")
+    private long badgeId;
 }

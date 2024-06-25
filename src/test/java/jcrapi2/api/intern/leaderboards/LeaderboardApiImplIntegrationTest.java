@@ -54,4 +54,41 @@ public class LeaderboardApiImplIntegrationTest extends IntegrationTestBase {
         prepareWithErrorAndRun(
                 "/leaderboards", EMPTY, request, () -> unitUnderTest.findAll(request).get());
     }
+
+    @Test
+    void findById() throws Exception {
+        long leaderboardId = 4711L;
+        jcrapi2.api.intern.leaderboards.info.LeaderboardRequest.LeaderboardRequestBuilder builder =
+                jcrapi2.api.intern.leaderboards.info.LeaderboardRequest.builder(leaderboardId);
+        jcrapi2.api.intern.leaderboards.info.LeaderboardRequest request =
+                builder.limit(100).before("zzz").after("aaa").storeRawResponse(true).build();
+        prepare(
+                "/leaderboard/{leaderboardId}"
+                        .replace("{leaderboardId}", String.valueOf(leaderboardId)),
+                EMPTY,
+                "src/test/resources/leaderboard-findById.json",
+                request);
+        jcrapi2.api.intern.leaderboards.info.LeaderboardResponse expected =
+                toJson(
+                        jcrapi2.api.intern.leaderboards.info.LeaderboardResponse.class,
+                        getExpected());
+
+        run(expected, () -> unitUnderTest.findById(request).get());
+    }
+
+    @Test
+    void findById_whenWithException() {
+        long leaderboardId = 4711L;
+        jcrapi2.api.intern.leaderboards.info.LeaderboardRequest.LeaderboardRequestBuilder builder =
+                jcrapi2.api.intern.leaderboards.info.LeaderboardRequest.builder(leaderboardId);
+        jcrapi2.api.intern.leaderboards.info.LeaderboardRequest request =
+                builder.limit(100).before("zzz").after("aaa").storeRawResponse(true).build();
+
+        prepareWithErrorAndRun(
+                "/leaderboard/{leaderboardId}"
+                        .replace("{leaderboardId}", String.valueOf(leaderboardId)),
+                EMPTY,
+                request,
+                () -> unitUnderTest.findById(request).get());
+    }
 }

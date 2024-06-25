@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [4.0.8] - 2024-06-25
+
+### Added
+
+- New endpoint /leaderboard/{leaderboardId} (#196)
+
 ## [4.0.7] - 2024-06-25
 
 ### Added
@@ -239,7 +245,9 @@
 
 - Create a Release job (#152)
 
-[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.7...HEAD
+[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.8...HEAD
+[4.0.8]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.7...4.0.8
+[4.0.7]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.6...4.0.7
 [4.0.6]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.5...4.0.6
 [4.0.5]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.4...4.0.5
 [4.0.4]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.3...4.0.4

@@ -16,6 +16,9 @@
  */
 package jcrapi2.api.intern.leaderboards;
 
+import jcrapi2.api.intern.leaderboards.info.LeaderboardRequest;
+import jcrapi2.api.intern.leaderboards.info.LeaderboardResponse;
+
 import supercell.api.wrapper.essentials.api.ApiContext;
 import supercell.api.wrapper.essentials.api.BaseApi;
 
@@ -30,5 +33,9 @@ class LeaderboardApiImpl extends BaseApi implements LeaderboardApi {
     @Override
     public Future<LeaderboardsResponse> findAll(LeaderboardsRequest leaderboardsRequest) {
         return get("/leaderboards", leaderboardsRequest, LeaderboardsResponse.class);
+    }
+
+    public Future<LeaderboardResponse> findById(LeaderboardRequest leaderboardRequest) {
+        return get("/leaderboard/{leaderboardId}", leaderboardRequest, LeaderboardResponse.class);
     }
 }

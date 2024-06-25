@@ -1,7 +1,7 @@
 [![](https://img.shields.io/badge/java-packagecloud.io-844fec.svg)](https://packagecloud.io/)
 [![Nightlies](https://github.com/mlieshoff/jcrapi2/actions/workflows/nightlies.yml/badge.svg)](https://github.com/mlieshoff/jcrapi2/actions/workflows/nightlies.yml)
 
-# jcrapi2 4.0.7
+# jcrapi2 4.0.8
 A Java Wrapper For Official Supercell Clash Royal Api
 
 ## Why we don't use the Swagger scheme?
@@ -434,6 +434,19 @@ list all supported apis
         .build()
     ).get();
 ```
+```java
+    // findById
+    LeaderboardResponse response = api.findById(leaderboardRequest.builder()
+           .leaderboardId()
+           // pagination
+           .limit()
+           .after()
+           .before()
+           // store raw response
+           .storeRawResponse()
+        .build()
+    ).get();
+```
 
 ## Add or replace registered API's
 
@@ -471,7 +484,7 @@ All requests are returning *java.concurrent.Future*. The execution will be async
 
 to Gradle:
 ```groovy
-    implementation group: 'jcrapi2', name: 'jcrapi2', version: '4.0.7'
+    implementation group: 'jcrapi2', name: 'jcrapi2', version: '4.0.8'
 ```
 
 to Maven:
@@ -479,7 +492,7 @@ to Maven:
     <dependency>
         <groupId>jcrapi2</groupId>
         <artifactId>jcrapi2</artifactId>
-        <version>4.0.7</version>
+        <version>4.0.8</version>
     </dependency>
 ```
 

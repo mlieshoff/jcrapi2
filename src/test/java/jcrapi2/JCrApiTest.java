@@ -68,7 +68,8 @@ class JCrApiTest {
                                 "jcrapi2.api.intern.globaltournaments.GlobalTournamentApi",
                                 "jcrapi2.api.intern.locations.LocationApi",
                                 "jcrapi2.api.intern.players.PlayerApi",
-                                "jcrapi2.api.intern.tournaments.TournamentApi"));
+                                "jcrapi2.api.intern.tournaments.TournamentApi",
+                                "jcrapi2.api.intern.leaderboards.LeaderboardApi"));
 
         List<String> actual = unitUnderTest.listApis();
 

@@ -20,6 +20,7 @@ import jcrapi2.api.intern.cards.CardApi;
 import jcrapi2.api.intern.challenges.ChallengeApi;
 import jcrapi2.api.intern.clans.ClanApi;
 import jcrapi2.api.intern.globaltournaments.GlobalTournamentApi;
+import jcrapi2.api.intern.leaderboards.LeaderboardApi;
 import jcrapi2.api.intern.locations.LocationApi;
 import jcrapi2.api.intern.players.PlayerApi;
 import jcrapi2.api.intern.tournaments.TournamentApi;
@@ -42,5 +43,6 @@ public class DefaultApiClasses {
                     LocationApi.class, "jcrapi2.api.intern.locations.LocationApiImpl",
                     ChallengeApi.class, "jcrapi2.api.intern.challenges.ChallengeApiImpl",
                     GlobalTournamentApi.class,
-                            "jcrapi2.api.intern.globaltournaments.GlobalTournamentApiImpl");
+                            "jcrapi2.api.intern.globaltournaments.GlobalTournamentApiImpl",
+                    LeaderboardApi.class, "jcrapi2.api.intern.leaderboards.LeaderboardApiImpl");
 }

@@ -48,6 +48,9 @@ import jcrapi2.api.intern.clans.riverracelog.RiverRaceLogResponse;
 import jcrapi2.api.intern.globaltournaments.GlobalTournamentApi;
 import jcrapi2.api.intern.globaltournaments.GlobalTournamentsRequest;
 import jcrapi2.api.intern.globaltournaments.GlobalTournamentsResponse;
+import jcrapi2.api.intern.leaderboards.LeaderboardApi;
+import jcrapi2.api.intern.leaderboards.LeaderboardsRequest;
+import jcrapi2.api.intern.leaderboards.LeaderboardsResponse;
 import jcrapi2.api.intern.locations.LocationApi;
 import jcrapi2.api.intern.locations.LocationsRequest;
 import jcrapi2.api.intern.locations.LocationsResponse;
@@ -125,6 +128,8 @@ class EndToEnd {
 
     private GlobalTournamentApi globalTournamentApi;
 
+    private LeaderboardApi leaderboardApi;
+
     @BeforeEach
     void setUp() {
         JCrApi jCrApi =
@@ -139,6 +144,7 @@ class EndToEnd {
         locationApi = jCrApi.getApi(LocationApi.class);
         challengeApi = jCrApi.getApi(ChallengeApi.class);
         globalTournamentApi = jCrApi.getApi(GlobalTournamentApi.class);
+        leaderboardApi = jCrApi.getApi(LeaderboardApi.class);
     }
 
     private static void assertDiff(String expected, String actual) {
@@ -552,6 +558,22 @@ class EndToEnd {
                 locationApi
                         .getTopPlayerPathOfLegendRankings(
                                 TopPlayerPathOfLegendRankingsRequest.builder(LOCATION_ID)
+                                        .storeRawResponse(true)
+                                        .limit(10)
+                                        .build())
+                        .get();
+        String actual = GSON.toJson(response);
+        String expected = response.getRawResponse().getRaw();
+
+        assertDiff(expected, actual);
+    }
+
+    @Test
+    void leaderboards_findAll() throws Exception {
+        LeaderboardsResponse response =
+                leaderboardApi
+                        .findAll(
+                                LeaderboardsRequest.builder()
                                         .storeRawResponse(true)
                                         .limit(10)
                                         .build())

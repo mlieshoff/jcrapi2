@@ -132,4 +132,7 @@ public class Player {
 
     @SerializedName("currentDeckSupportCards")
     private List<CurrentDeckSupportCard> currentDeckSupportCards;
+
+    @SerializedName("progress")
+    private Progress progress;
 }

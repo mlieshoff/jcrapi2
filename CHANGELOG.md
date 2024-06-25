@@ -2,6 +2,17 @@
 
 ## [Unreleased]
 
+## [4.0.6] - 2024-06-25
+
+### Changed
+
+- Apply data model changes on players.findByTag endpoint (#194)
+* (new field) players.info.Player.progress
+* (new class) players.info.Player.GoblinRoad
+* (new field) players.info.Player.GoblinRoad.arena
+* (new field) players.info.Player.GoblinRoad.trophies
+* (new field) players.info.Player.GoblinRoad.bestTrophies
+
 ## [4.0.5] - 2024-04-30
 
 ### Changed
@@ -222,7 +233,8 @@
 
 - Create a Release job (#152)
 
-[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.5...HEAD
+[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.6...HEAD
+[4.0.6]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.5...4.0.6
 [4.0.5]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.4...4.0.5
 [4.0.4]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.3...4.0.4
 [4.0.3]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.2...4.0.3

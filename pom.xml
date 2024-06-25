@@ -49,7 +49,7 @@
         <version.mockito>5.11.0</version.mockito>
         <version.slf4j>2.0.13</version.slf4j>
         <version.supercell.api.wrapper.essentials>1.0.1</version.supercell.api.wrapper.essentials>
-        <version.wiremock>3.5.4</version.wiremock>
+        <version.wiremock>3.7.0</version.wiremock>
     </properties>
     <build>
         <plugins>

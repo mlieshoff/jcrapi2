@@ -2,6 +2,21 @@
 
 ## [Unreleased]
 
+## [4.0.9] - 2025-01-13
+
+### Changed
+
+- Apache Commons IO from 2.16.1 to 2.18.0
+- GSON from 2.10.1 to 2.11.0
+- JUnit from 5.10.2 to 5.11.4
+- Lombok from 1.18.32 to 1.18.36
+- Maven Dependency Plugin from 3.6.1 to 3.8.1
+- Maven Enforcer Plugin from 3.4.1 to 3.5.0
+- Maven Exec Plugin from 3.2.0 to 3.5.0
+- Maven Surefire Plugin from 3.2.5 to 3.5.2
+- Mockito from 5.11.0 to 5.15.2
+- WireMock from 3.7.0 to 3.10.0
+
 ## [4.0.8] - 2024-06-25
 
 ### Added
@@ -245,7 +260,8 @@
 
 - Create a Release job (#152)
 
-[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.8...HEAD
+[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.9...HEAD
+[4.0.9]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.8...4.0.9
 [4.0.8]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.7...4.0.8
 [4.0.7]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.6...4.0.7
 [4.0.6]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.5...4.0.6

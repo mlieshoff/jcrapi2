@@ -2,6 +2,13 @@
 
 ## [Unreleased]
 
+## [4.0.11] - 2025-01-13
+
+### Added
+
+- Apply data model changes on player find by tag endpoint (#203)
+* (new field) players.info.Progress.Royals2v2
+
 ## [4.0.10] - 2025-01-13
 
 ### Changed
@@ -266,7 +273,8 @@
 
 - Create a Release job (#152)
 
-[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.10...HEAD
+[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.11...HEAD
+[4.0.11]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.10...4.0.11
 [4.0.10]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.9...4.0.10
 [4.0.9]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.8...4.0.9
 [4.0.8]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.7...4.0.8

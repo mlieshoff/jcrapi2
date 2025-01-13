@@ -247,8 +247,9 @@ class EndToEnd {
                 GSON.toJson(response)
                         .replace(",\"starLevel\":0", "")
                         .replace(",\"target\":0", "")
-                        .replace(",\"bestTrophies\":0", "")
                         .replace(",\"evolutionLevel\":0", "");
+
+        System.out.println(actual);
         String expected =
                 response.getRawResponse()
                         .getRaw()

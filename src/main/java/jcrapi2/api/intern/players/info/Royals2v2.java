@@ -21,11 +21,14 @@ import com.google.gson.annotations.SerializedName;
 import lombok.Data;
 
 @Data
-public class Progress {
+public class Royals2v2 {
 
-    @SerializedName("goblin-road")
-    private GoblinRoad goblinRoad;
+    @SerializedName("arena")
+    private Arena arena;
 
-    @SerializedName("Royals_2v2")
-    private Royals2v2 royals2v2;
+    @SerializedName("trophies")
+    private int trophies;
+
+    @SerializedName("bestTrophies")
+    private int bestTrophies;
 }

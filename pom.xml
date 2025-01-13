@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>jcrapi2</artifactId>
     <packaging>jar</packaging>
-    <version>4.0.9</version>
+    <version>4.0.10</version>
     <groupId>jcrapi2</groupId>
     <url>https://maven.apache.org</url>
     <inceptionYear>2018</inceptionYear>
@@ -47,7 +47,7 @@
         <version.maven.surfire.junit>1.0.3</version.maven.surfire.junit>
         <version.maven.packagecloud>0.0.4</version.maven.packagecloud>
         <version.mockito>5.15.2</version.mockito>
-        <version.slf4j>2.0.13</version.slf4j>
+        <version.slf4j>2.0.14</version.slf4j>
         <version.supercell.api.wrapper.essentials>1.0.1</version.supercell.api.wrapper.essentials>
         <version.wiremock>3.10.0</version.wiremock>
     </properties>

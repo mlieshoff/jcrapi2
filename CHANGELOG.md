@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [4.0.10] - 2025-01-13
+
+### Changed
+
+- SLF4j from 2.0.13 to 2.0.14
+
 ## [4.0.9] - 2025-01-13
 
 ### Changed
@@ -260,7 +266,8 @@
 
 - Create a Release job (#152)
 
-[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.9...HEAD
+[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.10...HEAD
+[4.0.10]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.9...4.0.10
 [4.0.9]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.8...4.0.9
 [4.0.8]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.7...4.0.8
 [4.0.7]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.6...4.0.7

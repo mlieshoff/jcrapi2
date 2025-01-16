@@ -54,6 +54,27 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.openapitools</groupId>
+                <artifactId>openapi-generator-maven-plugin</artifactId>
+                <version>7.10.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <inputSpec>${project.basedir}/src/main/resources/api.yaml</inputSpec>
+                            <generatorName>wsdl-schema</generatorName>
+                            <templateResourcePath>${project.basedir}/src/main/resources/templates/wsdl-schema</templateResourcePath>
+                            <globalProperties>
+                                <debugOpenAPI>true</debugOpenAPI>
+                                <debugOperations>true</debugOperations>
+                            </globalProperties>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
                 <version>${version.maven.enforcer}</version>
@@ -264,6 +285,11 @@
             <artifactId>slf4j-simple</artifactId>
             <version>${version.slf4j}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>4.12.0</version>
         </dependency>
     </dependencies>
     <distributionManagement>

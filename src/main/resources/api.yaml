@@ -1,0 +1,2510 @@
+swagger: "2.0"
+info:
+  title: Clash Royale API
+  description: |
+    Check out <a href="https://developer.clashroyale.com/#/getting-started" target="_parent">Getting Started</a> for instructions and links to other resources. Clash Royale API uses <a href="https://jwt.io/" target="_blank">JSON Web Tokens</a> for authorizing the requests. Tokens are created by developers on <a href="https://developer.clashroyale.com/#/account" target="_parent">My Account</a> page and must be passed in every API request in Authorization HTTP header using Bearer authentication scheme. Correct Authorization header looks like this: "Authorization: Bearer API_TOKEN".
+  version: v1
+  termsOfService: http://supercell.com/en/terms-of-service/
+host: api.clashroyale.com
+basePath: /v1
+schemes:
+  - https
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+tags:
+  -
+    name: clans
+    description: Access clan specific information
+  -
+    name: players
+    description: Access player specific information
+  -
+    name: cards
+    description: Access card information
+  -
+    name: tournaments
+    description: Access tournament information
+  -
+    name: locations
+    description: Access global and local rankings
+  -
+    name: challenges
+    description: Access challenge information
+responses:
+  InMaintenanceSpec:
+    description: Service is temprorarily unavailable because of maintenance.
+    schema:
+      $ref: '#/definitions/ClientError'
+  UnknownExceptionSpec:
+    description: Unknown error happened when handling the request.
+    schema:
+      $ref: '#/definitions/ClientError'
+  RequestThrottledSpec:
+    description: |
+      Request was throttled, because amount of requests was above the threshold defined for the used API token.
+    schema:
+      $ref: '#/definitions/ClientError'
+  NotFoundSpec:
+    description: Resource was not found.
+    schema:
+      $ref: '#/definitions/ClientError'
+  ForbiddenSpec:
+    description: |
+      Access denied, either because of missing/incorrect credentials or used API token does not grant access to the requested resource.
+    schema:
+      $ref: '#/definitions/ClientError'
+  BadRequestSpec:
+    description: Client provided incorrect parameters for the request.
+    schema:
+      $ref: '#/definitions/ClientError'
+definitions:
+  PlayerPathOfLegendRankingList:
+    type: array
+    items:
+      $ref: '#/definitions/PlayerPathOfLegendRanking'
+  PlayerPathOfLegendRanking:
+    type: object
+    properties:
+      clan:
+        $ref: '#/definitions/PlayerRankingClan'
+      tag:
+        type: string
+      name:
+        type: string
+      expLevel:
+        type: integer
+      rank:
+        type: integer
+      eloRating:
+        type: integer
+  PlayerRankingClan:
+    type: object
+    properties:
+      badgeId:
+        type: integer
+      tag:
+        type: string
+      name:
+        type: string
+      badgeUrls:
+        type: object
+  LadderTournamentRankingList:
+    type: array
+    items:
+      $ref: '#/definitions/LadderTournamentRanking'
+  LadderTournamentRanking:
+    type: object
+    properties:
+      clan:
+        $ref: '#/definitions/PlayerRankingClan'
+      wins:
+        type: integer
+      losses:
+        type: integer
+      tag:
+        type: string
+      name:
+        type: string
+      rank:
+        type: integer
+      previousRank:
+        type: integer
+  CurrentRiverRace:
+    type: object
+    properties:
+      state:
+        type: string
+        enum:
+          - CLAN_NOT_FOUND
+          - ACCESS_DENIED
+          - MATCHMAKING
+          - MATCHED
+          - FULL
+          - ENDED
+      clan:
+        $ref: '#/definitions/RiverRaceClan'
+      clans:
+        $ref: '#/definitions/RiverRaceClanList'
+      collectionEndTime:
+        type: string
+      warEndTime:
+        type: string
+      sectionIndex:
+        type: integer
+      periodIndex:
+        type: integer
+      periodType:
+        type: string
+        enum:
+          - TRAINING
+          - WAR_DAY
+          - COLOSSEUM
+      periodLogs:
+        $ref: '#/definitions/PeriodLogList'
+  PeriodLogList:
+    type: array
+    items:
+      $ref: '#/definitions/PeriodLog'
+  PeriodLog:
+    type: object
+    properties:
+      items:
+        $ref: '#/definitions/PeriodLogEntryList'
+      periodIndex:
+        type: integer
+  PeriodLogEntryList:
+    type: array
+    items:
+      $ref: '#/definitions/PeriodLogEntry'
+  PeriodLogEntry:
+    type: object
+    properties:
+      clan:
+        $ref: '#/definitions/PeriodLogEntryClan'
+      pointsEarned:
+        type: integer
+      progressStartOfDay:
+        type: integer
+      progressEndOfDay:
+        type: integer
+      endOfDayRank:
+        type: integer
+      progressEarned:
+        type: integer
+      numOfDefensesRemaining:
+        type: integer
+      progressEarnedFromDefenses:
+        type: integer
+  PeriodLogEntryClan:
+    type: object
+    properties:
+      tag:
+        type: string
+  RiverRaceClanList:
+    type: array
+    items:
+      $ref: '#/definitions/RiverRaceClan'
+  RiverRaceClan:
+    type: object
+    properties:
+      tag:
+        type: string
+      clanScore:
+        type: integer
+      badgeId:
+        type: integer
+      name:
+        type: string
+      fame:
+        type: integer
+      repairPoints:
+        type: integer
+      finishTime:
+        type: string
+      participants:
+        $ref: '#/definitions/RiverRaceParticipantList'
+      periodPoints:
+        type: integer
+  RiverRaceParticipantList:
+    type: array
+    items:
+      $ref: '#/definitions/RiverRaceParticipant'
+  RiverRaceParticipant:
+    type: object
+    properties:
+      tag:
+        type: string
+      name:
+        type: string
+      fame:
+        type: integer
+      repairPoints:
+        type: integer
+      boatAttacks:
+        type: integer
+      decksUsed:
+        type: integer
+      decksUsedToday:
+        type: integer
+  Location:
+    type: object
+    properties:
+      localizedName:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      isCountry:
+        type: boolean
+      countryCode:
+        type: string
+  Replay:
+    type: object
+    properties:
+      replayInfo:
+        type: string
+      replayData:
+        $ref: '#/definitions/JsonNode'
+      version:
+        $ref: '#/definitions/Version'
+      tag:
+        type: string
+      battleTime:
+        type: string
+      viewCount:
+        type: integer
+      shareCount:
+        type: integer
+  Version:
+    type: object
+    properties:
+      build:
+        type: integer
+      major:
+        type: integer
+      content:
+        type: integer
+  JsonNode:
+    type: object
+  LeagueSeasonList:
+    type: array
+    items:
+      $ref: '#/definitions/LeagueSeason'
+  LeagueSeason:
+    type: object
+    properties:
+      id:
+        type: string
+  LocationList:
+    type: array
+    items:
+      $ref: '#/definitions/Location'
+  Fingerprint:
+    type: object
+    properties:
+      sha:
+        type: string
+      version:
+        type: string
+      files:
+        $ref: '#/definitions/List'
+  LeaderboardList:
+    type: array
+    items:
+      $ref: '#/definitions/Leaderboard'
+  Leaderboard:
+    type: object
+    properties:
+      name:
+        $ref: '#/definitions/JsonLocalizedName'
+      id:
+        type: integer
+  JsonLocalizedName:
+    type: object
+  ChallengeChainsList:
+    type: array
+    items:
+      $ref: '#/definitions/ChallengeChain'
+  ChallengeChain:
+    type: object
+    properties:
+      title:
+        $ref: '#/definitions/JsonLocalizedName'
+      type:
+        type: string
+        enum:
+          - SINGLE_CHALLENGE
+          - CHAIN_CHALLENGE
+      startTime:
+        type: string
+      endTime:
+        type: string
+      challenges:
+        $ref: '#/definitions/ChallengeList'
+  ChallengeList:
+    type: array
+    items:
+      $ref: '#/definitions/Challenge'
+  Challenge:
+    type: object
+    properties:
+      description:
+        $ref: '#/definitions/JsonLocalizedName'
+      name:
+        $ref: '#/definitions/JsonLocalizedName'
+      id:
+        type: integer
+      winMode:
+        type: string
+      casual:
+        type: boolean
+      maxLosses:
+        type: integer
+      maxWins:
+        type: integer
+      iconUrl:
+        type: string
+      gameMode:
+        $ref: '#/definitions/ChallengeGameMode'
+      prizes:
+        $ref: '#/definitions/SurvivalMilestoneRewardList'
+  SurvivalMilestoneRewardList:
+    type: array
+    items:
+      $ref: '#/definitions/SurvivalMilestoneReward'
+  SurvivalMilestoneReward:
+    type: object
+    properties:
+      rarity:
+        type: string
+        enum:
+          - COMMON
+          - RARE
+          - EPIC
+          - LEGENDARY
+          - CHAMPION
+      chest:
+        type: string
+      resource:
+        type: string
+        enum:
+          - GOLD
+          - UNKNOWN
+      type:
+        type: string
+        enum:
+          - NONE
+          - CARD_STACK
+          - CHEST
+          - CARD_STACK_RANDOM
+          - RESOURCE
+          - TRADE_TOKEN
+          - CONSUMABLE
+      amount:
+        type: integer
+      card:
+        $ref: '#/definitions/Item'
+      consumableName:
+        type: string
+      wins:
+        type: integer
+  Item:
+    type: object
+    properties:
+      iconUrls:
+        type: object
+      name:
+        $ref: '#/definitions/JsonLocalizedName'
+      id:
+        type: integer
+      rarity:
+        type: string
+        enum:
+          - COMMON
+          - RARE
+          - EPIC
+          - LEGENDARY
+          - CHAMPION
+      maxLevel:
+        type: integer
+      elixirCost:
+        type: integer
+      maxEvolutionLevel:
+        type: integer
+  ChallengeGameMode:
+    type: object
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+  ClanMemberList:
+    type: array
+    items:
+      $ref: '#/definitions/ClanMember'
+  ClanMember:
+    type: object
+    properties:
+      clanChestPoints:
+        type: integer
+      lastSeen:
+        type: string
+      arena:
+        $ref: '#/definitions/Arena'
+      tag:
+        type: string
+      name:
+        type: string
+      role:
+        type: string
+        enum:
+          - NOT_MEMBER
+          - MEMBER
+          - LEADER
+          - ADMIN
+          - COLEADER
+      expLevel:
+        type: integer
+      trophies:
+        type: integer
+      clanRank:
+        type: integer
+      previousClanRank:
+        type: integer
+      donations:
+        type: integer
+      donationsReceived:
+        type: integer
+  Arena:
+    type: object
+    properties:
+      name:
+        $ref: '#/definitions/JsonLocalizedName'
+      id:
+        type: integer
+      iconUrls:
+        type: object
+  LadderTournamentList:
+    type: array
+    items:
+      $ref: '#/definitions/LadderTournament'
+  LadderTournament:
+    type: object
+    properties:
+      gameMode:
+        $ref: '#/definitions/GameMode'
+      maxLosses:
+        type: integer
+      minExpLevel:
+        type: integer
+      tournamentLevel:
+        type: integer
+      milestoneRewards:
+        $ref: '#/definitions/SurvivalMilestoneRewardList'
+      freeTierRewards:
+        $ref: '#/definitions/SurvivalMilestoneRewardList'
+      tag:
+        type: string
+      title:
+        type: string
+      startTime:
+        type: string
+      endTime:
+        type: string
+      topRankReward:
+        $ref: '#/definitions/SurvivalMilestoneRewardList'
+      maxTopRewardRank:
+        type: integer
+  GameMode:
+    type: object
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+  PlayerRankingList:
+    type: array
+    items:
+      $ref: '#/definitions/PlayerRanking'
+  PlayerRanking:
+    type: object
+    properties:
+      clan:
+        $ref: '#/definitions/PlayerRankingClan'
+      arena:
+        $ref: '#/definitions/Arena'
+      tag:
+        type: string
+      name:
+        type: string
+      expLevel:
+        type: integer
+      rank:
+        type: integer
+      previousRank:
+        type: integer
+      trophies:
+        type: integer
+  VerifyTokenRequest:
+    type: object
+    properties:
+      token:
+        type: string
+  VerifyTokenResponse:
+    type: object
+    properties:
+      tag:
+        type: string
+      token:
+        type: string
+      status:
+        type: string
+  Clan:
+    type: object
+    properties:
+      memberList:
+        $ref: '#/definitions/ClanMemberList'
+      tag:
+        type: string
+      badgeId:
+        type: integer
+      clanChestStatus:
+        type: string
+        enum:
+          - INACTIVE
+          - ACTIVE
+          - COMPLETED
+          - UNKNOWN
+      clanChestLevel:
+        type: integer
+      requiredTrophies:
+        type: integer
+      donationsPerWeek:
+        type: integer
+      clanScore:
+        type: integer
+      clanChestMaxLevel:
+        type: integer
+      clanWarTrophies:
+        type: integer
+      name:
+        type: string
+      location:
+        $ref: '#/definitions/Location'
+      type:
+        type: string
+        enum:
+          - OPEN
+          - INVITE_ONLY
+          - CLOSED
+      members:
+        type: integer
+      description:
+        type: string
+      clanChestPoints:
+        type: integer
+      badgeUrls:
+        type: object
+  Match:
+    type: object
+    properties:
+      invites:
+        type: object
+      startTime:
+        type: string
+      state:
+        type: string
+        enum:
+          - PENDING
+          - CANCELLED
+          - TIMED_OUT
+          - IN_PROGRESS
+          - COMPLETE
+          - FAILED
+      battle:
+        $ref: '#/definitions/Battle'
+      tag:
+        type: string
+  Battle:
+    type: object
+    properties:
+      gameMode:
+        $ref: '#/definitions/GameMode'
+      arena:
+        $ref: '#/definitions/Arena'
+      deckSelection:
+        type: string
+        enum:
+          - COLLECTION
+          - DRAFT
+          - DRAFT_COMPETITIVE
+          - PREDEFINED
+          - EVENT_DECK
+          - PICK
+          - WARDECK_PICK
+          - QUADDECK_PICK
+          - UNKNOWN
+      challengeWinCountBefore:
+        type: integer
+      boatBattleSide:
+        type: string
+      boatBattleWon:
+        type: boolean
+      newTowersDestroyed:
+        type: integer
+      prevTowersDestroyed:
+        type: integer
+      remainingTowers:
+        type: integer
+      leagueNumber:
+        type: integer
+      team:
+        $ref: '#/definitions/PlayerBattleDataList'
+      opponent:
+        $ref: '#/definitions/PlayerBattleDataList'
+      type:
+        type: string
+        enum:
+          - PVP
+          - PVE
+          - CLANMATE
+          - TOURNAMENT
+          - FRIENDLY
+          - SURVIVAL
+          - PVP2v2
+          - CLANMATE2v2
+          - CHALLENGE2v2
+          - CLANWAR_COLLECTION_DAY
+          - CLANWAR_WAR_DAY
+          - CASUAL_1V1
+          - CASUAL_2V2
+          - BOAT_BATTLE
+          - BOAT_BATTLE_PRACTICE
+          - RIVER_RACE_PVP
+          - RIVER_RACE_DUEL
+          - RIVER_RACE_DUEL_COLOSSEUM
+          - TUTORIAL
+          - PATH_OF_LEGEND
+          - SEASONAL_BATTLE
+          - PRACTICE
+          - TRAIL
+          - UNKNOWN
+      battleTime:
+        type: string
+      challengeId:
+        type: integer
+      tournamentTag:
+        type: string
+      challengeTitle:
+        type: string
+      isLadderTournament:
+        type: boolean
+      isHostedMatch:
+        type: boolean
+  PlayerBattleDataList:
+    type: array
+    items:
+      $ref: '#/definitions/PlayerBattleData'
+  PlayerBattleData:
+    type: object
+    properties:
+      elixirLeaked:
+        $ref: '#/definitions/Float'
+      globalRank:
+        type: integer
+      clan:
+        $ref: '#/definitions/PlayerClan'
+      cards:
+        $ref: '#/definitions/PlayerItemLevelList'
+      supportCards:
+        $ref: '#/definitions/PlayerItemLevelList'
+      rounds:
+        $ref: '#/definitions/PlayerBattleRoundList'
+      crowns:
+        type: integer
+      princessTowersHitPoints:
+        $ref: '#/definitions/IntegerList'
+      tag:
+        type: string
+      name:
+        type: string
+      startingTrophies:
+        type: integer
+      trophyChange:
+        type: integer
+      kingTowerHitPoints:
+        type: integer
+  IntegerList:
+    type: array
+    items:
+      type: integer
+  Integer:
+    type: object
+  PlayerBattleRoundList:
+    type: array
+    items:
+      $ref: '#/definitions/PlayerBattleRound'
+  PlayerBattleRound:
+    type: object
+    properties:
+      elixirLeaked:
+        $ref: '#/definitions/Float'
+      cards:
+        $ref: '#/definitions/PlayerItemLevelList'
+      crowns:
+        type: integer
+      kingTowerHitPoints:
+        type: integer
+      princessTowersHitPoints:
+        $ref: '#/definitions/IntegerList'
+  PlayerItemLevelList:
+    type: array
+    items:
+      $ref: '#/definitions/PlayerItemLevel'
+  PlayerItemLevel:
+    type: object
+    properties:
+      id:
+        type: integer
+      rarity:
+        type: string
+        enum:
+          - COMMON
+          - RARE
+          - EPIC
+          - LEGENDARY
+          - CHAMPION
+      count:
+        type: integer
+      level:
+        type: integer
+      starLevel:
+        type: integer
+      evolutionLevel:
+        type: integer
+      used:
+        type: boolean
+      name:
+        $ref: '#/definitions/JsonLocalizedName'
+      maxLevel:
+        type: integer
+      elixirCost:
+        type: integer
+      maxEvolutionLevel:
+        type: integer
+      iconUrls:
+        type: object
+  Float:
+    type: object
+  PlayerClan:
+    type: object
+    properties:
+      badgeId:
+        type: integer
+      tag:
+        type: string
+      name:
+        type: string
+      badgeUrls:
+        type: object
+  CancelMatchResponse:
+    type: object
+    properties:
+      success:
+        type: boolean
+  BattleList:
+    type: array
+    items:
+      $ref: '#/definitions/Battle'
+  CurrentClanWar:
+    type: object
+    properties:
+      state:
+        type: string
+        enum:
+          - CLAN_NOT_FOUND
+          - ACCESS_DENIED
+          - NOT_IN_WAR
+          - COLLECTION_DAY
+          - MATCHMAKING
+          - WAR_DAY
+          - ENDED
+      clan:
+        $ref: '#/definitions/ClanWarClan'
+      participants:
+        $ref: '#/definitions/ClanWarParticipantList'
+      clans:
+        $ref: '#/definitions/ClanWarClanList'
+      collectionEndTime:
+        type: string
+      warEndTime:
+        type: string
+  ClanWarClanList:
+    type: array
+    items:
+      $ref: '#/definitions/ClanWarClan'
+  ClanWarClan:
+    type: object
+    properties:
+      crowns:
+        type: integer
+      tag:
+        type: string
+      clanScore:
+        type: integer
+      badgeId:
+        type: integer
+      name:
+        type: string
+      participants:
+        type: integer
+      battlesPlayed:
+        type: integer
+      wins:
+        type: integer
+  ClanWarParticipantList:
+    type: array
+    items:
+      $ref: '#/definitions/ClanWarParticipant'
+  ClanWarParticipant:
+    type: object
+    properties:
+      tag:
+        type: string
+      name:
+        type: string
+      cardsEarned:
+        type: integer
+      battlesPlayed:
+        type: integer
+      wins:
+        type: integer
+      collectionDayBattlesPlayed:
+        type: integer
+      numberOfBattles:
+        type: integer
+  RiverRaceLog:
+    type: array
+    items:
+      $ref: '#/definitions/RiverRaceLogEntry'
+  RiverRaceLogEntry:
+    type: object
+    properties:
+      standings:
+        $ref: '#/definitions/RiverRaceStandingList'
+      seasonId:
+        type: integer
+      createdDate:
+        type: string
+      sectionIndex:
+        type: integer
+  RiverRaceStandingList:
+    type: array
+    items:
+      $ref: '#/definitions/RiverRaceStanding'
+  RiverRaceStanding:
+    type: object
+    properties:
+      rank:
+        type: integer
+      trophyChange:
+        type: integer
+      clan:
+        $ref: '#/definitions/RiverRaceClan'
+  Tournament:
+    type: object
+    properties:
+      membersList:
+        $ref: '#/definitions/TournamentMemberList'
+      status:
+        type: string
+        enum:
+          - IN_PREPARATION
+          - IN_PROGRESS
+          - ENDED
+          - UNKNOWN
+      preparationDuration:
+        type: integer
+      createdTime:
+        type: string
+      startedTime:
+        type: string
+      endedTime:
+        type: string
+      firstPlaceCardPrize:
+        type: integer
+      gameMode:
+        $ref: '#/definitions/GameMode'
+      duration:
+        type: integer
+      type:
+        type: string
+        enum:
+          - OPEN
+          - PASSWORD_PROTECTED
+          - UNKNOWN
+      tag:
+        type: string
+      creatorTag:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      capacity:
+        type: integer
+      maxCapacity:
+        type: integer
+      levelCap:
+        type: integer
+  TournamentMemberList:
+    type: array
+    items:
+      $ref: '#/definitions/TournamentMember'
+  TournamentMember:
+    type: object
+    properties:
+      rank:
+        type: integer
+      clan:
+        $ref: '#/definitions/PlayerClan'
+      previousRank:
+        type: integer
+      tag:
+        type: string
+      name:
+        type: string
+      score:
+        type: integer
+  TournamentHeaderList:
+    type: array
+    items:
+      $ref: '#/definitions/TournamentHeader'
+  TournamentHeader:
+    type: object
+    properties:
+      status:
+        type: string
+        enum:
+          - IN_PREPARATION
+          - IN_PROGRESS
+          - ENDED
+          - UNKNOWN
+      preparationDuration:
+        type: integer
+      createdTime:
+        type: string
+      firstPlaceCardPrize:
+        type: integer
+      gameMode:
+        $ref: '#/definitions/GameMode'
+      duration:
+        type: integer
+      type:
+        type: string
+        enum:
+          - OPEN
+          - PASSWORD_PROTECTED
+          - UNKNOWN
+      tag:
+        type: string
+      creatorTag:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      capacity:
+        type: integer
+      maxCapacity:
+        type: integer
+      levelCap:
+        type: integer
+  ClanList:
+    type: array
+    items:
+      $ref: '#/definitions/Clan'
+  ClanRankingList:
+    type: array
+    items:
+      $ref: '#/definitions/ClanRanking'
+  ClanRanking:
+    type: object
+    properties:
+      clanScore:
+        type: integer
+      badgeId:
+        type: integer
+      location:
+        $ref: '#/definitions/Location'
+      members:
+        type: integer
+      tag:
+        type: string
+      name:
+        type: string
+      rank:
+        type: integer
+      previousRank:
+        type: integer
+      badgeUrls:
+        type: object
+  RegisterMatchRequest:
+    type: object
+    properties:
+      playerTags:
+        $ref: '#/definitions/StringList'
+      gameMode:
+        type: string
+        enum:
+          - REGULAR
+          - TEAM_VS_TEAM
+          - DOUBLE_ELIXIR
+          - TRIPLE_ELIXIR
+          - RAGE
+          - SUDDEN_DEATH
+          - TOUCHDOWN
+          - RAMP_UP
+          - DRAFT
+          - MIRROR
+          - DRAGON_HUNT
+          - TRIPLE_DRAFT
+          - BEST_OF_3
+          - MEGA_DRAFT
+          - HEIST
+  StringList:
+    type: array
+    items:
+      type: string
+  String:
+    type: object
+  RegisterMatchResponse:
+    type: object
+    properties:
+      tag:
+        type: string
+  UpcomingChests:
+    type: object
+    properties:
+      items:
+        $ref: '#/definitions/ChestList'
+  ChestList:
+    type: array
+    items:
+      $ref: '#/definitions/Chest'
+  Chest:
+    type: object
+    properties:
+      name:
+        $ref: '#/definitions/JsonLocalizedName'
+      index:
+        type: integer
+      iconUrls:
+        type: object
+  ClanWarLog:
+    type: array
+    items:
+      $ref: '#/definitions/ClanWarLogEntry'
+  ClanWarLogEntry:
+    type: object
+    properties:
+      standings:
+        $ref: '#/definitions/ClanWarStandingList'
+      seasonId:
+        type: integer
+      participants:
+        $ref: '#/definitions/ClanWarParticipantList'
+      createdDate:
+        type: string
+  ClanWarStandingList:
+    type: array
+    items:
+      $ref: '#/definitions/ClanWarStanding'
+  ClanWarStanding:
+    type: object
+    properties:
+      trophyChange:
+        type: integer
+      clan:
+        $ref: '#/definitions/ClanWarClan'
+  Player:
+    type: object
+    properties:
+      clan:
+        $ref: '#/definitions/PlayerClan'
+      legacyTrophyRoadHighScore:
+        type: integer
+      currentDeck:
+        $ref: '#/definitions/PlayerItemLevelList'
+      currentDeckSupportCards:
+        $ref: '#/definitions/PlayerItemLevelList'
+      arena:
+        $ref: '#/definitions/Arena'
+      role:
+        type: string
+        enum:
+          - NOT_MEMBER
+          - MEMBER
+          - LEADER
+          - ADMIN
+          - COLEADER
+      wins:
+        type: integer
+      losses:
+        type: integer
+      totalDonations:
+        type: integer
+      leagueStatistics:
+        $ref: '#/definitions/PlayerLeagueStatistics'
+      cards:
+        $ref: '#/definitions/PlayerItemLevelList'
+      supportCards:
+        $ref: '#/definitions/PlayerItemLevelList'
+      currentFavouriteCard:
+        $ref: '#/definitions/Item'
+      badges:
+        $ref: '#/definitions/PlayerAchievementBadgeList'
+      tag:
+        type: string
+      name:
+        type: string
+      expLevel:
+        type: integer
+      trophies:
+        type: integer
+      bestTrophies:
+        type: integer
+      donations:
+        type: integer
+      donationsReceived:
+        type: integer
+      achievements:
+        $ref: '#/definitions/PlayerAchievementProgressList'
+      battleCount:
+        type: integer
+      threeCrownWins:
+        type: integer
+      challengeCardsWon:
+        type: integer
+      challengeMaxWins:
+        type: integer
+      tournamentCardsWon:
+        type: integer
+      tournamentBattleCount:
+        type: integer
+      warDayWins:
+        type: integer
+      clanCardsCollected:
+        type: integer
+      starPoints:
+        type: integer
+      expPoints:
+        type: integer
+      totalExpPoints:
+        type: integer
+      currentPathOfLegendSeasonResult:
+        $ref: '#/definitions/PathOfLegendSeasonResult'
+      lastPathOfLegendSeasonResult:
+        $ref: '#/definitions/PathOfLegendSeasonResult'
+      bestPathOfLegendSeasonResult:
+        $ref: '#/definitions/PathOfLegendSeasonResult'
+      progress:
+        type: object
+  PathOfLegendSeasonResult:
+    type: object
+    properties:
+      trophies:
+        type: integer
+      rank:
+        type: integer
+      leagueNumber:
+        type: integer
+  PlayerAchievementProgressList:
+    type: array
+    items:
+      $ref: '#/definitions/PlayerAchievementProgress'
+  PlayerAchievementProgress:
+    type: object
+    properties:
+      stars:
+        type: integer
+      value:
+        type: integer
+      name:
+        $ref: '#/definitions/JsonLocalizedName'
+      target:
+        type: integer
+      info:
+        $ref: '#/definitions/JsonLocalizedName'
+      completionInfo:
+        $ref: '#/definitions/JsonLocalizedName'
+  PlayerAchievementBadgeList:
+    type: array
+    items:
+      $ref: '#/definitions/PlayerAchievementBadge'
+  PlayerAchievementBadge:
+    type: object
+    properties:
+      iconUrls:
+        type: object
+      maxLevel:
+        type: integer
+      progress:
+        type: integer
+      level:
+        type: integer
+      target:
+        type: integer
+      name:
+        type: string
+  PlayerLeagueStatistics:
+    type: object
+    properties:
+      currentSeason:
+        $ref: '#/definitions/LeagueSeasonResult'
+      bestSeason:
+        $ref: '#/definitions/LeagueSeasonResult'
+      previousSeason:
+        $ref: '#/definitions/LeagueSeasonResult'
+  LeagueSeasonResult:
+    type: object
+    properties:
+      trophies:
+        type: integer
+      rank:
+        type: integer
+      bestTrophies:
+        type: integer
+      id:
+        type: string
+  Items:
+    type: object
+    properties:
+      items:
+        $ref: '#/definitions/ItemList'
+      supportItems:
+        $ref: '#/definitions/ItemList'
+  ItemList:
+    type: array
+    items:
+      $ref: '#/definitions/Item'
+  ClientError:
+    type: object
+    properties:
+      reason:
+        type: string
+      message:
+        type: string
+      type:
+        type: string
+      detail:
+        type: object
+paths:
+  /cards:
+    get:
+      summary: Get list of available cards
+      description: Get list of available cards
+      operationId: getCards
+      tags:
+        - cards
+      parameters:
+        -
+          name: limit
+          in: query
+          description: Limit the number of items returned in the response.
+          required: false
+          type: integer
+        -
+          name: after
+          in: query
+          description: |
+            Return only items that occur after this marker. Before marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both.
+          required: false
+          type: string
+        -
+          name: before
+          in: query
+          description: |
+            Return only items that occur before this marker. Before marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both.
+          required: false
+          type: string
+      responses:
+        '400':
+          $ref: '#/responses/BadRequestSpec'
+        '403':
+          $ref: '#/responses/ForbiddenSpec'
+        '404':
+          $ref: '#/responses/NotFoundSpec'
+        '429':
+          $ref: '#/responses/RequestThrottledSpec'
+        '500':
+          $ref: '#/responses/UnknownExceptionSpec'
+        '503':
+          $ref: '#/responses/InMaintenanceSpec'
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/Items'
+  /players/{playerTag}:
+    get:
+      summary: Get player information
+      description: |
+        Get information about a single player by player tag. Player tags can be found either in game or by from clan member lists. Note that player tags start with hash character '#' and that needs to be URL-encoded properly to work in URL, so for example player tag '#2ABC' would become '%232ABC' in the URL.
+      operationId: getPlayer
+      tags:
+        - players
+      parameters:
+        -
+          name: playerTag
+          in: path
+          description: Tag of the player.
+          required: true
+          type: string
+      responses:
+        '400':
+          $ref: '#/responses/BadRequestSpec'
+        '403':
+          $ref: '#/responses/ForbiddenSpec'
+        '404':
+          $ref: '#/responses/NotFoundSpec'
+        '429':
+          $ref: '#/responses/RequestThrottledSpec'
+        '500':
+          $ref: '#/responses/UnknownExceptionSpec'
+        '503':
+          $ref: '#/responses/InMaintenanceSpec'
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/Player'
+  /locations/{locationId}/rankings/clans:
+    get:
+      summary: Get clan rankings for a specific location
+      description: Get clan rankings for a specific location
+      operationId: getClanRanking
+      tags:
+        - locations
+      parameters:
+        -
+          name: locationId
+          in: path
+          description: Identifier of the location to retrieve.
+          required: true
+          type: string
+        -
+          name: limit
+          in: query
+          description: Limit the number of items returned in the response.
+          required: false
+          type: integer
+        -
+          name: after
+          in: query
+          description: |
+            Return only items that occur after this marker. Before marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both.
+          required: false
+          type: string
+        -
+          name: before
+          in: query
+          description: |
+            Return only items that occur before this marker. Before marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both.
+          required: false
+          type: string
+      responses:
+        '400':
+          $ref: '#/responses/BadRequestSpec'
+        '403':
+          $ref: '#/responses/ForbiddenSpec'
+        '404':
+          $ref: '#/responses/NotFoundSpec'
+        '429':
+          $ref: '#/responses/RequestThrottledSpec'
+        '500':
+          $ref: '#/responses/UnknownExceptionSpec'
+        '503':
+          $ref: '#/responses/InMaintenanceSpec'
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ClanRankingList'
+  /clans/{clanTag}/warlog:
+    get:
+      summary: Retrieve clan's clan war log
+      description: Retrieve clan's clan war log
+      operationId: getClanWarLog
+      tags:
+        - clans
+      parameters:
+        -
+          name: clanTag
+          in: path
+          description: Tag of the clan.
+          required: true
+          type: string
+        -
+          name: limit
+          in: query
+          description: Limit the number of items returned in the response.
+          required: false
+          type: integer
+        -
+          name: after
+          in: query
+          description: |
+            Return only items that occur after this marker. Before marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both.
+          required: false
+          type: string
+        -
+          name: before
+          in: query
+          description: |
+            Return only items that occur before this marker. Before marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both.
+          required: false
+          type: string
+      responses:
+        '400':
+          $ref: '#/responses/BadRequestSpec'
+        '403':
+          $ref: '#/responses/ForbiddenSpec'
+        '404':
+          $ref: '#/responses/NotFoundSpec'
+        '429':
+          $ref: '#/responses/RequestThrottledSpec'
+        '500':
+          $ref: '#/responses/UnknownExceptionSpec'
+        '503':
+          $ref: '#/responses/InMaintenanceSpec'
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ClanWarLog'
+  /players/{playerTag}/upcomingchests:
+    get:
+      summary: Get information about player's upcoming chests
+      description: Get list of reward chests that the player will receive next in the game.
+      operationId: getPlayerUpcomingChests
+      tags:
+        - players
+      parameters:
+        -
+          name: playerTag
+          in: path
+          description: Tag of the player.
+          required: true
+          type: string
+      responses:
+        '400':
+          $ref: '#/responses/BadRequestSpec'
+        '403':
+          $ref: '#/responses/ForbiddenSpec'
+        '404':
+          $ref: '#/responses/NotFoundSpec'
+        '429':
+          $ref: '#/responses/RequestThrottledSpec'
+        '500':
+          $ref: '#/responses/UnknownExceptionSpec'
+        '503':
+          $ref: '#/responses/InMaintenanceSpec'
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/UpcomingChests'
+  /locations/{locationId}/rankings/players:
+    get:
+      summary: Get player rankings for a specific location
+      description: Get player rankings for a specific location
+      operationId: getPlayerRanking
+      tags:
+        - locations
+      parameters:
+        -
+          name: locationId
+          in: path
+          description: Identifier of the location to retrieve.
+          required: true
+          type: string
+        -
+          name: limit
+          in: query
+          description: Limit the number of items returned in the response.
+          required: false
+          type: integer
+        -
+          name: after
+          in: query
+          description: |
+            Return only items that occur after this marker. Before marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both.
+          required: false
+          type: string
+        -
+          name: before
+          in: query
+          description: |
+            Return only items that occur before this marker. Before marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both.
+          required: false
+          type: string
+      responses:
+        '400':
+          $ref: '#/responses/BadRequestSpec'
+        '403':
+          $ref: '#/responses/ForbiddenSpec'
+        '404':
+          $ref: '#/responses/NotFoundSpec'
+        '429':
+          $ref: '#/responses/RequestThrottledSpec'
+        '500':
+          $ref: '#/responses/UnknownExceptionSpec'
+        '503':
+          $ref: '#/responses/InMaintenanceSpec'
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/PlayerRankingList'
+  /locations/{locationId}/rankings/clanwars:
+    get:
+      summary: Get clan war rankings for a specific location
+      description: Get clan war rankings for a specific location
+      operationId: getClanWarsRanking
+      tags:
+        - locations
+      parameters:
+        -
+          name: locationId
+          in: path
+          description: Identifier of the location to retrieve.
+          required: true
+          type: string
+        -
+          name: limit
+          in: query
+          description: Limit the number of items returned in the response.
+          required: false
+          type: integer
+        -
+          name: after
+          in: query
+          description: |
+            Return only items that occur after this marker. Before marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both.
+          required: false
+          type: string
+        -
+          name: before
+          in: query
+          description: |
+            Return only items that occur before this marker. Before marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both.
+          required: false
+          type: string
+      responses:
+        '400':
+          $ref: '#/responses/BadRequestSpec'
+        '403':
+          $ref: '#/responses/ForbiddenSpec'
+        '404':
+          $ref: '#/responses/NotFoundSpec'
+        '429':
+          $ref: '#/responses/RequestThrottledSpec'
+        '500':
+          $ref: '#/responses/UnknownExceptionSpec'
+        '503':
+          $ref: '#/responses/InMaintenanceSpec'
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ClanRankingList'
+  /locations/global/pathoflegend/{seasonId}/rankings/players:
+    get:
+      summary: Get top Path of Legend players for given season.
+      description: Get top Path of Legend players for given season.
+      operationId: getTopPlayerPathOfLegendSeasonRankings
+      tags:
+        - locations
+      parameters:
+        -
+          name: seasonId
+          in: path
+          description: Identifier of the season.
+          required: true
+          type: string
+        -
+          name: limit
+          in: query
+          description: Limit the number of items returned in the response.
+          required: false
+          type: integer
+        -
+          name: after
+          in: query
+          description: |
+            Return only items that occur after this marker. Before marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both.
+          required: false
+          type: string
+        -
+          name: before
+          in: query
+          description: |
+            Return only items that occur before this marker. Before marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both.
+          required: false
+          type: string
+      responses:
+        '400':
+          $ref: '#/responses/BadRequestSpec'
+        '403':
+          $ref: '#/responses/ForbiddenSpec'
+        '404':
+          $ref: '#/responses/NotFoundSpec'
+        '429':
+          $ref: '#/responses/RequestThrottledSpec'
+        '500':
+          $ref: '#/responses/UnknownExceptionSpec'
+        '503':
+          $ref: '#/responses/InMaintenanceSpec'
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/PlayerPathOfLegendRankingList'
+  /clans:
+    get:
+      summary: Search clans
+      description: |
+        Search all clans by name and/or filtering the results using various criteria. At least one filtering criteria must be defined and if name is used as part of search, it is required to be at least three characters long It is not possible to specify ordering for results so clients should not rely on any specific ordering as that may change in the future releases of the API.
+      operationId: searchClans
+      tags:
+        - clans
+      parameters:
+        -
+          name: name
+          in: query
+          description: |
+            Search clans by name. If name is used as part of search query, it needs to be at least three characters long. Name search parameter is interpreted as wild card search, so it may appear anywhere in the clan name.
+          required: false
+          type: string
+        -
+          name: locationId
+          in: query
+          description: |
+            Filter by clan location identifier. For list of available locations, refer to getLocations operation.
+          required: false
+          type: integer
+        -
+          name: minMembers
+          in: query
+          description: Filter by minimum number of clan members
+          required: false
+          type: integer
+        -
+          name: maxMembers
+          in: query
+          description: Filter by maximum number of clan members
+          required: false
+          type: integer
+        -
+          name: minScore
+          in: query
+          description: Filter by minimum amount of clan score.
+          required: false
+          type: integer
+        -
+          name: limit
+          in: query
+          description: Limit the number of items returned in the response.
+          required: false
+          type: integer
+        -
+          name: after
+          in: query
+          description: |
+            Return only items that occur after this marker. Before marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both.
+          required: false
+          type: string
+        -
+          name: before
+          in: query
+          description: |
+            Return only items that occur before this marker. Before marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both.
+          required: false
+          type: string
+      responses:
+        '400':
+          $ref: '#/responses/BadRequestSpec'
+        '403':
+          $ref: '#/responses/ForbiddenSpec'
+        '404':
+          $ref: '#/responses/NotFoundSpec'
+        '429':
+          $ref: '#/responses/RequestThrottledSpec'
+        '500':
+          $ref: '#/responses/UnknownExceptionSpec'
+        '503':
+          $ref: '#/responses/InMaintenanceSpec'
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ClanList'
+  /locations/global/seasons/{seasonId}:
+    get:
+      summary: Get top player league season.
+      description: Get top player league season.
+      operationId: getTopPlayerLeagueSeasonHandler
+      tags:
+        - locations
+      parameters:
+        -
+          name: seasonId
+          in: path
+          description: Identifier of the season.
+          required: true
+          type: string
+      responses:
+        '400':
+          $ref: '#/responses/BadRequestSpec'
+        '403':
+          $ref: '#/responses/ForbiddenSpec'
+        '404':
+          $ref: '#/responses/NotFoundSpec'
+        '429':
+          $ref: '#/responses/RequestThrottledSpec'
+        '500':
+          $ref: '#/responses/UnknownExceptionSpec'
+        '503':
+          $ref: '#/responses/InMaintenanceSpec'
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/LeagueSeason'
+  /leaderboard/{leaderboardId}:
+    get:
+      summary: Get players on a specific leaderboard
+      description: Get players on a specific leaderboard
+      operationId: getLeaderboard
+      tags:
+        - leaderboards
+      parameters:
+        -
+          name: leaderboardId
+          in: path
+          description: A leaderboard ID from leaderboard API
+          required: true
+          type: integer
+        -
+          name: limit
+          in: query
+          description: Limit the number of items returned in the response.
+          required: false
+          type: integer
+        -
+          name: after
+          in: query
+          description: |
+            Return only items that occur after this marker. Before marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both.
+          required: false
+          type: string
+        -
+          name: before
+          in: query
+          description: |
+            Return only items that occur before this marker. Before marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both.
+          required: false
+          type: string
+      responses:
+        '400':
+          $ref: '#/responses/BadRequestSpec'
+        '403':
+          $ref: '#/responses/ForbiddenSpec'
+        '404':
+          $ref: '#/responses/NotFoundSpec'
+        '429':
+          $ref: '#/responses/RequestThrottledSpec'
+        '500':
+          $ref: '#/responses/UnknownExceptionSpec'
+        '503':
+          $ref: '#/responses/InMaintenanceSpec'
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/LeaderboardList'
+  /tournaments:
+    get:
+      summary: Search tournaments
+      description: |
+        Search all tournaments by name. It is not possible to specify ordering for results so clients should not rely on any specific ordering as that may change in the future releases of the API.
+      operationId: searchTournaments
+      tags:
+        - tournaments
+      parameters:
+        -
+          name: name
+          in: query
+          description: |
+            Search clans by name. If name is used as part of search query, it needs to be at least three characters long. Name search parameter is interpreted as wild card search, so it may appear anywhere in the clan name.
+          required: false
+          type: string
+        -
+          name: limit
+          in: query
+          description: Limit the number of items returned in the response.
+          required: false
+          type: integer
+        -
+          name: after
+          in: query
+          description: |
+            Return only items that occur after this marker. Before marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both.
+          required: false
+          type: string
+        -
+          name: before
+          in: query
+          description: |
+            Return only items that occur before this marker. Before marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both.
+          required: false
+          type: string
+      responses:
+        '400':
+          $ref: '#/responses/BadRequestSpec'
+        '403':
+          $ref: '#/responses/ForbiddenSpec'
+        '404':
+          $ref: '#/responses/NotFoundSpec'
+        '429':
+          $ref: '#/responses/RequestThrottledSpec'
+        '500':
+          $ref: '#/responses/UnknownExceptionSpec'
+        '503':
+          $ref: '#/responses/InMaintenanceSpec'
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/TournamentHeaderList'
+  /tournaments/{tournamentTag}:
+    get:
+      summary: Get tournament information
+      description: Get information about a single tournament by a tournament tag.
+      operationId: getTournament
+      tags:
+        - tournaments
+      parameters:
+        -
+          name: tournamentTag
+          in: path
+          description: Tag of the tournament to retrieve
+          required: true
+          type: string
+      responses:
+        '400':
+          $ref: '#/responses/BadRequestSpec'
+        '403':
+          $ref: '#/responses/ForbiddenSpec'
+        '404':
+          $ref: '#/responses/NotFoundSpec'
+        '429':
+          $ref: '#/responses/RequestThrottledSpec'
+        '500':
+          $ref: '#/responses/UnknownExceptionSpec'
+        '503':
+          $ref: '#/responses/InMaintenanceSpec'
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/Tournament'
+  /clans/{clanTag}/riverracelog:
+    get:
+      summary: Retrieve clan's river race log
+      description: Retrieve clan's river race log
+      operationId: getRiverRaceWarLog
+      tags:
+        - clans
+      parameters:
+        -
+          name: clanTag
+          in: path
+          description: Tag of the clan.
+          required: true
+          type: string
+        -
+          name: limit
+          in: query
+          description: Limit the number of items returned in the response.
+          required: false
+          type: integer
+        -
+          name: after
+          in: query
+          description: |
+            Return only items that occur after this marker. Before marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both.
+          required: false
+          type: string
+        -
+          name: before
+          in: query
+          description: |
+            Return only items that occur before this marker. Before marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both.
+          required: false
+          type: string
+      responses:
+        '400':
+          $ref: '#/responses/BadRequestSpec'
+        '403':
+          $ref: '#/responses/ForbiddenSpec'
+        '404':
+          $ref: '#/responses/NotFoundSpec'
+        '429':
+          $ref: '#/responses/RequestThrottledSpec'
+        '500':
+          $ref: '#/responses/UnknownExceptionSpec'
+        '503':
+          $ref: '#/responses/InMaintenanceSpec'
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/RiverRaceLog'
+  /clans/{clanTag}/currentwar:
+    get:
+      summary: Retrieve information about clan's current clan war
+      description: Retrieve information about clan's current clan war
+      operationId: getCurrentWar
+      tags:
+        - clans
+      parameters:
+        -
+          name: clanTag
+          in: path
+          description: Tag of the clan.
+          required: true
+          type: string
+      responses:
+        '400':
+          $ref: '#/responses/BadRequestSpec'
+        '403':
+          $ref: '#/responses/ForbiddenSpec'
+        '404':
+          $ref: '#/responses/NotFoundSpec'
+        '429':
+          $ref: '#/responses/RequestThrottledSpec'
+        '500':
+          $ref: '#/responses/UnknownExceptionSpec'
+        '503':
+          $ref: '#/responses/InMaintenanceSpec'
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/CurrentClanWar'
+  /players/{playerTag}/battlelog:
+    get:
+      summary: Get list of recent battles for a player
+      description: Get list of recent battles for a player
+      operationId: getPlayerBattles
+      tags:
+        - players
+      parameters:
+        -
+          name: playerTag
+          in: path
+          description: Tag of the player.
+          required: true
+          type: string
+      responses:
+        '400':
+          $ref: '#/responses/BadRequestSpec'
+        '403':
+          $ref: '#/responses/ForbiddenSpec'
+        '404':
+          $ref: '#/responses/NotFoundSpec'
+        '429':
+          $ref: '#/responses/RequestThrottledSpec'
+        '500':
+          $ref: '#/responses/UnknownExceptionSpec'
+        '503':
+          $ref: '#/responses/InMaintenanceSpec'
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/BattleList'
+  /clans/{clanTag}:
+    get:
+      summary: Get clan information
+      description: |
+        Get information about a single clan by clan tag. Clan tags can be found using clan search operation. Note that clan tags start with hash character '#' and that needs to be URL-encoded properly to work in URL, so for example clan tag '#2ABC' would become '%232ABC' in the URL.
+      operationId: getClan
+      tags:
+        - clans
+      parameters:
+        -
+          name: clanTag
+          in: path
+          description: Tag of the clan.
+          required: true
+          type: string
+      responses:
+        '400':
+          $ref: '#/responses/BadRequestSpec'
+        '403':
+          $ref: '#/responses/ForbiddenSpec'
+        '404':
+          $ref: '#/responses/NotFoundSpec'
+        '429':
+          $ref: '#/responses/RequestThrottledSpec'
+        '500':
+          $ref: '#/responses/UnknownExceptionSpec'
+        '503':
+          $ref: '#/responses/InMaintenanceSpec'
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/Clan'
+  /locations/global/seasons/{seasonId}/rankings/players:
+    get:
+      summary: Get top player rankings for a season.
+      description: Get top player rankings for a season.
+      operationId: getTopPlayerLeagueSeasonRankings
+      tags:
+        - locations
+      parameters:
+        -
+          name: seasonId
+          in: path
+          description: Identifier of the season.
+          required: true
+          type: string
+        -
+          name: limit
+          in: query
+          description: Limit the number of items returned in the response.
+          required: false
+          type: integer
+        -
+          name: after
+          in: query
+          description: |
+            Return only items that occur after this marker. Before marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both.
+          required: false
+          type: string
+        -
+          name: before
+          in: query
+          description: |
+            Return only items that occur before this marker. Before marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both.
+          required: false
+          type: string
+      responses:
+        '400':
+          $ref: '#/responses/BadRequestSpec'
+        '403':
+          $ref: '#/responses/ForbiddenSpec'
+        '404':
+          $ref: '#/responses/NotFoundSpec'
+        '429':
+          $ref: '#/responses/RequestThrottledSpec'
+        '500':
+          $ref: '#/responses/UnknownExceptionSpec'
+        '503':
+          $ref: '#/responses/InMaintenanceSpec'
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/PlayerRankingList'
+  /globaltournaments:
+    get:
+      summary: Get list of global tournaments
+      description: Get list of global tournaments
+      operationId: getGlobalTournaments
+      tags:
+        - globaltournaments
+      responses:
+        '400':
+          $ref: '#/responses/BadRequestSpec'
+        '403':
+          $ref: '#/responses/ForbiddenSpec'
+        '404':
+          $ref: '#/responses/NotFoundSpec'
+        '429':
+          $ref: '#/responses/RequestThrottledSpec'
+        '500':
+          $ref: '#/responses/UnknownExceptionSpec'
+        '503':
+          $ref: '#/responses/InMaintenanceSpec'
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/LadderTournamentList'
+  /clans/{clanTag}/members:
+    get:
+      summary: List clan members
+      description: List clan members.
+      operationId: getClanMembers
+      tags:
+        - clans
+      parameters:
+        -
+          name: clanTag
+          in: path
+          description: Tag of the clan.
+          required: true
+          type: string
+        -
+          name: limit
+          in: query
+          description: Limit the number of items returned in the response.
+          required: false
+          type: integer
+        -
+          name: after
+          in: query
+          description: |
+            Return only items that occur after this marker. Before marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both.
+          required: false
+          type: string
+        -
+          name: before
+          in: query
+          description: |
+            Return only items that occur before this marker. Before marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both.
+          required: false
+          type: string
+      responses:
+        '400':
+          $ref: '#/responses/BadRequestSpec'
+        '403':
+          $ref: '#/responses/ForbiddenSpec'
+        '404':
+          $ref: '#/responses/NotFoundSpec'
+        '429':
+          $ref: '#/responses/RequestThrottledSpec'
+        '500':
+          $ref: '#/responses/UnknownExceptionSpec'
+        '503':
+          $ref: '#/responses/InMaintenanceSpec'
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ClanMemberList'
+  /challenges:
+    get:
+      summary: Get current and upcoming challenges.
+      description: |
+        Get current and upcoming challenges. Challenges are returned as chains. Chains are either of type singleChallenge or challengeChain Possible types for prizes are: none, cardStack, chest, cardStackRandom, resource, tradeToken, consumable
+      operationId: getChallenges
+      tags:
+        - challenges
+      responses:
+        '400':
+          $ref: '#/responses/BadRequestSpec'
+        '403':
+          $ref: '#/responses/ForbiddenSpec'
+        '404':
+          $ref: '#/responses/NotFoundSpec'
+        '429':
+          $ref: '#/responses/RequestThrottledSpec'
+        '500':
+          $ref: '#/responses/UnknownExceptionSpec'
+        '503':
+          $ref: '#/responses/InMaintenanceSpec'
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/ChallengeChainsList'
+  /leaderboards:
+    get:
+      summary: List leaderboards
+      description: List leaderboards for different trophy roads
+      operationId: getLeaderboards
+      tags:
+        - leaderboards
+      responses:
+        '400':
+          $ref: '#/responses/BadRequestSpec'
+        '403':
+          $ref: '#/responses/ForbiddenSpec'
+        '404':
+          $ref: '#/responses/NotFoundSpec'
+        '429':
+          $ref: '#/responses/RequestThrottledSpec'
+        '500':
+          $ref: '#/responses/UnknownExceptionSpec'
+        '503':
+          $ref: '#/responses/InMaintenanceSpec'
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/LeaderboardList'
+  /files/fingerprint:
+    get:
+      summary: Get version fingerprint of game files
+      description: Get version fingerprint of game files.
+      operationId: getFingerprint
+      tags:
+        - players
+      parameters:
+        -
+          name: playerTag
+          in: path
+          description: Tag of the player.
+          required: true
+          type: string
+      responses:
+        '400':
+          $ref: '#/responses/BadRequestSpec'
+        '403':
+          $ref: '#/responses/ForbiddenSpec'
+        '404':
+          $ref: '#/responses/NotFoundSpec'
+        '429':
+          $ref: '#/responses/RequestThrottledSpec'
+        '500':
+          $ref: '#/responses/UnknownExceptionSpec'
+        '503':
+          $ref: '#/responses/InMaintenanceSpec'
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/Fingerprint'
+  /locations/global/seasons:
+    get:
+      summary: Lists top player league seasons.
+      description: Lists top player league seasons.
+      operationId: listTopPlayerLeagueSeasonsHandler
+      tags:
+        - locations
+      responses:
+        '400':
+          $ref: '#/responses/BadRequestSpec'
+        '403':
+          $ref: '#/responses/ForbiddenSpec'
+        '404':
+          $ref: '#/responses/NotFoundSpec'
+        '429':
+          $ref: '#/responses/RequestThrottledSpec'
+        '500':
+          $ref: '#/responses/UnknownExceptionSpec'
+        '503':
+          $ref: '#/responses/InMaintenanceSpec'
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/LeagueSeasonList'
+  /locations:
+    get:
+      summary: List locations
+      description: List locations
+      operationId: getLocations
+      tags:
+        - locations
+      parameters:
+        -
+          name: limit
+          in: query
+          description: Limit the number of items returned in the response.
+          required: false
+          type: integer
+        -
+          name: after
+          in: query
+          description: |
+            Return only items that occur after this marker. Before marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both.
+          required: false
+          type: string
+        -
+          name: before
+          in: query
+          description: |
+            Return only items that occur before this marker. Before marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both.
+          required: false
+          type: string
+      responses:
+        '400':
+          $ref: '#/responses/BadRequestSpec'
+        '403':
+          $ref: '#/responses/ForbiddenSpec'
+        '404':
+          $ref: '#/responses/NotFoundSpec'
+        '429':
+          $ref: '#/responses/RequestThrottledSpec'
+        '500':
+          $ref: '#/responses/UnknownExceptionSpec'
+        '503':
+          $ref: '#/responses/InMaintenanceSpec'
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/LocationList'
+  /locations/global/seasonsV2:
+    get:
+      summary: Lists league seasons with more details.
+      description: Lists league seasons with unique season IDs and season end times.
+      operationId: listTopPlayerLeagueSeasonsV2Handler
+      tags:
+        - locations
+      responses:
+        '400':
+          $ref: '#/responses/BadRequestSpec'
+        '403':
+          $ref: '#/responses/ForbiddenSpec'
+        '404':
+          $ref: '#/responses/NotFoundSpec'
+        '429':
+          $ref: '#/responses/RequestThrottledSpec'
+        '500':
+          $ref: '#/responses/UnknownExceptionSpec'
+        '503':
+          $ref: '#/responses/InMaintenanceSpec'
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/LeagueSeasonList'
+  /locations/{locationId}:
+    get:
+      summary: Get location information
+      description: Get information about specific location
+      operationId: getLocation
+      tags:
+        - locations
+      parameters:
+        -
+          name: locationId
+          in: path
+          description: Identifier of the location to retrieve.
+          required: true
+          type: string
+      responses:
+        '400':
+          $ref: '#/responses/BadRequestSpec'
+        '403':
+          $ref: '#/responses/ForbiddenSpec'
+        '404':
+          $ref: '#/responses/NotFoundSpec'
+        '429':
+          $ref: '#/responses/RequestThrottledSpec'
+        '500':
+          $ref: '#/responses/UnknownExceptionSpec'
+        '503':
+          $ref: '#/responses/InMaintenanceSpec'
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/Location'
+  /clans/{clanTag}/currentriverrace:
+    get:
+      summary: Retrieve information about clan's current river race
+      description: Retrieve information about clan's current river race
+      operationId: getCurrentRiverRace
+      tags:
+        - clans
+      parameters:
+        -
+          name: clanTag
+          in: path
+          description: Tag of the clan.
+          required: true
+          type: string
+      responses:
+        '400':
+          $ref: '#/responses/BadRequestSpec'
+        '403':
+          $ref: '#/responses/ForbiddenSpec'
+        '404':
+          $ref: '#/responses/NotFoundSpec'
+        '429':
+          $ref: '#/responses/RequestThrottledSpec'
+        '500':
+          $ref: '#/responses/UnknownExceptionSpec'
+        '503':
+          $ref: '#/responses/InMaintenanceSpec'
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/CurrentRiverRace'
+  /locations/global/rankings/tournaments/{tournamentTag}:
+    get:
+      summary: Get global tournament rankings
+      description: Get global tournament rankings
+      operationId: getGlobalTournamentRanking
+      tags:
+        - locations
+      parameters:
+        -
+          name: tournamentTag
+          in: path
+          description: Tag of the tournament to retrieve
+          required: true
+          type: string
+        -
+          name: limit
+          in: query
+          description: Limit the number of items returned in the response.
+          required: false
+          type: integer
+        -
+          name: after
+          in: query
+          description: |
+            Return only items that occur after this marker. Before marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both.
+          required: false
+          type: string
+        -
+          name: before
+          in: query
+          description: |
+            Return only items that occur before this marker. Before marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both.
+          required: false
+          type: string
+      responses:
+        '400':
+          $ref: '#/responses/BadRequestSpec'
+        '403':
+          $ref: '#/responses/ForbiddenSpec'
+        '404':
+          $ref: '#/responses/NotFoundSpec'
+        '429':
+          $ref: '#/responses/RequestThrottledSpec'
+        '500':
+          $ref: '#/responses/UnknownExceptionSpec'
+        '503':
+          $ref: '#/responses/InMaintenanceSpec'
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/LadderTournamentRankingList'
+  /locations/{locationId}/pathoflegend/players:
+    get:
+      summary: Get player rankings in Path of Legend for a specific location
+      description: Get player rankings in Path of Legend for a specific location
+      operationId: getPlayerPathOfLegendRanking
+      tags:
+        - locations
+      parameters:
+        -
+          name: locationId
+          in: path
+          description: Identifier of the location to retrieve.
+          required: true
+          type: string
+        -
+          name: limit
+          in: query
+          description: Limit the number of items returned in the response.
+          required: false
+          type: integer
+        -
+          name: after
+          in: query
+          description: |
+            Return only items that occur after this marker. Before marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both.
+          required: false
+          type: string
+        -
+          name: before
+          in: query
+          description: |
+            Return only items that occur before this marker. Before marker can be found from the response, inside the 'paging' property. Note that only after or before can be specified for a request, not both.
+          required: false
+          type: string
+      responses:
+        '400':
+          $ref: '#/responses/BadRequestSpec'
+        '403':
+          $ref: '#/responses/ForbiddenSpec'
+        '404':
+          $ref: '#/responses/NotFoundSpec'
+        '429':
+          $ref: '#/responses/RequestThrottledSpec'
+        '500':
+          $ref: '#/responses/UnknownExceptionSpec'
+        '503':
+          $ref: '#/responses/InMaintenanceSpec'
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/PlayerPathOfLegendRankingList'
+securityDefinitions:
+  JWT:
+    type: apiKey
+    description: JSON Web Token used as an API key
+    name: authorization
+    in: header
+security:
+  -
+    JWT: []

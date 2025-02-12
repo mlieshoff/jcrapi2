@@ -56,7 +56,7 @@
             <plugin>
                 <groupId>org.openapitools</groupId>
                 <artifactId>openapi-generator-maven-plugin</artifactId>
-                <version>7.10.0</version>
+                <version>6.6.0</version>
                 <executions>
                     <execution>
                         <goals>
@@ -65,7 +65,9 @@
                         <configuration>
                             <inputSpec>${project.basedir}/src/main/resources/api.yaml</inputSpec>
                             <generatorName>wsdl-schema</generatorName>
-                            <templateResourcePath>${project.basedir}/src/main/resources/templates/wsdl-schema</templateResourcePath>
+                            <templateDirectory>${project.basedir}/src/main/resources/templates</templateDirectory>
+                            <templateResourcePath>${project.basedir}/src/main/resources/templates</templateResourcePath>
+                            <cleanupOutput>true</cleanupOutput>
                             <globalProperties>
                                 <debugOpenAPI>true</debugOpenAPI>
                                 <debugOperations>true</debugOperations>
@@ -290,6 +292,11 @@
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>okhttp</artifactId>
             <version>4.12.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openapitools</groupId>
+            <artifactId>openapi-generator-cli</artifactId>
+            <version>7.10.0</version>
         </dependency>
     </dependencies>
     <distributionManagement>

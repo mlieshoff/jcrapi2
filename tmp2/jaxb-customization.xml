@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jaxws:bindings
+  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+  xmlns:jaxws="http://java.sun.com/xml/ns/jaxws"
+  xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  wsdlLocation="service.wsdl">
+
+    <enableWrapperStyle>true</enableWrapperStyle>
+    <enableAsyncMapping>false</enableAsyncMapping>
+
+    <jaxws:bindings node="xsd:simpleType[@name='DeckSelection']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="COLLECTION" name="COLLECTION" />
+	        <jaxb:typesafeEnumMember value="DRAFT" name="DRAFT" />
+	        <jaxb:typesafeEnumMember value="DRAFT_COMPETITIVE" name="DRAFT_COMPETITIVE" />
+	        <jaxb:typesafeEnumMember value="PREDEFINED" name="PREDEFINED" />
+	        <jaxb:typesafeEnumMember value="EVENT_DECK" name="EVENT_DECK" />
+	        <jaxb:typesafeEnumMember value="PICK" name="PICK" />
+	        <jaxb:typesafeEnumMember value="WARDECK_PICK" name="WARDECK_PICK" />
+	        <jaxb:typesafeEnumMember value="QUADDECK_PICK" name="QUADDECK_PICK" />
+	        <jaxb:typesafeEnumMember value="UNKNOWN" name="UNKNOWN" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='Type']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="PVP" name="PVP" />
+	        <jaxb:typesafeEnumMember value="PVE" name="PVE" />
+	        <jaxb:typesafeEnumMember value="CLANMATE" name="CLANMATE" />
+	        <jaxb:typesafeEnumMember value="TOURNAMENT" name="TOURNAMENT" />
+	        <jaxb:typesafeEnumMember value="FRIENDLY" name="FRIENDLY" />
+	        <jaxb:typesafeEnumMember value="SURVIVAL" name="SURVIVAL" />
+	        <jaxb:typesafeEnumMember value="PVP2v2" name="PVP2V2" />
+	        <jaxb:typesafeEnumMember value="CLANMATE2v2" name="CLANMATE2V2" />
+	        <jaxb:typesafeEnumMember value="CHALLENGE2v2" name="CHALLENGE2V2" />
+	        <jaxb:typesafeEnumMember value="CLANWAR_COLLECTION_DAY" name="CLANWAR_COLLECTION_DAY" />
+	        <jaxb:typesafeEnumMember value="CLANWAR_WAR_DAY" name="CLANWAR_WAR_DAY" />
+	        <jaxb:typesafeEnumMember value="CASUAL_1V1" name="CASUAL_1V1" />
+	        <jaxb:typesafeEnumMember value="CASUAL_2V2" name="CASUAL_2V2" />
+	        <jaxb:typesafeEnumMember value="BOAT_BATTLE" name="BOAT_BATTLE" />
+	        <jaxb:typesafeEnumMember value="BOAT_BATTLE_PRACTICE" name="BOAT_BATTLE_PRACTICE" />
+	        <jaxb:typesafeEnumMember value="RIVER_RACE_PVP" name="RIVER_RACE_PVP" />
+	        <jaxb:typesafeEnumMember value="RIVER_RACE_DUEL" name="RIVER_RACE_DUEL" />
+	        <jaxb:typesafeEnumMember value="RIVER_RACE_DUEL_COLOSSEUM" name="RIVER_RACE_DUEL_COLOSSEUM" />
+	        <jaxb:typesafeEnumMember value="TUTORIAL" name="TUTORIAL" />
+	        <jaxb:typesafeEnumMember value="PATH_OF_LEGEND" name="PATH_OF_LEGEND" />
+	        <jaxb:typesafeEnumMember value="SEASONAL_BATTLE" name="SEASONAL_BATTLE" />
+	        <jaxb:typesafeEnumMember value="PRACTICE" name="PRACTICE" />
+	        <jaxb:typesafeEnumMember value="TRAIL" name="TRAIL" />
+	        <jaxb:typesafeEnumMember value="UNKNOWN" name="UNKNOWN" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='Type']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="SINGLE_CHALLENGE" name="SINGLE_CHALLENGE" />
+	        <jaxb:typesafeEnumMember value="CHAIN_CHALLENGE" name="CHAIN_CHALLENGE" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='ClanChestStatus']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="INACTIVE" name="INACTIVE" />
+	        <jaxb:typesafeEnumMember value="ACTIVE" name="ACTIVE" />
+	        <jaxb:typesafeEnumMember value="COMPLETED" name="COMPLETED" />
+	        <jaxb:typesafeEnumMember value="UNKNOWN" name="UNKNOWN" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='Type']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="OPEN" name="OPEN" />
+	        <jaxb:typesafeEnumMember value="INVITE_ONLY" name="INVITE_ONLY" />
+	        <jaxb:typesafeEnumMember value="CLOSED" name="CLOSED" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='Role']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="NOT_MEMBER" name="NOT_MEMBER" />
+	        <jaxb:typesafeEnumMember value="MEMBER" name="MEMBER" />
+	        <jaxb:typesafeEnumMember value="LEADER" name="LEADER" />
+	        <jaxb:typesafeEnumMember value="ADMIN" name="ADMIN" />
+	        <jaxb:typesafeEnumMember value="COLEADER" name="COLEADER" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='State']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="CLAN_NOT_FOUND" name="CLAN_NOT_FOUND" />
+	        <jaxb:typesafeEnumMember value="ACCESS_DENIED" name="ACCESS_DENIED" />
+	        <jaxb:typesafeEnumMember value="NOT_IN_WAR" name="NOT_IN_WAR" />
+	        <jaxb:typesafeEnumMember value="COLLECTION_DAY" name="COLLECTION_DAY" />
+	        <jaxb:typesafeEnumMember value="MATCHMAKING" name="MATCHMAKING" />
+	        <jaxb:typesafeEnumMember value="WAR_DAY" name="WAR_DAY" />
+	        <jaxb:typesafeEnumMember value="ENDED" name="ENDED" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='State']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="CLAN_NOT_FOUND" name="CLAN_NOT_FOUND" />
+	        <jaxb:typesafeEnumMember value="ACCESS_DENIED" name="ACCESS_DENIED" />
+	        <jaxb:typesafeEnumMember value="MATCHMAKING" name="MATCHMAKING" />
+	        <jaxb:typesafeEnumMember value="MATCHED" name="MATCHED" />
+	        <jaxb:typesafeEnumMember value="FULL" name="FULL" />
+	        <jaxb:typesafeEnumMember value="ENDED" name="ENDED" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='PeriodType']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="TRAINING" name="TRAINING" />
+	        <jaxb:typesafeEnumMember value="WAR_DAY" name="WAR_DAY" />
+	        <jaxb:typesafeEnumMember value="COLOSSEUM" name="COLOSSEUM" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='Rarity']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="COMMON" name="COMMON" />
+	        <jaxb:typesafeEnumMember value="RARE" name="RARE" />
+	        <jaxb:typesafeEnumMember value="EPIC" name="EPIC" />
+	        <jaxb:typesafeEnumMember value="LEGENDARY" name="LEGENDARY" />
+	        <jaxb:typesafeEnumMember value="CHAMPION" name="CHAMPION" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='State']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="PENDING" name="PENDING" />
+	        <jaxb:typesafeEnumMember value="CANCELLED" name="CANCELLED" />
+	        <jaxb:typesafeEnumMember value="TIMED_OUT" name="TIMED_OUT" />
+	        <jaxb:typesafeEnumMember value="IN_PROGRESS" name="IN_PROGRESS" />
+	        <jaxb:typesafeEnumMember value="COMPLETE" name="COMPLETE" />
+	        <jaxb:typesafeEnumMember value="FAILED" name="FAILED" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='Role']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="NOT_MEMBER" name="NOT_MEMBER" />
+	        <jaxb:typesafeEnumMember value="MEMBER" name="MEMBER" />
+	        <jaxb:typesafeEnumMember value="LEADER" name="LEADER" />
+	        <jaxb:typesafeEnumMember value="ADMIN" name="ADMIN" />
+	        <jaxb:typesafeEnumMember value="COLEADER" name="COLEADER" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='Rarity']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="COMMON" name="COMMON" />
+	        <jaxb:typesafeEnumMember value="RARE" name="RARE" />
+	        <jaxb:typesafeEnumMember value="EPIC" name="EPIC" />
+	        <jaxb:typesafeEnumMember value="LEGENDARY" name="LEGENDARY" />
+	        <jaxb:typesafeEnumMember value="CHAMPION" name="CHAMPION" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='GameMode']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="REGULAR" name="REGULAR" />
+	        <jaxb:typesafeEnumMember value="TEAM_VS_TEAM" name="TEAM_VS_TEAM" />
+	        <jaxb:typesafeEnumMember value="DOUBLE_ELIXIR" name="DOUBLE_ELIXIR" />
+	        <jaxb:typesafeEnumMember value="TRIPLE_ELIXIR" name="TRIPLE_ELIXIR" />
+	        <jaxb:typesafeEnumMember value="RAGE" name="RAGE" />
+	        <jaxb:typesafeEnumMember value="SUDDEN_DEATH" name="SUDDEN_DEATH" />
+	        <jaxb:typesafeEnumMember value="TOUCHDOWN" name="TOUCHDOWN" />
+	        <jaxb:typesafeEnumMember value="RAMP_UP" name="RAMP_UP" />
+	        <jaxb:typesafeEnumMember value="DRAFT" name="DRAFT" />
+	        <jaxb:typesafeEnumMember value="MIRROR" name="MIRROR" />
+	        <jaxb:typesafeEnumMember value="DRAGON_HUNT" name="DRAGON_HUNT" />
+	        <jaxb:typesafeEnumMember value="TRIPLE_DRAFT" name="TRIPLE_DRAFT" />
+	        <jaxb:typesafeEnumMember value="BEST_OF_3" name="BEST_OF_3" />
+	        <jaxb:typesafeEnumMember value="MEGA_DRAFT" name="MEGA_DRAFT" />
+	        <jaxb:typesafeEnumMember value="HEIST" name="HEIST" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='Rarity']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="COMMON" name="COMMON" />
+	        <jaxb:typesafeEnumMember value="RARE" name="RARE" />
+	        <jaxb:typesafeEnumMember value="EPIC" name="EPIC" />
+	        <jaxb:typesafeEnumMember value="LEGENDARY" name="LEGENDARY" />
+	        <jaxb:typesafeEnumMember value="CHAMPION" name="CHAMPION" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='Resource']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="GOLD" name="GOLD" />
+	        <jaxb:typesafeEnumMember value="UNKNOWN" name="UNKNOWN" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='Type']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="NONE" name="NONE" />
+	        <jaxb:typesafeEnumMember value="CARD_STACK" name="CARD_STACK" />
+	        <jaxb:typesafeEnumMember value="CHEST" name="CHEST" />
+	        <jaxb:typesafeEnumMember value="CARD_STACK_RANDOM" name="CARD_STACK_RANDOM" />
+	        <jaxb:typesafeEnumMember value="RESOURCE" name="RESOURCE" />
+	        <jaxb:typesafeEnumMember value="TRADE_TOKEN" name="TRADE_TOKEN" />
+	        <jaxb:typesafeEnumMember value="CONSUMABLE" name="CONSUMABLE" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='Status']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="IN_PREPARATION" name="IN_PREPARATION" />
+	        <jaxb:typesafeEnumMember value="IN_PROGRESS" name="IN_PROGRESS" />
+	        <jaxb:typesafeEnumMember value="ENDED" name="ENDED" />
+	        <jaxb:typesafeEnumMember value="UNKNOWN" name="UNKNOWN" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='Type']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="OPEN" name="OPEN" />
+	        <jaxb:typesafeEnumMember value="PASSWORD_PROTECTED" name="PASSWORD_PROTECTED" />
+	        <jaxb:typesafeEnumMember value="UNKNOWN" name="UNKNOWN" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='Status']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="IN_PREPARATION" name="IN_PREPARATION" />
+	        <jaxb:typesafeEnumMember value="IN_PROGRESS" name="IN_PROGRESS" />
+	        <jaxb:typesafeEnumMember value="ENDED" name="ENDED" />
+	        <jaxb:typesafeEnumMember value="UNKNOWN" name="UNKNOWN" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+    <jaxws:bindings node="xsd:simpleType[@name='Type']">
+    	<jaxb:typesafeEnumClass>
+	        <jaxb:typesafeEnumMember value="OPEN" name="OPEN" />
+	        <jaxb:typesafeEnumMember value="PASSWORD_PROTECTED" name="PASSWORD_PROTECTED" />
+	        <jaxb:typesafeEnumMember value="UNKNOWN" name="UNKNOWN" />
+	    </jaxb:typesafeEnumClass>
+    </jaxws:bindings>
+
+
+</jaxws:bindings>

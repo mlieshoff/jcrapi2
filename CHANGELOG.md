@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [4.0.12] - 2025-02-13
+
+### Changed
+
+- Use classes from Java Build Essentials for building time instead of Supercell API Wrapper Essentials
+
 ## [4.0.11] - 2025-01-13
 
 ### Added
@@ -273,7 +279,7 @@
 
 - Create a Release job (#152)
 
-[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.11...HEAD
+[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.12...HEAD
 [4.0.11]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.10...4.0.11
 [4.0.10]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.9...4.0.10
 [4.0.9]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.8...4.0.9

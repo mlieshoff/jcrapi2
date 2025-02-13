@@ -4,9 +4,14 @@
 
 ## [4.0.12] - 2025-02-13
 
-### Changed
+### Added
 
-- Use classes from Java Build Essentials for building time instead of Supercell API Wrapper Essentials
+- Spotless Maven Plugin
+
+### Removed
+
+- Git Commit hooks handling formatting
+- Google Java Format library
 
 ## [4.0.11] - 2025-01-13
 

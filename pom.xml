@@ -158,6 +158,22 @@
                             </arguments>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>ReadmeVersion</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>com.mlieshoff.build.essentials.ReadmeVersionChecker</mainClass>
+                            <arguments>
+                                <argument>./VERSION.txt</argument>
+                                <argument>./README.md</argument>
+                                <argument>${groupId}</argument>
+                                <argument>${artifactId}</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
         </plugins>

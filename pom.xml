@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>jcrapi2</artifactId>
     <packaging>jar</packaging>
-    <version>4.0.11</version>
+    <version>4.0.12</version>
     <groupId>jcrapi2</groupId>
     <url>https://maven.apache.org</url>
     <inceptionYear>2018</inceptionYear>
@@ -154,11 +154,11 @@
                 <configuration>
                     <ratchetFrom>origin/master</ratchetFrom>
                     <java>
-                        <removeUnusedImports/>
                         <googleJavaFormat>
                             <version>${version.google-java-formatter}</version>
                             <style>AOSP</style>
                             <reflowLongStrings>true</reflowLongStrings>
+                            <reorderImports>true</reorderImports>
                         </googleJavaFormat>
                     </java>
                 </configuration>
@@ -167,7 +167,7 @@
                         <goals>
                             <goal>check</goal>
                         </goals>
-                        <phase>verify</phase>
+                        <phase>process-resources</phase>
                     </execution>
                 </executions>
             </plugin>

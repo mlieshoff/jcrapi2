@@ -144,6 +144,20 @@
                             </arguments>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>ChangelogVersion</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>com.mlieshoff.build.essentials.ChangeLogVersionChecker</mainClass>
+                            <arguments>
+                                <argument>./VERSION.txt</argument>
+                                <argument>./CHANGELOG.md</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
         </plugins>

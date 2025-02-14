@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>jcrapi2</artifactId>
     <packaging>jar</packaging>
-    <version>4.0.12</version>
+    <version>4.0.13</version>
     <groupId>jcrapi2</groupId>
     <url>https://maven.apache.org</url>
     <inceptionYear>2018</inceptionYear>
@@ -36,6 +36,7 @@
         <version.io>2.18.0</version.io>
         <version.jacoco>0.8.12</version.jacoco>
         <version.java>21</version.java>
+        <version.java.build.essentials>1.0.1</version.java.build.essentials>
         <version.json>1.1.4</version.json>
         <version.junit>5.11.4</version.junit>
         <version.lombok>1.18.36</version.lombok>
@@ -138,10 +139,40 @@
                             <goal>java</goal>
                         </goals>
                         <configuration>
-                            <mainClass>supercell.api.wrapper.essentials.build.ReleaseVersionChecker</mainClass>
+                            <mainClass>com.mlieshoff.build.essentials.ReleaseVersionChecker</mainClass>
                             <arguments>
                                 <argument>./VERSION.txt</argument>
                                 <argument>./pom.xml</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>ChangelogVersion</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>com.mlieshoff.build.essentials.ChangeLogVersionChecker</mainClass>
+                            <arguments>
+                                <argument>./VERSION.txt</argument>
+                                <argument>./CHANGELOG.md</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>ReadmeVersion</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>com.mlieshoff.build.essentials.ReadmeVersionChecker</mainClass>
+                            <arguments>
+                                <argument>./VERSION.txt</argument>
+                                <argument>./README.md</argument>
+                                <argument>${project.groupId}</argument>
+                                <argument>${project.artifactId}</argument>
                             </arguments>
                         </configuration>
                     </execution>
@@ -220,6 +251,11 @@
             <groupId>supercell-api-wrapper-essentials</groupId>
             <artifactId>supercell-api-wrapper-essentials</artifactId>
             <version>${version.supercell.api.wrapper.essentials}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.mlieshoff</groupId>
+            <artifactId>java-build-essentials</artifactId>
+            <version>${version.java.build.essentials}</version>
         </dependency>
 
         <!-- others -->
@@ -312,6 +348,16 @@
         <repository>
             <id>packagecloud-supercell-api-wrapper-essentials</id>
             <url>https://packagecloud.io/mlieshoff/supercell-api-wrapper-essentials/maven2</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>packagecloud-java-build-essentials</id>
+            <url>https://packagecloud.io/mlieshoff/java-build-essentials/maven2</url>
             <releases>
                 <enabled>true</enabled>
             </releases>

@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>jcrapi2</artifactId>
     <packaging>jar</packaging>
-    <version>4.0.12</version>
+    <version>4.0.13</version>
     <groupId>jcrapi2</groupId>
     <url>https://maven.apache.org</url>
     <inceptionYear>2018</inceptionYear>
@@ -36,7 +36,7 @@
         <version.io>2.18.0</version.io>
         <version.jacoco>0.8.12</version.jacoco>
         <version.java>21</version.java>
-        <version.java.build.essentials>1.0.0</version.java.build.essentials>
+        <version.java.build.essentials>1.0.1</version.java.build.essentials>
         <version.json>1.1.4</version.json>
         <version.junit>5.11.4</version.junit>
         <version.lombok>1.18.36</version.lombok>
@@ -171,8 +171,8 @@
                             <arguments>
                                 <argument>./VERSION.txt</argument>
                                 <argument>./README.md</argument>
-                                <argument>${groupId}</argument>
-                                <argument>${artifactId}</argument>
+                                <argument>${project.groupId}</argument>
+                                <argument>${project.artifactId}</argument>
                             </arguments>
                         </configuration>
                     </execution>

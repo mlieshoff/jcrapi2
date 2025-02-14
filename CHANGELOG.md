@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [4.0.15] - 2025-02-14
+
+### Added
+
+- (new field) players.info.Player.progress.Royals_2v2_2025
+
 ## [4.0.14] - 2025-02-14
 
 ### Added
@@ -296,7 +302,8 @@
 
 - Create a Release job (#152)
 
-[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.14...HEAD
+[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.15...HEAD
+[4.0.15]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.14...4.0.15
 [4.0.14]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.13...4.0.14
 [4.0.13]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.12...4.0.13
 [4.0.12]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.11...4.0.12

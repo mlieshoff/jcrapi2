@@ -328,12 +328,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-    <distributionManagement>
-        <repository>
-            <id>packagecloud</id>
-            <url>packagecloud+https://packagecloud.io/mlieshoff/jcrapi2</url>
-        </repository>
-    </distributionManagement>
     <repositories>
         <repository>
             <id>mlieshoff-jcrapi2</id>
@@ -366,4 +360,25 @@
             </snapshots>
         </repository>
     </repositories>
+    <profiles>
+        <profile>
+            <id>packagecloud</id>
+            <distributionManagement>
+                <repository>
+                    <id>packagecloud</id>
+                    <url>packagecloud+https://packagecloud.io/mlieshoff/jcrapi2</url>
+                </repository>
+            </distributionManagement>
+        </profile>
+        <profile>
+            <id>github-packages</id>
+            <distributionManagement>
+                <repository>
+                    <id>github</id>
+                    <name>GitHub Packages</name>
+                    <url>https://maven.pkg.github.com/mlieshoff/jcrapi2</url>
+                </repository>
+            </distributionManagement>
+        </profile>
+    </profiles>
 </project>

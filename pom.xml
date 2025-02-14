@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>jcrapi2</artifactId>
     <packaging>jar</packaging>
-    <version>4.0.11</version>
+    <version>4.0.12</version>
     <groupId>jcrapi2</groupId>
     <url>https://maven.apache.org</url>
     <inceptionYear>2018</inceptionYear>
@@ -31,6 +31,7 @@
         </license>
     </licenses>
     <properties>
+        <version.google-java-formatter>1.25.2</version.google-java-formatter>
         <version.gson>2.11.0</version.gson>
         <version.io>2.18.0</version.io>
         <version.jacoco>0.8.12</version.jacoco>
@@ -43,6 +44,7 @@
         <version.maven.enforcer>3.5.0</version.maven.enforcer>
         <version.maven.exec>3.5.0</version.maven.exec>
         <version.maven.source>3.3.1</version.maven.source>
+        <version.maven.spotless>2.44.2</version.maven.spotless>
         <version.maven.surfire>3.5.2</version.maven.surfire>
         <version.maven.surfire.junit>1.0.3</version.maven.surfire.junit>
         <version.maven.packagecloud>0.0.4</version.maven.packagecloud>
@@ -142,6 +144,30 @@
                                 <argument>./pom.xml</argument>
                             </arguments>
                         </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.diffplug.spotless</groupId>
+                <artifactId>spotless-maven-plugin</artifactId>
+                <version>${version.maven.spotless}</version>
+                <configuration>
+                    <ratchetFrom>origin/master</ratchetFrom>
+                    <java>
+                        <googleJavaFormat>
+                            <version>${version.google-java-formatter}</version>
+                            <style>AOSP</style>
+                            <reflowLongStrings>true</reflowLongStrings>
+                            <reorderImports>true</reorderImports>
+                        </googleJavaFormat>
+                    </java>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <phase>process-resources</phase>
                     </execution>
                 </executions>
             </plugin>

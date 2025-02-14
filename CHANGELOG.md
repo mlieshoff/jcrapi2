@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [4.0.14] - 2025-02-14
+
+### Added
+
+- GitHub Packages pipeline
+
 ## [4.0.13] - 2025-02-14
 
 ### Changed
@@ -290,7 +296,8 @@
 
 - Create a Release job (#152)
 
-[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.13...HEAD
+[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.14...HEAD
+[4.0.14]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.13...4.0.14
 [4.0.13]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.12...4.0.13
 [4.0.12]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.11...4.0.12
 [4.0.11]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.10...4.0.11

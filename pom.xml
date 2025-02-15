@@ -50,7 +50,7 @@
         <version.maven.surfire.junit>1.0.3</version.maven.surfire.junit>
         <version.maven.packagecloud>0.0.4</version.maven.packagecloud>
         <version.mockito>5.15.2</version.mockito>
-        <version.slf4j>2.0.14</version.slf4j>
+        <version.slf4j>2.0.16</version.slf4j>
         <version.supercell.api.wrapper.essentials>1.0.1</version.supercell.api.wrapper.essentials>
         <version.wiremock>3.10.0</version.wiremock>
     </properties>

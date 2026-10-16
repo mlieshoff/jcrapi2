@@ -315,6 +315,23 @@ See [AGENTS.md](AGENTS.md) for contributor and coding-agent instructions.
 Dependency and plugin updates should be reviewed deliberately against the
 configured versions in [pom.xml](pom.xml).
 
+## Library updates
+
+Minor versions
+```
+mvn versions:update-parent versions:use-latest-releases versions:update-properties versions:commit -DallowMajorUpdates=false
+```
+
+Major versions
+```
+mvn versions:update-parent versions:use-latest-releases versions:update-properties versions:commit -DallowMajorUpdates=true
+```
+
+Update plugins
+```
+mvn versions:display-plugin-updates -U
+```
+
 ## Community
 
 - [Discord](https://discord.gg/WNb5c8hn)

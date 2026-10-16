@@ -16,6 +16,8 @@
  */
 package jcrapi2.api.intern.globaltournaments;
 
+import jcrapi2.api.generated.model.LadderTournament;
+
 import supercell.api.wrapper.essentials.common.PaginationResponse;
 
-public class GlobalTournamentsResponse extends PaginationResponse<GlobalTournament> {}
+public class GlobalTournamentsResponse extends PaginationResponse<LadderTournament> {}

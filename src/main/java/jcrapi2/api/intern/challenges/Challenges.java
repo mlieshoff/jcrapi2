@@ -16,6 +16,8 @@
  */
 package jcrapi2.api.intern.challenges;
 
+import jcrapi2.api.generated.model.ChallengeChain;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -23,4 +25,4 @@ import java.util.ArrayList;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class Challenges extends ArrayList<Challenge> {}
+public class Challenges extends ArrayList<ChallengeChain> {}

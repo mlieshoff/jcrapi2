@@ -16,6 +16,8 @@
  */
 package jcrapi2.api.intern.cards;
 
+import jcrapi2.api.generated.model.Items;
+
 import com.google.gson.annotations.SerializedName;
 
 import lombok.Data;
@@ -26,7 +28,7 @@ import supercell.api.wrapper.essentials.common.RawResponse;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class CardsResponse extends Cards implements IResponse {
+public class CardsResponse extends Items implements IResponse {
 
     @SerializedName("reason")
     private String reason;

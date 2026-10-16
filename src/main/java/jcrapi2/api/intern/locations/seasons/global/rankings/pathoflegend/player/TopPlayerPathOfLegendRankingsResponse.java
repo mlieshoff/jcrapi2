@@ -16,7 +16,9 @@
  */
 package jcrapi2.api.intern.locations.seasons.global.rankings.pathoflegend.player;
 
+import jcrapi2.api.generated.model.PlayerPathOfLegendRanking;
+
 import supercell.api.wrapper.essentials.common.PaginationResponse;
 
 public class TopPlayerPathOfLegendRankingsResponse
-        extends PaginationResponse<TopPlayerPathOfLegendRanking> {}
+        extends PaginationResponse<PlayerPathOfLegendRanking> {}

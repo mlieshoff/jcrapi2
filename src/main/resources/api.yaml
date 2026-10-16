@@ -30,9 +30,6 @@ tags:
   -
     name: locations
     description: Access global and local rankings
-  -
-    name: challenges
-    description: Access challenge information
 responses:
   InMaintenanceSpec:
     description: Service is temprorarily unavailable because of maintenance.
@@ -118,12 +115,12 @@ definitions:
       state:
         type: string
         enum:
-          - CLAN_NOT_FOUND
-          - ACCESS_DENIED
-          - MATCHMAKING
-          - MATCHED
-          - FULL
-          - ENDED
+          - clanNotFound
+          - accessDenied
+          - matchmaking
+          - matched
+          - full
+          - ended
       clan:
         $ref: '#/definitions/RiverRaceClan'
       clans:
@@ -139,9 +136,9 @@ definitions:
       periodType:
         type: string
         enum:
-          - TRAINING
-          - WAR_DAY
-          - COLOSSEUM
+          - training
+          - warDay
+          - colosseum
       periodLogs:
         $ref: '#/definitions/PeriodLogList'
   PeriodLogList:
@@ -190,13 +187,13 @@ definitions:
   RiverRaceClan:
     type: object
     properties:
-      tag:
-        type: string
       clanScore:
         type: integer
       badgeId:
         type: integer
       name:
+        type: string
+      tag:
         type: string
       fame:
         type: integer
@@ -291,7 +288,9 @@ definitions:
       version:
         type: string
       files:
-        $ref: '#/definitions/List'
+        type: array
+        items:
+          type: object
   LeaderboardList:
     type: array
     items:
@@ -304,124 +303,7 @@ definitions:
       id:
         type: integer
   JsonLocalizedName:
-    type: object
-  ChallengeChainsList:
-    type: array
-    items:
-      $ref: '#/definitions/ChallengeChain'
-  ChallengeChain:
-    type: object
-    properties:
-      title:
-        $ref: '#/definitions/JsonLocalizedName'
-      type:
-        type: string
-        enum:
-          - SINGLE_CHALLENGE
-          - CHAIN_CHALLENGE
-      startTime:
-        type: string
-      endTime:
-        type: string
-      challenges:
-        $ref: '#/definitions/ChallengeList'
-  ChallengeList:
-    type: array
-    items:
-      $ref: '#/definitions/Challenge'
-  Challenge:
-    type: object
-    properties:
-      description:
-        $ref: '#/definitions/JsonLocalizedName'
-      name:
-        $ref: '#/definitions/JsonLocalizedName'
-      id:
-        type: integer
-      winMode:
-        type: string
-      casual:
-        type: boolean
-      maxLosses:
-        type: integer
-      maxWins:
-        type: integer
-      iconUrl:
-        type: string
-      gameMode:
-        $ref: '#/definitions/ChallengeGameMode'
-      prizes:
-        $ref: '#/definitions/SurvivalMilestoneRewardList'
-  SurvivalMilestoneRewardList:
-    type: array
-    items:
-      $ref: '#/definitions/SurvivalMilestoneReward'
-  SurvivalMilestoneReward:
-    type: object
-    properties:
-      rarity:
-        type: string
-        enum:
-          - COMMON
-          - RARE
-          - EPIC
-          - LEGENDARY
-          - CHAMPION
-      chest:
-        type: string
-      resource:
-        type: string
-        enum:
-          - GOLD
-          - UNKNOWN
-      type:
-        type: string
-        enum:
-          - NONE
-          - CARD_STACK
-          - CHEST
-          - CARD_STACK_RANDOM
-          - RESOURCE
-          - TRADE_TOKEN
-          - CONSUMABLE
-      amount:
-        type: integer
-      card:
-        $ref: '#/definitions/Item'
-      consumableName:
-        type: string
-      wins:
-        type: integer
-  Item:
-    type: object
-    properties:
-      iconUrls:
-        type: object
-      name:
-        $ref: '#/definitions/JsonLocalizedName'
-      id:
-        type: integer
-      rarity:
-        type: string
-        enum:
-          - COMMON
-          - RARE
-          - EPIC
-          - LEGENDARY
-          - CHAMPION
-      maxLevel:
-        type: integer
-      elixirCost:
-        type: integer
-      maxEvolutionLevel:
-        type: integer
-  ChallengeGameMode:
-    type: object
-    properties:
-      id:
-        type: integer
-      name:
-        type: string
+    type: string
   ClanMemberList:
     type: array
     items:
@@ -431,10 +313,10 @@ definitions:
     properties:
       clanChestPoints:
         type: integer
-      lastSeen:
-        type: string
       arena:
         $ref: '#/definitions/Arena'
+      lastSeen:
+        type: string
       tag:
         type: string
       name:
@@ -442,11 +324,11 @@ definitions:
       role:
         type: string
         enum:
-          - NOT_MEMBER
-          - MEMBER
-          - LEADER
-          - ADMIN
-          - COLEADER
+          - notMember
+          - member
+          - leader
+          - elder
+          - coLeader
       expLevel:
         type: integer
       trophies:
@@ -466,8 +348,10 @@ definitions:
         $ref: '#/definitions/JsonLocalizedName'
       id:
         type: integer
+      rawName:
+        type: string
       iconUrls:
-        type: object
+        $ref: '#/definitions/IconUrls'
   LadderTournamentList:
     type: array
     items:
@@ -475,10 +359,10 @@ definitions:
   LadderTournament:
     type: object
     properties:
-      gameMode:
-        $ref: '#/definitions/GameMode'
       maxLosses:
         type: integer
+      gameMode:
+        $ref: '#/definitions/GameMode'
       minExpLevel:
         type: integer
       tournamentLevel:
@@ -498,6 +382,69 @@ definitions:
       topRankReward:
         $ref: '#/definitions/SurvivalMilestoneRewardList'
       maxTopRewardRank:
+        type: integer
+  SurvivalMilestoneRewardList:
+    type: array
+    items:
+      $ref: '#/definitions/SurvivalMilestoneReward'
+  SurvivalMilestoneReward:
+    type: object
+    properties:
+      rarity:
+        type: string
+        enum:
+          - common
+          - rare
+          - epic
+          - legendary
+          - champion
+      chest:
+        type: string
+      resource:
+        type: string
+        enum:
+          - gold
+          - unknown
+      type:
+        type: string
+        enum:
+          - none
+          - cardStack
+          - chest
+          - cardStackRandom
+          - resource
+          - tradeToken
+          - consumable
+      amount:
+        type: integer
+      card:
+        $ref: '#/definitions/Item'
+      consumableName:
+        type: string
+      wins:
+        type: integer
+  Item:
+    type: object
+    properties:
+      iconUrls:
+        $ref: '#/definitions/IconUrls'
+      name:
+        $ref: '#/definitions/JsonLocalizedName'
+      id:
+        type: integer
+      rarity:
+        type: string
+        enum:
+          - common
+          - rare
+          - epic
+          - legendary
+          - champion
+      maxLevel:
+        type: integer
+      elixirCost:
+        type: integer
+      maxEvolutionLevel:
         type: integer
   GameMode:
     type: object
@@ -546,30 +493,30 @@ definitions:
   Clan:
     type: object
     properties:
-      memberList:
-        $ref: '#/definitions/ClanMemberList'
-      tag:
-        type: string
-      badgeId:
-        type: integer
       clanChestStatus:
         type: string
         enum:
-          - INACTIVE
-          - ACTIVE
-          - COMPLETED
-          - UNKNOWN
+          - inactive
+          - active
+          - completed
+          - unknown
       clanChestLevel:
+        type: integer
+      memberList:
+        $ref: '#/definitions/ClanMemberList'
+      clanChestMaxLevel:
+        type: integer
+      clanScore:
+        type: integer
+      clanWarTrophies:
         type: integer
       requiredTrophies:
         type: integer
       donationsPerWeek:
         type: integer
-      clanScore:
+      members:
         type: integer
-      clanChestMaxLevel:
-        type: integer
-      clanWarTrophies:
+      badgeId:
         type: integer
       name:
         type: string
@@ -578,11 +525,11 @@ definitions:
       type:
         type: string
         enum:
-          - OPEN
-          - INVITE_ONLY
-          - CLOSED
-      members:
-        type: integer
+          - open
+          - inviteOnly
+          - closed
+      tag:
+        type: string
       description:
         type: string
       clanChestPoints:
@@ -599,12 +546,12 @@ definitions:
       state:
         type: string
         enum:
-          - PENDING
-          - CANCELLED
-          - TIMED_OUT
-          - IN_PROGRESS
-          - COMPLETE
-          - FAILED
+          - pending
+          - cancelled
+          - timedOut
+          - inProgress
+          - complete
+          - failed
       battle:
         $ref: '#/definitions/Battle'
       tag:
@@ -616,63 +563,63 @@ definitions:
         $ref: '#/definitions/GameMode'
       arena:
         $ref: '#/definitions/Arena'
-      deckSelection:
+      team:
+        $ref: '#/definitions/PlayerBattleDataList'
+      type:
         type: string
         enum:
-          - COLLECTION
-          - DRAFT
-          - DRAFT_COMPETITIVE
-          - PREDEFINED
-          - EVENT_DECK
-          - PICK
-          - WARDECK_PICK
-          - QUADDECK_PICK
-          - UNKNOWN
-      challengeWinCountBefore:
-        type: integer
-      boatBattleSide:
-        type: string
-      boatBattleWon:
-        type: boolean
+          - PvP
+          - PvE
+          - clanmate
+          - tournament
+          - friendly
+          - survival
+          - pvp2v2
+          - clanmate2v2
+          - challenge2v2
+          - clanwarCollectionDay
+          - clanwarWarDay
+          - casual1v1
+          - casual2v2
+          - boatBattle
+          - boatBattlePractice
+          - riverRacePvP
+          - riverRaceDuel
+          - riverRaceDuelColosseum
+          - tutorial
+          - pathOfLegend
+          - seasonalBattle
+          - practice
+          - trail
+          - unknown
       newTowersDestroyed:
         type: integer
       prevTowersDestroyed:
         type: integer
       remainingTowers:
         type: integer
-      leagueNumber:
-        type: integer
-      team:
-        $ref: '#/definitions/PlayerBattleDataList'
-      opponent:
-        $ref: '#/definitions/PlayerBattleDataList'
-      type:
+      deckSelection:
         type: string
         enum:
-          - PVP
-          - PVE
-          - CLANMATE
-          - TOURNAMENT
-          - FRIENDLY
-          - SURVIVAL
-          - PVP2v2
-          - CLANMATE2v2
-          - CHALLENGE2v2
-          - CLANWAR_COLLECTION_DAY
-          - CLANWAR_WAR_DAY
-          - CASUAL_1V1
-          - CASUAL_2V2
-          - BOAT_BATTLE
-          - BOAT_BATTLE_PRACTICE
-          - RIVER_RACE_PVP
-          - RIVER_RACE_DUEL
-          - RIVER_RACE_DUEL_COLOSSEUM
-          - TUTORIAL
-          - PATH_OF_LEGEND
-          - SEASONAL_BATTLE
-          - PRACTICE
-          - TRAIL
-          - UNKNOWN
+          - collection
+          - draft
+          - draftCompetitive
+          - predefined
+          - eventDeck
+          - pick
+          - wardeckPick
+          - quaddeckPick
+          - unknown
+      opponent:
+        $ref: '#/definitions/PlayerBattleDataList'
+      challengeWinCountBefore:
+        type: integer
+      boatBattleSide:
+        type: string
+      boatBattleWon:
+        type: boolean
+      leagueNumber:
+        type: integer
       battleTime:
         type: string
       challengeId:
@@ -685,6 +632,27 @@ definitions:
         type: boolean
       isHostedMatch:
         type: boolean
+      eventTag:
+        type: string
+      modifiers:
+        $ref: '#/definitions/PlayerBattleAugmentList'
+  PlayerBattleAugmentList:
+    type: array
+    items:
+      $ref: '#/definitions/PlayerBattleAugment'
+  PlayerBattleAugment:
+    type: object
+    properties:
+      tag:
+        type: string
+      modifiers:
+        $ref: '#/definitions/StringList'
+  StringList:
+    type: array
+    items:
+      type: string
+  String:
+    type: object
   PlayerBattleDataList:
     type: array
     items:
@@ -692,22 +660,22 @@ definitions:
   PlayerBattleData:
     type: object
     properties:
-      elixirLeaked:
-        $ref: '#/definitions/Float'
-      globalRank:
-        type: integer
       clan:
         $ref: '#/definitions/PlayerClan'
       cards:
         $ref: '#/definitions/PlayerItemLevelList'
       supportCards:
         $ref: '#/definitions/PlayerItemLevelList'
-      rounds:
-        $ref: '#/definitions/PlayerBattleRoundList'
       crowns:
         type: integer
       princessTowersHitPoints:
         $ref: '#/definitions/IntegerList'
+      rounds:
+        $ref: '#/definitions/PlayerBattleRoundList'
+      elixirLeaked:
+        $ref: '#/definitions/Float'
+      globalRank:
+        type: integer
       tag:
         type: string
       name:
@@ -718,11 +686,7 @@ definitions:
         type: integer
       kingTowerHitPoints:
         type: integer
-  IntegerList:
-    type: array
-    items:
-      type: integer
-  Integer:
+  Float:
     type: object
   PlayerBattleRoundList:
     type: array
@@ -731,16 +695,22 @@ definitions:
   PlayerBattleRound:
     type: object
     properties:
-      elixirLeaked:
-        $ref: '#/definitions/Float'
       cards:
         $ref: '#/definitions/PlayerItemLevelList'
+      elixirLeaked:
+        $ref: '#/definitions/Float'
       crowns:
         type: integer
       kingTowerHitPoints:
         type: integer
       princessTowersHitPoints:
         $ref: '#/definitions/IntegerList'
+  IntegerList:
+    type: array
+    items:
+      type: integer
+  Integer:
+    type: object
   PlayerItemLevelList:
     type: array
     items:
@@ -753,11 +723,11 @@ definitions:
       rarity:
         type: string
         enum:
-          - COMMON
-          - RARE
-          - EPIC
-          - LEGENDARY
-          - CHAMPION
+          - common
+          - rare
+          - epic
+          - legendary
+          - champion
       count:
         type: integer
       level:
@@ -777,9 +747,7 @@ definitions:
       maxEvolutionLevel:
         type: integer
       iconUrls:
-        type: object
-  Float:
-    type: object
+        $ref: '#/definitions/IconUrls'
   PlayerClan:
     type: object
     properties:
@@ -806,13 +774,13 @@ definitions:
       state:
         type: string
         enum:
-          - CLAN_NOT_FOUND
-          - ACCESS_DENIED
-          - NOT_IN_WAR
-          - COLLECTION_DAY
-          - MATCHMAKING
-          - WAR_DAY
-          - ENDED
+          - clanNotFound
+          - accessDenied
+          - notInWar
+          - collectionDay
+          - matchmaking
+          - warDay
+          - ended
       clan:
         $ref: '#/definitions/ClanWarClan'
       participants:
@@ -830,15 +798,15 @@ definitions:
   ClanWarClan:
     type: object
     properties:
-      crowns:
-        type: integer
-      tag:
-        type: string
       clanScore:
         type: integer
       badgeId:
         type: integer
+      crowns:
+        type: integer
       name:
+        type: string
+      tag:
         type: string
       participants:
         type: integer
@@ -898,17 +866,19 @@ definitions:
   Tournament:
     type: object
     properties:
-      membersList:
-        $ref: '#/definitions/TournamentMemberList'
+      gameMode:
+        $ref: '#/definitions/GameMode'
       status:
         type: string
         enum:
-          - IN_PREPARATION
-          - IN_PROGRESS
-          - ENDED
-          - UNKNOWN
+          - inPreparation
+          - inProgress
+          - ended
+          - unknown
       preparationDuration:
         type: integer
+      membersList:
+        $ref: '#/definitions/TournamentMemberList'
       createdTime:
         type: string
       startedTime:
@@ -917,16 +887,14 @@ definitions:
         type: string
       firstPlaceCardPrize:
         type: integer
-      gameMode:
-        $ref: '#/definitions/GameMode'
-      duration:
-        type: integer
       type:
         type: string
         enum:
-          - OPEN
-          - PASSWORD_PROTECTED
-          - UNKNOWN
+          - open
+          - passwordProtected
+          - unknown
+      duration:
+        type: integer
       tag:
         type: string
       creatorTag:
@@ -948,11 +916,11 @@ definitions:
   TournamentMember:
     type: object
     properties:
-      rank:
+      previousRank:
         type: integer
       clan:
         $ref: '#/definitions/PlayerClan'
-      previousRank:
+      rank:
         type: integer
       tag:
         type: string
@@ -967,29 +935,29 @@ definitions:
   TournamentHeader:
     type: object
     properties:
+      gameMode:
+        $ref: '#/definitions/GameMode'
       status:
         type: string
         enum:
-          - IN_PREPARATION
-          - IN_PROGRESS
-          - ENDED
-          - UNKNOWN
+          - inPreparation
+          - inProgress
+          - ended
+          - unknown
       preparationDuration:
         type: integer
       createdTime:
         type: string
       firstPlaceCardPrize:
         type: integer
-      gameMode:
-        $ref: '#/definitions/GameMode'
-      duration:
-        type: integer
       type:
         type: string
         enum:
-          - OPEN
-          - PASSWORD_PROTECTED
-          - UNKNOWN
+          - open
+          - passwordProtected
+          - unknown
+      duration:
+        type: integer
       tag:
         type: string
       creatorTag:
@@ -1004,6 +972,37 @@ definitions:
         type: integer
       levelCap:
         type: integer
+  EmoteList:
+    type: array
+    items:
+      $ref: '#/definitions/Emote'
+  Emote:
+    type: object
+    properties:
+      name:
+        type: string
+      indexHi:
+        type: integer
+      indexLo:
+        type: integer
+      available:
+        type: boolean
+      defaultOwned:
+        type: boolean
+      sfxFile:
+        type: string
+      scFile:
+        type: string
+      availableForOffer:
+        type: boolean
+      exclusive:
+        type: boolean
+      dateAvailable:
+        type: string
+      humanReadableName:
+        type: string
+      family:
+        type: string
   ClanList:
     type: array
     items:
@@ -1017,12 +1016,12 @@ definitions:
     properties:
       clanScore:
         type: integer
+      members:
+        type: integer
       badgeId:
         type: integer
       location:
         $ref: '#/definitions/Location'
-      members:
-        type: integer
       tag:
         type: string
       name:
@@ -1041,27 +1040,21 @@ definitions:
       gameMode:
         type: string
         enum:
-          - REGULAR
-          - TEAM_VS_TEAM
-          - DOUBLE_ELIXIR
-          - TRIPLE_ELIXIR
-          - RAGE
-          - SUDDEN_DEATH
-          - TOUCHDOWN
-          - RAMP_UP
-          - DRAFT
-          - MIRROR
-          - DRAGON_HUNT
-          - TRIPLE_DRAFT
-          - BEST_OF_3
-          - MEGA_DRAFT
-          - HEIST
-  StringList:
-    type: array
-    items:
-      type: string
-  String:
-    type: object
+          - regular
+          - teamVsTeam
+          - doubleElixir
+          - tripleElixir
+          - rage
+          - suddenDeath
+          - touchdown
+          - rampUp
+          - draft
+          - mirror
+          - dragonHunt
+          - tripleDraft
+          - bestOf3
+          - megaDraft
+          - heist
   RegisterMatchResponse:
     type: object
     properties:
@@ -1084,7 +1077,7 @@ definitions:
       index:
         type: integer
       iconUrls:
-        type: object
+        $ref: '#/definitions/IconUrls'
   ClanWarLog:
     type: array
     items:
@@ -1111,6 +1104,50 @@ definitions:
         type: integer
       clan:
         $ref: '#/definitions/ClanWarClan'
+  GameModeDetailsList:
+    type: array
+    items:
+      $ref: '#/definitions/GameModeDetails'
+  GameModeDetails:
+    type: object
+    properties:
+      name:
+        $ref: '#/definitions/JsonLocalizedName'
+      id:
+        type: integer
+      identifier:
+        type: string
+      category:
+        type: string
+        enum:
+          - unknown
+          - chaos
+          - shuffle
+      startTime:
+        type: string
+      endTime:
+        type: string
+      chaosModifiers:
+        $ref: '#/definitions/ChaosGameModeModifierList'
+  ChaosGameModeModifierList:
+    type: array
+    items:
+      $ref: '#/definitions/ChaosGameModeModifier'
+  ChaosGameModeModifier:
+    type: object
+    properties:
+      name:
+        $ref: '#/definitions/JsonLocalizedName'
+      description:
+        $ref: '#/definitions/JsonLocalizedName'
+      identifier:
+        type: string
+      rarity:
+        type: string
+      weight:
+        type: integer
+      itemId:
+        type: integer
   Player:
     type: object
     properties:
@@ -1127,11 +1164,11 @@ definitions:
       role:
         type: string
         enum:
-          - NOT_MEMBER
-          - MEMBER
-          - LEADER
-          - ADMIN
-          - COLEADER
+          - notMember
+          - member
+          - leader
+          - elder
+          - coLeader
       wins:
         type: integer
       losses:
@@ -1152,6 +1189,10 @@ definitions:
         type: string
       name:
         type: string
+      collectionLevel:
+        type: integer
+      kingTowerLevel:
+        type: integer
       expLevel:
         type: integer
       trophies:
@@ -1176,6 +1217,8 @@ definitions:
         type: integer
       tournamentBattleCount:
         type: integer
+      currentWinLoseStreak:
+        type: integer
       warDayWins:
         type: integer
       clanCardsCollected:
@@ -1193,15 +1236,15 @@ definitions:
       bestPathOfLegendSeasonResult:
         $ref: '#/definitions/PathOfLegendSeasonResult'
       progress:
-        type: object
+        $ref: '#/definitions/PlayerProgress'
   PathOfLegendSeasonResult:
     type: object
     properties:
       trophies:
         type: integer
-      rank:
-        type: integer
       leagueNumber:
+        type: integer
+      rank:
         type: integer
   PlayerAchievementProgressList:
     type: array
@@ -1230,14 +1273,14 @@ definitions:
     type: object
     properties:
       iconUrls:
-        type: object
+        $ref: '#/definitions/IconUrls'
       maxLevel:
         type: integer
       progress:
         type: integer
-      level:
-        type: integer
       target:
+        type: integer
+      level:
         type: integer
       name:
         type: string
@@ -1246,20 +1289,33 @@ definitions:
     properties:
       currentSeason:
         $ref: '#/definitions/LeagueSeasonResult'
-      bestSeason:
-        $ref: '#/definitions/LeagueSeasonResult'
       previousSeason:
+        $ref: '#/definitions/LeagueSeasonResult'
+      bestSeason:
         $ref: '#/definitions/LeagueSeasonResult'
   LeagueSeasonResult:
     type: object
     properties:
       trophies:
         type: integer
+      id:
+        type: string
       rank:
         type: integer
       bestTrophies:
         type: integer
-      id:
+  TrailEventList:
+    type: array
+    items:
+      $ref: '#/definitions/TrailEvent'
+  TrailEvent:
+    type: object
+    properties:
+      title:
+        $ref: '#/definitions/JsonLocalizedName'
+      description:
+        $ref: '#/definitions/JsonLocalizedName'
+      eventTag:
         type: string
   Items:
     type: object
@@ -1283,6 +1339,108 @@ definitions:
         type: string
       detail:
         type: object
+  ChallengeChainsList:
+    type: array
+    items:
+      $ref: '#/definitions/ChallengeChain'
+  ChallengeChain:
+    type: object
+    properties:
+      title:
+        $ref: '#/definitions/JsonLocalizedName'
+      type:
+        type: string
+        enum:
+          - singleChallenge
+          - challengeChain
+      startTime:
+        type: string
+      endTime:
+        type: string
+      challenges:
+        $ref: '#/definitions/ChallengeList'
+  ChallengeList:
+    type: array
+    items:
+      $ref: '#/definitions/Challenge'
+  Challenge:
+    type: object
+    properties:
+      description:
+        $ref: '#/definitions/JsonLocalizedName'
+      name:
+        $ref: '#/definitions/JsonLocalizedName'
+      id:
+        type: integer
+      winMode:
+        type: string
+      casual:
+        type: boolean
+      maxLosses:
+        type: integer
+      maxWins:
+        type: integer
+      iconUrl:
+        type: string
+      gameMode:
+        $ref: '#/definitions/GameMode'
+      prizes:
+        $ref: '#/definitions/SurvivalMilestoneRewardList'
+  LeaderboardEntry:
+    type: object
+    properties:
+      tag:
+        type: string
+      name:
+        type: string
+      score:
+        type: integer
+      rank:
+        type: integer
+      clan:
+        $ref: '#/definitions/PlayerRankingClan'
+  LeaderboardEntryList:
+    type: array
+    items:
+      $ref: '#/definitions/LeaderboardEntry'
+  LeagueSeasonV2:
+    type: object
+    properties:
+      code:
+        type: string
+      uniqueId:
+        type: string
+      endTime:
+        type: string
+  LeagueSeasonV2List:
+    type: array
+    items:
+      $ref: '#/definitions/LeagueSeasonV2'
+  IconUrls:
+    type: object
+    properties:
+      large:
+        type: string
+      medium:
+        type: string
+      evolutionMedium:
+        type: string
+  PlayerProgress:
+    type: object
+    properties:
+      goblin-road:
+        $ref: '#/definitions/TrophyRoadProgress'
+      Royals_2v2:
+        $ref: '#/definitions/TrophyRoadProgress'
+  TrophyRoadProgress:
+    type: object
+    properties:
+      arena:
+        $ref: '#/definitions/Arena'
+      trophies:
+        type: integer
+      bestTrophies:
+        type: integer
 paths:
   /cards:
     get:
@@ -1329,6 +1487,31 @@ paths:
           description: Successful response
           schema:
             $ref: '#/definitions/Items'
+  /events:
+    get:
+      summary: Get current events.
+      description: |
+        Get current events. Returns a list of ongoing events with its Title and Description localized.
+      operationId: getTrailEvents
+      tags:
+        - events
+      responses:
+        '400':
+          $ref: '#/responses/BadRequestSpec'
+        '403':
+          $ref: '#/responses/ForbiddenSpec'
+        '404':
+          $ref: '#/responses/NotFoundSpec'
+        '429':
+          $ref: '#/responses/RequestThrottledSpec'
+        '500':
+          $ref: '#/responses/UnknownExceptionSpec'
+        '503':
+          $ref: '#/responses/InMaintenanceSpec'
+        '200':
+          description: Successful response
+          schema:
+            $ref: '#/definitions/TrailEventList'
   /players/{playerTag}:
     get:
       summary: Get player information
@@ -1497,7 +1680,8 @@ paths:
   /locations/{locationId}/rankings/players:
     get:
       summary: Get player rankings for a specific location
-      description: Get player rankings for a specific location
+      description: |
+        Deprecated: this endpoint always returns an empty list and will be removed in a future version. Trophy road player rankings no longer exist; use the Path of Legend ranking endpoints instead.
       operationId: getPlayerRanking
       tags:
         - locations
@@ -1806,7 +1990,7 @@ paths:
         '200':
           description: Successful response
           schema:
-            $ref: '#/definitions/LeaderboardList'
+            $ref: '#/definitions/LeaderboardEntryList'
   /tournaments:
     get:
       summary: Search tournaments
@@ -2162,31 +2346,6 @@ paths:
           description: Successful response
           schema:
             $ref: '#/definitions/ClanMemberList'
-  /challenges:
-    get:
-      summary: Get current and upcoming challenges.
-      description: |
-        Get current and upcoming challenges. Challenges are returned as chains. Chains are either of type singleChallenge or challengeChain Possible types for prizes are: none, cardStack, chest, cardStackRandom, resource, tradeToken, consumable
-      operationId: getChallenges
-      tags:
-        - challenges
-      responses:
-        '400':
-          $ref: '#/responses/BadRequestSpec'
-        '403':
-          $ref: '#/responses/ForbiddenSpec'
-        '404':
-          $ref: '#/responses/NotFoundSpec'
-        '429':
-          $ref: '#/responses/RequestThrottledSpec'
-        '500':
-          $ref: '#/responses/UnknownExceptionSpec'
-        '503':
-          $ref: '#/responses/InMaintenanceSpec'
-        '200':
-          description: Successful response
-          schema:
-            $ref: '#/definitions/ChallengeChainsList'
   /leaderboards:
     get:
       summary: List leaderboards
@@ -2211,37 +2370,6 @@ paths:
           description: Successful response
           schema:
             $ref: '#/definitions/LeaderboardList'
-  /files/fingerprint:
-    get:
-      summary: Get version fingerprint of game files
-      description: Get version fingerprint of game files.
-      operationId: getFingerprint
-      tags:
-        - players
-      parameters:
-        -
-          name: playerTag
-          in: path
-          description: Tag of the player.
-          required: true
-          type: string
-      responses:
-        '400':
-          $ref: '#/responses/BadRequestSpec'
-        '403':
-          $ref: '#/responses/ForbiddenSpec'
-        '404':
-          $ref: '#/responses/NotFoundSpec'
-        '429':
-          $ref: '#/responses/RequestThrottledSpec'
-        '500':
-          $ref: '#/responses/UnknownExceptionSpec'
-        '503':
-          $ref: '#/responses/InMaintenanceSpec'
-        '200':
-          description: Successful response
-          schema:
-            $ref: '#/definitions/Fingerprint'
   /locations/global/seasons:
     get:
       summary: Lists top player league seasons.
@@ -2334,7 +2462,7 @@ paths:
         '200':
           description: Successful response
           schema:
-            $ref: '#/definitions/LeagueSeasonList'
+            $ref: '#/definitions/LeagueSeasonV2List'
   /locations/{locationId}:
     get:
       summary: Get location information

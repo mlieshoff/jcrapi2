@@ -16,6 +16,8 @@
  */
 package jcrapi2.api.intern.players.upcomingchests;
 
+import jcrapi2.api.generated.model.UpcomingChests;
+
 import com.google.gson.annotations.SerializedName;
 
 import lombok.Data;

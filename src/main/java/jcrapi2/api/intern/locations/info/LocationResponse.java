@@ -16,6 +16,8 @@
  */
 package jcrapi2.api.intern.locations.info;
 
+import jcrapi2.api.generated.model.Location;
+
 import com.google.gson.annotations.SerializedName;
 
 import lombok.Data;

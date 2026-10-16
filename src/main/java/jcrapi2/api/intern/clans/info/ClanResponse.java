@@ -16,6 +16,8 @@
  */
 package jcrapi2.api.intern.clans.info;
 
+import jcrapi2.api.generated.model.Clan;
+
 import com.google.gson.annotations.SerializedName;
 
 import lombok.Data;

@@ -30,6 +30,7 @@ import static org.apache.hc.core5.http.HttpStatus.SC_OK;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
 import static supercell.api.wrapper.essentials.common.Utils.isNotBlank;
@@ -40,6 +41,8 @@ import com.github.tomakehurst.wiremock.WireMockServer;
 import com.github.tomakehurst.wiremock.core.WireMockConfiguration;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 
 import lombok.Getter;
 
@@ -49,12 +52,14 @@ import org.junit.jupiter.api.BeforeEach;
 
 import supercell.api.wrapper.essentials.common.IResponse;
 import supercell.api.wrapper.essentials.common.PaginationRequest;
+import supercell.api.wrapper.essentials.common.PaginationResponse;
 import supercell.api.wrapper.essentials.common.Request;
 import supercell.api.wrapper.essentials.connector.StandardConnector;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -135,6 +140,50 @@ public abstract class IntegrationTestBase {
         assertNotEquals(emptyMap(), actual.getRawResponse().getResponseHeaders());
         assertEquals(expected, actual.getRawResponse().getRaw());
         assertNotEquals(EMPTY, actual.toString());
+        assertGeneratedPayload(actual);
+        assertPayloadPreserved(JsonParser.parseString(expected), GSON.toJsonTree(actual), "$");
+    }
+
+    private void assertGeneratedPayload(IResponse response) {
+        if (response instanceof PaginationResponse<?> page) {
+            page.getItems().forEach(this::assertGeneratedModel);
+        } else if (response instanceof Collection<?> items) {
+            items.forEach(this::assertGeneratedModel);
+        } else {
+            assertGeneratedModel(response);
+        }
+    }
+
+    private void assertGeneratedModel(Object value) {
+        Class<?> type = value.getClass();
+        while (type != null && !type.getPackageName().equals("jcrapi2.api.generated.model")) {
+            type = type.getSuperclass();
+        }
+        assertNotNull(type, () -> "Expected a generated model: " + value.getClass().getName());
+    }
+
+    // Comparing two instances of the same response type cannot detect dropped JSON fields.
+    private void assertPayloadPreserved(JsonElement expected, JsonElement actual, String path) {
+        if (expected.isJsonNull()) {
+            return;
+        }
+        assertNotNull(actual, () -> "Missing response data at " + path);
+        if (expected.isJsonObject()) {
+            assertTrue(actual.isJsonObject(), () -> "Expected an object at " + path);
+            for (var entry : expected.getAsJsonObject().entrySet()) {
+                assertPayloadPreserved(entry.getValue(), actual.getAsJsonObject().get(entry.getKey()),
+                        path + "." + entry.getKey());
+            }
+        } else if (expected.isJsonArray()) {
+            assertTrue(actual.isJsonArray(), () -> "Expected an array at " + path);
+            assertEquals(expected.getAsJsonArray().size(), actual.getAsJsonArray().size(), path);
+            for (int i = 0; i < expected.getAsJsonArray().size(); i++) {
+                assertPayloadPreserved(expected.getAsJsonArray().get(i),
+                        actual.getAsJsonArray().get(i), path + "[" + i + "]");
+            }
+        } else {
+            assertEquals(expected, actual, path);
+        }
     }
 
     protected void prepareWithErrorAndRun(

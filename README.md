@@ -4,11 +4,44 @@
 # jcrapi2 4.0.11
 A Java Wrapper For Official Supercell Clash Royal Api
 
-## Why we don't use the Swagger scheme?
+## Generated API data classes
 
-A big sorry for that, but the quality of that scheme changes from day to day.
-Another big sorry, but the OpenApi Java generator is producing code quality we like much.
-That's simple why :) If you think the same way (it may differ from case to case of course), feel free to continue using our wrapper.
+`src/main/resources/api.yaml` is the source for the generated Java data classes.
+Maven runs OpenAPI Generator 7.10.0 during `generate-sources`:
+
+```bash
+mvn generate-sources
+mvn test
+```
+
+Models are generated in `target/generated-sources/openapi/src/main/java`, in the
+`jcrapi2.api.generated.model` package, and automatically compiled into the JAR.
+The generator uses the Java generator's `feign` templates with Gson serialization
+for standalone POJOs. API clients, supporting files, documentation, and generated
+tests are disabled; no Feign runtime is needed for these models.
+The schema uses API wire values for enums (for example, `inviteOnly`,
+`singleChallenge`, and `elder`); parsing also ignores case. Absent arrays remain
+null so serialization does not add empty arrays to responses.
+Edit `api.yaml` and regenerate instead of editing generated files.
+
+The existing `api.intern` packages, API interfaces, Impls, requests, and response
+wrappers remain in place. Object response wrappers now extend generated models;
+paginated wrappers use generated item types. Battle logs and challenge responses
+retain their list shape with generated elements. This lets the Impls keep using
+the existing connector, futures, pagination, error handling, and raw responses.
+
+For example, `CardApi.findAll(CardsRequest)` still returns `Future<CardsResponse>`,
+but `CardsResponse` now extends generated `Items`, and `getItems()` returns
+`List<jcrapi2.api.generated.model.Item>`. Nested getters now return generated
+classes and enums rather than the old handwritten DTO types. Localized names
+are strings, while icons and player progress have typed generated models.
+
+Unused handwritten DTOs have been removed from `src/main/java`; response
+payloads use the generated models. Callers that explicitly refer to old DTO types
+need to update their imports and any string comparisons against enum getters.
+
+The integration tests verify the existing request/response behavior, generated
+payload types, and preservation of every non-null field in the JSON fixtures.
 
 ## Why we moved to the amazing services of packagecloud?
 

@@ -16,6 +16,8 @@
  */
 package jcrapi2.api.intern.locations.seasons.global.info;
 
+import jcrapi2.api.generated.model.LeagueSeason;
+
 import com.google.gson.annotations.SerializedName;
 
 import lombok.Data;
@@ -26,7 +28,7 @@ import supercell.api.wrapper.essentials.common.RawResponse;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class TopPlayerLeagueSeasonResponse extends TopPlayerLeagueSeason implements IResponse {
+public class TopPlayerLeagueSeasonResponse extends LeagueSeason implements IResponse {
 
     @SerializedName("reason")
     private String reason;

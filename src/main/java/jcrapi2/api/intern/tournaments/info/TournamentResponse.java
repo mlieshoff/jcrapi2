@@ -16,6 +16,8 @@
  */
 package jcrapi2.api.intern.tournaments.info;
 
+import jcrapi2.api.generated.model.Tournament;
+
 import com.google.gson.annotations.SerializedName;
 
 import lombok.Data;

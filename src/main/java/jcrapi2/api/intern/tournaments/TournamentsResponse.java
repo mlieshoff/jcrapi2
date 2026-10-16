@@ -16,6 +16,8 @@
  */
 package jcrapi2.api.intern.tournaments;
 
+import jcrapi2.api.generated.model.TournamentHeader;
+
 import supercell.api.wrapper.essentials.common.PaginationResponse;
 
-public class TournamentsResponse extends PaginationResponse<Tournament> {}
+public class TournamentsResponse extends PaginationResponse<TournamentHeader> {}

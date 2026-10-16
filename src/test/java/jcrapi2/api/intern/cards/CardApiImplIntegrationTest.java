@@ -17,6 +17,10 @@
 package jcrapi2.api.intern.cards;
 
 import jcrapi2.IntegrationTestBase;
+import jcrapi2.api.generated.model.Item;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -42,6 +46,18 @@ public class CardApiImplIntegrationTest extends IntegrationTestBase {
                 toJson(jcrapi2.api.intern.cards.CardsResponse.class, getExpected());
 
         run(expected, () -> unitUnderTest.findAll(request).get());
+    }
+
+    @Test
+    void findAll_withoutRawResponseReturnsGeneratedCards() throws Exception {
+        CardsRequest request = CardsRequest.builder().storeRawResponse(false).build();
+        prepare("/cards", EMPTY, "src/test/resources/card-findAll.json", request);
+
+        CardsResponse response = unitUnderTest.findAll(request).get();
+        Item knight = response.getItems().getFirst();
+        assertEquals("Knight", knight.getName());
+        assertEquals(26000000, knight.getId());
+        assertNull(response.getRawResponse());
     }
 
     @Test

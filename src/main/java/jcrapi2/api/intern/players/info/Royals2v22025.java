@@ -18,6 +18,8 @@ package jcrapi2.api.intern.players.info;
 
 import com.google.gson.annotations.SerializedName;
 
+import jcrapi2.api.generated.model.Arena;
+
 import lombok.Data;
 
 @Data

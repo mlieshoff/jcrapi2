@@ -16,9 +16,9 @@
  */
 package jcrapi2.api.intern.cards;
 
-import jcrapi2.api.generated.model.Items;
-
 import com.google.gson.annotations.SerializedName;
+
+import jcrapi2.api.generated.model.Items;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

@@ -32,6 +32,7 @@
     </licenses>
     <properties>
         <version.google-java-formatter>1.25.2</version.google-java-formatter>
+        <version.assertj>3.26.3</version.assertj>
         <version.gson>2.11.0</version.gson>
         <version.io>2.18.0</version.io>
         <version.jacoco>0.8.12</version.jacoco>
@@ -295,6 +296,12 @@
         </dependency>
 
         <!-- test -->
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${version.assertj}</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>

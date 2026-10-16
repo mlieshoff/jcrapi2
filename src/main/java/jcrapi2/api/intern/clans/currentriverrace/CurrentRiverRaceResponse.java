@@ -16,9 +16,9 @@
  */
 package jcrapi2.api.intern.clans.currentriverrace;
 
-import jcrapi2.api.generated.model.CurrentRiverRace;
-
 import com.google.gson.annotations.SerializedName;
+
+import jcrapi2.api.generated.model.CurrentRiverRace;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

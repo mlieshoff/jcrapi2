@@ -31,7 +31,7 @@ public class GlobalTournamentApiImplIntegrationTest extends IntegrationTestBase 
     }
 
     @Test
-    void findAll() throws Exception {
+    void findAll_whenApiReturnsSuccess_thenReturnGeneratedResponse() throws Exception {
         jcrapi2.api.intern.globaltournaments.GlobalTournamentsRequest
                         .GlobalTournamentsRequestBuilder
                 builder = jcrapi2.api.intern.globaltournaments.GlobalTournamentsRequest.builder();
@@ -43,22 +43,22 @@ public class GlobalTournamentApiImplIntegrationTest extends IntegrationTestBase 
                 "src/test/resources/globalTournament-findAll.json",
                 request);
         jcrapi2.api.intern.globaltournaments.GlobalTournamentsResponse expected =
-                toJson(
+                fromJson(
                         jcrapi2.api.intern.globaltournaments.GlobalTournamentsResponse.class,
                         getExpected());
 
-        run(expected, () -> unitUnderTest.findAll(request).get());
+        assertResponse(expected, () -> unitUnderTest.findAll(request).get());
     }
 
     @Test
-    void findAll_whenWithException() {
+    void findAll_whenApiReturnsError_thenThrowConnectorException() {
         jcrapi2.api.intern.globaltournaments.GlobalTournamentsRequest
                         .GlobalTournamentsRequestBuilder
                 builder = jcrapi2.api.intern.globaltournaments.GlobalTournamentsRequest.builder();
         jcrapi2.api.intern.globaltournaments.GlobalTournamentsRequest request =
                 builder.limit(100).before("zzz").after("aaa").storeRawResponse(true).build();
 
-        prepareWithErrorAndRun(
+        assertRequestFails(
                 "/globaltournaments", EMPTY, request, () -> unitUnderTest.findAll(request).get());
     }
 }

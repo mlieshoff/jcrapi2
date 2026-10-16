@@ -16,9 +16,9 @@
  */
 package jcrapi2.api.intern.locations.seasons.global.info;
 
-import jcrapi2.api.generated.model.LeagueSeason;
-
 import com.google.gson.annotations.SerializedName;
+
+import jcrapi2.api.generated.model.LeagueSeason;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

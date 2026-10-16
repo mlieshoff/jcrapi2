@@ -16,14 +16,10 @@
  */
 package jcrapi2;
 
-import static jcrapi2.IntegrationTestBase.EMPTY;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import static java.lang.System.getProperty;
 import static java.lang.System.getenv;
-import static java.util.Collections.emptyList;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -91,21 +87,17 @@ import jcrapi2.api.intern.tournaments.TournamentsResponse;
 import jcrapi2.api.intern.tournaments.info.TournamentRequest;
 import jcrapi2.api.intern.tournaments.info.TournamentResponse;
 
-import lombok.extern.slf4j.Slf4j;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import supercell.api.wrapper.essentials.connector.FilesystemCachedConnector;
 
 import java.io.StringReader;
-import java.util.concurrent.ExecutionException;
 
 import javax.json.Json;
 import javax.json.JsonPatch;
 import javax.json.JsonValue;
 
-@Slf4j
 class EndToEnd {
 
     private static final Gson GSON = new GsonBuilder().disableHtmlEscaping().create();
@@ -155,7 +147,7 @@ class EndToEnd {
     }
 
     private static void assertDiff(String expected, String actual) {
-        assertNotEquals("", actual);
+        assertThat(actual).isNotEmpty();
         JsonValue source = Json.createReader(new StringReader(actual)).readValue();
         JsonValue target = Json.createReader(new StringReader(expected)).readValue();
         JsonPatch diff;
@@ -166,11 +158,11 @@ class EndToEnd {
         }
         StringBuilder diffOutput = new StringBuilder();
         diff.toJsonArray().forEach(entry -> diffOutput.append(entry).append('\n'));
-        assertEquals(EMPTY, diffOutput.toString());
+        assertThat(diffOutput.toString()).isEmpty();
     }
 
     @Test
-    void clans_findAll() throws Exception {
+    void clans_findAll_whenApiReturnsSuccess_thenMatchResponsePayload() throws Exception {
         ClansResponse clansResponse =
                 clanApi.findAll(
                                 ClansRequest.builder()
@@ -188,7 +180,7 @@ class EndToEnd {
     }
 
     @Test
-    void clans_findByTag() throws Exception {
+    void clans_findByTag_whenApiReturnsSuccess_thenMatchResponsePayload() throws Exception {
         ClanResponse response =
                 clanApi.findByTag(ClanRequest.builder(CLAN_TAG).storeRawResponse(true).build())
                         .get();
@@ -199,7 +191,7 @@ class EndToEnd {
     }
 
     @Test
-    void clans_getRiverRaceLog() throws Exception {
+    void clans_getRiverRaceLog_whenApiReturnsSuccess_thenMatchResponsePayload() throws Exception {
         RiverRaceLogResponse response =
                 clanApi.getRiverRaceLog(
                                 RiverRaceLogRequest.builder(CLAN_TAG)
@@ -213,7 +205,7 @@ class EndToEnd {
     }
 
     @Test
-    void clans_getMembers() throws Exception {
+    void clans_getMembers_whenApiReturnsSuccess_thenMatchResponsePayload() throws Exception {
         ClanMembersResponse response =
                 clanApi.getMembers(
                                 ClanMembersRequest.builder(CLAN_TAG).storeRawResponse(true).build())
@@ -225,7 +217,8 @@ class EndToEnd {
     }
 
     @Test
-    void clans_getCurrentRiverRaceLog() throws Exception {
+    void clans_getCurrentRiverRaceLog_whenApiReturnsSuccess_thenMatchResponsePayload()
+            throws Exception {
         CurrentRiverRaceResponse response =
                 clanApi.getCurrentRiverRace(
                                 CurrentRiverRaceRequest.builder(CLAN_TAG)
@@ -239,7 +232,7 @@ class EndToEnd {
     }
 
     @Test
-    void players_findByTag() throws Exception {
+    void players_findByTag_whenApiReturnsSuccess_thenMatchResponsePayload() throws Exception {
         PlayerResponse response =
                 playerApi
                         .findByTag(PlayerRequest.builder(PLAYER_TAG).storeRawResponse(true).build())
@@ -261,7 +254,8 @@ class EndToEnd {
     }
 
     @Test
-    void players_getUpcomingChests() throws Exception {
+    void players_getUpcomingChests_whenApiReturnsSuccess_thenMatchResponsePayload()
+            throws Exception {
         UpcomingChestsResponse response =
                 playerApi
                         .getUpcomingChests(
@@ -276,7 +270,7 @@ class EndToEnd {
     }
 
     @Test
-    void players_getBattleLog() throws Exception {
+    void players_getBattleLog_whenApiReturnsSuccess_thenMatchResponsePayload() throws Exception {
         BattleLogResponse response =
                 playerApi
                         .getBattleLog(
@@ -321,7 +315,7 @@ class EndToEnd {
     }
 
     @Test
-    void cards_findAll() throws Exception {
+    void cards_findAll_whenApiReturnsSuccess_thenMatchResponsePayload() throws Exception {
         CardsResponse response =
                 cardApi.findAll(CardsRequest.builder().storeRawResponse(true).build()).get();
         String actual = GSON.toJson(response);
@@ -331,7 +325,7 @@ class EndToEnd {
     }
 
     @Test
-    void tournaments_findAll() throws Exception {
+    void tournaments_findAll_whenApiReturnsSuccess_thenMatchResponsePayload() throws Exception {
         TournamentsResponse response =
                 tournamentApi
                         .findAll(
@@ -347,7 +341,7 @@ class EndToEnd {
     }
 
     @Test
-    void tournaments_findByTag() throws Exception {
+    void tournaments_findByTag_whenApiReturnsSuccess_thenMatchResponsePayload() throws Exception {
         TournamentResponse response =
                 tournamentApi
                         .findByTag(
@@ -362,7 +356,7 @@ class EndToEnd {
     }
 
     @Test
-    void locations_findAll() throws Exception {
+    void locations_findAll_whenApiReturnsSuccess_thenMatchResponsePayload() throws Exception {
         LocationsResponse response =
                 locationApi
                         .findAll(LocationsRequest.builder().storeRawResponse(true).build())
@@ -374,7 +368,7 @@ class EndToEnd {
     }
 
     @Test
-    void locations_findById() throws Exception {
+    void locations_findById_whenApiReturnsSuccess_thenMatchResponsePayload() throws Exception {
         LocationResponse response =
                 locationApi
                         .findById(
@@ -387,7 +381,8 @@ class EndToEnd {
     }
 
     @Test
-    void locations_getClanRankings() throws Exception {
+    void locations_getClanRankings_whenApiReturnsSuccess_thenMatchResponsePayload()
+            throws Exception {
         ClanRankingsResponse response =
                 locationApi
                         .getClanRankings(
@@ -402,7 +397,8 @@ class EndToEnd {
     }
 
     @Test
-    void locations_getPlayerRankings() throws Exception {
+    void locations_getPlayerRankings_whenApiReturnsSuccess_thenMatchResponsePayload()
+            throws Exception {
         PlayerRankingsResponse response =
                 locationApi
                         .getPlayerRankings(
@@ -417,7 +413,8 @@ class EndToEnd {
     }
 
     @Test
-    void locations_getClanWarRankings() throws Exception {
+    void locations_getClanWarRankings_whenApiReturnsSuccess_thenMatchResponsePayload()
+            throws Exception {
         ClanWarRankingsResponse response =
                 locationApi
                         .getClanWarRankings(
@@ -432,7 +429,8 @@ class EndToEnd {
     }
 
     @Test
-    void locations_getTopPlayerLeagueSeasons() throws Exception {
+    void locations_getTopPlayerLeagueSeasons_whenApiReturnsSuccess_thenMatchResponsePayload()
+            throws Exception {
         TopPlayerLeagueSeasonsResponse response =
                 locationApi
                         .getTopPlayerLeagueSeasons(
@@ -441,11 +439,12 @@ class EndToEnd {
                                         .build())
                         .get();
 
-        assertNotEquals(emptyList(), response.getItems());
+        assertThat(response.getItems()).isNotEmpty();
     }
 
     @Test
-    void locations_getTopPlayerLeagueSeason() throws Exception {
+    void locations_getTopPlayerLeagueSeason_whenApiReturnsSuccess_thenMatchResponsePayload()
+            throws Exception {
         TopPlayerLeagueSeasonResponse response =
                 locationApi
                         .getTopPlayerLeagueSeason(
@@ -460,7 +459,8 @@ class EndToEnd {
     }
 
     @Test
-    void locations_getTopPlayerLeagueSeasonRankings() throws Exception {
+    void locations_getTopPlayerLeagueSeasonRankings_whenApiReturnsSuccess_thenMatchResponsePayload()
+            throws Exception {
         TopPlayerLeagueSeasonRankingsResponse response =
                 locationApi
                         .getTopPlayerLeagueSeasonRankings(
@@ -475,7 +475,7 @@ class EndToEnd {
     }
 
     @Test
-    void challenges_findAll() throws Exception {
+    void challenges_findAll_whenApiReturnsSuccess_thenMatchResponsePayload() throws Exception {
         ChallengesResponse response =
                 challengeApi
                         .findAll(ChallengesRequest.builder().storeRawResponse(true).build())
@@ -496,7 +496,8 @@ class EndToEnd {
     }
 
     @Test
-    void globalTournaments_findAll() throws Exception {
+    void globalTournaments_findAll_whenApiReturnsSuccess_thenMatchResponsePayload()
+            throws Exception {
         GlobalTournamentsResponse response =
                 globalTournamentApi
                         .findAll(GlobalTournamentsRequest.builder().storeRawResponse(true).build())
@@ -513,7 +514,9 @@ class EndToEnd {
     }
 
     @Test
-    void locations_getTopPlayerPathOfLegendSeasonRankings() throws Exception {
+    void
+            locations_getTopPlayerPathOfLegendSeasonRankings_whenApiReturnsSuccess_thenMatchResponsePayload()
+                    throws Exception {
         TopPlayerPathOfLegendSeasonRankingsResponse response =
                 locationApi
                         .getTopPlayerPathOfLegendSeasonRankings(
@@ -530,7 +533,8 @@ class EndToEnd {
     }
 
     @Test
-    void locations_getTopPlayerTournamentRankings() throws Exception {
+    void locations_getTopPlayerTournamentRankings_whenApiReturnsSuccess_thenMatchResponsePayload()
+            throws Exception {
         TopPlayerTournamentRankingsResponse response =
                 locationApi
                         .getTopPlayerTournamentRankings(
@@ -546,7 +550,8 @@ class EndToEnd {
     }
 
     @Test
-    void locations_getTopPlayerLeagueSeasonsV2() throws Exception {
+    void locations_getTopPlayerLeagueSeasonsV2_whenApiReturnsSuccess_thenMatchResponsePayload()
+            throws Exception {
         TopPlayerLeagueSeasonsV2Response response =
                 locationApi
                         .getTopPlayerLeagueSeasonsV2(
@@ -561,7 +566,8 @@ class EndToEnd {
     }
 
     @Test
-    void locations_getTopPlayerPathOfLegendRankings() throws Exception {
+    void locations_getTopPlayerPathOfLegendRankings_whenApiReturnsSuccess_thenMatchResponsePayload()
+            throws Exception {
         TopPlayerPathOfLegendRankingsResponse response =
                 locationApi
                         .getTopPlayerPathOfLegendRankings(
@@ -577,7 +583,7 @@ class EndToEnd {
     }
 
     @Test
-    void leaderboards_findAll() throws Exception {
+    void leaderboards_findAll_whenApiReturnsSuccess_thenMatchResponsePayload() throws Exception {
         LeaderboardsResponse response =
                 leaderboardApi
                         .findAll(
@@ -593,22 +599,18 @@ class EndToEnd {
     }
 
     @Test
-    void leaderboards_findById() throws Exception {
-        try {
-            LeaderboardResponse response =
-                    leaderboardApi
-                            .findById(
-                                    LeaderboardRequest.builder(LEADERBOARD_ID)
-                                            .storeRawResponse(true)
-                                            .limit(10)
-                                            .build())
-                            .get();
-            String actual = GSON.toJson(response);
-            String expected = response.getRawResponse().getRaw();
+    void leaderboards_findById_whenApiReturnsSuccess_thenMatchResponsePayload() throws Exception {
+        LeaderboardResponse response =
+                leaderboardApi
+                        .findById(
+                                LeaderboardRequest.builder(LEADERBOARD_ID)
+                                        .storeRawResponse(true)
+                                        .limit(10)
+                                        .build())
+                        .get();
+        String actual = GSON.toJson(response);
+        String expected = response.getRawResponse().getRaw();
 
-            assertDiff(expected, actual);
-        } catch (ExecutionException e) {
-            log.warn("FLAKE TEST DETECTED: leaderboards_findById", e);
-        }
+        assertDiff(expected, actual);
     }
 }

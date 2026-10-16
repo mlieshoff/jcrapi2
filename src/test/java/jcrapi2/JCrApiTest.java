@@ -16,9 +16,8 @@
  */
 package jcrapi2;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import jcrapi2.api.intern.clans.ClanApi;
 
@@ -58,7 +57,7 @@ class JCrApiTest {
     }
 
     @Test
-    void listApis_whenCalled_shouldReturnListOfApiInterfaceNames() {
+    void listApis_whenCalled_thenReturnListOfApiInterfaceNames() {
         Set<String> expected =
                 new HashSet<>(
                         Arrays.asList(
@@ -73,36 +72,37 @@ class JCrApiTest {
 
         List<String> actual = unitUnderTest.listApis();
 
-        assertEquals(expected, new HashSet<>(actual));
+        assertThat(new HashSet<>(actual)).isEqualTo(expected);
     }
 
     @Test
-    void getApi_whenWithValidParameter_shouldReturnApiInstance() {
+    void getApi_whenWithValidParameter_thenReturnApiInstance() {
         ClanApi actual = unitUnderTest.getApi(ClanApi.class);
 
-        assertNotNull(actual);
+        assertThat(actual).isNotNull();
     }
 
     @ParameterizedTest
     @CsvSource(value = "null,", nullValues = "null")
     void registerApi_whenWithNull_thenThrowException(String actual) {
 
-        assertThrows(
-                IllegalArgumentException.class, () -> unitUnderTest.register(FooApi.class, actual));
+        assertThatThrownBy(() -> unitUnderTest.register(FooApi.class, actual))
+                .isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
-    void registerAndGetApi_whenWithValidParameter_shouldRegister() {
+    void registerAndGetApi_whenWithValidParameter_thenRegister() {
         unitUnderTest.register(FooApi.class, FooApiImpl.class.getName());
         FooApi actual = unitUnderTest.getApi(FooApi.class);
 
-        assertNotNull(actual);
+        assertThat(actual).isNotNull();
     }
 
     @Test
     void getApi_whenClassNotFound_thenThrowException() {
 
-        assertThrows(IllegalStateException.class, () -> unitUnderTest.getApi(FooApi.class));
+        assertThatThrownBy(() -> unitUnderTest.getApi(FooApi.class))
+                .isInstanceOf(IllegalStateException.class);
     }
 
     public interface FooApi extends Api {}

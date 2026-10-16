@@ -16,9 +16,9 @@
  */
 package jcrapi2.api.intern.players.info;
 
-import jcrapi2.api.generated.model.Player;
-
 import com.google.gson.annotations.SerializedName;
+
+import jcrapi2.api.generated.model.Player;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

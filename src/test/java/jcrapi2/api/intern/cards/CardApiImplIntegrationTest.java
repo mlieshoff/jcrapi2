@@ -16,11 +16,10 @@
  */
 package jcrapi2.api.intern.cards;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import jcrapi2.IntegrationTestBase;
 import jcrapi2.api.generated.model.Item;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -35,7 +34,7 @@ public class CardApiImplIntegrationTest extends IntegrationTestBase {
     }
 
     @Test
-    void findAll() throws Exception {
+    void findAll_whenApiReturnsSuccess_thenReturnGeneratedResponse() throws Exception {
         jcrapi2.api.intern.cards.CardsRequest.CardsRequestBuilder builder =
                 jcrapi2.api.intern.cards.CardsRequest.builder();
         jcrapi2.api.intern.cards.CardsRequest request = builder.storeRawResponse(true).build();
@@ -43,30 +42,35 @@ public class CardApiImplIntegrationTest extends IntegrationTestBase {
         prepare("/cards", EMPTY, "src/test/resources/card-findAll.json", request);
 
         jcrapi2.api.intern.cards.CardsResponse expected =
-                toJson(jcrapi2.api.intern.cards.CardsResponse.class, getExpected());
+                fromJson(jcrapi2.api.intern.cards.CardsResponse.class, getExpected());
 
-        run(expected, () -> unitUnderTest.findAll(request).get());
+        assertResponse(expected, () -> unitUnderTest.findAll(request).get());
     }
 
     @Test
-    void findAll_withoutRawResponseReturnsGeneratedCards() throws Exception {
+    void findAll_whenRawResponseDisabled_thenReturnGeneratedCardsWithoutRawResponse()
+            throws Exception {
         CardsRequest request = CardsRequest.builder().storeRawResponse(false).build();
         prepare("/cards", EMPTY, "src/test/resources/card-findAll.json", request);
 
         CardsResponse response = unitUnderTest.findAll(request).get();
+        assertGeneratedCardsWithoutRawResponse(response);
+    }
+
+    private void assertGeneratedCardsWithoutRawResponse(CardsResponse response) {
+        assertThat(response.getItems()).isNotEmpty();
         Item knight = response.getItems().getFirst();
-        assertEquals("Knight", knight.getName());
-        assertEquals(26000000, knight.getId());
-        assertNull(response.getRawResponse());
+        assertThat(knight.getName()).isEqualTo("Knight");
+        assertThat(knight.getId()).isEqualTo(26000000);
+        assertThat(response.getRawResponse()).isNull();
     }
 
     @Test
-    void findAll_whenWithException() {
+    void findAll_whenApiReturnsError_thenThrowConnectorException() {
         jcrapi2.api.intern.cards.CardsRequest.CardsRequestBuilder builder =
                 jcrapi2.api.intern.cards.CardsRequest.builder();
         jcrapi2.api.intern.cards.CardsRequest request = builder.storeRawResponse(true).build();
 
-        prepareWithErrorAndRun(
-                "/cards", EMPTY, request, () -> unitUnderTest.findAll(request).get());
+        assertRequestFails("/cards", EMPTY, request, () -> unitUnderTest.findAll(request).get());
     }
 }

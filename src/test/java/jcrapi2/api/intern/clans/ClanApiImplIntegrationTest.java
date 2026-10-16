@@ -31,7 +31,7 @@ public class ClanApiImplIntegrationTest extends IntegrationTestBase {
     }
 
     @Test
-    void findAll() throws Exception {
+    void findAll_whenApiReturnsSuccess_thenReturnGeneratedResponse() throws Exception {
         String name = "name";
         Integer locationId = 815;
         Integer minMembers = 815;
@@ -61,13 +61,13 @@ public class ClanApiImplIntegrationTest extends IntegrationTestBase {
                 "src/test/resources/clan-findAll.json",
                 request);
         jcrapi2.api.intern.clans.ClansResponse expected =
-                toJson(jcrapi2.api.intern.clans.ClansResponse.class, getExpected());
+                fromJson(jcrapi2.api.intern.clans.ClansResponse.class, getExpected());
 
-        run(expected, () -> unitUnderTest.findAll(request).get());
+        assertResponse(expected, () -> unitUnderTest.findAll(request).get());
     }
 
     @Test
-    void findAll_whenWithException() {
+    void findAll_whenApiReturnsError_thenThrowConnectorException() {
         String name = "name";
         Integer locationId = 815;
         Integer minMembers = 815;
@@ -85,7 +85,7 @@ public class ClanApiImplIntegrationTest extends IntegrationTestBase {
                         .storeRawResponse(true)
                         .build();
 
-        prepareWithErrorAndRun(
+        assertRequestFails(
                 "/clans",
                 "name="
                         + name
@@ -100,7 +100,7 @@ public class ClanApiImplIntegrationTest extends IntegrationTestBase {
     }
 
     @Test
-    void findByTag() throws Exception {
+    void findByTag_whenApiReturnsSuccess_thenReturnGeneratedResponse() throws Exception {
         String clanTag = "clanTag";
         jcrapi2.api.intern.clans.info.ClanRequest.ClanRequestBuilder builder =
                 jcrapi2.api.intern.clans.info.ClanRequest.builder(clanTag);
@@ -112,19 +112,19 @@ public class ClanApiImplIntegrationTest extends IntegrationTestBase {
                 "src/test/resources/clan-findByTag.json",
                 request);
         jcrapi2.api.intern.clans.info.ClanResponse expected =
-                toJson(jcrapi2.api.intern.clans.info.ClanResponse.class, getExpected());
+                fromJson(jcrapi2.api.intern.clans.info.ClanResponse.class, getExpected());
 
-        run(expected, () -> unitUnderTest.findByTag(request).get());
+        assertResponse(expected, () -> unitUnderTest.findByTag(request).get());
     }
 
     @Test
-    void findByTag_whenWithException() {
+    void findByTag_whenApiReturnsError_thenThrowConnectorException() {
         String clanTag = "clanTag";
         jcrapi2.api.intern.clans.info.ClanRequest.ClanRequestBuilder builder =
                 jcrapi2.api.intern.clans.info.ClanRequest.builder(clanTag);
         jcrapi2.api.intern.clans.info.ClanRequest request = builder.storeRawResponse(true).build();
 
-        prepareWithErrorAndRun(
+        assertRequestFails(
                 "/clans/{clanTag}".replace("{clanTag}", clanTag),
                 EMPTY,
                 request,
@@ -132,7 +132,7 @@ public class ClanApiImplIntegrationTest extends IntegrationTestBase {
     }
 
     @Test
-    void getRiverRaceLog() throws Exception {
+    void getRiverRaceLog_whenApiReturnsSuccess_thenReturnGeneratedResponse() throws Exception {
         String clanTag = "clanTag";
         jcrapi2.api.intern.clans.riverracelog.RiverRaceLogRequest.RiverRaceLogRequestBuilder
                 builder =
@@ -145,15 +145,15 @@ public class ClanApiImplIntegrationTest extends IntegrationTestBase {
                 "src/test/resources/clan-getRiverRaceLog.json",
                 request);
         jcrapi2.api.intern.clans.riverracelog.RiverRaceLogResponse expected =
-                toJson(
+                fromJson(
                         jcrapi2.api.intern.clans.riverracelog.RiverRaceLogResponse.class,
                         getExpected());
 
-        run(expected, () -> unitUnderTest.getRiverRaceLog(request).get());
+        assertResponse(expected, () -> unitUnderTest.getRiverRaceLog(request).get());
     }
 
     @Test
-    void getRiverRaceLog_whenWithException() {
+    void getRiverRaceLog_whenApiReturnsError_thenThrowConnectorException() {
         String clanTag = "clanTag";
         jcrapi2.api.intern.clans.riverracelog.RiverRaceLogRequest.RiverRaceLogRequestBuilder
                 builder =
@@ -161,7 +161,7 @@ public class ClanApiImplIntegrationTest extends IntegrationTestBase {
         jcrapi2.api.intern.clans.riverracelog.RiverRaceLogRequest request =
                 builder.limit(100).before("zzz").after("aaa").storeRawResponse(true).build();
 
-        prepareWithErrorAndRun(
+        assertRequestFails(
                 "/clans/{clanTag}/riverracelog".replace("{clanTag}", clanTag),
                 EMPTY,
                 request,
@@ -169,7 +169,7 @@ public class ClanApiImplIntegrationTest extends IntegrationTestBase {
     }
 
     @Test
-    void getMembers() throws Exception {
+    void getMembers_whenApiReturnsSuccess_thenReturnGeneratedResponse() throws Exception {
         String clanTag = "clanTag";
         jcrapi2.api.intern.clans.members.ClanMembersRequest.ClanMembersRequestBuilder builder =
                 jcrapi2.api.intern.clans.members.ClanMembersRequest.builder(clanTag);
@@ -181,20 +181,20 @@ public class ClanApiImplIntegrationTest extends IntegrationTestBase {
                 "src/test/resources/clan-getMembers.json",
                 request);
         jcrapi2.api.intern.clans.members.ClanMembersResponse expected =
-                toJson(jcrapi2.api.intern.clans.members.ClanMembersResponse.class, getExpected());
+                fromJson(jcrapi2.api.intern.clans.members.ClanMembersResponse.class, getExpected());
 
-        run(expected, () -> unitUnderTest.getMembers(request).get());
+        assertResponse(expected, () -> unitUnderTest.getMembers(request).get());
     }
 
     @Test
-    void getMembers_whenWithException() {
+    void getMembers_whenApiReturnsError_thenThrowConnectorException() {
         String clanTag = "clanTag";
         jcrapi2.api.intern.clans.members.ClanMembersRequest.ClanMembersRequestBuilder builder =
                 jcrapi2.api.intern.clans.members.ClanMembersRequest.builder(clanTag);
         jcrapi2.api.intern.clans.members.ClanMembersRequest request =
                 builder.limit(100).before("zzz").after("aaa").storeRawResponse(true).build();
 
-        prepareWithErrorAndRun(
+        assertRequestFails(
                 "/clans/{clanTag}/members".replace("{clanTag}", clanTag),
                 EMPTY,
                 request,
@@ -202,7 +202,7 @@ public class ClanApiImplIntegrationTest extends IntegrationTestBase {
     }
 
     @Test
-    void getCurrentRiverRace() throws Exception {
+    void getCurrentRiverRace_whenApiReturnsSuccess_thenReturnGeneratedResponse() throws Exception {
         String clanTag = "clanTag";
         jcrapi2.api.intern.clans.currentriverrace.CurrentRiverRaceRequest
                         .CurrentRiverRaceRequestBuilder
@@ -217,15 +217,15 @@ public class ClanApiImplIntegrationTest extends IntegrationTestBase {
                 "src/test/resources/clan-getCurrentRiverRace.json",
                 request);
         jcrapi2.api.intern.clans.currentriverrace.CurrentRiverRaceResponse expected =
-                toJson(
+                fromJson(
                         jcrapi2.api.intern.clans.currentriverrace.CurrentRiverRaceResponse.class,
                         getExpected());
 
-        run(expected, () -> unitUnderTest.getCurrentRiverRace(request).get());
+        assertResponse(expected, () -> unitUnderTest.getCurrentRiverRace(request).get());
     }
 
     @Test
-    void getCurrentRiverRace_whenWithException() {
+    void getCurrentRiverRace_whenApiReturnsError_thenThrowConnectorException() {
         String clanTag = "clanTag";
         jcrapi2.api.intern.clans.currentriverrace.CurrentRiverRaceRequest
                         .CurrentRiverRaceRequestBuilder
@@ -235,7 +235,7 @@ public class ClanApiImplIntegrationTest extends IntegrationTestBase {
         jcrapi2.api.intern.clans.currentriverrace.CurrentRiverRaceRequest request =
                 builder.storeRawResponse(true).build();
 
-        prepareWithErrorAndRun(
+        assertRequestFails(
                 "/clans/{clanTag}/currentriverrace".replace("{clanTag}", clanTag),
                 EMPTY,
                 request,

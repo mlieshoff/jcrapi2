@@ -27,15 +27,10 @@ import static com.github.tomakehurst.wiremock.common.ContentTypes.AUTHORIZATION;
 import static org.apache.commons.io.FileUtils.readLines;
 import static org.apache.hc.core5.http.HttpStatus.SC_BAD_REQUEST;
 import static org.apache.hc.core5.http.HttpStatus.SC_OK;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import static supercell.api.wrapper.essentials.common.Utils.isNotBlank;
-
-import static java.util.Collections.emptyMap;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
 import com.github.tomakehurst.wiremock.core.WireMockConfiguration;
@@ -46,6 +41,7 @@ import com.google.gson.JsonParser;
 
 import lombok.Getter;
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -54,6 +50,7 @@ import supercell.api.wrapper.essentials.common.IResponse;
 import supercell.api.wrapper.essentials.common.PaginationRequest;
 import supercell.api.wrapper.essentials.common.PaginationResponse;
 import supercell.api.wrapper.essentials.common.Request;
+import supercell.api.wrapper.essentials.connector.ConnectorException;
 import supercell.api.wrapper.essentials.connector.StandardConnector;
 
 import java.io.File;
@@ -61,6 +58,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Collection;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import java.util.stream.Collectors;
 
 public abstract class IntegrationTestBase {
@@ -83,12 +81,17 @@ public abstract class IntegrationTestBase {
         wireMockServer.start();
     }
 
+    @AfterAll
+    public static void afterAll() {
+        wireMockServer.stop();
+    }
+
     private static JCrApi createJCrApi() {
         return new JCrApi(
                 "http://localhost:" + wireMockServer.port(), "myApiKey", new StandardConnector());
     }
 
-    protected static <T> T toJson(Class<T> clazz, String s) {
+    protected static <T> T fromJson(Class<T> clazz, String s) {
         return GSON.fromJson(s, clazz);
     }
 
@@ -131,15 +134,15 @@ public abstract class IntegrationTestBase {
         return createdUrl;
     }
 
-    protected void run(
+    protected void assertResponse(
             IResponse expectedResponse, ResultTestRunner<? extends IResponse> resultTestRunner)
             throws Exception {
         IResponse actual = resultTestRunner.execute();
-        assertEquals(expectedResponse, actual);
-        assertNotNull(actual.getRawResponse());
-        assertNotEquals(emptyMap(), actual.getRawResponse().getResponseHeaders());
-        assertEquals(expected, actual.getRawResponse().getRaw());
-        assertNotEquals(EMPTY, actual.toString());
+        assertThat(actual).isEqualTo(expectedResponse);
+        assertThat(actual.getRawResponse()).isNotNull();
+        assertThat(actual.getRawResponse().getResponseHeaders()).isNotEmpty();
+        assertThat(actual.getRawResponse().getRaw()).isEqualTo(expected);
+        assertThat(actual.toString()).isNotEmpty();
         assertGeneratedPayload(actual);
         assertPayloadPreserved(JsonParser.parseString(expected), GSON.toJsonTree(actual), "$");
     }
@@ -159,7 +162,7 @@ public abstract class IntegrationTestBase {
         while (type != null && !type.getPackageName().equals("jcrapi2.api.generated.model")) {
             type = type.getSuperclass();
         }
-        assertNotNull(type, () -> "Expected a generated model: " + value.getClass().getName());
+        assertThat(type).as("Generated model for %s", value.getClass().getName()).isNotNull();
     }
 
     // Comparing two instances of the same response type cannot detect dropped JSON fields.
@@ -167,36 +170,36 @@ public abstract class IntegrationTestBase {
         if (expected.isJsonNull()) {
             return;
         }
-        assertNotNull(actual, () -> "Missing response data at " + path);
+        assertThat(actual).as("Response data at %s", path).isNotNull();
         if (expected.isJsonObject()) {
-            assertTrue(actual.isJsonObject(), () -> "Expected an object at " + path);
+            assertThat(actual.isJsonObject()).as("Object at %s", path).isTrue();
             for (var entry : expected.getAsJsonObject().entrySet()) {
-                assertPayloadPreserved(entry.getValue(), actual.getAsJsonObject().get(entry.getKey()),
+                assertPayloadPreserved(
+                        entry.getValue(),
+                        actual.getAsJsonObject().get(entry.getKey()),
                         path + "." + entry.getKey());
             }
         } else if (expected.isJsonArray()) {
-            assertTrue(actual.isJsonArray(), () -> "Expected an array at " + path);
-            assertEquals(expected.getAsJsonArray().size(), actual.getAsJsonArray().size(), path);
+            assertThat(actual.isJsonArray()).as("Array at %s", path).isTrue();
+            assertThat(actual.getAsJsonArray()).as(path).hasSize(expected.getAsJsonArray().size());
             for (int i = 0; i < expected.getAsJsonArray().size(); i++) {
-                assertPayloadPreserved(expected.getAsJsonArray().get(i),
-                        actual.getAsJsonArray().get(i), path + "[" + i + "]");
+                assertPayloadPreserved(
+                        expected.getAsJsonArray().get(i),
+                        actual.getAsJsonArray().get(i),
+                        path + "[" + i + "]");
             }
         } else {
-            assertEquals(expected, actual, path);
+            assertThat(actual).as(path).isEqualTo(expected);
         }
     }
 
-    protected void prepareWithErrorAndRun(
+    protected void assertRequestFails(
             String url, String queryPart, Request request, TestRunner testRunner) {
         prepareWithError(url, queryPart, request);
-        try {
-            testRunner.execute();
-            fail();
-        } catch (Exception e) {
-            assertEquals(
-                    "supercell.api.wrapper.essentials.connector.ConnectorException: 400",
-                    e.getMessage());
-        }
+        assertThatThrownBy(testRunner::execute)
+                .isInstanceOf(ExecutionException.class)
+                .hasMessage("supercell.api.wrapper.essentials.connector.ConnectorException: 400")
+                .hasCauseInstanceOf(ConnectorException.class);
     }
 
     private void prepareWithError(String url, String queryPart, Request request) {

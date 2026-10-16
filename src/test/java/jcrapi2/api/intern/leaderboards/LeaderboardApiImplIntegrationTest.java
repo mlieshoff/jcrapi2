@@ -31,7 +31,7 @@ public class LeaderboardApiImplIntegrationTest extends IntegrationTestBase {
     }
 
     @Test
-    void findAll() throws Exception {
+    void findAll_whenApiReturnsSuccess_thenReturnGeneratedResponse() throws Exception {
         jcrapi2.api.intern.leaderboards.LeaderboardsRequest.LeaderboardsRequestBuilder builder =
                 jcrapi2.api.intern.leaderboards.LeaderboardsRequest.builder();
         jcrapi2.api.intern.leaderboards.LeaderboardsRequest request =
@@ -39,24 +39,24 @@ public class LeaderboardApiImplIntegrationTest extends IntegrationTestBase {
         prepare("/leaderboards", EMPTY, "src/test/resources/leaderboard-findAll.json", request);
 
         jcrapi2.api.intern.leaderboards.LeaderboardsResponse expected =
-                toJson(jcrapi2.api.intern.leaderboards.LeaderboardsResponse.class, getExpected());
+                fromJson(jcrapi2.api.intern.leaderboards.LeaderboardsResponse.class, getExpected());
 
-        run(expected, () -> unitUnderTest.findAll(request).get());
+        assertResponse(expected, () -> unitUnderTest.findAll(request).get());
     }
 
     @Test
-    void findAll_whenWithException() {
+    void findAll_whenApiReturnsError_thenThrowConnectorException() {
         jcrapi2.api.intern.leaderboards.LeaderboardsRequest.LeaderboardsRequestBuilder builder =
                 jcrapi2.api.intern.leaderboards.LeaderboardsRequest.builder();
         jcrapi2.api.intern.leaderboards.LeaderboardsRequest request =
                 builder.limit(100).before("zzz").after("aaa").storeRawResponse(true).build();
 
-        prepareWithErrorAndRun(
+        assertRequestFails(
                 "/leaderboards", EMPTY, request, () -> unitUnderTest.findAll(request).get());
     }
 
     @Test
-    void findById() throws Exception {
+    void findById_whenApiReturnsSuccess_thenReturnGeneratedResponse() throws Exception {
         long leaderboardId = 4711L;
         jcrapi2.api.intern.leaderboards.info.LeaderboardRequest.LeaderboardRequestBuilder builder =
                 jcrapi2.api.intern.leaderboards.info.LeaderboardRequest.builder(leaderboardId);
@@ -69,22 +69,22 @@ public class LeaderboardApiImplIntegrationTest extends IntegrationTestBase {
                 "src/test/resources/leaderboard-findById.json",
                 request);
         jcrapi2.api.intern.leaderboards.info.LeaderboardResponse expected =
-                toJson(
+                fromJson(
                         jcrapi2.api.intern.leaderboards.info.LeaderboardResponse.class,
                         getExpected());
 
-        run(expected, () -> unitUnderTest.findById(request).get());
+        assertResponse(expected, () -> unitUnderTest.findById(request).get());
     }
 
     @Test
-    void findById_whenWithException() {
+    void findById_whenApiReturnsError_thenThrowConnectorException() {
         long leaderboardId = 4711L;
         jcrapi2.api.intern.leaderboards.info.LeaderboardRequest.LeaderboardRequestBuilder builder =
                 jcrapi2.api.intern.leaderboards.info.LeaderboardRequest.builder(leaderboardId);
         jcrapi2.api.intern.leaderboards.info.LeaderboardRequest request =
                 builder.limit(100).before("zzz").after("aaa").storeRawResponse(true).build();
 
-        prepareWithErrorAndRun(
+        assertRequestFails(
                 "/leaderboard/{leaderboardId}"
                         .replace("{leaderboardId}", String.valueOf(leaderboardId)),
                 EMPTY,

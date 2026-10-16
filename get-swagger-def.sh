@@ -2,7 +2,7 @@
 set -euo pipefail
 
 token="${1:-${CLASH_ROYALE_TOKEN:-}}"
-output="${2:-response.json}"
+output="${2:-src/main/resources/api.yaml}"
 if [[ -z "$token" ]]; then
   printf 'Usage: %s <bearer-token> [output-file]\nOr set CLASH_ROYALE_TOKEN.\n' "$0" >&2
   exit 1

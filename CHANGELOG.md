@@ -2,6 +2,15 @@
 
 ## [Unreleased]
 
+## [5.0.0] - 2026-10-16
+
+* Attention: Breaking Changes between the REST interface *
+
+### Added
+
+- OpenApi support
+- Codex agent support
+
 ## [4.0.15] - 2025-02-14
 
 ### Added
@@ -303,6 +312,7 @@
 - Create a Release job (#152)
 
 [unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.15...HEAD
+[5.0.0]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.15...5.0.0
 [4.0.15]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.14...4.0.15
 [4.0.14]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.13...4.0.14
 [4.0.13]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.12...4.0.13

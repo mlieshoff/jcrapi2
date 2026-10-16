@@ -4,16 +4,33 @@
 
 ## [5.0.0] - 2026-10-16
 
-* Attention: Breaking Changes between the REST interface *
+**Breaking changes to the Java API:** update handwritten DTO imports to
+`jcrapi2.api.generated.model` and essentials imports to `jcrapi2.essentials`.
+Generated getters may return different types, including enums instead of strings.
 
 ### Added
 
-- OpenApi support
-- Codex agent support
+- OpenAPI Generator integration to generate Gson-compatible data classes from `api.yaml` during the Maven build.
+- `EventApi` for `/events`, with request/response wrappers, integration tests, and end-to-end coverage.
+- Codex contributor instructions in `AGENTS.md`.
 
-### Removed 
+### Changed
 
-- Supercell essentials dependency
+- Response wrappers now use generated models while retaining existing API interfaces, request builders, futures, pagination, and raw-response handling.
+- Integrated the essentials API, connector, and common classes into the project under `jcrapi2.essentials`.
+- Refreshed integration-test fixtures and limited list samples to five entries, with empty, null, and populated cases.
+- Standardized tests on AssertJ, descriptive names, and shared assertion helpers.
+
+### Fixed
+
+- Preserved hero icon URLs and dynamically keyed player progress during deserialization.
+- Corrected enum wire values, including `warDeckPick`.
+- Fixed stale exception-package assertions after the essentials package migration and ensured test servers shut down.
+
+### Removed
+
+- External `supercell-api-wrapper-essentials` dependency.
+- Unused handwritten data classes replaced by generated models.
 
 ## [4.0.15] - 2025-02-14
 

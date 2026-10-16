@@ -18,8 +18,7 @@ package jcrapi2.api.intern.leaderboards;
 
 import jcrapi2.api.intern.leaderboards.info.LeaderboardRequest;
 import jcrapi2.api.intern.leaderboards.info.LeaderboardResponse;
-
-import supercell.api.wrapper.essentials.api.Api;
+import jcrapi2.essentials.api.Api;
 
 import java.util.concurrent.Future;
 

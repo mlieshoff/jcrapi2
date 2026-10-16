@@ -2,7 +2,7 @@
   "items": [
     {
       "index": 0,
-      "name": "Silver Chest"
+      "name": "Gold Crate"
     },
     {
       "index": 1,
@@ -10,7 +10,7 @@
     },
     {
       "index": 2,
-      "name": "Silver Chest"
+      "name": "Tower Troop Chest"
     },
     {
       "index": 3,
@@ -18,39 +18,7 @@
     },
     {
       "index": 4,
-      "name": "Silver Chest"
-    },
-    {
-      "index": 5,
       "name": "Golden Chest"
-    },
-    {
-      "index": 6,
-      "name": "Silver Chest"
-    },
-    {
-      "index": 7,
-      "name": "Giant Chest"
-    },
-    {
-      "index": 8,
-      "name": "Silver Chest"
-    },
-    {
-      "index": 17,
-      "name": "Magical Chest"
-    },
-    {
-      "index": 89,
-      "name": "Epic Chest"
-    },
-    {
-      "index": 115,
-      "name": "Legendary Chest"
-    },
-    {
-      "index": 329,
-      "name": "Mega Lightning Chest"
     }
   ]
 }

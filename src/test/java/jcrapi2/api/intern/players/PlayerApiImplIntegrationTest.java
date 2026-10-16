@@ -31,7 +31,7 @@ public class PlayerApiImplIntegrationTest extends IntegrationTestBase {
     }
 
     @Test
-    void findByTag() throws Exception {
+    void findByTag_whenApiReturnsSuccess_thenReturnGeneratedResponse() throws Exception {
         String playerTag = "playerTag";
         jcrapi2.api.intern.players.info.PlayerRequest.PlayerRequestBuilder builder =
                 jcrapi2.api.intern.players.info.PlayerRequest.builder(playerTag);
@@ -43,20 +43,20 @@ public class PlayerApiImplIntegrationTest extends IntegrationTestBase {
                 "src/test/resources/player-findByTag.json",
                 request);
         jcrapi2.api.intern.players.info.PlayerResponse expected =
-                toJson(jcrapi2.api.intern.players.info.PlayerResponse.class, getExpected());
+                fromJson(jcrapi2.api.intern.players.info.PlayerResponse.class, getExpected());
 
-        run(expected, () -> unitUnderTest.findByTag(request).get());
+        assertResponse(expected, () -> unitUnderTest.findByTag(request).get());
     }
 
     @Test
-    void findByTag_whenWithException() {
+    void findByTag_whenApiReturnsError_thenThrowConnectorException() {
         String playerTag = "playerTag";
         jcrapi2.api.intern.players.info.PlayerRequest.PlayerRequestBuilder builder =
                 jcrapi2.api.intern.players.info.PlayerRequest.builder(playerTag);
         jcrapi2.api.intern.players.info.PlayerRequest request =
                 builder.storeRawResponse(true).build();
 
-        prepareWithErrorAndRun(
+        assertRequestFails(
                 "/players/{playerTag}".replace("{playerTag}", playerTag),
                 EMPTY,
                 request,
@@ -64,7 +64,7 @@ public class PlayerApiImplIntegrationTest extends IntegrationTestBase {
     }
 
     @Test
-    void getUpcomingChests() throws Exception {
+    void getUpcomingChests_whenApiReturnsSuccess_thenReturnGeneratedResponse() throws Exception {
         String playerTag = "playerTag";
         jcrapi2.api.intern.players.upcomingchests.UpcomingChestsRequest.UpcomingChestsRequestBuilder
                 builder =
@@ -78,15 +78,15 @@ public class PlayerApiImplIntegrationTest extends IntegrationTestBase {
                 "src/test/resources/player-getUpcomingChests.json",
                 request);
         jcrapi2.api.intern.players.upcomingchests.UpcomingChestsResponse expected =
-                toJson(
+                fromJson(
                         jcrapi2.api.intern.players.upcomingchests.UpcomingChestsResponse.class,
                         getExpected());
 
-        run(expected, () -> unitUnderTest.getUpcomingChests(request).get());
+        assertResponse(expected, () -> unitUnderTest.getUpcomingChests(request).get());
     }
 
     @Test
-    void getUpcomingChests_whenWithException() {
+    void getUpcomingChests_whenApiReturnsError_thenThrowConnectorException() {
         String playerTag = "playerTag";
         jcrapi2.api.intern.players.upcomingchests.UpcomingChestsRequest.UpcomingChestsRequestBuilder
                 builder =
@@ -95,7 +95,7 @@ public class PlayerApiImplIntegrationTest extends IntegrationTestBase {
         jcrapi2.api.intern.players.upcomingchests.UpcomingChestsRequest request =
                 builder.storeRawResponse(true).build();
 
-        prepareWithErrorAndRun(
+        assertRequestFails(
                 "/players/{playerTag}/upcomingchests".replace("{playerTag}", playerTag),
                 EMPTY,
                 request,
@@ -103,7 +103,7 @@ public class PlayerApiImplIntegrationTest extends IntegrationTestBase {
     }
 
     @Test
-    void getBattleLog() throws Exception {
+    void getBattleLog_whenApiReturnsSuccess_thenReturnGeneratedResponse() throws Exception {
         String playerTag = "playerTag";
         jcrapi2.api.intern.players.battlelog.BattleLogRequest.BattleLogRequestBuilder builder =
                 jcrapi2.api.intern.players.battlelog.BattleLogRequest.builder(playerTag);
@@ -115,20 +115,22 @@ public class PlayerApiImplIntegrationTest extends IntegrationTestBase {
                 "src/test/resources/player-getBattleLog.json",
                 request);
         jcrapi2.api.intern.players.battlelog.BattleLogResponse expected =
-                toJson(jcrapi2.api.intern.players.battlelog.BattleLogResponse.class, getExpected());
+                fromJson(
+                        jcrapi2.api.intern.players.battlelog.BattleLogResponse.class,
+                        getExpected());
 
-        run(expected, () -> unitUnderTest.getBattleLog(request).get());
+        assertResponse(expected, () -> unitUnderTest.getBattleLog(request).get());
     }
 
     @Test
-    void getBattleLog_whenWithException() {
+    void getBattleLog_whenApiReturnsError_thenThrowConnectorException() {
         String playerTag = "playerTag";
         jcrapi2.api.intern.players.battlelog.BattleLogRequest.BattleLogRequestBuilder builder =
                 jcrapi2.api.intern.players.battlelog.BattleLogRequest.builder(playerTag);
         jcrapi2.api.intern.players.battlelog.BattleLogRequest request =
                 builder.storeRawResponse(true).build();
 
-        prepareWithErrorAndRun(
+        assertRequestFails(
                 "/players/{playerTag}/battlelog".replace("{playerTag}", playerTag),
                 EMPTY,
                 request,

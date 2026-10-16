@@ -16,6 +16,7 @@
  */
 package jcrapi2.api.intern.locations;
 
-import supercell.api.wrapper.essentials.common.PaginationResponse;
+import jcrapi2.api.generated.model.Location;
+import jcrapi2.essentials.common.PaginationResponse;
 
 public class LocationsResponse extends PaginationResponse<Location> {}

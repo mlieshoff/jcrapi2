@@ -18,11 +18,12 @@ package jcrapi2.api.intern.clans.currentriverrace;
 
 import com.google.gson.annotations.SerializedName;
 
+import jcrapi2.api.generated.model.CurrentRiverRace;
+import jcrapi2.essentials.common.IResponse;
+import jcrapi2.essentials.common.RawResponse;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-
-import supercell.api.wrapper.essentials.common.IResponse;
-import supercell.api.wrapper.essentials.common.RawResponse;
 
 @Data
 @EqualsAndHashCode(callSuper = true)

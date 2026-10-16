@@ -1,0 +1,87 @@
+{
+  "items": [
+    {
+      "tag": "#YPR02QUJ",
+      "name": "joris bord",
+      "expLevel": 14,
+      "trophies": 6016,
+      "rank": 1,
+      "previousRank": 1,
+      "clan": {
+        "tag": "#Y8G8C",
+        "name": "Ambitionz FR",
+        "badgeId": 16000078
+      },
+      "arena": {
+        "id": 54000015,
+        "name": "Master I"
+      }
+    },
+    {
+      "tag": "#LCPYJ9RJP",
+      "name": "amaury",
+      "expLevel": 11,
+      "trophies": 5307,
+      "rank": 2,
+      "previousRank": 2,
+      "clan": {
+        "tag": "#G9V0U0QU",
+        "name": "K C D KUu",
+        "badgeId": 16000175
+      },
+      "arena": {
+        "id": 54000013,
+        "name": "Challenger II"
+      }
+    },
+    {
+      "tag": "#GY88QUVY9",
+      "name": "Haagrah!",
+      "expLevel": 12,
+      "trophies": 5209,
+      "rank": 3,
+      "previousRank": 3,
+      "arena": {
+        "id": 54000012,
+        "name": "Legendary Arena"
+      }
+    },
+    {
+      "tag": "#JYCGVV0U2",
+      "name": "KNG SMK",
+      "expLevel": 10,
+      "trophies": 5192,
+      "rank": 4,
+      "previousRank": 5,
+      "clan": {
+        "tag": "#JCY2J9R",
+        "name": "ADCOG",
+        "badgeId": 16000078
+      },
+      "arena": {
+        "id": 54000012,
+        "name": "Legendary Arena"
+      }
+    },
+    {
+      "tag": "#QGYCGURYU",
+      "name": "GoldenPash",
+      "expLevel": 12,
+      "trophies": 5104,
+      "rank": 5,
+      "previousRank": 4,
+      "clan": {
+        "tag": "#LQU2JQ99",
+        "name": "les b0ul!$tes",
+        "badgeId": 16000162
+      },
+      "arena": {
+        "id": 54000012,
+        "name": "Legendary Arena"
+      }
+    }
+  ],
+  "paging": {
+    "cursors": {}
+  }
+}

@@ -1,0 +1,420 @@
+{
+  "items": [
+    {
+      "tag": "#URP0P0LU0",
+      "title": "Global Tournament",
+      "startTime": "20181205T080000.000Z",
+      "endTime": "20181207T110000.000Z",
+      "milestoneRewards": [
+        {
+          "wins": 1,
+          "type": "resource",
+          "amount": 11000,
+          "resource": "gold"
+        },
+        {
+          "wins": 3,
+          "type": "chest",
+          "chest": "Lightning"
+        },
+        {
+          "wins": 5,
+          "type": "tradeToken",
+          "amount": 1,
+          "rarity": "rare"
+        },
+        {
+          "wins": 15,
+          "type": "cardStackRandom",
+          "amount": 10,
+          "rarity": "epic"
+        },
+        {
+          "wins": 19,
+          "type": "tradeToken",
+          "amount": 1,
+          "rarity": "legendary"
+        }
+      ],
+      "freeTierRewards": [
+        {
+          "wins": 2,
+          "type": "resource",
+          "amount": 500,
+          "resource": "gold"
+        },
+        {
+          "wins": 4,
+          "type": "tradeToken",
+          "amount": 1,
+          "rarity": "common"
+        },
+        {
+          "wins": 6,
+          "type": "tradeToken",
+          "amount": 1,
+          "rarity": "epic"
+        },
+        {
+          "wins": 12,
+          "type": "tradeToken",
+          "amount": 1,
+          "rarity": "rare"
+        },
+        {
+          "wins": 20,
+          "type": "chest",
+          "chest": "Lightning"
+        }
+      ],
+      "topRankReward": [
+        {
+          "type": "resource",
+          "amount": 100000,
+          "resource": "gold"
+        }
+      ],
+      "maxTopRewardRank": 10,
+      "gameMode": {
+        "id": 72000010
+      },
+      "maxLosses": 4,
+      "minExpLevel": 9,
+      "tournamentLevel": 10
+    },
+    {
+      "tag": "#URP0P2ULP",
+      "title": "Global Tournament",
+      "startTime": "20181212T093000.000Z",
+      "endTime": "20181214T090000.000Z",
+      "milestoneRewards": [
+        {
+          "wins": 1,
+          "type": "chest",
+          "chest": "Legendary"
+        },
+        {
+          "wins": 2,
+          "type": "resource",
+          "amount": 5000,
+          "resource": "gold"
+        },
+        {
+          "wins": 3,
+          "type": "tradeToken",
+          "amount": 1,
+          "rarity": "epic"
+        },
+        {
+          "wins": 7,
+          "type": "tradeToken",
+          "amount": 1,
+          "rarity": "rare"
+        },
+        {
+          "wins": 11,
+          "type": "tradeToken",
+          "amount": 1,
+          "rarity": "legendary"
+        }
+      ],
+      "freeTierRewards": [
+        {
+          "wins": 1,
+          "type": "tradeToken",
+          "amount": 1,
+          "rarity": "common"
+        },
+        {
+          "wins": 2,
+          "type": "tradeToken",
+          "amount": 1,
+          "rarity": "rare"
+        },
+        {
+          "wins": 3,
+          "type": "tradeToken",
+          "amount": 1,
+          "rarity": "epic"
+        },
+        {
+          "wins": 5,
+          "type": "resource",
+          "amount": 1000,
+          "resource": "gold"
+        },
+        {
+          "wins": 12,
+          "type": "chest",
+          "chest": "Lightning"
+        }
+      ],
+      "topRankReward": [
+        {
+          "type": "resource",
+          "amount": 100000,
+          "resource": "gold"
+        }
+      ],
+      "maxTopRewardRank": 10,
+      "gameMode": {
+        "id": 72000010
+      },
+      "maxLosses": 4,
+      "minExpLevel": 10,
+      "tournamentLevel": 11
+    },
+    {
+      "tag": "#URP0PQRL0",
+      "title": "Double Elixir Tournament",
+      "startTime": "20190123T070000.000Z",
+      "endTime": "20190125T070000.000Z",
+      "milestoneRewards": [
+        {
+          "wins": 1,
+          "type": "chest",
+          "chest": "Legendary"
+        },
+        {
+          "wins": 2,
+          "type": "resource",
+          "amount": 5000,
+          "resource": "gold"
+        },
+        {
+          "wins": 4,
+          "type": "tradeToken",
+          "amount": 2,
+          "rarity": "epic"
+        },
+        {
+          "wins": 8,
+          "type": "tradeToken",
+          "amount": 2,
+          "rarity": "rare"
+        },
+        {
+          "wins": 12,
+          "type": "tradeToken",
+          "amount": 2,
+          "rarity": "legendary"
+        }
+      ],
+      "freeTierRewards": [
+        {
+          "wins": 1,
+          "type": "cardStackRandom",
+          "amount": 50,
+          "rarity": "rare"
+        },
+        {
+          "wins": 2,
+          "type": "tradeToken",
+          "amount": 1,
+          "rarity": "rare"
+        },
+        {
+          "wins": 3,
+          "type": "resource",
+          "amount": 2500,
+          "resource": "gold"
+        },
+        {
+          "wins": 6,
+          "type": "tradeToken",
+          "amount": 1,
+          "rarity": "common"
+        },
+        {
+          "wins": 9,
+          "type": "cardStackRandom",
+          "amount": 10,
+          "rarity": "epic"
+        }
+      ],
+      "topRankReward": [
+        {
+          "type": "resource",
+          "amount": 100000,
+          "resource": "gold"
+        }
+      ],
+      "maxTopRewardRank": 50,
+      "gameMode": {
+        "id": 72000001
+      },
+      "maxLosses": 4,
+      "minExpLevel": 9,
+      "tournamentLevel": 10
+    },
+    {
+      "tag": "#URP2LRQQJ",
+      "title": "Season 18 Global Tournament",
+      "startTime": "20201216T080000.000Z",
+      "endTime": "20201221T080000.000Z",
+      "milestoneRewards": [
+        {
+          "wins": 1,
+          "type": "cardStack",
+          "amount": 1,
+          "card": {
+            "name": null,
+            "id": 26000083,
+            "maxLevel": 0
+          },
+          "rarity": "common"
+        },
+        {
+          "wins": 2,
+          "type": "resource",
+          "amount": 10000,
+          "resource": "gold"
+        },
+        {
+          "wins": 3,
+          "type": "tradeToken",
+          "amount": 1,
+          "rarity": "legendary"
+        },
+        {
+          "wins": 4,
+          "type": "chest",
+          "chest": "Epic"
+        },
+        {
+          "wins": 6,
+          "type": "tradeToken",
+          "amount": 1,
+          "rarity": "epic"
+        }
+      ],
+      "freeTierRewards": [
+        {
+          "wins": 1,
+          "type": "tradeToken",
+          "amount": 2,
+          "rarity": "common"
+        },
+        {
+          "wins": 2,
+          "type": "resource",
+          "amount": 10,
+          "resource": "unknown"
+        },
+        {
+          "wins": 3,
+          "type": "tradeToken",
+          "amount": 2,
+          "rarity": "epic"
+        },
+        {
+          "wins": 4,
+          "type": "resource",
+          "amount": 2500,
+          "resource": "gold"
+        },
+        {
+          "wins": 10,
+          "type": "chest",
+          "chest": "Lightning"
+        }
+      ],
+      "topRankReward": [
+        {
+          "type": "resource",
+          "amount": 100000,
+          "resource": "gold"
+        }
+      ],
+      "maxTopRewardRank": 50,
+      "gameMode": {
+        "id": 72000010
+      },
+      "maxLosses": 5,
+      "minExpLevel": 8,
+      "tournamentLevel": 9
+    },
+    {
+      "tag": "#URP2R8UG0",
+      "title": "Royal Tournament",
+      "startTime": "20210410T080000.000Z",
+      "endTime": "20210414T080000.000Z",
+      "milestoneRewards": [
+        {
+          "wins": 1,
+          "type": "chest",
+          "chest": "Legendary"
+        },
+        {
+          "wins": 2,
+          "type": "resource",
+          "amount": 10000,
+          "resource": "gold"
+        },
+        {
+          "wins": 3,
+          "type": "tradeToken",
+          "amount": 1,
+          "rarity": "legendary"
+        },
+        {
+          "wins": 6,
+          "type": "tradeToken",
+          "amount": 1,
+          "rarity": "epic"
+        },
+        {
+          "wins": 13,
+          "type": "consumable",
+          "amount": 1,
+          "consumableName": "ChestKey"
+        }
+      ],
+      "freeTierRewards": [
+        {
+          "wins": 1,
+          "type": "tradeToken",
+          "amount": 2,
+          "rarity": "common"
+        },
+        {
+          "wins": 2,
+          "type": "resource",
+          "amount": 10,
+          "resource": "unknown"
+        },
+        {
+          "wins": 3,
+          "type": "tradeToken",
+          "amount": 2,
+          "rarity": "epic"
+        },
+        {
+          "wins": 4,
+          "type": "consumable",
+          "amount": 1,
+          "consumableName": "ChestKey"
+        },
+        {
+          "wins": 12,
+          "type": "chest",
+          "chest": "Lightning"
+        }
+      ],
+      "topRankReward": [
+        {
+          "type": "resource",
+          "amount": 100000,
+          "resource": "gold"
+        }
+      ],
+      "maxTopRewardRank": 50,
+      "gameMode": {
+        "id": 72000010
+      },
+      "maxLosses": 5,
+      "minExpLevel": 8,
+      "tournamentLevel": 9
+    }
+  ]
+}

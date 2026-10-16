@@ -16,11 +16,14 @@
  */
 package jcrapi2;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import jcrapi2.api.intern.clans.ClanApi;
+import jcrapi2.essentials.api.Api;
+import jcrapi2.essentials.api.ApiContext;
+import jcrapi2.essentials.api.BaseApi;
+import jcrapi2.essentials.connector.Connector;
 
 import lombok.NonNull;
 
@@ -31,11 +34,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-
-import supercell.api.wrapper.essentials.api.Api;
-import supercell.api.wrapper.essentials.api.ApiContext;
-import supercell.api.wrapper.essentials.api.BaseApi;
-import supercell.api.wrapper.essentials.connector.Connector;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -58,11 +56,12 @@ class JCrApiTest {
     }
 
     @Test
-    void listApis_whenCalled_shouldReturnListOfApiInterfaceNames() {
+    void listApis_whenCalled_thenReturnListOfApiInterfaceNames() {
         Set<String> expected =
                 new HashSet<>(
                         Arrays.asList(
                                 "jcrapi2.api.intern.cards.CardApi",
+                                "jcrapi2.api.intern.events.EventApi",
                                 "jcrapi2.api.intern.challenges.ChallengeApi",
                                 "jcrapi2.api.intern.clans.ClanApi",
                                 "jcrapi2.api.intern.globaltournaments.GlobalTournamentApi",
@@ -73,36 +72,37 @@ class JCrApiTest {
 
         List<String> actual = unitUnderTest.listApis();
 
-        assertEquals(expected, new HashSet<>(actual));
+        assertThat(new HashSet<>(actual)).isEqualTo(expected);
     }
 
     @Test
-    void getApi_whenWithValidParameter_shouldReturnApiInstance() {
+    void getApi_whenWithValidParameter_thenReturnApiInstance() {
         ClanApi actual = unitUnderTest.getApi(ClanApi.class);
 
-        assertNotNull(actual);
+        assertThat(actual).isNotNull();
     }
 
     @ParameterizedTest
     @CsvSource(value = "null,", nullValues = "null")
     void registerApi_whenWithNull_thenThrowException(String actual) {
 
-        assertThrows(
-                IllegalArgumentException.class, () -> unitUnderTest.register(FooApi.class, actual));
+        assertThatThrownBy(() -> unitUnderTest.register(FooApi.class, actual))
+                .isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
-    void registerAndGetApi_whenWithValidParameter_shouldRegister() {
+    void registerAndGetApi_whenWithValidParameter_thenRegister() {
         unitUnderTest.register(FooApi.class, FooApiImpl.class.getName());
         FooApi actual = unitUnderTest.getApi(FooApi.class);
 
-        assertNotNull(actual);
+        assertThat(actual).isNotNull();
     }
 
     @Test
     void getApi_whenClassNotFound_thenThrowException() {
 
-        assertThrows(IllegalStateException.class, () -> unitUnderTest.getApi(FooApi.class));
+        assertThatThrownBy(() -> unitUnderTest.getApi(FooApi.class))
+                .isInstanceOf(IllegalStateException.class);
     }
 
     public interface FooApi extends Api {}

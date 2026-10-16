@@ -16,6 +16,7 @@
  */
 package jcrapi2.api.intern.leaderboards.info;
 
-import supercell.api.wrapper.essentials.common.PaginationResponse;
+import jcrapi2.api.generated.model.LeaderboardEntry;
+import jcrapi2.essentials.common.PaginationResponse;
 
-public class LeaderboardResponse extends PaginationResponse<Leaderboard> {}
+public class LeaderboardResponse extends PaginationResponse<LeaderboardEntry> {}

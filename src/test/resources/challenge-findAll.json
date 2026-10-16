@@ -83,58 +83,6 @@
           {
             "type": "chest",
             "chest": "Epic"
-          },
-          {
-            "type": "resource",
-            "amount": 10000,
-            "resource": "gold"
-          },
-          {
-            "type": "consumable",
-            "amount": 25,
-            "consumableName": "WildcardRare"
-          },
-          {
-            "type": "chest",
-            "chest": "Giant"
-          },
-          {
-            "type": "resource",
-            "amount": 10000,
-            "resource": "gold"
-          },
-          {
-            "type": "consumable",
-            "amount": 25,
-            "consumableName": "WildcardRare"
-          },
-          {
-            "type": "chest",
-            "chest": "Kings"
-          },
-          {
-            "type": "resource",
-            "amount": 10000,
-            "resource": "gold"
-          },
-          {
-            "type": "consumable",
-            "amount": 100,
-            "consumableName": "WildcardCommon"
-          },
-          {
-            "type": "consumable",
-            "amount": 1,
-            "consumableName": "ChestKey"
-          },
-          {
-            "type": "resource",
-            "amount": 10000,
-            "resource": "gold"
-          },
-          {
-            "type": "chest",
-            "chest": "Magic"
           }
         ],
         "maxWins": 15,
@@ -180,58 +128,6 @@
           {
             "type": "chest",
             "chest": "Epic"
-          },
-          {
-            "type": "resource",
-            "amount": 10000,
-            "resource": "gold"
-          },
-          {
-            "type": "consumable",
-            "amount": 25,
-            "consumableName": "WildcardRare"
-          },
-          {
-            "type": "chest",
-            "chest": "Giant"
-          },
-          {
-            "type": "resource",
-            "amount": 10000,
-            "resource": "gold"
-          },
-          {
-            "type": "consumable",
-            "amount": 25,
-            "consumableName": "WildcardRare"
-          },
-          {
-            "type": "chest",
-            "chest": "Kings"
-          },
-          {
-            "type": "resource",
-            "amount": 10000,
-            "resource": "gold"
-          },
-          {
-            "type": "consumable",
-            "amount": 100,
-            "consumableName": "WildcardCommon"
-          },
-          {
-            "type": "consumable",
-            "amount": 1,
-            "consumableName": "ChestKey"
-          },
-          {
-            "type": "resource",
-            "amount": 10000,
-            "resource": "gold"
-          },
-          {
-            "type": "chest",
-            "chest": "Magic"
           }
         ],
         "maxWins": 15,
@@ -275,98 +171,12 @@
             "resource": "gold"
           },
           {
-            "type": "resource",
-            "amount": 2000,
-            "resource": "gold"
-          },
-          {
-            "type": "resource",
-            "amount": 1000,
-            "resource": "gold"
-          },
-          {
             "type": "chest",
             "chest": "GoldCage_Medium"
           }
         ],
         "maxWins": 6,
         "iconUrl": "https://event-assets.clashroyale.com/bb1fe911-e20f-41fe-b973-ba395be7aaf0_2elixir_challenge_02.png"
-      }
-    ]
-  },
-  {
-    "type": "singleChallenge",
-    "startTime": "20220523T080000.000Z",
-    "endTime": "19700120T032457.600Z",
-    "challenges": [
-      {
-        "id": 73005986,
-        "name": "The Floor Is Healing!",
-        "description": "Battle, Heal, Repeat! The entire Arena has a Heal spell effect. Build your deck and battle. No losses! Play to the final reward!",
-        "winMode": "win",
-        "casual": true,
-        "maxLosses": 0,
-        "gameMode": {
-          "id": 72000255,
-          "name": "GlobalHeal_NoBuildings_Tournament"
-        },
-        "prizes": [
-          {
-            "type": "none"
-          },
-          {
-            "type": "resource",
-            "amount": 1000,
-            "resource": "gold"
-          },
-          {
-            "type": "resource",
-            "amount": 1000,
-            "resource": "gold"
-          },
-          {
-            "type": "resource",
-            "amount": 1000,
-            "resource": "gold"
-          },
-          {
-            "type": "resource",
-            "amount": 1000,
-            "resource": "gold"
-          },
-          {
-            "type": "resource",
-            "amount": 1000,
-            "resource": "gold"
-          },
-          {
-            "type": "resource",
-            "amount": 500,
-            "resource": "gold"
-          },
-          {
-            "type": "resource",
-            "amount": 500,
-            "resource": "gold"
-          },
-          {
-            "type": "resource",
-            "amount": 500,
-            "resource": "gold"
-          },
-          {
-            "type": "resource",
-            "amount": 500,
-            "resource": "gold"
-          },
-          {
-            "type": "resource",
-            "amount": 3000,
-            "resource": "gold"
-          }
-        ],
-        "maxWins": 10,
-        "iconUrl": "https://event-assets.clashroyale.com/6701f3db-e457-42b3-b2a8-17a2db2eb8c8_FloorisHealing_Banner.png"
       }
     ]
   },
@@ -410,30 +220,6 @@
             "rarity": "common"
           },
           {
-            "type": "none"
-          },
-          {
-            "type": "resource",
-            "amount": 500,
-            "resource": "gold"
-          },
-          {
-            "type": "none"
-          },
-          {
-            "type": "cardStack",
-            "amount": 50,
-            "card": {
-              "name": null,
-              "id": 28000001,
-              "maxLevel": 0
-            },
-            "rarity": "common"
-          },
-          {
-            "type": "none"
-          },
-          {
             "type": "chest",
             "chest": "GoldCage_Large"
           }
@@ -465,9 +251,6 @@
             "resource": "gold"
           },
           {
-            "type": "none"
-          },
-          {
             "type": "cardStack",
             "amount": 50,
             "card": {
@@ -476,38 +259,6 @@
               "maxLevel": 0
             },
             "rarity": "common"
-          },
-          {
-            "type": "none"
-          },
-          {
-            "type": "resource",
-            "amount": 500,
-            "resource": "gold"
-          },
-          {
-            "type": "none"
-          },
-          {
-            "type": "cardStack",
-            "amount": 25,
-            "card": {
-              "name": null,
-              "id": 26000017,
-              "maxLevel": 0
-            },
-            "rarity": "common"
-          },
-          {
-            "type": "none"
-          },
-          {
-            "type": "resource",
-            "amount": 500,
-            "resource": "gold"
-          },
-          {
-            "type": "none"
           },
           {
             "type": "chest",
@@ -541,22 +292,6 @@
             "type": "none"
           },
           {
-            "type": "resource",
-            "amount": 500,
-            "resource": "gold"
-          },
-          {
-            "type": "none"
-          },
-          {
-            "type": "resource",
-            "amount": 500,
-            "resource": "gold"
-          },
-          {
-            "type": "none"
-          },
-          {
             "type": "cardStack",
             "amount": 10,
             "card": {
@@ -565,33 +300,6 @@
               "maxLevel": 0
             },
             "rarity": "common"
-          },
-          {
-            "type": "none"
-          },
-          {
-            "type": "resource",
-            "amount": 500,
-            "resource": "gold"
-          },
-          {
-            "type": "none"
-          },
-          {
-            "type": "resource",
-            "amount": 500,
-            "resource": "gold"
-          },
-          {
-            "type": "none"
-          },
-          {
-            "type": "resource",
-            "amount": 500,
-            "resource": "gold"
-          },
-          {
-            "type": "none"
           },
           {
             "type": "consumable",
@@ -632,60 +340,6 @@
             "type": "resource",
             "amount": 500,
             "resource": "gold"
-          },
-          {
-            "type": "none"
-          },
-          {
-            "type": "resource",
-            "amount": 500,
-            "resource": "gold"
-          },
-          {
-            "type": "none"
-          },
-          {
-            "type": "resource",
-            "amount": 500,
-            "resource": "gold"
-          },
-          {
-            "type": "none"
-          },
-          {
-            "type": "resource",
-            "amount": 500,
-            "resource": "gold"
-          },
-          {
-            "type": "none"
-          },
-          {
-            "type": "resource",
-            "amount": 500,
-            "resource": "gold"
-          },
-          {
-            "type": "none"
-          },
-          {
-            "type": "resource",
-            "amount": 500,
-            "resource": "gold"
-          },
-          {
-            "type": "none"
-          },
-          {
-            "type": "resource",
-            "amount": 500,
-            "resource": "gold"
-          },
-          {
-            "type": "none"
-          },
-          {
-            "type": null
           }
         ],
         "maxWins": 18,

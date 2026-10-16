@@ -31,7 +31,7 @@ public class ChallengeApiImplIntegrationTest extends IntegrationTestBase {
     }
 
     @Test
-    void findAll() throws Exception {
+    void findAll_whenApiReturnsSuccess_thenReturnGeneratedResponse() throws Exception {
         jcrapi2.api.intern.challenges.ChallengesRequest.ChallengesRequestBuilder builder =
                 jcrapi2.api.intern.challenges.ChallengesRequest.builder();
         jcrapi2.api.intern.challenges.ChallengesRequest request =
@@ -39,19 +39,19 @@ public class ChallengeApiImplIntegrationTest extends IntegrationTestBase {
         prepare("/challenges", EMPTY, "src/test/resources/challenge-findAll.json", request);
 
         jcrapi2.api.intern.challenges.ChallengesResponse expected =
-                toJson(jcrapi2.api.intern.challenges.ChallengesResponse.class, getExpected());
+                fromJson(jcrapi2.api.intern.challenges.ChallengesResponse.class, getExpected());
 
-        run(expected, () -> unitUnderTest.findAll(request).get());
+        assertResponse(expected, () -> unitUnderTest.findAll(request).get());
     }
 
     @Test
-    void findAll_whenWithException() {
+    void findAll_whenApiReturnsError_thenThrowConnectorException() {
         jcrapi2.api.intern.challenges.ChallengesRequest.ChallengesRequestBuilder builder =
                 jcrapi2.api.intern.challenges.ChallengesRequest.builder();
         jcrapi2.api.intern.challenges.ChallengesRequest request =
                 builder.storeRawResponse(true).build();
 
-        prepareWithErrorAndRun(
+        assertRequestFails(
                 "/challenges", EMPTY, request, () -> unitUnderTest.findAll(request).get());
     }
 }

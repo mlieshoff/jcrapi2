@@ -38,9 +38,8 @@ import jcrapi2.api.intern.locations.seasons.global.rankings.pathoflegend.player.
 import jcrapi2.api.intern.locations.seasons.global.rankings.pathoflegend.player.TopPlayerPathOfLegendRankingsResponse;
 import jcrapi2.api.intern.locations.seasons.global.rankings.tournament.TopPlayerTournamentRankingsRequest;
 import jcrapi2.api.intern.locations.seasons.global.rankings.tournament.TopPlayerTournamentRankingsResponse;
-
-import supercell.api.wrapper.essentials.api.ApiContext;
-import supercell.api.wrapper.essentials.api.BaseApi;
+import jcrapi2.essentials.api.ApiContext;
+import jcrapi2.essentials.api.BaseApi;
 
 import java.util.concurrent.Future;
 

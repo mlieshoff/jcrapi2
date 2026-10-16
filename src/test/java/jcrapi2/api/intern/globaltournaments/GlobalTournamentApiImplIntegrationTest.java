@@ -20,6 +20,8 @@ import jcrapi2.IntegrationTestBase;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 public class GlobalTournamentApiImplIntegrationTest extends IntegrationTestBase {
 
@@ -30,35 +32,34 @@ public class GlobalTournamentApiImplIntegrationTest extends IntegrationTestBase 
         unitUnderTest = getJCrApi().getApi(GlobalTournamentApi.class);
     }
 
-    @Test
-    void findAll() throws Exception {
+    @ParameterizedTest
+    @ValueSource(
+            strings = {"globalTournament-findAll.json", "globalTournament-findAll-populated.json"})
+    void findAll_whenApiReturnsSuccess_thenReturnGeneratedResponse(String fixture)
+            throws Exception {
         jcrapi2.api.intern.globaltournaments.GlobalTournamentsRequest
                         .GlobalTournamentsRequestBuilder
                 builder = jcrapi2.api.intern.globaltournaments.GlobalTournamentsRequest.builder();
         jcrapi2.api.intern.globaltournaments.GlobalTournamentsRequest request =
                 builder.limit(100).before("zzz").after("aaa").storeRawResponse(true).build();
-        prepare(
-                "/globaltournaments",
-                EMPTY,
-                "src/test/resources/globalTournament-findAll.json",
-                request);
+        prepare("/globaltournaments", EMPTY, "src/test/resources/" + fixture, request);
         jcrapi2.api.intern.globaltournaments.GlobalTournamentsResponse expected =
-                toJson(
+                fromJson(
                         jcrapi2.api.intern.globaltournaments.GlobalTournamentsResponse.class,
                         getExpected());
 
-        run(expected, () -> unitUnderTest.findAll(request).get());
+        assertResponse(expected, () -> unitUnderTest.findAll(request).get());
     }
 
     @Test
-    void findAll_whenWithException() {
+    void findAll_whenApiReturnsError_thenThrowConnectorException() {
         jcrapi2.api.intern.globaltournaments.GlobalTournamentsRequest
                         .GlobalTournamentsRequestBuilder
                 builder = jcrapi2.api.intern.globaltournaments.GlobalTournamentsRequest.builder();
         jcrapi2.api.intern.globaltournaments.GlobalTournamentsRequest request =
                 builder.limit(100).before("zzz").after("aaa").storeRawResponse(true).build();
 
-        prepareWithErrorAndRun(
+        assertRequestFails(
                 "/globaltournaments", EMPTY, request, () -> unitUnderTest.findAll(request).get());
     }
 }

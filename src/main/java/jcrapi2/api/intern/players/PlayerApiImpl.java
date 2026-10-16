@@ -22,9 +22,8 @@ import jcrapi2.api.intern.players.info.PlayerRequest;
 import jcrapi2.api.intern.players.info.PlayerResponse;
 import jcrapi2.api.intern.players.upcomingchests.UpcomingChestsRequest;
 import jcrapi2.api.intern.players.upcomingchests.UpcomingChestsResponse;
-
-import supercell.api.wrapper.essentials.api.ApiContext;
-import supercell.api.wrapper.essentials.api.BaseApi;
+import jcrapi2.essentials.api.ApiContext;
+import jcrapi2.essentials.api.BaseApi;
 
 import java.util.concurrent.Future;
 

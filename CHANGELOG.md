@@ -11,6 +11,10 @@
 - OpenApi support
 - Codex agent support
 
+### Removed 
+
+- Supercell essentials dependency
+
 ## [4.0.15] - 2025-02-14
 
 ### Added

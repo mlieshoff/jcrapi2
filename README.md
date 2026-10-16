@@ -70,31 +70,6 @@ Proxy endpoint
     https://crproxy.royaleapi.dev/v1
 ```
 
-Bind essentials to your project
-```xml
-<repositories>
-    <repository>
-        <id>packagecloud-supercell-api-wrapper-essentials</id>
-        <url>https://packagecloud.io/mlieshoff/supercell-api-wrapper-essentials/maven2</url>
-        <releases>
-            <enabled>true</enabled>
-        </releases>
-        <snapshots>
-            <enabled>true</enabled>
-        </snapshots>
-    </repository>
-</repositories>
-```
-
-and use the dependency
-```xml
-<dependency>
-    <groupId>supercell-api-wrapper-essentials</groupId>
-    <artifactId>supercell-api-wrapper-essentials</artifactId>
-    <version>1.0.1</version>
-</dependency>
-```
-
 Use built-in standard connector
 ```java
 Connector connector = new StandardConnector();

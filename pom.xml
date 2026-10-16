@@ -52,7 +52,6 @@
         <version.maven.packagecloud>0.0.4</version.maven.packagecloud>
         <version.mockito>5.15.2</version.mockito>
         <version.slf4j>2.0.14</version.slf4j>
-        <version.supercell.api.wrapper.essentials>1.0.1</version.supercell.api.wrapper.essentials>
         <version.wiremock>3.10.0</version.wiremock>
     </properties>
     <build>
@@ -277,11 +276,6 @@
             <version>${version.gson}</version>
         </dependency>
         <dependency>
-            <groupId>supercell-api-wrapper-essentials</groupId>
-            <artifactId>supercell-api-wrapper-essentials</artifactId>
-            <version>${version.supercell.api.wrapper.essentials}</version>
-        </dependency>
-        <dependency>
             <groupId>com.mlieshoff</groupId>
             <artifactId>java-build-essentials</artifactId>
             <version>${version.java.build.essentials}</version>
@@ -377,16 +371,6 @@
         <repository>
             <id>mlieshoff-jcrapi2</id>
             <url>https://packagecloud.io/mlieshoff/jcrapi2/maven2</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>packagecloud-supercell-api-wrapper-essentials</id>
-            <url>https://packagecloud.io/mlieshoff/supercell-api-wrapper-essentials/maven2</url>
             <releases>
                 <enabled>true</enabled>
             </releases>

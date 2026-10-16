@@ -1,16 +1,19 @@
 package supercell.api.wrapper.essentials.connector;
 
-import static com.github.tomakehurst.wiremock.client.WireMock.*;
+import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
+import static com.github.tomakehurst.wiremock.client.WireMock.equalTo;
+import static com.github.tomakehurst.wiremock.client.WireMock.get;
+import static com.github.tomakehurst.wiremock.client.WireMock.stubFor;
+import static com.github.tomakehurst.wiremock.client.WireMock.urlEqualTo;
+import static com.github.tomakehurst.wiremock.common.ContentTypes.AUTHORIZATION;
 
 import static org.apache.commons.io.FileUtils.write;
+import static org.apache.hc.core5.http.HttpStatus.SC_INTERNAL_SERVER_ERROR;
+import static org.apache.hc.core5.http.HttpStatus.SC_OK;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 import static supercell.api.wrapper.essentials.connector.FilesystemCachedConnector.CACHE_TIMEOUT;
-
-import static wiremock.org.apache.http.HttpHeaders.AUTHORIZATION;
-import static wiremock.org.apache.http.HttpStatus.SC_INTERNAL_SERVER_ERROR;
-import static wiremock.org.apache.http.HttpStatus.SC_OK;
 
 import static java.lang.System.currentTimeMillis;
 import static java.nio.charset.StandardCharsets.UTF_8;

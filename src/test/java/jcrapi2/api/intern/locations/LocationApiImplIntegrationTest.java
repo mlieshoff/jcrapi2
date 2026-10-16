@@ -20,6 +20,8 @@ import jcrapi2.IntegrationTestBase;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 public class LocationApiImplIntegrationTest extends IntegrationTestBase {
 
@@ -129,8 +131,14 @@ public class LocationApiImplIntegrationTest extends IntegrationTestBase {
                 () -> unitUnderTest.getClanRankings(request).get());
     }
 
-    @Test
-    void getPlayerRankings_whenApiReturnsSuccess_thenReturnGeneratedResponse() throws Exception {
+    @ParameterizedTest
+    @ValueSource(
+            strings = {
+                "location-getPlayerRankings.json",
+                "location-getPlayerRankings-populated.json"
+            })
+    void getPlayerRankings_whenApiReturnsSuccess_thenReturnGeneratedResponse(String fixture)
+            throws Exception {
         long locationId = 4711L;
         jcrapi2.api.intern.locations.rankings.player.PlayerRankingsRequest
                         .PlayerRankingsRequestBuilder
@@ -143,7 +151,7 @@ public class LocationApiImplIntegrationTest extends IntegrationTestBase {
                 "/locations/{locationId}/rankings/players"
                         .replace("{locationId}", String.valueOf(locationId)),
                 EMPTY,
-                "src/test/resources/location-getPlayerRankings.json",
+                "src/test/resources/" + fixture,
                 request);
         jcrapi2.api.intern.locations.rankings.player.PlayerRankingsResponse expected =
                 fromJson(
@@ -517,6 +525,26 @@ public class LocationApiImplIntegrationTest extends IntegrationTestBase {
     }
 
     @Test
+    void getTopPlayerTournamentRankings_whenTournamentUnavailable_thenThrowNotFound()
+            throws Exception {
+        var request =
+                jcrapi2.api.intern.locations.seasons.global.rankings.tournament
+                        .TopPlayerTournamentRankingsRequest.builder("#URP89CGRJ")
+                        .limit(100)
+                        .before("zzz")
+                        .after("aaa")
+                        .storeRawResponse(true)
+                        .build();
+
+        assertNotFoundResponse(
+                "/locations/global/rankings/tournaments/%23URP89CGRJ",
+                EMPTY,
+                "src/test/resources/location-getGlobalTournamentRankings.json",
+                request,
+                () -> unitUnderTest.getTopPlayerTournamentRankings(request).get());
+    }
+
+    @Test
     void getTopPlayerTournamentRankings_whenApiReturnsError_thenThrowConnectorException() {
         String tournamentTag = "tournamentTag";
         jcrapi2.api.intern.locations.seasons.global.rankings.tournament
@@ -542,9 +570,14 @@ public class LocationApiImplIntegrationTest extends IntegrationTestBase {
                 () -> unitUnderTest.getTopPlayerTournamentRankings(request).get());
     }
 
-    @Test
-    void getTopPlayerLeagueSeasonsV2_whenApiReturnsSuccess_thenReturnGeneratedResponse()
-            throws Exception {
+    @ParameterizedTest
+    @ValueSource(
+            strings = {
+                "location-getTopPlayerLeagueSeasonsV2.json",
+                "location-getTopPlayerLeagueSeasonsV2-populated.json"
+            })
+    void getTopPlayerLeagueSeasonsV2_whenApiReturnsSuccess_thenReturnGeneratedResponse(
+            String fixture) throws Exception {
         jcrapi2.api.intern.locations.seasons.global.TopPlayerLeagueSeasonsV2Request
                         .TopPlayerLeagueSeasonsV2RequestBuilder
                 builder =
@@ -552,11 +585,7 @@ public class LocationApiImplIntegrationTest extends IntegrationTestBase {
                                 .builder();
         jcrapi2.api.intern.locations.seasons.global.TopPlayerLeagueSeasonsV2Request request =
                 builder.limit(100).before("zzz").after("aaa").storeRawResponse(true).build();
-        prepare(
-                "/locations/global/seasonsV2",
-                EMPTY,
-                "src/test/resources/location-getTopPlayerLeagueSeasonsV2.json",
-                request);
+        prepare("/locations/global/seasonsV2", EMPTY, "src/test/resources/" + fixture, request);
         jcrapi2.api.intern.locations.seasons.global.TopPlayerLeagueSeasonsV2Response expected =
                 fromJson(
                         jcrapi2.api.intern.locations.seasons.global.TopPlayerLeagueSeasonsV2Response

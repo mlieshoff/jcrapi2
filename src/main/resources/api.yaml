@@ -607,7 +607,7 @@ definitions:
           - predefined
           - eventDeck
           - pick
-          - wardeckPick
+          - warDeckPick
           - quaddeckPick
           - unknown
       opponent:
@@ -1425,13 +1425,12 @@ definitions:
         type: string
       evolutionMedium:
         type: string
+      heroMedium:
+        type: string
   PlayerProgress:
     type: object
-    properties:
-      goblin-road:
-        $ref: '#/definitions/TrophyRoadProgress'
-      Royals_2v2:
-        $ref: '#/definitions/TrophyRoadProgress'
+    additionalProperties:
+      $ref: '#/definitions/TrophyRoadProgress'
   TrophyRoadProgress:
     type: object
     properties:

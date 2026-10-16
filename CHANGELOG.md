@@ -315,7 +315,7 @@
 
 - Create a Release job (#152)
 
-[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.15...HEAD
+[unreleased]: https://github.com/mlieshoff/jcrapi2/compare/v5.0.0...HEAD
 [5.0.0]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.15...5.0.0
 [4.0.15]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.14...4.0.15
 [4.0.14]: https://github.com/mlieshoff/jcrapi2/compare/v4.0.13...4.0.14

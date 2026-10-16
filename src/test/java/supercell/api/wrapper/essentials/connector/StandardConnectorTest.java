@@ -1,18 +1,28 @@
 package supercell.api.wrapper.essentials.connector;
 
-import static com.github.tomakehurst.wiremock.client.WireMock.*;
+import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
+import static com.github.tomakehurst.wiremock.client.WireMock.equalTo;
+import static com.github.tomakehurst.wiremock.client.WireMock.get;
+import static com.github.tomakehurst.wiremock.client.WireMock.stubFor;
+import static com.github.tomakehurst.wiremock.client.WireMock.urlEqualTo;
+import static com.github.tomakehurst.wiremock.common.ContentTypes.AUTHORIZATION;
 
-import static org.assertj.core.api.Assertions.*;
-
-import static wiremock.org.apache.http.HttpHeaders.AUTHORIZATION;
-import static wiremock.org.apache.http.HttpStatus.*;
+import static org.apache.hc.core5.http.HttpStatus.SC_INTERNAL_SERVER_ERROR;
+import static org.apache.hc.core5.http.HttpStatus.SC_OK;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+import static org.assertj.core.api.Assertions.assertThatNoException;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import supercell.api.wrapper.essentials.common.*;
+import supercell.api.wrapper.essentials.common.PaginationRequest;
+import supercell.api.wrapper.essentials.common.PaginationResponse;
+import supercell.api.wrapper.essentials.common.RawResponse;
+import supercell.api.wrapper.essentials.common.Request;
+import supercell.api.wrapper.essentials.common.Response;
 
 import java.net.http.HttpResponse;
 import java.util.Comparator;

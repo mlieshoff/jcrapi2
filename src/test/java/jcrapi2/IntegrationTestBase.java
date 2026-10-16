@@ -26,6 +26,7 @@ import static com.github.tomakehurst.wiremock.common.ContentTypes.AUTHORIZATION;
 
 import static org.apache.commons.io.FileUtils.readLines;
 import static org.apache.hc.core5.http.HttpStatus.SC_BAD_REQUEST;
+import static org.apache.hc.core5.http.HttpStatus.SC_NOT_FOUND;
 import static org.apache.hc.core5.http.HttpStatus.SC_OK;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -196,9 +197,28 @@ public abstract class IntegrationTestBase {
     protected void assertRequestFails(
             String url, String queryPart, Request request, TestRunner testRunner) {
         prepareWithError(url, queryPart, request);
+        assertConnectorFailure(testRunner, SC_BAD_REQUEST, "body");
+    }
+
+    protected void assertNotFoundResponse(
+            String url, String queryPart, String filename, Request request, TestRunner testRunner)
+            throws IOException {
+        String errorBody = body(filename);
+        stubFor(
+                get(urlEqualTo(createUrl(url, queryPart, request)))
+                        .withHeader(AUTHORIZATION, equalTo("Bearer myApiKey"))
+                        .willReturn(aResponse().withBody(errorBody).withStatus(SC_NOT_FOUND)));
+        assertConnectorFailure(testRunner, SC_NOT_FOUND, errorBody);
+    }
+
+    private void assertConnectorFailure(TestRunner testRunner, int status, String errorBody) {
         assertThatThrownBy(testRunner::execute)
                 .isInstanceOf(ExecutionException.class)
-                .hasMessage("supercell.api.wrapper.essentials.connector.ConnectorException: 400")
+                .hasMessage(
+                        "supercell.api.wrapper.essentials.connector.ConnectorException: "
+                                + status
+                                + ": "
+                                + errorBody)
                 .hasCauseInstanceOf(ConnectorException.class);
     }
 

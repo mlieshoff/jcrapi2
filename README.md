@@ -47,7 +47,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'jcrapi2:jcrapi2:5.0.0'
+    implementation group: 'jcrapi2', name: 'jcrapi2', version: '5.0.0'
 }
 ```
 

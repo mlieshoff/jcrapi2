@@ -24,14 +24,14 @@ import static com.github.tomakehurst.wiremock.client.WireMock.stubFor;
 import static com.github.tomakehurst.wiremock.client.WireMock.urlEqualTo;
 import static com.github.tomakehurst.wiremock.common.ContentTypes.AUTHORIZATION;
 
+import static jcrapi2.essentials.common.Utils.isNotBlank;
+
 import static org.apache.commons.io.FileUtils.readLines;
 import static org.apache.hc.core5.http.HttpStatus.SC_BAD_REQUEST;
 import static org.apache.hc.core5.http.HttpStatus.SC_NOT_FOUND;
 import static org.apache.hc.core5.http.HttpStatus.SC_OK;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
-
-import static supercell.api.wrapper.essentials.common.Utils.isNotBlank;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
 import com.github.tomakehurst.wiremock.core.WireMockConfiguration;
@@ -40,19 +40,19 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 
+import jcrapi2.essentials.common.IResponse;
+import jcrapi2.essentials.common.PaginationRequest;
+import jcrapi2.essentials.common.PaginationResponse;
+import jcrapi2.essentials.common.Request;
+import jcrapi2.essentials.connector.ConnectorException;
+import jcrapi2.essentials.connector.StandardConnector;
+
 import lombok.Getter;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-
-import supercell.api.wrapper.essentials.common.IResponse;
-import supercell.api.wrapper.essentials.common.PaginationRequest;
-import supercell.api.wrapper.essentials.common.PaginationResponse;
-import supercell.api.wrapper.essentials.common.Request;
-import supercell.api.wrapper.essentials.connector.ConnectorException;
-import supercell.api.wrapper.essentials.connector.StandardConnector;
 
 import java.io.File;
 import java.io.IOException;
@@ -214,11 +214,7 @@ public abstract class IntegrationTestBase {
     private void assertConnectorFailure(TestRunner testRunner, int status, String errorBody) {
         assertThatThrownBy(testRunner::execute)
                 .isInstanceOf(ExecutionException.class)
-                .hasMessage(
-                        "supercell.api.wrapper.essentials.connector.ConnectorException: "
-                                + status
-                                + ": "
-                                + errorBody)
+                .hasMessage(ConnectorException.class.getName() + ": " + status + ": " + errorBody)
                 .hasCauseInstanceOf(ConnectorException.class);
     }
 

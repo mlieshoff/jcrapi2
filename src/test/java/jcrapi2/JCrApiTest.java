@@ -20,6 +20,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import jcrapi2.api.intern.clans.ClanApi;
+import jcrapi2.essentials.api.Api;
+import jcrapi2.essentials.api.ApiContext;
+import jcrapi2.essentials.api.BaseApi;
+import jcrapi2.essentials.connector.Connector;
 
 import lombok.NonNull;
 
@@ -30,11 +34,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-
-import supercell.api.wrapper.essentials.api.Api;
-import supercell.api.wrapper.essentials.api.ApiContext;
-import supercell.api.wrapper.essentials.api.BaseApi;
-import supercell.api.wrapper.essentials.connector.Connector;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -62,6 +61,7 @@ class JCrApiTest {
                 new HashSet<>(
                         Arrays.asList(
                                 "jcrapi2.api.intern.cards.CardApi",
+                                "jcrapi2.api.intern.events.EventApi",
                                 "jcrapi2.api.intern.challenges.ChallengeApi",
                                 "jcrapi2.api.intern.clans.ClanApi",
                                 "jcrapi2.api.intern.globaltournaments.GlobalTournamentApi",

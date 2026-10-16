@@ -19,15 +19,15 @@ package jcrapi2.api.intern;
 import jcrapi2.api.intern.cards.CardApi;
 import jcrapi2.api.intern.challenges.ChallengeApi;
 import jcrapi2.api.intern.clans.ClanApi;
+import jcrapi2.api.intern.events.EventApi;
 import jcrapi2.api.intern.globaltournaments.GlobalTournamentApi;
 import jcrapi2.api.intern.leaderboards.LeaderboardApi;
 import jcrapi2.api.intern.locations.LocationApi;
 import jcrapi2.api.intern.players.PlayerApi;
 import jcrapi2.api.intern.tournaments.TournamentApi;
+import jcrapi2.essentials.api.Api;
 
 import lombok.Getter;
-
-import supercell.api.wrapper.essentials.api.Api;
 
 import java.util.Map;
 
@@ -39,6 +39,7 @@ public class DefaultApiClasses {
                     ClanApi.class, "jcrapi2.api.intern.clans.ClanApiImpl",
                     PlayerApi.class, "jcrapi2.api.intern.players.PlayerApiImpl",
                     CardApi.class, "jcrapi2.api.intern.cards.CardApiImpl",
+                    EventApi.class, "jcrapi2.api.intern.events.EventApiImpl",
                     TournamentApi.class, "jcrapi2.api.intern.tournaments.TournamentApiImpl",
                     LocationApi.class, "jcrapi2.api.intern.locations.LocationApiImpl",
                     ChallengeApi.class, "jcrapi2.api.intern.challenges.ChallengeApiImpl",

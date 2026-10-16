@@ -17,7 +17,6 @@
 package jcrapi2.api.intern.clans.riverracelog;
 
 import jcrapi2.api.generated.model.RiverRaceLogEntry;
-
-import supercell.api.wrapper.essentials.common.PaginationResponse;
+import jcrapi2.essentials.common.PaginationResponse;
 
 public class RiverRaceLogResponse extends PaginationResponse<RiverRaceLogEntry> {}

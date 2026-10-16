@@ -214,6 +214,16 @@ list all supported apis
         .build()
     ).get();
 ```
+#### EventApi
+
+```java
+EventApi api = jCrApi.getApi(EventApi.class);
+EventsResponse events = api.findAll(EventsRequest.builder().storeRawResponse(true).build()).get();
+```
+
+`EventsResponse` is a list of generated `TrailEvent` models from `/events`.
+Event descriptions can be null.
+
 #### TournamentApi
 ```java
     // create an instance for the api

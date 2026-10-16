@@ -15,6 +15,7 @@ parameters exercise URL construction independently of snapshot provenance.
 | Fixture | Verified request | Retained items |
 | --- | --- | --- |
 | `card-findAll.json` | `/cards` | 5 |
+| `event-findAll.json` | `/events` | 5 |
 | `clan-findAll.json` | `/clans?name=Royal&limit=10` | 5 |
 | `clan-findByTag.json` | `/clans/%23RYQJYLQV` | object |
 | `clan-getCurrentRiverRace.json` | `/clans/%23RYQJYLQV/currentriverrace` | object |
@@ -80,3 +81,15 @@ All successful fixture cases verify generated payload types, raw response data,
 and preservation of every non-null JSON field. Specific model tests also check
 hero icons, support items, and dynamic progress keys. No fixture is generated
 from model serialization as its expected API response.
+
+## Events and legacy clan-war routes
+
+`event-findAll.json` contains five real `/events` entries collected on
+2026-10-16, including null descriptions. The API returns a top-level array.
+`event-findAll-empty.json` is a minimal empty-array contract example for the same
+route. Both are replayed by `EventApiImplIntegrationTest`.
+
+The same live check returned HTTP 404 from `/clans/{clanTag}/warlog`, with a
+message that the endpoint is temporarily disabled, and HTTP 410 from
+`/clans/{clanTag}/currentwar`, with a message that it has been permanently
+removed. These routes still appear in the checked-in `api.yaml`.

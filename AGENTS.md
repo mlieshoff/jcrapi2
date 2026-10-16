@@ -97,16 +97,22 @@ Do not bypass these restrictions through scripts, IDE integrations, GitHub CLI, 
 - Do not weaken assertions to hide failures.
 - Do not modify production code solely to accommodate an incorrect test.
 
-## 6. Build and Validation
+## 6. Build, Formatting and Validation
 
 - Prefer the existing Maven or Gradle wrapper.
-- Run relevant tests after making changes.
+- **Always use `mvn spotless:apply` to format Java code.**
+- Never format Java code manually or using an alternative formatter.
+- Run `mvn spotless:apply` after implementing code changes.
+- Run `mvn spotless:check` to verify formatting.
+- Run relevant tests after formatting.
 - Run the full test suite when appropriate.
 - Do not skip tests unless explicitly requested.
+- Do not modify Spotless configuration without explicit permission.
 - Do not modify build configuration merely to bypass failures.
 - Do not automatically update dependencies or plugins.
 - Do not download or execute arbitrary remote scripts.
 - Keep build artifacts inside the project directory whenever possible.
+- Review the diff after formatting to ensure unrelated files were not modified.
 
 ## 7. Security
 

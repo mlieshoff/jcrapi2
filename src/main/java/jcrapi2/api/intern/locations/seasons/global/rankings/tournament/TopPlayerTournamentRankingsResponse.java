@@ -17,8 +17,7 @@
 package jcrapi2.api.intern.locations.seasons.global.rankings.tournament;
 
 import jcrapi2.api.generated.model.LadderTournamentRanking;
-
-import supercell.api.wrapper.essentials.common.PaginationResponse;
+import jcrapi2.essentials.common.PaginationResponse;
 
 public class TopPlayerTournamentRankingsResponse
         extends PaginationResponse<LadderTournamentRanking> {}

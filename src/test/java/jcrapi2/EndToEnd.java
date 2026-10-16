@@ -41,6 +41,9 @@ import jcrapi2.api.intern.clans.members.ClanMembersRequest;
 import jcrapi2.api.intern.clans.members.ClanMembersResponse;
 import jcrapi2.api.intern.clans.riverracelog.RiverRaceLogRequest;
 import jcrapi2.api.intern.clans.riverracelog.RiverRaceLogResponse;
+import jcrapi2.api.intern.events.EventApi;
+import jcrapi2.api.intern.events.EventsRequest;
+import jcrapi2.api.intern.events.EventsResponse;
 import jcrapi2.api.intern.globaltournaments.GlobalTournamentApi;
 import jcrapi2.api.intern.globaltournaments.GlobalTournamentsRequest;
 import jcrapi2.api.intern.globaltournaments.GlobalTournamentsResponse;
@@ -86,11 +89,10 @@ import jcrapi2.api.intern.tournaments.TournamentsRequest;
 import jcrapi2.api.intern.tournaments.TournamentsResponse;
 import jcrapi2.api.intern.tournaments.info.TournamentRequest;
 import jcrapi2.api.intern.tournaments.info.TournamentResponse;
+import jcrapi2.essentials.connector.FilesystemCachedConnector;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import supercell.api.wrapper.essentials.connector.FilesystemCachedConnector;
 
 import java.io.StringReader;
 
@@ -119,6 +121,8 @@ class EndToEnd {
 
     private CardApi cardApi;
 
+    private EventApi eventApi;
+
     private TournamentApi tournamentApi;
 
     private LocationApi locationApi;
@@ -139,6 +143,7 @@ class EndToEnd {
         clanApi = jCrApi.getApi(ClanApi.class);
         playerApi = jCrApi.getApi(PlayerApi.class);
         cardApi = jCrApi.getApi(CardApi.class);
+        eventApi = jCrApi.getApi(EventApi.class);
         tournamentApi = jCrApi.getApi(TournamentApi.class);
         locationApi = jCrApi.getApi(LocationApi.class);
         challengeApi = jCrApi.getApi(ChallengeApi.class);
@@ -310,6 +315,17 @@ class EndToEnd {
                         .replace(",\"challengeWinCountBefore\":0", "")
                         .replace(",\"maxEvolutionLevel\":null", "")
                         .replace(",\"globalRank\":null", "");
+
+        assertDiff(expected, actual);
+    }
+
+    @Test
+    void events_findAll_whenApiReturnsSuccess_thenMatchResponsePayload() throws Exception {
+        EventsResponse response =
+                eventApi.findAll(EventsRequest.builder().storeRawResponse(true).build()).get();
+        String actual =
+                new GsonBuilder().serializeNulls().disableHtmlEscaping().create().toJson(response);
+        String expected = response.getRawResponse().getRaw();
 
         assertDiff(expected, actual);
     }

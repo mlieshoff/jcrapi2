@@ -16,9 +16,9 @@
  */
 package jcrapi2.api.intern.locations.seasons.global;
 
-import lombok.Builder;
+import jcrapi2.essentials.common.PaginationRequest;
 
-import supercell.api.wrapper.essentials.common.PaginationRequest;
+import lombok.Builder;
 
 public class TopPlayerLeagueSeasonsV2Request extends PaginationRequest {
 

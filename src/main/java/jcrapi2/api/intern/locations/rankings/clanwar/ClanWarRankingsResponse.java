@@ -17,7 +17,6 @@
 package jcrapi2.api.intern.locations.rankings.clanwar;
 
 import jcrapi2.api.generated.model.ClanRanking;
-
-import supercell.api.wrapper.essentials.common.PaginationResponse;
+import jcrapi2.essentials.common.PaginationResponse;
 
 public class ClanWarRankingsResponse extends PaginationResponse<ClanRanking> {}

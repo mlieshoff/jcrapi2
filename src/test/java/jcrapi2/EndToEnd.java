@@ -92,6 +92,7 @@ import jcrapi2.api.intern.tournaments.info.TournamentRequest;
 import jcrapi2.api.intern.tournaments.info.TournamentResponse;
 
 import lombok.extern.slf4j.Slf4j;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -610,5 +611,4 @@ class EndToEnd {
             log.warn("FLAKE TEST DETECTED: leaderboards_findById", e);
         }
     }
-
 }
